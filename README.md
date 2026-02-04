@@ -6,14 +6,15 @@ A lightweight fork of Baileys with a few fixes and a small adjustment.
 
 ### ⚙️ Changes
 - Fixed an issue where media could not be sent to newsletter due to an upstream Baileys bug.
-- Added support for sending interactive message (button, list, interactive, template, carousel)
-- Added support for album message, sticker pack message, and payment-related message (request payment, payment invite, order, invoice)
+- Added support for sending interactive message (button, list, interactive, template, carousel).
+- Added support for sending album message, sticker pack message, and payment-related message (request payment, payment invite, order, invoice).
+- Added support for sending message with ad thumbnail via externalAdReply.
 - Added boolean options for message handling:  
-  `ai` (adds AI-related metadata),  
-  `ephemeral`, `statusGroup`, `viewOnceV2`, `viewOnceV2Extension`, `interactiveAsTemplate` (message wrapping)
-- Slightly adjusted authentication state handling and pre-key manager
+   - `ai` (add AI label),  
+   - `ephemeral`, `statusGroup`, `viewOnceV2`, `viewOnceV2Extension`, `interactiveAsTemplate` (message wrapping)
+- Slightly adjusted authentication state handling and pre-key manager.
 
-> 😞 Sorry for my bad english
+> 😞 Sorry for my bad english.
 
 ### 📥 Installation
 
@@ -786,7 +787,9 @@ sock.sendMessage(jid, {
 > [!IMPORTANT]
 Based on [Baileys GitHub](https://github.com/WhiskeySockets/Baileys/commits/master) version as of **2026-01-25**
 
-## 📣 Credits
+---
+
+### 📣 Credits
 > [!CAUTION]
 All rights reserved to the original maintainers:
 > - [WhiskeySockets/Baileys](https://github.com/WhiskeySockets/Baileys/)
