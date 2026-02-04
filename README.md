@@ -169,6 +169,19 @@ connectToWhatsApp()
 </details>
 
 <details>
+<summary><strong>🪪 WhatsApp IDs Explain</strong></summary>
+
+💭 `id` is the WhatsApp ID, called `jid` and `lid` too, of the person or group you're sending the message to.
+- It must be in the format `[country code][phone number]@s.whatsapp.net`
+   - Example for people: `+19999999999@s.whatsapp.net` and `12677777777777@lid`.
+   - For groups, it must be in the format `123456789-123345@g.us`.
+- For meta ai, it's `11111111111@bot`.
+- For broadcast lists, it's `[timestamp of creation]@broadcast`.
+- For stories, the ID is `status@broadcast`.
+
+</details>
+
+<details>
 <summary><strong>✉️ Sending Messages</strong></summary>
 
 > 📝 You can get the `jid` from `message.key.remoteJid` in the first example.
@@ -685,7 +698,7 @@ sock.sendMessage(jid, {
    text: '📰 External Ad Reply',
    externalAdReply: {
       title: '📝 Did you know?',
-      body: '❓ I don't know',
+      body: '❓ I dont know',
       thumbnail: fs.readFileSync('./path/to/image.jpg'), // --- Must in buffer format
       largeThumbnail: false, // --- Or true for bigger thumbnail
       url: 'https://www.npmjs.com/package/baileys' // --- Optional, used for WhatsApp internal thumbnail caching and direct URL
