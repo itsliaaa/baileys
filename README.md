@@ -13,6 +13,8 @@ A lightweight fork of Baileys with a few fixes and a small adjustment.
   `ephemeral`, `statusGroup`, `viewOnceV2`, `viewOnceV2Extension`, `interactiveAsTemplate` (message wrapping)
 - Slightly adjusted authentication state handling and pre-key manager
 
+> 😞 Sorry for my bad english
+
 ### 📥 Installation
 
 - 📄 Via `package.json`
