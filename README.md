@@ -31,6 +31,12 @@ A lightweight fork of Baileys with a few fixes and a small adjustment.
 
 - 📄 Via `package.json`
 ```json
+# NPM
+"dependencies": {
+   "@itsliaaa/baileys": "latest"
+}
+
+# GitHub
 "dependencies": {
    "@itsliaaa/baileys": "github:itsliaaa/baileys"
 }
@@ -38,6 +44,10 @@ A lightweight fork of Baileys with a few fixes and a small adjustment.
 
 - ⌨️ Via terminal
 ```bash
+# NPM
+npm i @itsliaaa/baileys@latest
+
+# GitHub
 npm i github:itsliaaa/baileys
 ```
 
