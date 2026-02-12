@@ -9,7 +9,7 @@ A lightweight fork of Baileys with a few fixes and a small adjustment.
 ### 🛠️ Internal Adjustments
 - 🖼️ Fixed an issue where media could not be sent to newsletters due to an upstream issue.
 - 📁 Reintroduced `makeInMemoryStore` with a minimal ESM adaptation and small adjustments for Baileys v7.
-- 📦 Switched FFmpeg execution from `exec` to `execFile` for safer process handling.
+- 📦 Switched FFmpeg execution from `exec` to `spawn` for safer process handling.
 
 ### 📨 Message Handling & Compatibility
 - 👉🏻 Added support for sending interactive message types (button, list, interactive, template, carousel).
@@ -937,6 +937,36 @@ console.log('🏷️ Got user ID', ':', ids)
 //    lid: 'id-not-found'
 // }
 // --- Same output shape regardless of input type
+```
+
+#### 🖼️ Image Processing (FFmpeg)
+
+```javascript
+import { getImageProcessingLibrary } from '@itsliaaa/baileys'
+
+const lib = await getImageProcessingLibrary()
+
+if (lib.ffmpeg) {
+   const job = await lib.ffmpeg({
+      args: [
+         '-i', 'path/to/media.jpg',
+         '-frames:v', '1',
+         '-q:v', '10'
+      ],
+      extension: 'jpg' // --- Used for output file extension
+   })
+
+   const buffer = await job.toBuffer() // --- Optional if you need a buffer. The output file will be deleted automatically after the buffer is created.
+}
+else {
+   throw new Error('FFmpeg not available')
+}
+
+// --- Output
+// {
+//    outputFilename: 'output/path.jpg',
+//    toBuffer: [AsyncFunction: toBuffer]
+// }
 ```
 
 #### 🔑 Request Custom Pairing Code
