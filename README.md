@@ -89,7 +89,7 @@ const connectToWhatsApp = async () => {
    sock.ev.on('connection.update', (update) => {
       const { connection, lastDisconnect } = update
       if (connection === 'connecting' && !sock.authState.creds.registered) {
-         await delay(1_500)
+         await delay(1500)
          const code = await sock.requestPairingCode(myPhoneNumber)
          console.log('🔗 Pairing code', ':', code)
       }
@@ -160,7 +160,7 @@ const connectToWhatsApp = async () => {
    sock.ev.on('connection.update', (update) => {
       const { connection, lastDisconnect } = update
       if (connection === 'connecting' && !sock.authState.creds.registered) {
-         await delay(1_500)
+         await delay(1500)
          const code = await sock.requestPairingCode(myPhoneNumber)
          console.log('🔗 Pairing code', ':', code)
       }
