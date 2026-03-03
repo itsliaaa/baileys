@@ -4,19 +4,19 @@
 
 A lightweight fork of Baileys with a few fixes and a small adjustment.
 
-## ⚙️ **Changes**
+### ⚙️ **Changes**
 
-### 🛠️ Internal Adjustments
+#### 🛠️ Internal Adjustments
 - 🖼️ Fixed an issue where media could not be sent to newsletters due to an upstream issue.
 - 📁 Reintroduced `makeInMemoryStore` with a minimal ESM adaptation and small adjustments for Baileys v7.
 - 📦 Switched FFmpeg execution from `exec` to `spawn` for safer process handling.
 
-### 📨 Message Handling & Compatibility
+#### 📨 Message Handling & Compatibility
 - 👉🏻 Added support for sending interactive message types (button, list, interactive, template, carousel).
 - 📩 Added support for album messages, group status messages, sticker pack messages, and several payment-related messages (request payment, payment invite, order, invoice).
 - 📰 Simplified sending messages with ad thumbnails via `externalAdReply` without requiring manual `contextInfo`.
 
-### 🧩 Additional Message Options
+#### 🧩 Additional Message Options
 - 👁️ Added optional boolean flags for message handling:  
    - `ai` - AI label on message
    - `ephemeral`, `groupStatus`, `viewOnceV2`, `viewOnceV2Extension`, `interactiveAsTemplate` - Message wrappers
@@ -27,9 +27,10 @@ A lightweight fork of Baileys with a few fixes and a small adjustment.
 >
 > 😞 And, really sorry for my bad english.
 
-## 📥 **Installation**
+### 📥 **Installation**
 
 - 📄 Via `package.json`
+
 ```json
 # NPM
 "dependencies": {
@@ -43,6 +44,7 @@ A lightweight fork of Baileys with a few fixes and a small adjustment.
 ```
 
 - ⌨️ Via terminal
+
 ```bash
 # NPM
 npm i @itsliaaa/baileys@latest
@@ -51,7 +53,8 @@ npm i @itsliaaa/baileys@latest
 npm i github:itsliaaa/baileys
 ```
 
-- 🧩 Import (ESM & CJS)
+#### 🧩 Import (ESM & CJS)
+
 ```javascript
 // --- ESM
 import { makeWASocket } from '@itsliaaa/baileys'
@@ -60,12 +63,9 @@ import { makeWASocket } from '@itsliaaa/baileys'
 const { makeWASocket } = require('@itsliaaa/baileys')
 ```
 
-## 🔧 **Usage**
+### 🔧 **Usage**
 
-<details open>
-<summary><strong>🌐 Connect to WhatsApp (Quick Step)</strong></summary>
-
-<br>
+#### 🌐 Connect to WhatsApp (Quick Step)
 
 ```javascript
 import { makeWASocket, delay, DisconnectReason, useMultiFileAuthState } from '@itsliaaa/baileys'
@@ -75,9 +75,10 @@ import pino from 'pino'
 // --- Connect with pairing code
 const myPhoneNumber = '6288888888888'
 
+const logger = pino({ level: 'silent' })
+
 const connectToWhatsApp = async () => {
    const { state, saveCreds } = await useMultiFileAuthState('session')
-   const logger = pino({ level: 'silent' })
     
    const sock = makeWASocket({
       logger,
@@ -120,14 +121,10 @@ const connectToWhatsApp = async () => {
 connectToWhatsApp()
 ```
 
-</details>
+#### 🗄️ Implementing a Data Store
 
-<details>
-<summary><strong>🗄️ Implementing a Data Store</strong></summary>
-
-<br>
-
-> 📝 I highly recommend building your own data store, as keeping an entire chat history in memory can lead to excessive RAM usage.
+> [!CAUTION]
+I highly recommend building your own data store, as keeping an entire chat history in memory can lead to excessive RAM usage.
 
 ```javascript
 import { makeWASocket, makeInMemoryStore, delay, DisconnectReason, useMultiFileAuthState } from '@itsliaaa/baileys'
@@ -139,9 +136,10 @@ const myPhoneNumber = '6288888888888'
 // --- Create your store path
 const storePath = './store.json'
 
+const logger = pino({ level: 'silent' })
+
 const connectToWhatsApp = async () => {
    const { state, saveCreds } = await useMultiFileAuthState('session')
-   const logger = pino({ level: 'silent' })
     
    const sock = makeWASocket({
       logger,
@@ -196,12 +194,7 @@ const connectToWhatsApp = async () => {
 connectToWhatsApp()
 ```
 
-</details>
-
-<details>
-<summary><strong>🪪 WhatsApp IDs Explain</strong></summary>
-
-<br>
+#### 🪪 WhatsApp IDs Explain
 
 `id` is the WhatsApp ID, called `jid` and `lid` too, of the person or group you're sending the message to.
 - It must be in the format `[country code][phone number]@s.whatsapp.net`
@@ -211,19 +204,12 @@ connectToWhatsApp()
 - For broadcast lists, it's `[timestamp of creation]@broadcast`.
 - For stories, the ID is `status@broadcast`.
 
-</details>
+#### ✉️ Sending Messages
 
-<details>
-<summary><strong>✉️ Sending Messages</strong></summary>
+> [!NOTE]
+You can get the `jid` from `message.key.remoteJid` in the first example.
 
-<br>
-
-> 📝 You can get the `jid` from `message.key.remoteJid` in the first example.
-
-<details>
-<summary><strong>📩 Sending Common Messages</strong></summary>
-
-#### 🔠 Text
+##### 🔠 Text
 
 ```javascript
 sock.sendMessage(jid, {
@@ -233,7 +219,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-#### 🔔 Mention
+##### 🔔 Mention
 
 ```javascript
 sock.sendMessage(jid, {
@@ -244,7 +230,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-#### 😁 Reaction
+##### 😁 Reaction
 
 ```javascript
 sock.sendMessage(jid, {
@@ -257,7 +243,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-#### 📌 Pin Message
+##### 📌 Pin Message
 
 ```javascript
 sock.sendMessage(jid, {
@@ -269,7 +255,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-#### 👤 Contact
+##### 👤 Contact
 
 ```javascript
 const vcard = 'BEGIN:VCARD\n'
@@ -291,7 +277,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-#### 📍 Location
+##### 📍 Location
 
 ```javascript
 sock.sendMessage(jid, {
@@ -305,7 +291,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-#### 📊 Poll
+##### 📊 Poll
 
 ```javascript
 // --- Regular poll message
@@ -364,14 +350,12 @@ sock.sendMessage(jid, {
 })
 ```
 
-</details>
+#### 📁 Sending Media Messages
 
-<details>
-<summary><strong>📁 Sending Media Messages</strong></summary>
+> [!NOTE]
+For media messages, you can pass a `Buffer` directly, or an object with either `{ stream: Readable }` or `{ url: string }` (local file path or HTTP/HTTPS URL).
 
-> 📝 For media messages, you can pass a `Buffer` directly, or an object with either `{ stream: Readable }` or `{ url: string }` (local file path or HTTP/HTTPS URL).
-
-#### 🖼️ Image
+##### 🖼️ Image
 
 ```javascript
 sock.sendMessage(jid, {
@@ -384,7 +368,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-#### 🎥 Video
+##### 🎥 Video
 
 ```javascript
 sock.sendMessage(jid, {
@@ -399,7 +383,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-#### 📃 Sticker
+##### 📃 Sticker
 
 ```javascript
 sock.sendMessage(jid, {
@@ -411,7 +395,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-#### 💽 Audio
+##### 💽 Audio
 
 ```javascript
 sock.sendMessage(jid, {
@@ -424,7 +408,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-#### 🖼️ Album (Image & Video)
+##### 🖼️ Album (Image & Video)
 
 ```javascript
 sock.sendMessage(jid, {
@@ -454,9 +438,10 @@ sock.sendMessage(jid, {
 })
 ```
 
-#### 📦 Sticker Pack
+##### 📦 Sticker Pack
 
-> 📝 If Sharp is not installed, the `cover` and `stickers` must already be in WebP format.
+> [!IMPORTANT]
+If Sharp is not installed, the `cover` and `stickers` must already be in WebP format.
 
 ```javascript
 sock.sendMessage(jid, {
@@ -484,12 +469,9 @@ sock.sendMessage(jid, {
 })
 ```
 
-</details>
+#### 👉🏻 Sending Interactive Messages
 
-<details>
-<summary><strong>👉🏻 Sending Interactive Messages</strong></summary>
-
-#### 1️⃣ Buttons (Classic)
+##### 1️⃣ Buttons (Classic)
 
 ```javascript
 sock.sendMessage(jid, {
@@ -545,9 +527,10 @@ sock.sendMessage(jid, {
 })
 ```
 
-#### 2️⃣ List (Classic)
+##### 2️⃣ List (Classic)
 
-> 📝 It only works in private chat (`@s.whatsapp.net`).
+> [!NOTE]
+It only works in private chat (`@s.whatsapp.net`).
 
 ```javascript
 sock.sendMessage(jid, {
@@ -575,7 +558,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-#### 3️⃣ Interactive (Native Flow)
+##### 3️⃣ Interactive (Native Flow)
 
 ```javascript
 sock.sendMessage(jid, {
@@ -681,7 +664,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-#### 4️⃣ Template (Hydrated Template)
+##### 4️⃣ Template (Hydrated Template)
 
 ```javascript
 sock.sendMessage(jid, {
@@ -706,12 +689,9 @@ sock.sendMessage(jid, {
 })
 ```
 
-</details>
+#### 💳 Sending Payment Messages
 
-<details>
-<summary><strong>💳 Sending Payment Messages</strong></summary>
-
-#### 1️⃣ Invite Payment
+##### 1️⃣ Invite Payment
 
 ```javascript
 sock.sendMessage(jid, {
@@ -719,9 +699,10 @@ sock.sendMessage(jid, {
 })
 ```
 
-#### 2️⃣ Invoice
+##### 2️⃣ Invoice
 
-> 📝 Invoice message are not supported yet.
+> [!NOTE]
+Invoice message are not supported yet.
 
 ```javascript
 sock.sendMessage(jid, {
@@ -732,7 +713,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-#### 3️⃣ Order
+##### 3️⃣ Order
 
 ```javascript
 sock.sendMessage(chat, {
@@ -743,7 +724,7 @@ sock.sendMessage(chat, {
 })
 ```
 
-#### 4️⃣ Product
+##### 4️⃣ Product
 
 ```javascript
 sock.sendMessage(jid, {
@@ -759,7 +740,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-#### 5️⃣ Request Payment
+##### 5️⃣ Request Payment
 
 ```javascript
 sock.sendMessage(jid, {
@@ -768,14 +749,12 @@ sock.sendMessage(jid, {
 })
 ```
 
-</details>
+#### 👁️ Other Message Options
 
-<details>
-<summary><strong>👁️ Other Message Options</strong></summary>
+##### 1️⃣ AI Label
 
-#### 1️⃣ AI Label
-
-> 📝 It only works in private chat (`@s.whatsapp.net`).
+> [!NOTE]
+It only works in private chat (`@s.whatsapp.net`).
 
 ```javascript
 sock.sendMessage(jid, {
@@ -789,9 +768,10 @@ sock.sendMessage(jid, {
 })
 ```
 
-#### 2️⃣ Ephemeral
+##### 2️⃣ Ephemeral
 
-> 📝 Wrap message into `ephemeralMessage`
+> [!NOTE]
+Wrap message into `ephemeralMessage`
 
 ```javascript
 sock.sendMessage(jid, {
@@ -803,9 +783,10 @@ sock.sendMessage(jid, {
 })
 ```
 
-#### 3️⃣ External Ad Reply
+##### 3️⃣ External Ad Reply
 
-> 📝 Add an ad thumbnail to messages (may not be displayed on some WhatsApp versions).
+> [!NOTE]
+Add an ad thumbnail to messages (may not be displayed on some WhatsApp versions).
 
 ```javascript
 sock.sendMessage(jid, {
@@ -822,9 +803,10 @@ sock.sendMessage(jid, {
 })
 ```
 
-#### 4️⃣ Group Status
+##### 4️⃣ Group Status
 
-> 📝 It only works in group chat (`@g.us`)
+> [!NOTE]
+It only works in group chat (`@g.us`)
 
 ```javascript
 sock.sendMessage(jid, {
@@ -836,7 +818,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-#### 5️⃣ Raw
+##### 5️⃣ Raw
 
 ```javascript
 sock.sendMessage(jid, {
@@ -858,9 +840,10 @@ sock.sendMessage(jid, {
 })
 ```
 
-#### 6️⃣ View Once
+##### 6️⃣ View Once
 
-> 📝 Wrap message into `viewOnceMessage`
+> [!NOTE]
+Wrap message into `viewOnceMessage`
 
 ```javascript
 sock.sendMessage(jid, {
@@ -872,9 +855,10 @@ sock.sendMessage(jid, {
 })
 ```
 
-#### 7️⃣ View Once V2
+##### 7️⃣ View Once V2
 
-> 📝 Wrap message into `viewOnceMessageV2`
+> [!NOTE]
+Wrap message into `viewOnceMessageV2`
 
 ```javascript
 sock.sendMessage(jid, {
@@ -886,9 +870,10 @@ sock.sendMessage(jid, {
 })
 ```
 
-#### 8️⃣ View Once V2 Extension
+##### 8️⃣ View Once V2 Extension
 
-> 📝 Wrap message into `viewOnceMessageV2Extension`
+> [!NOTE]
+Wrap message into `viewOnceMessageV2Extension`
 
 ```javascript
 sock.sendMessage(jid, {
@@ -900,16 +885,12 @@ sock.sendMessage(jid, {
 })
 ```
 
-</details>
+#### 🧰 Additional Contents
 
-</details>
+##### 🏷️ Find User ID (JID|PN/LID)
 
-<details>
-<summary><strong>🧰 Additional Contents</strong></summary>
-
-#### 🏷️ Find User ID (JID|PN/LID)
-
-> 📝 The ID must contain numbers only (no +, (), or -) and must include the country code with WhatsApp ID format.
+> [!NOTE]
+The ID must contain numbers only (no +, (), or -) and must include the country code with WhatsApp ID format.
 
 ```javascript
 // --- PN (Phone Number)
@@ -939,9 +920,10 @@ console.log('🏷️ Got user ID', ':', ids)
 // --- Same output shape regardless of input type
 ```
 
-#### 🔑 Request Custom Pairing Code
+##### 🔑 Request Custom Pairing Code
 
-> 📝 The phone number must contain numbers only (no +, (), or -) and must include the country code.
+> [!NOTE]
+The phone number must contain numbers only (no +, (), or -) and must include the country code.
 
 ```javascript
 const phoneNumber = '6281111111111'
@@ -952,8 +934,7 @@ await sock.requestPairingCode(phoneNumber, customPairingCode)
 console.log('🔗 Pairing code', ':', customPairingCode)
 ```
 
-<details>
-<summary><strong>📣 Newsletter Management</strong></summary>
+##### 📣 Newsletter Management
 
 ```javascript
 // --- Create a new one
@@ -991,10 +972,7 @@ const newsletters = await sock.newsletterSubscribed()
 console.dir(newsletters, { depth: null })
 ```
 
-</details>
-
-<details>
-<summary><strong>👥 Group Management</strong></summary>
+##### 👥 Group Management
 
 ```javascript
 // --- Create a new one and add participants using their JIDs
@@ -1085,17 +1063,13 @@ const group = await sock.groupGetInviteInfo('https://chat.whatsapp.com/ABC123')
 console.log('👥 Got group info from link', ':', group)
 ```
 
-</details>
-
-</details>
-
 ## 📦 **Fork Base**
 > [!NOTE]
 This fork is based on [Baileys (GitHub)](https://github.com/WhiskeySockets/Baileys)
 
 ## 📣 **Credits**
 > [!IMPORTANT]
-This fork uses Protocol Buffer definitions maintained by [WPP Connect](https://github.com/wppconnect-team) via [wa-proto](https://github.com/wppconnect-team/wa-proto)
+This fork uses Protocol Buffer definitions maintained by [WPP Connect](https://github.com/wppconnect-team) via [`wa-proto`](https://github.com/wppconnect-team/wa-proto)
 > 
 > All rights belong to the original Baileys maintainers and contributors:
 > - [WhiskeySockets/Baileys](https://github.com/WhiskeySockets/Baileys)

@@ -1,0 +1,57 @@
+name: Bug Report
+title: "[BUG] "
+description: Report a bug related to this Baileys fork
+labels: ["bug"]
+body:
+
+  - type: input
+    id: nodejs-version
+    attributes:
+      label: Node.js Version
+      description: Enter the version of Node.js you are using.
+      placeholder: 24.14.0
+    validations:
+      required: true
+
+  - type: input
+    id: operating-system
+    attributes:
+      label: Operating System
+      description: Enter the operating system you are using.
+      placeholder: Ubuntu 24.01 (Linux 6.8.0)
+    validations:
+      required: true
+
+  - type: input
+    id: whatsapp-version
+    attributes:
+      label: WhatsApp Version
+      description: Enter the version of WhatsApp you are using.
+      placeholder: WhatsApp Business 2.26.7.73 (Android 15)
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional Information
+      description: |
+        Describe the issue you're facing. You may attach log files or screenshots if needed.
+      placeholder: Describe the issue and include logs if possible.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I am using the latest commit of this fork.
+          required: true
+        - label: I have checked the documentation and found no answer.
+          required: true
+        - label: I have searched existing issues to ensure this is not a duplicate.
+          required: true
+        - label: I am using the latest version of WhatsApp.
+        - label: I have provided sufficient information.
+          required: true
