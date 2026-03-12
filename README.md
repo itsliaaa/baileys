@@ -8,21 +8,21 @@ A lightweight fork of Baileys with a few fixes and a small adjustment.
 
 #### 🛠️ Internal Adjustments
 - 🖼️ Fixed an issue where media could not be sent to newsletters due to an upstream issue.
-- 📁 Reintroduced `makeInMemoryStore` with a minimal ESM adaptation and small adjustments for Baileys v7.
+- 📁 Reintroduced [`makeInMemoryStore`](#%EF%B8%8F-implementing-a-data-store) with a minimal ESM adaptation and small adjustments for Baileys v7.
 - 📦 Switched FFmpeg execution from `exec` to `spawn` for safer process handling.
 - 🗃️ Added `@napi-rs/image` as a supported image processing backend in `getImageProcessingLibrary()`, offering a balance between performance and compatibility.
 
 #### 📨 Message Handling & Compatibility
-- 👉🏻 Added support for sending interactive message types (button, list, interactive, template, carousel).
-- 📩 Added support for album messages, group status messages, sticker pack messages, and several payment-related messages (request payment, payment invite, order, invoice).
-- 📰 Simplified sending messages with ad thumbnails via `externalAdReply` without requiring manual `contextInfo`.
+- 👉🏻 Added support for sending [interactive message](#-sending-interactive-messages) types (button, list, interactive, template, carousel).
+- 📩 Added support for [album messages](#%EF%B8%8F-album-image--video), [group status messages](#4%EF%B8%8F⃣-group-status), [sticker pack messages](#-sticker-pack), and several [payment-related messages](#-sending-payment-messages) (request payment, payment invite, order, invoice).
+- 📰 Simplified sending messages with ad thumbnails via [`externalAdReply`](#3%EF%B8%8F⃣-external-ad-reply) without requiring manual `contextInfo`.
 
 #### 🧩 Additional Message Options
 - 👁️ Added optional boolean flags for message handling:  
-   - `ai` - AI label on message
-   - `mentionAll` - Mentions all group participants without requiring their JIDs in `mentions` or `mentionedJid`
-   - `ephemeral`, `groupStatus`, `viewOnceV2`, `viewOnceV2Extension`, `interactiveAsTemplate` - Message wrappers
-   - `raw` - Build your message manually **(DO NOT USE FOR EXPLOITATION)**
+   - [`ai`](#1%EF%B8%8F⃣-ai-label) - AI label on message
+   - [`mentionAll`](#-mention) - Mentions all group participants without requiring their JIDs in `mentions` or `mentionedJid`
+   - [`ephemeral`](#2%EF%B8%8F⃣-ephemeral), [`groupStatus`](#4%EF%B8%8F⃣-group-status), [`viewOnceV2`](#7%EF%B8%8F⃣-view-once-v2), [`viewOnceV2Extension`](#8%EF%B8%8F⃣-view-once-v2-extension), [`interactiveAsTemplate`](#3%EF%B8%8F⃣-interactive) - Message wrappers
+   - [`raw`](#5%EF%B8%8F⃣-raw) - Build your message manually **(DO NOT USE FOR EXPLOITATION)**
 
 > [!NOTE]
 📄 This project is maintained with limited scope and is not intended to replace upstream Baileys.
@@ -224,17 +224,15 @@ sock.sendMessage(jid, {
 ##### 🔔 Mention
 
 ```javascript
+// --- Regular mention
 sock.sendMessage(jid, {
    text: '👋🏻 Hello @628123456789',
    mentions: ['628123456789@s.whatsapp.net']
 }, {
    quoted: message
 })
-```
 
-##### 🧑‍🧑‍🧒‍🧒 Mention All
-
-```javascript
+// --- Mention all
 sock.sendMessage(jid, {
    text: '👋🏻 Hello @all',
    mentionAll: true
@@ -331,7 +329,7 @@ sock.sendMessage('1211111111111@newsletter', {
    quoted: message
 })
 
-// Poll result
+// --- Poll result
 sock.sendMessage(jid, {
    pollResult: {
       name: '📝 Poll Result',
@@ -348,7 +346,7 @@ sock.sendMessage(jid, {
    quoted: message
 })
 
-// Poll update
+// --- Poll update
 sock.sendMessage(jid, {
    pollUpdate: {
       metadata: {},
@@ -454,7 +452,7 @@ sock.sendMessage(jid, {
 ##### 📦 Sticker Pack
 
 > [!IMPORTANT]
-If Sharp is not installed, the `cover` and `stickers` must already be in WebP format.
+If `sharp` or `@napi-rs/image` is not installed, the `cover` and `stickers` must already be in WebP format.
 
 ```javascript
 sock.sendMessage(jid, {
@@ -484,9 +482,10 @@ sock.sendMessage(jid, {
 
 #### 👉🏻 Sending Interactive Messages
 
-##### 1️⃣ Buttons (Classic)
+##### 1️⃣ Buttons
 
 ```javascript
+// --- Regular buttons message
 sock.sendMessage(jid, {
    text: '👆🏻 Buttons!',
    footer: '@itsliaaa/baileys',
@@ -497,11 +496,8 @@ sock.sendMessage(jid, {
 }, {
    quoted: message
 })
-```
 
-##### 🖼️ Buttons (With Media & Native Flow)
-
-```javascript
+// --- Buttons with Media & Native Flow
 sock.sendMessage(jid, {
    image: {
       url: './path/to/image.jpg'
@@ -512,35 +508,32 @@ sock.sendMessage(jid, {
       text: '👋🏻 Rating',
       id: '#Rating'
    }, {
-      name: 'single_select',
-      paramsJson: JSON.stringify({
-         title: '📋 Select',
-         sections: [{
-            title: '✨ Section 1',
-            rows: [{
-               header: '',
-               title: '💭 Secret Ingredient',
-               description: '',
-               id: '#SecretIngredient'
-            }]
-         }, {
-            title: '✨ Section 2',
-            highlight_label: '🔥 Popular',
-            rows: [{
-               header: '',
-               title: '🏷️ Coupon',
-               description: '',
-               id: '#CouponCode'
-            }]
+      text: '📋 Select',
+      sections: [{
+         title: '✨ Section 1',
+         rows: [{
+            header: '',
+            title: '💭 Secret Ingredient',
+            description: '',
+            id: '#SecretIngredient'
          }]
-      })
+      }, {
+         title: '✨ Section 2',
+         highlight_label: '🔥 Popular',
+         rows: [{
+            header: '',
+            title: '🏷️ Coupon',
+            description: '',
+            id: '#CouponCode'
+         }]
+      }]
    }]
 }, {
    quoted: message
 })
 ```
 
-##### 2️⃣ List (Classic)
+##### 2️⃣ List
 
 > [!NOTE]
 It only works in private chat (`@s.whatsapp.net`).
@@ -571,9 +564,10 @@ sock.sendMessage(jid, {
 })
 ```
 
-##### 3️⃣ Interactive (Native Flow)
+##### 3️⃣ Interactive
 
 ```javascript
+// --- Native Flow
 sock.sendMessage(jid, {
    image: {
       url: './path/to/image.jpg'
@@ -597,38 +591,32 @@ sock.sendMessage(jid, {
       text: '🌐 Source',
       url: 'https://www.npmjs.com/package/baileys'
    }, {
-      name: 'single_select',
-      buttonParamsJson: JSON.stringify({
-         title: '📋 Select',
-         sections: [{
-            title: '✨ Section 1',
-            rows: [{
-               header: '',
-               title: '🏷️ Coupon',
-               description: '',
-               id: '#CouponCode'
-            }]
-         }, {
-            title: '✨ Section 2',
-            highlight_label: '🔥 Popular',
-            rows: [{
-               header: '',
-               title: '💭 Secret Ingredient',
-               description: '',
-               id: '#SecretIngredient'
-            }]
+      text: '📋 Select',
+      sections: [{
+         title: '✨ Section 1',
+         rows: [{
+            header: '',
+            title: '🏷️ Coupon',
+            description: '',
+            id: '#CouponCode'
          }]
-      })
+      }, {
+         title: '✨ Section 2',
+         highlight_label: '🔥 Popular',
+         rows: [{
+            header: '',
+            title: '💭 Secret Ingredient',
+            description: '',
+            id: '#SecretIngredient'
+         }]
+      }]
    }],
    interactiveAsTemplate: false, // --- Optional, wrap the interactive message into a template
 }, {
    quoted: message
 })
-```
 
-##### 🎠 Interactive (Carousel & Native Flow)
-
-```javascript
+// --- Carousel & Native Flow
 sock.sendMessage(jid, {
    text: '🗂️ Interactive with Carousel!',
    footer: '@itsliaaa/baileys',
@@ -677,7 +665,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-##### 4️⃣ Template (Hydrated Template)
+##### 4️⃣ Hydrated Template
 
 ```javascript
 sock.sendMessage(jid, {
