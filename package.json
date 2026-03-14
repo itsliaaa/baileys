@@ -1,6 +1,6 @@
 {
    "name": "@itsliaaa/baileys",
-   "version": "0.1.6",
+   "version": "0.1.7",
    "description": "A simple fork of Baileys for WhatsApp automation",
    "main": "lib/index.js",
    "type": "module",
@@ -48,7 +48,7 @@
       "p-queue": "^9.1.0",
       "pino": "^9.6.0",
       "protobufjs": "^7.5.4",
-      "whatsapp-rust-bridge": "^0.5.3",
+      "whatsapp-rust-bridge": "0.5.3",
       "ws": "^8.19.0"
    },
    "peerDependencies": {
