@@ -32,6 +32,16 @@ body:
       required: true
 
   - type: textarea
+    id: socket-configuration
+    attributes:
+      label: Socket Configuration
+      description: |
+        Describe your socket configuration.
+      placeholder: makeWASocket({ ... })
+    validations:
+      required: true
+
+  - type: textarea
     id: additional-info
     attributes:
       label: Additional Information
