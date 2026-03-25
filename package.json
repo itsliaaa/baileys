@@ -1,6 +1,6 @@
 {
    "name": "@itsliaaa/baileys",
-   "version": "0.1.14",
+   "version": "0.1.15",
    "description": "A simple fork of Baileys for WhatsApp automation",
    "main": "lib/index.js",
    "type": "module",
