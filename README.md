@@ -20,6 +20,7 @@ A lightweight fork of Baileys with a few fixes and a small adjustment.
 #### 🧩 Additional Message Options
 - 👁️ Added optional boolean flags for message handling:  
    - [`ai`](#1%EF%B8%8F⃣-ai-label) - AI label on message
+   - [`secureMetaServiceLabel`](#1%EF%B8%8F⃣-secure-meta-service-label) - Secure meta service label on message
    - [`mentionAll`](#-mention) - Mentions all group participants without requiring their JIDs in `mentions` or `mentionedJid`
    - [`ephemeral`](#2%EF%B8%8F⃣-ephemeral), [`groupStatus`](#4%EF%B8%8F⃣-group-status), [`viewOnceV2`](#7%EF%B8%8F⃣-view-once-v2), [`viewOnceV2Extension`](#8%EF%B8%8F⃣-view-once-v2-extension), [`interactiveAsTemplate`](#3%EF%B8%8F⃣-interactive) - Message wrappers
    - [`raw`](#5%EF%B8%8F⃣-raw) - Build your message manually **(DO NOT USE FOR EXPLOITATION)**
@@ -849,7 +850,16 @@ sock.sendMessage(jid, {
 })
 ```
 
-##### 6️⃣ View Once
+##### 6️⃣ Secure Meta Service Label
+
+```javascript
+sock.sendMessage(jid, {
+   text: 'Just a label!',
+   secureMetaServiceLabel: true
+})
+```
+
+##### 7️⃣ View Once
 
 > [!NOTE]
 Wrap message into `viewOnceMessage`
@@ -864,7 +874,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-##### 7️⃣ View Once V2
+##### 8️⃣ View Once V2
 
 > [!NOTE]
 Wrap message into `viewOnceMessageV2`
@@ -879,7 +889,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-##### 8️⃣ View Once V2 Extension
+##### 9️⃣ View Once V2 Extension
 
 > [!NOTE]
 Wrap message into `viewOnceMessageV2Extension`
