@@ -20,9 +20,9 @@ A lightweight fork of Baileys with a few fixes and a small adjustment.
 #### 🧩 Additional Message Options
 - 👁️ Added optional boolean flags for message handling:  
    - [`ai`](#1%EF%B8%8F⃣-ai-label) - AI label on message
-   - [`secureMetaServiceLabel`](#1%EF%B8%8F⃣-secure-meta-service-label) - Secure meta service label on message
    - [`mentionAll`](#-mention) - Mentions all group participants without requiring their JIDs in `mentions` or `mentionedJid`
-   - [`ephemeral`](#2%EF%B8%8F⃣-ephemeral), [`groupStatus`](#4%EF%B8%8F⃣-group-status), [`viewOnceV2`](#7%EF%B8%8F⃣-view-once-v2), [`viewOnceV2Extension`](#8%EF%B8%8F⃣-view-once-v2-extension), [`interactiveAsTemplate`](#3%EF%B8%8F⃣-interactive) - Message wrappers
+   - [`ephemeral`](#2%EF%B8%8F⃣-ephemeral), [`groupStatus`](#4%EF%B8%8F⃣-group-status), [`viewOnceV2`](#8%EF%B8%8F⃣-view-once-v2), [`viewOnceV2Extension`](#9%EF%B8%8F⃣-view-once-v2-extension), [`interactiveAsTemplate`](#3%EF%B8%8F⃣-interactive) - Message wrappers
+   - [`secureMetaServiceLabel`](#6%EF%B8%8F⃣-secure-meta-service-label) - Secure meta service label on message
    - [`raw`](#5%EF%B8%8F⃣-raw) - Build your message manually **(DO NOT USE FOR EXPLOITATION)**
 
 > [!NOTE]
@@ -585,8 +585,10 @@ sock.sendMessage(jid, {
    footer: '@itsliaaa/baileys',
    optionText: '👉🏻 Select Options', // --- Optional, wrap all native flow into a single list
    optionTitle: '📄 Select Options', // --- Optional
-   couponText: '🏷️ Newest Coupon!', // --- Optional, add coupon into message
-   couponCode: '@itsliaaa/baileys', // --- Optional
+   offerText: '🏷️ Newest Coupon!', // --- Optional, add an offer into message
+   offerCode: '@itsliaaa/baileys', // --- Optional
+   offerUrl: 'https://www.npmjs.com/package/@itsliaaa/baileys', // --- Optional
+   offerExpiration: Date.now() + 3_600_000, // --- Optional
    nativeFlow: [{
       text: '👋🏻 Greeting',
       id: '#Greeting'
@@ -598,7 +600,7 @@ sock.sendMessage(jid, {
       copy: '@itsliaaa/baileys'
    }, {
       text: '🌐 Source',
-      url: 'https://www.npmjs.com/package/baileys'
+      url: 'https://www.npmjs.com/package/@itsliaaa/baileys'
    }, {
       text: '📋 Select',
       sections: [{
@@ -637,7 +639,7 @@ sock.sendMessage(jid, {
       footer: '🏷️️ Pinterest',
       nativeFlow: [{
          text: '🌐 Source',
-         url: 'https://www.npmjs.com/package/baileys'
+         url: 'https://www.npmjs.com/package/@itsliaaa/baileys'
       }]
    }, {
       image: {
@@ -645,11 +647,13 @@ sock.sendMessage(jid, {
       },
       caption: '🖼️ Image 2',
       footer: '🏷️ Pinterest',
-      couponText: '🏷️ New Coupon!',
-      couponCode: '@itsliaaa/baileys',
+      offerText: '🏷️ New Coupon!',
+      offerCode: '@itsliaaa/baileys',
+      offerUrl: 'https://www.npmjs.com/package/@itsliaaa/baileys',
+      offerExpiration: Date.now() + 3_600_000,
       nativeFlow: [{
          text: '🌐 Source',
-         url: 'https://www.npmjs.com/package/baileys'
+         url: 'https://www.npmjs.com/package/@itsliaaa/baileys'
       }]
    }, {
       image: {
@@ -659,14 +663,16 @@ sock.sendMessage(jid, {
       footer: '🏷️ Pinterest',
       optionText: '👉🏻 Select Options',
       optionTitle: '📄 Select Options',
-      couponText: '🏷️ New Coupon!',
-      couponCode: '@itsliaaa/baileys',
+      offerText: '🏷️ New Coupon!',
+      offerCode: '@itsliaaa/baileys',
+      offerUrl: 'https://www.npmjs.com/package/@itsliaaa/baileys',
+      offerExpiration: Date.now() + 3_600_000,
       nativeFlow: [{
          text: '🛒 Product',
          id: '#Product'
       }, {
          text: '🌐 Source',
-         url: 'https://www.npmjs.com/package/baileys'
+         url: 'https://www.npmjs.com/package/@itsliaaa/baileys'
       }]
    }]
 }, {
@@ -678,7 +684,7 @@ sock.sendMessage(jid, {
 
 ```javascript
 sock.sendMessage(jid, {
-   title: '👋🏻 Hello',
+   title: '??🏻 Hello',
    image: {
       url: './path/to/image.jpg'
    },
@@ -689,7 +695,7 @@ sock.sendMessage(jid, {
       id: '#Order'
    }, {
       text: '🌐 Source',
-      url: 'https://www.npmjs.com/package/baileys'
+      url: 'https://www.npmjs.com/package/@itsliaaa/baileys'
    }, {
       text: '📞 Call',
       call: '628123456789'
@@ -806,7 +812,7 @@ sock.sendMessage(jid, {
       body: '❓ I dont know',
       thumbnail: fs.readFileSync('./path/to/image.jpg'), // --- Must in buffer format
       largeThumbnail: false, // --- Or true for bigger thumbnail
-      url: 'https://www.npmjs.com/package/baileys' // --- Optional, used for WhatsApp internal thumbnail caching and direct URL
+      url: 'https://www.npmjs.com/package/@itsliaaa/baileys' // --- Optional, used for WhatsApp internal thumbnail caching and direct URL
    }
 }, {
    quoted: message
