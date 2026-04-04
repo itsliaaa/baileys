@@ -684,7 +684,7 @@ sock.sendMessage(jid, {
 
 ```javascript
 sock.sendMessage(jid, {
-   title: '??🏻 Hello',
+   title: '👋🏻 Hello',
    image: {
       url: './path/to/image.jpg'
    },
