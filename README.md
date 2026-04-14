@@ -3,19 +3,19 @@
 [![Logo](https://files.catbox.moe/c5s9g0.jpg)](https://www.npmjs.com/package/@itsliaaa/baileys)
 
 <p align="center">
-   A lightweight fork of Baileys with practical fixes and small but meaningful improvements.
+   Enhanced Baileys v7 with fixed newsletter media upload, plus support for interactive messages, albums, and more message types.
    <br><br>
    <a href="https://www.npmjs.com/package/@itsliaaa/baileys">
-      <img src="https://img.shields.io/npm/v/@itsliaaa/baileys?color=FFFFFF&labelColor=red&logo=npm&logoColor=white&style=for-the-badge"/>
+      <img src="https://img.shields.io/npm/v/@itsliaaa/baileys?style=for-the-badge&logo=npm"/>
    </a>
    <a href="https://www.npmjs.com/package/@itsliaaa/baileys">
-      <img src="https://img.shields.io/npm/dm/@itsliaaa/baileys?color=FFFFFF&labelColor=red&logo=npm&logoColor=white&style=for-the-badge"/>
+      <img src="https://img.shields.io/npm/dm/@itsliaaa/baileys?style=for-the-badge&logo=npm"/>
    </a>
    <a href="https://github.com/itsliaaa/baileys">
-      <img src="https://img.shields.io/github/stars/itsliaaa/baileys?color=FFFFFF&labelColor=black&logo=github&logoColor=white&style=for-the-badge"/>
+      <img src="https://img.shields.io/github/stars/itsliaaa/baileys?style=for-the-badge&logo=github"/>
    </a>
    <a href="LICENSE">
-      <img src="https://img.shields.io/badge/license-MIT-blue?labelColor=black&style=for-the-badge"/>
+      <img src="https://img.shields.io/badge/license-MIT-blue?style=for-the-badge"/>
    </a>
    <a href="https://nodejs.org">
       <img src="https://img.shields.io/badge/node-%3E%3D20-339933?logo=node.js&labelColor=green&logoColor=white&style=for-the-badge"/>
@@ -43,25 +43,25 @@ This fork designed for production use with a focus on clarity and safety:
 - 🗃️ Added [`@napi-rs/image`](https://www.npmjs.com/package/@napi-rs/image) as a supported image processing backend in [`getImageProcessingLibrary()`](#%EF%B8%8F-image-processing), offering a balance between performance and compatibility.
 
 #### 📨 Message Handling & Compatibility
-- 👉🏻 Added support for sending [interactive messages](#-sending-interactive-messages) (buttons, lists, interactive, templates, carousel).
+- 👉🏻 Added support for sending [interactive messages](#-sending-interactive-messages) (buttons, lists, interactive, template, carousel).
 - 📩 Expanded message support for:
-   - [album messages](#%EF%B8%8F-album-image--video)
-   - [group status messages](#4%EF%B8%8F⃣-group-status)
-   - [status mention messages](#%EF%B8%8F-status-mention)
-   - [sticker pack messages](#-sticker-pack)
-   - [rich response messages](#-rich-response)
-   - [messages with code blocks](#-message-with-code-block)
-   - [messages with tables](#-message-with-table)
-   - [payment-related messages](#-sending-payment-messages) (payment requests, invites, orders, invoices).
-- 📰 Simplified sending messages with ad thumbnails using [`externalAdReply`](#3%EF%B8%8F⃣-external-ad-reply), without requiring manual `contextInfo`.
+   - 🖼️ [Album Message](#%EF%B8%8F-album-image--video)
+   - 👤 [Group Status Message](#4%EF%B8%8F⃣-group-status)
+   - 🎞️ [Status Mention Message](#%EF%B8%8F-status-mention)
+   - 📦 [Sticker Pack Message](#-sticker-pack)
+   - ✨ [Rich Response Message](#-rich-response) **[NEW]**
+   - 🧾 [Message with Code Blocks](#-message-with-code-block) **[NEW]**
+   - 📋 [Message with Table](#-message-with-table) **[NEW]**
+   - 💳 [Payment-related Message](#-sending-payment-messages) (payment requests, invites, orders, invoices).
+- 📰 Simplified sending messages with ad thumbnail using [`externalAdReply`](#3%EF%B8%8F⃣-external-ad-reply), without requiring manual `contextInfo`.
 
 #### 🧩 Additional Message Options
 - 👁️ Added optional boolean flags for message handling:  
-   - [`ai`](#1%EF%B8%8F⃣-ai-label) - AI label on message
-   - [`mentionAll`](#-mention) - Mentions all group participants without requiring their JIDs in `mentions` or `mentionedJid`
-   - [`ephemeral`](#2%EF%B8%8F⃣-ephemeral), [`groupStatus`](#4%EF%B8%8F⃣-group-status), [`viewOnceV2`](#8%EF%B8%8F⃣-view-once-v2), [`viewOnceV2Extension`](#9%EF%B8%8F⃣-view-once-v2-extension), [`interactiveAsTemplate`](#3%EF%B8%8F⃣-interactive) - Message wrappers
-   - [`secureMetaServiceLabel`](#6%EF%B8%8F⃣-secure-meta-service-label) - Secure meta service label on message
-   - [`raw`](#5%EF%B8%8F⃣-raw) - Build your message manually **(DO NOT USE FOR EXPLOITATION)**
+   - 🤖 [`ai`](#1%EF%B8%8F⃣-ai-icon) - AI icon on message
+   - 📣 [`mentionAll`](#-mention) - Mention all group participants without requiring their JIDs in `mentions` or `mentionedJid` **[NEW]**
+   - 🔧 [`ephemeral`](#2%EF%B8%8F⃣-ephemeral), [`groupStatus`](#4%EF%B8%8F⃣-group-status), [`viewOnceV2`](#8%EF%B8%8F⃣-view-once-v2), [`viewOnceV2Extension`](#9%EF%B8%8F⃣-view-once-v2-extension), [`interactiveAsTemplate`](#3%EF%B8%8F⃣-interactive) - Message wrappers
+   - 🔒 [`secureMetaServiceLabel`](#6%EF%B8%8F⃣-secure-meta-service-label) - Secure meta service label on message **[NEW]**
+   - 📄 [`raw`](#5%EF%B8%8F⃣-raw) - Build your message manually **(DO NOT USE FOR EXPLOITATION)**
 
 > [!NOTE]
 📄 This project is maintained with limited scope and is not intended to replace upstream Baileys.
@@ -872,7 +872,7 @@ sock.sendMessage(jid, {
 
 #### 👁️ Other Message Options
 
-##### 1️⃣ AI Label
+##### 1️⃣ AI icon
 
 > [!NOTE]
 It only works in private chat (`@s.whatsapp.net`).
@@ -882,7 +882,7 @@ sock.sendMessage(jid, {
    image: {
       url: './path/to/image.jpg'
    },
-   caption: '🤖 AI Labeled!',
+   caption: '🤖 With AI icon!',
    ai: true
 }, {
    quoted: message

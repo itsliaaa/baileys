@@ -1,7 +1,7 @@
 {
    "name": "@itsliaaa/baileys",
-   "version": "0.1.20",
-   "description": "A lightweight fork of Baileys with practical fixes and small but meaningful improvements.",
+   "version": "0.1.21",
+   "description": "Enhanced Baileys v7 with fixed newsletter media upload, plus support for interactive messages, albums, and more message types.",
    "main": "lib/index.js",
    "type": "module",
    "scripts": {
@@ -48,7 +48,7 @@
       "p-queue": "^9.1.0",
       "pino": "^9.6.0",
       "protobufjs": "^7.5.4",
-      "whatsapp-rust-bridge": "^0.5.3",
+      "whatsapp-rust-bridge": "0.5.3",
       "ws": "^8.19.0"
    },
    "peerDependencies": {
