@@ -362,59 +362,6 @@ sock.sendMessage(jid, {
 })
 ```
 
-##### 💭 Response
-
-```javascript
-// --- Using buttonsResponseMessage
-sock.sendMessage(jid, {
-   type: 'plain',
-   buttonReply: {
-      id: '#Menu',
-      displayText: '✨ Interesting Menu'
-   }
-}, {
-   quoted: message
-})
-
-// --- Using interactiveResponseMessage
-sock.sendMessage(jid, {
-   flowReply: {
-      format: 0,
-      text: '💭 Response',
-      name: 'menu_options',
-      paramsJson: JSON.stringify({
-         id: '#Menu',
-         description: '✨ Interesting Menu'
-      })
-   }
-}, {
-   quoted: message
-})
-
-// --- Using listResponseMessage
-sock.sendMessage(jid, {
-   listReply: {
-      title: '📄 See More',
-      description: '✨ Interesting Menu',
-      id: '#Menu'
-   }
-}, {
-   quoted: message
-})
-
-// --- Using templateButtonReplyMessage
-sock.sendMessage(jid, {
-   type: 'template',
-   buttonReply: {
-      id: '#Menu',
-      displayText: '✨ Interesting Menu',
-      index: 1
-   }
-}, {
-   quoted: message
-})
-```
-
 ##### 📊 Poll
 
 ```javascript
@@ -468,6 +415,59 @@ sock.sendMessage(jid, {
          enclv: /* <Buffer> */,
          encPayload: /* <Buffer> */
       }
+   }
+}, {
+   quoted: message
+})
+```
+
+##### 💭 Response
+
+```javascript
+// --- Using buttonsResponseMessage
+sock.sendMessage(jid, {
+   type: 'plain',
+   buttonReply: {
+      id: '#Menu',
+      displayText: '✨ Interesting Menu'
+   }
+}, {
+   quoted: message
+})
+
+// --- Using interactiveResponseMessage
+sock.sendMessage(jid, {
+   flowReply: {
+      format: 0,
+      text: '💭 Response',
+      name: 'menu_options',
+      paramsJson: JSON.stringify({
+         id: '#Menu',
+         description: '✨ Interesting Menu'
+      })
+   }
+}, {
+   quoted: message
+})
+
+// --- Using listResponseMessage
+sock.sendMessage(jid, {
+   listReply: {
+      title: '📄 See More',
+      description: '✨ Interesting Menu',
+      id: '#Menu'
+   }
+}, {
+   quoted: message
+})
+
+// --- Using templateButtonReplyMessage
+sock.sendMessage(jid, {
+   type: 'template',
+   buttonReply: {
+      id: '#Menu',
+      displayText: '✨ Interesting Menu',
+      index: 1
    }
 }, {
    quoted: message
@@ -692,7 +692,7 @@ sock.sendMessage(jid, {
    image: {
       url: './path/to/image.jpg'
    },
-   caption: '👆?? Buttons and Native Flow!',
+   caption: '👆🏻 Buttons and Native Flow!',
    footer: '@itsliaaa/baileys',
    buttons: [{
       text: '👋🏻 Rating',
