@@ -52,6 +52,8 @@ This fork designed for production use with a focus on clarity and safety:
    - 📋 [Message with Table](#-message-with-table) **[NEW]**
    - 💳 [Payment-related Message](#-sending-payment-messages) (payment requests, invites, orders, invoices).
 - 📰 Simplified sending messages with ad thumbnail using [`externalAdReply`](#3%EF%B8%8F⃣-external-ad-reply), without requiring manual `contextInfo`.
+- 💭 Added support for quoting messages inside channel (newsletter). **[NEW]**
+- 🎀 Added support for [custom button icon](#-sending-interactive-messages). **[NEW]**
 
 ### 🧩 Additional Message Options
 - 👁️ Added optional boolean flags for message handling:  
@@ -514,7 +516,31 @@ sock.sendMessage(jid, {
 })
 ```
 
+> [!TIP]
+You can easily add syntax highlighting by importing `tokenizeCode` directly from Baileys.
+
+```javascript
+import { tokenizeCode } from '@itsliaaa/baileys'
+
+const language = 'javascript'
+const code = 'console.log("Hello, World!")'
+
+sock.sendMessage(jid, {
+   richResponse: [{
+      text: 'Example Usage',
+   }, {
+      language,
+      code: tokenizeCode(code, language)
+   }, {
+      text: 'Pretty simple, right?'
+   }]
+})
+```
+
 #### 🧾 Message with Code Block
+
+> [!NOTE]
+This feature already includes a built-in tokenizer.
 
 ```javascript
 sock.sendMessage(jid, {
@@ -771,7 +797,8 @@ sock.sendMessage(jid, {
    offerExpiration: Date.now() + 3_600_000, // --- Optional
    nativeFlow: [{
       text: '👋🏻 Greeting',
-      id: '#Greeting'
+      id: '#Greeting',
+      icon: 'review' // --- Optional
    }, {
       text: '📞 Call',
       call: '628123456789'
@@ -800,7 +827,8 @@ sock.sendMessage(jid, {
             description: '',
             id: '#SecretIngredient'
          }]
-      }]
+      }],
+      icon: 'default' // --- Optional
    }],
    interactiveAsTemplate: false, // --- Optional, wrap the interactive message into a template
 }, {
