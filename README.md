@@ -899,7 +899,7 @@ sock.sendMessage(jid, {
       nativeFlow: [{
          text: '🛒 Product',
          id: '#Product',
-         icon: 'default' // --- Optional
+         icon: 'default'
       }, {
          text: '🌐 Source',
          url: 'https://www.npmjs.com/package/@itsliaaa/baileys'
