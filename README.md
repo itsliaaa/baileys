@@ -382,6 +382,28 @@ sock.sendMessage(jid, {
 })
 ```
 
+#### 👥 Group Invite
+
+```javascript
+const groupJid = '1201111111111@g.us'
+const groupName = '@itsliaaa/baileys'
+const inviteCode = groupUrl
+   .split('chat.whatsapp.com/')[1]?
+   .split('?')[0]
+
+sock.sendMessage(jid, {
+   groupInvite: {
+      inviteCode,
+      inviteExpiration: Date.now() + 86400000,
+      text: '👋🏻 Hello, we invite you to join our group.',
+      jid: groupJid,
+      subject: groupName,
+   }
+}, {
+   quoted: message
+})
+```
+
 #### 📊 Poll
 
 ```javascript
