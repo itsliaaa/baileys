@@ -53,14 +53,19 @@ Hi everyone,
 >
 > Thank you for taking the time to read this 🤍
 
+> [!NOTE]
+📄 This project is maintained with limited scope and is not intended to replace upstream Baileys.
+>
+> 😞 And, really sorry for my bad english.
+
 ### 🛠️ Internal Adjustments
 - 🖼️ Fixed an issue where media could not be sent to newsletters due to an upstream issue.
 - 📁 Reintroduced [`makeInMemoryStore`](#%EF%B8%8F-implementing-a-data-store) with a minimal ESM adaptation and small adjustments for Baileys v7.
 - 📦 Switched FFmpeg execution from `exec` to `spawn` for safer process handling.
 - 🗃️ Added [`@napi-rs/image`](https://www.npmjs.com/package/@napi-rs/image) as a supported image processing backend in [`getImageProcessingLibrary()`](#%EF%B8%8F-image-processing), offering a balance between performance and compatibility.
 
-### 📨 Message Handling & Compatibility
-- 📩 Expanded message support for:
+### 📨 Messages Handling & Compatibility
+- 📩 Expanded messages support for:
    - 🖼️ [Album Message](#%EF%B8%8F-album-image--video)
    - 👤 [Group Status Message](#4%EF%B8%8F⃣-group-status)
    - 👉🏻 [Interactive Message](#-sending-interactive-messages) (buttons, lists, native flows, templates, carousels).
@@ -82,10 +87,68 @@ Hi everyone,
    - 🔒 [`secureMetaServiceLabel`](#6%EF%B8%8F⃣-secure-meta-service-label) - Secure meta service label on message **[NEW]**
    - 📄 [`raw`](#5%EF%B8%8F⃣-raw) - Build your message manually **(DO NOT USE FOR EXPLOITATION)**
 
-> [!NOTE]
-📄 This project is maintained with limited scope and is not intended to replace upstream Baileys.
->
-> 😞 And, really sorry for my bad english.
+### 📋 Index
+- [📥 Installation](#-installation)
+   - [🧩 Import (ESM & CJS)](#-import-esm--cjs)
+- [🌐 Connect to WhatsApp (Quick Step)](#-connect-to-whatsapp-quick-step)
+- [🗄️ Implementing Data Store](#%EF%B8%8F-implementing-data-store)
+- [🪪 WhatsApp IDs Explain](#-whatsapp-ids-explain)
+- [✉️ Sending Messages](#%EF%B8%8F-sending-messages)
+   - [🔠 Text](#-text)
+   - [🔔 Mention](#-mention)
+   - [😁 Reaction](#-reaction)
+   - [📌 Pin Message](#-pin-message)
+   - [➡️ Forward Message](#%EF%B8%8F-forward-message)
+   - [👤 Contact](#-contact)
+   - [📍 Location](#-location)
+   - [🗓️ Event](#%EF%B8%8F-event)
+   - [👥 Group Invite](#-group-invite)
+   - [🛍️ Product](#%EF%B8%8F-product)
+   - [📊 Poll](#-poll)
+   - [💭 Button Response](#-button-response)
+   - [✨ Rich Response](#-rich-response)
+   - [🧾 Message with Code Block](#-message-with-code-block)
+   - [📋 Message with Table](#-message-with-table)
+   - [🎞️ Status Mention](#%EF%B8%8F-status-mention)
+- [📁 Sending Media Messages](#-sending-media-messages)
+   - [🖼️ Image](#%EF%B8%8F-image)
+   - [🎥 Video](#-video)
+   - [📃 Sticker](#-sticker)
+   - [💽 Audio](#-audio)
+   - [🗂️ Document](#%EF%B8%8F-document)
+   - [🖼️ Album (Image & Video)](#%EF%B8%8F-album-image--video)
+   - [📦 Sticker Pack](#-sticker-pack)
+- [👉🏻 Sending Interactive Messages](#-sending-interactive-messages)
+   - [1️⃣ Buttons](#1%EF%B8%8F⃣-buttons)
+   - [2️⃣ List](#2%EF%B8%8F⃣-list)
+   - [3️⃣ Interactive](#3%EF%B8%8F⃣-interactive)
+   - [4️⃣ Hydrated Template](#4%EF%B8%8F⃣-hydrated-template)
+- [💳 Sending Payment Messages](#-sending-payment-messages)
+   - [1️⃣ Invite Payment](#1%EF%B8%8F⃣-invite-payment)
+   - [2️⃣ Invoice](#2%EF%B8%8F⃣-invoice)
+   - [3️⃣ Order](#3%EF%B8%8F⃣-order)
+   - [4️⃣ Request Payment](#4%EF%B8%8F⃣-request-payment)
+- [👁️ Other Message Options](#%EF%B8%8F-other-message-options)
+   - [1️⃣ AI Icon](#1%EF%B8%8F⃣-ai-icon)
+   - [2️⃣ Ephemeral](#2%EF%B8%8F⃣-ephemeral)
+   - [3️⃣ External Ad Reply](#3%EF%B8%8F⃣-external-ad-reply)
+   - [4️⃣ Group Status](#4%EF%B8%8F⃣-group-status)
+   - [5️⃣ Raw](#5%EF%B8%8F⃣-raw)
+   - [6️⃣ Secure Meta Service Label](#6%EF%B8%8F⃣-secure-meta-service-label)
+   - [7️⃣ View Once](#7%EF%B8%8F⃣-view-once)
+   - [8️⃣ View Once V2](#8%EF%B8%8F⃣-view-once-v2)
+   - [9️⃣ View Once V2 Extension](#9%EF%B8%8F⃣-view-once-v2-extension)
+- [♻️ Modify Messages](#%EF%B8%8F-modify-messages)
+   - [🗑️ Delete Messages](#%EF%B8%8F-delete-messages)
+   - [✏️ Edit Messages](#%EF%B8%8F-edit-messages)
+- [🧰 Additional Contents](#-additional-contents)
+   - [🏷️ Find User ID (JID|PN/LID)](#%EF%B8%8F-find-user-id-jidpnlid)
+   - [🔑 Request Custom Pairing Code](#-request-custom-pairing-code)
+   - [🖼️ Image Processing](#%EF%B8%8F-image-processing)
+   - [📣 Newsletter Management](#-newsletter-management)
+   - [👥 Group Management](#-group-management)
+- [📦 Fork Base](#-fork-base)
+- [📣 Credits](#-credits)
 
 ### 📥 Installation
 
@@ -322,6 +385,15 @@ sock.sendMessage(jid, {
 })
 ```
 
+#### ➡️ Forward Message
+
+```javascript
+sock.sendMessage(jid, {
+   forward: message,
+   force: true // --- Optional
+})
+```
+
 #### 👤 Contact
 
 ```javascript
@@ -385,11 +457,12 @@ sock.sendMessage(jid, {
 #### 👥 Group Invite
 
 ```javascript
+const inviteCode = groupUrl
+   .split('chat.whatsapp.com/')[1]
+   ?.split('?')[0]
+
 const groupJid = '1201111111111@g.us'
 const groupName = '@itsliaaa/baileys'
-const inviteCode = groupUrl
-   .split('chat.whatsapp.com/')[1]?
-   .split('?')[0]
 
 sock.sendMessage(jid, {
    groupInvite: {
@@ -401,6 +474,32 @@ sock.sendMessage(jid, {
    }
 }, {
    quoted: message
+})
+```
+
+#### 🛍️ Product
+
+```javascript
+import { randomUUID } from 'crypto'
+
+sock.sendMessage(jid, {
+   image: {
+      url: './path/to/image.jpg'
+   },
+   body: '👋🏻 Check my product here!',
+   footer: '@itsliaaa/baileys',
+   product: {
+      currencyCode: 'IDR',
+      description: '🛍️ Interesting product!',
+      priceAmount1000: 70_000_000,
+      productId: randomUUID(),
+      productImageCount: 1,
+      salePriceAmount1000: 65_000_000,
+      signedUrl: 'https://www.npmjs.com/package/@itsliaaa/baileys',
+      title: '📦 Starseed (Premium)',
+      url: 'https://www.npmjs.com/package/@itsliaaa/baileys'
+   },
+   businessOwnerJid: '0@s.whatsapp.net'
 })
 ```
 
@@ -463,7 +562,7 @@ sock.sendMessage(jid, {
 })
 ```
 
-#### 💭 Response
+#### 💭 Button Response
 
 ```javascript
 // --- Using buttonsResponseMessage
@@ -675,6 +774,20 @@ sock.sendMessage(jid, {
 })
 ```
 
+#### 🗂️ Document
+
+```javascript
+sock.sendMessage(jid, {
+   document: {
+      url: './path/to/document.pdf'
+   },
+   mimetype: 'application/pdf',
+   caption: '✨ My work!'
+}, {
+   quoted: message
+})
+```
+
 #### 🖼️ Album (Image & Video)
 
 ```javascript
@@ -828,7 +941,7 @@ sock.sendMessage(jid, {
    image: {
       url: './path/to/image.jpg'
    },
-   caption: '🗄️ Interactive!',
+   caption: '??️ Interactive!',
    footer: '@itsliaaa/baileys',
    optionText: '👉🏻 Select Options', // --- Optional, wrap all native flow into a single list
    optionTitle: '📄 Select Options', // --- Optional
@@ -992,23 +1105,7 @@ sock.sendMessage(chat, {
 })
 ```
 
-#### 4️⃣ Product
-
-```javascript
-sock.sendMessage(jid, {
-   image: {
-      url: './path/to/image.jpg'
-   },
-   product: {
-      title: '🛒 My Product'
-   },
-   businessOwnerJid: '0@s.whatsapp.net' // --- Must included
-}, {
-   quoted: message
-})
-```
-
-#### 5️⃣ Request Payment
+#### 4️⃣ Request Payment
 
 ```javascript
 sock.sendMessage(jid, {
@@ -1159,6 +1256,32 @@ sock.sendMessage(jid, {
    },
    caption: '👁️ View Once V2 Extension',
    viewOnceV2Extension: true
+})
+```
+
+### ♻️ Modify Messages
+
+#### 🗑️ Delete Messages
+
+```javascript
+sock.sendMessage(jid, {
+   delete: message.key
+})
+```
+
+#### ✏️ Edit Messages
+
+```javascript
+// --- Edit plain text
+sock.sendMessage(jid, {
+   text: '✨ I mean, nice!',
+   edit: message.key
+})
+
+// --- Edit media messages caption
+sock.sendMessage(jid, {
+   caption: '✨ I mean, here is the image!',
+   edit: message.key
 })
 ```
 
