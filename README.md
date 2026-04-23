@@ -1536,4 +1536,5 @@ This fork uses Protocol Buffer definitions maintained by [WPP Connect](https://g
 > - [adiwajshing](https://github.com/adiwajshing)
 >
 > This fork includes additional enhancements and modifications by [Lia Wynn](https://github.com/itsliaaa)
+>
 > **Credits are mandatory and must remain unchanged in any form of redistribution or fork.**
