@@ -111,6 +111,7 @@ Hi everyone,
    - [💭 Button Response](#-button-response)
    - [✨ Rich Response](#-rich-response)
    - [🧾 Message with Code Block](#-message-with-code-block)
+   - [🌏 Message with Inline Entities](#-message-with-inline-entities)
    - [📋 Message with Table](#-message-with-table)
    - [🎞️ Status Mention](#%EF%B8%8F-status-mention)
 - [📁 Sending Media Messages](#-sending-media-messages)
@@ -695,6 +696,29 @@ sock.sendMessage(jid, {
 })
 ```
 
+#### 🌏 Message with Inline Entities
+
+```javascript
+sock.sendMessage(jid, {
+   headerText: '## Check Out!',
+   contentText: '---',
+   links: [{
+      text: '1. Google',
+      title: 'Popular Search Engine',
+      url: 'https://www.google.com/'
+   }, {
+      text: '2. YouTube',
+      title: 'Popular Streaming Platform',
+      url: 'https://www.youtube.com/'
+   }, {
+      text: '3. Modded Baileys',
+      title: 'Underrated Baileys Fork',
+      url: 'https://www.npmjs.com/package/@itsliaaa/baileys'
+   }],
+   footerText: '---'
+})
+```
+
 #### 📋 Message with Table
 
 ```javascript
@@ -707,6 +731,7 @@ sock.sendMessage(jid, {
       ['Engine', 'V8 (C++)', 'JavaScriptCore (C++)', 'V8 (C++)'],
       ['Performance', '4/5', '5/5', '4/5']
    ],
+   noHeading: false, // --- Optional
    footerText: 'Does this help clarify the differences?'
 })
 ```
