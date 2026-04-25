@@ -72,6 +72,7 @@ This fork designed for production use with a focus on clarity and safety:
 - [📥 Installation](#-installation)
    - [🧩 Import (ESM & CJS)](#-import-esm--cjs)
 - [🌐 Connect to WhatsApp (Quick Step)](#-connect-to-whatsapp-quick-step)
+   - [🔐 Auth State](#-auth-state)
 - [🗄️ Implementing Data Store](#%EF%B8%8F-implementing-data-store)
 - [🪪 WhatsApp IDs Explain](#-whatsapp-ids-explain)
 - [✉️ Sending Messages](#%EF%B8%8F-sending-messages)
@@ -228,8 +229,10 @@ const connectToWhatsApp = async () => {
 connectToWhatsApp()
 ```
 
+#### 🔐 Auth State
+
 > [!NOTE]
-> You can use the experimental `useSingleFileAuthState` as an alternative to `useMultiFileAuthState`. However, `useSingleFileAuthState` already includes an internal caching mechanism, so there is no need to wrap `creds.key` with `makeCacheableSignalKeyStore`.
+> You can use the experimental `useSingleFileAuthState` as an alternative to `useMultiFileAuthState`. However, `useSingleFileAuthState` already includes an internal caching mechanism, so there is no need to wrap `state.keys` with `makeCacheableSignalKeyStore`.
 
 ### 🗄️ Implementing Data Store
 
@@ -333,7 +336,7 @@ sock.sendMessage(jid, {
 const url = 'https://www.npmjs.com/package/@itsliaaa/baileys'
 
 sock.sendMessage(jid, {
-   text: '👉🏻 Check it out! ' + url,
+   text: url + ' 👆🏻 Check it out!',
    linkPreview: {
       'matched-text': url,
       title: '🌱 @itsliaaa/baileys',
