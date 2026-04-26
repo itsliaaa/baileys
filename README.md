@@ -34,6 +34,32 @@ This fork designed for production use with a focus on clarity and safety:
 - 🚫 No obfuscation. Easy to read and audit.
 - 🚫 No auto-follow channel (newsletter) behavior.
 
+> [!IMPORTANT]
+> Hi everyone,
+> 
+> I need to say this clearly.
+> 
+> Some npm packages are reuploading my fork under different names, with almost no meaningful changes:
+> 
+> - [@zackmans](https://www.npmjs.com/package/@zackmans/baileys)
+> - [@dnuzi](https://www.npmjs.com/package/@dnuzi/baileys)
+> 
+> They:
+> 
+> - Renamed my fork
+> - Added unnecessary overhead
+> - Rewrote all changelogs and note changes with their own names
+> - Claimed the modifications as their own work
+> 
+> This is not acceptable.
+> 
+> To be clear, I am not the original author of Baileys (full respect to https://github.com/WhiskeySockets/Baileys).
+> This is about proper attribution and honesty in contributions.
+> 
+> Please report if necessary.
+> 
+> Thank you. 🤍
+
 > [!NOTE]
 > 📄 This project is maintained with limited scope and is not intended to replace upstream Baileys.
 >
