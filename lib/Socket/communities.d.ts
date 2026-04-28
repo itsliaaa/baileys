@@ -1,0 +1,582 @@
+export function makeCommunitiesSocket(config: any): {
+    communityMetadata: (jid: any) => Promise<{
+        id: any;
+        subject: any;
+        subjectOwner: any;
+        subjectTime: number;
+        size: any;
+        creation: number;
+        owner: string | undefined;
+        desc: any;
+        descId: any;
+        linkedParent: any;
+        restrict: boolean;
+        announce: boolean;
+        isCommunity: boolean;
+        isCommunityAnnounce: boolean;
+        joinApprovalMode: boolean;
+        memberAddMode: boolean;
+        participants: any;
+        ephemeralDuration: number | undefined;
+        addressingMode: any;
+    }>;
+    communityCreate: (subject: any, body: any) => Promise<{
+        id: any;
+        notify: any;
+        addressingMode: any;
+        subject: any;
+        subjectOwner: any;
+        subjectOwnerPn: any;
+        subjectOwnerUsername: any;
+        subjectTime: number;
+        size: any;
+        creation: number;
+        owner: string | undefined;
+        ownerPn: string | undefined;
+        ownerUsername: any;
+        owner_country_code: any;
+        desc: any;
+        descId: any;
+        descOwner: string | undefined;
+        descOwnerPn: string | undefined;
+        descOwnerUsername: any;
+        descTime: number | undefined;
+        linkedParent: any;
+        restrict: boolean;
+        announce: boolean;
+        isCommunity: boolean;
+        isCommunityAnnounce: boolean;
+        joinApprovalMode: boolean;
+        memberAddMode: boolean;
+        participants: any;
+        ephemeralDuration: number | undefined;
+    } | null>;
+    communityCreateGroup: (subject: any, participants: any, parentCommunityJid: any) => Promise<{
+        id: any;
+        notify: any;
+        addressingMode: any;
+        subject: any;
+        subjectOwner: any;
+        subjectOwnerPn: any;
+        subjectOwnerUsername: any;
+        subjectTime: number;
+        size: any;
+        creation: number;
+        owner: string | undefined;
+        ownerPn: string | undefined;
+        ownerUsername: any;
+        owner_country_code: any;
+        desc: any;
+        descId: any;
+        descOwner: string | undefined;
+        descOwnerPn: string | undefined;
+        descOwnerUsername: any;
+        descTime: number | undefined;
+        linkedParent: any;
+        restrict: boolean;
+        announce: boolean;
+        isCommunity: boolean;
+        isCommunityAnnounce: boolean;
+        joinApprovalMode: boolean;
+        memberAddMode: boolean;
+        participants: any;
+        ephemeralDuration: number | undefined;
+    } | null>;
+    communityLeave: (id: any) => Promise<void>;
+    communityUpdateSubject: (jid: any, subject: any) => Promise<void>;
+    communityLinkGroup: (groupJid: any, parentCommunityJid: any) => Promise<void>;
+    communityUnlinkGroup: (groupJid: any, parentCommunityJid: any) => Promise<void>;
+    communityFetchLinkedGroups: (jid: any) => Promise<{
+        communityJid: any;
+        isCommunity: boolean;
+        linkedGroups: {
+            id: string | undefined;
+            subject: any;
+            creation: number | undefined;
+            owner: string | undefined;
+            size: number | undefined;
+        }[];
+    }>;
+    communityRequestParticipantsList: (jid: any) => Promise<any>;
+    communityRequestParticipantsUpdate: (jid: any, participants: any, action: any) => Promise<any>;
+    communityParticipantsUpdate: (jid: any, participants: any, action: any) => Promise<any>;
+    communityUpdateDescription: (jid: any, description: any) => Promise<void>;
+    communityInviteCode: (jid: any) => Promise<any>;
+    communityRevokeInvite: (jid: any) => Promise<any>;
+    communityAcceptInvite: (code: any) => Promise<any>;
+    /**
+     * revoke a v4 invite for someone
+     * @param communityJid community jid
+     * @param invitedJid jid of person you invited
+     * @returns true if successful
+     */
+    communityRevokeInviteV4: (communityJid: any, invitedJid: any) => Promise<boolean>;
+    /**
+     * accept a CommunityInviteMessage
+     * @param key the key of the invite message, or optionally only provide the jid of the person who sent the invite
+     * @param inviteMessage the message to accept
+     */
+    communityAcceptInviteV4: (...args: any[]) => Promise<any>;
+    communityGetInviteInfo: (code: any) => Promise<{
+        id: any;
+        subject: any;
+        subjectOwner: any;
+        subjectTime: number;
+        size: any;
+        creation: number;
+        owner: string | undefined;
+        desc: any;
+        descId: any;
+        linkedParent: any;
+        restrict: boolean;
+        announce: boolean;
+        isCommunity: boolean;
+        isCommunityAnnounce: boolean;
+        joinApprovalMode: boolean;
+        memberAddMode: boolean;
+        participants: any;
+        ephemeralDuration: number | undefined;
+        addressingMode: any;
+    }>;
+    communityToggleEphemeral: (jid: any, ephemeralExpiration: any) => Promise<void>;
+    communitySettingUpdate: (jid: any, setting: any) => Promise<void>;
+    communityMemberAddMode: (jid: any, mode: any) => Promise<void>;
+    communityJoinApprovalMode: (jid: any, mode: any) => Promise<void>;
+    communityFetchAllParticipating: () => Promise<{}>;
+    logger: any;
+    getOrderDetails: (orderId: any, tokenBase64: any) => Promise<{
+        price: {
+            total: number;
+            currency: any;
+        };
+        products: any;
+    }>;
+    getCatalog: ({ jid, limit, cursor }: {
+        jid: any;
+        limit: any;
+        cursor: any;
+    }) => Promise<{
+        products: any;
+        nextPageCursor: any;
+    }>;
+    getCollections: (jid: any, limit?: number) => Promise<{
+        collections: any;
+    }>;
+    productCreate: (create: any) => Promise<{
+        id: any;
+        imageUrls: {
+            requested: any;
+            original: any;
+        };
+        reviewStatus: {
+            whatsapp: any;
+        };
+        availability: string;
+        name: any;
+        retailerId: any;
+        url: any;
+        description: any;
+        price: number;
+        currency: any;
+        isHidden: boolean;
+    }>;
+    productDelete: (productIds: any) => Promise<{
+        deleted: number;
+    }>;
+    productUpdate: (productId: any, update: any) => Promise<{
+        id: any;
+        imageUrls: {
+            requested: any;
+            original: any;
+        };
+        reviewStatus: {
+            whatsapp: any;
+        };
+        availability: string;
+        name: any;
+        retailerId: any;
+        url: any;
+        description: any;
+        price: number;
+        currency: any;
+        isHidden: boolean;
+    }>;
+    updateBussinesProfile: (args: any) => Promise<any>;
+    updateCoverPhoto: (photo: any) => Promise<any>;
+    removeCoverPhoto: (id: any) => Promise<any>;
+    sendMessageAck: (node: any, errorCode: any) => Promise<void>;
+    sendRetryRequest: (node: any, forceIncludeKeys?: boolean) => Promise<void>;
+    rejectCall: (callId: any, callFrom: any) => Promise<void>;
+    initiateCall: (jid: any, options?: {}) => Promise<{
+        callId: any;
+        to: any;
+        isVideo: boolean;
+    }>;
+    cancelCall: (callId: any, callTo: any) => Promise<void>;
+    fetchMessageHistory: (count: any, oldestMsgKey: any, oldestMsgTimestamp: any) => Promise<any>;
+    requestPlaceholderResend: (messageKey: any, msgData: any) => Promise<any>;
+    messageRetryManager: import("../Utils/message-retry-manager.js").MessageRetryManager | null;
+    issuePrivacyTokens: (jids: any, timestamp: any) => Promise<any>;
+    assertSessions: (jids: any, force: any) => Promise<boolean>;
+    relayMessage: (jid: any, message: any, { messageId: msgId, participant, additionalAttributes, additionalNodes, useUserDevicesCache, useCachedGroupMetadata, addBizAttributes, statusJidList }: {
+        messageId: any;
+        participant: any;
+        additionalAttributes: any;
+        additionalNodes: any;
+        useUserDevicesCache: any;
+        useCachedGroupMetadata: any;
+        addBizAttributes: any;
+        statusJidList: any;
+    }) => Promise<any>;
+    sendReceipt: (jid: any, participant: any, messageIds: any, type: any) => Promise<void>;
+    sendReceipts: (keys: any, type: any) => Promise<void>;
+    readMessages: (keys: any) => Promise<void>;
+    refreshMediaConn: (forceGet?: boolean) => Promise<any>;
+    waUploadToServer: (filePath: any, { mediaType, fileEncSha256B64, timeoutMs, newsletter }: {
+        mediaType: any;
+        fileEncSha256B64: any;
+        timeoutMs: any;
+        newsletter: any;
+    }) => Promise<{
+        mediaUrl: any;
+        directPath: any;
+        meta_hmac: any;
+        fbid: any;
+        ts: any;
+        thumbnailDirectPath: any;
+        thumbnailSha256: any;
+    }>;
+    fetchPrivacySettings: (force?: boolean) => Promise<any>;
+    sendPeerDataOperationMessage: (pdoMessage: any) => Promise<any>;
+    createParticipantNodes: (recipientJids: any, message: any, extraAttrs: any, dsmMessage: any) => Promise<{
+        nodes: any[];
+        shouldIncludeDeviceIdentity: boolean;
+    }>;
+    getUSyncDevices: (jids: any, useCache: any, ignoreZeroDevices: any) => Promise<any[]>;
+    updateMemberLabel: (jid: any, memberLabel: any) => Promise<any>;
+    updateMediaMessage: (message: any) => Promise<any>;
+    sendMessage: (jid: any, content: any, options?: {}) => Promise<import("../index.js").proto.WebMessageInfo | undefined>;
+    executeWMexQuery: (variables: any, queryId: any, dataPath: any) => Promise<any>;
+    newsletterCreate: (name: any, description: any) => Promise<{
+        id: any;
+        owner: undefined;
+        name: any;
+        creation_time: number;
+        description: any;
+        invite: any;
+        subscribers: number;
+        verification: any;
+        picture: {
+            id: any;
+            directPath: any;
+        };
+        mute_state: any;
+    }>;
+    newsletterUpdate: (jid: any, updates: any) => Promise<any>;
+    newsletterSubscribers: (jid: any) => Promise<any>;
+    newsletterSubscribed: () => Promise<any>;
+    newsletterMetadata: (type: any, key: any) => Promise<any>;
+    newsletterFollow: (jid: any) => Promise<any>;
+    newsletterUnfollow: (jid: any) => Promise<any>;
+    newsletterMute: (jid: any) => Promise<any>;
+    newsletterUnmute: (jid: any) => Promise<any>;
+    newsletterUpdateName: (jid: any, name: any) => Promise<any>;
+    newsletterUpdateDescription: (jid: any, description: any) => Promise<any>;
+    newsletterUpdatePicture: (jid: any, content: any) => Promise<any>;
+    newsletterRemovePicture: (jid: any) => Promise<any>;
+    newsletterReactMessage: (jid: any, serverId: any, reaction: any) => Promise<void>;
+    newsletterFetchMessages: (type: any, key: any, count: any, after: any, before: any) => Promise<{
+        [k: string]: any;
+    }[]>;
+    subscribeNewsletterUpdates: (jid: any) => Promise<{
+        duration: any;
+    } | null>;
+    newsletterAdminCount: (jid: any) => Promise<any>;
+    newsletterChangeOwner: (jid: any, newOwnerJid: any) => Promise<void>;
+    newsletterDemote: (jid: any, userJid: any) => Promise<void>;
+    newsletterDelete: (jid: any) => Promise<void>;
+    extractGroupMetadata: (result: any) => {
+        id: any;
+        notify: any;
+        addressingMode: any;
+        subject: any;
+        subjectOwner: any;
+        subjectOwnerPn: any;
+        subjectOwnerUsername: any;
+        subjectTime: number;
+        size: any;
+        creation: number;
+        owner: string | undefined;
+        ownerPn: string | undefined;
+        ownerUsername: any;
+        owner_country_code: any;
+        desc: any;
+        descId: any;
+        descOwner: string | undefined;
+        descOwnerPn: string | undefined;
+        descOwnerUsername: any;
+        descTime: number | undefined;
+        linkedParent: any;
+        restrict: boolean;
+        announce: boolean;
+        isCommunity: boolean;
+        isCommunityAnnounce: boolean;
+        joinApprovalMode: boolean;
+        memberAddMode: boolean;
+        participants: any;
+        ephemeralDuration: number | undefined;
+    };
+    groupMetadata: (jid: any) => Promise<{
+        id: any;
+        notify: any;
+        addressingMode: any;
+        subject: any;
+        subjectOwner: any;
+        subjectOwnerPn: any;
+        subjectOwnerUsername: any;
+        subjectTime: number;
+        size: any;
+        creation: number;
+        owner: string | undefined;
+        ownerPn: string | undefined;
+        ownerUsername: any;
+        owner_country_code: any;
+        desc: any;
+        descId: any;
+        descOwner: string | undefined;
+        descOwnerPn: string | undefined;
+        descOwnerUsername: any;
+        descTime: number | undefined;
+        linkedParent: any;
+        restrict: boolean;
+        announce: boolean;
+        isCommunity: boolean;
+        isCommunityAnnounce: boolean;
+        joinApprovalMode: boolean;
+        memberAddMode: boolean;
+        participants: any;
+        ephemeralDuration: number | undefined;
+    }>;
+    groupCreate: (subject: any, participants: any) => Promise<{
+        id: any;
+        notify: any;
+        addressingMode: any;
+        subject: any;
+        subjectOwner: any;
+        subjectOwnerPn: any;
+        subjectOwnerUsername: any;
+        subjectTime: number;
+        size: any;
+        creation: number;
+        owner: string | undefined;
+        ownerPn: string | undefined;
+        ownerUsername: any;
+        owner_country_code: any;
+        desc: any;
+        descId: any;
+        descOwner: string | undefined;
+        descOwnerPn: string | undefined;
+        descOwnerUsername: any;
+        descTime: number | undefined;
+        linkedParent: any;
+        restrict: boolean;
+        announce: boolean;
+        isCommunity: boolean;
+        isCommunityAnnounce: boolean;
+        joinApprovalMode: boolean;
+        memberAddMode: boolean;
+        participants: any;
+        ephemeralDuration: number | undefined;
+    }>;
+    groupLeave: (id: any) => Promise<void>;
+    groupUpdateSubject: (jid: any, subject: any) => Promise<void>;
+    groupRequestParticipantsList: (jid: any) => Promise<any>;
+    groupRequestParticipantsUpdate: (jid: any, participants: any, action: any) => Promise<any>;
+    groupParticipantsUpdate: (jid: any, participants: any, action: any) => Promise<any>;
+    groupUpdateDescription: (jid: any, description: any) => Promise<void>;
+    groupInviteCode: (jid: any) => Promise<any>;
+    groupRevokeInvite: (jid: any) => Promise<any>;
+    groupAcceptInvite: (code: any) => Promise<any>;
+    groupRevokeInviteV4: (groupJid: any, invitedJid: any) => Promise<boolean>;
+    groupAcceptInviteV4: (...args: any[]) => Promise<any>;
+    groupGetInviteInfo: (code: any) => Promise<{
+        id: any;
+        notify: any;
+        addressingMode: any;
+        subject: any;
+        subjectOwner: any;
+        subjectOwnerPn: any;
+        subjectOwnerUsername: any;
+        subjectTime: number;
+        size: any;
+        creation: number;
+        owner: string | undefined;
+        ownerPn: string | undefined;
+        ownerUsername: any;
+        owner_country_code: any;
+        desc: any;
+        descId: any;
+        descOwner: string | undefined;
+        descOwnerPn: string | undefined;
+        descOwnerUsername: any;
+        descTime: number | undefined;
+        linkedParent: any;
+        restrict: boolean;
+        announce: boolean;
+        isCommunity: boolean;
+        isCommunityAnnounce: boolean;
+        joinApprovalMode: boolean;
+        memberAddMode: boolean;
+        participants: any;
+        ephemeralDuration: number | undefined;
+    }>;
+    groupToggleEphemeral: (jid: any, ephemeralExpiration: any) => Promise<void>;
+    groupSettingUpdate: (jid: any, setting: any) => Promise<void>;
+    groupMemberAddMode: (jid: any, mode: any) => Promise<void>;
+    groupJoinApprovalMode: (jid: any, mode: any) => Promise<void>;
+    groupFetchAllParticipating: () => Promise<any>;
+    groupQuery: (jid: any, type: any, content: any) => Promise<any>;
+    serverProps: {
+        privacyTokenOn1to1: boolean;
+        profilePicPrivacyToken: boolean;
+        lidTrustedTokenIssueToLid: boolean;
+    };
+    createCallLink: (type: any, event: any, timeoutMs: any) => Promise<any>;
+    getBotListV2: () => Promise<{
+        jid: any;
+        personaId: any;
+    }[]>;
+    messageMutex: {
+        mutex(code: any): any;
+    };
+    receiptMutex: {
+        mutex(code: any): any;
+    };
+    appStatePatchMutex: {
+        mutex(code: any): any;
+    };
+    notificationMutex: {
+        mutex(code: any): any;
+    };
+    upsertMessage: (...args: any[]) => Promise<any>;
+    appPatch: (patchCreate: any) => Promise<void>;
+    sendPresenceUpdate: (type: any, toJid: any) => Promise<void>;
+    presenceSubscribe: (toJid: any) => Promise<void>;
+    profilePictureUrl: (jid: any, type: string | undefined, timeoutMs: any) => Promise<any>;
+    fetchBlocklist: () => Promise<any>;
+    fetchStatus: (...jids: any[]) => Promise<any>;
+    fetchDisappearingDuration: (...jids: any[]) => Promise<any>;
+    findUserId: (pnLid: any) => Promise<any>;
+    updateProfilePicture: (jid: any, content: any, dimensions: any) => Promise<void>;
+    removeProfilePicture: (jid: any) => Promise<void>;
+    updateProfileStatus: (status: any) => Promise<void>;
+    updateProfileName: (name: any) => Promise<void>;
+    updateBlockStatus: (jid: any, action: any) => Promise<void>;
+    updateDisableLinkPreviewsPrivacy: (isPreviewsDisabled: any) => Promise<void>;
+    updateCallPrivacy: (value: any) => Promise<void>;
+    updateMessagesPrivacy: (value: any) => Promise<void>;
+    updateLastSeenPrivacy: (value: any) => Promise<void>;
+    updateOnlinePrivacy: (value: any) => Promise<void>;
+    updateProfilePicturePrivacy: (value: any) => Promise<void>;
+    updateStatusPrivacy: (value: any) => Promise<void>;
+    updateReadReceiptsPrivacy: (value: any) => Promise<void>;
+    updateGroupsAddPrivacy: (value: any) => Promise<void>;
+    updateDefaultDisappearingMode: (duration: any) => Promise<void>;
+    getBusinessProfile: (jid: any) => Promise<{
+        wid: any;
+        address: any;
+        description: any;
+        website: any[];
+        email: any;
+        category: any;
+        business_hours: {
+            timezone: any;
+            business_config: any;
+        };
+    } | undefined>;
+    resyncAppState: (...args: any[]) => Promise<any>;
+    chatModify: (mod: any, jid: any) => Promise<void>;
+    cleanDirtyBits: (type: any, fromTimestamp: any) => Promise<void>;
+    addOrEditContact: (jid: any, contact: any) => Promise<void>;
+    removeContact: (jid: any) => Promise<void>;
+    addLabel: (jid: any, labels: any) => Promise<void>;
+    addChatLabel: (jid: any, labelId: any) => Promise<void>;
+    removeChatLabel: (jid: any, labelId: any) => Promise<void>;
+    addMessageLabel: (jid: any, messageId: any, labelId: any) => Promise<void>;
+    removeMessageLabel: (jid: any, messageId: any, labelId: any) => Promise<void>;
+    star: (jid: any, messages: any, star: any) => Promise<void>;
+    addOrEditQuickReply: (quickReply: any) => Promise<void>;
+    removeQuickReply: (timestamp: any) => Promise<void>;
+    type: string;
+    ws: import("./Client/websocket.js").WebSocketClient;
+    ev: {
+        process(handler: any): () => void;
+        emit(event: any, evData: any): any;
+        isBuffering(): boolean;
+        buffer: () => void;
+        flush: () => boolean;
+        createBufferedFunction(work: any): (...args: any[]) => Promise<any>;
+        on: (...args: any[]) => any;
+        off: (...args: any[]) => any;
+        removeAllListeners: (...args: any[]) => any;
+        destroy(): void;
+    };
+    authState: {
+        creds: any;
+        keys: {
+            get: (type: any, ids: any) => Promise<any>;
+            set: (data: any) => Promise<void>;
+            isInTransaction: () => boolean;
+            transaction: (work: any, key: any) => Promise<any>;
+        };
+    };
+    signalRepository: any;
+    user: any;
+    generateMessageTag: () => string;
+    query: (node: any, timeoutMs: any) => Promise<any>;
+    waitForMessage: (msgId: any, timeoutMs?: any) => Promise<any>;
+    waitForSocketOpen: () => Promise<void>;
+    sendRawMessage: (data: any) => Promise<void>;
+    sendNode: (frame: any) => Promise<void>;
+    logout: (msg: any) => Promise<void>;
+    end: (error: any) => Promise<void>;
+    registerSocketEndHandler: (handler: any) => void;
+    onUnexpectedError: (err: any, msg: any) => void;
+    uploadPreKeys: (count?: number, retryCount?: number) => Promise<void>;
+    uploadPreKeysToServerIfRequired: () => Promise<void>;
+    digestKeyBundle: () => Promise<void>;
+    rotateSignedPreKey: () => Promise<void>;
+    requestPairingCode: (phoneNumber: any, customPairingCode: any) => Promise<any>;
+    updateServerTimeOffset: ({ attrs }: {
+        attrs: any;
+    }) => void;
+    sendUnifiedSession: () => Promise<void>;
+    wamBuffer: import("../index.js").BinaryInfo;
+    waitForConnectionUpdate: (check: any, timeoutMs: any) => Promise<void>;
+    sendWAMBuffer: (wamBuffer: any) => Promise<any>;
+    executeUSyncQuery: (usyncQuery: any) => Promise<any>;
+    onWhatsApp: (...phoneNumber: any[]) => Promise<any>;
+};
+export function extractCommunityMetadata(result: any): {
+    id: any;
+    subject: any;
+    subjectOwner: any;
+    subjectTime: number;
+    size: any;
+    creation: number;
+    owner: string | undefined;
+    desc: any;
+    descId: any;
+    linkedParent: any;
+    restrict: boolean;
+    announce: boolean;
+    isCommunity: boolean;
+    isCommunityAnnounce: boolean;
+    joinApprovalMode: boolean;
+    memberAddMode: boolean;
+    participants: any;
+    ephemeralDuration: number | undefined;
+    addressingMode: any;
+};
+import { proto } from '../../WAProto/index.js';
+//# sourceMappingURL=communities.d.ts.map

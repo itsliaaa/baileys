@@ -41,7 +41,7 @@ This fork designed for production use with a focus on clarity and safety:
 > 
 > Some npm packages are reuploading my fork under different names, with almost no meaningful changes:
 > 
-> - [@zackmans](https://www.npmjs.com/package/@zackmans/baileys)
+> - [@itsmelody](https://www.npmjs.com/package/@itsmelody/baileys)
 > - [@dnuzi](https://www.npmjs.com/package/@dnuzi/baileys)
 > 
 > They:

@@ -1,0 +1,1 @@
+{"version":3,"file":"LabelAssociation.js","sourceRoot":"","sources":["../../lib/Types/LabelAssociation.js"],"names":[],"mappings":"AAAA,uBAAuB;AACvB,MAAM,CAAC,IAAI,oBAAoB,CAAC;AAChC,CAAC,UAAU,oBAAoB;IAC3B,oBAAoB,CAAC,MAAM,CAAC,GAAG,WAAW,CAAC;IAC3C,oBAAoB,CAAC,SAAS,CAAC,GAAG,eAAe,CAAC;AACtD,CAAC,CAAC,CAAC,oBAAoB,IAAI,CAAC,oBAAoB,GAAG,EAAE,CAAC,CAAC,CAAC"}
