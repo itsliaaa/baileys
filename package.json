@@ -1,6 +1,6 @@
 {
    "name": "@itsliaaa/baileys",
-   "version": "0.3.0",
+   "version": "0.3.0-rc.1",
    "description": "Enhanced Baileys v7 with fixed newsletter media upload, plus support for interactive messages, albums, and more message types.",
    "main": "lib/index.js",
    "types": "lib/index.d.ts",
