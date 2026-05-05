@@ -91,7 +91,7 @@ This fork designed for production use with a focus on clarity and safety:
 - 👁️ Added optional boolean flags for message handling:  
    - 🤖 [`ai`](#1%EF%B8%8F⃣-ai-icon) - AI icon on message
    - 📣 [`mentionAll`](#-mention) - Mention all group participants without requiring their JIDs in `mentions` or `mentionedJid` **[NEW]**
-   - 🔧 [`ephemeral`](#2%EF%B8%8F⃣-ephemeral), [`groupStatus`](#4%EF%B8%8F⃣-group-status), [`viewOnceV2`](#8%EF%B8%8F⃣-view-once-v2), [`viewOnceV2Extension`](#9%EF%B8%8F⃣-view-once-v2-extension), [`interactiveAsTemplate`](#3%EF%B8%8F⃣-interactive) - Message wrappers
+   - 🔧 [`ephemeral`](#2%EF%B8%8F⃣-ephemeral), [`groupStatus`](#4%EF%B8%8F⃣-group-status), [`spoiler`](#-spoiler), [`viewOnce`](#7%EF%B8%8F⃣-view-once), [`viewOnceV2`](#8%EF%B8%8F⃣-view-once-v2), [`viewOnceV2Extension`](#9%EF%B8%8F⃣-view-once-v2-extension), [`interactiveAsTemplate`](#3%EF%B8%8F⃣-interactive) - Message wrappers
    - 🔒 [`secureMetaServiceLabel`](#6%EF%B8%8F⃣-secure-meta-service-label) - Secure meta service label on message **[NEW]**
    - 📄 [`raw`](#5%EF%B8%8F⃣-raw) - Build your message manually **(DO NOT USE FOR EXPLOITATION)**
 
@@ -1357,6 +1357,21 @@ sock.sendMessage(jid, {
    },
    caption: '👁️ View Once V2 Extension',
    viewOnceV2Extension: true
+})
+```
+
+#### 🔟 Spoiler
+
+> [!NOTE]
+> Wrap message into `spoilerMessage`
+
+```javascript
+sock.sendMessage(jid, {
+   image: {
+      url: './path/to/image.jpg'
+   },
+   caption: '❔ Spoiler',
+   spoiler: true
 })
 ```
 

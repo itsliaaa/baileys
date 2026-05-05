@@ -16,7 +16,7 @@ export function encodeWAMessage(message: any): any;
 export function generateRegistrationId(): number;
 export function encodeBigEndian(e: any, t?: number): Uint8Array<ArrayBuffer>;
 export function toNumber(t: any): any;
-export function unixTimestampSeconds(date?: number): number;
+export function unixTimestampSeconds(date?: Date): number;
 export function debouncedTimeout(intervalMs: number | undefined, task: any): {
     start: (newIntervalMs: any, newTask: any) => void;
     cancel: () => void;
