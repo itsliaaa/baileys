@@ -161,7 +161,9 @@ This fork designed for production use with a focus on clarity and safety:
    - [🖼️ Image Processing](#%EF%B8%8F-image-processing)
    - [📣 Newsletter Management](#-newsletter-management)
    - [👥 Group Management](#-group-management)
+   - [👥 Community Management](#-community-management)
    - [👤 Profile Management](#-profile-management)
+   - [🛒 Business Management](#-business-management)
    - [🔐 Privacy Management](#-privacy-management)
    - [📡 Events](#-events)
 - [🚀 Try the Bot](#-try-the-bot)
@@ -1414,7 +1416,7 @@ console.log('🏷️ Got user ID', ':', ids)
 // --- Output when failed
 // {
 //    phoneNumber: '6281111111111@s.whatsapp.net',
-//    lid: 'id-not-found'
+//    lid: undefined
 // }
 // --- Same output shape regardless of input type
 ```
@@ -1564,7 +1566,9 @@ const metadata = await sock.groupMetadata(jid)
 console.dir(metadata, { depth: null })
 
 // --- Get group invite code
-sock.groupInviteCode(jid)
+const inviteCode = await sock.groupInviteCode(jid)
+console.dir(inviteCode, { depth: null })
+
 
 // --- Revoke invite link
 sock.groupRevokeInvite(jid)
@@ -1641,11 +1645,98 @@ const requests = await sock.groupRequestParticipantsList(jid)
 console.dir(requests, { depth: null })
 
 // --- Get group info from link
-const group = await sock.groupGetInviteInfo('https://chat.whatsapp.com/ABC123')
-console.log('👥 Got group info from link', ':', group)
+const group = await sock.groupGetInviteInfo('ABC123456789')
+console.log('👥 Got group info from invite code', ':', group)
 
 // --- Update bot member label
 sock.updateMemberLabel(jid, '@itsliaaa/baileys')
+```
+
+#### 👥 Community Management
+
+```javascript
+// --- Create a new one and add description
+const community = await sock.communityCreate('@itsliaaa/baileys', '📣 Fresh updates weekly')
+console.dir(community, { depth: null })
+
+// --- Create a subgroup for community and add participants using their JIDs
+const group = await sock.communityCreateGroup('📢 Announcements', ['628123456789@s.whatsapp.net'], communityJid)
+
+// --- Link an existing group
+sock.communityLinkGroup(groupJid, communityJid)
+
+// --- Unlink an existing group
+sock.communityUnlinkGroup(groupJid, communityJid)
+
+// --- Get info
+const metadata = await sock.communityMetadata(jid)
+console.dir(metadata, { depth: null })
+
+// --- Get community invite code
+const inviteCode = await sock.communityInviteCode(jid)
+console.dir(inviteCode, { depth: null })
+
+// --- Revoke invite link
+sock.communityRevokeInvite(jid)
+
+// --- Accept community invite
+sock.communityAcceptInvite(inviteCode)
+
+// --- Leave community
+sock.communityLeave(jid)
+
+// --- Accept join requests
+sock.communityRequestParticipantsUpdate(jid, ['628123456789@s.whatsapp.net'], 'approve')
+
+// --- Change name
+sock.communityUpdateSubject(jid, '📦 @itsliaaa/baileys')
+
+// --- Change description
+sock.communityUpdateDescription(jid, 'Updated description')
+
+// --- Set community as admin only for chatting
+sock.communitySettingUpdate(jid, 'announcement')
+
+// --- Set community as open to all for chatting
+sock.communitySettingUpdate(jid, 'not_announcement')
+
+// --- Set admin only can edit community info
+sock.communitySettingUpdate(jid, 'locked')
+
+// --- Set all participants can edit community info
+sock.communitySettingUpdate(jid, 'unlocked')
+
+// --- Set admin only can add participants
+sock.communityMemberAddMode(jid, 'admin_add')
+
+// --- Set all participants can add participants
+sock.communityMemberAddMode(jid, 'all_member_add')
+
+// --- Enable or disable temporary messages with seconds format
+sock.communityToggleEphemeral(jid, 86400)
+
+// --- Disable temporary messages
+sock.communityToggleEphemeral(jid, 0)
+
+// --- Enable or disable membership approval mode
+sock.communityJoinApprovalMode(jid, 'on')
+sock.communityJoinApprovalMode(jid, 'off')
+
+// --- Get all communities metadata
+const communities = await sock.communityFetchAllParticipating()
+console.dir(communities, { depth: null })
+
+// --- Get all community linked groups
+const linked = await sock.communityFetchLinkedGroups(jid)
+console.dir(linked, { depth: null })
+
+// --- Get pending join requests
+const requests = await sock.communityRequestParticipantsList(jid)
+console.dir(requests, { depth: null })
+
+// --- Get community info from link
+const community = await sock.communityGetInviteInfo('ABC123456789')
+console.log('👥 Got community info from invite code', ':', community)
 ```
 
 #### 👤 Profile Management
@@ -1711,6 +1802,85 @@ sock.resyncAppState(['regular', 'critical_block'], true)
 // --- Get business profile
 const profile = await sock.getBusinessProfile(jid)
 console.dir(profile, { depth: null })
+```
+
+#### 🛒 Business Management
+
+```javascript
+// --- Create a new product
+const product = await sock.productCreate({
+   name: '🧩 Starseed (Premium)',
+   description: 'Get a full version of Starseed!',
+   price: 100000,
+   currency: 'IDR',
+   originCountryCode: 'ID',
+   images: [
+      bufferImage,
+      {
+         url: './path/to/image.jpg'
+      }
+   ]
+})
+console.dir(product, { depth: null })
+
+// --- Update product
+await sock.productUpdate(productId, {
+   name: '🧩 Starseed (Premium)',
+   description: 'Get a full version of Starseed with more features!',
+   price: 75000,
+   currency: 'IDR',
+   images: [
+      {
+         url: './path/to/image.jpg'
+      }
+   ]
+})
+
+// --- Delete product
+sock.productDelete([productId])
+
+// --- Get catalog info
+const { products, nextPageCursor } = await sock.getCatalog({
+  jid: '628123456789@s.whatsapp.net',
+  limit: 10
+})
+
+// --- Get collections
+const collections = await sock.getCollections('628123456789@s.whatsapp.net', 10)
+console.dir(collections, { depth: null })
+
+// --- Get order info
+const order = await sock.getOrderDetails(orderId, tokenBase64)
+console.dir(order, { depth: null })
+
+// --- Update business profile
+await sock.updateBusinessProfile({
+   address: 'Jakarta, Indonesia',
+   description: '🛒 Official Starseed Store',
+   websites: ['https://www.npmjs.com/package/@itsliaaa/baileys'],
+   email: 'more-more@gmail.com',
+   hours: {
+      timezone: 'Asia/Jakarta',
+      days: [{ day: 'mon', mode: 'open_24h' }]
+   }
+})
+
+// --- Update cover
+sock.updateCoverPhoto({
+   url: './path/to/image.jpg'
+})
+
+// --- Remove cover
+sock.removeCoverPhoto(coverId)
+
+// --- Update quick replies
+sock.addOrEditQuickReply({
+  shortcut: 'hello',
+  message: 'Hello from business account',
+})
+
+// --- Remove quick reply
+sock.removeQuickReply(timestamp)
 ```
 
 #### 🔐 Privacy Management

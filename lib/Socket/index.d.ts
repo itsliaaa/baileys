@@ -192,6 +192,7 @@ declare function makeWASocket(config: any): {
         isHidden: boolean;
     }>;
     updateBussinesProfile: (args: any) => Promise<any>;
+    updateBusinessProfile: (args: any) => Promise<any>;
     updateCoverPhoto: (photo: any) => Promise<any>;
     removeCoverPhoto: (id: any) => Promise<any>;
     sendMessageAck: (node: any, errorCode: any) => Promise<void>;
