@@ -414,7 +414,7 @@ sock.sendMessage(jid, {
       } // --- Additional metadata for large link preview
    },
    favicon: {
-      url: './path/to/tiny-image.jpg'
+      url: './path/to/tiny-image.png'
    }
 })
 ```
@@ -871,7 +871,7 @@ sock.sendMessage(jid, {
    audio: {
       url: './path/to/audio.mp3'
    },
-   ptt: false, // --- Set true if you want to send audio as Voice Note
+   ptt: false // --- Set true if you want to send audio as Voice Note
 }, {
    quoted: message
 })
@@ -1142,6 +1142,25 @@ sock.sendMessage(jid, {
          text: '🌐 Source',
          url: 'https://www.npmjs.com/package/@itsliaaa/baileys'
       }]
+   }]
+}, {
+   quoted: message
+})
+
+// --- Native Flow with Audio in the Footer
+sock.sendMessage(jid, {
+   text: '🔈 Music in the footer!',
+   audioFooter: {
+      url: './path/to/audio.mp3'
+   }, // --- Like other media upload methods, buffers and streams are supported
+   nativeFlow: [{
+      text: '👍🏻 Good, next',
+      id: '#Next',
+      icon: 'review'
+   }, {
+      text: '👎🏻 Skip',
+      id: '#Skip',
+      icon: 'default'
    }]
 }, {
    quoted: message
