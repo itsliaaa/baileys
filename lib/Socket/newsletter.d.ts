@@ -28,7 +28,9 @@ export function makeNewsletterSocket(config: any): {
     newsletterUpdatePicture: (jid: any, content: any) => Promise<any>;
     newsletterRemovePicture: (jid: any) => Promise<any>;
     newsletterReactMessage: (jid: any, serverId: any, reaction: any) => Promise<void>;
-    newsletterFetchMessages: (jid: any, count: any, since: any, after: any) => Promise<any>;
+    newsletterFetchMessages: (type: any, key: any, count: any, after: any, before: any) => Promise<{
+        [k: string]: any;
+    }[]>;
     subscribeNewsletterUpdates: (jid: any) => Promise<{
         duration: any;
     } | null>;
@@ -268,5 +270,11 @@ export function makeNewsletterSocket(config: any): {
     sendWAMBuffer: (wamBuffer: any) => Promise<any>;
     executeUSyncQuery: (usyncQuery: any) => Promise<any>;
     onWhatsApp: (...phoneNumber: any[]) => Promise<any>;
+    fetchAccountReachoutTimelock: () => Promise<{
+        isActive: boolean;
+        timeEnforcementEnds: Date | undefined;
+        enforcementType: any;
+    }>;
+    fetchNewChatMessageCap: () => Promise<any>;
 };
 //# sourceMappingURL=newsletter.d.ts.map

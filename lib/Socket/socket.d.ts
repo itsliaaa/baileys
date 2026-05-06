@@ -47,6 +47,12 @@ export function makeSocket(config: any): {
     sendWAMBuffer: (wamBuffer: any) => Promise<any>;
     executeUSyncQuery: (usyncQuery: any) => Promise<any>;
     onWhatsApp: (...phoneNumber: any[]) => Promise<any>;
+    fetchAccountReachoutTimelock: () => Promise<{
+        isActive: boolean;
+        timeEnforcementEnds: Date | undefined;
+        enforcementType: any;
+    }>;
+    fetchNewChatMessageCap: () => Promise<any>;
 };
 import { WebSocketClient } from './Client/index.js';
 import { BinaryInfo } from '../WAM/BinaryInfo.js';

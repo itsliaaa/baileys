@@ -69,7 +69,9 @@ export function makeMessagesSocket(config: any): {
     newsletterUpdatePicture: (jid: any, content: any) => Promise<any>;
     newsletterRemovePicture: (jid: any) => Promise<any>;
     newsletterReactMessage: (jid: any, serverId: any, reaction: any) => Promise<void>;
-    newsletterFetchMessages: (jid: any, count: any, since: any, after: any) => Promise<any>;
+    newsletterFetchMessages: (type: any, key: any, count: any, after: any, before: any) => Promise<{
+        [k: string]: any;
+    }[]>;
     subscribeNewsletterUpdates: (jid: any) => Promise<{
         duration: any;
     } | null>;
@@ -308,6 +310,12 @@ export function makeMessagesSocket(config: any): {
     sendWAMBuffer: (wamBuffer: any) => Promise<any>;
     executeUSyncQuery: (usyncQuery: any) => Promise<any>;
     onWhatsApp: (...phoneNumber: any[]) => Promise<any>;
+    fetchAccountReachoutTimelock: () => Promise<{
+        isActive: boolean;
+        timeEnforcementEnds: Date | undefined;
+        enforcementType: any;
+    }>;
+    fetchNewChatMessageCap: () => Promise<any>;
 };
 import { MessageRetryManager } from '../Utils/index.js';
 import { proto } from '../../WAProto/index.js';

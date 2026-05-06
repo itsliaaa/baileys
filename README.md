@@ -81,6 +81,7 @@ This fork designed for production use with a focus on clarity and safety:
    - 📦 [Sticker Pack Message](#-sticker-pack)
    - ✨ [Rich Response Message](#-rich-response) **[NEW]**
    - 🧾 [Message with Code Blocks](#-message-with-code-block) **[NEW]**
+   - [🌏 Message with Inline Entities](#-message-with-inline-entities) **[NEW]**
    - 📋 [Message with Table](#-message-with-table) **[NEW]**
    - 💳 [Payment-related Message](#-sending-payment-messages) (payment requests, invites, orders, invoices).
 - 📰 Simplified sending messages with ad thumbnail using [`externalAdReply`](#3%EF%B8%8F⃣-external-ad-reply), without requiring manual `contextInfo`.
@@ -1563,7 +1564,7 @@ const newsletters = await sock.newsletterSubscribed()
 console.dir(newsletters, { depth: null })
 
 // --- Fetch newsletter messages
-const messages = sock.newsletterFetchMessages('1231111111111@newsletter', 50, 0, 0)
+const messages = sock.newsletterFetchMessages('jid', '1231111111111@newsletter', 50, 0, 0)
 console.dir(messages, { depth: null })
 
 // --- Delete newsletter

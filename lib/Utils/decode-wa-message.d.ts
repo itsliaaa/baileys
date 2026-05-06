@@ -27,12 +27,14 @@ export function decodeMessageNode(stanza: any, meId: any, meLid: any): {
 export function getDecryptionJid(sender: any, repository: any): Promise<any>;
 export const NO_MESSAGE_FOUND_ERROR_TEXT: "Message absent from node";
 export const MISSING_KEYS_ERROR_TEXT: "Key used already or never filled";
+export const ACCOUNT_RESTRICTED_TEXT: "Your account has been restricted";
 export namespace DECRYPTION_RETRY_CONFIG {
     let maxRetries: number;
     let baseDelayMs: number;
     let sessionRecordErrors: string[];
 }
 export namespace NACK_REASONS {
+    let SenderReachoutTimelocked: number;
     let ParsingError: number;
     let UnrecognizedStanza: number;
     let UnrecognizedStanzaClass: number;
