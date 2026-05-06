@@ -8,5 +8,6 @@ export function makeEventBuffer(logger: any): {
     on: (...args: any[]) => any;
     off: (...args: any[]) => any;
     removeAllListeners: (...args: any[]) => any;
+    destroy(): void;
 };
 //# sourceMappingURL=event-buffer.d.ts.map

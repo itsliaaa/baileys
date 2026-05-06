@@ -54,7 +54,8 @@ export function encryptedStream(media: any, mediaType: any, { logger, saveOrigin
     fileSha256: any;
     fileLength: number;
 }>;
-export function getUrlFromDirectPath(directPath: any): string;
+export const DEF_MEDIA_HOST: "mmg.whatsapp.net";
+export function getUrlFromDirectPath(directPath: any, host?: string): string;
 export function downloadContentFromMessage({ mediaKey, directPath, url }: {
     mediaKey: any;
     directPath: any;

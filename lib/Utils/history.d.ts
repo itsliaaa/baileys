@@ -31,6 +31,7 @@ export function processHistoryMessage(item: any, logger: any): {
         lid: any;
         pn: any;
     }[];
+    pastParticipants: any;
     syncType: any;
     progress: any;
 };
@@ -66,6 +67,7 @@ export function downloadAndProcessHistorySyncNotification(msg: any, options: any
         lid: any;
         pn: any;
     }[];
+    pastParticipants: any;
     syncType: any;
     progress: any;
 }>;

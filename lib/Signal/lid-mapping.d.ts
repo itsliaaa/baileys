@@ -13,5 +13,9 @@ export class LIDMappingStore {
     getPNForLID(lid: any): Promise<any>;
     getPNsForLIDs(lids: any): Promise<any>;
     _getPNsForLIDsImpl(lids: any): Promise<any[] | null>;
+    /**
+     * Close the cache and release resources
+     */
+    close(): void;
 }
 //# sourceMappingURL=lid-mapping.d.ts.map

@@ -69,6 +69,7 @@ export function makeChatsSocket(config: any): {
     cleanDirtyBits: (type: any, fromTimestamp: any) => Promise<void>;
     addOrEditContact: (jid: any, contact: any) => Promise<void>;
     removeContact: (jid: any) => Promise<void>;
+    placeholderResendCache: any;
     addLabel: (jid: any, labels: any) => Promise<void>;
     addChatLabel: (jid: any, labelId: any) => Promise<void>;
     removeChatLabel: (jid: any, labelId: any) => Promise<void>;
@@ -89,6 +90,7 @@ export function makeChatsSocket(config: any): {
         on: (...args: any[]) => any;
         off: (...args: any[]) => any;
         removeAllListeners: (...args: any[]) => any;
+        destroy(): void;
     };
     authState: {
         creds: any;
@@ -109,8 +111,9 @@ export function makeChatsSocket(config: any): {
     sendNode: (frame: any) => Promise<void>;
     logout: (msg: any) => Promise<void>;
     end: (error: any) => Promise<void>;
+    registerSocketEndHandler: (handler: any) => void;
     onUnexpectedError: (err: any, msg: any) => void;
-    uploadPreKeys: (count?: number, retryCount?: number) => Promise<void>;
+    uploadPreKeys: (count?: number) => Promise<void>;
     uploadPreKeysToServerIfRequired: () => Promise<void>;
     digestKeyBundle: () => Promise<void>;
     rotateSignedPreKey: () => Promise<void>;

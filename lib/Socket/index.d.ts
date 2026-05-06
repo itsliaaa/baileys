@@ -218,6 +218,7 @@ declare function makeWASocket(config: any): {
     sendReceipts: (keys: any, type: any) => Promise<void>;
     readMessages: (keys: any) => Promise<void>;
     refreshMediaConn: (forceGet?: boolean) => Promise<any>;
+    getMediaHost: () => string;
     waUploadToServer: (filePath: any, { mediaType, fileEncSha256B64, timeoutMs, newsletter }: {
         mediaType: any;
         fileEncSha256B64: any;
@@ -457,6 +458,7 @@ declare function makeWASocket(config: any): {
     cleanDirtyBits: (type: any, fromTimestamp: any) => Promise<void>;
     addOrEditContact: (jid: any, contact: any) => Promise<void>;
     removeContact: (jid: any) => Promise<void>;
+    placeholderResendCache: any;
     addLabel: (jid: any, labels: any) => Promise<void>;
     addChatLabel: (jid: any, labelId: any) => Promise<void>;
     removeChatLabel: (jid: any, labelId: any) => Promise<void>;
@@ -477,6 +479,7 @@ declare function makeWASocket(config: any): {
         on: (...args: any[]) => any;
         off: (...args: any[]) => any;
         removeAllListeners: (...args: any[]) => any;
+        destroy(): void;
     };
     authState: {
         creds: any;
@@ -497,8 +500,9 @@ declare function makeWASocket(config: any): {
     sendNode: (frame: any) => Promise<void>;
     logout: (msg: any) => Promise<void>;
     end: (error: any) => Promise<void>;
+    registerSocketEndHandler: (handler: any) => void;
     onUnexpectedError: (err: any, msg: any) => void;
-    uploadPreKeys: (count?: number, retryCount?: number) => Promise<void>;
+    uploadPreKeys: (count?: number) => Promise<void>;
     uploadPreKeysToServerIfRequired: () => Promise<void>;
     digestKeyBundle: () => Promise<void>;
     rotateSignedPreKey: () => Promise<void>;

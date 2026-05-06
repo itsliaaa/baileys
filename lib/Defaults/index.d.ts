@@ -120,7 +120,6 @@ export const HISTORY_SYNC_PAUSED_TIMEOUT_MS: 120000;
 export const MIN_PREKEY_COUNT: 5;
 export const INITIAL_PREKEY_COUNT: 812;
 export const UPLOAD_TIMEOUT: 30000;
-export const MIN_UPLOAD_INTERVAL: 5000;
 export namespace DEFAULT_CACHE_TTLS {
     let SIGNAL_STORE: number;
     let MSG_RETRY: number;

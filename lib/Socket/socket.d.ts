@@ -11,6 +11,7 @@ export function makeSocket(config: any): {
         on: (...args: any[]) => any;
         off: (...args: any[]) => any;
         removeAllListeners: (...args: any[]) => any;
+        destroy(): void;
     };
     authState: {
         creds: any;
@@ -31,8 +32,9 @@ export function makeSocket(config: any): {
     sendNode: (frame: any) => Promise<void>;
     logout: (msg: any) => Promise<void>;
     end: (error: any) => Promise<void>;
+    registerSocketEndHandler: (handler: any) => void;
     onUnexpectedError: (err: any, msg: any) => void;
-    uploadPreKeys: (count?: number, retryCount?: number) => Promise<void>;
+    uploadPreKeys: (count?: number) => Promise<void>;
     uploadPreKeysToServerIfRequired: () => Promise<void>;
     digestKeyBundle: () => Promise<void>;
     rotateSignedPreKey: () => Promise<void>;

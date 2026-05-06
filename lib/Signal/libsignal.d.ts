@@ -22,6 +22,18 @@ export function makeLibSignalRepository(auth: any, logger: any, pnToLIDFunc: any
         meId: any;
         data: any;
     }): Promise<any>;
+    getSenderKeyDistributionMessage({ group, meId }: {
+        group: any;
+        meId: any;
+    }): Promise<any>;
+    hasSenderKey({ group, meId }: {
+        group: any;
+        meId: any;
+    }): Promise<boolean>;
+    getSessionInfo(jid: any): Promise<{
+        baseKey: Uint8Array<any>;
+        registrationId: number;
+    } | null>;
     injectE2ESession({ jid, session }: {
         jid: any;
         session: any;
@@ -36,6 +48,7 @@ export function makeLibSignalRepository(auth: any, logger: any, pnToLIDFunc: any
         reason?: undefined;
     }>;
     deleteSession(jids: any): Promise<any>;
+    close(): void;
     migrateSession(fromJid: any, toJid: any): Promise<any>;
 };
 import { LIDMappingStore } from './lid-mapping.js';

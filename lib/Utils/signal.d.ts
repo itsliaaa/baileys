@@ -31,6 +31,19 @@ export function xmppPreKey(pair: any, id: any): {
         content: any;
     }[];
 };
+export function extractE2ESessionFromRetryReceipt(receipt: any): {
+    registrationId: number | undefined;
+    identityKey: any;
+    signedPreKey: {
+        keyId: number | undefined;
+        publicKey: any;
+        signature: any;
+    };
+    preKey: {
+        keyId: number | undefined;
+        publicKey: any;
+    } | undefined;
+} | null;
 export function parseAndInjectE2ESessions(node: any, repository: any): Promise<void>;
 export function extractDeviceJids(result: any, myJid: any, myLid: any, excludeZeroDevices: any): {
     user: any;

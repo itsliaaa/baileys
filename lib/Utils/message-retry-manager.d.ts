@@ -6,6 +6,7 @@ export class MessageRetryManager {
     messageKeyIndex: Map<any, any>;
     sessionRecreateHistory: any;
     retryCounters: any;
+    baseKeys: any;
     pendingPhoneRequests: {};
     maxMsgRetryCount: any;
     statistics: {
@@ -69,6 +70,10 @@ export class MessageRetryManager {
      * Cancel pending phone request
      */
     cancelPendingPhoneRequest(messageId: any): void;
+    clear(): void;
+    saveBaseKey(addr: any, msgId: any, baseKey: any): void;
+    hasSameBaseKey(addr: any, msgId: any, baseKey: any): boolean;
+    deleteBaseKey(addr: any, msgId: any): void;
     keyToString(key: any): string;
     removeRecentMessage(messageId: any): void;
 }

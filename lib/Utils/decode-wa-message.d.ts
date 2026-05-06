@@ -50,7 +50,7 @@ export namespace NACK_REASONS {
     let DBOperationFailed: number;
 }
 export namespace SERVER_ERROR_CODES {
-    let MissingTcToken: string;
+    let MessageAccountRestriction: string;
     let SmaxInvalid: string;
 }
 export function extractAddressingContext(stanza: any): {

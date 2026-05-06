@@ -62,7 +62,7 @@ export function decodeSyncdPatch(msg: any, name: any, initialState: any, getAppS
 export function extractSyncdPatches(result: any, options: any): Promise<{}>;
 export function downloadExternalBlob(blob: any, options: any): Promise<any>;
 export function downloadExternalPatch(blob: any, options: any): Promise<proto.SyncdMutations>;
-export function decodeSyncdSnapshot(name: any, snapshot: any, getAppStateSyncKey: any, minimumVersionNumber: any, validateMacs?: boolean): Promise<{
+export function decodeSyncdSnapshot(name: any, snapshot: any, getAppStateSyncKey: any, minimumVersionNumber: any, validateMacs: boolean | undefined, logger: any): Promise<{
     state: {
         version: number;
         hash: any;
