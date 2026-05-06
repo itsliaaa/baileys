@@ -1,5 +1,6 @@
 export default makeWASocket;
 declare function makeWASocket(config: any): {
+    communityQuery: (jid: any, type: any, content: any) => Promise<any>;
     communityMetadata: (jid: any) => Promise<{
         id: any;
         subject: any;
@@ -241,6 +242,7 @@ declare function makeWASocket(config: any): {
     updateMemberLabel: (jid: any, memberLabel: any) => Promise<any>;
     updateMediaMessage: (message: any) => Promise<any>;
     sendMessage: (jid: any, content: any, options?: {}) => Promise<import("../index.js").proto.WebMessageInfo | undefined>;
+    executeWMexQuery: (variables: any, queryId: any, dataPath: any) => Promise<any>;
     newsletterCreate: (name: any, description: any) => Promise<{
         id: any;
         owner: undefined;
@@ -277,6 +279,7 @@ declare function makeWASocket(config: any): {
     newsletterChangeOwner: (jid: any, newOwnerJid: any) => Promise<void>;
     newsletterDemote: (jid: any, userJid: any) => Promise<void>;
     newsletterDelete: (jid: any) => Promise<void>;
+    groupQuery: (jid: any, type: any, content: any) => Promise<any>;
     groupMetadata: (jid: any) => Promise<{
         id: any;
         notify: any;

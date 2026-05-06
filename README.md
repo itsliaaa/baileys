@@ -152,6 +152,7 @@ This fork designed for production use with a focus on clarity and safety:
    - [7️⃣ View Once](#7%EF%B8%8F⃣-view-once)
    - [8️⃣ View Once V2](#8%EF%B8%8F⃣-view-once-v2)
    - [9️⃣ View Once V2 Extension](#9%EF%B8%8F⃣-view-once-v2-extension)
+   - [🔟 Spoiler](#-spoiler)
 - [♻️ Modify Messages](#%EF%B8%8F-modify-messages)
    - [🗑️ Delete Messages](#%EF%B8%8F-delete-messages)
    - [✏️ Edit Messages](#%EF%B8%8F-edit-messages)
@@ -1562,7 +1563,7 @@ const newsletters = await sock.newsletterSubscribed()
 console.dir(newsletters, { depth: null })
 
 // --- Fetch newsletter messages
-const messages = sock.newsletterFetchMessages('jid', '1231111111111@newsletter', 50, 0, 0)
+const messages = sock.newsletterFetchMessages('1231111111111@newsletter', 50, 0, 0)
 console.dir(messages, { depth: null })
 
 // --- Delete newsletter

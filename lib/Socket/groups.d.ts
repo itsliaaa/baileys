@@ -1,4 +1,5 @@
 export function makeGroupsSocket(config: any): {
+    groupQuery: (jid: any, type: any, content: any) => Promise<any>;
     groupMetadata: (jid: any) => Promise<{
         id: any;
         notify: any;

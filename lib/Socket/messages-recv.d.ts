@@ -45,6 +45,7 @@ export function makeMessagesRecvSocket(config: any): {
     updateMemberLabel: (jid: any, memberLabel: any) => Promise<any>;
     updateMediaMessage: (message: any) => Promise<any>;
     sendMessage: (jid: any, content: any, options?: {}) => Promise<proto.WebMessageInfo | undefined>;
+    executeWMexQuery: (variables: any, queryId: any, dataPath: any) => Promise<any>;
     newsletterCreate: (name: any, description: any) => Promise<{
         id: any;
         owner: undefined;
@@ -81,6 +82,7 @@ export function makeMessagesRecvSocket(config: any): {
     newsletterChangeOwner: (jid: any, newOwnerJid: any) => Promise<void>;
     newsletterDemote: (jid: any, userJid: any) => Promise<void>;
     newsletterDelete: (jid: any) => Promise<void>;
+    groupQuery: (jid: any, type: any, content: any) => Promise<any>;
     groupMetadata: (jid: any) => Promise<{
         id: any;
         notify: any;
