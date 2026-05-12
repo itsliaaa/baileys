@@ -678,6 +678,7 @@ sock.sendMessage(jid, {
 
 ```javascript
 sock.sendMessage(jid, {
+   disclaimerText: 'RAW submessages structure example',
    richResponse: [{
       text: 'Example Usage',
    }, {
@@ -718,6 +719,7 @@ const language = 'javascript'
 const code = 'console.log("Hello, World!")'
 
 sock.sendMessage(jid, {
+   disclaimerText: 'Example of tokenizing Code Block',
    richResponse: [{
       text: 'Example Usage',
    }, {
@@ -736,6 +738,7 @@ sock.sendMessage(jid, {
 
 ```javascript
 sock.sendMessage(jid, {
+   disclaimerText: 'Code Block',
    headerText: '## Example Usage',
    contentText: '---',
    code: 'console.log("Hello, World!")',
@@ -748,6 +751,7 @@ sock.sendMessage(jid, {
 
 ```javascript
 sock.sendMessage(jid, {
+   disclaimerText: 'Inline Entities',
    headerText: '## Check Out!',
    contentText: '---',
    links: [{
@@ -771,6 +775,7 @@ sock.sendMessage(jid, {
 
 ```javascript
 sock.sendMessage(jid, {
+   disclaimerText: 'Table',
    headerText: '## Comparison between Node.js, Bun, and Deno',
    contentText: '---',
    title: 'Runtime Comparison',
