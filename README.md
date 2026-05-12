@@ -3,7 +3,7 @@
 [![Logo](https://files.catbox.moe/c5s9g0.jpg)](https://www.npmjs.com/package/@itsliaaa/baileys)
 
 <p align="center">
-   Enhanced Baileys v7 with fixed newsletter media upload, plus support for interactive messages, albums, and more message types.
+   Enhanced Baileys v7 with fixes for newsletter media uploads, plus support for interactive messages, albums, and additional message types.
    <br><br>
    <a href="https://www.npmjs.com/package/@itsliaaa/baileys">
       <img src="https://img.shields.io/npm/v/@itsliaaa/baileys?style=for-the-badge&logo=npm"/>
