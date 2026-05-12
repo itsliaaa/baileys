@@ -30,6 +30,7 @@ export function buildAdditionalBotMetadataContext(submessages: any): {
 };
 export function prepareRichResponseMessage(content: any): {
     messageContextInfo: {
+        botMessageSecret: any;
         botMetadata: {
             pluginMetadata: {};
             verificationMetadata: {
@@ -56,6 +57,7 @@ export function botMetadataSignature(): Uint8Array<ArrayBuffer>;
 export function botMetadataCertificate(length?: number): Uint8Array<ArrayBuffer>;
 export function wrapToBotForwardedMessage(richResponseMessage: any): {
     messageContextInfo: {
+        botMessageSecret: any;
         botMetadata: {
             pluginMetadata: {};
             verificationMetadata: {
