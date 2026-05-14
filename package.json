@@ -1,6 +1,6 @@
 {
    "name": "@itsliaaa/baileys",
-   "version": "0.3.2",
+   "version": "0.3.3",
    "description": "Enhanced Baileys v7 with fixes for newsletter media uploads, plus support for interactive messages, albums, and additional message types.",
    "main": "lib/index.js",
    "types": "lib/index.d.ts",
@@ -44,7 +44,7 @@
       "@hapi/boom": "^9.1.3",
       "async-mutex": "^0.5.0",
       "fflate": "^0.8.2",
-      "libsignal": "github:WhiskeySockets/libsignal-wasm#master",
+      "libsignal": "^6.0.0",
       "lru-cache": "^11.2.6",
       "music-metadata": "^11.12.3",
       "p-queue": "^9.1.0",
