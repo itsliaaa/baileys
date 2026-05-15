@@ -8,7 +8,9 @@ export function toUnified(submessages: any): {
 };
 export function prepareRichResponseMessage(content: any): {
     messageContextInfo: {
-        botMessageSecret: any;
+        deviceListMetadata: {
+            senderAccountType: number;
+        };
         botMetadata: {
             pluginMetadata: {};
             verificationMetadata: {
@@ -18,6 +20,14 @@ export function prepareRichResponseMessage(content: any): {
                     useCase: number;
                     signature: Uint8Array<ArrayBuffer>;
                 }[];
+            };
+            botInfrastructureDiagnostics: {
+                toolsUsed: never[];
+                botBackend: number;
+            };
+            botModeSelectionMetadata: {
+                mode: never[];
+                overrideMode: number[];
             };
             botRenderingConfigMetadata: {
                 bloksVersioningId: string;
@@ -35,7 +45,9 @@ export function botMetadataSignature(): Uint8Array<ArrayBuffer>;
 export function botMetadataCertificate(length?: number): Uint8Array<ArrayBuffer>;
 export function wrapToBotForwardedMessage(richResponseMessage: any): {
     messageContextInfo: {
-        botMessageSecret: any;
+        deviceListMetadata: {
+            senderAccountType: number;
+        };
         botMetadata: {
             pluginMetadata: {};
             verificationMetadata: {
@@ -45,6 +57,14 @@ export function wrapToBotForwardedMessage(richResponseMessage: any): {
                     useCase: number;
                     signature: Uint8Array<ArrayBuffer>;
                 }[];
+            };
+            botInfrastructureDiagnostics: {
+                toolsUsed: never[];
+                botBackend: number;
+            };
+            botModeSelectionMetadata: {
+                mode: never[];
+                overrideMode: number[];
             };
             botRenderingConfigMetadata: {
                 bloksVersioningId: string;
