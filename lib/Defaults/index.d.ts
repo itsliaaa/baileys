@@ -84,10 +84,14 @@ export const MEDIA_PATH_MAP: {
     'sticker-pack': string;
     'thumbnail-sticker-pack': string;
     'thumbnail-link': string;
+    'thumbnail-image': string;
+    'thumbnail-video': string;
+    'thumbnail-document': string;
     'product-catalog-image': string;
     'md-app-state': string;
     'md-msg-hist': string;
     'biz-cover-photo': string;
+    ptv: string;
 };
 export const NEWSLETTER_MEDIA_PATH_MAP: {
     image: string;
@@ -119,6 +123,9 @@ export const MEDIA_HKDF_KEY_MAPPING: {
     'payment-bg-image': string;
     ptv: string;
     'biz-cover-photo': string;
+    location: string;
+    contact: string;
+    'voip-token': string;
 };
 export const MEDIA_KEYS: string[];
 /** 120s timeout for history sync stall detection, same as WA Web's handleChunkProgress / restartPausedTimer (g = 120) */
