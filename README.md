@@ -42,6 +42,8 @@ This fork designed for production use with a focus on clarity and safety:
 > Some npm packages are reuploading my fork under different names, with almost no meaningful changes:
 > 
 > - [@nuisockets](https://www.npmjs.com/package/@nuisockets/baileys)
+> - [@nuiisatoru/baileys](https://www.npmjs.com/package/@nuiisatoru/baileys)
+> - [@nuiisweetberry/baileys](https://www.npmjs.com/package/@nuiisweetberry/baileys)
 > - [@kaels](https://www.npmjs.com/package/@kaels/casileys)
 > - [@lumina-md](https://www.npmjs.com/package/@lumina-md/baileys)
 > 
