@@ -291,7 +291,7 @@ export function makeBusinessSocket(config: any): {
     appPatch: (patchCreate: any) => Promise<void>;
     sendPresenceUpdate: (type: any, toJid: any) => Promise<void>;
     presenceSubscribe: (toJid: any) => Promise<void>;
-    profilePictureUrl: (jid: any, type: string | undefined, timeoutMs: any) => Promise<any>;
+    profilePictureUrl: (jid: any, type: string | undefined, timeoutMs: any, useTcToken: boolean) => Promise<any>;
     fetchBlocklist: () => Promise<any>;
     fetchStatus: (...jids: any[]) => Promise<any>;
     fetchDisappearingDuration: (...jids: any[]) => Promise<any>;
