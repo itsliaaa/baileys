@@ -17,6 +17,7 @@ export function addTransactionCapability(state: any, logger: any, { maxCommitRet
     set: (data: any) => Promise<void>;
     isInTransaction: () => boolean;
     transaction: (work: any, key: any) => Promise<any>;
+    disposeTransactionStorage: () => void;
 };
 export function assertMeId(creds: any): any;
 export function initAuthCreds(): {
@@ -55,4 +56,3 @@ export function initAuthCreds(): {
     routingInfo: undefined;
     additionalData: undefined;
 };
-//# sourceMappingURL=auth-utils.d.ts.map

@@ -9,4 +9,3 @@ export class SenderKeyName {
     equals(other: any): boolean;
     hashCode(): number;
 }
-//# sourceMappingURL=sender-key-name.d.ts.map

@@ -10,4 +10,3 @@ export class USyncStatusProtocol {
         setAt: Date;
     } | undefined;
 }
-//# sourceMappingURL=USyncStatusProtocol.d.ts.map

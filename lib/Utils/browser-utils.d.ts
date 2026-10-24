@@ -7,4 +7,3 @@ export namespace Browsers {
     function appropriate(browser: any): any[];
 }
 export function getPlatformId(browser: any): string;
-//# sourceMappingURL=browser-utils.d.ts.map

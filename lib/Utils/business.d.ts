@@ -47,4 +47,3 @@ export function parseProductNode(productNode: any): {
     isHidden: boolean;
 };
 export function uploadingNecessaryImages(images: any, waUploadToServer: any, timeoutMs?: number): Promise<any[]>;
-//# sourceMappingURL=business.d.ts.map

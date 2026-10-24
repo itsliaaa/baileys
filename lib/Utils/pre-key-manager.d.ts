@@ -23,4 +23,3 @@ export class PreKeyManager {
      */
     validateDeletions(data: any, keyType: any): Promise<any>;
 }
-//# sourceMappingURL=pre-key-manager.d.ts.map

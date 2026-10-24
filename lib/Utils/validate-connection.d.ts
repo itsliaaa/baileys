@@ -18,6 +18,7 @@ export function configureSuccessfulPairing(stanza: any, { advSecretKey, signedId
         };
         signalIdentities: any[];
         platform: any;
+        registered: boolean;
     };
     reply: {
         tag: string;
@@ -41,4 +42,3 @@ export function configureSuccessfulPairing(stanza: any, { advSecretKey, signedId
 };
 export function encodeSignedDeviceIdentity(account: any, includeSignatureKey: any): any;
 import { proto } from '../../WAProto/index.js';
-//# sourceMappingURL=validate-connection.d.ts.map

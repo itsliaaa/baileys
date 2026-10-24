@@ -8,4 +8,3 @@ export function useSingleFileAuthState(fileName: any): Promise<{
     };
     saveCreds: () => void;
 }>;
-//# sourceMappingURL=use-single-file-auth-state.d.ts.map

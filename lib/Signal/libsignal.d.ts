@@ -52,4 +52,3 @@ export function makeLibSignalRepository(auth: any, logger: any, pnToLIDFunc: any
     migrateSession(fromJid: any, toJid: any): Promise<any>;
 };
 import { LIDMappingStore } from './lid-mapping.js';
-//# sourceMappingURL=libsignal.d.ts.map

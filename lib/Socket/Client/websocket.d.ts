@@ -10,4 +10,3 @@ export class WebSocketClient extends AbstractSocketClient {
     send(str: any, cb: any): boolean;
 }
 import { AbstractSocketClient } from './types.js';
-//# sourceMappingURL=websocket.d.ts.map

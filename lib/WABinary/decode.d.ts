@@ -7,4 +7,3 @@ export function decodeDecompressedBinaryNode(buffer: any, opts: any, indexRef?: 
     content: any;
 };
 export function decodeBinaryNode(buff: any): Promise<any>;
-//# sourceMappingURL=decode.d.ts.map

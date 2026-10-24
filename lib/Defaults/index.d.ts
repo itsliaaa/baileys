@@ -5,6 +5,8 @@ export const CALL_VIDEO_PREFIX: "https://call.whatsapp.com/video/";
 export const CALL_AUDIO_PREFIX: "https://call.whatsapp.com/voice/";
 export const DONATE_URL: "https://saweria.co/itsliaaa";
 export const LIBRARY_NAME: "itsliaaa/baileys";
+export const TEXT_ENCODER: TextEncoder;
+export const TEXT_DECODER: TextDecoder;
 export const DEF_CALLBACK_PREFIX: "CB:";
 export const DEF_TAG_PREFIX: "TAG:";
 export const PHONE_CONNECTION_CB: "CB:Pong";
@@ -42,7 +44,17 @@ export namespace DEFAULT_CONNECTION_CONFIG {
     export let waWebSocketUrl: string;
     export let connectTimeoutMs: number;
     export let keepAliveIntervalMs: number;
-    export let logger: any;
+    export let logger: Readonly<{
+        level: "silent";
+        debug: () => void;
+        info: () => void;
+        warn: () => void;
+        error: () => void;
+        fatal: () => void;
+        trace: () => void;
+        child: () => Readonly</*elided*/ any>;
+        isLevelEnabled: () => false;
+    }>;
     export let emitOwnEvents: boolean;
     export let defaultQueryTimeoutMs: number;
     export let customUploadHosts: never[];
@@ -142,4 +154,3 @@ import { proto } from '../../WAProto/index.js';
 declare const version: number[];
 import { makeLibSignalRepository } from '../Signal/libsignal.js';
 export {};
-//# sourceMappingURL=index.d.ts.map

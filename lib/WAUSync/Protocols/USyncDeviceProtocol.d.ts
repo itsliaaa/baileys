@@ -20,4 +20,3 @@ export class USyncDeviceProtocol {
         } | undefined;
     };
 }
-//# sourceMappingURL=USyncDeviceProtocol.d.ts.map

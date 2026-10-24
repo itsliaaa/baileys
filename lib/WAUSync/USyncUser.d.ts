@@ -14,4 +14,3 @@ export class USyncUser {
     withPersonaId(personaId: any): this;
     personaId: any;
 }
-//# sourceMappingURL=USyncUser.d.ts.map

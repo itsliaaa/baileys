@@ -20,60 +20,15 @@
    <a href="https://nodejs.org">
       <img src="https://img.shields.io/badge/node-%3E%3D20-339933?logo=node.js&labelColor=green&logoColor=white&style=for-the-badge"/>
    </a>
+   <a href="https://bun.sh">
+      <img src="https://img.shields.io/badge/bun-%3E%3D1.2-fbf0df?logo=bun&labelColor=14151a&logoColor=white&style=for-the-badge"/>
+   </a>
    <a href="#">
       <img src="https://img.shields.io/badge/ESM-only?logo=javascript&labelColor=yellow&logoColor=black&style=for-the-badge"/>
    </a>
 </p>
 
 ☕ For donation: [Saweria](https://saweria.co/itsliaaa)
-
-### ✨ Highlights
-
-This fork designed for production use with a focus on clarity and safety:
-
-- 🚫 No obfuscation. Easy to read and audit.
-- 🚫 No auto-follow channel (newsletter) behavior.
-
-> [!IMPORTANT]
-> Hi everyone,
->
-> I want to clarify two separate attribution issues regarding packages derived from this fork.
->
-> 1. Direct redistribution of my modifications without attribution
->
-> The following packages are operated by the same individual under multiple npm accounts:
->
-> - [@nuisockets](https://www.npmjs.com/package/@nuisockets/baileys)
-> - [@nuiisatoru](https://www.npmjs.com/package/@nuiisatoru/baileys)
-> - [@nuiisweetberry](https://www.npmjs.com/package/@nuiisweetberry/baileys)
-> - [@nuiisweety](https://www.npmjs.com/package/@nuiisweety/baileys)
->
-> These packages redistribute files and modifications originating from this fork while removing contributor credits and modification notes.
->
-> 2. Rebranded republishes of this fork
->
-> - [@lumina-md](https://www.npmjs.com/package/@lumina-md/baileys)
-> - [@sairidev](https://www.npmjs.com/package/@sairidev/baileys-new)
-> - [@lordmega/baileys](https://www.npmjs.com/package/@lordmega/baileys)
-> - [phantom-baileys](https://www.npmjs.com/package/phantom-baileys)
-> - [nexora-baileys](https://www.npmjs.com/package/nexora-baileys)
->
-> These packages primarily repackage or republish this fork under different names while failing to preserve proper attribution, credits, or modification notes.
-> 
-> To be clear, I am **NOT** the original maintainer of Baileys. Full credit and respect belong to:
->
-> https://github.com/WhiskeySockets/Baileys
->
-> **Forking is completely acceptable. Removing attribution, contributor credits, or modification history is not.**
->
-> Please report if necessary.
->
-> Thank you. 🤍
-
-> [!NOTE]
-> 📄 This project is maintained with limited scope and is not intended to replace upstream Baileys.
->
-> 😞 And, really sorry for my bad english.
 
 ### 📋 Table of Contents
 - [📋 Table of Contents](#-table-of-contents)
@@ -153,6 +108,27 @@ This fork designed for production use with a focus on clarity and safety:
 - [🚀 Try the Bot](#-try-the-bot)
 - [📦 Fork Base](#-fork-base)
 - [📣 Credits](#-credits)
+
+### ✨ Highlights
+
+This fork designed for production use with a focus on clarity and safety:
+
+- 🚫 No obfuscation. Easy to read and audit.
+- 🚫 No auto-follow channel (newsletter) behavior.
+
+> [!IMPORTANT]
+> To be clear, I am **NOT** the original maintainer of Baileys. Full credit and respect belong to:
+>
+> https://github.com/WhiskeySockets/Baileys
+>
+> **Forking is completely acceptable. Removing attribution, contributor credits, or modification history is not.**
+>
+> Thank you. 🤍
+
+> [!NOTE]
+> 📄 This project is maintained with limited scope and is not intended to replace upstream Baileys.
+>
+> 😞 And, really sorry for my bad english.
 
 ### 🛠️ Internal Adjustments
 - 🖼️ Fixed an issue where media could not be sent to newsletters due to an upstream issue.
@@ -1208,7 +1184,7 @@ sock.sendMessage(jid, {
    caption: '🫙 Template!',
    footer: '@itsliaaa/baileys',
    templateButtons: [{
-      text: '👉?? Tap Here',
+      text: '👉🏻 Tap Here',
       id: '#Order'
    }, {
       text: '🌐 Source',

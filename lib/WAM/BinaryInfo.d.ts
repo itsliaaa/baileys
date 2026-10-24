@@ -5,4 +5,3 @@ export class BinaryInfo {
     events: any[];
     buffer: any[];
 }
-//# sourceMappingURL=BinaryInfo.d.ts.map

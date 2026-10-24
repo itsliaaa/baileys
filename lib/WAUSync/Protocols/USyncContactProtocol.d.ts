@@ -34,4 +34,3 @@ export class USyncContactProtocol {
     };
     parser(node: any): boolean;
 }
-//# sourceMappingURL=USyncContactProtocol.d.ts.map

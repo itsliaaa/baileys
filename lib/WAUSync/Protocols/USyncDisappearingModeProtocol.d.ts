@@ -10,4 +10,3 @@ export class USyncDisappearingModeProtocol {
         setAt: Date;
     } | undefined;
 }
-//# sourceMappingURL=USyncDisappearingModeProtocol.d.ts.map

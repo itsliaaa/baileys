@@ -73,4 +73,3 @@ export function downloadAndProcessHistorySyncNotification(msg: any, options: any
 }>;
 export function getHistoryMsg(message: any): any;
 import { proto } from '../../WAProto/index.js';
-//# sourceMappingURL=history.d.ts.map

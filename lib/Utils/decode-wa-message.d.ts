@@ -81,4 +81,3 @@ export function decryptMessageNode(stanza: any, meId: any, meLid: any, repositor
     author: any;
     decrypt(): Promise<void>;
 };
-//# sourceMappingURL=decode-wa-message.d.ts.map

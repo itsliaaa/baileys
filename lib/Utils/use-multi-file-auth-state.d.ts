@@ -8,4 +8,3 @@ export function useMultiFileAuthState(folder: any): Promise<{
     };
     saveCreds: () => Promise<any>;
 }>;
-//# sourceMappingURL=use-multi-file-auth-state.d.ts.map

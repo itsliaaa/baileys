@@ -18,4 +18,3 @@ export class USyncQuery {
     withLIDProtocol(): this;
     withUsernameProtocol(): this;
 }
-//# sourceMappingURL=USyncQuery.d.ts.map

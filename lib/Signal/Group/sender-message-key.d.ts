@@ -9,4 +9,3 @@ export class SenderMessageKey {
     getCipherKey(): any;
     getSeed(): any;
 }
-//# sourceMappingURL=sender-message-key.d.ts.map

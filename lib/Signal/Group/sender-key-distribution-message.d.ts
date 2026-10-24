@@ -14,4 +14,3 @@ export class SenderKeyDistributionMessage extends CiphertextMessage {
     getId(): any;
 }
 import { CiphertextMessage } from './ciphertext-message.js';
-//# sourceMappingURL=sender-key-distribution-message.d.ts.map

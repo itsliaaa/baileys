@@ -10,4 +10,3 @@ export class SenderKeyRecord {
     serialize(): any[];
 }
 import { SenderKeyState } from './sender-key-state.js';
-//# sourceMappingURL=sender-key-record.d.ts.map

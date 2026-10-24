@@ -46,4 +46,3 @@ export function wrapToBotForwardedMessage(richResponseMessage: any): {
         };
     };
 };
-//# sourceMappingURL=rich-message-utils.d.ts.map

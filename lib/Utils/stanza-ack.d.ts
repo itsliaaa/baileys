@@ -14,4 +14,3 @@ export function buildAckStanza(node: any, errorCode: any, meId: any): {
         class: any;
     };
 };
-//# sourceMappingURL=stanza-ack.d.ts.map

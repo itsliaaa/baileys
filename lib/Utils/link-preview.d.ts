@@ -4,10 +4,10 @@ export function getUrlInfo(text: any, opts?: {
         timeout: number;
     };
 }): Promise<{
-    'canonical-url': any;
+    'canonical-url': string;
     'matched-text': any;
     title: any;
     description: any;
     originalThumbnailUrl: any;
+    'preview-type': number;
 } | undefined>;
-//# sourceMappingURL=link-preview.d.ts.map

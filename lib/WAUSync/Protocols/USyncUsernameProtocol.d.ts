@@ -7,4 +7,3 @@ export class USyncUsernameProtocol {
     getUserElement(user: any): null;
     parser(node: any): any;
 }
-//# sourceMappingURL=USyncUsernameProtocol.d.ts.map

@@ -406,4 +406,3 @@ export function chatModificationToAppPatch(mod: any, jid: any): {
 };
 export function processSyncAction(syncAction: any, ev: any, me: any, initialSyncOpts: any, logger: any): void;
 import { proto } from '../../WAProto/index.js';
-//# sourceMappingURL=chat-utils.d.ts.map

@@ -36,4 +36,3 @@ export class USyncBotProfileProtocol {
         prompts: string[];
     };
 }
-//# sourceMappingURL=UsyncBotProfileProtocol.d.ts.map

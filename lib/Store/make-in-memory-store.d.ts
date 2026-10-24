@@ -8,7 +8,7 @@ export namespace waLabelAssociationKey {
     function compare(k1: any, k2: any): any;
 }
 export function makeInMemoryStore(config?: {}): {
-    chats: any;
+    chats: KeyedDB;
     contacts: {};
     messages: {};
     groupMetadata: {};
@@ -17,7 +17,7 @@ export function makeInMemoryStore(config?: {}): {
     };
     presences: {};
     labels: ObjectRepository;
-    labelAssociations: any;
+    labelAssociations: KeyedDB;
     bind: (ev: any) => void;
     /** loads messages from the store, if not found -- uses the legacy connection */
     loadMessages: (jid: any, count: any, cursor: any) => Promise<any>;
@@ -33,13 +33,13 @@ export function makeInMemoryStore(config?: {}): {
      *
      * @returns Label IDs
      **/
-    getChatLabels: (chatId: any) => any;
+    getChatLabels: (chatId: any) => any[];
     /**
      * Get labels for message
      *
      * @returns Label IDs
      **/
-    getMessageLabels: (messageId: any) => any;
+    getMessageLabels: (messageId: any) => any[];
     loadMessage: (jid: any, id: any) => Promise<any>;
     mostRecentMessage: (jid: any) => Promise<any>;
     fetchImageUrl: (jid: any, sock: any) => Promise<any>;
@@ -49,15 +49,15 @@ export function makeInMemoryStore(config?: {}): {
         id: any;
     }) => Promise<any>;
     toJSON: () => {
-        chats: any;
+        chats: KeyedDB;
         contacts: {};
         messages: {};
         labels: ObjectRepository;
-        labelAssociations: any;
+        labelAssociations: KeyedDB;
     };
     fromJSON: (json: any) => void;
     writeToFile: (path: any) => void;
     readFromFile: (path: any) => void;
 };
+import { KeyedDB } from '../Addon/index.js';
 import { ObjectRepository } from './object-repository.js';
-//# sourceMappingURL=make-in-memory-store.d.ts.map

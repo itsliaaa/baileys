@@ -27,4 +27,3 @@ export function storeTcTokensFromIqResult({ result, fallbackJid, keys, getLIDFor
 }): Promise<void>;
 /** Sentinel key under `tctoken` store holding a JSON array of tracked storage JIDs for cross-session pruning. */
 export const TC_TOKEN_INDEX_KEY: "__index";
-//# sourceMappingURL=tc-token-utils.d.ts.map

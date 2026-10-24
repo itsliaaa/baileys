@@ -4,4 +4,3 @@ export function makeMutex(): {
 export function makeKeyedMutex(): {
     mutex(key: any, task: any): Promise<any>;
 };
-//# sourceMappingURL=make-mutex.d.ts.map

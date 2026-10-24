@@ -11,4 +11,3 @@ export function handleIdentityChange(node: any, ctx: any): Promise<{
     error: unknown;
     device?: undefined;
 }>;
-//# sourceMappingURL=identity-change-handler.d.ts.map

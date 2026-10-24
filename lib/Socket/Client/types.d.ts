@@ -3,4 +3,3 @@ export class AbstractSocketClient {
     url: any;
     config: any;
 }
-//# sourceMappingURL=types.d.ts.map

@@ -10,4 +10,3 @@ export function makeOrderedDictionary(idGetter: any): {
     toJSON: () => any[];
     fromJSON: (newItems: any) => void;
 };
-//# sourceMappingURL=make-ordered-dictionary.d.ts.map

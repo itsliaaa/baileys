@@ -18,4 +18,3 @@ export function makeNoiseHandler({ keyPair: { private: privateKey, public: publi
     encodeFrame: (data: any) => any;
     decodeFrame: (newData: any, onFrame: any) => Promise<void>;
 };
-//# sourceMappingURL=noise-handler.d.ts.map

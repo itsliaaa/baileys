@@ -12,4 +12,3 @@ export class USyncLIDProtocol {
     } | null;
     parser(node: any): any;
 }
-//# sourceMappingURL=UsyncLIDProtocol.d.ts.map

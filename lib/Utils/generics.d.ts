@@ -61,4 +61,3 @@ export function getCallStatusFromNode({ tag, attrs }: {
 }): string;
 export function getCodeFromWSError(error: any): number;
 export function isWABusinessPlatform(platform: any): boolean;
-//# sourceMappingURL=generics.d.ts.map

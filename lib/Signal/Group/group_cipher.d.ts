@@ -8,4 +8,3 @@ export class GroupCipher {
     getPlainText(iv: any, key: any, ciphertext: any): Promise<any>;
     getCipherText(iv: any, key: any, plaintext: any): Promise<any>;
 }
-//# sourceMappingURL=group_cipher.d.ts.map

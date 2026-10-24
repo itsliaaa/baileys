@@ -245,6 +245,7 @@ export function makeNewsletterSocket(config: any): {
             set: (data: any) => Promise<void>;
             isInTransaction: () => boolean;
             transaction: (work: any, key: any) => Promise<any>;
+            disposeTransactionStorage: () => void;
         };
     };
     signalRepository: any;
@@ -280,4 +281,3 @@ export function makeNewsletterSocket(config: any): {
     }>;
     fetchNewChatMessageCap: () => Promise<any>;
 };
-//# sourceMappingURL=newsletter.d.ts.map

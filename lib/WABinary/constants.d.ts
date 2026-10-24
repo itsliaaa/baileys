@@ -59,4 +59,3 @@ export const LANGUAGE_KEYWORDS: {
     powershell: Set<string>;
     ps1: Set<string>;
 };
-//# sourceMappingURL=constants.d.ts.map

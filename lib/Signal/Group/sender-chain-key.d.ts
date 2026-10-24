@@ -11,4 +11,3 @@ export class SenderChainKey {
     getDerivative(seed: any, key: any): any;
 }
 import { SenderMessageKey } from './sender-message-key.js';
-//# sourceMappingURL=sender-chain-key.d.ts.map

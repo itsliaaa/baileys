@@ -295,6 +295,7 @@ export function makeMessagesRecvSocket(config: any): {
             set: (data: any) => Promise<void>;
             isInTransaction: () => boolean;
             transaction: (work: any, key: any) => Promise<any>;
+            disposeTransactionStorage: () => void;
         };
     };
     signalRepository: any;
@@ -331,4 +332,3 @@ export function makeMessagesRecvSocket(config: any): {
     fetchNewChatMessageCap: () => Promise<any>;
 };
 import { proto } from '../../WAProto/index.js';
-//# sourceMappingURL=messages-recv.d.ts.map

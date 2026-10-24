@@ -26,4 +26,3 @@ export function isHostedLidUser(jid: any): any;
 export function isJidBot(jid: any): any;
 export function jidNormalizedUser(jid: any): string;
 export function transferDevice(fromJid: any, toJid: any): string;
-//# sourceMappingURL=jid-utils.d.ts.map

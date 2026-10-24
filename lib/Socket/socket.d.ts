@@ -20,6 +20,7 @@ export function makeSocket(config: any): {
             set: (data: any) => Promise<void>;
             isInTransaction: () => boolean;
             transaction: (work: any, key: any) => Promise<any>;
+            disposeTransactionStorage: () => void;
         };
     };
     signalRepository: any;
@@ -58,4 +59,3 @@ export function makeSocket(config: any): {
 };
 import { WebSocketClient } from './Client/index.js';
 import { BinaryInfo } from '../WAM/BinaryInfo.js';
-//# sourceMappingURL=socket.d.ts.map

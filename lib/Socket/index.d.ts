@@ -492,6 +492,7 @@ declare function makeWASocket(config: any): {
             set: (data: any) => Promise<void>;
             isInTransaction: () => boolean;
             transaction: (work: any, key: any) => Promise<any>;
+            disposeTransactionStorage: () => void;
         };
     };
     signalRepository: any;
@@ -527,4 +528,3 @@ declare function makeWASocket(config: any): {
     }>;
     fetchNewChatMessageCap: () => Promise<any>;
 };
-//# sourceMappingURL=index.d.ts.map

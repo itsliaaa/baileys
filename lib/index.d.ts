@@ -9,4 +9,3 @@ export * from "./WAUSync/index.js";
 export { makeWASocket };
 export default makeWASocket;
 import makeWASocket from './Socket/index.js';
-//# sourceMappingURL=index.d.ts.map

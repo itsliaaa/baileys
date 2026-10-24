@@ -290,6 +290,7 @@ export function makeMessagesSocket(config: any): {
             set: (data: any) => Promise<void>;
             isInTransaction: () => boolean;
             transaction: (work: any, key: any) => Promise<any>;
+            disposeTransactionStorage: () => void;
         };
     };
     signalRepository: any;
@@ -327,4 +328,3 @@ export function makeMessagesSocket(config: any): {
 };
 import { MessageRetryManager } from '../Utils/index.js';
 import { proto } from '../../WAProto/index.js';
-//# sourceMappingURL=messages-send.d.ts.map

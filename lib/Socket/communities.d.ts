@@ -502,6 +502,7 @@ export function makeCommunitiesSocket(config: any): {
             set: (data: any) => Promise<void>;
             isInTransaction: () => boolean;
             transaction: (work: any, key: any) => Promise<any>;
+            disposeTransactionStorage: () => void;
         };
     };
     signalRepository: any;
@@ -559,4 +560,3 @@ export function extractCommunityMetadata(result: any): {
     addressingMode: any;
 };
 import { proto } from '../../WAProto/index.js';
-//# sourceMappingURL=communities.d.ts.map

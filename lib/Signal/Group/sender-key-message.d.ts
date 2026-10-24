@@ -16,4 +16,3 @@ export class SenderKeyMessage extends CiphertextMessage {
     getType(): number;
 }
 import { CiphertextMessage } from './ciphertext-message.js';
-//# sourceMappingURL=sender-key-message.d.ts.map

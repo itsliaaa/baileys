@@ -10,4 +10,3 @@ export function makeEventBuffer(logger: any): {
     removeAllListeners: (...args: any[]) => any;
     destroy(): void;
 };
-//# sourceMappingURL=event-buffer.d.ts.map
