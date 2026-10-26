@@ -1,12 +1,12 @@
 export class WebSocketClient extends AbstractSocketClient {
-    constructor(...args: any[]);
-    socket: any;
+    socket: null;
     get isOpen(): boolean;
     get isClosed(): boolean;
     get isClosing(): boolean;
     get isConnecting(): boolean;
     connect(): void;
     close(): Promise<void>;
-    send(str: any, cb: any): boolean;
+    send(data: any, cb: any): boolean;
+    #private;
 }
 import { AbstractSocketClient } from './types.js';

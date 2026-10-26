@@ -169,7 +169,7 @@ Choose one of the following methods to install `@itsliaaa/baileys`.
 ```json
 # NPM
 "dependencies": {
-   "@itsliaaa/baileys": "latest",
+   "@itsliaaa/baileys": "latest"
 }
 
 # GitHub
@@ -190,6 +190,7 @@ npm i github:itsliaaa/baileys
 
 - 🔗 Peer Dependencies
    - `qr@>=0.5.0` is required when using `printQRInTerminal`.
+   - `ws@^8.13.0` is required when using Node.js versions below 22.
 
 #### 🧩 Import (ESM & CJS)
 
@@ -205,13 +206,9 @@ const { makeWASocket } = require('@itsliaaa/baileys')
 
 ```javascript
 import { makeWASocket, delay, DisconnectReason, useMultiFileAuthState } from '@itsliaaa/baileys'
-import { Boom } from '@hapi/boom'
-import pino from 'pino'
 
 // --- Connect with pairing code
 const myPhoneNumber = '6288888888888'
-
-const logger = pino({ level: 'silent' })
 
 const connectToWhatsApp = async () => {
    const { state, saveCreds } = await useMultiFileAuthState('session')
@@ -220,7 +217,6 @@ const connectToWhatsApp = async () => {
       // Optional, "qr" must be installed
       printQRInTerminal: true,
 
-      logger,
       auth: state
    })
 
@@ -234,7 +230,7 @@ const connectToWhatsApp = async () => {
          console.log('🔗 Pairing code', ':', code)
       }
       else if (connection === 'close') {
-         const shouldReconnect = new Boom(connection?.lastDisconnect?.error)?.output?.statusCode !== DisconnectReason.loggedOut
+         const shouldReconnect = lastDisconnect?.error?.output?.statusCode !== DisconnectReason.loggedOut
          console.log('⚠️ Connection closed because', lastDisconnect.error, ', reconnecting ', shouldReconnect)
          if (shouldReconnect) {
             connectToWhatsApp()
@@ -272,26 +268,20 @@ connectToWhatsApp()
 
 ```javascript
 import { makeWASocket, makeInMemoryStore, delay, DisconnectReason, useMultiFileAuthState } from '@itsliaaa/baileys'
-import { Boom } from '@hapi/boom'
-import pino from 'pino'
 
 const myPhoneNumber = '6288888888888'
 
 // --- Create your store path
 const storePath = './store.json'
 
-const logger = pino({ level: 'silent' })
-
 const connectToWhatsApp = async () => {
    const { state, saveCreds } = await useMultiFileAuthState('session')
     
    const sock = makeWASocket({
-      logger,
       auth: state
    })
 
    const store = makeInMemoryStore({
-      logger,
       socket: sock
    })
 
@@ -307,7 +297,7 @@ const connectToWhatsApp = async () => {
          console.log('🔗 Pairing code', ':', code)
       }
       else if (connection === 'close') {
-         const shouldReconnect = new Boom(connection?.lastDisconnect?.error)?.output?.statusCode !== DisconnectReason.loggedOut
+         const shouldReconnect = lastDisconnect?.error?.output?.statusCode !== DisconnectReason.loggedOut
          console.log('⚠️ Connection closed because', lastDisconnect.error, ', reconnecting ', shouldReconnect)
          if (shouldReconnect) {
             connectToWhatsApp()

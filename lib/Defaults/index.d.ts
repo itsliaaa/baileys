@@ -150,6 +150,12 @@ export namespace TimeMs {
     let Day: number;
     let Week: number;
 }
+export namespace WEBSOCKET_STATES {
+    let CONNECTING: number;
+    let OPEN: number;
+    let CLOSING: number;
+    let CLOSED: number;
+}
 import { proto } from '../../WAProto/index.js';
 declare const version: number[];
 import { makeLibSignalRepository } from '../Signal/libsignal.js';
