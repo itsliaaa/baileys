@@ -2,7 +2,7 @@ export function promiseTimeout(ms: any, promise: any): Promise<any>;
 export function bindWaitForEvent(ev: any, event: any): (check: any, timeoutMs: any) => Promise<void>;
 export function trimUndefined(obj: any): any;
 export function bytesToCrockford(buffer: any): string;
-export function encodeNewsletterMessage(message: any): any;
+export function encodeNewsletterMessage(message: any): Uint8Array<ArrayBufferLike>;
 export namespace BufferJSON {
     function replacer(k: any, value: any): any;
     function reviver(_: any, value: any): any;

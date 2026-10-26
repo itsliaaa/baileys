@@ -12,7 +12,7 @@ export function decryptPollVote({ encPayload, encIv }: {
     pollMsgId: any;
     pollEncKey: any;
     voterJid: any;
-}): proto.Message.PollVoteMessage;
+}): proto.Message.PollVoteMessage & proto.Message.PollVoteMessage.$Properties;
 /**
  * Decrypt an event response
  * @param response encrypted event response
@@ -27,7 +27,7 @@ export function decryptEventResponse({ encPayload, encIv }: {
     eventMsgId: any;
     eventEncKey: any;
     responderJid: any;
-}): proto.Message.EventResponseMessage;
+}): proto.Message.EventResponseMessage & proto.Message.EventResponseMessage.$Properties;
 /**
  * Decrypt a `secretEncryptedMessage` carrying a `MESSAGE_EDIT` payload.
  *
@@ -59,7 +59,7 @@ export function decryptMessageEdit({ encPayload, encIv }: {
     originalMsgId: any;
     editEncKey: any;
     editorJid: any;
-}): proto.Message;
+}): proto.Message & proto.Message.$Shape;
 export function cleanMessage(message: any, meId: any, meLid: any): void;
 export function isRealMessage(message: any): boolean;
 export function shouldIncrementChatUnread(message: any): boolean;

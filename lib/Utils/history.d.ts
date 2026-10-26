@@ -1,4 +1,4 @@
-export function downloadHistory(msg: any, options: any): Promise<proto.HistorySync>;
+export function downloadHistory(msg: any, options: any): Promise<proto.HistorySync & proto.HistorySync.$Shape>;
 export function processHistoryMessage(item: any, logger: any): {
     chats: any[];
     contacts: ({

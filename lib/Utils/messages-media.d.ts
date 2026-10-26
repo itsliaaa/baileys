@@ -127,6 +127,6 @@ export function decodeMediaRetryNode(node: any): {
 export function decryptMediaRetryData({ ciphertext, iv }: {
     ciphertext: any;
     iv: any;
-}, mediaKey: any, msgId: any): proto.MediaRetryNotification;
+}, mediaKey: any, msgId: any): proto.MediaRetryNotification & proto.MediaRetryNotification.$Properties;
 export function getStatusCodeForMediaRetry(code: any): any;
 import { proto } from '../../WAProto/index.js';

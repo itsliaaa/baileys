@@ -1,6 +1,6 @@
 {
    "name": "@itsliaaa/baileys",
-   "version": "0.4.0",
+   "version": "0.3.19",
    "description": "Enhanced Baileys v7 with fixes for newsletter media uploads, plus support for interactive messages, albums, and additional message types.",
    "main": "lib/index.js",
    "types": "lib/index.d.ts",
@@ -37,8 +37,6 @@
    "license": "MIT",
    "dependencies": {
       "@itsliaaa/starforge": "0.0.0-alpha.10",
-      "libsignal": "^6.0.0",
-      "protobufjs": "^7.6.6",
       "whatsapp-rust-bridge": "0.5.5",
       "ws": "^8.22.0"
    },
@@ -46,6 +44,7 @@
       "@napi-rs/image": "^1.12.0",
       "better-sqlite3": ">=11.0.0",
       "jimp": "^1.6.0",
+      "qr": ">=0.5.0",
       "sharp": ">=0.33.3"
    },
    "peerDependenciesMeta": {
@@ -56,6 +55,9 @@
          "optional": true
       },
       "jimp": {
+         "optional": true
+      },
+      "qr": {
          "optional": true
       },
       "sharp": {

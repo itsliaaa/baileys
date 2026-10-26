@@ -162,12 +162,14 @@ This fork designed for production use with a focus on clarity and safety:
 
 ### 📥 Installation
 
+Choose one of the following methods to install `@itsliaaa/baileys`.
+
 - 📄 Via `package.json`
 
 ```json
 # NPM
 "dependencies": {
-   "@itsliaaa/baileys": "latest"
+   "@itsliaaa/baileys": "latest",
 }
 
 # GitHub
@@ -185,6 +187,9 @@ npm i @itsliaaa/baileys@latest
 # GitHub
 npm i github:itsliaaa/baileys
 ```
+
+- 🔗 Peer Dependencies
+   - `qr@>=0.5.0` is required when using `printQRInTerminal`.
 
 #### 🧩 Import (ESM & CJS)
 
@@ -212,6 +217,9 @@ const connectToWhatsApp = async () => {
    const { state, saveCreds } = await useMultiFileAuthState('session')
     
    const sock = makeWASocket({
+      // Optional, "qr" must be installed
+      printQRInTerminal: true,
+
       logger,
       auth: state
    })
@@ -219,8 +227,8 @@ const connectToWhatsApp = async () => {
    sock.ev.on('creds.update', saveCreds)
 
    sock.ev.on('connection.update', (update) => {
-      const { connection, lastDisconnect } = update
-      if (connection === 'connecting' && !sock.authState.creds.registered) {
+      const { connection, lastDisconnect, qr } = update
+      if (qr && !sock.authState.creds.registered) {
          await delay(1500)
          const code = await sock.requestPairingCode(myPhoneNumber)
          console.log('🔗 Pairing code', ':', code)
@@ -2026,9 +2034,9 @@ Perfect for managing groups, moderating chats, and adding fun with quiz games an
 
 👉🏻 [@itsliaaa/starseed](https://github.com/itsliaaa/starseed#readme)
 
-A lightweight yet powerful Baileys wrapper designed to simplify development while extending support for additional message types and WhatsApp features.
+A toolkit for building WhatsApp bots with Zapo.
 
-👉🏻 [@itsliaaa/starcore](https://www.npmjs.com/package/@itsliaaa/starcore)
+👉🏻 [@itsliaaa/starforge](https://www.npmjs.com/package/@itsliaaa/starforge)
 
 ### 📦 Fork Base
 
@@ -2046,8 +2054,6 @@ Full credit is attributed to the original maintainers and contributors of Bailey
 <!-- Please do not replace my name with yours. It's disrespectful. -->
 
 This fork includes additional enhancements and modifications by [Lia Wynn](https://github.com/itsliaaa)
-
-Special thanks to [itsreimau](https://github.com/itsreimau) for the fix to the `updateBlockStatus` implementation.
 
 > [!CAUTION]
 > ⚠️ **Modification, removal, or misrepresentation of these credits is strictly prohibited. Any redistribution or fork must preserve this section in its original form without exception.**

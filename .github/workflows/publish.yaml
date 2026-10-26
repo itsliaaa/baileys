@@ -24,7 +24,7 @@ jobs:
           scope: '@itsliaaa'
 
       - run: corepack enable
-      - run: yarn install
+      - run: yarn install --no-immutable
 
       - name: Publish to npm
         run: npm publish --access public --provenance --tag latest
