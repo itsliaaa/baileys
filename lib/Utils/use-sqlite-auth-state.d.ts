@@ -1,10 +1,11 @@
-export function useSqliteAuthState(opts: any): Promise<{
+export function useSqliteAuthState(dbPath: any, ownedDatabase: any): Promise<{
     state: {
         creds: any;
         keys: {
-            get: (type: any, ids: any) => Promise<{}>;
-            set: (data: any) => Promise<void>;
+            get: (type: any, ids: any) => {};
+            set: (data: any) => void;
         };
     };
-    saveCreds: () => Promise<void>;
+    saveCreds: () => void;
+    close: () => any;
 }>;

@@ -3,7 +3,7 @@
 [![Logo](https://files.catbox.moe/c5s9g0.jpg)](https://www.npmjs.com/package/@itsliaaa/baileys)
 
 <p align="center">
-   Enhanced Baileys v7 with fixes for newsletter media uploads, plus support for interactive messages, albums, and additional message types.
+   A lightweight, dependency-minimal Baileys v7 fork with newsletter media upload fixes, interactive messages, albums, and extended message type support.
    <br><br>
    <a href="https://www.npmjs.com/package/@itsliaaa/baileys">
       <img src="https://img.shields.io/npm/v/@itsliaaa/baileys?style=for-the-badge&logo=npm"/>
@@ -135,6 +135,9 @@ This fork designed for production use with a focus on clarity and safety:
 - 📁 Reintroduced [`makeInMemoryStore`](#%EF%B8%8F-implementing-data-store) with a minimal ESM adaptation and small adjustments for Baileys v7.
 - 📦 Switched FFmpeg execution from `exec` to `spawn` for safer process handling.
 - 🗃️ Added [`@napi-rs/image`](https://www.npmjs.com/package/@napi-rs/image) as a supported image processing backend in [`getImageProcessingLibrary()`](#%EF%B8%8F-image-processing), offering a balance between performance and compatibility.
+- ◻️ Reintroduced `printQRInTerminal` in `makeWASocket()`.
+- 📡 Migrated signal transport to a Rust-based WASM.
+- 🌱 Reduced transitive dependencies from 13 to just 2 with optional peer integrations.
 
 ### 📨 Messages Handling & Compatibility
 - 📩 Expanded messages support for:
@@ -143,21 +146,21 @@ This fork designed for production use with a focus on clarity and safety:
    - 👉🏻 [Interactive Message](#-sending-interactive-messages) (buttons, lists, native flows, templates, carousels).
    - 🎞️ [Status Mention Message](#%EF%B8%8F-status-mention)
    - 📦 [Sticker Pack Message](#-sticker-pack)
-   - ✨ [Rich Response Message](#-rich-response) **[NEW]**
-   - 🧾 [Message with Code Blocks](#-message-with-code-block) **[NEW]**
-   - [🌏 Message with Inline Entities](#-message-with-inline-entities) **[NEW]**
-   - 📋 [Message with Table](#-message-with-table) **[NEW]**
+   - ✨ [Rich Response Message](#-rich-response)
+   - 🧾 [Message with Code Blocks](#-message-with-code-block)
+   - [🌏 Message with Inline Entities](#-message-with-inline-entities)
+   - 📋 [Message with Table](#-message-with-table)
    - 💳 [Payment-related Message](#-sending-payment-messages) (payment requests, invites, orders, invoices).
 - 📰 Simplified sending messages with ad thumbnail using [`externalAdReply`](#-external-ad-reply), without requiring manual `contextInfo`.
-- 💭 Added support for quoting messages inside channel (newsletter). **[NEW]**
-- 🎀 Added support for [custom button icon](#%EF%B8%8F-interactive). **[NEW]**
+- 💭 Added support for quoting messages inside channel (newsletter).
+- 🎀 Added support for [custom button icon](#%EF%B8%8F-interactive).
 
 ### 🧩 Additional Message Options
 - 👁️ Added optional boolean flags for message handling:  
    - 🤖 [`ai`](#-ai-icon) - AI icon on message
-   - 📣 [`mentionAll`](#-mention) - Mention all group participants without requiring their JIDs in `mentions` or `mentionedJid` **[NEW]**
+   - 📣 [`mentionAll`](#-mention) - Mention all group participants without requiring their JIDs in `mentions` or `mentionedJid`
    - 🔧 [`ephemeral`](#-ephemeral), [`groupStatus`](#%E2%80%8D%E2%80%8D-group-status), [`isLottie`](#-lottie-sticker), [`spoiler`](#-spoiler), [`viewOnce`](#%EF%B8%8F-view-once), [`viewOnceV2`](#%EF%B8%8F-view-once-v2), [`viewOnceV2Extension`](#%EF%B8%8F-view-once-v2-extension), [`interactiveAsTemplate`](#%EF%B8%8F-interactive) - Message wrappers
-   - 🔒 [`secureMetaServiceLabel`](#%EF%B8%8F-secure-meta-service-label) - Secure meta service label on message **[NEW]**
+   - 🔒 [`secureMetaServiceLabel`](#%EF%B8%8F-secure-meta-service-label) - Secure meta service label on message
    - 📄 [`raw`](#-raw) - Build your message manually **(DO NOT USE FOR EXPLOITATION)**
 
 ### 📥 Installation
@@ -189,8 +192,9 @@ npm i github:itsliaaa/baileys
 ```
 
 - 🔗 Peer Dependencies
-   - `qr@>=0.5.0` is required when using `printQRInTerminal`.
-   - `ws@^8.13.0` is required when using Node.js versions below 22.
+  - `better-sqlite3@>=11.0.0` is required for `useSqliteAuthState` when using Node.js versions below `>22.13`.
+  - `qr@>=0.5.0` is required for `printQRInTerminal`.
+  - `ws@^8.13.0` is required when using Node.js versions below `>22`.
 
 #### 🧩 Import (ESM & CJS)
 
@@ -258,8 +262,22 @@ connectToWhatsApp()
 
 #### 🔐 Auth State
 
-> [!NOTE]
-> You can use the experimental `useSingleFileAuthState` and `useSqliteAuthState` as an alternative to `useMultiFileAuthState`. However, `useSingleFileAuthState` already includes an internal caching mechanism, so there is no need to wrap `state.keys` with `makeCacheableSignalKeyStore`.
+```javascript
+import {
+   useMultiFileAuthState,
+   useSingleFileAuthState,
+   useSqliteAuthState
+} from '@itsliaaa/baileys'
+```
+
+- 🗒️ `useMultiFileAuthState(folder?: string)`
+   Stores authentication credentials and keys in separate JSON files within a directory. Suitable for users who prefer the traditional multi-file storage approach.
+
+- 📄 `useSingleFileAuthState(fileName?: string)`
+   Stores all authentication credentials and keys in a single JSON file for simpler file management.
+
+- 🗄️ `useSqliteAuthState(dbPath?: string, ownedDatabase?: object)`
+   Stores authentication credentials and keys in an SQLite database. No external SQLite dependency is required when using Bun or Node.js `>=22.13`. For older Node.js versions, install `better-sqlite3`.
 
 ### 🗄️ Implementing Data Store
 
@@ -2019,8 +2037,7 @@ sock.ev.on('settings.update', (update) => {})
 
 ### 🚀 Try the Bot
 
-A fast, lightweight, and modular WhatsApp bot built with [@itsliaaa/baileys](https://www.npmjs.com/package/@itsliaaa/baileys).
-Perfect for managing groups, moderating chats, and adding fun with quiz games and handy tools.
+A Simple WhatsApp Bot Built with Zapo.
 
 👉🏻 [@itsliaaa/starseed](https://github.com/itsliaaa/starseed#readme)
 
