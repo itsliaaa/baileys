@@ -1,3 +1,7 @@
+/*
+ * https://www.npmjs.com/package/@itsliaaa/baileys
+ * Type definitions adapted with lightweight types to match index.js
+ */
 interface PbReader {
 	len: number
 	pos: number
@@ -1603,7 +1607,9 @@ export namespace proto {
 			HATCH_ARTIFACT_CARD_ENABLED = 79,
 			AI_STUDY_CENTER_ENABLED = 80,
 			AI_MUSE_JARVIS_SCHEMA_ENABLED = 81,
-			AI_STUDY_QUIZ_ENABLED = 82
+			AI_STUDY_QUIZ_ENABLED = 82,
+			HATCH_CVM_ENABLED = 83,
+			RICH_RESPONSE_SOCIAL_ENTITY_PREFETCH_SCHEDULER_ENABLED = 84
 		}
 	}
 	interface IBotCommandMetadata extends proto.BotCommandMetadata.$Properties {
@@ -2052,6 +2058,29 @@ export namespace proto {
 			CLIPPY = 1
 		}
 	}
+	interface IBotInterjectionMetadata extends proto.BotInterjectionMetadata.$Properties {
+	}
+	class BotInterjectionMetadata {
+		constructor(p?: proto.BotInterjectionMetadata.$Properties)
+		$unknowns?: Uint8Array[]
+		targetPromptMessageId?: (string|null)
+		foldedPromptMessageIds: string[]
+		static create(properties: proto.BotInterjectionMetadata.$Shape): proto.BotInterjectionMetadata & proto.BotInterjectionMetadata.$Shape
+		static create(properties?: proto.BotInterjectionMetadata.$Properties): proto.BotInterjectionMetadata
+		static encode(m: proto.BotInterjectionMetadata.$Properties, w?: PbWriter): PbWriter
+		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotInterjectionMetadata & proto.BotInterjectionMetadata.$Shape
+		static fromObject(d: { [k: string]: any }): proto.BotInterjectionMetadata
+		static toObject(m: proto.BotInterjectionMetadata, o?: PbConversionOptions): { [k: string]: any }
+		toJSON(): { [k: string]: any }
+	}
+	namespace BotInterjectionMetadata {
+		interface $Properties {
+			targetPromptMessageId?: (string|null)
+			foldedPromptMessageIds?: (string[]|null)
+			$unknowns?: Uint8Array[]
+		}
+		type $Shape = proto.BotInterjectionMetadata.$Properties
+	}
 	interface IBotLinkedAccount extends proto.BotLinkedAccount.$Properties {
 	}
 	class BotLinkedAccount {
@@ -2327,6 +2356,7 @@ export namespace proto {
 		pttPromptMetadata?: (proto.BotPttPromptMetadata.$Properties|null)
 		botHistoryShareMetadata?: (proto.BotHistoryShareMetadata.$Properties|null)
 		responseStoppedByUser?: (boolean|null)
+		interjectionMetadata?: (proto.BotInterjectionMetadata.$Properties|null)
 		internalMetadata?: (Uint8Array|null)
 		static create(properties: proto.BotMetadata.$Shape): proto.BotMetadata & proto.BotMetadata.$Shape
 		static create(properties?: proto.BotMetadata.$Properties): proto.BotMetadata
@@ -2381,6 +2411,7 @@ export namespace proto {
 			pttPromptMetadata?: (proto.BotPttPromptMetadata.$Properties|null)
 			botHistoryShareMetadata?: (proto.BotHistoryShareMetadata.$Properties|null)
 			responseStoppedByUser?: (boolean|null)
+			interjectionMetadata?: (proto.BotInterjectionMetadata.$Properties|null)
 			internalMetadata?: (Uint8Array|null)
 			$unknowns?: Uint8Array[]
 		}
@@ -4011,7 +4042,9 @@ export namespace proto {
 				TABLET = 1,
 				DESKTOP = 2,
 				WEARABLE = 3,
-				VR = 4
+				VR = 4,
+				SMART_DISPLAY = 5,
+				SMART_SPEAKER = 6
 			}
 			enum DistributionChannel {
 				APPSTORE = 0,
@@ -4419,6 +4452,7 @@ export namespace proto {
 		experienceIds: number[]
 		partnerDeepLinkToken?: (string|null)
 		sourceExperienceId?: (number|null)
+		sourceExperienceIds: number[]
 		static create(properties: proto.ContextInfo.$Shape): proto.ContextInfo & proto.ContextInfo.$Shape
 		static create(properties?: proto.ContextInfo.$Properties): proto.ContextInfo
 		static encode(m: proto.ContextInfo.$Properties, w?: PbWriter): PbWriter
@@ -4496,6 +4530,7 @@ export namespace proto {
 			experienceIds?: (number[]|null)
 			partnerDeepLinkToken?: (string|null)
 			sourceExperienceId?: (number|null)
+			sourceExperienceIds?: (number[]|null)
 			$unknowns?: Uint8Array[]
 		}
 		type $Shape = {
@@ -4566,6 +4601,7 @@ export namespace proto {
 		  experienceIds?: number[]|null
 		  partnerDeepLinkToken?: string|null
 		  sourceExperienceId?: number|null
+		  sourceExperienceIds?: number[]|null
 		  $unknowns?: Uint8Array[]
 		}
 		interface IAdReplyInfo extends proto.ContextInfo.AdReplyInfo.$Properties {
@@ -11387,6 +11423,7 @@ export namespace proto {
 					startTimeInMs?: (number|Long|null)
 					endTimeInMs?: (number|Long|null)
 					text?: (string|null)
+					wordOffsets: proto.Message.MusicMessage.Lyrics.Line.WordOffset.$Properties[]
 					static create(properties: proto.Message.MusicMessage.Lyrics.Line.$Shape): proto.Message.MusicMessage.Lyrics.Line & proto.Message.MusicMessage.Lyrics.Line.$Shape
 					static create(properties?: proto.Message.MusicMessage.Lyrics.Line.$Properties): proto.Message.MusicMessage.Lyrics.Line
 					static encode(m: proto.Message.MusicMessage.Lyrics.Line.$Properties, w?: PbWriter): PbWriter
@@ -11400,9 +11437,37 @@ export namespace proto {
 						startTimeInMs?: (number|Long|null)
 						endTimeInMs?: (number|Long|null)
 						text?: (string|null)
+						wordOffsets?: (proto.Message.MusicMessage.Lyrics.Line.WordOffset.$Properties[]|null)
 						$unknowns?: Uint8Array[]
 					}
 					type $Shape = proto.Message.MusicMessage.Lyrics.Line.$Properties
+					interface IWordOffset extends proto.Message.MusicMessage.Lyrics.Line.WordOffset.$Properties {
+					}
+					class WordOffset {
+						constructor(p?: proto.Message.MusicMessage.Lyrics.Line.WordOffset.$Properties)
+						$unknowns?: Uint8Array[]
+						startIndex?: (number|null)
+						endIndex?: (number|null)
+						startOffsetMs?: (number|Long|null)
+						endOffsetMs?: (number|Long|null)
+						static create(properties: proto.Message.MusicMessage.Lyrics.Line.WordOffset.$Shape): proto.Message.MusicMessage.Lyrics.Line.WordOffset & proto.Message.MusicMessage.Lyrics.Line.WordOffset.$Shape
+						static create(properties?: proto.Message.MusicMessage.Lyrics.Line.WordOffset.$Properties): proto.Message.MusicMessage.Lyrics.Line.WordOffset
+						static encode(m: proto.Message.MusicMessage.Lyrics.Line.WordOffset.$Properties, w?: PbWriter): PbWriter
+						static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.MusicMessage.Lyrics.Line.WordOffset & proto.Message.MusicMessage.Lyrics.Line.WordOffset.$Shape
+						static fromObject(d: { [k: string]: any }): proto.Message.MusicMessage.Lyrics.Line.WordOffset
+						static toObject(m: proto.Message.MusicMessage.Lyrics.Line.WordOffset, o?: PbConversionOptions): { [k: string]: any }
+						toJSON(): { [k: string]: any }
+					}
+					namespace WordOffset {
+						interface $Properties {
+							startIndex?: (number|null)
+							endIndex?: (number|null)
+							startOffsetMs?: (number|Long|null)
+							endOffsetMs?: (number|Long|null)
+							$unknowns?: Uint8Array[]
+						}
+						type $Shape = proto.Message.MusicMessage.Lyrics.Line.WordOffset.$Properties
+					}
 				}
 			}
 			enum MusicMessageStyle {
@@ -11974,6 +12039,7 @@ export namespace proto {
 				oldestMsgTimestampMs?: (number|Long|null)
 				accountLid?: (string|null)
 				supportInlineResponse?: (boolean|null)
+				mode?: (proto.Message.PeerDataOperationRequestMessage.HistorySyncOnDemandRequest.Mode|null)
 				static create(properties: proto.Message.PeerDataOperationRequestMessage.HistorySyncOnDemandRequest.$Shape): proto.Message.PeerDataOperationRequestMessage.HistorySyncOnDemandRequest & proto.Message.PeerDataOperationRequestMessage.HistorySyncOnDemandRequest.$Shape
 				static create(properties?: proto.Message.PeerDataOperationRequestMessage.HistorySyncOnDemandRequest.$Properties): proto.Message.PeerDataOperationRequestMessage.HistorySyncOnDemandRequest
 				static encode(m: proto.Message.PeerDataOperationRequestMessage.HistorySyncOnDemandRequest.$Properties, w?: PbWriter): PbWriter
@@ -11991,9 +12057,14 @@ export namespace proto {
 					oldestMsgTimestampMs?: (number|Long|null)
 					accountLid?: (string|null)
 					supportInlineResponse?: (boolean|null)
+					mode?: (proto.Message.PeerDataOperationRequestMessage.HistorySyncOnDemandRequest.Mode|null)
 					$unknowns?: Uint8Array[]
 				}
 				type $Shape = proto.Message.PeerDataOperationRequestMessage.HistorySyncOnDemandRequest.$Properties
+				enum Mode {
+					MODE_UNSPECIFIED = 0,
+					INITIAL_REVERSE_HISTORY = 1
+				}
 			}
 			interface IPlaceholderMessageResendRequest extends proto.Message.PeerDataOperationRequestMessage.PlaceholderMessageResendRequest.$Properties {
 			}
@@ -14953,6 +15024,8 @@ export namespace proto {
 			artworkMediaKey?: (Uint8Array|null)
 			consumptionCheckedAtS?: (number|Long|null)
 			isAvailableForConsumption?: (boolean|null)
+			lyrics: proto.MsgOpaqueData.MusicData.LyricsLine.$Properties[]
+			lyricsConfirmedAtS?: (number|Long|null)
 			static create(properties: proto.MsgOpaqueData.MusicData.$Shape): proto.MsgOpaqueData.MusicData & proto.MsgOpaqueData.MusicData.$Shape
 			static create(properties?: proto.MsgOpaqueData.MusicData.$Properties): proto.MsgOpaqueData.MusicData
 			static encode(m: proto.MsgOpaqueData.MusicData.$Properties, w?: PbWriter): PbWriter
@@ -14981,9 +15054,65 @@ export namespace proto {
 				artworkMediaKey?: (Uint8Array|null)
 				consumptionCheckedAtS?: (number|Long|null)
 				isAvailableForConsumption?: (boolean|null)
+				lyrics?: (proto.MsgOpaqueData.MusicData.LyricsLine.$Properties[]|null)
+				lyricsConfirmedAtS?: (number|Long|null)
 				$unknowns?: Uint8Array[]
 			}
 			type $Shape = proto.MsgOpaqueData.MusicData.$Properties
+			interface ILyricsLine extends proto.MsgOpaqueData.MusicData.LyricsLine.$Properties {
+			}
+			class LyricsLine {
+				constructor(p?: proto.MsgOpaqueData.MusicData.LyricsLine.$Properties)
+				$unknowns?: Uint8Array[]
+				startTimeMs?: (number|null)
+				endTimeMs?: (number|null)
+				text?: (string|null)
+				wordOffsets: proto.MsgOpaqueData.MusicData.LyricsLine.WordOffset.$Properties[]
+				static create(properties: proto.MsgOpaqueData.MusicData.LyricsLine.$Shape): proto.MsgOpaqueData.MusicData.LyricsLine & proto.MsgOpaqueData.MusicData.LyricsLine.$Shape
+				static create(properties?: proto.MsgOpaqueData.MusicData.LyricsLine.$Properties): proto.MsgOpaqueData.MusicData.LyricsLine
+				static encode(m: proto.MsgOpaqueData.MusicData.LyricsLine.$Properties, w?: PbWriter): PbWriter
+				static decode(r: (PbReader|Uint8Array), l?: number): proto.MsgOpaqueData.MusicData.LyricsLine & proto.MsgOpaqueData.MusicData.LyricsLine.$Shape
+				static fromObject(d: { [k: string]: any }): proto.MsgOpaqueData.MusicData.LyricsLine
+				static toObject(m: proto.MsgOpaqueData.MusicData.LyricsLine, o?: PbConversionOptions): { [k: string]: any }
+				toJSON(): { [k: string]: any }
+			}
+			namespace LyricsLine {
+				interface $Properties {
+					startTimeMs?: (number|null)
+					endTimeMs?: (number|null)
+					text?: (string|null)
+					wordOffsets?: (proto.MsgOpaqueData.MusicData.LyricsLine.WordOffset.$Properties[]|null)
+					$unknowns?: Uint8Array[]
+				}
+				type $Shape = proto.MsgOpaqueData.MusicData.LyricsLine.$Properties
+				interface IWordOffset extends proto.MsgOpaqueData.MusicData.LyricsLine.WordOffset.$Properties {
+				}
+				class WordOffset {
+					constructor(p?: proto.MsgOpaqueData.MusicData.LyricsLine.WordOffset.$Properties)
+					$unknowns?: Uint8Array[]
+					startIndex?: (number|null)
+					endIndex?: (number|null)
+					startOffsetMs?: (number|null)
+					endOffsetMs?: (number|null)
+					static create(properties: proto.MsgOpaqueData.MusicData.LyricsLine.WordOffset.$Shape): proto.MsgOpaqueData.MusicData.LyricsLine.WordOffset & proto.MsgOpaqueData.MusicData.LyricsLine.WordOffset.$Shape
+					static create(properties?: proto.MsgOpaqueData.MusicData.LyricsLine.WordOffset.$Properties): proto.MsgOpaqueData.MusicData.LyricsLine.WordOffset
+					static encode(m: proto.MsgOpaqueData.MusicData.LyricsLine.WordOffset.$Properties, w?: PbWriter): PbWriter
+					static decode(r: (PbReader|Uint8Array), l?: number): proto.MsgOpaqueData.MusicData.LyricsLine.WordOffset & proto.MsgOpaqueData.MusicData.LyricsLine.WordOffset.$Shape
+					static fromObject(d: { [k: string]: any }): proto.MsgOpaqueData.MusicData.LyricsLine.WordOffset
+					static toObject(m: proto.MsgOpaqueData.MusicData.LyricsLine.WordOffset, o?: PbConversionOptions): { [k: string]: any }
+					toJSON(): { [k: string]: any }
+				}
+				namespace WordOffset {
+					interface $Properties {
+						startIndex?: (number|null)
+						endIndex?: (number|null)
+						startOffsetMs?: (number|null)
+						endOffsetMs?: (number|null)
+						$unknowns?: Uint8Array[]
+					}
+					type $Shape = proto.MsgOpaqueData.MusicData.LyricsLine.WordOffset.$Properties
+				}
+			}
 		}
 		enum PollContentType {
 			UNKNOWN = 0,
@@ -15186,6 +15315,7 @@ export namespace proto {
 		BB_PRO_PENDING_CUSTOMER_BASE_ACTION = 98,
 		COMMUNITY_NESTING_STATE_ACTION = 99,
 		SHARED_DEVICE_SECRET_ACTION = 100,
+		HATCH_CVM_SECRET_ACTION = 101,
 		SHARE_OWN_PN = 10001,
 		BUSINESS_BROADCAST_ACTION = 10002,
 		AI_THREAD_DELETE_ACTION = 10003
@@ -17341,6 +17471,7 @@ export namespace proto {
 		bbProPendingCustomerBaseAction?: (proto.SyncActionValue.BBProPendingCustomerBaseAction.$Properties|null)
 		communityNestingStateAction?: (proto.SyncActionValue.CommunityNestingStateAction.$Properties|null)
 		sharedDeviceSecretAction?: (proto.SyncActionValue.SharedDeviceSecretAction.$Properties|null)
+		hatchCvmSecretAction?: (proto.SyncActionValue.HatchCVMSecretAction.$Properties|null)
 		static create(properties: proto.SyncActionValue.$Shape): proto.SyncActionValue & proto.SyncActionValue.$Shape
 		static create(properties?: proto.SyncActionValue.$Properties): proto.SyncActionValue
 		static encode(m: proto.SyncActionValue.$Properties, w?: PbWriter): PbWriter
@@ -17442,6 +17573,7 @@ export namespace proto {
 			bbProPendingCustomerBaseAction?: (proto.SyncActionValue.BBProPendingCustomerBaseAction.$Properties|null)
 			communityNestingStateAction?: (proto.SyncActionValue.CommunityNestingStateAction.$Properties|null)
 			sharedDeviceSecretAction?: (proto.SyncActionValue.SharedDeviceSecretAction.$Properties|null)
+			hatchCvmSecretAction?: (proto.SyncActionValue.HatchCVMSecretAction.$Properties|null)
 			$unknowns?: Uint8Array[]
 		}
 		type $Shape = {
@@ -17536,6 +17668,7 @@ export namespace proto {
 		  bbProPendingCustomerBaseAction?: proto.SyncActionValue.BBProPendingCustomerBaseAction.$Shape|null
 		  communityNestingStateAction?: proto.SyncActionValue.CommunityNestingStateAction.$Shape|null
 		  sharedDeviceSecretAction?: proto.SyncActionValue.SharedDeviceSecretAction.$Shape|null
+		  hatchCvmSecretAction?: proto.SyncActionValue.HatchCVMSecretAction.$Shape|null
 		  $unknowns?: Uint8Array[]
 		}
 		interface IAgentAction extends proto.SyncActionValue.AgentAction.$Properties {
@@ -18085,9 +18218,9 @@ export namespace proto {
 			}
 			type $Shape = proto.SyncActionValue.CommunityNestingStateAction.$Properties
 			enum NestingState {
-				NESTING_STATE_UNKNOWN = 0,
-				NESTING_STATE_NESTED = 1,
-				NESTING_STATE_UNNESTED = 2
+				PLATFORM_DEFAULT = 0,
+				NESTED = 1,
+				UNNESTED = 2
 			}
 		}
 		interface IContactAction extends proto.SyncActionValue.ContactAction.$Properties {
@@ -18474,6 +18607,29 @@ export namespace proto {
 				GROUP_HISTORY_TOGGLE_MODE_ON = 1,
 				GROUP_HISTORY_TOGGLE_MODE_OFF = 2
 			}
+		}
+		interface IHatchCVMSecretAction extends proto.SyncActionValue.HatchCVMSecretAction.$Properties {
+		}
+		class HatchCVMSecretAction {
+			constructor(p?: proto.SyncActionValue.HatchCVMSecretAction.$Properties)
+			$unknowns?: Uint8Array[]
+			secret?: (Uint8Array|null)
+			generation?: (number|Long|null)
+			static create(properties: proto.SyncActionValue.HatchCVMSecretAction.$Shape): proto.SyncActionValue.HatchCVMSecretAction & proto.SyncActionValue.HatchCVMSecretAction.$Shape
+			static create(properties?: proto.SyncActionValue.HatchCVMSecretAction.$Properties): proto.SyncActionValue.HatchCVMSecretAction
+			static encode(m: proto.SyncActionValue.HatchCVMSecretAction.$Properties, w?: PbWriter): PbWriter
+			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.HatchCVMSecretAction & proto.SyncActionValue.HatchCVMSecretAction.$Shape
+			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.HatchCVMSecretAction
+			static toObject(m: proto.SyncActionValue.HatchCVMSecretAction, o?: PbConversionOptions): { [k: string]: any }
+			toJSON(): { [k: string]: any }
+		}
+		namespace HatchCVMSecretAction {
+			interface $Properties {
+				secret?: (Uint8Array|null)
+				generation?: (number|Long|null)
+				$unknowns?: Uint8Array[]
+			}
+			type $Shape = proto.SyncActionValue.HatchCVMSecretAction.$Properties
 		}
 		interface IInteractiveMessageAction extends proto.SyncActionValue.InteractiveMessageAction.$Properties {
 		}
@@ -19409,6 +19565,7 @@ export namespace proto {
 			chatThemeId?: (string|null)
 			colorSchemeId?: (string|null)
 			stockWallpaperImageId?: (string|null)
+			mediaAutoDownloadQuality?: (proto.SyncActionValue.SettingsSyncAction.MediaAutoDownloadQualitySetting|null)
 			static create(properties: proto.SyncActionValue.SettingsSyncAction.$Shape): proto.SyncActionValue.SettingsSyncAction & proto.SyncActionValue.SettingsSyncAction.$Shape
 			static create(properties?: proto.SyncActionValue.SettingsSyncAction.$Properties): proto.SyncActionValue.SettingsSyncAction
 			static encode(m: proto.SyncActionValue.SettingsSyncAction.$Properties, w?: PbWriter): PbWriter
@@ -19453,6 +19610,7 @@ export namespace proto {
 				chatThemeId?: (string|null)
 				colorSchemeId?: (string|null)
 				stockWallpaperImageId?: (string|null)
+				mediaAutoDownloadQuality?: (proto.SyncActionValue.SettingsSyncAction.MediaAutoDownloadQualitySetting|null)
 				$unknowns?: Uint8Array[]
 			}
 			type $Shape = proto.SyncActionValue.SettingsSyncAction.$Properties
@@ -19461,6 +19619,12 @@ export namespace proto {
 				ALWAYS = 1,
 				NEVER = 2,
 				ONLY_WHEN_APP_IS_OPEN = 3
+			}
+			enum MediaAutoDownloadQualitySetting {
+				MEDIA_AUTO_DOWNLOAD_QUALITY_UNKNOWN = 0,
+				MEDIA_AUTO_DOWNLOAD_QUALITY_STANDARD = 1,
+				MEDIA_AUTO_DOWNLOAD_QUALITY_HD = 2,
+				MEDIA_AUTO_DOWNLOAD_QUALITY_AUTO = 3
 			}
 			enum MediaQualitySetting {
 				MEDIA_QUALITY_UNKNOWN = 0,
@@ -19502,7 +19666,8 @@ export namespace proto {
 				SHOULD_PLAY_SOUND_FOR_CALL_NOTIFICATION = 31,
 				CHAT_THEME_ID = 32,
 				COLOR_SCHEME_ID = 33,
-				STOCK_WALLPAPER_IMAGE_ID = 34
+				STOCK_WALLPAPER_IMAGE_ID = 34,
+				MEDIA_AUTO_DOWNLOAD_QUALITY = 35
 			}
 			enum SettingPlatform {
 				PLATFORM_UNKNOWN = 0,

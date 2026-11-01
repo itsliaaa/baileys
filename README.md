@@ -192,9 +192,14 @@ npm i github:itsliaaa/baileys
 ```
 
 - 🔗 Peer Dependencies
-  - `better-sqlite3@>=11.0.0` is required for `useSqliteAuthState` when using Node.js versions below `>22.13`.
+  - One of `@napi-rs/image@^1.12.0`, `jimp@^1.6.0`, or `sharp@>=0.33.0` is required for thumbnail generation and other image processing operations.
+  - `better-sqlite3@>=11.0.0` is required for `useSqliteAuthState` when using Node.js versions below `22.13`.
   - `qr@>=0.5.0` is required for `printQRInTerminal`.
-  - `ws@^8.13.0` is required when using Node.js versions below `>22`.
+  - `ws@^8.13.0` is required when using Node.js versions below `22.0`.
+
+- ⚙️ System Dependencies
+  - `ffmpeg` is required for video thumbnail extraction, audio waveform generation, and other media processing operations.
+  - `ffprobe` is required for media metadata inspection (MediaInfo).
 
 #### 🧩 Import (ESM & CJS)
 

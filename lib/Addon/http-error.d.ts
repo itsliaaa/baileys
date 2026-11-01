@@ -2,6 +2,7 @@ export class HttpError extends Error {
     static getStatusText(statusCode: any): any;
     constructor(message: any, options?: {});
     isHttpError: boolean;
+    isBoom: boolean;
     isServer: boolean;
     data: any;
     output: {

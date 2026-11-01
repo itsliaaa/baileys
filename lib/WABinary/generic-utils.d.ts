@@ -42,6 +42,9 @@ export function getBizBinaryNode(message: any): {
         content: {
             tag: string;
             attrs: {
+                name: any;
+                v?: undefined;
+            } | {
                 v: string;
                 name: any;
             };
