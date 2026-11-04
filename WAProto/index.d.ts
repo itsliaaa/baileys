@@ -2,7 +2,7 @@
  * https://www.npmjs.com/package/@itsliaaa/baileys
  * Type definitions adapted with lightweight types to match index.js
  */
-interface PbReader {
+interface PBReader {
 	len: number
 	pos: number
 	uint32(): number
@@ -22,27 +22,27 @@ interface PbReader {
 	string(): string
 	skipType(wireType: number): this
 }
-interface PbWriter {
-	uint32(value: number): PbWriter
-	int32(value: number): PbWriter
-	int64(value: Long): PbWriter
-	uint64(value: Long): PbWriter
-	sint32(value: number): PbWriter
-	sint64(value: Long): PbWriter
-	bool(value: boolean): PbWriter
-	fixed32(value: number): PbWriter
-	sfixed32(value: number): PbWriter
-	fixed64(value: Long): PbWriter
-	sfixed64(value: Long): PbWriter
-	float(value: number): PbWriter
-	double(value: number): PbWriter
-	bytes(value: Uint8Array): PbWriter
-	string(value: string): PbWriter
-	fork(): PbWriter
-	ldelim(): PbWriter
+interface PBWriter {
+	uint32(value: number): PBWriter
+	int32(value: number): PBWriter
+	int64(value: Long): PBWriter
+	uint64(value: Long): PBWriter
+	sint32(value: number): PBWriter
+	sint64(value: Long): PBWriter
+	bool(value: boolean): PBWriter
+	fixed32(value: number): PBWriter
+	sfixed32(value: number): PBWriter
+	fixed64(value: Long): PBWriter
+	sfixed64(value: Long): PBWriter
+	float(value: number): PBWriter
+	double(value: number): PBWriter
+	bytes(value: Uint8Array): PBWriter
+	string(value: string): PBWriter
+	fork(): PBWriter
+	ldelim(): PBWriter
 	finish(): Uint8Array
 }
-interface PbConversionOptions {
+interface PBConversionOptions {
 	longs?: Function
 	enums?: Function
 	bytes?: Function
@@ -70,10 +70,10 @@ export namespace proto {
 		initiatedByMe?: (boolean|null)
 		static create(properties: proto.ACP2Setting.$Shape): proto.ACP2Setting & proto.ACP2Setting.$Shape
 		static create(properties?: proto.ACP2Setting.$Properties): proto.ACP2Setting
-		static encode(m: proto.ACP2Setting.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.ACP2Setting & proto.ACP2Setting.$Shape
+		static encode(m: proto.ACP2Setting.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.ACP2Setting & proto.ACP2Setting.$Shape
 		static fromObject(d: { [k: string]: any }): proto.ACP2Setting
-		static toObject(m: proto.ACP2Setting, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.ACP2Setting, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace ACP2Setting {
@@ -98,10 +98,10 @@ export namespace proto {
 		deviceType?: (proto.ADVEncryptionType|null)
 		static create(properties: proto.ADVDeviceIdentity.$Shape): proto.ADVDeviceIdentity & proto.ADVDeviceIdentity.$Shape
 		static create(properties?: proto.ADVDeviceIdentity.$Properties): proto.ADVDeviceIdentity
-		static encode(m: proto.ADVDeviceIdentity.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.ADVDeviceIdentity & proto.ADVDeviceIdentity.$Shape
+		static encode(m: proto.ADVDeviceIdentity.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.ADVDeviceIdentity & proto.ADVDeviceIdentity.$Shape
 		static fromObject(d: { [k: string]: any }): proto.ADVDeviceIdentity
-		static toObject(m: proto.ADVDeviceIdentity, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.ADVDeviceIdentity, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace ADVDeviceIdentity {
@@ -132,10 +132,10 @@ export namespace proto {
 		accountType?: (proto.ADVEncryptionType|null)
 		static create(properties: proto.ADVKeyIndexList.$Shape): proto.ADVKeyIndexList & proto.ADVKeyIndexList.$Shape
 		static create(properties?: proto.ADVKeyIndexList.$Properties): proto.ADVKeyIndexList
-		static encode(m: proto.ADVKeyIndexList.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.ADVKeyIndexList & proto.ADVKeyIndexList.$Shape
+		static encode(m: proto.ADVKeyIndexList.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.ADVKeyIndexList & proto.ADVKeyIndexList.$Shape
 		static fromObject(d: { [k: string]: any }): proto.ADVKeyIndexList
-		static toObject(m: proto.ADVKeyIndexList, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.ADVKeyIndexList, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace ADVKeyIndexList {
@@ -160,10 +160,10 @@ export namespace proto {
 		deviceSignature?: (Uint8Array|null)
 		static create(properties: proto.ADVSignedDeviceIdentity.$Shape): proto.ADVSignedDeviceIdentity & proto.ADVSignedDeviceIdentity.$Shape
 		static create(properties?: proto.ADVSignedDeviceIdentity.$Properties): proto.ADVSignedDeviceIdentity
-		static encode(m: proto.ADVSignedDeviceIdentity.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.ADVSignedDeviceIdentity & proto.ADVSignedDeviceIdentity.$Shape
+		static encode(m: proto.ADVSignedDeviceIdentity.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.ADVSignedDeviceIdentity & proto.ADVSignedDeviceIdentity.$Shape
 		static fromObject(d: { [k: string]: any }): proto.ADVSignedDeviceIdentity
-		static toObject(m: proto.ADVSignedDeviceIdentity, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.ADVSignedDeviceIdentity, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace ADVSignedDeviceIdentity {
@@ -186,10 +186,10 @@ export namespace proto {
 		accountType?: (proto.ADVEncryptionType|null)
 		static create(properties: proto.ADVSignedDeviceIdentityHMAC.$Shape): proto.ADVSignedDeviceIdentityHMAC & proto.ADVSignedDeviceIdentityHMAC.$Shape
 		static create(properties?: proto.ADVSignedDeviceIdentityHMAC.$Properties): proto.ADVSignedDeviceIdentityHMAC
-		static encode(m: proto.ADVSignedDeviceIdentityHMAC.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.ADVSignedDeviceIdentityHMAC & proto.ADVSignedDeviceIdentityHMAC.$Shape
+		static encode(m: proto.ADVSignedDeviceIdentityHMAC.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.ADVSignedDeviceIdentityHMAC & proto.ADVSignedDeviceIdentityHMAC.$Shape
 		static fromObject(d: { [k: string]: any }): proto.ADVSignedDeviceIdentityHMAC
-		static toObject(m: proto.ADVSignedDeviceIdentityHMAC, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.ADVSignedDeviceIdentityHMAC, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace ADVSignedDeviceIdentityHMAC {
@@ -211,10 +211,10 @@ export namespace proto {
 		accountSignatureKey?: (Uint8Array|null)
 		static create(properties: proto.ADVSignedKeyIndexList.$Shape): proto.ADVSignedKeyIndexList & proto.ADVSignedKeyIndexList.$Shape
 		static create(properties?: proto.ADVSignedKeyIndexList.$Properties): proto.ADVSignedKeyIndexList
-		static encode(m: proto.ADVSignedKeyIndexList.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.ADVSignedKeyIndexList & proto.ADVSignedKeyIndexList.$Shape
+		static encode(m: proto.ADVSignedKeyIndexList.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.ADVSignedKeyIndexList & proto.ADVSignedKeyIndexList.$Shape
 		static fromObject(d: { [k: string]: any }): proto.ADVSignedKeyIndexList
-		static toObject(m: proto.ADVSignedKeyIndexList, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.ADVSignedKeyIndexList, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace ADVSignedKeyIndexList {
@@ -236,10 +236,10 @@ export namespace proto {
 		conversationOptions: proto.AIHomeState.AIHomeOption.$Properties[]
 		static create(properties: proto.AIHomeState.$Shape): proto.AIHomeState & proto.AIHomeState.$Shape
 		static create(properties?: proto.AIHomeState.$Properties): proto.AIHomeState
-		static encode(m: proto.AIHomeState.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.AIHomeState & proto.AIHomeState.$Shape
+		static encode(m: proto.AIHomeState.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.AIHomeState & proto.AIHomeState.$Shape
 		static fromObject(d: { [k: string]: any }): proto.AIHomeState
-		static toObject(m: proto.AIHomeState, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.AIHomeState, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace AIHomeState {
@@ -265,10 +265,10 @@ export namespace proto {
 			cardTypeId?: (string|null)
 			static create(properties: proto.AIHomeState.AIHomeOption.$Shape): proto.AIHomeState.AIHomeOption & proto.AIHomeState.AIHomeOption.$Shape
 			static create(properties?: proto.AIHomeState.AIHomeOption.$Properties): proto.AIHomeState.AIHomeOption
-			static encode(m: proto.AIHomeState.AIHomeOption.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.AIHomeState.AIHomeOption & proto.AIHomeState.AIHomeOption.$Shape
+			static encode(m: proto.AIHomeState.AIHomeOption.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.AIHomeState.AIHomeOption & proto.AIHomeState.AIHomeOption.$Shape
 			static fromObject(d: { [k: string]: any }): proto.AIHomeState.AIHomeOption
-			static toObject(m: proto.AIHomeState.AIHomeOption, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.AIHomeState.AIHomeOption, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace AIHomeOption {
@@ -304,10 +304,10 @@ export namespace proto {
 		hasGlobalCaption?: (boolean|null)
 		static create(properties: proto.AIMediaCollectionMessage.$Shape): proto.AIMediaCollectionMessage & proto.AIMediaCollectionMessage.$Shape
 		static create(properties?: proto.AIMediaCollectionMessage.$Properties): proto.AIMediaCollectionMessage
-		static encode(m: proto.AIMediaCollectionMessage.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.AIMediaCollectionMessage & proto.AIMediaCollectionMessage.$Shape
+		static encode(m: proto.AIMediaCollectionMessage.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.AIMediaCollectionMessage & proto.AIMediaCollectionMessage.$Shape
 		static fromObject(d: { [k: string]: any }): proto.AIMediaCollectionMessage
-		static toObject(m: proto.AIMediaCollectionMessage, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.AIMediaCollectionMessage, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace AIMediaCollectionMessage {
@@ -328,10 +328,10 @@ export namespace proto {
 		uploadOrderIndex?: (number|null)
 		static create(properties: proto.AIMediaCollectionMetadata.$Shape): proto.AIMediaCollectionMetadata & proto.AIMediaCollectionMetadata.$Shape
 		static create(properties?: proto.AIMediaCollectionMetadata.$Properties): proto.AIMediaCollectionMetadata
-		static encode(m: proto.AIMediaCollectionMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.AIMediaCollectionMetadata & proto.AIMediaCollectionMetadata.$Shape
+		static encode(m: proto.AIMediaCollectionMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.AIMediaCollectionMetadata & proto.AIMediaCollectionMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.AIMediaCollectionMetadata
-		static toObject(m: proto.AIMediaCollectionMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.AIMediaCollectionMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace AIMediaCollectionMetadata {
@@ -351,10 +351,10 @@ export namespace proto {
 		bizAiMetadataSync?: (proto.BizAIMetadataSync.$Properties|null)
 		static create(properties: proto.AIMetadataOperation.$Shape): proto.AIMetadataOperation & proto.AIMetadataOperation.$Shape
 		static create(properties?: proto.AIMetadataOperation.$Properties): proto.AIMetadataOperation
-		static encode(m: proto.AIMetadataOperation.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.AIMetadataOperation & proto.AIMetadataOperation.$Shape
+		static encode(m: proto.AIMetadataOperation.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.AIMetadataOperation & proto.AIMetadataOperation.$Shape
 		static fromObject(d: { [k: string]: any }): proto.AIMetadataOperation
-		static toObject(m: proto.AIMetadataOperation, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.AIMetadataOperation, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace AIMetadataOperation {
@@ -378,10 +378,10 @@ export namespace proto {
 		iptcMetadata?: (proto.AIProvenance.Metadata.$Properties|null)
 		static create(properties: proto.AIProvenance.$Shape): proto.AIProvenance & proto.AIProvenance.$Shape
 		static create(properties?: proto.AIProvenance.$Properties): proto.AIProvenance
-		static encode(m: proto.AIProvenance.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.AIProvenance & proto.AIProvenance.$Shape
+		static encode(m: proto.AIProvenance.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.AIProvenance & proto.AIProvenance.$Shape
 		static fromObject(d: { [k: string]: any }): proto.AIProvenance
-		static toObject(m: proto.AIProvenance, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.AIProvenance, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace AIProvenance {
@@ -400,10 +400,10 @@ export namespace proto {
 			editedWithGenAi?: (boolean|null)
 			static create(properties: proto.AIProvenance.Metadata.$Shape): proto.AIProvenance.Metadata & proto.AIProvenance.Metadata.$Shape
 			static create(properties?: proto.AIProvenance.Metadata.$Properties): proto.AIProvenance.Metadata
-			static encode(m: proto.AIProvenance.Metadata.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.AIProvenance.Metadata & proto.AIProvenance.Metadata.$Shape
+			static encode(m: proto.AIProvenance.Metadata.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.AIProvenance.Metadata & proto.AIProvenance.Metadata.$Shape
 			static fromObject(d: { [k: string]: any }): proto.AIProvenance.Metadata
-			static toObject(m: proto.AIProvenance.Metadata, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.AIProvenance.Metadata, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace Metadata {
@@ -425,10 +425,10 @@ export namespace proto {
 		timestamp?: (number|Long|null)
 		static create(properties: proto.AIQueryFanout.$Shape): proto.AIQueryFanout & proto.AIQueryFanout.$Shape
 		static create(properties?: proto.AIQueryFanout.$Properties): proto.AIQueryFanout
-		static encode(m: proto.AIQueryFanout.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.AIQueryFanout & proto.AIQueryFanout.$Shape
+		static encode(m: proto.AIQueryFanout.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.AIQueryFanout & proto.AIQueryFanout.$Shape
 		static fromObject(d: { [k: string]: any }): proto.AIQueryFanout
-		static toObject(m: proto.AIQueryFanout, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.AIQueryFanout, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace AIQueryFanout {
@@ -454,10 +454,10 @@ export namespace proto {
 		responseTimestampMs?: (number|Long|null)
 		static create(properties: proto.AIRegenerateMetadata.$Shape): proto.AIRegenerateMetadata & proto.AIRegenerateMetadata.$Shape
 		static create(properties?: proto.AIRegenerateMetadata.$Properties): proto.AIRegenerateMetadata
-		static encode(m: proto.AIRegenerateMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.AIRegenerateMetadata & proto.AIRegenerateMetadata.$Shape
+		static encode(m: proto.AIRegenerateMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.AIRegenerateMetadata & proto.AIRegenerateMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.AIRegenerateMetadata
-		static toObject(m: proto.AIRegenerateMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.AIRegenerateMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace AIRegenerateMetadata {
@@ -477,10 +477,10 @@ export namespace proto {
 		codeBlocks: proto.AIRichResponseCodeMetadata.AIRichResponseCodeBlock.$Properties[]
 		static create(properties: proto.AIRichResponseCodeMetadata.$Shape): proto.AIRichResponseCodeMetadata & proto.AIRichResponseCodeMetadata.$Shape
 		static create(properties?: proto.AIRichResponseCodeMetadata.$Properties): proto.AIRichResponseCodeMetadata
-		static encode(m: proto.AIRichResponseCodeMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.AIRichResponseCodeMetadata & proto.AIRichResponseCodeMetadata.$Shape
+		static encode(m: proto.AIRichResponseCodeMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.AIRichResponseCodeMetadata & proto.AIRichResponseCodeMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.AIRichResponseCodeMetadata
-		static toObject(m: proto.AIRichResponseCodeMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.AIRichResponseCodeMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace AIRichResponseCodeMetadata {
@@ -499,10 +499,10 @@ export namespace proto {
 			codeContent?: (string|null)
 			static create(properties: proto.AIRichResponseCodeMetadata.AIRichResponseCodeBlock.$Shape): proto.AIRichResponseCodeMetadata.AIRichResponseCodeBlock & proto.AIRichResponseCodeMetadata.AIRichResponseCodeBlock.$Shape
 			static create(properties?: proto.AIRichResponseCodeMetadata.AIRichResponseCodeBlock.$Properties): proto.AIRichResponseCodeMetadata.AIRichResponseCodeBlock
-			static encode(m: proto.AIRichResponseCodeMetadata.AIRichResponseCodeBlock.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.AIRichResponseCodeMetadata.AIRichResponseCodeBlock & proto.AIRichResponseCodeMetadata.AIRichResponseCodeBlock.$Shape
+			static encode(m: proto.AIRichResponseCodeMetadata.AIRichResponseCodeBlock.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.AIRichResponseCodeMetadata.AIRichResponseCodeBlock & proto.AIRichResponseCodeMetadata.AIRichResponseCodeBlock.$Shape
 			static fromObject(d: { [k: string]: any }): proto.AIRichResponseCodeMetadata.AIRichResponseCodeBlock
-			static toObject(m: proto.AIRichResponseCodeMetadata.AIRichResponseCodeBlock, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.AIRichResponseCodeMetadata.AIRichResponseCodeBlock, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace AIRichResponseCodeBlock {
@@ -531,10 +531,10 @@ export namespace proto {
 		contentType?: (proto.AIRichResponseContentItemsMetadata.ContentType|null)
 		static create(properties: proto.AIRichResponseContentItemsMetadata.$Shape): proto.AIRichResponseContentItemsMetadata & proto.AIRichResponseContentItemsMetadata.$Shape
 		static create(properties?: proto.AIRichResponseContentItemsMetadata.$Properties): proto.AIRichResponseContentItemsMetadata
-		static encode(m: proto.AIRichResponseContentItemsMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.AIRichResponseContentItemsMetadata & proto.AIRichResponseContentItemsMetadata.$Shape
+		static encode(m: proto.AIRichResponseContentItemsMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.AIRichResponseContentItemsMetadata & proto.AIRichResponseContentItemsMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.AIRichResponseContentItemsMetadata
-		static toObject(m: proto.AIRichResponseContentItemsMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.AIRichResponseContentItemsMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace AIRichResponseContentItemsMetadata {
@@ -557,10 +557,10 @@ export namespace proto {
 			aiRichResponseContentItem?: "reelItem"
 			static create(properties: proto.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata.$Shape): proto.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata & proto.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata.$Shape
 			static create(properties?: proto.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata.$Properties): proto.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata
-			static encode(m: proto.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata & proto.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata.$Shape
+			static encode(m: proto.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata & proto.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata.$Shape
 			static fromObject(d: { [k: string]: any }): proto.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata
-			static toObject(m: proto.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.AIRichResponseContentItemsMetadata.AIRichResponseContentItemMetadata, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace AIRichResponseContentItemMetadata {
@@ -587,10 +587,10 @@ export namespace proto {
 			videoUrl?: (string|null)
 			static create(properties: proto.AIRichResponseContentItemsMetadata.AIRichResponseReelItem.$Shape): proto.AIRichResponseContentItemsMetadata.AIRichResponseReelItem & proto.AIRichResponseContentItemsMetadata.AIRichResponseReelItem.$Shape
 			static create(properties?: proto.AIRichResponseContentItemsMetadata.AIRichResponseReelItem.$Properties): proto.AIRichResponseContentItemsMetadata.AIRichResponseReelItem
-			static encode(m: proto.AIRichResponseContentItemsMetadata.AIRichResponseReelItem.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.AIRichResponseContentItemsMetadata.AIRichResponseReelItem & proto.AIRichResponseContentItemsMetadata.AIRichResponseReelItem.$Shape
+			static encode(m: proto.AIRichResponseContentItemsMetadata.AIRichResponseReelItem.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.AIRichResponseContentItemsMetadata.AIRichResponseReelItem & proto.AIRichResponseContentItemsMetadata.AIRichResponseReelItem.$Shape
 			static fromObject(d: { [k: string]: any }): proto.AIRichResponseContentItemsMetadata.AIRichResponseReelItem
-			static toObject(m: proto.AIRichResponseContentItemsMetadata.AIRichResponseReelItem, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.AIRichResponseContentItemsMetadata.AIRichResponseReelItem, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace AIRichResponseReelItem {
@@ -619,10 +619,10 @@ export namespace proto {
 		loopCount?: (number|null)
 		static create(properties: proto.AIRichResponseDynamicMetadata.$Shape): proto.AIRichResponseDynamicMetadata & proto.AIRichResponseDynamicMetadata.$Shape
 		static create(properties?: proto.AIRichResponseDynamicMetadata.$Properties): proto.AIRichResponseDynamicMetadata
-		static encode(m: proto.AIRichResponseDynamicMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.AIRichResponseDynamicMetadata & proto.AIRichResponseDynamicMetadata.$Shape
+		static encode(m: proto.AIRichResponseDynamicMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.AIRichResponseDynamicMetadata & proto.AIRichResponseDynamicMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.AIRichResponseDynamicMetadata
-		static toObject(m: proto.AIRichResponseDynamicMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.AIRichResponseDynamicMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace AIRichResponseDynamicMetadata {
@@ -649,10 +649,10 @@ export namespace proto {
 		imageUrls: proto.AIRichResponseImageURL.$Properties[]
 		static create(properties: proto.AIRichResponseGridImageMetadata.$Shape): proto.AIRichResponseGridImageMetadata & proto.AIRichResponseGridImageMetadata.$Shape
 		static create(properties?: proto.AIRichResponseGridImageMetadata.$Properties): proto.AIRichResponseGridImageMetadata
-		static encode(m: proto.AIRichResponseGridImageMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.AIRichResponseGridImageMetadata & proto.AIRichResponseGridImageMetadata.$Shape
+		static encode(m: proto.AIRichResponseGridImageMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.AIRichResponseGridImageMetadata & proto.AIRichResponseGridImageMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.AIRichResponseGridImageMetadata
-		static toObject(m: proto.AIRichResponseGridImageMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.AIRichResponseGridImageMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace AIRichResponseGridImageMetadata {
@@ -673,10 +673,10 @@ export namespace proto {
 		sourceUrl?: (string|null)
 		static create(properties: proto.AIRichResponseImageURL.$Shape): proto.AIRichResponseImageURL & proto.AIRichResponseImageURL.$Shape
 		static create(properties?: proto.AIRichResponseImageURL.$Properties): proto.AIRichResponseImageURL
-		static encode(m: proto.AIRichResponseImageURL.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.AIRichResponseImageURL & proto.AIRichResponseImageURL.$Shape
+		static encode(m: proto.AIRichResponseImageURL.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.AIRichResponseImageURL & proto.AIRichResponseImageURL.$Shape
 		static fromObject(d: { [k: string]: any }): proto.AIRichResponseImageURL
-		static toObject(m: proto.AIRichResponseImageURL, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.AIRichResponseImageURL, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace AIRichResponseImageURL {
@@ -699,10 +699,10 @@ export namespace proto {
 		tapLinkUrl?: (string|null)
 		static create(properties: proto.AIRichResponseInlineImageMetadata.$Shape): proto.AIRichResponseInlineImageMetadata & proto.AIRichResponseInlineImageMetadata.$Shape
 		static create(properties?: proto.AIRichResponseInlineImageMetadata.$Properties): proto.AIRichResponseInlineImageMetadata
-		static encode(m: proto.AIRichResponseInlineImageMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.AIRichResponseInlineImageMetadata & proto.AIRichResponseInlineImageMetadata.$Shape
+		static encode(m: proto.AIRichResponseInlineImageMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.AIRichResponseInlineImageMetadata & proto.AIRichResponseInlineImageMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.AIRichResponseInlineImageMetadata
-		static toObject(m: proto.AIRichResponseInlineImageMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.AIRichResponseInlineImageMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace AIRichResponseInlineImageMetadata {
@@ -729,10 +729,10 @@ export namespace proto {
 		expressions: proto.AIRichResponseLatexMetadata.AIRichResponseLatexExpression.$Properties[]
 		static create(properties: proto.AIRichResponseLatexMetadata.$Shape): proto.AIRichResponseLatexMetadata & proto.AIRichResponseLatexMetadata.$Shape
 		static create(properties?: proto.AIRichResponseLatexMetadata.$Properties): proto.AIRichResponseLatexMetadata
-		static encode(m: proto.AIRichResponseLatexMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.AIRichResponseLatexMetadata & proto.AIRichResponseLatexMetadata.$Shape
+		static encode(m: proto.AIRichResponseLatexMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.AIRichResponseLatexMetadata & proto.AIRichResponseLatexMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.AIRichResponseLatexMetadata
-		static toObject(m: proto.AIRichResponseLatexMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.AIRichResponseLatexMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace AIRichResponseLatexMetadata {
@@ -758,10 +758,10 @@ export namespace proto {
 			imageTrailingPadding?: (number|null)
 			static create(properties: proto.AIRichResponseLatexMetadata.AIRichResponseLatexExpression.$Shape): proto.AIRichResponseLatexMetadata.AIRichResponseLatexExpression & proto.AIRichResponseLatexMetadata.AIRichResponseLatexExpression.$Shape
 			static create(properties?: proto.AIRichResponseLatexMetadata.AIRichResponseLatexExpression.$Properties): proto.AIRichResponseLatexMetadata.AIRichResponseLatexExpression
-			static encode(m: proto.AIRichResponseLatexMetadata.AIRichResponseLatexExpression.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.AIRichResponseLatexMetadata.AIRichResponseLatexExpression & proto.AIRichResponseLatexMetadata.AIRichResponseLatexExpression.$Shape
+			static encode(m: proto.AIRichResponseLatexMetadata.AIRichResponseLatexExpression.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.AIRichResponseLatexMetadata.AIRichResponseLatexExpression & proto.AIRichResponseLatexMetadata.AIRichResponseLatexExpression.$Shape
 			static fromObject(d: { [k: string]: any }): proto.AIRichResponseLatexMetadata.AIRichResponseLatexExpression
-			static toObject(m: proto.AIRichResponseLatexMetadata.AIRichResponseLatexExpression, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.AIRichResponseLatexMetadata.AIRichResponseLatexExpression, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace AIRichResponseLatexExpression {
@@ -793,10 +793,10 @@ export namespace proto {
 		showInfoList?: (boolean|null)
 		static create(properties: proto.AIRichResponseMapMetadata.$Shape): proto.AIRichResponseMapMetadata & proto.AIRichResponseMapMetadata.$Shape
 		static create(properties?: proto.AIRichResponseMapMetadata.$Properties): proto.AIRichResponseMapMetadata
-		static encode(m: proto.AIRichResponseMapMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.AIRichResponseMapMetadata & proto.AIRichResponseMapMetadata.$Shape
+		static encode(m: proto.AIRichResponseMapMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.AIRichResponseMapMetadata & proto.AIRichResponseMapMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.AIRichResponseMapMetadata
-		static toObject(m: proto.AIRichResponseMapMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.AIRichResponseMapMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace AIRichResponseMapMetadata {
@@ -822,10 +822,10 @@ export namespace proto {
 			body?: (string|null)
 			static create(properties: proto.AIRichResponseMapMetadata.AIRichResponseMapAnnotation.$Shape): proto.AIRichResponseMapMetadata.AIRichResponseMapAnnotation & proto.AIRichResponseMapMetadata.AIRichResponseMapAnnotation.$Shape
 			static create(properties?: proto.AIRichResponseMapMetadata.AIRichResponseMapAnnotation.$Properties): proto.AIRichResponseMapMetadata.AIRichResponseMapAnnotation
-			static encode(m: proto.AIRichResponseMapMetadata.AIRichResponseMapAnnotation.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.AIRichResponseMapMetadata.AIRichResponseMapAnnotation & proto.AIRichResponseMapMetadata.AIRichResponseMapAnnotation.$Shape
+			static encode(m: proto.AIRichResponseMapMetadata.AIRichResponseMapAnnotation.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.AIRichResponseMapMetadata.AIRichResponseMapAnnotation & proto.AIRichResponseMapMetadata.AIRichResponseMapAnnotation.$Shape
 			static fromObject(d: { [k: string]: any }): proto.AIRichResponseMapMetadata.AIRichResponseMapAnnotation
-			static toObject(m: proto.AIRichResponseMapMetadata.AIRichResponseMapAnnotation, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.AIRichResponseMapMetadata.AIRichResponseMapAnnotation, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace AIRichResponseMapAnnotation {
@@ -852,10 +852,10 @@ export namespace proto {
 		originalRecipientMetadata?: (proto.AIRichResponseUnifiedResponse.$Properties|null)
 		static create(properties: proto.AIRichResponseMessage.$Shape): proto.AIRichResponseMessage & proto.AIRichResponseMessage.$Shape
 		static create(properties?: proto.AIRichResponseMessage.$Properties): proto.AIRichResponseMessage
-		static encode(m: proto.AIRichResponseMessage.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.AIRichResponseMessage & proto.AIRichResponseMessage.$Shape
+		static encode(m: proto.AIRichResponseMessage.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.AIRichResponseMessage & proto.AIRichResponseMessage.$Shape
 		static fromObject(d: { [k: string]: any }): proto.AIRichResponseMessage
-		static toObject(m: proto.AIRichResponseMessage, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.AIRichResponseMessage, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace AIRichResponseMessage {
@@ -897,10 +897,10 @@ export namespace proto {
 		contentItemsMetadata?: (proto.AIRichResponseContentItemsMetadata.$Properties|null)
 		static create(properties: proto.AIRichResponseSubMessage.$Shape): proto.AIRichResponseSubMessage & proto.AIRichResponseSubMessage.$Shape
 		static create(properties?: proto.AIRichResponseSubMessage.$Properties): proto.AIRichResponseSubMessage
-		static encode(m: proto.AIRichResponseSubMessage.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.AIRichResponseSubMessage & proto.AIRichResponseSubMessage.$Shape
+		static encode(m: proto.AIRichResponseSubMessage.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.AIRichResponseSubMessage & proto.AIRichResponseSubMessage.$Shape
 		static fromObject(d: { [k: string]: any }): proto.AIRichResponseSubMessage
-		static toObject(m: proto.AIRichResponseSubMessage, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.AIRichResponseSubMessage, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace AIRichResponseSubMessage {
@@ -952,10 +952,10 @@ export namespace proto {
 		title?: (string|null)
 		static create(properties: proto.AIRichResponseTableMetadata.$Shape): proto.AIRichResponseTableMetadata & proto.AIRichResponseTableMetadata.$Shape
 		static create(properties?: proto.AIRichResponseTableMetadata.$Properties): proto.AIRichResponseTableMetadata
-		static encode(m: proto.AIRichResponseTableMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.AIRichResponseTableMetadata & proto.AIRichResponseTableMetadata.$Shape
+		static encode(m: proto.AIRichResponseTableMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.AIRichResponseTableMetadata & proto.AIRichResponseTableMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.AIRichResponseTableMetadata
-		static toObject(m: proto.AIRichResponseTableMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.AIRichResponseTableMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace AIRichResponseTableMetadata {
@@ -974,10 +974,10 @@ export namespace proto {
 			isHeading?: (boolean|null)
 			static create(properties: proto.AIRichResponseTableMetadata.AIRichResponseTableRow.$Shape): proto.AIRichResponseTableMetadata.AIRichResponseTableRow & proto.AIRichResponseTableMetadata.AIRichResponseTableRow.$Shape
 			static create(properties?: proto.AIRichResponseTableMetadata.AIRichResponseTableRow.$Properties): proto.AIRichResponseTableMetadata.AIRichResponseTableRow
-			static encode(m: proto.AIRichResponseTableMetadata.AIRichResponseTableRow.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.AIRichResponseTableMetadata.AIRichResponseTableRow & proto.AIRichResponseTableMetadata.AIRichResponseTableRow.$Shape
+			static encode(m: proto.AIRichResponseTableMetadata.AIRichResponseTableRow.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.AIRichResponseTableMetadata.AIRichResponseTableRow & proto.AIRichResponseTableMetadata.AIRichResponseTableRow.$Shape
 			static fromObject(d: { [k: string]: any }): proto.AIRichResponseTableMetadata.AIRichResponseTableRow
-			static toObject(m: proto.AIRichResponseTableMetadata.AIRichResponseTableRow, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.AIRichResponseTableMetadata.AIRichResponseTableRow, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace AIRichResponseTableRow {
@@ -997,10 +997,10 @@ export namespace proto {
 		data?: (Uint8Array|null)
 		static create(properties: proto.AIRichResponseUnifiedResponse.$Shape): proto.AIRichResponseUnifiedResponse & proto.AIRichResponseUnifiedResponse.$Shape
 		static create(properties?: proto.AIRichResponseUnifiedResponse.$Properties): proto.AIRichResponseUnifiedResponse
-		static encode(m: proto.AIRichResponseUnifiedResponse.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.AIRichResponseUnifiedResponse & proto.AIRichResponseUnifiedResponse.$Shape
+		static encode(m: proto.AIRichResponseUnifiedResponse.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.AIRichResponseUnifiedResponse & proto.AIRichResponseUnifiedResponse.$Shape
 		static fromObject(d: { [k: string]: any }): proto.AIRichResponseUnifiedResponse
-		static toObject(m: proto.AIRichResponseUnifiedResponse, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.AIRichResponseUnifiedResponse, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace AIRichResponseUnifiedResponse {
@@ -1024,10 +1024,10 @@ export namespace proto {
 		requestType?: (proto.AISubscriptionRequestType|null)
 		static create(properties: proto.AISubscriptionUpsellMetadata.$Shape): proto.AISubscriptionUpsellMetadata & proto.AISubscriptionUpsellMetadata.$Shape
 		static create(properties?: proto.AISubscriptionUpsellMetadata.$Properties): proto.AISubscriptionUpsellMetadata
-		static encode(m: proto.AISubscriptionUpsellMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.AISubscriptionUpsellMetadata & proto.AISubscriptionUpsellMetadata.$Shape
+		static encode(m: proto.AISubscriptionUpsellMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.AISubscriptionUpsellMetadata & proto.AISubscriptionUpsellMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.AISubscriptionUpsellMetadata
-		static toObject(m: proto.AISubscriptionUpsellMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.AISubscriptionUpsellMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace AISubscriptionUpsellMetadata {
@@ -1046,10 +1046,10 @@ export namespace proto {
 		clientInfo?: (proto.AIThreadInfo.AIThreadClientInfo.$Properties|null)
 		static create(properties: proto.AIThreadInfo.$Shape): proto.AIThreadInfo & proto.AIThreadInfo.$Shape
 		static create(properties?: proto.AIThreadInfo.$Properties): proto.AIThreadInfo
-		static encode(m: proto.AIThreadInfo.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.AIThreadInfo & proto.AIThreadInfo.$Shape
+		static encode(m: proto.AIThreadInfo.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.AIThreadInfo & proto.AIThreadInfo.$Shape
 		static fromObject(d: { [k: string]: any }): proto.AIThreadInfo
-		static toObject(m: proto.AIThreadInfo, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.AIThreadInfo, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace AIThreadInfo {
@@ -1068,10 +1068,10 @@ export namespace proto {
 			sourceChatJid?: (string|null)
 			static create(properties: proto.AIThreadInfo.AIThreadClientInfo.$Shape): proto.AIThreadInfo.AIThreadClientInfo & proto.AIThreadInfo.AIThreadClientInfo.$Shape
 			static create(properties?: proto.AIThreadInfo.AIThreadClientInfo.$Properties): proto.AIThreadInfo.AIThreadClientInfo
-			static encode(m: proto.AIThreadInfo.AIThreadClientInfo.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.AIThreadInfo.AIThreadClientInfo & proto.AIThreadInfo.AIThreadClientInfo.$Shape
+			static encode(m: proto.AIThreadInfo.AIThreadClientInfo.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.AIThreadInfo.AIThreadClientInfo & proto.AIThreadInfo.AIThreadClientInfo.$Shape
 			static fromObject(d: { [k: string]: any }): proto.AIThreadInfo.AIThreadClientInfo
-			static toObject(m: proto.AIThreadInfo.AIThreadClientInfo, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.AIThreadInfo.AIThreadClientInfo, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace AIThreadClientInfo {
@@ -1097,10 +1097,10 @@ export namespace proto {
 			title?: (string|null)
 			static create(properties: proto.AIThreadInfo.AIThreadServerInfo.$Shape): proto.AIThreadInfo.AIThreadServerInfo & proto.AIThreadInfo.AIThreadServerInfo.$Shape
 			static create(properties?: proto.AIThreadInfo.AIThreadServerInfo.$Properties): proto.AIThreadInfo.AIThreadServerInfo
-			static encode(m: proto.AIThreadInfo.AIThreadServerInfo.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.AIThreadInfo.AIThreadServerInfo & proto.AIThreadInfo.AIThreadServerInfo.$Shape
+			static encode(m: proto.AIThreadInfo.AIThreadServerInfo.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.AIThreadInfo.AIThreadServerInfo & proto.AIThreadInfo.AIThreadServerInfo.$Shape
 			static fromObject(d: { [k: string]: any }): proto.AIThreadInfo.AIThreadServerInfo
-			static toObject(m: proto.AIThreadInfo.AIThreadServerInfo, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.AIThreadInfo.AIThreadServerInfo, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace AIThreadServerInfo {
@@ -1122,10 +1122,10 @@ export namespace proto {
 		isUsernameDeleted?: (boolean|null)
 		static create(properties: proto.Account.$Shape): proto.Account & proto.Account.$Shape
 		static create(properties?: proto.Account.$Properties): proto.Account
-		static encode(m: proto.Account.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.Account & proto.Account.$Shape
+		static encode(m: proto.Account.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.Account & proto.Account.$Shape
 		static fromObject(d: { [k: string]: any }): proto.Account
-		static toObject(m: proto.Account, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.Account, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace Account {
@@ -1149,10 +1149,10 @@ export namespace proto {
 		encryptedPassword?: (string|null)
 		static create(properties: proto.AccountLinkingOpaqueData.$Shape): proto.AccountLinkingOpaqueData & proto.AccountLinkingOpaqueData.$Shape
 		static create(properties?: proto.AccountLinkingOpaqueData.$Properties): proto.AccountLinkingOpaqueData
-		static encode(m: proto.AccountLinkingOpaqueData.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.AccountLinkingOpaqueData & proto.AccountLinkingOpaqueData.$Shape
+		static encode(m: proto.AccountLinkingOpaqueData.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.AccountLinkingOpaqueData & proto.AccountLinkingOpaqueData.$Shape
 		static fromObject(d: { [k: string]: any }): proto.AccountLinkingOpaqueData
-		static toObject(m: proto.AccountLinkingOpaqueData, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.AccountLinkingOpaqueData, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace AccountLinkingOpaqueData {
@@ -1174,10 +1174,10 @@ export namespace proto {
 		buttonTitle?: (string|null)
 		static create(properties: proto.ActionLink.$Shape): proto.ActionLink & proto.ActionLink.$Shape
 		static create(properties?: proto.ActionLink.$Properties): proto.ActionLink
-		static encode(m: proto.ActionLink.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.ActionLink & proto.ActionLink.$Shape
+		static encode(m: proto.ActionLink.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.ActionLink & proto.ActionLink.$Shape
 		static fromObject(d: { [k: string]: any }): proto.ActionLink
-		static toObject(m: proto.ActionLink, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.ActionLink, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace ActionLink {
@@ -1199,10 +1199,10 @@ export namespace proto {
 		downloadDocuments?: (boolean|null)
 		static create(properties: proto.AutoDownloadSettings.$Shape): proto.AutoDownloadSettings & proto.AutoDownloadSettings.$Shape
 		static create(properties?: proto.AutoDownloadSettings.$Properties): proto.AutoDownloadSettings
-		static encode(m: proto.AutoDownloadSettings.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.AutoDownloadSettings & proto.AutoDownloadSettings.$Shape
+		static encode(m: proto.AutoDownloadSettings.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.AutoDownloadSettings & proto.AutoDownloadSettings.$Shape
 		static fromObject(d: { [k: string]: any }): proto.AutoDownloadSettings
-		static toObject(m: proto.AutoDownloadSettings, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.AutoDownloadSettings, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace AutoDownloadSettings {
@@ -1224,10 +1224,10 @@ export namespace proto {
 		password?: (string|null)
 		static create(properties: proto.AvatarUserSettings.$Shape): proto.AvatarUserSettings & proto.AvatarUserSettings.$Shape
 		static create(properties?: proto.AvatarUserSettings.$Properties): proto.AvatarUserSettings
-		static encode(m: proto.AvatarUserSettings.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.AvatarUserSettings & proto.AvatarUserSettings.$Shape
+		static encode(m: proto.AvatarUserSettings.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.AvatarUserSettings & proto.AvatarUserSettings.$Shape
 		static fromObject(d: { [k: string]: any }): proto.AvatarUserSettings
-		static toObject(m: proto.AvatarUserSettings, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.AvatarUserSettings, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace AvatarUserSettings {
@@ -1247,10 +1247,10 @@ export namespace proto {
 		operation?: "serverEvent"
 		static create(properties: proto.BizAIMetadataSync.$Shape): proto.BizAIMetadataSync & proto.BizAIMetadataSync.$Shape
 		static create(properties?: proto.BizAIMetadataSync.$Properties): proto.BizAIMetadataSync
-		static encode(m: proto.BizAIMetadataSync.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BizAIMetadataSync & proto.BizAIMetadataSync.$Shape
+		static encode(m: proto.BizAIMetadataSync.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BizAIMetadataSync & proto.BizAIMetadataSync.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BizAIMetadataSync
-		static toObject(m: proto.BizAIMetadataSync, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BizAIMetadataSync, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BizAIMetadataSync {
@@ -1275,10 +1275,10 @@ export namespace proto {
 			event?: ("protocolEvent"|"agentOnboardingStarted")
 			static create(properties: proto.BizAIMetadataSync.ServerEvent.$Shape): proto.BizAIMetadataSync.ServerEvent & proto.BizAIMetadataSync.ServerEvent.$Shape
 			static create(properties?: proto.BizAIMetadataSync.ServerEvent.$Properties): proto.BizAIMetadataSync.ServerEvent
-			static encode(m: proto.BizAIMetadataSync.ServerEvent.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.BizAIMetadataSync.ServerEvent & proto.BizAIMetadataSync.ServerEvent.$Shape
+			static encode(m: proto.BizAIMetadataSync.ServerEvent.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.BizAIMetadataSync.ServerEvent & proto.BizAIMetadataSync.ServerEvent.$Shape
 			static fromObject(d: { [k: string]: any }): proto.BizAIMetadataSync.ServerEvent
-			static toObject(m: proto.BizAIMetadataSync.ServerEvent, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.BizAIMetadataSync.ServerEvent, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ServerEvent {
@@ -1303,10 +1303,10 @@ export namespace proto {
 				composerBlockDurationSecs?: (number|Long|null)
 				static create(properties: proto.BizAIMetadataSync.ServerEvent.AgentOnboardingStarted.$Shape): proto.BizAIMetadataSync.ServerEvent.AgentOnboardingStarted & proto.BizAIMetadataSync.ServerEvent.AgentOnboardingStarted.$Shape
 				static create(properties?: proto.BizAIMetadataSync.ServerEvent.AgentOnboardingStarted.$Properties): proto.BizAIMetadataSync.ServerEvent.AgentOnboardingStarted
-				static encode(m: proto.BizAIMetadataSync.ServerEvent.AgentOnboardingStarted.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.BizAIMetadataSync.ServerEvent.AgentOnboardingStarted & proto.BizAIMetadataSync.ServerEvent.AgentOnboardingStarted.$Shape
+				static encode(m: proto.BizAIMetadataSync.ServerEvent.AgentOnboardingStarted.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.BizAIMetadataSync.ServerEvent.AgentOnboardingStarted & proto.BizAIMetadataSync.ServerEvent.AgentOnboardingStarted.$Shape
 				static fromObject(d: { [k: string]: any }): proto.BizAIMetadataSync.ServerEvent.AgentOnboardingStarted
-				static toObject(m: proto.BizAIMetadataSync.ServerEvent.AgentOnboardingStarted, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.BizAIMetadataSync.ServerEvent.AgentOnboardingStarted, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace AgentOnboardingStarted {
@@ -1335,10 +1335,10 @@ export namespace proto {
 		whatsappAcctEmail?: (string|null)
 		static create(properties: proto.BizAccountLinkInfo.$Shape): proto.BizAccountLinkInfo & proto.BizAccountLinkInfo.$Shape
 		static create(properties?: proto.BizAccountLinkInfo.$Properties): proto.BizAccountLinkInfo
-		static encode(m: proto.BizAccountLinkInfo.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BizAccountLinkInfo & proto.BizAccountLinkInfo.$Shape
+		static encode(m: proto.BizAccountLinkInfo.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BizAccountLinkInfo & proto.BizAccountLinkInfo.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BizAccountLinkInfo
-		static toObject(m: proto.BizAccountLinkInfo, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BizAccountLinkInfo, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BizAccountLinkInfo {
@@ -1369,10 +1369,10 @@ export namespace proto {
 		bizAcctLinkInfo?: (Uint8Array|null)
 		static create(properties: proto.BizAccountPayload.$Shape): proto.BizAccountPayload & proto.BizAccountPayload.$Shape
 		static create(properties?: proto.BizAccountPayload.$Properties): proto.BizAccountPayload
-		static encode(m: proto.BizAccountPayload.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BizAccountPayload & proto.BizAccountPayload.$Shape
+		static encode(m: proto.BizAccountPayload.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BizAccountPayload & proto.BizAccountPayload.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BizAccountPayload
-		static toObject(m: proto.BizAccountPayload, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BizAccountPayload, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BizAccountPayload {
@@ -1398,10 +1398,10 @@ export namespace proto {
 		featureControls?: (number|Long|null)
 		static create(properties: proto.BizIdentityInfo.$Shape): proto.BizIdentityInfo & proto.BizIdentityInfo.$Shape
 		static create(properties?: proto.BizIdentityInfo.$Properties): proto.BizIdentityInfo
-		static encode(m: proto.BizIdentityInfo.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BizIdentityInfo & proto.BizIdentityInfo.$Shape
+		static encode(m: proto.BizIdentityInfo.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BizIdentityInfo & proto.BizIdentityInfo.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BizIdentityInfo
-		static toObject(m: proto.BizIdentityInfo, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BizIdentityInfo, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BizIdentityInfo {
@@ -1441,10 +1441,10 @@ export namespace proto {
 		ageCollectionType?: (proto.BotAgeCollectionMetadata.AgeCollectionType|null)
 		static create(properties: proto.BotAgeCollectionMetadata.$Shape): proto.BotAgeCollectionMetadata & proto.BotAgeCollectionMetadata.$Shape
 		static create(properties?: proto.BotAgeCollectionMetadata.$Properties): proto.BotAgeCollectionMetadata
-		static encode(m: proto.BotAgeCollectionMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotAgeCollectionMetadata & proto.BotAgeCollectionMetadata.$Shape
+		static encode(m: proto.BotAgeCollectionMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotAgeCollectionMetadata & proto.BotAgeCollectionMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotAgeCollectionMetadata
-		static toObject(m: proto.BotAgeCollectionMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotAgeCollectionMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotAgeCollectionMetadata {
@@ -1469,10 +1469,10 @@ export namespace proto {
 		clientPublicKey?: (Uint8Array|null)
 		static create(properties: proto.BotAgentDeepLinkMetadata.$Shape): proto.BotAgentDeepLinkMetadata & proto.BotAgentDeepLinkMetadata.$Shape
 		static create(properties?: proto.BotAgentDeepLinkMetadata.$Properties): proto.BotAgentDeepLinkMetadata
-		static encode(m: proto.BotAgentDeepLinkMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotAgentDeepLinkMetadata & proto.BotAgentDeepLinkMetadata.$Shape
+		static encode(m: proto.BotAgentDeepLinkMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotAgentDeepLinkMetadata & proto.BotAgentDeepLinkMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotAgentDeepLinkMetadata
-		static toObject(m: proto.BotAgentDeepLinkMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotAgentDeepLinkMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotAgentDeepLinkMetadata {
@@ -1491,10 +1491,10 @@ export namespace proto {
 		deepLinkMetadata?: (proto.BotAgentDeepLinkMetadata.$Properties|null)
 		static create(properties: proto.BotAgentMetadata.$Shape): proto.BotAgentMetadata & proto.BotAgentMetadata.$Shape
 		static create(properties?: proto.BotAgentMetadata.$Properties): proto.BotAgentMetadata
-		static encode(m: proto.BotAgentMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotAgentMetadata & proto.BotAgentMetadata.$Shape
+		static encode(m: proto.BotAgentMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotAgentMetadata & proto.BotAgentMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotAgentMetadata
-		static toObject(m: proto.BotAgentMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotAgentMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotAgentMetadata {
@@ -1512,10 +1512,10 @@ export namespace proto {
 		capabilities: proto.BotCapabilityMetadata.BotCapabilityType[]
 		static create(properties: proto.BotCapabilityMetadata.$Shape): proto.BotCapabilityMetadata & proto.BotCapabilityMetadata.$Shape
 		static create(properties?: proto.BotCapabilityMetadata.$Properties): proto.BotCapabilityMetadata
-		static encode(m: proto.BotCapabilityMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotCapabilityMetadata & proto.BotCapabilityMetadata.$Shape
+		static encode(m: proto.BotCapabilityMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotCapabilityMetadata & proto.BotCapabilityMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotCapabilityMetadata
-		static toObject(m: proto.BotCapabilityMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotCapabilityMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotCapabilityMetadata {
@@ -1622,10 +1622,10 @@ export namespace proto {
 		commandPrompt?: (string|null)
 		static create(properties: proto.BotCommandMetadata.$Shape): proto.BotCommandMetadata & proto.BotCommandMetadata.$Shape
 		static create(properties?: proto.BotCommandMetadata.$Properties): proto.BotCommandMetadata
-		static encode(m: proto.BotCommandMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotCommandMetadata & proto.BotCommandMetadata.$Shape
+		static encode(m: proto.BotCommandMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotCommandMetadata & proto.BotCommandMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotCommandMetadata
-		static toObject(m: proto.BotCommandMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotCommandMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotCommandMetadata {
@@ -1645,10 +1645,10 @@ export namespace proto {
 		pluginType?: (proto.BotDocumentMessageMetadata.DocumentPluginType|null)
 		static create(properties: proto.BotDocumentMessageMetadata.$Shape): proto.BotDocumentMessageMetadata & proto.BotDocumentMessageMetadata.$Shape
 		static create(properties?: proto.BotDocumentMessageMetadata.$Properties): proto.BotDocumentMessageMetadata
-		static encode(m: proto.BotDocumentMessageMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotDocumentMessageMetadata & proto.BotDocumentMessageMetadata.$Shape
+		static encode(m: proto.BotDocumentMessageMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotDocumentMessageMetadata & proto.BotDocumentMessageMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotDocumentMessageMetadata
-		static toObject(m: proto.BotDocumentMessageMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotDocumentMessageMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotDocumentMessageMetadata {
@@ -1676,10 +1676,10 @@ export namespace proto {
 		sideBySideSurveyMetadata?: (proto.BotFeedbackMessage.SideBySideSurveyMetadata.$Properties|null)
 		static create(properties: proto.BotFeedbackMessage.$Shape): proto.BotFeedbackMessage & proto.BotFeedbackMessage.$Shape
 		static create(properties?: proto.BotFeedbackMessage.$Properties): proto.BotFeedbackMessage
-		static encode(m: proto.BotFeedbackMessage.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotFeedbackMessage & proto.BotFeedbackMessage.$Shape
+		static encode(m: proto.BotFeedbackMessage.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotFeedbackMessage & proto.BotFeedbackMessage.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotFeedbackMessage
-		static toObject(m: proto.BotFeedbackMessage, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotFeedbackMessage, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotFeedbackMessage {
@@ -1745,10 +1745,10 @@ export namespace proto {
 			metaAiAnalyticsData?: (proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.$Properties|null)
 			static create(properties: proto.BotFeedbackMessage.SideBySideSurveyMetadata.$Shape): proto.BotFeedbackMessage.SideBySideSurveyMetadata & proto.BotFeedbackMessage.SideBySideSurveyMetadata.$Shape
 			static create(properties?: proto.BotFeedbackMessage.SideBySideSurveyMetadata.$Properties): proto.BotFeedbackMessage.SideBySideSurveyMetadata
-			static encode(m: proto.BotFeedbackMessage.SideBySideSurveyMetadata.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.BotFeedbackMessage.SideBySideSurveyMetadata & proto.BotFeedbackMessage.SideBySideSurveyMetadata.$Shape
+			static encode(m: proto.BotFeedbackMessage.SideBySideSurveyMetadata.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.BotFeedbackMessage.SideBySideSurveyMetadata & proto.BotFeedbackMessage.SideBySideSurveyMetadata.$Shape
 			static fromObject(d: { [k: string]: any }): proto.BotFeedbackMessage.SideBySideSurveyMetadata
-			static toObject(m: proto.BotFeedbackMessage.SideBySideSurveyMetadata, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.BotFeedbackMessage.SideBySideSurveyMetadata, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace SideBySideSurveyMetadata {
@@ -1775,10 +1775,10 @@ export namespace proto {
 				simonSessionFbid?: (string|null)
 				static create(properties: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SideBySideSurveyAnalyticsData.$Shape): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SideBySideSurveyAnalyticsData & proto.BotFeedbackMessage.SideBySideSurveyMetadata.SideBySideSurveyAnalyticsData.$Shape
 				static create(properties?: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SideBySideSurveyAnalyticsData.$Properties): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SideBySideSurveyAnalyticsData
-				static encode(m: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SideBySideSurveyAnalyticsData.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SideBySideSurveyAnalyticsData & proto.BotFeedbackMessage.SideBySideSurveyMetadata.SideBySideSurveyAnalyticsData.$Shape
+				static encode(m: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SideBySideSurveyAnalyticsData.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SideBySideSurveyAnalyticsData & proto.BotFeedbackMessage.SideBySideSurveyMetadata.SideBySideSurveyAnalyticsData.$Shape
 				static fromObject(d: { [k: string]: any }): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SideBySideSurveyAnalyticsData
-				static toObject(m: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SideBySideSurveyAnalyticsData, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SideBySideSurveyAnalyticsData, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace SideBySideSurveyAnalyticsData {
@@ -1806,10 +1806,10 @@ export namespace proto {
 				abandonEvent?: (proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyAbandonEventData.$Properties|null)
 				static create(properties: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.$Shape): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData & proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.$Shape
 				static create(properties?: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.$Properties): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData
-				static encode(m: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData & proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.$Shape
+				static encode(m: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData & proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.$Shape
 				static fromObject(d: { [k: string]: any }): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData
-				static toObject(m: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace SidebySideSurveyMetaAiAnalyticsData {
@@ -1834,10 +1834,10 @@ export namespace proto {
 					abandonDwellTimeMsString?: (string|null)
 					static create(properties: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyAbandonEventData.$Shape): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyAbandonEventData & proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyAbandonEventData.$Shape
 					static create(properties?: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyAbandonEventData.$Properties): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyAbandonEventData
-					static encode(m: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyAbandonEventData.$Properties, w?: PbWriter): PbWriter
-					static decode(r: (PbReader|Uint8Array), l?: number): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyAbandonEventData & proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyAbandonEventData.$Shape
+					static encode(m: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyAbandonEventData.$Properties, w?: PBWriter): PBWriter
+					static decode(r: (PBReader|Uint8Array), l?: number): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyAbandonEventData & proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyAbandonEventData.$Shape
 					static fromObject(d: { [k: string]: any }): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyAbandonEventData
-					static toObject(m: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyAbandonEventData, o?: PbConversionOptions): { [k: string]: any }
+					static toObject(m: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyAbandonEventData, o?: PBConversionOptions): { [k: string]: any }
 					toJSON(): { [k: string]: any }
 				}
 				namespace SideBySideSurveyAbandonEventData {
@@ -1856,10 +1856,10 @@ export namespace proto {
 					clickDwellTimeMsString?: (string|null)
 					static create(properties: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCTAClickEventData.$Shape): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCTAClickEventData & proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCTAClickEventData.$Shape
 					static create(properties?: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCTAClickEventData.$Properties): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCTAClickEventData
-					static encode(m: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCTAClickEventData.$Properties, w?: PbWriter): PbWriter
-					static decode(r: (PbReader|Uint8Array), l?: number): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCTAClickEventData & proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCTAClickEventData.$Shape
+					static encode(m: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCTAClickEventData.$Properties, w?: PBWriter): PBWriter
+					static decode(r: (PBReader|Uint8Array), l?: number): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCTAClickEventData & proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCTAClickEventData.$Shape
 					static fromObject(d: { [k: string]: any }): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCTAClickEventData
-					static toObject(m: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCTAClickEventData, o?: PbConversionOptions): { [k: string]: any }
+					static toObject(m: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCTAClickEventData, o?: PBConversionOptions): { [k: string]: any }
 					toJSON(): { [k: string]: any }
 				}
 				namespace SideBySideSurveyCTAClickEventData {
@@ -1878,10 +1878,10 @@ export namespace proto {
 					isSurveyExpired?: (boolean|null)
 					static create(properties: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCTAImpressionEventData.$Shape): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCTAImpressionEventData & proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCTAImpressionEventData.$Shape
 					static create(properties?: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCTAImpressionEventData.$Properties): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCTAImpressionEventData
-					static encode(m: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCTAImpressionEventData.$Properties, w?: PbWriter): PbWriter
-					static decode(r: (PbReader|Uint8Array), l?: number): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCTAImpressionEventData & proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCTAImpressionEventData.$Shape
+					static encode(m: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCTAImpressionEventData.$Properties, w?: PBWriter): PBWriter
+					static decode(r: (PBReader|Uint8Array), l?: number): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCTAImpressionEventData & proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCTAImpressionEventData.$Shape
 					static fromObject(d: { [k: string]: any }): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCTAImpressionEventData
-					static toObject(m: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCTAImpressionEventData, o?: PbConversionOptions): { [k: string]: any }
+					static toObject(m: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCTAImpressionEventData, o?: PBConversionOptions): { [k: string]: any }
 					toJSON(): { [k: string]: any }
 				}
 				namespace SideBySideSurveyCTAImpressionEventData {
@@ -1898,10 +1898,10 @@ export namespace proto {
 					$unknowns?: Uint8Array[]
 					static create(properties: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCardImpressionEventData.$Shape): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCardImpressionEventData & proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCardImpressionEventData.$Shape
 					static create(properties?: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCardImpressionEventData.$Properties): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCardImpressionEventData
-					static encode(m: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCardImpressionEventData.$Properties, w?: PbWriter): PbWriter
-					static decode(r: (PbReader|Uint8Array), l?: number): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCardImpressionEventData & proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCardImpressionEventData.$Shape
+					static encode(m: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCardImpressionEventData.$Properties, w?: PBWriter): PBWriter
+					static decode(r: (PBReader|Uint8Array), l?: number): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCardImpressionEventData & proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCardImpressionEventData.$Shape
 					static fromObject(d: { [k: string]: any }): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCardImpressionEventData
-					static toObject(m: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCardImpressionEventData, o?: PbConversionOptions): { [k: string]: any }
+					static toObject(m: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyCardImpressionEventData, o?: PBConversionOptions): { [k: string]: any }
 					toJSON(): { [k: string]: any }
 				}
 				namespace SideBySideSurveyCardImpressionEventData {
@@ -1919,10 +1919,10 @@ export namespace proto {
 					selectedResponseId?: (string|null)
 					static create(properties: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyResponseEventData.$Shape): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyResponseEventData & proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyResponseEventData.$Shape
 					static create(properties?: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyResponseEventData.$Properties): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyResponseEventData
-					static encode(m: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyResponseEventData.$Properties, w?: PbWriter): PbWriter
-					static decode(r: (PbReader|Uint8Array), l?: number): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyResponseEventData & proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyResponseEventData.$Shape
+					static encode(m: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyResponseEventData.$Properties, w?: PBWriter): PBWriter
+					static decode(r: (PBReader|Uint8Array), l?: number): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyResponseEventData & proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyResponseEventData.$Shape
 					static fromObject(d: { [k: string]: any }): proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyResponseEventData
-					static toObject(m: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyResponseEventData, o?: PbConversionOptions): { [k: string]: any }
+					static toObject(m: proto.BotFeedbackMessage.SideBySideSurveyMetadata.SidebySideSurveyMetaAiAnalyticsData.SideBySideSurveyResponseEventData, o?: PBConversionOptions): { [k: string]: any }
 					toJSON(): { [k: string]: any }
 				}
 				namespace SideBySideSurveyResponseEventData {
@@ -1944,10 +1944,10 @@ export namespace proto {
 		participantsMetadata: proto.BotGroupParticipantMetadata.$Properties[]
 		static create(properties: proto.BotGroupMetadata.$Shape): proto.BotGroupMetadata & proto.BotGroupMetadata.$Shape
 		static create(properties?: proto.BotGroupMetadata.$Properties): proto.BotGroupMetadata
-		static encode(m: proto.BotGroupMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotGroupMetadata & proto.BotGroupMetadata.$Shape
+		static encode(m: proto.BotGroupMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotGroupMetadata & proto.BotGroupMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotGroupMetadata
-		static toObject(m: proto.BotGroupMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotGroupMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotGroupMetadata {
@@ -1965,10 +1965,10 @@ export namespace proto {
 		botFbid?: (string|null)
 		static create(properties: proto.BotGroupParticipantMetadata.$Shape): proto.BotGroupParticipantMetadata & proto.BotGroupParticipantMetadata.$Shape
 		static create(properties?: proto.BotGroupParticipantMetadata.$Properties): proto.BotGroupParticipantMetadata
-		static encode(m: proto.BotGroupParticipantMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotGroupParticipantMetadata & proto.BotGroupParticipantMetadata.$Shape
+		static encode(m: proto.BotGroupParticipantMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotGroupParticipantMetadata & proto.BotGroupParticipantMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotGroupParticipantMetadata
-		static toObject(m: proto.BotGroupParticipantMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotGroupParticipantMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotGroupParticipantMetadata {
@@ -1986,10 +1986,10 @@ export namespace proto {
 		participantsMetadata: proto.BotGroupParticipantMetadata.$Properties[]
 		static create(properties: proto.BotHistoryShareMetadata.$Shape): proto.BotHistoryShareMetadata & proto.BotHistoryShareMetadata.$Shape
 		static create(properties?: proto.BotHistoryShareMetadata.$Properties): proto.BotHistoryShareMetadata
-		static encode(m: proto.BotHistoryShareMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotHistoryShareMetadata & proto.BotHistoryShareMetadata.$Shape
+		static encode(m: proto.BotHistoryShareMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotHistoryShareMetadata & proto.BotHistoryShareMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotHistoryShareMetadata
-		static toObject(m: proto.BotHistoryShareMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotHistoryShareMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotHistoryShareMetadata {
@@ -2008,10 +2008,10 @@ export namespace proto {
 		shortPrompt?: (string|null)
 		static create(properties: proto.BotImagineMetadata.$Shape): proto.BotImagineMetadata & proto.BotImagineMetadata.$Shape
 		static create(properties?: proto.BotImagineMetadata.$Properties): proto.BotImagineMetadata
-		static encode(m: proto.BotImagineMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotImagineMetadata & proto.BotImagineMetadata.$Shape
+		static encode(m: proto.BotImagineMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotImagineMetadata & proto.BotImagineMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotImagineMetadata
-		static toObject(m: proto.BotImagineMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotImagineMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotImagineMetadata {
@@ -2039,10 +2039,10 @@ export namespace proto {
 		isThinking?: (boolean|null)
 		static create(properties: proto.BotInfrastructureDiagnostics.$Shape): proto.BotInfrastructureDiagnostics & proto.BotInfrastructureDiagnostics.$Shape
 		static create(properties?: proto.BotInfrastructureDiagnostics.$Properties): proto.BotInfrastructureDiagnostics
-		static encode(m: proto.BotInfrastructureDiagnostics.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotInfrastructureDiagnostics & proto.BotInfrastructureDiagnostics.$Shape
+		static encode(m: proto.BotInfrastructureDiagnostics.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotInfrastructureDiagnostics & proto.BotInfrastructureDiagnostics.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotInfrastructureDiagnostics
-		static toObject(m: proto.BotInfrastructureDiagnostics, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotInfrastructureDiagnostics, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotInfrastructureDiagnostics {
@@ -2067,10 +2067,10 @@ export namespace proto {
 		foldedPromptMessageIds: string[]
 		static create(properties: proto.BotInterjectionMetadata.$Shape): proto.BotInterjectionMetadata & proto.BotInterjectionMetadata.$Shape
 		static create(properties?: proto.BotInterjectionMetadata.$Properties): proto.BotInterjectionMetadata
-		static encode(m: proto.BotInterjectionMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotInterjectionMetadata & proto.BotInterjectionMetadata.$Shape
+		static encode(m: proto.BotInterjectionMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotInterjectionMetadata & proto.BotInterjectionMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotInterjectionMetadata
-		static toObject(m: proto.BotInterjectionMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotInterjectionMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotInterjectionMetadata {
@@ -2089,10 +2089,10 @@ export namespace proto {
 		type?: (proto.BotLinkedAccount.BotLinkedAccountType|null)
 		static create(properties: proto.BotLinkedAccount.$Shape): proto.BotLinkedAccount & proto.BotLinkedAccount.$Shape
 		static create(properties?: proto.BotLinkedAccount.$Properties): proto.BotLinkedAccount
-		static encode(m: proto.BotLinkedAccount.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotLinkedAccount & proto.BotLinkedAccount.$Shape
+		static encode(m: proto.BotLinkedAccount.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotLinkedAccount & proto.BotLinkedAccount.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotLinkedAccount
-		static toObject(m: proto.BotLinkedAccount, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotLinkedAccount, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotLinkedAccount {
@@ -2115,10 +2115,10 @@ export namespace proto {
 		acErrorCode?: (number|null)
 		static create(properties: proto.BotLinkedAccountsMetadata.$Shape): proto.BotLinkedAccountsMetadata & proto.BotLinkedAccountsMetadata.$Shape
 		static create(properties?: proto.BotLinkedAccountsMetadata.$Properties): proto.BotLinkedAccountsMetadata
-		static encode(m: proto.BotLinkedAccountsMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotLinkedAccountsMetadata & proto.BotLinkedAccountsMetadata.$Shape
+		static encode(m: proto.BotLinkedAccountsMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotLinkedAccountsMetadata & proto.BotLinkedAccountsMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotLinkedAccountsMetadata
-		static toObject(m: proto.BotLinkedAccountsMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotLinkedAccountsMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotLinkedAccountsMetadata {
@@ -2144,10 +2144,10 @@ export namespace proto {
 		orientationType?: (proto.BotMediaMetadata.OrientationType|null)
 		static create(properties: proto.BotMediaMetadata.$Shape): proto.BotMediaMetadata & proto.BotMediaMetadata.$Shape
 		static create(properties?: proto.BotMediaMetadata.$Properties): proto.BotMediaMetadata
-		static encode(m: proto.BotMediaMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotMediaMetadata & proto.BotMediaMetadata.$Shape
+		static encode(m: proto.BotMediaMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotMediaMetadata & proto.BotMediaMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotMediaMetadata
-		static toObject(m: proto.BotMediaMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotMediaMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotMediaMetadata {
@@ -2177,10 +2177,10 @@ export namespace proto {
 		factId?: (string|null)
 		static create(properties: proto.BotMemoryFact.$Shape): proto.BotMemoryFact & proto.BotMemoryFact.$Shape
 		static create(properties?: proto.BotMemoryFact.$Properties): proto.BotMemoryFact
-		static encode(m: proto.BotMemoryFact.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotMemoryFact & proto.BotMemoryFact.$Shape
+		static encode(m: proto.BotMemoryFact.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotMemoryFact & proto.BotMemoryFact.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotMemoryFact
-		static toObject(m: proto.BotMemoryFact, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotMemoryFact, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotMemoryFact {
@@ -2201,10 +2201,10 @@ export namespace proto {
 		disclaimer?: (string|null)
 		static create(properties: proto.BotMemoryMetadata.$Shape): proto.BotMemoryMetadata & proto.BotMemoryMetadata.$Shape
 		static create(properties?: proto.BotMemoryMetadata.$Properties): proto.BotMemoryMetadata
-		static encode(m: proto.BotMemoryMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotMemoryMetadata & proto.BotMemoryMetadata.$Shape
+		static encode(m: proto.BotMemoryMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotMemoryMetadata & proto.BotMemoryMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotMemoryMetadata
-		static toObject(m: proto.BotMemoryMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotMemoryMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotMemoryMetadata {
@@ -2224,10 +2224,10 @@ export namespace proto {
 		faceImages: proto.BotMediaMetadata.$Properties[]
 		static create(properties: proto.BotMemuMetadata.$Shape): proto.BotMemuMetadata & proto.BotMemuMetadata.$Shape
 		static create(properties?: proto.BotMemuMetadata.$Properties): proto.BotMemuMetadata
-		static encode(m: proto.BotMemuMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotMemuMetadata & proto.BotMemuMetadata.$Shape
+		static encode(m: proto.BotMemuMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotMemuMetadata & proto.BotMemuMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotMemuMetadata
-		static toObject(m: proto.BotMemuMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotMemuMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotMemuMetadata {
@@ -2246,10 +2246,10 @@ export namespace proto {
 		proactiveMessageCampaignId?: (string|null)
 		static create(properties: proto.BotMessageOrigin.$Shape): proto.BotMessageOrigin & proto.BotMessageOrigin.$Shape
 		static create(properties?: proto.BotMessageOrigin.$Properties): proto.BotMessageOrigin
-		static encode(m: proto.BotMessageOrigin.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotMessageOrigin & proto.BotMessageOrigin.$Shape
+		static encode(m: proto.BotMessageOrigin.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotMessageOrigin & proto.BotMessageOrigin.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotMessageOrigin
-		static toObject(m: proto.BotMessageOrigin, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotMessageOrigin, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotMessageOrigin {
@@ -2272,10 +2272,10 @@ export namespace proto {
 		origins: proto.BotMessageOrigin.$Properties[]
 		static create(properties: proto.BotMessageOriginMetadata.$Shape): proto.BotMessageOriginMetadata & proto.BotMessageOriginMetadata.$Shape
 		static create(properties?: proto.BotMessageOriginMetadata.$Properties): proto.BotMessageOriginMetadata
-		static encode(m: proto.BotMessageOriginMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotMessageOriginMetadata & proto.BotMessageOriginMetadata.$Shape
+		static encode(m: proto.BotMessageOriginMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotMessageOriginMetadata & proto.BotMessageOriginMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotMessageOriginMetadata
-		static toObject(m: proto.BotMessageOriginMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotMessageOriginMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotMessageOriginMetadata {
@@ -2294,10 +2294,10 @@ export namespace proto {
 		forwardScore?: (number|null)
 		static create(properties: proto.BotMessageSharingInfo.$Shape): proto.BotMessageSharingInfo & proto.BotMessageSharingInfo.$Shape
 		static create(properties?: proto.BotMessageSharingInfo.$Properties): proto.BotMessageSharingInfo
-		static encode(m: proto.BotMessageSharingInfo.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotMessageSharingInfo & proto.BotMessageSharingInfo.$Shape
+		static encode(m: proto.BotMessageSharingInfo.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotMessageSharingInfo & proto.BotMessageSharingInfo.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotMessageSharingInfo
-		static toObject(m: proto.BotMessageSharingInfo, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotMessageSharingInfo, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotMessageSharingInfo {
@@ -2360,10 +2360,10 @@ export namespace proto {
 		internalMetadata?: (Uint8Array|null)
 		static create(properties: proto.BotMetadata.$Shape): proto.BotMetadata & proto.BotMetadata.$Shape
 		static create(properties?: proto.BotMetadata.$Properties): proto.BotMetadata
-		static encode(m: proto.BotMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotMetadata & proto.BotMetadata.$Shape
+		static encode(m: proto.BotMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotMetadata & proto.BotMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotMetadata
-		static toObject(m: proto.BotMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotMetadata {
@@ -2480,10 +2480,10 @@ export namespace proto {
 		threadOrigin?: (proto.BotMetricsThreadEntryPoint|null)
 		static create(properties: proto.BotMetricsMetadata.$Shape): proto.BotMetricsMetadata & proto.BotMetricsMetadata.$Shape
 		static create(properties?: proto.BotMetricsMetadata.$Properties): proto.BotMetricsMetadata
-		static encode(m: proto.BotMetricsMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotMetricsMetadata & proto.BotMetricsMetadata.$Shape
+		static encode(m: proto.BotMetricsMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotMetricsMetadata & proto.BotMetricsMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotMetricsMetadata
-		static toObject(m: proto.BotMetricsMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotMetricsMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotMetricsMetadata {
@@ -2511,10 +2511,10 @@ export namespace proto {
 		overrideMode: number[]
 		static create(properties: proto.BotModeSelectionMetadata.$Shape): proto.BotModeSelectionMetadata & proto.BotModeSelectionMetadata.$Shape
 		static create(properties?: proto.BotModeSelectionMetadata.$Properties): proto.BotModeSelectionMetadata
-		static encode(m: proto.BotModeSelectionMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotModeSelectionMetadata & proto.BotModeSelectionMetadata.$Shape
+		static encode(m: proto.BotModeSelectionMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotModeSelectionMetadata & proto.BotModeSelectionMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotModeSelectionMetadata
-		static toObject(m: proto.BotModeSelectionMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotModeSelectionMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotModeSelectionMetadata {
@@ -2539,10 +2539,10 @@ export namespace proto {
 		modelNameOverride?: (string|null)
 		static create(properties: proto.BotModelMetadata.$Shape): proto.BotModelMetadata & proto.BotModelMetadata.$Shape
 		static create(properties?: proto.BotModelMetadata.$Properties): proto.BotModelMetadata
-		static encode(m: proto.BotModelMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotModelMetadata & proto.BotModelMetadata.$Shape
+		static encode(m: proto.BotModelMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotModelMetadata & proto.BotModelMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotModelMetadata
-		static toObject(m: proto.BotModelMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotModelMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotModelMetadata {
@@ -2583,10 +2583,10 @@ export namespace proto {
 		faviconCdnUrl?: (string|null)
 		static create(properties: proto.BotPluginMetadata.$Shape): proto.BotPluginMetadata & proto.BotPluginMetadata.$Shape
 		static create(properties?: proto.BotPluginMetadata.$Properties): proto.BotPluginMetadata
-		static encode(m: proto.BotPluginMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotPluginMetadata & proto.BotPluginMetadata.$Shape
+		static encode(m: proto.BotPluginMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotPluginMetadata & proto.BotPluginMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotPluginMetadata
-		static toObject(m: proto.BotPluginMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotPluginMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotPluginMetadata {
@@ -2628,10 +2628,10 @@ export namespace proto {
 		estimatedCompletionTime?: (number|Long|null)
 		static create(properties: proto.BotProgressIndicatorMetadata.$Shape): proto.BotProgressIndicatorMetadata & proto.BotProgressIndicatorMetadata.$Shape
 		static create(properties?: proto.BotProgressIndicatorMetadata.$Properties): proto.BotProgressIndicatorMetadata
-		static encode(m: proto.BotProgressIndicatorMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotProgressIndicatorMetadata & proto.BotProgressIndicatorMetadata.$Shape
+		static encode(m: proto.BotProgressIndicatorMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotProgressIndicatorMetadata & proto.BotProgressIndicatorMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotProgressIndicatorMetadata
-		static toObject(m: proto.BotProgressIndicatorMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotProgressIndicatorMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotProgressIndicatorMetadata {
@@ -2656,10 +2656,10 @@ export namespace proto {
 			sections: proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.$Properties[]
 			static create(properties: proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.$Shape): proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata & proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.$Shape
 			static create(properties?: proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.$Properties): proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata
-			static encode(m: proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata & proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.$Shape
+			static encode(m: proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata & proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.$Shape
 			static fromObject(d: { [k: string]: any }): proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata
-			static toObject(m: proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace BotPlanningStepMetadata {
@@ -2685,10 +2685,10 @@ export namespace proto {
 				favIconUrl?: (string|null)
 				static create(properties: proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.$Shape): proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata & proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.$Shape
 				static create(properties?: proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.$Properties): proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata
-				static encode(m: proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata & proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.$Shape
+				static encode(m: proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata & proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.$Shape
 				static fromObject(d: { [k: string]: any }): proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata
-				static toObject(m: proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace BotPlanningSearchSourceMetadata {
@@ -2711,10 +2711,10 @@ export namespace proto {
 				sourceUrl?: (string|null)
 				static create(properties: proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.$Shape): proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata & proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.$Shape
 				static create(properties?: proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.$Properties): proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata
-				static encode(m: proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata & proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.$Shape
+				static encode(m: proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata & proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata.$Shape
 				static fromObject(d: { [k: string]: any }): proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata
-				static toObject(m: proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourcesMetadata, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace BotPlanningSearchSourcesMetadata {
@@ -2742,10 +2742,10 @@ export namespace proto {
 				sourcesMetadata: proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningSearchSourceMetadata.$Properties[]
 				static create(properties: proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.$Shape): proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata & proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.$Shape
 				static create(properties?: proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.$Properties): proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata
-				static encode(m: proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata & proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.$Shape
+				static encode(m: proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata & proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata.$Shape
 				static fromObject(d: { [k: string]: any }): proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata
-				static toObject(m: proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.BotProgressIndicatorMetadata.BotPlanningStepMetadata.BotPlanningStepSectionMetadata, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace BotPlanningStepSectionMetadata {
@@ -2780,10 +2780,10 @@ export namespace proto {
 		buttonTitle?: (string|null)
 		static create(properties: proto.BotPromotionMessageMetadata.$Shape): proto.BotPromotionMessageMetadata & proto.BotPromotionMessageMetadata.$Shape
 		static create(properties?: proto.BotPromotionMessageMetadata.$Properties): proto.BotPromotionMessageMetadata
-		static encode(m: proto.BotPromotionMessageMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotPromotionMessageMetadata & proto.BotPromotionMessageMetadata.$Shape
+		static encode(m: proto.BotPromotionMessageMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotPromotionMessageMetadata & proto.BotPromotionMessageMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotPromotionMessageMetadata
-		static toObject(m: proto.BotPromotionMessageMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotPromotionMessageMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotPromotionMessageMetadata {
@@ -2808,10 +2808,10 @@ export namespace proto {
 		promptId?: (string|null)
 		static create(properties: proto.BotPromptSuggestion.$Shape): proto.BotPromptSuggestion & proto.BotPromptSuggestion.$Shape
 		static create(properties?: proto.BotPromptSuggestion.$Properties): proto.BotPromptSuggestion
-		static encode(m: proto.BotPromptSuggestion.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotPromptSuggestion & proto.BotPromptSuggestion.$Shape
+		static encode(m: proto.BotPromptSuggestion.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotPromptSuggestion & proto.BotPromptSuggestion.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotPromptSuggestion
-		static toObject(m: proto.BotPromptSuggestion, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotPromptSuggestion, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotPromptSuggestion {
@@ -2830,10 +2830,10 @@ export namespace proto {
 		suggestions: proto.BotPromptSuggestion.$Properties[]
 		static create(properties: proto.BotPromptSuggestions.$Shape): proto.BotPromptSuggestions & proto.BotPromptSuggestions.$Shape
 		static create(properties?: proto.BotPromptSuggestions.$Properties): proto.BotPromptSuggestions
-		static encode(m: proto.BotPromptSuggestions.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotPromptSuggestions & proto.BotPromptSuggestions.$Shape
+		static encode(m: proto.BotPromptSuggestions.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotPromptSuggestions & proto.BotPromptSuggestions.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotPromptSuggestions
-		static toObject(m: proto.BotPromptSuggestions, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotPromptSuggestions, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotPromptSuggestions {
@@ -2851,10 +2851,10 @@ export namespace proto {
 		transcript?: (string|null)
 		static create(properties: proto.BotPttPromptMetadata.$Shape): proto.BotPttPromptMetadata & proto.BotPttPromptMetadata.$Shape
 		static create(properties?: proto.BotPttPromptMetadata.$Properties): proto.BotPttPromptMetadata
-		static encode(m: proto.BotPttPromptMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotPttPromptMetadata & proto.BotPttPromptMetadata.$Shape
+		static encode(m: proto.BotPttPromptMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotPttPromptMetadata & proto.BotPttPromptMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotPttPromptMetadata
-		static toObject(m: proto.BotPttPromptMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotPttPromptMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotPttPromptMetadata {
@@ -2872,10 +2872,10 @@ export namespace proto {
 		botFeatureQuotaMetadata: proto.BotQuotaMetadata.BotFeatureQuotaMetadata.$Properties[]
 		static create(properties: proto.BotQuotaMetadata.$Shape): proto.BotQuotaMetadata & proto.BotQuotaMetadata.$Shape
 		static create(properties?: proto.BotQuotaMetadata.$Properties): proto.BotQuotaMetadata
-		static encode(m: proto.BotQuotaMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotQuotaMetadata & proto.BotQuotaMetadata.$Shape
+		static encode(m: proto.BotQuotaMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotQuotaMetadata & proto.BotQuotaMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotQuotaMetadata
-		static toObject(m: proto.BotQuotaMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotQuotaMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotQuotaMetadata {
@@ -2894,10 +2894,10 @@ export namespace proto {
 			expirationTimestamp?: (number|Long|null)
 			static create(properties: proto.BotQuotaMetadata.BotFeatureQuotaMetadata.$Shape): proto.BotQuotaMetadata.BotFeatureQuotaMetadata & proto.BotQuotaMetadata.BotFeatureQuotaMetadata.$Shape
 			static create(properties?: proto.BotQuotaMetadata.BotFeatureQuotaMetadata.$Properties): proto.BotQuotaMetadata.BotFeatureQuotaMetadata
-			static encode(m: proto.BotQuotaMetadata.BotFeatureQuotaMetadata.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.BotQuotaMetadata.BotFeatureQuotaMetadata & proto.BotQuotaMetadata.BotFeatureQuotaMetadata.$Shape
+			static encode(m: proto.BotQuotaMetadata.BotFeatureQuotaMetadata.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.BotQuotaMetadata.BotFeatureQuotaMetadata & proto.BotQuotaMetadata.BotFeatureQuotaMetadata.$Shape
 			static fromObject(d: { [k: string]: any }): proto.BotQuotaMetadata.BotFeatureQuotaMetadata
-			static toObject(m: proto.BotQuotaMetadata.BotFeatureQuotaMetadata, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.BotQuotaMetadata.BotFeatureQuotaMetadata, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace BotFeatureQuotaMetadata {
@@ -2926,10 +2926,10 @@ export namespace proto {
 		frequency?: (proto.BotReminderMetadata.ReminderFrequency|null)
 		static create(properties: proto.BotReminderMetadata.$Shape): proto.BotReminderMetadata & proto.BotReminderMetadata.$Shape
 		static create(properties?: proto.BotReminderMetadata.$Properties): proto.BotReminderMetadata
-		static encode(m: proto.BotReminderMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotReminderMetadata & proto.BotReminderMetadata.$Shape
+		static encode(m: proto.BotReminderMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotReminderMetadata & proto.BotReminderMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotReminderMetadata
-		static toObject(m: proto.BotReminderMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotReminderMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotReminderMetadata {
@@ -2965,10 +2965,10 @@ export namespace proto {
 		pixelDensity?: (number|null)
 		static create(properties: proto.BotRenderingConfigMetadata.$Shape): proto.BotRenderingConfigMetadata & proto.BotRenderingConfigMetadata.$Shape
 		static create(properties?: proto.BotRenderingConfigMetadata.$Properties): proto.BotRenderingConfigMetadata
-		static encode(m: proto.BotRenderingConfigMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotRenderingConfigMetadata & proto.BotRenderingConfigMetadata.$Shape
+		static encode(m: proto.BotRenderingConfigMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotRenderingConfigMetadata & proto.BotRenderingConfigMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotRenderingConfigMetadata
-		static toObject(m: proto.BotRenderingConfigMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotRenderingConfigMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotRenderingConfigMetadata {
@@ -2987,10 +2987,10 @@ export namespace proto {
 		keywords: proto.BotRenderingMetadata.Keyword.$Properties[]
 		static create(properties: proto.BotRenderingMetadata.$Shape): proto.BotRenderingMetadata & proto.BotRenderingMetadata.$Shape
 		static create(properties?: proto.BotRenderingMetadata.$Properties): proto.BotRenderingMetadata
-		static encode(m: proto.BotRenderingMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotRenderingMetadata & proto.BotRenderingMetadata.$Shape
+		static encode(m: proto.BotRenderingMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotRenderingMetadata & proto.BotRenderingMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotRenderingMetadata
-		static toObject(m: proto.BotRenderingMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotRenderingMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotRenderingMetadata {
@@ -3008,10 +3008,10 @@ export namespace proto {
 			associatedPrompts: string[]
 			static create(properties: proto.BotRenderingMetadata.Keyword.$Shape): proto.BotRenderingMetadata.Keyword & proto.BotRenderingMetadata.Keyword.$Shape
 			static create(properties?: proto.BotRenderingMetadata.Keyword.$Properties): proto.BotRenderingMetadata.Keyword
-			static encode(m: proto.BotRenderingMetadata.Keyword.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.BotRenderingMetadata.Keyword & proto.BotRenderingMetadata.Keyword.$Shape
+			static encode(m: proto.BotRenderingMetadata.Keyword.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.BotRenderingMetadata.Keyword & proto.BotRenderingMetadata.Keyword.$Shape
 			static fromObject(d: { [k: string]: any }): proto.BotRenderingMetadata.Keyword
-			static toObject(m: proto.BotRenderingMetadata.Keyword, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.BotRenderingMetadata.Keyword, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace Keyword {
@@ -3032,10 +3032,10 @@ export namespace proto {
 		resolutionDataSerialized?: (string|null)
 		static create(properties: proto.BotResolvedToolCallMetadata.$Shape): proto.BotResolvedToolCallMetadata & proto.BotResolvedToolCallMetadata.$Shape
 		static create(properties?: proto.BotResolvedToolCallMetadata.$Properties): proto.BotResolvedToolCallMetadata
-		static encode(m: proto.BotResolvedToolCallMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotResolvedToolCallMetadata & proto.BotResolvedToolCallMetadata.$Shape
+		static encode(m: proto.BotResolvedToolCallMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotResolvedToolCallMetadata & proto.BotResolvedToolCallMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotResolvedToolCallMetadata
-		static toObject(m: proto.BotResolvedToolCallMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotResolvedToolCallMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotResolvedToolCallMetadata {
@@ -3055,10 +3055,10 @@ export namespace proto {
 		sessionSource?: (proto.BotSessionSource|null)
 		static create(properties: proto.BotSessionMetadata.$Shape): proto.BotSessionMetadata & proto.BotSessionMetadata.$Shape
 		static create(properties?: proto.BotSessionMetadata.$Properties): proto.BotSessionMetadata
-		static encode(m: proto.BotSessionMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotSessionMetadata & proto.BotSessionMetadata.$Shape
+		static encode(m: proto.BotSessionMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotSessionMetadata & proto.BotSessionMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotSessionMetadata
-		static toObject(m: proto.BotSessionMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotSessionMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotSessionMetadata {
@@ -3087,10 +3087,10 @@ export namespace proto {
 		proofs: proto.BotSignatureVerificationUseCaseProof.$Properties[]
 		static create(properties: proto.BotSignatureVerificationMetadata.$Shape): proto.BotSignatureVerificationMetadata & proto.BotSignatureVerificationMetadata.$Shape
 		static create(properties?: proto.BotSignatureVerificationMetadata.$Properties): proto.BotSignatureVerificationMetadata
-		static encode(m: proto.BotSignatureVerificationMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotSignatureVerificationMetadata & proto.BotSignatureVerificationMetadata.$Shape
+		static encode(m: proto.BotSignatureVerificationMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotSignatureVerificationMetadata & proto.BotSignatureVerificationMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotSignatureVerificationMetadata
-		static toObject(m: proto.BotSignatureVerificationMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotSignatureVerificationMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotSignatureVerificationMetadata {
@@ -3112,10 +3112,10 @@ export namespace proto {
 		certificateChainSki: proto.BotSignatureVerificationUseCaseProof.CertificateSKI.$Properties[]
 		static create(properties: proto.BotSignatureVerificationUseCaseProof.$Shape): proto.BotSignatureVerificationUseCaseProof & proto.BotSignatureVerificationUseCaseProof.$Shape
 		static create(properties?: proto.BotSignatureVerificationUseCaseProof.$Properties): proto.BotSignatureVerificationUseCaseProof
-		static encode(m: proto.BotSignatureVerificationUseCaseProof.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotSignatureVerificationUseCaseProof & proto.BotSignatureVerificationUseCaseProof.$Shape
+		static encode(m: proto.BotSignatureVerificationUseCaseProof.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotSignatureVerificationUseCaseProof & proto.BotSignatureVerificationUseCaseProof.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotSignatureVerificationUseCaseProof
-		static toObject(m: proto.BotSignatureVerificationUseCaseProof, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotSignatureVerificationUseCaseProof, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotSignatureVerificationUseCaseProof {
@@ -3145,10 +3145,10 @@ export namespace proto {
 			ski?: (Uint8Array|null)
 			static create(properties: proto.BotSignatureVerificationUseCaseProof.CertificateSKI.$Shape): proto.BotSignatureVerificationUseCaseProof.CertificateSKI & proto.BotSignatureVerificationUseCaseProof.CertificateSKI.$Shape
 			static create(properties?: proto.BotSignatureVerificationUseCaseProof.CertificateSKI.$Properties): proto.BotSignatureVerificationUseCaseProof.CertificateSKI
-			static encode(m: proto.BotSignatureVerificationUseCaseProof.CertificateSKI.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.BotSignatureVerificationUseCaseProof.CertificateSKI & proto.BotSignatureVerificationUseCaseProof.CertificateSKI.$Shape
+			static encode(m: proto.BotSignatureVerificationUseCaseProof.CertificateSKI.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.BotSignatureVerificationUseCaseProof.CertificateSKI & proto.BotSignatureVerificationUseCaseProof.CertificateSKI.$Shape
 			static fromObject(d: { [k: string]: any }): proto.BotSignatureVerificationUseCaseProof.CertificateSKI
-			static toObject(m: proto.BotSignatureVerificationUseCaseProof.CertificateSKI, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.BotSignatureVerificationUseCaseProof.CertificateSKI, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace CertificateSKI {
@@ -3168,10 +3168,10 @@ export namespace proto {
 		sources: proto.BotSourcesMetadata.BotSourceItem.$Properties[]
 		static create(properties: proto.BotSourcesMetadata.$Shape): proto.BotSourcesMetadata & proto.BotSourcesMetadata.$Shape
 		static create(properties?: proto.BotSourcesMetadata.$Properties): proto.BotSourcesMetadata
-		static encode(m: proto.BotSourcesMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotSourcesMetadata & proto.BotSourcesMetadata.$Shape
+		static encode(m: proto.BotSourcesMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotSourcesMetadata & proto.BotSourcesMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotSourcesMetadata
-		static toObject(m: proto.BotSourcesMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotSourcesMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotSourcesMetadata {
@@ -3194,10 +3194,10 @@ export namespace proto {
 			sourceTitle?: (string|null)
 			static create(properties: proto.BotSourcesMetadata.BotSourceItem.$Shape): proto.BotSourcesMetadata.BotSourceItem & proto.BotSourcesMetadata.BotSourceItem.$Shape
 			static create(properties?: proto.BotSourcesMetadata.BotSourceItem.$Properties): proto.BotSourcesMetadata.BotSourceItem
-			static encode(m: proto.BotSourcesMetadata.BotSourceItem.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.BotSourcesMetadata.BotSourceItem & proto.BotSourcesMetadata.BotSourceItem.$Shape
+			static encode(m: proto.BotSourcesMetadata.BotSourceItem.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.BotSourcesMetadata.BotSourceItem & proto.BotSourcesMetadata.BotSourceItem.$Shape
 			static fromObject(d: { [k: string]: any }): proto.BotSourcesMetadata.BotSourceItem
-			static toObject(m: proto.BotSourcesMetadata.BotSourceItem, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.BotSourcesMetadata.BotSourceItem, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace BotSourceItem {
@@ -3232,10 +3232,10 @@ export namespace proto {
 		selectedPromptId?: (string|null)
 		static create(properties: proto.BotSuggestedPromptMetadata.$Shape): proto.BotSuggestedPromptMetadata & proto.BotSuggestedPromptMetadata.$Shape
 		static create(properties?: proto.BotSuggestedPromptMetadata.$Properties): proto.BotSuggestedPromptMetadata
-		static encode(m: proto.BotSuggestedPromptMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotSuggestedPromptMetadata & proto.BotSuggestedPromptMetadata.$Shape
+		static encode(m: proto.BotSuggestedPromptMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotSuggestedPromptMetadata & proto.BotSuggestedPromptMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotSuggestedPromptMetadata
-		static toObject(m: proto.BotSuggestedPromptMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotSuggestedPromptMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotSuggestedPromptMetadata {
@@ -3257,10 +3257,10 @@ export namespace proto {
 		mediaDetailsMetadataList: proto.BotUnifiedResponseMutation.MediaDetailsMetadata.$Properties[]
 		static create(properties: proto.BotUnifiedResponseMutation.$Shape): proto.BotUnifiedResponseMutation & proto.BotUnifiedResponseMutation.$Shape
 		static create(properties?: proto.BotUnifiedResponseMutation.$Properties): proto.BotUnifiedResponseMutation
-		static encode(m: proto.BotUnifiedResponseMutation.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.BotUnifiedResponseMutation & proto.BotUnifiedResponseMutation.$Shape
+		static encode(m: proto.BotUnifiedResponseMutation.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.BotUnifiedResponseMutation & proto.BotUnifiedResponseMutation.$Shape
 		static fromObject(d: { [k: string]: any }): proto.BotUnifiedResponseMutation
-		static toObject(m: proto.BotUnifiedResponseMutation, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.BotUnifiedResponseMutation, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace BotUnifiedResponseMutation {
@@ -3280,10 +3280,10 @@ export namespace proto {
 			previewMedia?: (proto.BotMediaMetadata.$Properties|null)
 			static create(properties: proto.BotUnifiedResponseMutation.MediaDetailsMetadata.$Shape): proto.BotUnifiedResponseMutation.MediaDetailsMetadata & proto.BotUnifiedResponseMutation.MediaDetailsMetadata.$Shape
 			static create(properties?: proto.BotUnifiedResponseMutation.MediaDetailsMetadata.$Properties): proto.BotUnifiedResponseMutation.MediaDetailsMetadata
-			static encode(m: proto.BotUnifiedResponseMutation.MediaDetailsMetadata.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.BotUnifiedResponseMutation.MediaDetailsMetadata & proto.BotUnifiedResponseMutation.MediaDetailsMetadata.$Shape
+			static encode(m: proto.BotUnifiedResponseMutation.MediaDetailsMetadata.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.BotUnifiedResponseMutation.MediaDetailsMetadata & proto.BotUnifiedResponseMutation.MediaDetailsMetadata.$Shape
 			static fromObject(d: { [k: string]: any }): proto.BotUnifiedResponseMutation.MediaDetailsMetadata
-			static toObject(m: proto.BotUnifiedResponseMutation.MediaDetailsMetadata, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.BotUnifiedResponseMutation.MediaDetailsMetadata, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace MediaDetailsMetadata {
@@ -3304,10 +3304,10 @@ export namespace proto {
 			surveyCtaHasRendered?: (boolean|null)
 			static create(properties: proto.BotUnifiedResponseMutation.SideBySideMetadata.$Shape): proto.BotUnifiedResponseMutation.SideBySideMetadata & proto.BotUnifiedResponseMutation.SideBySideMetadata.$Shape
 			static create(properties?: proto.BotUnifiedResponseMutation.SideBySideMetadata.$Properties): proto.BotUnifiedResponseMutation.SideBySideMetadata
-			static encode(m: proto.BotUnifiedResponseMutation.SideBySideMetadata.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.BotUnifiedResponseMutation.SideBySideMetadata & proto.BotUnifiedResponseMutation.SideBySideMetadata.$Shape
+			static encode(m: proto.BotUnifiedResponseMutation.SideBySideMetadata.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.BotUnifiedResponseMutation.SideBySideMetadata & proto.BotUnifiedResponseMutation.SideBySideMetadata.$Shape
 			static fromObject(d: { [k: string]: any }): proto.BotUnifiedResponseMutation.SideBySideMetadata
-			static toObject(m: proto.BotUnifiedResponseMutation.SideBySideMetadata, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.BotUnifiedResponseMutation.SideBySideMetadata, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace SideBySideMetadata {
@@ -3341,10 +3341,10 @@ export namespace proto {
 		callType?: (proto.CallLogRecord.CallType|null)
 		static create(properties: proto.CallLogRecord.$Shape): proto.CallLogRecord & proto.CallLogRecord.$Shape
 		static create(properties?: proto.CallLogRecord.$Properties): proto.CallLogRecord
-		static encode(m: proto.CallLogRecord.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.CallLogRecord & proto.CallLogRecord.$Shape
+		static encode(m: proto.CallLogRecord.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.CallLogRecord & proto.CallLogRecord.$Shape
 		static fromObject(d: { [k: string]: any }): proto.CallLogRecord
-		static toObject(m: proto.CallLogRecord, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.CallLogRecord, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace CallLogRecord {
@@ -3393,10 +3393,10 @@ export namespace proto {
 			pushName?: (string|null)
 			static create(properties: proto.CallLogRecord.GuestInfo.$Shape): proto.CallLogRecord.GuestInfo & proto.CallLogRecord.GuestInfo.$Shape
 			static create(properties?: proto.CallLogRecord.GuestInfo.$Properties): proto.CallLogRecord.GuestInfo
-			static encode(m: proto.CallLogRecord.GuestInfo.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.CallLogRecord.GuestInfo & proto.CallLogRecord.GuestInfo.$Shape
+			static encode(m: proto.CallLogRecord.GuestInfo.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.CallLogRecord.GuestInfo & proto.CallLogRecord.GuestInfo.$Shape
 			static fromObject(d: { [k: string]: any }): proto.CallLogRecord.GuestInfo
-			static toObject(m: proto.CallLogRecord.GuestInfo, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.CallLogRecord.GuestInfo, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace GuestInfo {
@@ -3416,10 +3416,10 @@ export namespace proto {
 			guestInfo?: (proto.CallLogRecord.GuestInfo.$Properties|null)
 			static create(properties: proto.CallLogRecord.ParticipantInfo.$Shape): proto.CallLogRecord.ParticipantInfo & proto.CallLogRecord.ParticipantInfo.$Shape
 			static create(properties?: proto.CallLogRecord.ParticipantInfo.$Properties): proto.CallLogRecord.ParticipantInfo
-			static encode(m: proto.CallLogRecord.ParticipantInfo.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.CallLogRecord.ParticipantInfo & proto.CallLogRecord.ParticipantInfo.$Shape
+			static encode(m: proto.CallLogRecord.ParticipantInfo.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.CallLogRecord.ParticipantInfo & proto.CallLogRecord.ParticipantInfo.$Shape
 			static fromObject(d: { [k: string]: any }): proto.CallLogRecord.ParticipantInfo
-			static toObject(m: proto.CallLogRecord.ParticipantInfo, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.CallLogRecord.ParticipantInfo, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ParticipantInfo {
@@ -3447,10 +3447,10 @@ export namespace proto {
 		intermediate?: (proto.CertChain.NoiseCertificate.$Properties|null)
 		static create(properties: proto.CertChain.$Shape): proto.CertChain & proto.CertChain.$Shape
 		static create(properties?: proto.CertChain.$Properties): proto.CertChain
-		static encode(m: proto.CertChain.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.CertChain & proto.CertChain.$Shape
+		static encode(m: proto.CertChain.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.CertChain & proto.CertChain.$Shape
 		static fromObject(d: { [k: string]: any }): proto.CertChain
-		static toObject(m: proto.CertChain, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.CertChain, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace CertChain {
@@ -3469,10 +3469,10 @@ export namespace proto {
 			signature?: (Uint8Array|null)
 			static create(properties: proto.CertChain.NoiseCertificate.$Shape): proto.CertChain.NoiseCertificate & proto.CertChain.NoiseCertificate.$Shape
 			static create(properties?: proto.CertChain.NoiseCertificate.$Properties): proto.CertChain.NoiseCertificate
-			static encode(m: proto.CertChain.NoiseCertificate.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.CertChain.NoiseCertificate & proto.CertChain.NoiseCertificate.$Shape
+			static encode(m: proto.CertChain.NoiseCertificate.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.CertChain.NoiseCertificate & proto.CertChain.NoiseCertificate.$Shape
 			static fromObject(d: { [k: string]: any }): proto.CertChain.NoiseCertificate
-			static toObject(m: proto.CertChain.NoiseCertificate, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.CertChain.NoiseCertificate, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace NoiseCertificate {
@@ -3494,10 +3494,10 @@ export namespace proto {
 				notAfter?: (number|Long|null)
 				static create(properties: proto.CertChain.NoiseCertificate.Details.$Shape): proto.CertChain.NoiseCertificate.Details & proto.CertChain.NoiseCertificate.Details.$Shape
 				static create(properties?: proto.CertChain.NoiseCertificate.Details.$Properties): proto.CertChain.NoiseCertificate.Details
-				static encode(m: proto.CertChain.NoiseCertificate.Details.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.CertChain.NoiseCertificate.Details & proto.CertChain.NoiseCertificate.Details.$Shape
+				static encode(m: proto.CertChain.NoiseCertificate.Details.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.CertChain.NoiseCertificate.Details & proto.CertChain.NoiseCertificate.Details.$Shape
 				static fromObject(d: { [k: string]: any }): proto.CertChain.NoiseCertificate.Details
-				static toObject(m: proto.CertChain.NoiseCertificate.Details, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.CertChain.NoiseCertificate.Details, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace Details {
@@ -3522,10 +3522,10 @@ export namespace proto {
 		secretCode?: (proto.UserPassword.$Properties|null)
 		static create(properties: proto.ChatLockSettings.$Shape): proto.ChatLockSettings & proto.ChatLockSettings.$Shape
 		static create(properties?: proto.ChatLockSettings.$Properties): proto.ChatLockSettings
-		static encode(m: proto.ChatLockSettings.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.ChatLockSettings & proto.ChatLockSettings.$Shape
+		static encode(m: proto.ChatLockSettings.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.ChatLockSettings & proto.ChatLockSettings.$Shape
 		static fromObject(d: { [k: string]: any }): proto.ChatLockSettings
-		static toObject(m: proto.ChatLockSettings, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.ChatLockSettings, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace ChatLockSettings {
@@ -3548,10 +3548,10 @@ export namespace proto {
 		draftMessage?: (proto.ChatRowOpaqueData.DraftMessage.$Properties|null)
 		static create(properties: proto.ChatRowOpaqueData.$Shape): proto.ChatRowOpaqueData & proto.ChatRowOpaqueData.$Shape
 		static create(properties?: proto.ChatRowOpaqueData.$Properties): proto.ChatRowOpaqueData
-		static encode(m: proto.ChatRowOpaqueData.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.ChatRowOpaqueData & proto.ChatRowOpaqueData.$Shape
+		static encode(m: proto.ChatRowOpaqueData.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.ChatRowOpaqueData & proto.ChatRowOpaqueData.$Shape
 		static fromObject(d: { [k: string]: any }): proto.ChatRowOpaqueData
-		static toObject(m: proto.ChatRowOpaqueData, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.ChatRowOpaqueData, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace ChatRowOpaqueData {
@@ -3572,10 +3572,10 @@ export namespace proto {
 			timestamp?: (number|Long|null)
 			static create(properties: proto.ChatRowOpaqueData.DraftMessage.$Shape): proto.ChatRowOpaqueData.DraftMessage & proto.ChatRowOpaqueData.DraftMessage.$Shape
 			static create(properties?: proto.ChatRowOpaqueData.DraftMessage.$Properties): proto.ChatRowOpaqueData.DraftMessage
-			static encode(m: proto.ChatRowOpaqueData.DraftMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.ChatRowOpaqueData.DraftMessage & proto.ChatRowOpaqueData.DraftMessage.$Shape
+			static encode(m: proto.ChatRowOpaqueData.DraftMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.ChatRowOpaqueData.DraftMessage & proto.ChatRowOpaqueData.DraftMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.ChatRowOpaqueData.DraftMessage
-			static toObject(m: proto.ChatRowOpaqueData.DraftMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.ChatRowOpaqueData.DraftMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace DraftMessage {
@@ -3607,10 +3607,10 @@ export namespace proto {
 				isSuspiciousLink?: (boolean|null)
 				static create(properties: proto.ChatRowOpaqueData.DraftMessage.CtwaContextData.$Shape): proto.ChatRowOpaqueData.DraftMessage.CtwaContextData & proto.ChatRowOpaqueData.DraftMessage.CtwaContextData.$Shape
 				static create(properties?: proto.ChatRowOpaqueData.DraftMessage.CtwaContextData.$Properties): proto.ChatRowOpaqueData.DraftMessage.CtwaContextData
-				static encode(m: proto.ChatRowOpaqueData.DraftMessage.CtwaContextData.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.ChatRowOpaqueData.DraftMessage.CtwaContextData & proto.ChatRowOpaqueData.DraftMessage.CtwaContextData.$Shape
+				static encode(m: proto.ChatRowOpaqueData.DraftMessage.CtwaContextData.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.ChatRowOpaqueData.DraftMessage.CtwaContextData & proto.ChatRowOpaqueData.DraftMessage.CtwaContextData.$Shape
 				static fromObject(d: { [k: string]: any }): proto.ChatRowOpaqueData.DraftMessage.CtwaContextData
-				static toObject(m: proto.ChatRowOpaqueData.DraftMessage.CtwaContextData, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.ChatRowOpaqueData.DraftMessage.CtwaContextData, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace CtwaContextData {
@@ -3647,10 +3647,10 @@ export namespace proto {
 				phone?: (string|null)
 				static create(properties: proto.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData.$Shape): proto.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData & proto.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData.$Shape
 				static create(properties?: proto.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData.$Properties): proto.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData
-				static encode(m: proto.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData & proto.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData.$Shape
+				static encode(m: proto.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData & proto.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData.$Shape
 				static fromObject(d: { [k: string]: any }): proto.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData
-				static toObject(m: proto.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.ChatRowOpaqueData.DraftMessage.CtwaContextLinkData, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace CtwaContextLinkData {
@@ -3676,10 +3676,10 @@ export namespace proto {
 		imageUrl: string
 		static create(properties: proto.Citation.$Shape): proto.Citation & proto.Citation.$Shape
 		static create(properties?: proto.Citation.$Properties): proto.Citation
-		static encode(m: proto.Citation.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.Citation & proto.Citation.$Shape
+		static encode(m: proto.Citation.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.Citation & proto.Citation.$Shape
 		static fromObject(d: { [k: string]: any }): proto.Citation
-		static toObject(m: proto.Citation, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.Citation, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace Citation {
@@ -3706,10 +3706,10 @@ export namespace proto {
 		companionAddPeerPayload?: (Uint8Array|null)
 		static create(properties: proto.ClientPairingProps.$Shape): proto.ClientPairingProps & proto.ClientPairingProps.$Shape
 		static create(properties?: proto.ClientPairingProps.$Properties): proto.ClientPairingProps
-		static encode(m: proto.ClientPairingProps.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.ClientPairingProps & proto.ClientPairingProps.$Shape
+		static encode(m: proto.ClientPairingProps.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.ClientPairingProps & proto.ClientPairingProps.$Shape
 		static fromObject(d: { [k: string]: any }): proto.ClientPairingProps
-		static toObject(m: proto.ClientPairingProps, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.ClientPairingProps, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace ClientPairingProps {
@@ -3769,10 +3769,10 @@ export namespace proto {
 		messageSts?: (number|Long|null)
 		static create(properties: proto.ClientPayload.$Shape): proto.ClientPayload & proto.ClientPayload.$Shape
 		static create(properties?: proto.ClientPayload.$Properties): proto.ClientPayload
-		static encode(m: proto.ClientPayload.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.ClientPayload & proto.ClientPayload.$Shape
+		static encode(m: proto.ClientPayload.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.ClientPayload & proto.ClientPayload.$Shape
 		static fromObject(d: { [k: string]: any }): proto.ClientPayload
-		static toObject(m: proto.ClientPayload, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.ClientPayload, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace ClientPayload {
@@ -3856,10 +3856,10 @@ export namespace proto {
 			appCached?: (boolean|null)
 			static create(properties: proto.ClientPayload.DNSSource.$Shape): proto.ClientPayload.DNSSource & proto.ClientPayload.DNSSource.$Shape
 			static create(properties?: proto.ClientPayload.DNSSource.$Properties): proto.ClientPayload.DNSSource
-			static encode(m: proto.ClientPayload.DNSSource.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.ClientPayload.DNSSource & proto.ClientPayload.DNSSource.$Shape
+			static encode(m: proto.ClientPayload.DNSSource.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.ClientPayload.DNSSource & proto.ClientPayload.DNSSource.$Shape
 			static fromObject(d: { [k: string]: any }): proto.ClientPayload.DNSSource
-			static toObject(m: proto.ClientPayload.DNSSource, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.ClientPayload.DNSSource, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace DNSSource {
@@ -3895,10 +3895,10 @@ export namespace proto {
 			deviceProps?: (Uint8Array|null)
 			static create(properties: proto.ClientPayload.DevicePairingRegistrationData.$Shape): proto.ClientPayload.DevicePairingRegistrationData & proto.ClientPayload.DevicePairingRegistrationData.$Shape
 			static create(properties?: proto.ClientPayload.DevicePairingRegistrationData.$Properties): proto.ClientPayload.DevicePairingRegistrationData
-			static encode(m: proto.ClientPayload.DevicePairingRegistrationData.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.ClientPayload.DevicePairingRegistrationData & proto.ClientPayload.DevicePairingRegistrationData.$Shape
+			static encode(m: proto.ClientPayload.DevicePairingRegistrationData.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.ClientPayload.DevicePairingRegistrationData & proto.ClientPayload.DevicePairingRegistrationData.$Shape
 			static fromObject(d: { [k: string]: any }): proto.ClientPayload.DevicePairingRegistrationData
-			static toObject(m: proto.ClientPayload.DevicePairingRegistrationData, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.ClientPayload.DevicePairingRegistrationData, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace DevicePairingRegistrationData {
@@ -3930,10 +3930,10 @@ export namespace proto {
 			enableReadReceipts?: (boolean|null)
 			static create(properties: proto.ClientPayload.InteropData.$Shape): proto.ClientPayload.InteropData & proto.ClientPayload.InteropData.$Shape
 			static create(properties?: proto.ClientPayload.InteropData.$Properties): proto.ClientPayload.InteropData
-			static encode(m: proto.ClientPayload.InteropData.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.ClientPayload.InteropData & proto.ClientPayload.InteropData.$Shape
+			static encode(m: proto.ClientPayload.InteropData.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.ClientPayload.InteropData & proto.ClientPayload.InteropData.$Shape
 			static fromObject(d: { [k: string]: any }): proto.ClientPayload.InteropData
-			static toObject(m: proto.ClientPayload.InteropData, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.ClientPayload.InteropData, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace InteropData {
@@ -3980,10 +3980,10 @@ export namespace proto {
 			distributionChannel?: (proto.ClientPayload.UserAgent.DistributionChannel|null)
 			static create(properties: proto.ClientPayload.UserAgent.$Shape): proto.ClientPayload.UserAgent & proto.ClientPayload.UserAgent.$Shape
 			static create(properties?: proto.ClientPayload.UserAgent.$Properties): proto.ClientPayload.UserAgent
-			static encode(m: proto.ClientPayload.UserAgent.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.ClientPayload.UserAgent & proto.ClientPayload.UserAgent.$Shape
+			static encode(m: proto.ClientPayload.UserAgent.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.ClientPayload.UserAgent & proto.ClientPayload.UserAgent.$Shape
 			static fromObject(d: { [k: string]: any }): proto.ClientPayload.UserAgent
-			static toObject(m: proto.ClientPayload.UserAgent, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.ClientPayload.UserAgent, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace UserAgent {
@@ -4020,10 +4020,10 @@ export namespace proto {
 				quinary?: (number|null)
 				static create(properties: proto.ClientPayload.UserAgent.AppVersion.$Shape): proto.ClientPayload.UserAgent.AppVersion & proto.ClientPayload.UserAgent.AppVersion.$Shape
 				static create(properties?: proto.ClientPayload.UserAgent.AppVersion.$Properties): proto.ClientPayload.UserAgent.AppVersion
-				static encode(m: proto.ClientPayload.UserAgent.AppVersion.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.ClientPayload.UserAgent.AppVersion & proto.ClientPayload.UserAgent.AppVersion.$Shape
+				static encode(m: proto.ClientPayload.UserAgent.AppVersion.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.ClientPayload.UserAgent.AppVersion & proto.ClientPayload.UserAgent.AppVersion.$Shape
 				static fromObject(d: { [k: string]: any }): proto.ClientPayload.UserAgent.AppVersion
-				static toObject(m: proto.ClientPayload.UserAgent.AppVersion, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.ClientPayload.UserAgent.AppVersion, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace AppVersion {
@@ -4116,10 +4116,10 @@ export namespace proto {
 			browserVersion?: (string|null)
 			static create(properties: proto.ClientPayload.WebInfo.$Shape): proto.ClientPayload.WebInfo & proto.ClientPayload.WebInfo.$Shape
 			static create(properties?: proto.ClientPayload.WebInfo.$Properties): proto.ClientPayload.WebInfo
-			static encode(m: proto.ClientPayload.WebInfo.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.ClientPayload.WebInfo & proto.ClientPayload.WebInfo.$Shape
+			static encode(m: proto.ClientPayload.WebInfo.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.ClientPayload.WebInfo & proto.ClientPayload.WebInfo.$Shape
 			static fromObject(d: { [k: string]: any }): proto.ClientPayload.WebInfo
-			static toObject(m: proto.ClientPayload.WebInfo, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.ClientPayload.WebInfo, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace WebInfo {
@@ -4159,10 +4159,10 @@ export namespace proto {
 				features?: (Uint8Array|null)
 				static create(properties: proto.ClientPayload.WebInfo.WebdPayload.$Shape): proto.ClientPayload.WebInfo.WebdPayload & proto.ClientPayload.WebInfo.WebdPayload.$Shape
 				static create(properties?: proto.ClientPayload.WebInfo.WebdPayload.$Properties): proto.ClientPayload.WebInfo.WebdPayload
-				static encode(m: proto.ClientPayload.WebInfo.WebdPayload.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.ClientPayload.WebInfo.WebdPayload & proto.ClientPayload.WebInfo.WebdPayload.$Shape
+				static encode(m: proto.ClientPayload.WebInfo.WebdPayload.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.ClientPayload.WebInfo.WebdPayload & proto.ClientPayload.WebInfo.WebdPayload.$Shape
 				static fromObject(d: { [k: string]: any }): proto.ClientPayload.WebInfo.WebdPayload
-				static toObject(m: proto.ClientPayload.WebInfo.WebdPayload, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.ClientPayload.WebInfo.WebdPayload, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace WebdPayload {
@@ -4192,10 +4192,10 @@ export namespace proto {
 		collectionMutations: proto.CoexStateSync.CollectionMutations.$Properties[]
 		static create(properties: proto.CoexStateSync.$Shape): proto.CoexStateSync & proto.CoexStateSync.$Shape
 		static create(properties?: proto.CoexStateSync.$Properties): proto.CoexStateSync
-		static encode(m: proto.CoexStateSync.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.CoexStateSync & proto.CoexStateSync.$Shape
+		static encode(m: proto.CoexStateSync.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.CoexStateSync & proto.CoexStateSync.$Shape
 		static fromObject(d: { [k: string]: any }): proto.CoexStateSync
-		static toObject(m: proto.CoexStateSync, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.CoexStateSync, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace CoexStateSync {
@@ -4213,10 +4213,10 @@ export namespace proto {
 			mutations: proto.CoexStateSync.Mutation.$Properties[]
 			static create(properties: proto.CoexStateSync.CollectionMutations.$Shape): proto.CoexStateSync.CollectionMutations & proto.CoexStateSync.CollectionMutations.$Shape
 			static create(properties?: proto.CoexStateSync.CollectionMutations.$Properties): proto.CoexStateSync.CollectionMutations
-			static encode(m: proto.CoexStateSync.CollectionMutations.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.CoexStateSync.CollectionMutations & proto.CoexStateSync.CollectionMutations.$Shape
+			static encode(m: proto.CoexStateSync.CollectionMutations.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.CoexStateSync.CollectionMutations & proto.CoexStateSync.CollectionMutations.$Shape
 			static fromObject(d: { [k: string]: any }): proto.CoexStateSync.CollectionMutations
-			static toObject(m: proto.CoexStateSync.CollectionMutations, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.CoexStateSync.CollectionMutations, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace CollectionMutations {
@@ -4238,10 +4238,10 @@ export namespace proto {
 			operation?: (proto.SyncdMutation.SyncdOperation|null)
 			static create(properties: proto.CoexStateSync.Mutation.$Shape): proto.CoexStateSync.Mutation & proto.CoexStateSync.Mutation.$Shape
 			static create(properties?: proto.CoexStateSync.Mutation.$Properties): proto.CoexStateSync.Mutation
-			static encode(m: proto.CoexStateSync.Mutation.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.CoexStateSync.Mutation & proto.CoexStateSync.Mutation.$Shape
+			static encode(m: proto.CoexStateSync.Mutation.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.CoexStateSync.Mutation & proto.CoexStateSync.Mutation.$Shape
 			static fromObject(d: { [k: string]: any }): proto.CoexStateSync.Mutation
-			static toObject(m: proto.CoexStateSync.Mutation, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.CoexStateSync.Mutation, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace Mutation {
@@ -4273,10 +4273,10 @@ export namespace proto {
 		remoteFingerprint?: (proto.FingerprintData.$Properties|null)
 		static create(properties: proto.CombinedFingerprint.$Shape): proto.CombinedFingerprint & proto.CombinedFingerprint.$Shape
 		static create(properties?: proto.CombinedFingerprint.$Properties): proto.CombinedFingerprint
-		static encode(m: proto.CombinedFingerprint.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.CombinedFingerprint & proto.CombinedFingerprint.$Shape
+		static encode(m: proto.CombinedFingerprint.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.CombinedFingerprint & proto.CombinedFingerprint.$Shape
 		static fromObject(d: { [k: string]: any }): proto.CombinedFingerprint
-		static toObject(m: proto.CombinedFingerprint, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.CombinedFingerprint, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace CombinedFingerprint {
@@ -4297,10 +4297,10 @@ export namespace proto {
 		replyCount?: (number|null)
 		static create(properties: proto.CommentMetadata.$Shape): proto.CommentMetadata & proto.CommentMetadata.$Shape
 		static create(properties?: proto.CommentMetadata.$Properties): proto.CommentMetadata
-		static encode(m: proto.CommentMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.CommentMetadata & proto.CommentMetadata.$Shape
+		static encode(m: proto.CommentMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.CommentMetadata & proto.CommentMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.CommentMetadata
-		static toObject(m: proto.CommentMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.CommentMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace CommentMetadata {
@@ -4319,10 +4319,10 @@ export namespace proto {
 		hash?: (Uint8Array|null)
 		static create(properties: proto.CompanionCommitment.$Shape): proto.CompanionCommitment & proto.CompanionCommitment.$Shape
 		static create(properties?: proto.CompanionCommitment.$Properties): proto.CompanionCommitment
-		static encode(m: proto.CompanionCommitment.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.CompanionCommitment & proto.CompanionCommitment.$Shape
+		static encode(m: proto.CompanionCommitment.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.CompanionCommitment & proto.CompanionCommitment.$Shape
 		static fromObject(d: { [k: string]: any }): proto.CompanionCommitment
-		static toObject(m: proto.CompanionCommitment, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.CompanionCommitment, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace CompanionCommitment {
@@ -4342,10 +4342,10 @@ export namespace proto {
 		ref?: (string|null)
 		static create(properties: proto.CompanionEphemeralIdentity.$Shape): proto.CompanionEphemeralIdentity & proto.CompanionEphemeralIdentity.$Shape
 		static create(properties?: proto.CompanionEphemeralIdentity.$Properties): proto.CompanionEphemeralIdentity
-		static encode(m: proto.CompanionEphemeralIdentity.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.CompanionEphemeralIdentity & proto.CompanionEphemeralIdentity.$Shape
+		static encode(m: proto.CompanionEphemeralIdentity.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.CompanionEphemeralIdentity & proto.CompanionEphemeralIdentity.$Shape
 		static fromObject(d: { [k: string]: any }): proto.CompanionEphemeralIdentity
-		static toObject(m: proto.CompanionEphemeralIdentity, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.CompanionEphemeralIdentity, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace CompanionEphemeralIdentity {
@@ -4366,10 +4366,10 @@ export namespace proto {
 		version?: (number|null)
 		static create(properties: proto.Config.$Shape): proto.Config & proto.Config.$Shape
 		static create(properties?: proto.Config.$Properties): proto.Config
-		static encode(m: proto.Config.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.Config & proto.Config.$Shape
+		static encode(m: proto.Config.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.Config & proto.Config.$Shape
 		static fromObject(d: { [k: string]: any }): proto.Config
-		static toObject(m: proto.Config, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.Config, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace Config {
@@ -4455,10 +4455,10 @@ export namespace proto {
 		sourceExperienceIds: number[]
 		static create(properties: proto.ContextInfo.$Shape): proto.ContextInfo & proto.ContextInfo.$Shape
 		static create(properties?: proto.ContextInfo.$Properties): proto.ContextInfo
-		static encode(m: proto.ContextInfo.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.ContextInfo & proto.ContextInfo.$Shape
+		static encode(m: proto.ContextInfo.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.ContextInfo & proto.ContextInfo.$Shape
 		static fromObject(d: { [k: string]: any }): proto.ContextInfo
-		static toObject(m: proto.ContextInfo, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.ContextInfo, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace ContextInfo {
@@ -4615,10 +4615,10 @@ export namespace proto {
 			caption?: (string|null)
 			static create(properties: proto.ContextInfo.AdReplyInfo.$Shape): proto.ContextInfo.AdReplyInfo & proto.ContextInfo.AdReplyInfo.$Shape
 			static create(properties?: proto.ContextInfo.AdReplyInfo.$Properties): proto.ContextInfo.AdReplyInfo
-			static encode(m: proto.ContextInfo.AdReplyInfo.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.ContextInfo.AdReplyInfo & proto.ContextInfo.AdReplyInfo.$Shape
+			static encode(m: proto.ContextInfo.AdReplyInfo.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.ContextInfo.AdReplyInfo & proto.ContextInfo.AdReplyInfo.$Shape
 			static fromObject(d: { [k: string]: any }): proto.ContextInfo.AdReplyInfo
-			static toObject(m: proto.ContextInfo.AdReplyInfo, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.ContextInfo.AdReplyInfo, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace AdReplyInfo {
@@ -4649,10 +4649,10 @@ export namespace proto {
 			unauthenticatedBusinessMetadata?: (proto.ContextInfo.BusinessInteractionPills.UnauthenticatedBusinessMetadata.$Properties|null)
 			static create(properties: proto.ContextInfo.BusinessInteractionPills.$Shape): proto.ContextInfo.BusinessInteractionPills & proto.ContextInfo.BusinessInteractionPills.$Shape
 			static create(properties?: proto.ContextInfo.BusinessInteractionPills.$Properties): proto.ContextInfo.BusinessInteractionPills
-			static encode(m: proto.ContextInfo.BusinessInteractionPills.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.ContextInfo.BusinessInteractionPills & proto.ContextInfo.BusinessInteractionPills.$Shape
+			static encode(m: proto.ContextInfo.BusinessInteractionPills.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.ContextInfo.BusinessInteractionPills & proto.ContextInfo.BusinessInteractionPills.$Shape
 			static fromObject(d: { [k: string]: any }): proto.ContextInfo.BusinessInteractionPills
-			static toObject(m: proto.ContextInfo.BusinessInteractionPills, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.ContextInfo.BusinessInteractionPills, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace BusinessInteractionPills {
@@ -4683,10 +4683,10 @@ export namespace proto {
 				actionUrl?: (string|null)
 				static create(properties: proto.ContextInfo.BusinessInteractionPills.Pill.$Shape): proto.ContextInfo.BusinessInteractionPills.Pill & proto.ContextInfo.BusinessInteractionPills.Pill.$Shape
 				static create(properties?: proto.ContextInfo.BusinessInteractionPills.Pill.$Properties): proto.ContextInfo.BusinessInteractionPills.Pill
-				static encode(m: proto.ContextInfo.BusinessInteractionPills.Pill.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.ContextInfo.BusinessInteractionPills.Pill & proto.ContextInfo.BusinessInteractionPills.Pill.$Shape
+				static encode(m: proto.ContextInfo.BusinessInteractionPills.Pill.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.ContextInfo.BusinessInteractionPills.Pill & proto.ContextInfo.BusinessInteractionPills.Pill.$Shape
 				static fromObject(d: { [k: string]: any }): proto.ContextInfo.BusinessInteractionPills.Pill
-				static toObject(m: proto.ContextInfo.BusinessInteractionPills.Pill, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.ContextInfo.BusinessInteractionPills.Pill, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace Pill {
@@ -4721,10 +4721,10 @@ export namespace proto {
 				pills: proto.ContextInfo.BusinessInteractionPills.Pill.$Properties[]
 				static create(properties: proto.ContextInfo.BusinessInteractionPills.SignedPayload.$Shape): proto.ContextInfo.BusinessInteractionPills.SignedPayload & proto.ContextInfo.BusinessInteractionPills.SignedPayload.$Shape
 				static create(properties?: proto.ContextInfo.BusinessInteractionPills.SignedPayload.$Properties): proto.ContextInfo.BusinessInteractionPills.SignedPayload
-				static encode(m: proto.ContextInfo.BusinessInteractionPills.SignedPayload.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.ContextInfo.BusinessInteractionPills.SignedPayload & proto.ContextInfo.BusinessInteractionPills.SignedPayload.$Shape
+				static encode(m: proto.ContextInfo.BusinessInteractionPills.SignedPayload.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.ContextInfo.BusinessInteractionPills.SignedPayload & proto.ContextInfo.BusinessInteractionPills.SignedPayload.$Shape
 				static fromObject(d: { [k: string]: any }): proto.ContextInfo.BusinessInteractionPills.SignedPayload
-				static toObject(m: proto.ContextInfo.BusinessInteractionPills.SignedPayload, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.ContextInfo.BusinessInteractionPills.SignedPayload, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace SignedPayload {
@@ -4746,10 +4746,10 @@ export namespace proto {
 				businessIsOpenSnapshotMs?: (number|Long|null)
 				static create(properties: proto.ContextInfo.BusinessInteractionPills.UnauthenticatedBusinessMetadata.$Shape): proto.ContextInfo.BusinessInteractionPills.UnauthenticatedBusinessMetadata & proto.ContextInfo.BusinessInteractionPills.UnauthenticatedBusinessMetadata.$Shape
 				static create(properties?: proto.ContextInfo.BusinessInteractionPills.UnauthenticatedBusinessMetadata.$Properties): proto.ContextInfo.BusinessInteractionPills.UnauthenticatedBusinessMetadata
-				static encode(m: proto.ContextInfo.BusinessInteractionPills.UnauthenticatedBusinessMetadata.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.ContextInfo.BusinessInteractionPills.UnauthenticatedBusinessMetadata & proto.ContextInfo.BusinessInteractionPills.UnauthenticatedBusinessMetadata.$Shape
+				static encode(m: proto.ContextInfo.BusinessInteractionPills.UnauthenticatedBusinessMetadata.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.ContextInfo.BusinessInteractionPills.UnauthenticatedBusinessMetadata & proto.ContextInfo.BusinessInteractionPills.UnauthenticatedBusinessMetadata.$Shape
 				static fromObject(d: { [k: string]: any }): proto.ContextInfo.BusinessInteractionPills.UnauthenticatedBusinessMetadata
-				static toObject(m: proto.ContextInfo.BusinessInteractionPills.UnauthenticatedBusinessMetadata, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.ContextInfo.BusinessInteractionPills.UnauthenticatedBusinessMetadata, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace UnauthenticatedBusinessMetadata {
@@ -4771,10 +4771,10 @@ export namespace proto {
 			businessOwnerJid?: (string|null)
 			static create(properties: proto.ContextInfo.BusinessMessageForwardInfo.$Shape): proto.ContextInfo.BusinessMessageForwardInfo & proto.ContextInfo.BusinessMessageForwardInfo.$Shape
 			static create(properties?: proto.ContextInfo.BusinessMessageForwardInfo.$Properties): proto.ContextInfo.BusinessMessageForwardInfo
-			static encode(m: proto.ContextInfo.BusinessMessageForwardInfo.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.ContextInfo.BusinessMessageForwardInfo & proto.ContextInfo.BusinessMessageForwardInfo.$Shape
+			static encode(m: proto.ContextInfo.BusinessMessageForwardInfo.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.ContextInfo.BusinessMessageForwardInfo & proto.ContextInfo.BusinessMessageForwardInfo.$Shape
 			static fromObject(d: { [k: string]: any }): proto.ContextInfo.BusinessMessageForwardInfo
-			static toObject(m: proto.ContextInfo.BusinessMessageForwardInfo, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.ContextInfo.BusinessMessageForwardInfo, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace BusinessMessageForwardInfo {
@@ -4800,10 +4800,10 @@ export namespace proto {
 			dataSharingFlags?: (number|null)
 			static create(properties: proto.ContextInfo.DataSharingContext.$Shape): proto.ContextInfo.DataSharingContext & proto.ContextInfo.DataSharingContext.$Shape
 			static create(properties?: proto.ContextInfo.DataSharingContext.$Properties): proto.ContextInfo.DataSharingContext
-			static encode(m: proto.ContextInfo.DataSharingContext.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.ContextInfo.DataSharingContext & proto.ContextInfo.DataSharingContext.$Shape
+			static encode(m: proto.ContextInfo.DataSharingContext.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.ContextInfo.DataSharingContext & proto.ContextInfo.DataSharingContext.$Shape
 			static fromObject(d: { [k: string]: any }): proto.ContextInfo.DataSharingContext
-			static toObject(m: proto.ContextInfo.DataSharingContext, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.ContextInfo.DataSharingContext, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace DataSharingContext {
@@ -4831,10 +4831,10 @@ export namespace proto {
 				contents?: (proto.ContextInfo.DataSharingContext.Parameters.$Properties|null)
 				static create(properties: proto.ContextInfo.DataSharingContext.Parameters.$Shape): proto.ContextInfo.DataSharingContext.Parameters & proto.ContextInfo.DataSharingContext.Parameters.$Shape
 				static create(properties?: proto.ContextInfo.DataSharingContext.Parameters.$Properties): proto.ContextInfo.DataSharingContext.Parameters
-				static encode(m: proto.ContextInfo.DataSharingContext.Parameters.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.ContextInfo.DataSharingContext.Parameters & proto.ContextInfo.DataSharingContext.Parameters.$Shape
+				static encode(m: proto.ContextInfo.DataSharingContext.Parameters.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.ContextInfo.DataSharingContext.Parameters & proto.ContextInfo.DataSharingContext.Parameters.$Shape
 				static fromObject(d: { [k: string]: any }): proto.ContextInfo.DataSharingContext.Parameters
-				static toObject(m: proto.ContextInfo.DataSharingContext.Parameters, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.ContextInfo.DataSharingContext.Parameters, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace Parameters {
@@ -4897,10 +4897,10 @@ export namespace proto {
 			ctwaPromoAdgroupId?: (string|null)
 			static create(properties: proto.ContextInfo.ExternalAdReplyInfo.$Shape): proto.ContextInfo.ExternalAdReplyInfo & proto.ContextInfo.ExternalAdReplyInfo.$Shape
 			static create(properties?: proto.ContextInfo.ExternalAdReplyInfo.$Properties): proto.ContextInfo.ExternalAdReplyInfo
-			static encode(m: proto.ContextInfo.ExternalAdReplyInfo.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.ContextInfo.ExternalAdReplyInfo & proto.ContextInfo.ExternalAdReplyInfo.$Shape
+			static encode(m: proto.ContextInfo.ExternalAdReplyInfo.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.ContextInfo.ExternalAdReplyInfo & proto.ContextInfo.ExternalAdReplyInfo.$Shape
 			static fromObject(d: { [k: string]: any }): proto.ContextInfo.ExternalAdReplyInfo
-			static toObject(m: proto.ContextInfo.ExternalAdReplyInfo, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.ContextInfo.ExternalAdReplyInfo, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ExternalAdReplyInfo {
@@ -4971,10 +4971,10 @@ export namespace proto {
 			canReceiveMultiReact?: (boolean|null)
 			static create(properties: proto.ContextInfo.FeatureEligibilities.$Shape): proto.ContextInfo.FeatureEligibilities & proto.ContextInfo.FeatureEligibilities.$Shape
 			static create(properties?: proto.ContextInfo.FeatureEligibilities.$Properties): proto.ContextInfo.FeatureEligibilities
-			static encode(m: proto.ContextInfo.FeatureEligibilities.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.ContextInfo.FeatureEligibilities & proto.ContextInfo.FeatureEligibilities.$Shape
+			static encode(m: proto.ContextInfo.FeatureEligibilities.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.ContextInfo.FeatureEligibilities & proto.ContextInfo.FeatureEligibilities.$Shape
 			static fromObject(d: { [k: string]: any }): proto.ContextInfo.FeatureEligibilities
-			static toObject(m: proto.ContextInfo.FeatureEligibilities, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.ContextInfo.FeatureEligibilities, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace FeatureEligibilities {
@@ -5009,10 +5009,10 @@ export namespace proto {
 			profileName?: (string|null)
 			static create(properties: proto.ContextInfo.ForwardedNewsletterMessageInfo.$Shape): proto.ContextInfo.ForwardedNewsletterMessageInfo & proto.ContextInfo.ForwardedNewsletterMessageInfo.$Shape
 			static create(properties?: proto.ContextInfo.ForwardedNewsletterMessageInfo.$Properties): proto.ContextInfo.ForwardedNewsletterMessageInfo
-			static encode(m: proto.ContextInfo.ForwardedNewsletterMessageInfo.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.ContextInfo.ForwardedNewsletterMessageInfo & proto.ContextInfo.ForwardedNewsletterMessageInfo.$Shape
+			static encode(m: proto.ContextInfo.ForwardedNewsletterMessageInfo.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.ContextInfo.ForwardedNewsletterMessageInfo & proto.ContextInfo.ForwardedNewsletterMessageInfo.$Shape
 			static fromObject(d: { [k: string]: any }): proto.ContextInfo.ForwardedNewsletterMessageInfo
-			static toObject(m: proto.ContextInfo.ForwardedNewsletterMessageInfo, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.ContextInfo.ForwardedNewsletterMessageInfo, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ForwardedNewsletterMessageInfo {
@@ -5040,10 +5040,10 @@ export namespace proto {
 			url?: (string|null)
 			static create(properties: proto.ContextInfo.InstagramThreadLink.$Shape): proto.ContextInfo.InstagramThreadLink & proto.ContextInfo.InstagramThreadLink.$Shape
 			static create(properties?: proto.ContextInfo.InstagramThreadLink.$Properties): proto.ContextInfo.InstagramThreadLink
-			static encode(m: proto.ContextInfo.InstagramThreadLink.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.ContextInfo.InstagramThreadLink & proto.ContextInfo.InstagramThreadLink.$Shape
+			static encode(m: proto.ContextInfo.InstagramThreadLink.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.ContextInfo.InstagramThreadLink & proto.ContextInfo.InstagramThreadLink.$Shape
 			static fromObject(d: { [k: string]: any }): proto.ContextInfo.InstagramThreadLink
-			static toObject(m: proto.ContextInfo.InstagramThreadLink, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.ContextInfo.InstagramThreadLink, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace InstagramThreadLink {
@@ -5076,10 +5076,10 @@ export namespace proto {
 			text?: (string|null)
 			static create(properties: proto.ContextInfo.PartiallySelectedContent.$Shape): proto.ContextInfo.PartiallySelectedContent & proto.ContextInfo.PartiallySelectedContent.$Shape
 			static create(properties?: proto.ContextInfo.PartiallySelectedContent.$Properties): proto.ContextInfo.PartiallySelectedContent
-			static encode(m: proto.ContextInfo.PartiallySelectedContent.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.ContextInfo.PartiallySelectedContent & proto.ContextInfo.PartiallySelectedContent.$Shape
+			static encode(m: proto.ContextInfo.PartiallySelectedContent.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.ContextInfo.PartiallySelectedContent & proto.ContextInfo.PartiallySelectedContent.$Shape
 			static fromObject(d: { [k: string]: any }): proto.ContextInfo.PartiallySelectedContent
-			static toObject(m: proto.ContextInfo.PartiallySelectedContent, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.ContextInfo.PartiallySelectedContent, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PartiallySelectedContent {
@@ -5099,10 +5099,10 @@ export namespace proto {
 			quotedResponse?: (proto.Message.$Properties|null)
 			static create(properties: proto.ContextInfo.QuestionReplyQuotedMessage.$Shape): proto.ContextInfo.QuestionReplyQuotedMessage & proto.ContextInfo.QuestionReplyQuotedMessage.$Shape
 			static create(properties?: proto.ContextInfo.QuestionReplyQuotedMessage.$Properties): proto.ContextInfo.QuestionReplyQuotedMessage
-			static encode(m: proto.ContextInfo.QuestionReplyQuotedMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.ContextInfo.QuestionReplyQuotedMessage & proto.ContextInfo.QuestionReplyQuotedMessage.$Shape
+			static encode(m: proto.ContextInfo.QuestionReplyQuotedMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.ContextInfo.QuestionReplyQuotedMessage & proto.ContextInfo.QuestionReplyQuotedMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.ContextInfo.QuestionReplyQuotedMessage
-			static toObject(m: proto.ContextInfo.QuestionReplyQuotedMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.ContextInfo.QuestionReplyQuotedMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace QuestionReplyQuotedMessage {
@@ -5141,10 +5141,10 @@ export namespace proto {
 			orgId?: (string|null)
 			static create(properties: proto.ContextInfo.StatusAudienceMetadata.$Shape): proto.ContextInfo.StatusAudienceMetadata & proto.ContextInfo.StatusAudienceMetadata.$Shape
 			static create(properties?: proto.ContextInfo.StatusAudienceMetadata.$Properties): proto.ContextInfo.StatusAudienceMetadata
-			static encode(m: proto.ContextInfo.StatusAudienceMetadata.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.ContextInfo.StatusAudienceMetadata & proto.ContextInfo.StatusAudienceMetadata.$Shape
+			static encode(m: proto.ContextInfo.StatusAudienceMetadata.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.ContextInfo.StatusAudienceMetadata & proto.ContextInfo.StatusAudienceMetadata.$Shape
 			static fromObject(d: { [k: string]: any }): proto.ContextInfo.StatusAudienceMetadata
-			static toObject(m: proto.ContextInfo.StatusAudienceMetadata, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.ContextInfo.StatusAudienceMetadata, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace StatusAudienceMetadata {
@@ -5180,10 +5180,10 @@ export namespace proto {
 			utmCampaign?: (string|null)
 			static create(properties: proto.ContextInfo.UTMInfo.$Shape): proto.ContextInfo.UTMInfo & proto.ContextInfo.UTMInfo.$Shape
 			static create(properties?: proto.ContextInfo.UTMInfo.$Properties): proto.ContextInfo.UTMInfo
-			static encode(m: proto.ContextInfo.UTMInfo.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.ContextInfo.UTMInfo & proto.ContextInfo.UTMInfo.$Shape
+			static encode(m: proto.ContextInfo.UTMInfo.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.ContextInfo.UTMInfo & proto.ContextInfo.UTMInfo.$Shape
 			static fromObject(d: { [k: string]: any }): proto.ContextInfo.UTMInfo
-			static toObject(m: proto.ContextInfo.UTMInfo, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.ContextInfo.UTMInfo, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace UTMInfo {
@@ -5267,10 +5267,10 @@ export namespace proto {
 		acp2HistoryWithheld?: (boolean|null)
 		static create(properties: proto.Conversation.$Shape): proto.Conversation & proto.Conversation.$Shape
 		static create(properties?: proto.Conversation.$Properties): proto.Conversation
-		static encode(m: proto.Conversation.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.Conversation & proto.Conversation.$Shape
+		static encode(m: proto.Conversation.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.Conversation & proto.Conversation.$Shape
 		static fromObject(d: { [k: string]: any }): proto.Conversation
-		static toObject(m: proto.Conversation, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.Conversation, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace Conversation {
@@ -5443,10 +5443,10 @@ export namespace proto {
 		bizAiWebOnboarding?: (proto.DeviceCapabilities.BizAiWebOnboarding.$Properties|null)
 		static create(properties: proto.DeviceCapabilities.$Shape): proto.DeviceCapabilities & proto.DeviceCapabilities.$Shape
 		static create(properties?: proto.DeviceCapabilities.$Properties): proto.DeviceCapabilities
-		static encode(m: proto.DeviceCapabilities.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.DeviceCapabilities & proto.DeviceCapabilities.$Shape
+		static encode(m: proto.DeviceCapabilities.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.DeviceCapabilities & proto.DeviceCapabilities.$Shape
 		static fromObject(d: { [k: string]: any }): proto.DeviceCapabilities
-		static toObject(m: proto.DeviceCapabilities, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.DeviceCapabilities, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace DeviceCapabilities {
@@ -5476,10 +5476,10 @@ export namespace proto {
 			supportVersion?: (number|null)
 			static create(properties: proto.DeviceCapabilities.AiFbidMigration.$Shape): proto.DeviceCapabilities.AiFbidMigration & proto.DeviceCapabilities.AiFbidMigration.$Shape
 			static create(properties?: proto.DeviceCapabilities.AiFbidMigration.$Properties): proto.DeviceCapabilities.AiFbidMigration
-			static encode(m: proto.DeviceCapabilities.AiFbidMigration.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.DeviceCapabilities.AiFbidMigration & proto.DeviceCapabilities.AiFbidMigration.$Shape
+			static encode(m: proto.DeviceCapabilities.AiFbidMigration.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.DeviceCapabilities.AiFbidMigration & proto.DeviceCapabilities.AiFbidMigration.$Shape
 			static fromObject(d: { [k: string]: any }): proto.DeviceCapabilities.AiFbidMigration
-			static toObject(m: proto.DeviceCapabilities.AiFbidMigration, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.DeviceCapabilities.AiFbidMigration, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace AiFbidMigration {
@@ -5498,10 +5498,10 @@ export namespace proto {
 			supportLevel?: (proto.DeviceCapabilities.AiThread.SupportLevel|null)
 			static create(properties: proto.DeviceCapabilities.AiThread.$Shape): proto.DeviceCapabilities.AiThread & proto.DeviceCapabilities.AiThread.$Shape
 			static create(properties?: proto.DeviceCapabilities.AiThread.$Properties): proto.DeviceCapabilities.AiThread
-			static encode(m: proto.DeviceCapabilities.AiThread.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.DeviceCapabilities.AiThread & proto.DeviceCapabilities.AiThread.$Shape
+			static encode(m: proto.DeviceCapabilities.AiThread.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.DeviceCapabilities.AiThread & proto.DeviceCapabilities.AiThread.$Shape
 			static fromObject(d: { [k: string]: any }): proto.DeviceCapabilities.AiThread
-			static toObject(m: proto.DeviceCapabilities.AiThread, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.DeviceCapabilities.AiThread, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace AiThread {
@@ -5524,10 +5524,10 @@ export namespace proto {
 			handoffRemovalTimingEnabled?: (boolean|null)
 			static create(properties: proto.DeviceCapabilities.BizAiSettingsSync.$Shape): proto.DeviceCapabilities.BizAiSettingsSync & proto.DeviceCapabilities.BizAiSettingsSync.$Shape
 			static create(properties?: proto.DeviceCapabilities.BizAiSettingsSync.$Properties): proto.DeviceCapabilities.BizAiSettingsSync
-			static encode(m: proto.DeviceCapabilities.BizAiSettingsSync.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.DeviceCapabilities.BizAiSettingsSync & proto.DeviceCapabilities.BizAiSettingsSync.$Shape
+			static encode(m: proto.DeviceCapabilities.BizAiSettingsSync.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.DeviceCapabilities.BizAiSettingsSync & proto.DeviceCapabilities.BizAiSettingsSync.$Shape
 			static fromObject(d: { [k: string]: any }): proto.DeviceCapabilities.BizAiSettingsSync
-			static toObject(m: proto.DeviceCapabilities.BizAiSettingsSync, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.DeviceCapabilities.BizAiSettingsSync, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace BizAiSettingsSync {
@@ -5545,10 +5545,10 @@ export namespace proto {
 			version?: (number|null)
 			static create(properties: proto.DeviceCapabilities.BizAiWebOnboarding.$Shape): proto.DeviceCapabilities.BizAiWebOnboarding & proto.DeviceCapabilities.BizAiWebOnboarding.$Shape
 			static create(properties?: proto.DeviceCapabilities.BizAiWebOnboarding.$Properties): proto.DeviceCapabilities.BizAiWebOnboarding
-			static encode(m: proto.DeviceCapabilities.BizAiWebOnboarding.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.DeviceCapabilities.BizAiWebOnboarding & proto.DeviceCapabilities.BizAiWebOnboarding.$Shape
+			static encode(m: proto.DeviceCapabilities.BizAiWebOnboarding.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.DeviceCapabilities.BizAiWebOnboarding & proto.DeviceCapabilities.BizAiWebOnboarding.$Shape
 			static fromObject(d: { [k: string]: any }): proto.DeviceCapabilities.BizAiWebOnboarding
-			static toObject(m: proto.DeviceCapabilities.BizAiWebOnboarding, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.DeviceCapabilities.BizAiWebOnboarding, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace BizAiWebOnboarding {
@@ -5571,10 +5571,10 @@ export namespace proto {
 			proCompanionSupportEnabled?: (boolean|null)
 			static create(properties: proto.DeviceCapabilities.BusinessBroadcast.$Shape): proto.DeviceCapabilities.BusinessBroadcast & proto.DeviceCapabilities.BusinessBroadcast.$Shape
 			static create(properties?: proto.DeviceCapabilities.BusinessBroadcast.$Properties): proto.DeviceCapabilities.BusinessBroadcast
-			static encode(m: proto.DeviceCapabilities.BusinessBroadcast.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.DeviceCapabilities.BusinessBroadcast & proto.DeviceCapabilities.BusinessBroadcast.$Shape
+			static encode(m: proto.DeviceCapabilities.BusinessBroadcast.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.DeviceCapabilities.BusinessBroadcast & proto.DeviceCapabilities.BusinessBroadcast.$Shape
 			static fromObject(d: { [k: string]: any }): proto.DeviceCapabilities.BusinessBroadcast
-			static toObject(m: proto.DeviceCapabilities.BusinessBroadcast, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.DeviceCapabilities.BusinessBroadcast, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace BusinessBroadcast {
@@ -5602,10 +5602,10 @@ export namespace proto {
 			refreshSupported?: (boolean|null)
 			static create(properties: proto.DeviceCapabilities.ContactRefresh.$Shape): proto.DeviceCapabilities.ContactRefresh & proto.DeviceCapabilities.ContactRefresh.$Shape
 			static create(properties?: proto.DeviceCapabilities.ContactRefresh.$Properties): proto.DeviceCapabilities.ContactRefresh
-			static encode(m: proto.DeviceCapabilities.ContactRefresh.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.DeviceCapabilities.ContactRefresh & proto.DeviceCapabilities.ContactRefresh.$Shape
+			static encode(m: proto.DeviceCapabilities.ContactRefresh.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.DeviceCapabilities.ContactRefresh & proto.DeviceCapabilities.ContactRefresh.$Shape
 			static fromObject(d: { [k: string]: any }): proto.DeviceCapabilities.ContactRefresh
-			static toObject(m: proto.DeviceCapabilities.ContactRefresh, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.DeviceCapabilities.ContactRefresh, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ContactRefresh {
@@ -5623,10 +5623,10 @@ export namespace proto {
 			mutationNames: string[]
 			static create(properties: proto.DeviceCapabilities.HostWriteMutationSupport.$Shape): proto.DeviceCapabilities.HostWriteMutationSupport & proto.DeviceCapabilities.HostWriteMutationSupport.$Shape
 			static create(properties?: proto.DeviceCapabilities.HostWriteMutationSupport.$Properties): proto.DeviceCapabilities.HostWriteMutationSupport
-			static encode(m: proto.DeviceCapabilities.HostWriteMutationSupport.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.DeviceCapabilities.HostWriteMutationSupport & proto.DeviceCapabilities.HostWriteMutationSupport.$Shape
+			static encode(m: proto.DeviceCapabilities.HostWriteMutationSupport.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.DeviceCapabilities.HostWriteMutationSupport & proto.DeviceCapabilities.HostWriteMutationSupport.$Shape
 			static fromObject(d: { [k: string]: any }): proto.DeviceCapabilities.HostWriteMutationSupport
-			static toObject(m: proto.DeviceCapabilities.HostWriteMutationSupport, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.DeviceCapabilities.HostWriteMutationSupport, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace HostWriteMutationSupport {
@@ -5644,10 +5644,10 @@ export namespace proto {
 			chatDbMigrationTimestamp?: (number|Long|null)
 			static create(properties: proto.DeviceCapabilities.LIDMigration.$Shape): proto.DeviceCapabilities.LIDMigration & proto.DeviceCapabilities.LIDMigration.$Shape
 			static create(properties?: proto.DeviceCapabilities.LIDMigration.$Properties): proto.DeviceCapabilities.LIDMigration
-			static encode(m: proto.DeviceCapabilities.LIDMigration.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.DeviceCapabilities.LIDMigration & proto.DeviceCapabilities.LIDMigration.$Shape
+			static encode(m: proto.DeviceCapabilities.LIDMigration.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.DeviceCapabilities.LIDMigration & proto.DeviceCapabilities.LIDMigration.$Shape
 			static fromObject(d: { [k: string]: any }): proto.DeviceCapabilities.LIDMigration
-			static toObject(m: proto.DeviceCapabilities.LIDMigration, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.DeviceCapabilities.LIDMigration, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace LIDMigration {
@@ -5672,10 +5672,10 @@ export namespace proto {
 			rolledBack?: (boolean|null)
 			static create(properties: proto.DeviceCapabilities.NewsletterChatsMigration.$Shape): proto.DeviceCapabilities.NewsletterChatsMigration & proto.DeviceCapabilities.NewsletterChatsMigration.$Shape
 			static create(properties?: proto.DeviceCapabilities.NewsletterChatsMigration.$Properties): proto.DeviceCapabilities.NewsletterChatsMigration
-			static encode(m: proto.DeviceCapabilities.NewsletterChatsMigration.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.DeviceCapabilities.NewsletterChatsMigration & proto.DeviceCapabilities.NewsletterChatsMigration.$Shape
+			static encode(m: proto.DeviceCapabilities.NewsletterChatsMigration.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.DeviceCapabilities.NewsletterChatsMigration & proto.DeviceCapabilities.NewsletterChatsMigration.$Shape
 			static fromObject(d: { [k: string]: any }): proto.DeviceCapabilities.NewsletterChatsMigration
-			static toObject(m: proto.DeviceCapabilities.NewsletterChatsMigration, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.DeviceCapabilities.NewsletterChatsMigration, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace NewsletterChatsMigration {
@@ -5695,10 +5695,10 @@ export namespace proto {
 			enabledProducts: proto.DeviceCapabilities.ReverseHistorySync.Product[]
 			static create(properties: proto.DeviceCapabilities.ReverseHistorySync.$Shape): proto.DeviceCapabilities.ReverseHistorySync & proto.DeviceCapabilities.ReverseHistorySync.$Shape
 			static create(properties?: proto.DeviceCapabilities.ReverseHistorySync.$Properties): proto.DeviceCapabilities.ReverseHistorySync
-			static encode(m: proto.DeviceCapabilities.ReverseHistorySync.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.DeviceCapabilities.ReverseHistorySync & proto.DeviceCapabilities.ReverseHistorySync.$Shape
+			static encode(m: proto.DeviceCapabilities.ReverseHistorySync.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.DeviceCapabilities.ReverseHistorySync & proto.DeviceCapabilities.ReverseHistorySync.$Shape
 			static fromObject(d: { [k: string]: any }): proto.DeviceCapabilities.ReverseHistorySync
-			static toObject(m: proto.DeviceCapabilities.ReverseHistorySync, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.DeviceCapabilities.ReverseHistorySync, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ReverseHistorySync {
@@ -5720,10 +5720,10 @@ export namespace proto {
 			userHasAvatar?: (boolean|null)
 			static create(properties: proto.DeviceCapabilities.UserHasAvatar.$Shape): proto.DeviceCapabilities.UserHasAvatar & proto.DeviceCapabilities.UserHasAvatar.$Shape
 			static create(properties?: proto.DeviceCapabilities.UserHasAvatar.$Properties): proto.DeviceCapabilities.UserHasAvatar
-			static encode(m: proto.DeviceCapabilities.UserHasAvatar.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.DeviceCapabilities.UserHasAvatar & proto.DeviceCapabilities.UserHasAvatar.$Shape
+			static encode(m: proto.DeviceCapabilities.UserHasAvatar.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.DeviceCapabilities.UserHasAvatar & proto.DeviceCapabilities.UserHasAvatar.$Shape
 			static fromObject(d: { [k: string]: any }): proto.DeviceCapabilities.UserHasAvatar
-			static toObject(m: proto.DeviceCapabilities.UserHasAvatar, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.DeviceCapabilities.UserHasAvatar, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace UserHasAvatar {
@@ -5743,10 +5743,10 @@ export namespace proto {
 		signature?: (Uint8Array|null)
 		static create(properties: proto.DeviceConsistencyCodeMessage.$Shape): proto.DeviceConsistencyCodeMessage & proto.DeviceConsistencyCodeMessage.$Shape
 		static create(properties?: proto.DeviceConsistencyCodeMessage.$Properties): proto.DeviceConsistencyCodeMessage
-		static encode(m: proto.DeviceConsistencyCodeMessage.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.DeviceConsistencyCodeMessage & proto.DeviceConsistencyCodeMessage.$Shape
+		static encode(m: proto.DeviceConsistencyCodeMessage.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.DeviceConsistencyCodeMessage & proto.DeviceConsistencyCodeMessage.$Shape
 		static fromObject(d: { [k: string]: any }): proto.DeviceConsistencyCodeMessage
-		static toObject(m: proto.DeviceConsistencyCodeMessage, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.DeviceConsistencyCodeMessage, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace DeviceConsistencyCodeMessage {
@@ -5772,10 +5772,10 @@ export namespace proto {
 		recipientKeyIndexes: number[]
 		static create(properties: proto.DeviceListMetadata.$Shape): proto.DeviceListMetadata & proto.DeviceListMetadata.$Shape
 		static create(properties?: proto.DeviceListMetadata.$Properties): proto.DeviceListMetadata
-		static encode(m: proto.DeviceListMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.DeviceListMetadata & proto.DeviceListMetadata.$Shape
+		static encode(m: proto.DeviceListMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.DeviceListMetadata & proto.DeviceListMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.DeviceListMetadata
-		static toObject(m: proto.DeviceListMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.DeviceListMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace DeviceListMetadata {
@@ -5804,10 +5804,10 @@ export namespace proto {
 		historySyncConfig?: (proto.DeviceProps.HistorySyncConfig.$Properties|null)
 		static create(properties: proto.DeviceProps.$Shape): proto.DeviceProps & proto.DeviceProps.$Shape
 		static create(properties?: proto.DeviceProps.$Properties): proto.DeviceProps
-		static encode(m: proto.DeviceProps.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.DeviceProps & proto.DeviceProps.$Shape
+		static encode(m: proto.DeviceProps.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.DeviceProps & proto.DeviceProps.$Shape
 		static fromObject(d: { [k: string]: any }): proto.DeviceProps
-		static toObject(m: proto.DeviceProps, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.DeviceProps, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace DeviceProps {
@@ -5832,10 +5832,10 @@ export namespace proto {
 			quinary?: (number|null)
 			static create(properties: proto.DeviceProps.AppVersion.$Shape): proto.DeviceProps.AppVersion & proto.DeviceProps.AppVersion.$Shape
 			static create(properties?: proto.DeviceProps.AppVersion.$Properties): proto.DeviceProps.AppVersion
-			static encode(m: proto.DeviceProps.AppVersion.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.DeviceProps.AppVersion & proto.DeviceProps.AppVersion.$Shape
+			static encode(m: proto.DeviceProps.AppVersion.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.DeviceProps.AppVersion & proto.DeviceProps.AppVersion.$Shape
 			static fromObject(d: { [k: string]: any }): proto.DeviceProps.AppVersion
-			static toObject(m: proto.DeviceProps.AppVersion, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.DeviceProps.AppVersion, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace AppVersion {
@@ -5883,10 +5883,10 @@ export namespace proto {
 			supportOmittedConversationMetadata?: (boolean|null)
 			static create(properties: proto.DeviceProps.HistorySyncConfig.$Shape): proto.DeviceProps.HistorySyncConfig & proto.DeviceProps.HistorySyncConfig.$Shape
 			static create(properties?: proto.DeviceProps.HistorySyncConfig.$Properties): proto.DeviceProps.HistorySyncConfig
-			static encode(m: proto.DeviceProps.HistorySyncConfig.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.DeviceProps.HistorySyncConfig & proto.DeviceProps.HistorySyncConfig.$Shape
+			static encode(m: proto.DeviceProps.HistorySyncConfig.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.DeviceProps.HistorySyncConfig & proto.DeviceProps.HistorySyncConfig.$Shape
 			static fromObject(d: { [k: string]: any }): proto.DeviceProps.HistorySyncConfig
-			static toObject(m: proto.DeviceProps.HistorySyncConfig, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.DeviceProps.HistorySyncConfig, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace HistorySyncConfig {
@@ -5967,10 +5967,10 @@ export namespace proto {
 		initiatedByMe?: (boolean|null)
 		static create(properties: proto.DisappearingMode.$Shape): proto.DisappearingMode & proto.DisappearingMode.$Shape
 		static create(properties?: proto.DisappearingMode.$Properties): proto.DisappearingMode
-		static encode(m: proto.DisappearingMode.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.DisappearingMode & proto.DisappearingMode.$Shape
+		static encode(m: proto.DisappearingMode.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.DisappearingMode & proto.DisappearingMode.$Shape
 		static fromObject(d: { [k: string]: any }): proto.DisappearingMode
-		static toObject(m: proto.DisappearingMode, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.DisappearingMode, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace DisappearingMode {
@@ -6007,10 +6007,10 @@ export namespace proto {
 		content?: ("embeddedMessage"|"embeddedMusic")
 		static create(properties: proto.EmbeddedContent.$Shape): proto.EmbeddedContent & proto.EmbeddedContent.$Shape
 		static create(properties?: proto.EmbeddedContent.$Properties): proto.EmbeddedContent
-		static encode(m: proto.EmbeddedContent.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.EmbeddedContent & proto.EmbeddedContent.$Shape
+		static encode(m: proto.EmbeddedContent.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.EmbeddedContent & proto.EmbeddedContent.$Shape
 		static fromObject(d: { [k: string]: any }): proto.EmbeddedContent
-		static toObject(m: proto.EmbeddedContent, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.EmbeddedContent, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace EmbeddedContent {
@@ -6037,10 +6037,10 @@ export namespace proto {
 		message?: (proto.Message.$Properties|null)
 		static create(properties: proto.EmbeddedMessage.$Shape): proto.EmbeddedMessage & proto.EmbeddedMessage.$Shape
 		static create(properties?: proto.EmbeddedMessage.$Properties): proto.EmbeddedMessage
-		static encode(m: proto.EmbeddedMessage.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.EmbeddedMessage & proto.EmbeddedMessage.$Shape
+		static encode(m: proto.EmbeddedMessage.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.EmbeddedMessage & proto.EmbeddedMessage.$Shape
 		static fromObject(d: { [k: string]: any }): proto.EmbeddedMessage
-		static toObject(m: proto.EmbeddedMessage, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.EmbeddedMessage, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace EmbeddedMessage {
@@ -6076,10 +6076,10 @@ export namespace proto {
 		overlapDurationInMs?: (number|Long|null)
 		static create(properties: proto.EmbeddedMusic.$Shape): proto.EmbeddedMusic & proto.EmbeddedMusic.$Shape
 		static create(properties?: proto.EmbeddedMusic.$Properties): proto.EmbeddedMusic
-		static encode(m: proto.EmbeddedMusic.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.EmbeddedMusic & proto.EmbeddedMusic.$Shape
+		static encode(m: proto.EmbeddedMusic.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.EmbeddedMusic & proto.EmbeddedMusic.$Shape
 		static fromObject(d: { [k: string]: any }): proto.EmbeddedMusic
-		static toObject(m: proto.EmbeddedMusic, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.EmbeddedMusic, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace EmbeddedMusic {
@@ -6111,10 +6111,10 @@ export namespace proto {
 		iv?: (Uint8Array|null)
 		static create(properties: proto.EncryptedPairingRequest.$Shape): proto.EncryptedPairingRequest & proto.EncryptedPairingRequest.$Shape
 		static create(properties?: proto.EncryptedPairingRequest.$Properties): proto.EncryptedPairingRequest
-		static encode(m: proto.EncryptedPairingRequest.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.EncryptedPairingRequest & proto.EncryptedPairingRequest.$Shape
+		static encode(m: proto.EncryptedPairingRequest.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.EncryptedPairingRequest & proto.EncryptedPairingRequest.$Shape
 		static fromObject(d: { [k: string]: any }): proto.EncryptedPairingRequest
-		static toObject(m: proto.EncryptedPairingRequest, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.EncryptedPairingRequest, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace EncryptedPairingRequest {
@@ -6134,10 +6134,10 @@ export namespace proto {
 		timestamp?: (number|Long|null)
 		static create(properties: proto.EphemeralSetting.$Shape): proto.EphemeralSetting & proto.EphemeralSetting.$Shape
 		static create(properties?: proto.EphemeralSetting.$Properties): proto.EphemeralSetting
-		static encode(m: proto.EphemeralSetting.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.EphemeralSetting & proto.EphemeralSetting.$Shape
+		static encode(m: proto.EphemeralSetting.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.EphemeralSetting & proto.EphemeralSetting.$Shape
 		static fromObject(d: { [k: string]: any }): proto.EphemeralSetting
-		static toObject(m: proto.EphemeralSetting, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.EphemeralSetting, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace EphemeralSetting {
@@ -6156,10 +6156,10 @@ export namespace proto {
 		isStale?: (boolean|null)
 		static create(properties: proto.EventAdditionalMetadata.$Shape): proto.EventAdditionalMetadata & proto.EventAdditionalMetadata.$Shape
 		static create(properties?: proto.EventAdditionalMetadata.$Properties): proto.EventAdditionalMetadata
-		static encode(m: proto.EventAdditionalMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.EventAdditionalMetadata & proto.EventAdditionalMetadata.$Shape
+		static encode(m: proto.EventAdditionalMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.EventAdditionalMetadata & proto.EventAdditionalMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.EventAdditionalMetadata
-		static toObject(m: proto.EventAdditionalMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.EventAdditionalMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace EventAdditionalMetadata {
@@ -6177,10 +6177,10 @@ export namespace proto {
 		isUpdated?: (boolean|null)
 		static create(properties: proto.EventInviteAdditionalMetadata.$Shape): proto.EventInviteAdditionalMetadata & proto.EventInviteAdditionalMetadata.$Shape
 		static create(properties?: proto.EventInviteAdditionalMetadata.$Properties): proto.EventInviteAdditionalMetadata
-		static encode(m: proto.EventInviteAdditionalMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.EventInviteAdditionalMetadata & proto.EventInviteAdditionalMetadata.$Shape
+		static encode(m: proto.EventInviteAdditionalMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.EventInviteAdditionalMetadata & proto.EventInviteAdditionalMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.EventInviteAdditionalMetadata
-		static toObject(m: proto.EventInviteAdditionalMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.EventInviteAdditionalMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace EventInviteAdditionalMetadata {
@@ -6201,10 +6201,10 @@ export namespace proto {
 		unread?: (boolean|null)
 		static create(properties: proto.EventResponse.$Shape): proto.EventResponse & proto.EventResponse.$Shape
 		static create(properties?: proto.EventResponse.$Properties): proto.EventResponse
-		static encode(m: proto.EventResponse.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.EventResponse & proto.EventResponse.$Shape
+		static encode(m: proto.EventResponse.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.EventResponse & proto.EventResponse.$Shape
 		static fromObject(d: { [k: string]: any }): proto.EventResponse
-		static toObject(m: proto.EventResponse, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.EventResponse, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace EventResponse {
@@ -6226,10 +6226,10 @@ export namespace proto {
 		text?: (string|null)
 		static create(properties: proto.ExitCode.$Shape): proto.ExitCode & proto.ExitCode.$Shape
 		static create(properties?: proto.ExitCode.$Properties): proto.ExitCode
-		static encode(m: proto.ExitCode.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.ExitCode & proto.ExitCode.$Shape
+		static encode(m: proto.ExitCode.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.ExitCode & proto.ExitCode.$Shape
 		static fromObject(d: { [k: string]: any }): proto.ExitCode
-		static toObject(m: proto.ExitCode, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.ExitCode, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace ExitCode {
@@ -6253,10 +6253,10 @@ export namespace proto {
 		fileEncSha256?: (Uint8Array|null)
 		static create(properties: proto.ExternalBlobReference.$Shape): proto.ExternalBlobReference & proto.ExternalBlobReference.$Shape
 		static create(properties?: proto.ExternalBlobReference.$Properties): proto.ExternalBlobReference
-		static encode(m: proto.ExternalBlobReference.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.ExternalBlobReference & proto.ExternalBlobReference.$Shape
+		static encode(m: proto.ExternalBlobReference.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.ExternalBlobReference & proto.ExternalBlobReference.$Shape
 		static fromObject(d: { [k: string]: any }): proto.ExternalBlobReference
-		static toObject(m: proto.ExternalBlobReference, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.ExternalBlobReference, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace ExternalBlobReference {
@@ -6283,10 +6283,10 @@ export namespace proto {
 		subfield: { [k: string]: proto.Field.$Properties }
 		static create(properties: proto.Field.$Shape): proto.Field & proto.Field.$Shape
 		static create(properties?: proto.Field.$Properties): proto.Field
-		static encode(m: proto.Field.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.Field & proto.Field.$Shape
+		static encode(m: proto.Field.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.Field & proto.Field.$Shape
 		static fromObject(d: { [k: string]: any }): proto.Field
-		static toObject(m: proto.Field, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.Field, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace Field {
@@ -6313,10 +6313,10 @@ export namespace proto {
 		hashedPublicKey?: (Uint8Array|null)
 		static create(properties: proto.FingerprintData.$Shape): proto.FingerprintData & proto.FingerprintData.$Shape
 		static create(properties?: proto.FingerprintData.$Properties): proto.FingerprintData
-		static encode(m: proto.FingerprintData.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.FingerprintData & proto.FingerprintData.$Shape
+		static encode(m: proto.FingerprintData.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.FingerprintData & proto.FingerprintData.$Shape
 		static fromObject(d: { [k: string]: any }): proto.FingerprintData
-		static toObject(m: proto.FingerprintData, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.FingerprintData, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace FingerprintData {
@@ -6341,10 +6341,10 @@ export namespace proto {
 		creatorName?: (string|null)
 		static create(properties: proto.ForwardedAIBotMessageInfo.$Shape): proto.ForwardedAIBotMessageInfo & proto.ForwardedAIBotMessageInfo.$Shape
 		static create(properties?: proto.ForwardedAIBotMessageInfo.$Properties): proto.ForwardedAIBotMessageInfo
-		static encode(m: proto.ForwardedAIBotMessageInfo.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.ForwardedAIBotMessageInfo & proto.ForwardedAIBotMessageInfo.$Shape
+		static encode(m: proto.ForwardedAIBotMessageInfo.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.ForwardedAIBotMessageInfo & proto.ForwardedAIBotMessageInfo.$Shape
 		static fromObject(d: { [k: string]: any }): proto.ForwardedAIBotMessageInfo
-		static toObject(m: proto.ForwardedAIBotMessageInfo, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.ForwardedAIBotMessageInfo, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace ForwardedAIBotMessageInfo {
@@ -6383,10 +6383,10 @@ export namespace proto {
 		chatDbLidMigrationTimestamp?: (number|Long|null)
 		static create(properties: proto.GlobalSettings.$Shape): proto.GlobalSettings & proto.GlobalSettings.$Shape
 		static create(properties?: proto.GlobalSettings.$Properties): proto.GlobalSettings
-		static encode(m: proto.GlobalSettings.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.GlobalSettings & proto.GlobalSettings.$Shape
+		static encode(m: proto.GlobalSettings.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.GlobalSettings & proto.GlobalSettings.$Shape
 		static fromObject(d: { [k: string]: any }): proto.GlobalSettings
-		static toObject(m: proto.GlobalSettings, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.GlobalSettings, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace GlobalSettings {
@@ -6449,10 +6449,10 @@ export namespace proto {
 		themeMessage?: (proto.WebMessageInfo.$Properties|null)
 		static create(properties: proto.GroupHistory.$Shape): proto.GroupHistory & proto.GroupHistory.$Shape
 		static create(properties?: proto.GroupHistory.$Properties): proto.GroupHistory
-		static encode(m: proto.GroupHistory.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.GroupHistory & proto.GroupHistory.$Shape
+		static encode(m: proto.GroupHistory.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.GroupHistory & proto.GroupHistory.$Shape
 		static fromObject(d: { [k: string]: any }): proto.GroupHistory
-		static toObject(m: proto.GroupHistory, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.GroupHistory, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace GroupHistory {
@@ -6482,10 +6482,10 @@ export namespace proto {
 		processState?: (proto.GroupHistoryBundleInfo.ProcessState|null)
 		static create(properties: proto.GroupHistoryBundleInfo.$Shape): proto.GroupHistoryBundleInfo & proto.GroupHistoryBundleInfo.$Shape
 		static create(properties?: proto.GroupHistoryBundleInfo.$Properties): proto.GroupHistoryBundleInfo
-		static encode(m: proto.GroupHistoryBundleInfo.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.GroupHistoryBundleInfo & proto.GroupHistoryBundleInfo.$Shape
+		static encode(m: proto.GroupHistoryBundleInfo.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.GroupHistoryBundleInfo & proto.GroupHistoryBundleInfo.$Shape
 		static fromObject(d: { [k: string]: any }): proto.GroupHistoryBundleInfo
-		static toObject(m: proto.GroupHistoryBundleInfo, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.GroupHistoryBundleInfo, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace GroupHistoryBundleInfo {
@@ -6517,10 +6517,10 @@ export namespace proto {
 		editedAfterReceivedAsHistory?: (boolean|null)
 		static create(properties: proto.GroupHistoryIndividualMessageInfo.$Shape): proto.GroupHistoryIndividualMessageInfo & proto.GroupHistoryIndividualMessageInfo.$Shape
 		static create(properties?: proto.GroupHistoryIndividualMessageInfo.$Properties): proto.GroupHistoryIndividualMessageInfo
-		static encode(m: proto.GroupHistoryIndividualMessageInfo.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.GroupHistoryIndividualMessageInfo & proto.GroupHistoryIndividualMessageInfo.$Shape
+		static encode(m: proto.GroupHistoryIndividualMessageInfo.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.GroupHistoryIndividualMessageInfo & proto.GroupHistoryIndividualMessageInfo.$Shape
 		static fromObject(d: { [k: string]: any }): proto.GroupHistoryIndividualMessageInfo
-		static toObject(m: proto.GroupHistoryIndividualMessageInfo, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.GroupHistoryIndividualMessageInfo, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace GroupHistoryIndividualMessageInfo {
@@ -6543,10 +6543,10 @@ export namespace proto {
 		themeMessage?: (proto.WebMessageInfoWithMessageBytes.$Properties|null)
 		static create(properties: proto.GroupHistoryWithMessageBytes.$Shape): proto.GroupHistoryWithMessageBytes & proto.GroupHistoryWithMessageBytes.$Shape
 		static create(properties?: proto.GroupHistoryWithMessageBytes.$Properties): proto.GroupHistoryWithMessageBytes
-		static encode(m: proto.GroupHistoryWithMessageBytes.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.GroupHistoryWithMessageBytes & proto.GroupHistoryWithMessageBytes.$Shape
+		static encode(m: proto.GroupHistoryWithMessageBytes.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.GroupHistoryWithMessageBytes & proto.GroupHistoryWithMessageBytes.$Shape
 		static fromObject(d: { [k: string]: any }): proto.GroupHistoryWithMessageBytes
-		static toObject(m: proto.GroupHistoryWithMessageBytes, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.GroupHistoryWithMessageBytes, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace GroupHistoryWithMessageBytes {
@@ -6569,10 +6569,10 @@ export namespace proto {
 		groupSubject?: (string|null)
 		static create(properties: proto.GroupMention.$Shape): proto.GroupMention & proto.GroupMention.$Shape
 		static create(properties?: proto.GroupMention.$Properties): proto.GroupMention
-		static encode(m: proto.GroupMention.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.GroupMention & proto.GroupMention.$Shape
+		static encode(m: proto.GroupMention.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.GroupMention & proto.GroupMention.$Shape
 		static fromObject(d: { [k: string]: any }): proto.GroupMention
-		static toObject(m: proto.GroupMention, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.GroupMention, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace GroupMention {
@@ -6593,10 +6593,10 @@ export namespace proto {
 		memberLabel?: (proto.MemberLabel.$Properties|null)
 		static create(properties: proto.GroupParticipant.$Shape): proto.GroupParticipant & proto.GroupParticipant.$Shape
 		static create(properties?: proto.GroupParticipant.$Properties): proto.GroupParticipant
-		static encode(m: proto.GroupParticipant.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.GroupParticipant & proto.GroupParticipant.$Shape
+		static encode(m: proto.GroupParticipant.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.GroupParticipant & proto.GroupParticipant.$Shape
 		static fromObject(d: { [k: string]: any }): proto.GroupParticipant
-		static toObject(m: proto.GroupParticipant, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.GroupParticipant, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace GroupParticipant {
@@ -6621,10 +6621,10 @@ export namespace proto {
 		keys: proto.GroupRootKeyShareEntry.$Properties[]
 		static create(properties: proto.GroupRootKeyShare.$Shape): proto.GroupRootKeyShare & proto.GroupRootKeyShare.$Shape
 		static create(properties?: proto.GroupRootKeyShare.$Properties): proto.GroupRootKeyShare
-		static encode(m: proto.GroupRootKeyShare.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.GroupRootKeyShare & proto.GroupRootKeyShare.$Shape
+		static encode(m: proto.GroupRootKeyShare.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.GroupRootKeyShare & proto.GroupRootKeyShare.$Shape
 		static fromObject(d: { [k: string]: any }): proto.GroupRootKeyShare
-		static toObject(m: proto.GroupRootKeyShare, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.GroupRootKeyShare, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace GroupRootKeyShare {
@@ -6645,10 +6645,10 @@ export namespace proto {
 		createdTimestampMs?: (number|Long|null)
 		static create(properties: proto.GroupRootKeyShareEntry.$Shape): proto.GroupRootKeyShareEntry & proto.GroupRootKeyShareEntry.$Shape
 		static create(properties?: proto.GroupRootKeyShareEntry.$Properties): proto.GroupRootKeyShareEntry
-		static encode(m: proto.GroupRootKeyShareEntry.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.GroupRootKeyShareEntry & proto.GroupRootKeyShareEntry.$Shape
+		static encode(m: proto.GroupRootKeyShareEntry.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.GroupRootKeyShareEntry & proto.GroupRootKeyShareEntry.$Shape
 		static fromObject(d: { [k: string]: any }): proto.GroupRootKeyShareEntry
-		static toObject(m: proto.GroupRootKeyShareEntry, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.GroupRootKeyShareEntry, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace GroupRootKeyShareEntry {
@@ -6671,10 +6671,10 @@ export namespace proto {
 		clientFinish?: (proto.HandshakeMessage.ClientFinish.$Properties|null)
 		static create(properties: proto.HandshakeMessage.$Shape): proto.HandshakeMessage & proto.HandshakeMessage.$Shape
 		static create(properties?: proto.HandshakeMessage.$Properties): proto.HandshakeMessage
-		static encode(m: proto.HandshakeMessage.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.HandshakeMessage & proto.HandshakeMessage.$Shape
+		static encode(m: proto.HandshakeMessage.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.HandshakeMessage & proto.HandshakeMessage.$Shape
 		static fromObject(d: { [k: string]: any }): proto.HandshakeMessage
-		static toObject(m: proto.HandshakeMessage, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.HandshakeMessage, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace HandshakeMessage {
@@ -6697,10 +6697,10 @@ export namespace proto {
 			simulateXxkemFs?: (boolean|null)
 			static create(properties: proto.HandshakeMessage.ClientFinish.$Shape): proto.HandshakeMessage.ClientFinish & proto.HandshakeMessage.ClientFinish.$Shape
 			static create(properties?: proto.HandshakeMessage.ClientFinish.$Properties): proto.HandshakeMessage.ClientFinish
-			static encode(m: proto.HandshakeMessage.ClientFinish.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.HandshakeMessage.ClientFinish & proto.HandshakeMessage.ClientFinish.$Shape
+			static encode(m: proto.HandshakeMessage.ClientFinish.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.HandshakeMessage.ClientFinish & proto.HandshakeMessage.ClientFinish.$Shape
 			static fromObject(d: { [k: string]: any }): proto.HandshakeMessage.ClientFinish
-			static toObject(m: proto.HandshakeMessage.ClientFinish, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.HandshakeMessage.ClientFinish, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ClientFinish {
@@ -6731,10 +6731,10 @@ export namespace proto {
 			extendedEphemeral?: (Uint8Array|null)
 			static create(properties: proto.HandshakeMessage.ClientHello.$Shape): proto.HandshakeMessage.ClientHello & proto.HandshakeMessage.ClientHello.$Shape
 			static create(properties?: proto.HandshakeMessage.ClientHello.$Properties): proto.HandshakeMessage.ClientHello
-			static encode(m: proto.HandshakeMessage.ClientHello.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.HandshakeMessage.ClientHello & proto.HandshakeMessage.ClientHello.$Shape
+			static encode(m: proto.HandshakeMessage.ClientHello.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.HandshakeMessage.ClientHello & proto.HandshakeMessage.ClientHello.$Shape
 			static fromObject(d: { [k: string]: any }): proto.HandshakeMessage.ClientHello
-			static toObject(m: proto.HandshakeMessage.ClientHello, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.HandshakeMessage.ClientHello, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ClientHello {
@@ -6778,10 +6778,10 @@ export namespace proto {
 			extendedCiphertext?: (Uint8Array|null)
 			static create(properties: proto.HandshakeMessage.ServerHello.$Shape): proto.HandshakeMessage.ServerHello & proto.HandshakeMessage.ServerHello.$Shape
 			static create(properties?: proto.HandshakeMessage.ServerHello.$Properties): proto.HandshakeMessage.ServerHello
-			static encode(m: proto.HandshakeMessage.ServerHello.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.HandshakeMessage.ServerHello & proto.HandshakeMessage.ServerHello.$Shape
+			static encode(m: proto.HandshakeMessage.ServerHello.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.HandshakeMessage.ServerHello & proto.HandshakeMessage.ServerHello.$Shape
 			static fromObject(d: { [k: string]: any }): proto.HandshakeMessage.ServerHello
-			static toObject(m: proto.HandshakeMessage.ServerHello, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.HandshakeMessage.ServerHello, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ServerHello {
@@ -6807,10 +6807,10 @@ export namespace proto {
 		requestId?: (string|null)
 		static create(properties: proto.HatchMetadataSync.$Shape): proto.HatchMetadataSync & proto.HatchMetadataSync.$Shape
 		static create(properties?: proto.HatchMetadataSync.$Properties): proto.HatchMetadataSync
-		static encode(m: proto.HatchMetadataSync.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.HatchMetadataSync & proto.HatchMetadataSync.$Shape
+		static encode(m: proto.HatchMetadataSync.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.HatchMetadataSync & proto.HatchMetadataSync.$Shape
 		static fromObject(d: { [k: string]: any }): proto.HatchMetadataSync
-		static toObject(m: proto.HatchMetadataSync, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.HatchMetadataSync, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace HatchMetadataSync {
@@ -6852,10 +6852,10 @@ export namespace proto {
 		omittedConversationMetadataSnapshotId?: (string|null)
 		static create(properties: proto.HistorySync.$Shape): proto.HistorySync & proto.HistorySync.$Shape
 		static create(properties?: proto.HistorySync.$Properties): proto.HistorySync
-		static encode(m: proto.HistorySync.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.HistorySync & proto.HistorySync.$Shape
+		static encode(m: proto.HistorySync.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.HistorySync & proto.HistorySync.$Shape
 		static fromObject(d: { [k: string]: any }): proto.HistorySync
-		static toObject(m: proto.HistorySync, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.HistorySync, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace HistorySync {
@@ -6935,10 +6935,10 @@ export namespace proto {
 		msgOrderId?: (number|Long|null)
 		static create(properties: proto.HistorySyncMsg.$Shape): proto.HistorySyncMsg & proto.HistorySyncMsg.$Shape
 		static create(properties?: proto.HistorySyncMsg.$Properties): proto.HistorySyncMsg
-		static encode(m: proto.HistorySyncMsg.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.HistorySyncMsg & proto.HistorySyncMsg.$Shape
+		static encode(m: proto.HistorySyncMsg.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.HistorySyncMsg & proto.HistorySyncMsg.$Shape
 		static fromObject(d: { [k: string]: any }): proto.HistorySyncMsg
-		static toObject(m: proto.HistorySyncMsg, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.HistorySyncMsg, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace HistorySyncMsg {
@@ -6969,10 +6969,10 @@ export namespace proto {
 		hydratedButton?: ("quickReplyButton"|"urlButton"|"callButton")
 		static create(properties: proto.HydratedTemplateButton.$Shape): proto.HydratedTemplateButton & proto.HydratedTemplateButton.$Shape
 		static create(properties?: proto.HydratedTemplateButton.$Properties): proto.HydratedTemplateButton
-		static encode(m: proto.HydratedTemplateButton.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.HydratedTemplateButton & proto.HydratedTemplateButton.$Shape
+		static encode(m: proto.HydratedTemplateButton.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.HydratedTemplateButton & proto.HydratedTemplateButton.$Shape
 		static fromObject(d: { [k: string]: any }): proto.HydratedTemplateButton
-		static toObject(m: proto.HydratedTemplateButton, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.HydratedTemplateButton, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace HydratedTemplateButton {
@@ -7002,10 +7002,10 @@ export namespace proto {
 			phoneNumber?: (string|null)
 			static create(properties: proto.HydratedTemplateButton.HydratedCallButton.$Shape): proto.HydratedTemplateButton.HydratedCallButton & proto.HydratedTemplateButton.HydratedCallButton.$Shape
 			static create(properties?: proto.HydratedTemplateButton.HydratedCallButton.$Properties): proto.HydratedTemplateButton.HydratedCallButton
-			static encode(m: proto.HydratedTemplateButton.HydratedCallButton.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.HydratedTemplateButton.HydratedCallButton & proto.HydratedTemplateButton.HydratedCallButton.$Shape
+			static encode(m: proto.HydratedTemplateButton.HydratedCallButton.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.HydratedTemplateButton.HydratedCallButton & proto.HydratedTemplateButton.HydratedCallButton.$Shape
 			static fromObject(d: { [k: string]: any }): proto.HydratedTemplateButton.HydratedCallButton
-			static toObject(m: proto.HydratedTemplateButton.HydratedCallButton, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.HydratedTemplateButton.HydratedCallButton, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace HydratedCallButton {
@@ -7025,10 +7025,10 @@ export namespace proto {
 			id?: (string|null)
 			static create(properties: proto.HydratedTemplateButton.HydratedQuickReplyButton.$Shape): proto.HydratedTemplateButton.HydratedQuickReplyButton & proto.HydratedTemplateButton.HydratedQuickReplyButton.$Shape
 			static create(properties?: proto.HydratedTemplateButton.HydratedQuickReplyButton.$Properties): proto.HydratedTemplateButton.HydratedQuickReplyButton
-			static encode(m: proto.HydratedTemplateButton.HydratedQuickReplyButton.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.HydratedTemplateButton.HydratedQuickReplyButton & proto.HydratedTemplateButton.HydratedQuickReplyButton.$Shape
+			static encode(m: proto.HydratedTemplateButton.HydratedQuickReplyButton.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.HydratedTemplateButton.HydratedQuickReplyButton & proto.HydratedTemplateButton.HydratedQuickReplyButton.$Shape
 			static fromObject(d: { [k: string]: any }): proto.HydratedTemplateButton.HydratedQuickReplyButton
-			static toObject(m: proto.HydratedTemplateButton.HydratedQuickReplyButton, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.HydratedTemplateButton.HydratedQuickReplyButton, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace HydratedQuickReplyButton {
@@ -7050,10 +7050,10 @@ export namespace proto {
 			webviewPresentation?: (proto.HydratedTemplateButton.HydratedURLButton.WebviewPresentationType|null)
 			static create(properties: proto.HydratedTemplateButton.HydratedURLButton.$Shape): proto.HydratedTemplateButton.HydratedURLButton & proto.HydratedTemplateButton.HydratedURLButton.$Shape
 			static create(properties?: proto.HydratedTemplateButton.HydratedURLButton.$Properties): proto.HydratedTemplateButton.HydratedURLButton
-			static encode(m: proto.HydratedTemplateButton.HydratedURLButton.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.HydratedTemplateButton.HydratedURLButton & proto.HydratedTemplateButton.HydratedURLButton.$Shape
+			static encode(m: proto.HydratedTemplateButton.HydratedURLButton.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.HydratedTemplateButton.HydratedURLButton & proto.HydratedTemplateButton.HydratedURLButton.$Shape
 			static fromObject(d: { [k: string]: any }): proto.HydratedTemplateButton.HydratedURLButton
-			static toObject(m: proto.HydratedTemplateButton.HydratedURLButton, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.HydratedTemplateButton.HydratedURLButton, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace HydratedURLButton {
@@ -7081,10 +7081,10 @@ export namespace proto {
 		privateKey?: (Uint8Array|null)
 		static create(properties: proto.IdentityKeyPairStructure.$Shape): proto.IdentityKeyPairStructure & proto.IdentityKeyPairStructure.$Shape
 		static create(properties?: proto.IdentityKeyPairStructure.$Properties): proto.IdentityKeyPairStructure
-		static encode(m: proto.IdentityKeyPairStructure.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.IdentityKeyPairStructure & proto.IdentityKeyPairStructure.$Shape
+		static encode(m: proto.IdentityKeyPairStructure.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.IdentityKeyPairStructure & proto.IdentityKeyPairStructure.$Shape
 		static fromObject(d: { [k: string]: any }): proto.IdentityKeyPairStructure
-		static toObject(m: proto.IdentityKeyPairStructure, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.IdentityKeyPairStructure, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace IdentityKeyPairStructure {
@@ -7104,10 +7104,10 @@ export namespace proto {
 		actionSeq?: (number|Long|null)
 		static create(properties: proto.IdentityVerificationState.$Shape): proto.IdentityVerificationState & proto.IdentityVerificationState.$Shape
 		static create(properties?: proto.IdentityVerificationState.$Properties): proto.IdentityVerificationState
-		static encode(m: proto.IdentityVerificationState.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.IdentityVerificationState & proto.IdentityVerificationState.$Shape
+		static encode(m: proto.IdentityVerificationState.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.IdentityVerificationState & proto.IdentityVerificationState.$Shape
 		static fromObject(d: { [k: string]: any }): proto.IdentityVerificationState
-		static toObject(m: proto.IdentityVerificationState, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.IdentityVerificationState, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace IdentityVerificationState {
@@ -7143,10 +7143,10 @@ export namespace proto {
 		startQuestionIndex?: (number|null)
 		static create(properties: proto.InThreadSurveyMetadata.$Shape): proto.InThreadSurveyMetadata & proto.InThreadSurveyMetadata.$Shape
 		static create(properties?: proto.InThreadSurveyMetadata.$Properties): proto.InThreadSurveyMetadata
-		static encode(m: proto.InThreadSurveyMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.InThreadSurveyMetadata & proto.InThreadSurveyMetadata.$Shape
+		static encode(m: proto.InThreadSurveyMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.InThreadSurveyMetadata & proto.InThreadSurveyMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.InThreadSurveyMetadata
-		static toObject(m: proto.InThreadSurveyMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.InThreadSurveyMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace InThreadSurveyMetadata {
@@ -7182,10 +7182,10 @@ export namespace proto {
 			textTranslated?: (string|null)
 			static create(properties: proto.InThreadSurveyMetadata.InThreadSurveyOption.$Shape): proto.InThreadSurveyMetadata.InThreadSurveyOption & proto.InThreadSurveyMetadata.InThreadSurveyOption.$Shape
 			static create(properties?: proto.InThreadSurveyMetadata.InThreadSurveyOption.$Properties): proto.InThreadSurveyMetadata.InThreadSurveyOption
-			static encode(m: proto.InThreadSurveyMetadata.InThreadSurveyOption.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.InThreadSurveyMetadata.InThreadSurveyOption & proto.InThreadSurveyMetadata.InThreadSurveyOption.$Shape
+			static encode(m: proto.InThreadSurveyMetadata.InThreadSurveyOption.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.InThreadSurveyMetadata.InThreadSurveyOption & proto.InThreadSurveyMetadata.InThreadSurveyOption.$Shape
 			static fromObject(d: { [k: string]: any }): proto.InThreadSurveyMetadata.InThreadSurveyOption
-			static toObject(m: proto.InThreadSurveyMetadata.InThreadSurveyOption, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.InThreadSurveyMetadata.InThreadSurveyOption, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace InThreadSurveyOption {
@@ -7206,10 +7206,10 @@ export namespace proto {
 			url?: (string|null)
 			static create(properties: proto.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart.$Shape): proto.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart & proto.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart.$Shape
 			static create(properties?: proto.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart.$Properties): proto.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart
-			static encode(m: proto.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart & proto.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart.$Shape
+			static encode(m: proto.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart & proto.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart.$Shape
 			static fromObject(d: { [k: string]: any }): proto.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart
-			static toObject(m: proto.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.InThreadSurveyMetadata.InThreadSurveyPrivacyStatementPart, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace InThreadSurveyPrivacyStatementPart {
@@ -7230,10 +7230,10 @@ export namespace proto {
 			questionOptions: proto.InThreadSurveyMetadata.InThreadSurveyOption.$Properties[]
 			static create(properties: proto.InThreadSurveyMetadata.InThreadSurveyQuestion.$Shape): proto.InThreadSurveyMetadata.InThreadSurveyQuestion & proto.InThreadSurveyMetadata.InThreadSurveyQuestion.$Shape
 			static create(properties?: proto.InThreadSurveyMetadata.InThreadSurveyQuestion.$Properties): proto.InThreadSurveyMetadata.InThreadSurveyQuestion
-			static encode(m: proto.InThreadSurveyMetadata.InThreadSurveyQuestion.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.InThreadSurveyMetadata.InThreadSurveyQuestion & proto.InThreadSurveyMetadata.InThreadSurveyQuestion.$Shape
+			static encode(m: proto.InThreadSurveyMetadata.InThreadSurveyQuestion.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.InThreadSurveyMetadata.InThreadSurveyQuestion & proto.InThreadSurveyMetadata.InThreadSurveyQuestion.$Shape
 			static fromObject(d: { [k: string]: any }): proto.InThreadSurveyMetadata.InThreadSurveyQuestion
-			static toObject(m: proto.InThreadSurveyMetadata.InThreadSurveyQuestion, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.InThreadSurveyMetadata.InThreadSurveyQuestion, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace InThreadSurveyQuestion {
@@ -7258,10 +7258,10 @@ export namespace proto {
 		username?: (string|null)
 		static create(properties: proto.InlineContact.$Shape): proto.InlineContact & proto.InlineContact.$Shape
 		static create(properties?: proto.InlineContact.$Properties): proto.InlineContact
-		static encode(m: proto.InlineContact.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.InlineContact & proto.InlineContact.$Shape
+		static encode(m: proto.InlineContact.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.InlineContact & proto.InlineContact.$Shape
 		static fromObject(d: { [k: string]: any }): proto.InlineContact
-		static toObject(m: proto.InlineContact, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.InlineContact, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace InlineContact {
@@ -7291,10 +7291,10 @@ export namespace proto {
 		action?: ("location"|"newsletter"|"embeddedAction"|"tapAction")
 		static create(properties: proto.InteractiveAnnotation.$Shape): proto.InteractiveAnnotation & proto.InteractiveAnnotation.$Shape
 		static create(properties?: proto.InteractiveAnnotation.$Properties): proto.InteractiveAnnotation
-		static encode(m: proto.InteractiveAnnotation.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.InteractiveAnnotation & proto.InteractiveAnnotation.$Shape
+		static encode(m: proto.InteractiveAnnotation.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.InteractiveAnnotation & proto.InteractiveAnnotation.$Shape
 		static fromObject(d: { [k: string]: any }): proto.InteractiveAnnotation
-		static toObject(m: proto.InteractiveAnnotation, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.InteractiveAnnotation, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace InteractiveAnnotation {
@@ -7337,10 +7337,10 @@ export namespace proto {
 		isGalaxyFlowCompleted?: (boolean|null)
 		static create(properties: proto.InteractiveMessageAdditionalMetadata.$Shape): proto.InteractiveMessageAdditionalMetadata & proto.InteractiveMessageAdditionalMetadata.$Shape
 		static create(properties?: proto.InteractiveMessageAdditionalMetadata.$Properties): proto.InteractiveMessageAdditionalMetadata
-		static encode(m: proto.InteractiveMessageAdditionalMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.InteractiveMessageAdditionalMetadata & proto.InteractiveMessageAdditionalMetadata.$Shape
+		static encode(m: proto.InteractiveMessageAdditionalMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.InteractiveMessageAdditionalMetadata & proto.InteractiveMessageAdditionalMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.InteractiveMessageAdditionalMetadata
-		static toObject(m: proto.InteractiveMessageAdditionalMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.InteractiveMessageAdditionalMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace InteractiveMessageAdditionalMetadata {
@@ -7363,10 +7363,10 @@ export namespace proto {
 		serverTimestampMs?: (number|Long|null)
 		static create(properties: proto.KeepInChat.$Shape): proto.KeepInChat & proto.KeepInChat.$Shape
 		static create(properties?: proto.KeepInChat.$Properties): proto.KeepInChat
-		static encode(m: proto.KeepInChat.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.KeepInChat & proto.KeepInChat.$Shape
+		static encode(m: proto.KeepInChat.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.KeepInChat & proto.KeepInChat.$Shape
 		static fromObject(d: { [k: string]: any }): proto.KeepInChat
-		static toObject(m: proto.KeepInChat, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.KeepInChat, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace KeepInChat {
@@ -7398,10 +7398,10 @@ export namespace proto {
 		baseKeySignature?: (Uint8Array|null)
 		static create(properties: proto.KeyExchangeMessage.$Shape): proto.KeyExchangeMessage & proto.KeyExchangeMessage.$Shape
 		static create(properties?: proto.KeyExchangeMessage.$Properties): proto.KeyExchangeMessage
-		static encode(m: proto.KeyExchangeMessage.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.KeyExchangeMessage & proto.KeyExchangeMessage.$Shape
+		static encode(m: proto.KeyExchangeMessage.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.KeyExchangeMessage & proto.KeyExchangeMessage.$Shape
 		static fromObject(d: { [k: string]: any }): proto.KeyExchangeMessage
-		static toObject(m: proto.KeyExchangeMessage, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.KeyExchangeMessage, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace KeyExchangeMessage {
@@ -7423,10 +7423,10 @@ export namespace proto {
 		id?: (Uint8Array|null)
 		static create(properties: proto.KeyId.$Shape): proto.KeyId & proto.KeyId.$Shape
 		static create(properties?: proto.KeyId.$Properties): proto.KeyId
-		static encode(m: proto.KeyId.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.KeyId & proto.KeyId.$Shape
+		static encode(m: proto.KeyId.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.KeyId & proto.KeyId.$Shape
 		static fromObject(d: { [k: string]: any }): proto.KeyId
-		static toObject(m: proto.KeyId, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.KeyId, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace KeyId {
@@ -7444,10 +7444,10 @@ export namespace proto {
 		encodedMappingPayload?: (Uint8Array|null)
 		static create(properties: proto.LIDMigrationMappingSyncMessage.$Shape): proto.LIDMigrationMappingSyncMessage & proto.LIDMigrationMappingSyncMessage.$Shape
 		static create(properties?: proto.LIDMigrationMappingSyncMessage.$Properties): proto.LIDMigrationMappingSyncMessage
-		static encode(m: proto.LIDMigrationMappingSyncMessage.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.LIDMigrationMappingSyncMessage & proto.LIDMigrationMappingSyncMessage.$Shape
+		static encode(m: proto.LIDMigrationMappingSyncMessage.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.LIDMigrationMappingSyncMessage & proto.LIDMigrationMappingSyncMessage.$Shape
 		static fromObject(d: { [k: string]: any }): proto.LIDMigrationMappingSyncMessage
-		static toObject(m: proto.LIDMigrationMappingSyncMessage, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.LIDMigrationMappingSyncMessage, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace LIDMigrationMappingSyncMessage {
@@ -7466,10 +7466,10 @@ export namespace proto {
 		pollVote?: (proto.Message.PollVoteMessage.$Properties|null)
 		static create(properties: proto.LegacyMessage.$Shape): proto.LegacyMessage & proto.LegacyMessage.$Shape
 		static create(properties?: proto.LegacyMessage.$Properties): proto.LegacyMessage
-		static encode(m: proto.LegacyMessage.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.LegacyMessage & proto.LegacyMessage.$Shape
+		static encode(m: proto.LegacyMessage.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.LegacyMessage & proto.LegacyMessage.$Shape
 		static fromObject(d: { [k: string]: any }): proto.LegacyMessage
-		static toObject(m: proto.LegacyMessage, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.LegacyMessage, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace LegacyMessage {
@@ -7491,10 +7491,10 @@ export namespace proto {
 		initiatedByMe?: (boolean|null)
 		static create(properties: proto.LimitSharing.$Shape): proto.LimitSharing & proto.LimitSharing.$Shape
 		static create(properties?: proto.LimitSharing.$Properties): proto.LimitSharing
-		static encode(m: proto.LimitSharing.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.LimitSharing & proto.LimitSharing.$Shape
+		static encode(m: proto.LimitSharing.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.LimitSharing & proto.LimitSharing.$Shape
 		static fromObject(d: { [k: string]: any }): proto.LimitSharing
-		static toObject(m: proto.LimitSharing, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.LimitSharing, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace LimitSharing {
@@ -7523,10 +7523,10 @@ export namespace proto {
 		verifiedName?: (string|null)
 		static create(properties: proto.LocalizedName.$Shape): proto.LocalizedName & proto.LocalizedName.$Shape
 		static create(properties?: proto.LocalizedName.$Properties): proto.LocalizedName
-		static encode(m: proto.LocalizedName.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.LocalizedName & proto.LocalizedName.$Shape
+		static encode(m: proto.LocalizedName.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.LocalizedName & proto.LocalizedName.$Shape
 		static fromObject(d: { [k: string]: any }): proto.LocalizedName
-		static toObject(m: proto.LocalizedName, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.LocalizedName, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace LocalizedName {
@@ -7548,10 +7548,10 @@ export namespace proto {
 		name?: (string|null)
 		static create(properties: proto.Location.$Shape): proto.Location & proto.Location.$Shape
 		static create(properties?: proto.Location.$Properties): proto.Location
-		static encode(m: proto.Location.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.Location & proto.Location.$Shape
+		static encode(m: proto.Location.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.Location & proto.Location.$Shape
 		static fromObject(d: { [k: string]: any }): proto.Location
-		static toObject(m: proto.Location, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.Location, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace Location {
@@ -7571,10 +7571,10 @@ export namespace proto {
 		localPath?: (string|null)
 		static create(properties: proto.MediaData.$Shape): proto.MediaData & proto.MediaData.$Shape
 		static create(properties?: proto.MediaData.$Properties): proto.MediaData
-		static encode(m: proto.MediaData.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.MediaData & proto.MediaData.$Shape
+		static encode(m: proto.MediaData.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.MediaData & proto.MediaData.$Shape
 		static fromObject(d: { [k: string]: any }): proto.MediaData
-		static toObject(m: proto.MediaData, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.MediaData, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace MediaData {
@@ -7593,10 +7593,10 @@ export namespace proto {
 		e2EeMediaKey?: (Uint8Array|null)
 		static create(properties: proto.MediaDomainInfo.$Shape): proto.MediaDomainInfo & proto.MediaDomainInfo.$Shape
 		static create(properties?: proto.MediaDomainInfo.$Properties): proto.MediaDomainInfo
-		static encode(m: proto.MediaDomainInfo.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.MediaDomainInfo & proto.MediaDomainInfo.$Shape
+		static encode(m: proto.MediaDomainInfo.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.MediaDomainInfo & proto.MediaDomainInfo.$Shape
 		static fromObject(d: { [k: string]: any }): proto.MediaDomainInfo
-		static toObject(m: proto.MediaDomainInfo, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.MediaDomainInfo, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace MediaDomainInfo {
@@ -7631,10 +7631,10 @@ export namespace proto {
 		lastDownloadAttemptTimestamp?: (number|Long|null)
 		static create(properties: proto.MediaEntry.$Shape): proto.MediaEntry & proto.MediaEntry.$Shape
 		static create(properties?: proto.MediaEntry.$Properties): proto.MediaEntry
-		static encode(m: proto.MediaEntry.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.MediaEntry & proto.MediaEntry.$Shape
+		static encode(m: proto.MediaEntry.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.MediaEntry & proto.MediaEntry.$Shape
 		static fromObject(d: { [k: string]: any }): proto.MediaEntry
-		static toObject(m: proto.MediaEntry, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.MediaEntry, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace MediaEntry {
@@ -7672,10 +7672,10 @@ export namespace proto {
 			objectId?: (string|null)
 			static create(properties: proto.MediaEntry.DownloadableThumbnail.$Shape): proto.MediaEntry.DownloadableThumbnail & proto.MediaEntry.DownloadableThumbnail.$Shape
 			static create(properties?: proto.MediaEntry.DownloadableThumbnail.$Properties): proto.MediaEntry.DownloadableThumbnail
-			static encode(m: proto.MediaEntry.DownloadableThumbnail.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.MediaEntry.DownloadableThumbnail & proto.MediaEntry.DownloadableThumbnail.$Shape
+			static encode(m: proto.MediaEntry.DownloadableThumbnail.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.MediaEntry.DownloadableThumbnail & proto.MediaEntry.DownloadableThumbnail.$Shape
 			static fromObject(d: { [k: string]: any }): proto.MediaEntry.DownloadableThumbnail
-			static toObject(m: proto.MediaEntry.DownloadableThumbnail, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.MediaEntry.DownloadableThumbnail, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace DownloadableThumbnail {
@@ -7699,10 +7699,10 @@ export namespace proto {
 			sidecar?: (Uint8Array|null)
 			static create(properties: proto.MediaEntry.ProgressiveJpegDetails.$Shape): proto.MediaEntry.ProgressiveJpegDetails & proto.MediaEntry.ProgressiveJpegDetails.$Shape
 			static create(properties?: proto.MediaEntry.ProgressiveJpegDetails.$Properties): proto.MediaEntry.ProgressiveJpegDetails
-			static encode(m: proto.MediaEntry.ProgressiveJpegDetails.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.MediaEntry.ProgressiveJpegDetails & proto.MediaEntry.ProgressiveJpegDetails.$Shape
+			static encode(m: proto.MediaEntry.ProgressiveJpegDetails.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.MediaEntry.ProgressiveJpegDetails & proto.MediaEntry.ProgressiveJpegDetails.$Shape
 			static fromObject(d: { [k: string]: any }): proto.MediaEntry.ProgressiveJpegDetails
-			static toObject(m: proto.MediaEntry.ProgressiveJpegDetails, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.MediaEntry.ProgressiveJpegDetails, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ProgressiveJpegDetails {
@@ -7729,10 +7729,10 @@ export namespace proto {
 		fileLength?: (number|Long|null)
 		static create(properties: proto.MediaNotifyMessage.$Shape): proto.MediaNotifyMessage & proto.MediaNotifyMessage.$Shape
 		static create(properties?: proto.MediaNotifyMessage.$Properties): proto.MediaNotifyMessage
-		static encode(m: proto.MediaNotifyMessage.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.MediaNotifyMessage & proto.MediaNotifyMessage.$Shape
+		static encode(m: proto.MediaNotifyMessage.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.MediaNotifyMessage & proto.MediaNotifyMessage.$Shape
 		static fromObject(d: { [k: string]: any }): proto.MediaNotifyMessage
-		static toObject(m: proto.MediaNotifyMessage, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.MediaNotifyMessage, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace MediaNotifyMessage {
@@ -7755,10 +7755,10 @@ export namespace proto {
 		messageSecret?: (Uint8Array|null)
 		static create(properties: proto.MediaRetryNotification.$Shape): proto.MediaRetryNotification & proto.MediaRetryNotification.$Shape
 		static create(properties?: proto.MediaRetryNotification.$Properties): proto.MediaRetryNotification
-		static encode(m: proto.MediaRetryNotification.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.MediaRetryNotification & proto.MediaRetryNotification.$Shape
+		static encode(m: proto.MediaRetryNotification.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.MediaRetryNotification & proto.MediaRetryNotification.$Shape
 		static fromObject(d: { [k: string]: any }): proto.MediaRetryNotification
-		static toObject(m: proto.MediaRetryNotification, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.MediaRetryNotification, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace MediaRetryNotification {
@@ -7791,10 +7791,10 @@ export namespace proto {
 		labelTimestamp?: (number|Long|null)
 		static create(properties: proto.MemberLabel.$Shape): proto.MemberLabel & proto.MemberLabel.$Shape
 		static create(properties?: proto.MemberLabel.$Properties): proto.MemberLabel
-		static encode(m: proto.MemberLabel.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.MemberLabel & proto.MemberLabel.$Shape
+		static encode(m: proto.MemberLabel.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.MemberLabel & proto.MemberLabel.$Shape
 		static fromObject(d: { [k: string]: any }): proto.MemberLabel
-		static toObject(m: proto.MemberLabel, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.MemberLabel, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace MemberLabel {
@@ -7929,10 +7929,10 @@ export namespace proto {
 		requestLocationUpdateMessage?: (proto.Message.RequestLocationUpdateMessage.$Properties|null)
 		static create(properties: proto.Message.$Shape): proto.Message & proto.Message.$Shape
 		static create(properties?: proto.Message.$Properties): proto.Message
-		static encode(m: proto.Message.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.Message & proto.Message.$Shape
+		static encode(m: proto.Message.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.Message & proto.Message.$Shape
 		static fromObject(d: { [k: string]: any }): proto.Message
-		static toObject(m: proto.Message, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.Message, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace Message {
@@ -8186,10 +8186,10 @@ export namespace proto {
 			contextInfo?: (proto.ContextInfo.$Properties|null)
 			static create(properties: proto.Message.AlbumMessage.$Shape): proto.Message.AlbumMessage & proto.Message.AlbumMessage.$Shape
 			static create(properties?: proto.Message.AlbumMessage.$Properties): proto.Message.AlbumMessage
-			static encode(m: proto.Message.AlbumMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.AlbumMessage & proto.Message.AlbumMessage.$Shape
+			static encode(m: proto.Message.AlbumMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.AlbumMessage & proto.Message.AlbumMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.AlbumMessage
-			static toObject(m: proto.Message.AlbumMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.AlbumMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace AlbumMessage {
@@ -8215,10 +8215,10 @@ export namespace proto {
 			timestamp?: (number|Long|null)
 			static create(properties: proto.Message.AppStateFatalExceptionNotification.$Shape): proto.Message.AppStateFatalExceptionNotification & proto.Message.AppStateFatalExceptionNotification.$Shape
 			static create(properties?: proto.Message.AppStateFatalExceptionNotification.$Properties): proto.Message.AppStateFatalExceptionNotification
-			static encode(m: proto.Message.AppStateFatalExceptionNotification.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.AppStateFatalExceptionNotification & proto.Message.AppStateFatalExceptionNotification.$Shape
+			static encode(m: proto.Message.AppStateFatalExceptionNotification.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.AppStateFatalExceptionNotification & proto.Message.AppStateFatalExceptionNotification.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.AppStateFatalExceptionNotification
-			static toObject(m: proto.Message.AppStateFatalExceptionNotification, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.AppStateFatalExceptionNotification, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace AppStateFatalExceptionNotification {
@@ -8238,10 +8238,10 @@ export namespace proto {
 			keyData?: (proto.Message.AppStateSyncKeyData.$Properties|null)
 			static create(properties: proto.Message.AppStateSyncKey.$Shape): proto.Message.AppStateSyncKey & proto.Message.AppStateSyncKey.$Shape
 			static create(properties?: proto.Message.AppStateSyncKey.$Properties): proto.Message.AppStateSyncKey
-			static encode(m: proto.Message.AppStateSyncKey.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.AppStateSyncKey & proto.Message.AppStateSyncKey.$Shape
+			static encode(m: proto.Message.AppStateSyncKey.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.AppStateSyncKey & proto.Message.AppStateSyncKey.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.AppStateSyncKey
-			static toObject(m: proto.Message.AppStateSyncKey, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.AppStateSyncKey, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace AppStateSyncKey {
@@ -8262,10 +8262,10 @@ export namespace proto {
 			timestamp?: (number|Long|null)
 			static create(properties: proto.Message.AppStateSyncKeyData.$Shape): proto.Message.AppStateSyncKeyData & proto.Message.AppStateSyncKeyData.$Shape
 			static create(properties?: proto.Message.AppStateSyncKeyData.$Properties): proto.Message.AppStateSyncKeyData
-			static encode(m: proto.Message.AppStateSyncKeyData.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.AppStateSyncKeyData & proto.Message.AppStateSyncKeyData.$Shape
+			static encode(m: proto.Message.AppStateSyncKeyData.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.AppStateSyncKeyData & proto.Message.AppStateSyncKeyData.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.AppStateSyncKeyData
-			static toObject(m: proto.Message.AppStateSyncKeyData, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.AppStateSyncKeyData, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace AppStateSyncKeyData {
@@ -8287,10 +8287,10 @@ export namespace proto {
 			deviceIndexes: number[]
 			static create(properties: proto.Message.AppStateSyncKeyFingerprint.$Shape): proto.Message.AppStateSyncKeyFingerprint & proto.Message.AppStateSyncKeyFingerprint.$Shape
 			static create(properties?: proto.Message.AppStateSyncKeyFingerprint.$Properties): proto.Message.AppStateSyncKeyFingerprint
-			static encode(m: proto.Message.AppStateSyncKeyFingerprint.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.AppStateSyncKeyFingerprint & proto.Message.AppStateSyncKeyFingerprint.$Shape
+			static encode(m: proto.Message.AppStateSyncKeyFingerprint.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.AppStateSyncKeyFingerprint & proto.Message.AppStateSyncKeyFingerprint.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.AppStateSyncKeyFingerprint
-			static toObject(m: proto.Message.AppStateSyncKeyFingerprint, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.AppStateSyncKeyFingerprint, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace AppStateSyncKeyFingerprint {
@@ -8310,10 +8310,10 @@ export namespace proto {
 			keyId?: (Uint8Array|null)
 			static create(properties: proto.Message.AppStateSyncKeyId.$Shape): proto.Message.AppStateSyncKeyId & proto.Message.AppStateSyncKeyId.$Shape
 			static create(properties?: proto.Message.AppStateSyncKeyId.$Properties): proto.Message.AppStateSyncKeyId
-			static encode(m: proto.Message.AppStateSyncKeyId.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.AppStateSyncKeyId & proto.Message.AppStateSyncKeyId.$Shape
+			static encode(m: proto.Message.AppStateSyncKeyId.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.AppStateSyncKeyId & proto.Message.AppStateSyncKeyId.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.AppStateSyncKeyId
-			static toObject(m: proto.Message.AppStateSyncKeyId, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.AppStateSyncKeyId, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace AppStateSyncKeyId {
@@ -8331,10 +8331,10 @@ export namespace proto {
 			keyIds: proto.Message.AppStateSyncKeyId.$Properties[]
 			static create(properties: proto.Message.AppStateSyncKeyRequest.$Shape): proto.Message.AppStateSyncKeyRequest & proto.Message.AppStateSyncKeyRequest.$Shape
 			static create(properties?: proto.Message.AppStateSyncKeyRequest.$Properties): proto.Message.AppStateSyncKeyRequest
-			static encode(m: proto.Message.AppStateSyncKeyRequest.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.AppStateSyncKeyRequest & proto.Message.AppStateSyncKeyRequest.$Shape
+			static encode(m: proto.Message.AppStateSyncKeyRequest.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.AppStateSyncKeyRequest & proto.Message.AppStateSyncKeyRequest.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.AppStateSyncKeyRequest
-			static toObject(m: proto.Message.AppStateSyncKeyRequest, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.AppStateSyncKeyRequest, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace AppStateSyncKeyRequest {
@@ -8352,10 +8352,10 @@ export namespace proto {
 			keys: proto.Message.AppStateSyncKey.$Properties[]
 			static create(properties: proto.Message.AppStateSyncKeyShare.$Shape): proto.Message.AppStateSyncKeyShare & proto.Message.AppStateSyncKeyShare.$Shape
 			static create(properties?: proto.Message.AppStateSyncKeyShare.$Properties): proto.Message.AppStateSyncKeyShare
-			static encode(m: proto.Message.AppStateSyncKeyShare.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.AppStateSyncKeyShare & proto.Message.AppStateSyncKeyShare.$Shape
+			static encode(m: proto.Message.AppStateSyncKeyShare.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.AppStateSyncKeyShare & proto.Message.AppStateSyncKeyShare.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.AppStateSyncKeyShare
-			static toObject(m: proto.Message.AppStateSyncKeyShare, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.AppStateSyncKeyShare, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace AppStateSyncKeyShare {
@@ -8388,10 +8388,10 @@ export namespace proto {
 			accessibilityLabel?: (string|null)
 			static create(properties: proto.Message.AudioMessage.$Shape): proto.Message.AudioMessage & proto.Message.AudioMessage.$Shape
 			static create(properties?: proto.Message.AudioMessage.$Properties): proto.Message.AudioMessage
-			static encode(m: proto.Message.AudioMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.AudioMessage & proto.Message.AudioMessage.$Shape
+			static encode(m: proto.Message.AudioMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.AudioMessage & proto.Message.AudioMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.AudioMessage
-			static toObject(m: proto.Message.AudioMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.AudioMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace AudioMessage {
@@ -8445,10 +8445,10 @@ export namespace proto {
 			caption?: (string|null)
 			static create(properties: proto.Message.BCallMessage.$Shape): proto.Message.BCallMessage & proto.Message.BCallMessage.$Shape
 			static create(properties?: proto.Message.BCallMessage.$Properties): proto.Message.BCallMessage
-			static encode(m: proto.Message.BCallMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.BCallMessage & proto.Message.BCallMessage.$Shape
+			static encode(m: proto.Message.BCallMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.BCallMessage & proto.Message.BCallMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.BCallMessage
-			static toObject(m: proto.Message.BCallMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.BCallMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace BCallMessage {
@@ -8476,10 +8476,10 @@ export namespace proto {
 			historyShareMessages: proto.Message.HistoryShareMessageEntry.$Properties[]
 			static create(properties: proto.Message.BotHistoryShareSyncMetadata.$Shape): proto.Message.BotHistoryShareSyncMetadata & proto.Message.BotHistoryShareSyncMetadata.$Shape
 			static create(properties?: proto.Message.BotHistoryShareSyncMetadata.$Properties): proto.Message.BotHistoryShareSyncMetadata
-			static encode(m: proto.Message.BotHistoryShareSyncMetadata.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.BotHistoryShareSyncMetadata & proto.Message.BotHistoryShareSyncMetadata.$Shape
+			static encode(m: proto.Message.BotHistoryShareSyncMetadata.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.BotHistoryShareSyncMetadata & proto.Message.BotHistoryShareSyncMetadata.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.BotHistoryShareSyncMetadata
-			static toObject(m: proto.Message.BotHistoryShareSyncMetadata, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.BotHistoryShareSyncMetadata, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace BotHistoryShareSyncMetadata {
@@ -8509,10 +8509,10 @@ export namespace proto {
 			header?: ("text"|"documentMessage"|"imageMessage"|"videoMessage"|"locationMessage")
 			static create(properties: proto.Message.ButtonsMessage.$Shape): proto.Message.ButtonsMessage & proto.Message.ButtonsMessage.$Shape
 			static create(properties?: proto.Message.ButtonsMessage.$Properties): proto.Message.ButtonsMessage
-			static encode(m: proto.Message.ButtonsMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.ButtonsMessage & proto.Message.ButtonsMessage.$Shape
+			static encode(m: proto.Message.ButtonsMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.ButtonsMessage & proto.Message.ButtonsMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.ButtonsMessage
-			static toObject(m: proto.Message.ButtonsMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.ButtonsMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ButtonsMessage {
@@ -8556,10 +8556,10 @@ export namespace proto {
 				nativeFlowInfo?: (proto.Message.ButtonsMessage.Button.NativeFlowInfo.$Properties|null)
 				static create(properties: proto.Message.ButtonsMessage.Button.$Shape): proto.Message.ButtonsMessage.Button & proto.Message.ButtonsMessage.Button.$Shape
 				static create(properties?: proto.Message.ButtonsMessage.Button.$Properties): proto.Message.ButtonsMessage.Button
-				static encode(m: proto.Message.ButtonsMessage.Button.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.ButtonsMessage.Button & proto.Message.ButtonsMessage.Button.$Shape
+				static encode(m: proto.Message.ButtonsMessage.Button.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.ButtonsMessage.Button & proto.Message.ButtonsMessage.Button.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.ButtonsMessage.Button
-				static toObject(m: proto.Message.ButtonsMessage.Button, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.ButtonsMessage.Button, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace Button {
@@ -8579,10 +8579,10 @@ export namespace proto {
 					displayText?: (string|null)
 					static create(properties: proto.Message.ButtonsMessage.Button.ButtonText.$Shape): proto.Message.ButtonsMessage.Button.ButtonText & proto.Message.ButtonsMessage.Button.ButtonText.$Shape
 					static create(properties?: proto.Message.ButtonsMessage.Button.ButtonText.$Properties): proto.Message.ButtonsMessage.Button.ButtonText
-					static encode(m: proto.Message.ButtonsMessage.Button.ButtonText.$Properties, w?: PbWriter): PbWriter
-					static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.ButtonsMessage.Button.ButtonText & proto.Message.ButtonsMessage.Button.ButtonText.$Shape
+					static encode(m: proto.Message.ButtonsMessage.Button.ButtonText.$Properties, w?: PBWriter): PBWriter
+					static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.ButtonsMessage.Button.ButtonText & proto.Message.ButtonsMessage.Button.ButtonText.$Shape
 					static fromObject(d: { [k: string]: any }): proto.Message.ButtonsMessage.Button.ButtonText
-					static toObject(m: proto.Message.ButtonsMessage.Button.ButtonText, o?: PbConversionOptions): { [k: string]: any }
+					static toObject(m: proto.Message.ButtonsMessage.Button.ButtonText, o?: PBConversionOptions): { [k: string]: any }
 					toJSON(): { [k: string]: any }
 				}
 				namespace ButtonText {
@@ -8601,10 +8601,10 @@ export namespace proto {
 					paramsJson?: (string|null)
 					static create(properties: proto.Message.ButtonsMessage.Button.NativeFlowInfo.$Shape): proto.Message.ButtonsMessage.Button.NativeFlowInfo & proto.Message.ButtonsMessage.Button.NativeFlowInfo.$Shape
 					static create(properties?: proto.Message.ButtonsMessage.Button.NativeFlowInfo.$Properties): proto.Message.ButtonsMessage.Button.NativeFlowInfo
-					static encode(m: proto.Message.ButtonsMessage.Button.NativeFlowInfo.$Properties, w?: PbWriter): PbWriter
-					static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.ButtonsMessage.Button.NativeFlowInfo & proto.Message.ButtonsMessage.Button.NativeFlowInfo.$Shape
+					static encode(m: proto.Message.ButtonsMessage.Button.NativeFlowInfo.$Properties, w?: PBWriter): PBWriter
+					static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.ButtonsMessage.Button.NativeFlowInfo & proto.Message.ButtonsMessage.Button.NativeFlowInfo.$Shape
 					static fromObject(d: { [k: string]: any }): proto.Message.ButtonsMessage.Button.NativeFlowInfo
-					static toObject(m: proto.Message.ButtonsMessage.Button.NativeFlowInfo, o?: PbConversionOptions): { [k: string]: any }
+					static toObject(m: proto.Message.ButtonsMessage.Button.NativeFlowInfo, o?: PBConversionOptions): { [k: string]: any }
 					toJSON(): { [k: string]: any }
 				}
 				namespace NativeFlowInfo {
@@ -8643,10 +8643,10 @@ export namespace proto {
 			response?: "selectedDisplayText"
 			static create(properties: proto.Message.ButtonsResponseMessage.$Shape): proto.Message.ButtonsResponseMessage & proto.Message.ButtonsResponseMessage.$Shape
 			static create(properties?: proto.Message.ButtonsResponseMessage.$Properties): proto.Message.ButtonsResponseMessage
-			static encode(m: proto.Message.ButtonsResponseMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.ButtonsResponseMessage & proto.Message.ButtonsResponseMessage.$Shape
+			static encode(m: proto.Message.ButtonsResponseMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.ButtonsResponseMessage & proto.Message.ButtonsResponseMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.ButtonsResponseMessage
-			static toObject(m: proto.Message.ButtonsResponseMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.ButtonsResponseMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ButtonsResponseMessage {
@@ -8691,10 +8691,10 @@ export namespace proto {
 			callReason?: (string|null)
 			static create(properties: proto.Message.Call.$Shape): proto.Message.Call & proto.Message.Call.$Shape
 			static create(properties?: proto.Message.Call.$Properties): proto.Message.Call
-			static encode(m: proto.Message.Call.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.Call & proto.Message.Call.$Shape
+			static encode(m: proto.Message.Call.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.Call & proto.Message.Call.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.Call
-			static toObject(m: proto.Message.Call, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.Call, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace Call {
@@ -8741,10 +8741,10 @@ export namespace proto {
 			participants: proto.Message.CallLogMessage.CallParticipant.$Properties[]
 			static create(properties: proto.Message.CallLogMessage.$Shape): proto.Message.CallLogMessage & proto.Message.CallLogMessage.$Shape
 			static create(properties?: proto.Message.CallLogMessage.$Properties): proto.Message.CallLogMessage
-			static encode(m: proto.Message.CallLogMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.CallLogMessage & proto.Message.CallLogMessage.$Shape
+			static encode(m: proto.Message.CallLogMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.CallLogMessage & proto.Message.CallLogMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.CallLogMessage
-			static toObject(m: proto.Message.CallLogMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.CallLogMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace CallLogMessage {
@@ -8776,10 +8776,10 @@ export namespace proto {
 				callOutcome?: (proto.Message.CallLogMessage.CallOutcome|null)
 				static create(properties: proto.Message.CallLogMessage.CallParticipant.$Shape): proto.Message.CallLogMessage.CallParticipant & proto.Message.CallLogMessage.CallParticipant.$Shape
 				static create(properties?: proto.Message.CallLogMessage.CallParticipant.$Properties): proto.Message.CallLogMessage.CallParticipant
-				static encode(m: proto.Message.CallLogMessage.CallParticipant.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.CallLogMessage.CallParticipant & proto.Message.CallLogMessage.CallParticipant.$Shape
+				static encode(m: proto.Message.CallLogMessage.CallParticipant.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.CallLogMessage.CallParticipant & proto.Message.CallLogMessage.CallParticipant.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.CallLogMessage.CallParticipant
-				static toObject(m: proto.Message.CallLogMessage.CallParticipant, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.CallLogMessage.CallParticipant, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace CallParticipant {
@@ -8804,10 +8804,10 @@ export namespace proto {
 			key?: (proto.MessageKey.$Properties|null)
 			static create(properties: proto.Message.CancelPaymentRequestMessage.$Shape): proto.Message.CancelPaymentRequestMessage & proto.Message.CancelPaymentRequestMessage.$Shape
 			static create(properties?: proto.Message.CancelPaymentRequestMessage.$Properties): proto.Message.CancelPaymentRequestMessage
-			static encode(m: proto.Message.CancelPaymentRequestMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.CancelPaymentRequestMessage & proto.Message.CancelPaymentRequestMessage.$Shape
+			static encode(m: proto.Message.CancelPaymentRequestMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.CancelPaymentRequestMessage & proto.Message.CancelPaymentRequestMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.CancelPaymentRequestMessage
-			static toObject(m: proto.Message.CancelPaymentRequestMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.CancelPaymentRequestMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace CancelPaymentRequestMessage {
@@ -8826,10 +8826,10 @@ export namespace proto {
 			id?: (string|null)
 			static create(properties: proto.Message.Chat.$Shape): proto.Message.Chat & proto.Message.Chat.$Shape
 			static create(properties?: proto.Message.Chat.$Properties): proto.Message.Chat
-			static encode(m: proto.Message.Chat.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.Chat & proto.Message.Chat.$Shape
+			static encode(m: proto.Message.Chat.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.Chat & proto.Message.Chat.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.Chat
-			static toObject(m: proto.Message.Chat, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.Chat, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace Chat {
@@ -8849,10 +8849,10 @@ export namespace proto {
 			dimLevel?: (number|null)
 			static create(properties: proto.Message.ChatAnimatedWallpaper.$Shape): proto.Message.ChatAnimatedWallpaper & proto.Message.ChatAnimatedWallpaper.$Shape
 			static create(properties?: proto.Message.ChatAnimatedWallpaper.$Properties): proto.Message.ChatAnimatedWallpaper
-			static encode(m: proto.Message.ChatAnimatedWallpaper.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.ChatAnimatedWallpaper & proto.Message.ChatAnimatedWallpaper.$Shape
+			static encode(m: proto.Message.ChatAnimatedWallpaper.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.ChatAnimatedWallpaper & proto.Message.ChatAnimatedWallpaper.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.ChatAnimatedWallpaper
-			static toObject(m: proto.Message.ChatAnimatedWallpaper, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.ChatAnimatedWallpaper, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ChatAnimatedWallpaper {
@@ -8875,10 +8875,10 @@ export namespace proto {
 			dimLevel?: (number|null)
 			static create(properties: proto.Message.ChatCustomImageWallpaper.$Shape): proto.Message.ChatCustomImageWallpaper & proto.Message.ChatCustomImageWallpaper.$Shape
 			static create(properties?: proto.Message.ChatCustomImageWallpaper.$Properties): proto.Message.ChatCustomImageWallpaper
-			static encode(m: proto.Message.ChatCustomImageWallpaper.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.ChatCustomImageWallpaper & proto.Message.ChatCustomImageWallpaper.$Shape
+			static encode(m: proto.Message.ChatCustomImageWallpaper.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.ChatCustomImageWallpaper & proto.Message.ChatCustomImageWallpaper.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.ChatCustomImageWallpaper
-			static toObject(m: proto.Message.ChatCustomImageWallpaper, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.ChatCustomImageWallpaper, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ChatCustomImageWallpaper {
@@ -8900,10 +8900,10 @@ export namespace proto {
 			isDoodleEnabled?: (boolean|null)
 			static create(properties: proto.Message.ChatDefaultWallpaper.$Shape): proto.Message.ChatDefaultWallpaper & proto.Message.ChatDefaultWallpaper.$Shape
 			static create(properties?: proto.Message.ChatDefaultWallpaper.$Properties): proto.Message.ChatDefaultWallpaper
-			static encode(m: proto.Message.ChatDefaultWallpaper.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.ChatDefaultWallpaper & proto.Message.ChatDefaultWallpaper.$Shape
+			static encode(m: proto.Message.ChatDefaultWallpaper.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.ChatDefaultWallpaper & proto.Message.ChatDefaultWallpaper.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.ChatDefaultWallpaper
-			static toObject(m: proto.Message.ChatDefaultWallpaper, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.ChatDefaultWallpaper, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ChatDefaultWallpaper {
@@ -8925,10 +8925,10 @@ export namespace proto {
 			doodleDarkArgb?: (number|null)
 			static create(properties: proto.Message.ChatSolidColorWallpaper.$Shape): proto.Message.ChatSolidColorWallpaper & proto.Message.ChatSolidColorWallpaper.$Shape
 			static create(properties?: proto.Message.ChatSolidColorWallpaper.$Properties): proto.Message.ChatSolidColorWallpaper
-			static encode(m: proto.Message.ChatSolidColorWallpaper.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.ChatSolidColorWallpaper & proto.Message.ChatSolidColorWallpaper.$Shape
+			static encode(m: proto.Message.ChatSolidColorWallpaper.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.ChatSolidColorWallpaper & proto.Message.ChatSolidColorWallpaper.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.ChatSolidColorWallpaper
-			static toObject(m: proto.Message.ChatSolidColorWallpaper, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.ChatSolidColorWallpaper, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ChatSolidColorWallpaper {
@@ -8951,10 +8951,10 @@ export namespace proto {
 			dimLevel?: (number|null)
 			static create(properties: proto.Message.ChatStockImageWallpaper.$Shape): proto.Message.ChatStockImageWallpaper & proto.Message.ChatStockImageWallpaper.$Shape
 			static create(properties?: proto.Message.ChatStockImageWallpaper.$Properties): proto.Message.ChatStockImageWallpaper
-			static encode(m: proto.Message.ChatStockImageWallpaper.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.ChatStockImageWallpaper & proto.Message.ChatStockImageWallpaper.$Shape
+			static encode(m: proto.Message.ChatStockImageWallpaper.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.ChatStockImageWallpaper & proto.Message.ChatStockImageWallpaper.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.ChatStockImageWallpaper
-			static toObject(m: proto.Message.ChatStockImageWallpaper, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.ChatStockImageWallpaper, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ChatStockImageWallpaper {
@@ -8981,10 +8981,10 @@ export namespace proto {
 			wallpaper?: ("defaultWallpaper"|"solidColor"|"stockImage"|"customImage"|"animatedWallpaper")
 			static create(properties: proto.Message.ChatThemeSetting.$Shape): proto.Message.ChatThemeSetting & proto.Message.ChatThemeSetting.$Shape
 			static create(properties?: proto.Message.ChatThemeSetting.$Properties): proto.Message.ChatThemeSetting
-			static encode(m: proto.Message.ChatThemeSetting.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.ChatThemeSetting & proto.Message.ChatThemeSetting.$Shape
+			static encode(m: proto.Message.ChatThemeSetting.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.ChatThemeSetting & proto.Message.ChatThemeSetting.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.ChatThemeSetting
-			static toObject(m: proto.Message.ChatThemeSetting, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.ChatThemeSetting, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ChatThemeSetting {
@@ -9027,10 +9027,10 @@ export namespace proto {
 			shouldSuppressNotification?: (boolean|null)
 			static create(properties: proto.Message.CloudAPIThreadControlNotification.$Shape): proto.Message.CloudAPIThreadControlNotification & proto.Message.CloudAPIThreadControlNotification.$Shape
 			static create(properties?: proto.Message.CloudAPIThreadControlNotification.$Properties): proto.Message.CloudAPIThreadControlNotification
-			static encode(m: proto.Message.CloudAPIThreadControlNotification.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.CloudAPIThreadControlNotification & proto.Message.CloudAPIThreadControlNotification.$Shape
+			static encode(m: proto.Message.CloudAPIThreadControlNotification.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.CloudAPIThreadControlNotification & proto.Message.CloudAPIThreadControlNotification.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.CloudAPIThreadControlNotification
-			static toObject(m: proto.Message.CloudAPIThreadControlNotification, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.CloudAPIThreadControlNotification, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace CloudAPIThreadControlNotification {
@@ -9059,10 +9059,10 @@ export namespace proto {
 				extraJson?: (string|null)
 				static create(properties: proto.Message.CloudAPIThreadControlNotification.CloudAPIThreadControlNotificationContent.$Shape): proto.Message.CloudAPIThreadControlNotification.CloudAPIThreadControlNotificationContent & proto.Message.CloudAPIThreadControlNotification.CloudAPIThreadControlNotificationContent.$Shape
 				static create(properties?: proto.Message.CloudAPIThreadControlNotification.CloudAPIThreadControlNotificationContent.$Properties): proto.Message.CloudAPIThreadControlNotification.CloudAPIThreadControlNotificationContent
-				static encode(m: proto.Message.CloudAPIThreadControlNotification.CloudAPIThreadControlNotificationContent.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.CloudAPIThreadControlNotification.CloudAPIThreadControlNotificationContent & proto.Message.CloudAPIThreadControlNotification.CloudAPIThreadControlNotificationContent.$Shape
+				static encode(m: proto.Message.CloudAPIThreadControlNotification.CloudAPIThreadControlNotificationContent.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.CloudAPIThreadControlNotification.CloudAPIThreadControlNotificationContent & proto.Message.CloudAPIThreadControlNotification.CloudAPIThreadControlNotificationContent.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.CloudAPIThreadControlNotification.CloudAPIThreadControlNotificationContent
-				static toObject(m: proto.Message.CloudAPIThreadControlNotification.CloudAPIThreadControlNotificationContent, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.CloudAPIThreadControlNotification.CloudAPIThreadControlNotificationContent, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace CloudAPIThreadControlNotificationContent {
@@ -9083,10 +9083,10 @@ export namespace proto {
 			product?: (string|null)
 			static create(properties: proto.Message.CoexConnectionDescriptor.$Shape): proto.Message.CoexConnectionDescriptor & proto.Message.CoexConnectionDescriptor.$Shape
 			static create(properties?: proto.Message.CoexConnectionDescriptor.$Properties): proto.Message.CoexConnectionDescriptor
-			static encode(m: proto.Message.CoexConnectionDescriptor.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.CoexConnectionDescriptor & proto.Message.CoexConnectionDescriptor.$Shape
+			static encode(m: proto.Message.CoexConnectionDescriptor.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.CoexConnectionDescriptor & proto.Message.CoexConnectionDescriptor.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.CoexConnectionDescriptor
-			static toObject(m: proto.Message.CoexConnectionDescriptor, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.CoexConnectionDescriptor, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace CoexConnectionDescriptor {
@@ -9106,10 +9106,10 @@ export namespace proto {
 			targetMessageKey?: (proto.MessageKey.$Properties|null)
 			static create(properties: proto.Message.CommentMessage.$Shape): proto.Message.CommentMessage & proto.Message.CommentMessage.$Shape
 			static create(properties?: proto.Message.CommentMessage.$Properties): proto.Message.CommentMessage
-			static encode(m: proto.Message.CommentMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.CommentMessage & proto.Message.CommentMessage.$Shape
+			static encode(m: proto.Message.CommentMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.CommentMessage & proto.Message.CommentMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.CommentMessage
-			static toObject(m: proto.Message.CommentMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.CommentMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace CommentMessage {
@@ -9135,10 +9135,10 @@ export namespace proto {
 			revealKeyId?: (string|null)
 			static create(properties: proto.Message.ConditionalRevealMessage.$Shape): proto.Message.ConditionalRevealMessage & proto.Message.ConditionalRevealMessage.$Shape
 			static create(properties?: proto.Message.ConditionalRevealMessage.$Properties): proto.Message.ConditionalRevealMessage
-			static encode(m: proto.Message.ConditionalRevealMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.ConditionalRevealMessage & proto.Message.ConditionalRevealMessage.$Shape
+			static encode(m: proto.Message.ConditionalRevealMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.ConditionalRevealMessage & proto.Message.ConditionalRevealMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.ConditionalRevealMessage
-			static toObject(m: proto.Message.ConditionalRevealMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.ConditionalRevealMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ConditionalRevealMessage {
@@ -9166,10 +9166,10 @@ export namespace proto {
 			isSelfContact?: (boolean|null)
 			static create(properties: proto.Message.ContactMessage.$Shape): proto.Message.ContactMessage & proto.Message.ContactMessage.$Shape
 			static create(properties?: proto.Message.ContactMessage.$Properties): proto.Message.ContactMessage
-			static encode(m: proto.Message.ContactMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.ContactMessage & proto.Message.ContactMessage.$Shape
+			static encode(m: proto.Message.ContactMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.ContactMessage & proto.Message.ContactMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.ContactMessage
-			static toObject(m: proto.Message.ContactMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.ContactMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ContactMessage {
@@ -9198,10 +9198,10 @@ export namespace proto {
 			contextInfo?: (proto.ContextInfo.$Properties|null)
 			static create(properties: proto.Message.ContactsArrayMessage.$Shape): proto.Message.ContactsArrayMessage & proto.Message.ContactsArrayMessage.$Shape
 			static create(properties?: proto.Message.ContactsArrayMessage.$Properties): proto.Message.ContactsArrayMessage
-			static encode(m: proto.Message.ContactsArrayMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.ContactsArrayMessage & proto.Message.ContactsArrayMessage.$Shape
+			static encode(m: proto.Message.ContactsArrayMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.ContactsArrayMessage & proto.Message.ContactsArrayMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.ContactsArrayMessage
-			static toObject(m: proto.Message.ContactsArrayMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.ContactsArrayMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ContactsArrayMessage {
@@ -9226,10 +9226,10 @@ export namespace proto {
 			key?: (proto.MessageKey.$Properties|null)
 			static create(properties: proto.Message.DeclinePaymentRequestMessage.$Shape): proto.Message.DeclinePaymentRequestMessage & proto.Message.DeclinePaymentRequestMessage.$Shape
 			static create(properties?: proto.Message.DeclinePaymentRequestMessage.$Properties): proto.Message.DeclinePaymentRequestMessage
-			static encode(m: proto.Message.DeclinePaymentRequestMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.DeclinePaymentRequestMessage & proto.Message.DeclinePaymentRequestMessage.$Shape
+			static encode(m: proto.Message.DeclinePaymentRequestMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.DeclinePaymentRequestMessage & proto.Message.DeclinePaymentRequestMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.DeclinePaymentRequestMessage
-			static toObject(m: proto.Message.DeclinePaymentRequestMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.DeclinePaymentRequestMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace DeclinePaymentRequestMessage {
@@ -9249,10 +9249,10 @@ export namespace proto {
 			phash?: (string|null)
 			static create(properties: proto.Message.DeviceSentMessage.$Shape): proto.Message.DeviceSentMessage & proto.Message.DeviceSentMessage.$Shape
 			static create(properties?: proto.Message.DeviceSentMessage.$Properties): proto.Message.DeviceSentMessage
-			static encode(m: proto.Message.DeviceSentMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.DeviceSentMessage & proto.Message.DeviceSentMessage.$Shape
+			static encode(m: proto.Message.DeviceSentMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.DeviceSentMessage & proto.Message.DeviceSentMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.DeviceSentMessage
-			static toObject(m: proto.Message.DeviceSentMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.DeviceSentMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace DeviceSentMessage {
@@ -9297,10 +9297,10 @@ export namespace proto {
 			accessibilityLabel?: (string|null)
 			static create(properties: proto.Message.DocumentMessage.$Shape): proto.Message.DocumentMessage & proto.Message.DocumentMessage.$Shape
 			static create(properties?: proto.Message.DocumentMessage.$Properties): proto.Message.DocumentMessage
-			static encode(m: proto.Message.DocumentMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.DocumentMessage & proto.Message.DocumentMessage.$Shape
+			static encode(m: proto.Message.DocumentMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.DocumentMessage & proto.Message.DocumentMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.DocumentMessage
-			static toObject(m: proto.Message.DocumentMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.DocumentMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace DocumentMessage {
@@ -9363,10 +9363,10 @@ export namespace proto {
 			encIv?: (Uint8Array|null)
 			static create(properties: proto.Message.EncCommentMessage.$Shape): proto.Message.EncCommentMessage & proto.Message.EncCommentMessage.$Shape
 			static create(properties?: proto.Message.EncCommentMessage.$Properties): proto.Message.EncCommentMessage
-			static encode(m: proto.Message.EncCommentMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.EncCommentMessage & proto.Message.EncCommentMessage.$Shape
+			static encode(m: proto.Message.EncCommentMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.EncCommentMessage & proto.Message.EncCommentMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.EncCommentMessage
-			static toObject(m: proto.Message.EncCommentMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.EncCommentMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace EncCommentMessage {
@@ -9388,10 +9388,10 @@ export namespace proto {
 			encIv?: (Uint8Array|null)
 			static create(properties: proto.Message.EncEventResponseMessage.$Shape): proto.Message.EncEventResponseMessage & proto.Message.EncEventResponseMessage.$Shape
 			static create(properties?: proto.Message.EncEventResponseMessage.$Properties): proto.Message.EncEventResponseMessage
-			static encode(m: proto.Message.EncEventResponseMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.EncEventResponseMessage & proto.Message.EncEventResponseMessage.$Shape
+			static encode(m: proto.Message.EncEventResponseMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.EncEventResponseMessage & proto.Message.EncEventResponseMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.EncEventResponseMessage
-			static toObject(m: proto.Message.EncEventResponseMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.EncEventResponseMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace EncEventResponseMessage {
@@ -9413,10 +9413,10 @@ export namespace proto {
 			encIv?: (Uint8Array|null)
 			static create(properties: proto.Message.EncReactionMessage.$Shape): proto.Message.EncReactionMessage & proto.Message.EncReactionMessage.$Shape
 			static create(properties?: proto.Message.EncReactionMessage.$Properties): proto.Message.EncReactionMessage
-			static encode(m: proto.Message.EncReactionMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.EncReactionMessage & proto.Message.EncReactionMessage.$Shape
+			static encode(m: proto.Message.EncReactionMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.EncReactionMessage & proto.Message.EncReactionMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.EncReactionMessage
-			static toObject(m: proto.Message.EncReactionMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.EncReactionMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace EncReactionMessage {
@@ -9448,10 +9448,10 @@ export namespace proto {
 			status?: (proto.Message.EventInviteMessage.EventStatus|null)
 			static create(properties: proto.Message.EventInviteMessage.$Shape): proto.Message.EventInviteMessage & proto.Message.EventInviteMessage.$Shape
 			static create(properties?: proto.Message.EventInviteMessage.$Properties): proto.Message.EventInviteMessage
-			static encode(m: proto.Message.EventInviteMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.EventInviteMessage & proto.Message.EventInviteMessage.$Shape
+			static encode(m: proto.Message.EventInviteMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.EventInviteMessage & proto.Message.EventInviteMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.EventInviteMessage
-			static toObject(m: proto.Message.EventInviteMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.EventInviteMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace EventInviteMessage {
@@ -9516,10 +9516,10 @@ export namespace proto {
 			reminderOffsetSec?: (number|Long|null)
 			static create(properties: proto.Message.EventMessage.$Shape): proto.Message.EventMessage & proto.Message.EventMessage.$Shape
 			static create(properties?: proto.Message.EventMessage.$Properties): proto.Message.EventMessage
-			static encode(m: proto.Message.EventMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.EventMessage & proto.Message.EventMessage.$Shape
+			static encode(m: proto.Message.EventMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.EventMessage & proto.Message.EventMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.EventMessage
-			static toObject(m: proto.Message.EventMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.EventMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace EventMessage {
@@ -9564,10 +9564,10 @@ export namespace proto {
 			extraGuestCount?: (number|null)
 			static create(properties: proto.Message.EventResponseMessage.$Shape): proto.Message.EventResponseMessage & proto.Message.EventResponseMessage.$Shape
 			static create(properties?: proto.Message.EventResponseMessage.$Properties): proto.Message.EventResponseMessage
-			static encode(m: proto.Message.EventResponseMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.EventResponseMessage & proto.Message.EventResponseMessage.$Shape
+			static encode(m: proto.Message.EventResponseMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.EventResponseMessage & proto.Message.EventResponseMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.EventResponseMessage
-			static toObject(m: proto.Message.EventResponseMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.EventResponseMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace EventResponseMessage {
@@ -9624,10 +9624,10 @@ export namespace proto {
 			paymentExtendedMetadata?: (proto.Message.PaymentExtendedMetadata.$Properties|null)
 			static create(properties: proto.Message.ExtendedTextMessage.$Shape): proto.Message.ExtendedTextMessage & proto.Message.ExtendedTextMessage.$Shape
 			static create(properties?: proto.Message.ExtendedTextMessage.$Properties): proto.Message.ExtendedTextMessage
-			static encode(m: proto.Message.ExtendedTextMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.ExtendedTextMessage & proto.Message.ExtendedTextMessage.$Shape
+			static encode(m: proto.Message.ExtendedTextMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.ExtendedTextMessage & proto.Message.ExtendedTextMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.ExtendedTextMessage
-			static toObject(m: proto.Message.ExtendedTextMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.ExtendedTextMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ExtendedTextMessage {
@@ -9735,10 +9735,10 @@ export namespace proto {
 			historyDurationDays?: (number|null)
 			static create(properties: proto.Message.FullHistorySyncOnDemandConfig.$Shape): proto.Message.FullHistorySyncOnDemandConfig & proto.Message.FullHistorySyncOnDemandConfig.$Shape
 			static create(properties?: proto.Message.FullHistorySyncOnDemandConfig.$Properties): proto.Message.FullHistorySyncOnDemandConfig
-			static encode(m: proto.Message.FullHistorySyncOnDemandConfig.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.FullHistorySyncOnDemandConfig & proto.Message.FullHistorySyncOnDemandConfig.$Shape
+			static encode(m: proto.Message.FullHistorySyncOnDemandConfig.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.FullHistorySyncOnDemandConfig & proto.Message.FullHistorySyncOnDemandConfig.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.FullHistorySyncOnDemandConfig
-			static toObject(m: proto.Message.FullHistorySyncOnDemandConfig, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.FullHistorySyncOnDemandConfig, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace FullHistorySyncOnDemandConfig {
@@ -9760,10 +9760,10 @@ export namespace proto {
 			connection?: (proto.Message.CoexConnectionDescriptor.$Properties|null)
 			static create(properties: proto.Message.FullHistorySyncOnDemandRequestMetadata.$Shape): proto.Message.FullHistorySyncOnDemandRequestMetadata & proto.Message.FullHistorySyncOnDemandRequestMetadata.$Shape
 			static create(properties?: proto.Message.FullHistorySyncOnDemandRequestMetadata.$Properties): proto.Message.FullHistorySyncOnDemandRequestMetadata
-			static encode(m: proto.Message.FullHistorySyncOnDemandRequestMetadata.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.FullHistorySyncOnDemandRequestMetadata & proto.Message.FullHistorySyncOnDemandRequestMetadata.$Shape
+			static encode(m: proto.Message.FullHistorySyncOnDemandRequestMetadata.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.FullHistorySyncOnDemandRequestMetadata & proto.Message.FullHistorySyncOnDemandRequestMetadata.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.FullHistorySyncOnDemandRequestMetadata
-			static toObject(m: proto.Message.FullHistorySyncOnDemandRequestMetadata, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.FullHistorySyncOnDemandRequestMetadata, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace FullHistorySyncOnDemandRequestMetadata {
@@ -9784,10 +9784,10 @@ export namespace proto {
 			message?: (proto.Message.$Properties|null)
 			static create(properties: proto.Message.FutureProofMessage.$Shape): proto.Message.FutureProofMessage & proto.Message.FutureProofMessage.$Shape
 			static create(properties?: proto.Message.FutureProofMessage.$Properties): proto.Message.FutureProofMessage
-			static encode(m: proto.Message.FutureProofMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.FutureProofMessage & proto.Message.FutureProofMessage.$Shape
+			static encode(m: proto.Message.FutureProofMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.FutureProofMessage & proto.Message.FutureProofMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.FutureProofMessage
-			static toObject(m: proto.Message.FutureProofMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.FutureProofMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace FutureProofMessage {
@@ -9815,10 +9815,10 @@ export namespace proto {
 			groupType?: (proto.Message.GroupInviteMessage.GroupType|null)
 			static create(properties: proto.Message.GroupInviteMessage.$Shape): proto.Message.GroupInviteMessage & proto.Message.GroupInviteMessage.$Shape
 			static create(properties?: proto.Message.GroupInviteMessage.$Properties): proto.Message.GroupInviteMessage
-			static encode(m: proto.Message.GroupInviteMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.GroupInviteMessage & proto.Message.GroupInviteMessage.$Shape
+			static encode(m: proto.Message.GroupInviteMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.GroupInviteMessage & proto.Message.GroupInviteMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.GroupInviteMessage
-			static toObject(m: proto.Message.GroupInviteMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.GroupInviteMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace GroupInviteMessage {
@@ -9865,10 +9865,10 @@ export namespace proto {
 			hydratedHsm?: (proto.Message.TemplateMessage.$Properties|null)
 			static create(properties: proto.Message.HighlyStructuredMessage.$Shape): proto.Message.HighlyStructuredMessage & proto.Message.HighlyStructuredMessage.$Shape
 			static create(properties?: proto.Message.HighlyStructuredMessage.$Properties): proto.Message.HighlyStructuredMessage
-			static encode(m: proto.Message.HighlyStructuredMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.HighlyStructuredMessage & proto.Message.HighlyStructuredMessage.$Shape
+			static encode(m: proto.Message.HighlyStructuredMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.HighlyStructuredMessage & proto.Message.HighlyStructuredMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.HighlyStructuredMessage
-			static toObject(m: proto.Message.HighlyStructuredMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.HighlyStructuredMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace HighlyStructuredMessage {
@@ -9907,10 +9907,10 @@ export namespace proto {
 				paramOneof?: ("currency"|"dateTime")
 				static create(properties: proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.$Shape): proto.Message.HighlyStructuredMessage.HSMLocalizableParameter & proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.$Shape
 				static create(properties?: proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.$Properties): proto.Message.HighlyStructuredMessage.HSMLocalizableParameter
-				static encode(m: proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.HighlyStructuredMessage.HSMLocalizableParameter & proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.$Shape
+				static encode(m: proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.HighlyStructuredMessage.HSMLocalizableParameter & proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.HighlyStructuredMessage.HSMLocalizableParameter
-				static toObject(m: proto.Message.HighlyStructuredMessage.HSMLocalizableParameter, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.HighlyStructuredMessage.HSMLocalizableParameter, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace HSMLocalizableParameter {
@@ -9938,10 +9938,10 @@ export namespace proto {
 					amount1000?: (number|Long|null)
 					static create(properties: proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMCurrency.$Shape): proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMCurrency & proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMCurrency.$Shape
 					static create(properties?: proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMCurrency.$Properties): proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMCurrency
-					static encode(m: proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMCurrency.$Properties, w?: PbWriter): PbWriter
-					static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMCurrency & proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMCurrency.$Shape
+					static encode(m: proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMCurrency.$Properties, w?: PBWriter): PBWriter
+					static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMCurrency & proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMCurrency.$Shape
 					static fromObject(d: { [k: string]: any }): proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMCurrency
-					static toObject(m: proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMCurrency, o?: PbConversionOptions): { [k: string]: any }
+					static toObject(m: proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMCurrency, o?: PBConversionOptions): { [k: string]: any }
 					toJSON(): { [k: string]: any }
 				}
 				namespace HSMCurrency {
@@ -9962,10 +9962,10 @@ export namespace proto {
 					datetimeOneof?: ("component"|"unixEpoch")
 					static create(properties: proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.$Shape): proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime & proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.$Shape
 					static create(properties?: proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.$Properties): proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime
-					static encode(m: proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.$Properties, w?: PbWriter): PbWriter
-					static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime & proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.$Shape
+					static encode(m: proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.$Properties, w?: PBWriter): PBWriter
+					static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime & proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.$Shape
 					static fromObject(d: { [k: string]: any }): proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime
-					static toObject(m: proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime, o?: PbConversionOptions): { [k: string]: any }
+					static toObject(m: proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime, o?: PBConversionOptions): { [k: string]: any }
 					toJSON(): { [k: string]: any }
 				}
 				namespace HSMDateTime {
@@ -9996,10 +9996,10 @@ export namespace proto {
 						calendar?: (proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeComponent.CalendarType|null)
 						static create(properties: proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeComponent.$Shape): proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeComponent & proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeComponent.$Shape
 						static create(properties?: proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeComponent.$Properties): proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeComponent
-						static encode(m: proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeComponent.$Properties, w?: PbWriter): PbWriter
-						static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeComponent & proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeComponent.$Shape
+						static encode(m: proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeComponent.$Properties, w?: PBWriter): PBWriter
+						static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeComponent & proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeComponent.$Shape
 						static fromObject(d: { [k: string]: any }): proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeComponent
-						static toObject(m: proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeComponent, o?: PbConversionOptions): { [k: string]: any }
+						static toObject(m: proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeComponent, o?: PBConversionOptions): { [k: string]: any }
 						toJSON(): { [k: string]: any }
 					}
 					namespace HSMDateTimeComponent {
@@ -10036,10 +10036,10 @@ export namespace proto {
 						timestamp?: (number|Long|null)
 						static create(properties: proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeUnixEpoch.$Shape): proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeUnixEpoch & proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeUnixEpoch.$Shape
 						static create(properties?: proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeUnixEpoch.$Properties): proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeUnixEpoch
-						static encode(m: proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeUnixEpoch.$Properties, w?: PbWriter): PbWriter
-						static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeUnixEpoch & proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeUnixEpoch.$Shape
+						static encode(m: proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeUnixEpoch.$Properties, w?: PBWriter): PBWriter
+						static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeUnixEpoch & proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeUnixEpoch.$Shape
 						static fromObject(d: { [k: string]: any }): proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeUnixEpoch
-						static toObject(m: proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeUnixEpoch, o?: PbConversionOptions): { [k: string]: any }
+						static toObject(m: proto.Message.HighlyStructuredMessage.HSMLocalizableParameter.HSMDateTime.HSMDateTimeUnixEpoch, o?: PBConversionOptions): { [k: string]: any }
 						toJSON(): { [k: string]: any }
 					}
 					namespace HSMDateTimeUnixEpoch {
@@ -10061,10 +10061,10 @@ export namespace proto {
 			messageSecretProof?: (Uint8Array|null)
 			static create(properties: proto.Message.HistoryShareMessageEntry.$Shape): proto.Message.HistoryShareMessageEntry & proto.Message.HistoryShareMessageEntry.$Shape
 			static create(properties?: proto.Message.HistoryShareMessageEntry.$Properties): proto.Message.HistoryShareMessageEntry
-			static encode(m: proto.Message.HistoryShareMessageEntry.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.HistoryShareMessageEntry & proto.Message.HistoryShareMessageEntry.$Shape
+			static encode(m: proto.Message.HistoryShareMessageEntry.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.HistoryShareMessageEntry & proto.Message.HistoryShareMessageEntry.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.HistoryShareMessageEntry
-			static toObject(m: proto.Message.HistoryShareMessageEntry, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.HistoryShareMessageEntry, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace HistoryShareMessageEntry {
@@ -10083,10 +10083,10 @@ export namespace proto {
 			completeAccessGranted?: (boolean|null)
 			static create(properties: proto.Message.HistorySyncMessageAccessStatus.$Shape): proto.Message.HistorySyncMessageAccessStatus & proto.Message.HistorySyncMessageAccessStatus.$Shape
 			static create(properties?: proto.Message.HistorySyncMessageAccessStatus.$Properties): proto.Message.HistorySyncMessageAccessStatus
-			static encode(m: proto.Message.HistorySyncMessageAccessStatus.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.HistorySyncMessageAccessStatus & proto.Message.HistorySyncMessageAccessStatus.$Shape
+			static encode(m: proto.Message.HistorySyncMessageAccessStatus.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.HistorySyncMessageAccessStatus & proto.Message.HistorySyncMessageAccessStatus.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.HistorySyncMessageAccessStatus
-			static toObject(m: proto.Message.HistorySyncMessageAccessStatus, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.HistorySyncMessageAccessStatus, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace HistorySyncMessageAccessStatus {
@@ -10118,10 +10118,10 @@ export namespace proto {
 			messageAccessStatus?: (proto.Message.HistorySyncMessageAccessStatus.$Properties|null)
 			static create(properties: proto.Message.HistorySyncNotification.$Shape): proto.Message.HistorySyncNotification & proto.Message.HistorySyncNotification.$Shape
 			static create(properties?: proto.Message.HistorySyncNotification.$Properties): proto.Message.HistorySyncNotification
-			static encode(m: proto.Message.HistorySyncNotification.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.HistorySyncNotification & proto.Message.HistorySyncNotification.$Shape
+			static encode(m: proto.Message.HistorySyncNotification.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.HistorySyncNotification & proto.Message.HistorySyncNotification.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.HistorySyncNotification
-			static toObject(m: proto.Message.HistorySyncNotification, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.HistorySyncNotification, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace HistorySyncNotification {
@@ -10194,10 +10194,10 @@ export namespace proto {
 			qrUrl?: (string|null)
 			static create(properties: proto.Message.ImageMessage.$Shape): proto.Message.ImageMessage & proto.Message.ImageMessage.$Shape
 			static create(properties?: proto.Message.ImageMessage.$Properties): proto.Message.ImageMessage
-			static encode(m: proto.Message.ImageMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.ImageMessage & proto.Message.ImageMessage.$Shape
+			static encode(m: proto.Message.ImageMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.ImageMessage & proto.Message.ImageMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.ImageMessage
-			static toObject(m: proto.Message.ImageMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.ImageMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ImageMessage {
@@ -10282,10 +10282,10 @@ export namespace proto {
 			securityNotificationEnabled?: (boolean|null)
 			static create(properties: proto.Message.InitialSecurityNotificationSettingSync.$Shape): proto.Message.InitialSecurityNotificationSettingSync & proto.Message.InitialSecurityNotificationSettingSync.$Shape
 			static create(properties?: proto.Message.InitialSecurityNotificationSettingSync.$Properties): proto.Message.InitialSecurityNotificationSettingSync
-			static encode(m: proto.Message.InitialSecurityNotificationSettingSync.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.InitialSecurityNotificationSettingSync & proto.Message.InitialSecurityNotificationSettingSync.$Shape
+			static encode(m: proto.Message.InitialSecurityNotificationSettingSync.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.InitialSecurityNotificationSettingSync & proto.Message.InitialSecurityNotificationSettingSync.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.InitialSecurityNotificationSettingSync
-			static toObject(m: proto.Message.InitialSecurityNotificationSettingSync, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.InitialSecurityNotificationSettingSync, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace InitialSecurityNotificationSettingSync {
@@ -10320,10 +10320,10 @@ export namespace proto {
 			interactiveMessage?: ("shopStorefrontMessage"|"collectionMessage"|"nativeFlowMessage"|"carouselMessage")
 			static create(properties: proto.Message.InteractiveMessage.$Shape): proto.Message.InteractiveMessage & proto.Message.InteractiveMessage.$Shape
 			static create(properties?: proto.Message.InteractiveMessage.$Properties): proto.Message.InteractiveMessage
-			static encode(m: proto.Message.InteractiveMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.InteractiveMessage & proto.Message.InteractiveMessage.$Shape
+			static encode(m: proto.Message.InteractiveMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.InteractiveMessage & proto.Message.InteractiveMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.InteractiveMessage
-			static toObject(m: proto.Message.InteractiveMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.InteractiveMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace InteractiveMessage {
@@ -10367,10 +10367,10 @@ export namespace proto {
 				fallback?: (string|null)
 				static create(properties: proto.Message.InteractiveMessage.BloksWidget.$Shape): proto.Message.InteractiveMessage.BloksWidget & proto.Message.InteractiveMessage.BloksWidget.$Shape
 				static create(properties?: proto.Message.InteractiveMessage.BloksWidget.$Properties): proto.Message.InteractiveMessage.BloksWidget
-				static encode(m: proto.Message.InteractiveMessage.BloksWidget.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.InteractiveMessage.BloksWidget & proto.Message.InteractiveMessage.BloksWidget.$Shape
+				static encode(m: proto.Message.InteractiveMessage.BloksWidget.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.InteractiveMessage.BloksWidget & proto.Message.InteractiveMessage.BloksWidget.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.InteractiveMessage.BloksWidget
-				static toObject(m: proto.Message.InteractiveMessage.BloksWidget, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.InteractiveMessage.BloksWidget, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace BloksWidget {
@@ -10391,10 +10391,10 @@ export namespace proto {
 				text?: (string|null)
 				static create(properties: proto.Message.InteractiveMessage.Body.$Shape): proto.Message.InteractiveMessage.Body & proto.Message.InteractiveMessage.Body.$Shape
 				static create(properties?: proto.Message.InteractiveMessage.Body.$Properties): proto.Message.InteractiveMessage.Body
-				static encode(m: proto.Message.InteractiveMessage.Body.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.InteractiveMessage.Body & proto.Message.InteractiveMessage.Body.$Shape
+				static encode(m: proto.Message.InteractiveMessage.Body.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.InteractiveMessage.Body & proto.Message.InteractiveMessage.Body.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.InteractiveMessage.Body
-				static toObject(m: proto.Message.InteractiveMessage.Body, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.InteractiveMessage.Body, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace Body {
@@ -10414,10 +10414,10 @@ export namespace proto {
 				carouselCardType?: (proto.Message.InteractiveMessage.CarouselMessage.CarouselCardType|null)
 				static create(properties: proto.Message.InteractiveMessage.CarouselMessage.$Shape): proto.Message.InteractiveMessage.CarouselMessage & proto.Message.InteractiveMessage.CarouselMessage.$Shape
 				static create(properties?: proto.Message.InteractiveMessage.CarouselMessage.$Properties): proto.Message.InteractiveMessage.CarouselMessage
-				static encode(m: proto.Message.InteractiveMessage.CarouselMessage.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.InteractiveMessage.CarouselMessage & proto.Message.InteractiveMessage.CarouselMessage.$Shape
+				static encode(m: proto.Message.InteractiveMessage.CarouselMessage.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.InteractiveMessage.CarouselMessage & proto.Message.InteractiveMessage.CarouselMessage.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.InteractiveMessage.CarouselMessage
-				static toObject(m: proto.Message.InteractiveMessage.CarouselMessage, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.InteractiveMessage.CarouselMessage, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace CarouselMessage {
@@ -10449,10 +10449,10 @@ export namespace proto {
 				messageVersion?: (number|null)
 				static create(properties: proto.Message.InteractiveMessage.CollectionMessage.$Shape): proto.Message.InteractiveMessage.CollectionMessage & proto.Message.InteractiveMessage.CollectionMessage.$Shape
 				static create(properties?: proto.Message.InteractiveMessage.CollectionMessage.$Properties): proto.Message.InteractiveMessage.CollectionMessage
-				static encode(m: proto.Message.InteractiveMessage.CollectionMessage.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.InteractiveMessage.CollectionMessage & proto.Message.InteractiveMessage.CollectionMessage.$Shape
+				static encode(m: proto.Message.InteractiveMessage.CollectionMessage.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.InteractiveMessage.CollectionMessage & proto.Message.InteractiveMessage.CollectionMessage.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.InteractiveMessage.CollectionMessage
-				static toObject(m: proto.Message.InteractiveMessage.CollectionMessage, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.InteractiveMessage.CollectionMessage, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace CollectionMessage {
@@ -10475,10 +10475,10 @@ export namespace proto {
 				media?: "audioMessage"
 				static create(properties: proto.Message.InteractiveMessage.Footer.$Shape): proto.Message.InteractiveMessage.Footer & proto.Message.InteractiveMessage.Footer.$Shape
 				static create(properties?: proto.Message.InteractiveMessage.Footer.$Properties): proto.Message.InteractiveMessage.Footer
-				static encode(m: proto.Message.InteractiveMessage.Footer.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.InteractiveMessage.Footer & proto.Message.InteractiveMessage.Footer.$Shape
+				static encode(m: proto.Message.InteractiveMessage.Footer.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.InteractiveMessage.Footer & proto.Message.InteractiveMessage.Footer.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.InteractiveMessage.Footer
-				static toObject(m: proto.Message.InteractiveMessage.Footer, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.InteractiveMessage.Footer, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace Footer {
@@ -10516,10 +10516,10 @@ export namespace proto {
 				media?: ("documentMessage"|"imageMessage"|"jpegThumbnail"|"videoMessage"|"locationMessage"|"productMessage")
 				static create(properties: proto.Message.InteractiveMessage.Header.$Shape): proto.Message.InteractiveMessage.Header & proto.Message.InteractiveMessage.Header.$Shape
 				static create(properties?: proto.Message.InteractiveMessage.Header.$Properties): proto.Message.InteractiveMessage.Header
-				static encode(m: proto.Message.InteractiveMessage.Header.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.InteractiveMessage.Header & proto.Message.InteractiveMessage.Header.$Shape
+				static encode(m: proto.Message.InteractiveMessage.Header.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.InteractiveMessage.Header & proto.Message.InteractiveMessage.Header.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.InteractiveMessage.Header
-				static toObject(m: proto.Message.InteractiveMessage.Header, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.InteractiveMessage.Header, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace Header {
@@ -10563,10 +10563,10 @@ export namespace proto {
 				messageVersion?: (number|null)
 				static create(properties: proto.Message.InteractiveMessage.NativeFlowMessage.$Shape): proto.Message.InteractiveMessage.NativeFlowMessage & proto.Message.InteractiveMessage.NativeFlowMessage.$Shape
 				static create(properties?: proto.Message.InteractiveMessage.NativeFlowMessage.$Properties): proto.Message.InteractiveMessage.NativeFlowMessage
-				static encode(m: proto.Message.InteractiveMessage.NativeFlowMessage.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.InteractiveMessage.NativeFlowMessage & proto.Message.InteractiveMessage.NativeFlowMessage.$Shape
+				static encode(m: proto.Message.InteractiveMessage.NativeFlowMessage.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.InteractiveMessage.NativeFlowMessage & proto.Message.InteractiveMessage.NativeFlowMessage.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.InteractiveMessage.NativeFlowMessage
-				static toObject(m: proto.Message.InteractiveMessage.NativeFlowMessage, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.InteractiveMessage.NativeFlowMessage, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace NativeFlowMessage {
@@ -10586,10 +10586,10 @@ export namespace proto {
 					buttonParamsJson?: (string|null)
 					static create(properties: proto.Message.InteractiveMessage.NativeFlowMessage.NativeFlowButton.$Shape): proto.Message.InteractiveMessage.NativeFlowMessage.NativeFlowButton & proto.Message.InteractiveMessage.NativeFlowMessage.NativeFlowButton.$Shape
 					static create(properties?: proto.Message.InteractiveMessage.NativeFlowMessage.NativeFlowButton.$Properties): proto.Message.InteractiveMessage.NativeFlowMessage.NativeFlowButton
-					static encode(m: proto.Message.InteractiveMessage.NativeFlowMessage.NativeFlowButton.$Properties, w?: PbWriter): PbWriter
-					static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.InteractiveMessage.NativeFlowMessage.NativeFlowButton & proto.Message.InteractiveMessage.NativeFlowMessage.NativeFlowButton.$Shape
+					static encode(m: proto.Message.InteractiveMessage.NativeFlowMessage.NativeFlowButton.$Properties, w?: PBWriter): PBWriter
+					static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.InteractiveMessage.NativeFlowMessage.NativeFlowButton & proto.Message.InteractiveMessage.NativeFlowMessage.NativeFlowButton.$Shape
 					static fromObject(d: { [k: string]: any }): proto.Message.InteractiveMessage.NativeFlowMessage.NativeFlowButton
-					static toObject(m: proto.Message.InteractiveMessage.NativeFlowMessage.NativeFlowButton, o?: PbConversionOptions): { [k: string]: any }
+					static toObject(m: proto.Message.InteractiveMessage.NativeFlowMessage.NativeFlowButton, o?: PBConversionOptions): { [k: string]: any }
 					toJSON(): { [k: string]: any }
 				}
 				namespace NativeFlowButton {
@@ -10611,10 +10611,10 @@ export namespace proto {
 				messageVersion?: (number|null)
 				static create(properties: proto.Message.InteractiveMessage.ShopMessage.$Shape): proto.Message.InteractiveMessage.ShopMessage & proto.Message.InteractiveMessage.ShopMessage.$Shape
 				static create(properties?: proto.Message.InteractiveMessage.ShopMessage.$Properties): proto.Message.InteractiveMessage.ShopMessage
-				static encode(m: proto.Message.InteractiveMessage.ShopMessage.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.InteractiveMessage.ShopMessage & proto.Message.InteractiveMessage.ShopMessage.$Shape
+				static encode(m: proto.Message.InteractiveMessage.ShopMessage.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.InteractiveMessage.ShopMessage & proto.Message.InteractiveMessage.ShopMessage.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.InteractiveMessage.ShopMessage
-				static toObject(m: proto.Message.InteractiveMessage.ShopMessage, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.InteractiveMessage.ShopMessage, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace ShopMessage {
@@ -10644,10 +10644,10 @@ export namespace proto {
 			interactiveResponseMessage?: "nativeFlowResponseMessage"
 			static create(properties: proto.Message.InteractiveResponseMessage.$Shape): proto.Message.InteractiveResponseMessage & proto.Message.InteractiveResponseMessage.$Shape
 			static create(properties?: proto.Message.InteractiveResponseMessage.$Properties): proto.Message.InteractiveResponseMessage
-			static encode(m: proto.Message.InteractiveResponseMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.InteractiveResponseMessage & proto.Message.InteractiveResponseMessage.$Shape
+			static encode(m: proto.Message.InteractiveResponseMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.InteractiveResponseMessage & proto.Message.InteractiveResponseMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.InteractiveResponseMessage
-			static toObject(m: proto.Message.InteractiveResponseMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.InteractiveResponseMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace InteractiveResponseMessage {
@@ -10675,10 +10675,10 @@ export namespace proto {
 				format?: (proto.Message.InteractiveResponseMessage.Body.Format|null)
 				static create(properties: proto.Message.InteractiveResponseMessage.Body.$Shape): proto.Message.InteractiveResponseMessage.Body & proto.Message.InteractiveResponseMessage.Body.$Shape
 				static create(properties?: proto.Message.InteractiveResponseMessage.Body.$Properties): proto.Message.InteractiveResponseMessage.Body
-				static encode(m: proto.Message.InteractiveResponseMessage.Body.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.InteractiveResponseMessage.Body & proto.Message.InteractiveResponseMessage.Body.$Shape
+				static encode(m: proto.Message.InteractiveResponseMessage.Body.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.InteractiveResponseMessage.Body & proto.Message.InteractiveResponseMessage.Body.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.InteractiveResponseMessage.Body
-				static toObject(m: proto.Message.InteractiveResponseMessage.Body, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.InteractiveResponseMessage.Body, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace Body {
@@ -10703,10 +10703,10 @@ export namespace proto {
 				version?: (number|null)
 				static create(properties: proto.Message.InteractiveResponseMessage.NativeFlowResponseMessage.$Shape): proto.Message.InteractiveResponseMessage.NativeFlowResponseMessage & proto.Message.InteractiveResponseMessage.NativeFlowResponseMessage.$Shape
 				static create(properties?: proto.Message.InteractiveResponseMessage.NativeFlowResponseMessage.$Properties): proto.Message.InteractiveResponseMessage.NativeFlowResponseMessage
-				static encode(m: proto.Message.InteractiveResponseMessage.NativeFlowResponseMessage.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.InteractiveResponseMessage.NativeFlowResponseMessage & proto.Message.InteractiveResponseMessage.NativeFlowResponseMessage.$Shape
+				static encode(m: proto.Message.InteractiveResponseMessage.NativeFlowResponseMessage.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.InteractiveResponseMessage.NativeFlowResponseMessage & proto.Message.InteractiveResponseMessage.NativeFlowResponseMessage.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.InteractiveResponseMessage.NativeFlowResponseMessage
-				static toObject(m: proto.Message.InteractiveResponseMessage.NativeFlowResponseMessage, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.InteractiveResponseMessage.NativeFlowResponseMessage, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace NativeFlowResponseMessage {
@@ -10736,10 +10736,10 @@ export namespace proto {
 			attachmentJpegThumbnail?: (Uint8Array|null)
 			static create(properties: proto.Message.InvoiceMessage.$Shape): proto.Message.InvoiceMessage & proto.Message.InvoiceMessage.$Shape
 			static create(properties?: proto.Message.InvoiceMessage.$Properties): proto.Message.InvoiceMessage
-			static encode(m: proto.Message.InvoiceMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.InvoiceMessage & proto.Message.InvoiceMessage.$Shape
+			static encode(m: proto.Message.InvoiceMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.InvoiceMessage & proto.Message.InvoiceMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.InvoiceMessage
-			static toObject(m: proto.Message.InvoiceMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.InvoiceMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace InvoiceMessage {
@@ -10772,10 +10772,10 @@ export namespace proto {
 			timestampMs?: (number|Long|null)
 			static create(properties: proto.Message.KeepInChatMessage.$Shape): proto.Message.KeepInChatMessage & proto.Message.KeepInChatMessage.$Shape
 			static create(properties?: proto.Message.KeepInChatMessage.$Properties): proto.Message.KeepInChatMessage
-			static encode(m: proto.Message.KeepInChatMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.KeepInChatMessage & proto.Message.KeepInChatMessage.$Shape
+			static encode(m: proto.Message.KeepInChatMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.KeepInChatMessage & proto.Message.KeepInChatMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.KeepInChatMessage
-			static toObject(m: proto.Message.KeepInChatMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.KeepInChatMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace KeepInChatMessage {
@@ -10803,10 +10803,10 @@ export namespace proto {
 			videoContentCaption?: (string|null)
 			static create(properties: proto.Message.LinkPreviewMetadata.$Shape): proto.Message.LinkPreviewMetadata & proto.Message.LinkPreviewMetadata.$Shape
 			static create(properties?: proto.Message.LinkPreviewMetadata.$Properties): proto.Message.LinkPreviewMetadata
-			static encode(m: proto.Message.LinkPreviewMetadata.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.LinkPreviewMetadata & proto.Message.LinkPreviewMetadata.$Shape
+			static encode(m: proto.Message.LinkPreviewMetadata.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.LinkPreviewMetadata & proto.Message.LinkPreviewMetadata.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.LinkPreviewMetadata
-			static toObject(m: proto.Message.LinkPreviewMetadata, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.LinkPreviewMetadata, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace LinkPreviewMetadata {
@@ -10847,10 +10847,10 @@ export namespace proto {
 			contextInfo?: (proto.ContextInfo.$Properties|null)
 			static create(properties: proto.Message.ListMessage.$Shape): proto.Message.ListMessage & proto.Message.ListMessage.$Shape
 			static create(properties?: proto.Message.ListMessage.$Properties): proto.Message.ListMessage
-			static encode(m: proto.Message.ListMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.ListMessage & proto.Message.ListMessage.$Shape
+			static encode(m: proto.Message.ListMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.ListMessage & proto.Message.ListMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.ListMessage
-			static toObject(m: proto.Message.ListMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.ListMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ListMessage {
@@ -10889,10 +10889,10 @@ export namespace proto {
 				productId?: (string|null)
 				static create(properties: proto.Message.ListMessage.Product.$Shape): proto.Message.ListMessage.Product & proto.Message.ListMessage.Product.$Shape
 				static create(properties?: proto.Message.ListMessage.Product.$Properties): proto.Message.ListMessage.Product
-				static encode(m: proto.Message.ListMessage.Product.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.ListMessage.Product & proto.Message.ListMessage.Product.$Shape
+				static encode(m: proto.Message.ListMessage.Product.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.ListMessage.Product & proto.Message.ListMessage.Product.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.ListMessage.Product
-				static toObject(m: proto.Message.ListMessage.Product, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.ListMessage.Product, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace Product {
@@ -10911,10 +10911,10 @@ export namespace proto {
 				jpegThumbnail?: (Uint8Array|null)
 				static create(properties: proto.Message.ListMessage.ProductListHeaderImage.$Shape): proto.Message.ListMessage.ProductListHeaderImage & proto.Message.ListMessage.ProductListHeaderImage.$Shape
 				static create(properties?: proto.Message.ListMessage.ProductListHeaderImage.$Properties): proto.Message.ListMessage.ProductListHeaderImage
-				static encode(m: proto.Message.ListMessage.ProductListHeaderImage.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.ListMessage.ProductListHeaderImage & proto.Message.ListMessage.ProductListHeaderImage.$Shape
+				static encode(m: proto.Message.ListMessage.ProductListHeaderImage.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.ListMessage.ProductListHeaderImage & proto.Message.ListMessage.ProductListHeaderImage.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.ListMessage.ProductListHeaderImage
-				static toObject(m: proto.Message.ListMessage.ProductListHeaderImage, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.ListMessage.ProductListHeaderImage, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace ProductListHeaderImage {
@@ -10935,10 +10935,10 @@ export namespace proto {
 				businessOwnerJid?: (string|null)
 				static create(properties: proto.Message.ListMessage.ProductListInfo.$Shape): proto.Message.ListMessage.ProductListInfo & proto.Message.ListMessage.ProductListInfo.$Shape
 				static create(properties?: proto.Message.ListMessage.ProductListInfo.$Properties): proto.Message.ListMessage.ProductListInfo
-				static encode(m: proto.Message.ListMessage.ProductListInfo.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.ListMessage.ProductListInfo & proto.Message.ListMessage.ProductListInfo.$Shape
+				static encode(m: proto.Message.ListMessage.ProductListInfo.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.ListMessage.ProductListInfo & proto.Message.ListMessage.ProductListInfo.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.ListMessage.ProductListInfo
-				static toObject(m: proto.Message.ListMessage.ProductListInfo, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.ListMessage.ProductListInfo, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace ProductListInfo {
@@ -10959,10 +10959,10 @@ export namespace proto {
 				products: proto.Message.ListMessage.Product.$Properties[]
 				static create(properties: proto.Message.ListMessage.ProductSection.$Shape): proto.Message.ListMessage.ProductSection & proto.Message.ListMessage.ProductSection.$Shape
 				static create(properties?: proto.Message.ListMessage.ProductSection.$Properties): proto.Message.ListMessage.ProductSection
-				static encode(m: proto.Message.ListMessage.ProductSection.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.ListMessage.ProductSection & proto.Message.ListMessage.ProductSection.$Shape
+				static encode(m: proto.Message.ListMessage.ProductSection.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.ListMessage.ProductSection & proto.Message.ListMessage.ProductSection.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.ListMessage.ProductSection
-				static toObject(m: proto.Message.ListMessage.ProductSection, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.ListMessage.ProductSection, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace ProductSection {
@@ -10983,10 +10983,10 @@ export namespace proto {
 				rowId?: (string|null)
 				static create(properties: proto.Message.ListMessage.Row.$Shape): proto.Message.ListMessage.Row & proto.Message.ListMessage.Row.$Shape
 				static create(properties?: proto.Message.ListMessage.Row.$Properties): proto.Message.ListMessage.Row
-				static encode(m: proto.Message.ListMessage.Row.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.ListMessage.Row & proto.Message.ListMessage.Row.$Shape
+				static encode(m: proto.Message.ListMessage.Row.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.ListMessage.Row & proto.Message.ListMessage.Row.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.ListMessage.Row
-				static toObject(m: proto.Message.ListMessage.Row, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.ListMessage.Row, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace Row {
@@ -11007,10 +11007,10 @@ export namespace proto {
 				rows: proto.Message.ListMessage.Row.$Properties[]
 				static create(properties: proto.Message.ListMessage.Section.$Shape): proto.Message.ListMessage.Section & proto.Message.ListMessage.Section.$Shape
 				static create(properties?: proto.Message.ListMessage.Section.$Properties): proto.Message.ListMessage.Section
-				static encode(m: proto.Message.ListMessage.Section.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.ListMessage.Section & proto.Message.ListMessage.Section.$Shape
+				static encode(m: proto.Message.ListMessage.Section.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.ListMessage.Section & proto.Message.ListMessage.Section.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.ListMessage.Section
-				static toObject(m: proto.Message.ListMessage.Section, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.ListMessage.Section, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace Section {
@@ -11034,10 +11034,10 @@ export namespace proto {
 			description?: (string|null)
 			static create(properties: proto.Message.ListResponseMessage.$Shape): proto.Message.ListResponseMessage & proto.Message.ListResponseMessage.$Shape
 			static create(properties?: proto.Message.ListResponseMessage.$Properties): proto.Message.ListResponseMessage
-			static encode(m: proto.Message.ListResponseMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.ListResponseMessage & proto.Message.ListResponseMessage.$Shape
+			static encode(m: proto.Message.ListResponseMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.ListResponseMessage & proto.Message.ListResponseMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.ListResponseMessage
-			static toObject(m: proto.Message.ListResponseMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.ListResponseMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ListResponseMessage {
@@ -11069,10 +11069,10 @@ export namespace proto {
 				selectedRowId?: (string|null)
 				static create(properties: proto.Message.ListResponseMessage.SingleSelectReply.$Shape): proto.Message.ListResponseMessage.SingleSelectReply & proto.Message.ListResponseMessage.SingleSelectReply.$Shape
 				static create(properties?: proto.Message.ListResponseMessage.SingleSelectReply.$Properties): proto.Message.ListResponseMessage.SingleSelectReply
-				static encode(m: proto.Message.ListResponseMessage.SingleSelectReply.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.ListResponseMessage.SingleSelectReply & proto.Message.ListResponseMessage.SingleSelectReply.$Shape
+				static encode(m: proto.Message.ListResponseMessage.SingleSelectReply.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.ListResponseMessage.SingleSelectReply & proto.Message.ListResponseMessage.SingleSelectReply.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.ListResponseMessage.SingleSelectReply
-				static toObject(m: proto.Message.ListResponseMessage.SingleSelectReply, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.ListResponseMessage.SingleSelectReply, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace SingleSelectReply {
@@ -11100,10 +11100,10 @@ export namespace proto {
 			contextInfo?: (proto.ContextInfo.$Properties|null)
 			static create(properties: proto.Message.LiveLocationMessage.$Shape): proto.Message.LiveLocationMessage & proto.Message.LiveLocationMessage.$Shape
 			static create(properties?: proto.Message.LiveLocationMessage.$Properties): proto.Message.LiveLocationMessage
-			static encode(m: proto.Message.LiveLocationMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.LiveLocationMessage & proto.Message.LiveLocationMessage.$Shape
+			static encode(m: proto.Message.LiveLocationMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.LiveLocationMessage & proto.Message.LiveLocationMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.LiveLocationMessage
-			static toObject(m: proto.Message.LiveLocationMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.LiveLocationMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace LiveLocationMessage {
@@ -11153,10 +11153,10 @@ export namespace proto {
 			contextInfo?: (proto.ContextInfo.$Properties|null)
 			static create(properties: proto.Message.LocationMessage.$Shape): proto.Message.LocationMessage & proto.Message.LocationMessage.$Shape
 			static create(properties?: proto.Message.LocationMessage.$Properties): proto.Message.LocationMessage
-			static encode(m: proto.Message.LocationMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.LocationMessage & proto.Message.LocationMessage.$Shape
+			static encode(m: proto.Message.LocationMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.LocationMessage & proto.Message.LocationMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.LocationMessage
-			static toObject(m: proto.Message.LocationMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.LocationMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace LocationMessage {
@@ -11205,10 +11205,10 @@ export namespace proto {
 			thumbnailWidth?: (number|null)
 			static create(properties: proto.Message.MMSThumbnailMetadata.$Shape): proto.Message.MMSThumbnailMetadata & proto.Message.MMSThumbnailMetadata.$Shape
 			static create(properties?: proto.Message.MMSThumbnailMetadata.$Properties): proto.Message.MMSThumbnailMetadata
-			static encode(m: proto.Message.MMSThumbnailMetadata.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.MMSThumbnailMetadata & proto.Message.MMSThumbnailMetadata.$Shape
+			static encode(m: proto.Message.MMSThumbnailMetadata.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.MMSThumbnailMetadata & proto.Message.MMSThumbnailMetadata.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.MMSThumbnailMetadata
-			static toObject(m: proto.Message.MMSThumbnailMetadata, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.MMSThumbnailMetadata, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace MMSThumbnailMetadata {
@@ -11235,10 +11235,10 @@ export namespace proto {
 			actionSeq?: (number|Long|null)
 			static create(properties: proto.Message.MarkAsVerifiedAction.$Shape): proto.Message.MarkAsVerifiedAction & proto.Message.MarkAsVerifiedAction.$Shape
 			static create(properties?: proto.Message.MarkAsVerifiedAction.$Properties): proto.Message.MarkAsVerifiedAction
-			static encode(m: proto.Message.MarkAsVerifiedAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.MarkAsVerifiedAction & proto.Message.MarkAsVerifiedAction.$Shape
+			static encode(m: proto.Message.MarkAsVerifiedAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.MarkAsVerifiedAction & proto.Message.MarkAsVerifiedAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.MarkAsVerifiedAction
-			static toObject(m: proto.Message.MarkAsVerifiedAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.MarkAsVerifiedAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace MarkAsVerifiedAction {
@@ -11266,10 +11266,10 @@ export namespace proto {
 			messageHistoryMetadata?: (proto.Message.MessageHistoryMetadata.$Properties|null)
 			static create(properties: proto.Message.MessageHistoryBundle.$Shape): proto.Message.MessageHistoryBundle & proto.Message.MessageHistoryBundle.$Shape
 			static create(properties?: proto.Message.MessageHistoryBundle.$Properties): proto.Message.MessageHistoryBundle
-			static encode(m: proto.Message.MessageHistoryBundle.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.MessageHistoryBundle & proto.Message.MessageHistoryBundle.$Shape
+			static encode(m: proto.Message.MessageHistoryBundle.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.MessageHistoryBundle & proto.Message.MessageHistoryBundle.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.MessageHistoryBundle
-			static toObject(m: proto.Message.MessageHistoryBundle, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.MessageHistoryBundle, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace MessageHistoryBundle {
@@ -11309,10 +11309,10 @@ export namespace proto {
 			includesChatTheme?: (boolean|null)
 			static create(properties: proto.Message.MessageHistoryMetadata.$Shape): proto.Message.MessageHistoryMetadata & proto.Message.MessageHistoryMetadata.$Shape
 			static create(properties?: proto.Message.MessageHistoryMetadata.$Properties): proto.Message.MessageHistoryMetadata
-			static encode(m: proto.Message.MessageHistoryMetadata.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.MessageHistoryMetadata & proto.Message.MessageHistoryMetadata.$Shape
+			static encode(m: proto.Message.MessageHistoryMetadata.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.MessageHistoryMetadata & proto.Message.MessageHistoryMetadata.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.MessageHistoryMetadata
-			static toObject(m: proto.Message.MessageHistoryMetadata, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.MessageHistoryMetadata, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace MessageHistoryMetadata {
@@ -11337,10 +11337,10 @@ export namespace proto {
 			botHistoryShareSyncMetadata?: (proto.Message.BotHistoryShareSyncMetadata.$Properties|null)
 			static create(properties: proto.Message.MessageHistoryNotice.$Shape): proto.Message.MessageHistoryNotice & proto.Message.MessageHistoryNotice.$Shape
 			static create(properties?: proto.Message.MessageHistoryNotice.$Properties): proto.Message.MessageHistoryNotice
-			static encode(m: proto.Message.MessageHistoryNotice.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.MessageHistoryNotice & proto.Message.MessageHistoryNotice.$Shape
+			static encode(m: proto.Message.MessageHistoryNotice.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.MessageHistoryNotice & proto.Message.MessageHistoryNotice.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.MessageHistoryNotice
-			static toObject(m: proto.Message.MessageHistoryNotice, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.MessageHistoryNotice, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace MessageHistoryNotice {
@@ -11370,10 +11370,10 @@ export namespace proto {
 			lyrics?: (proto.Message.MusicMessage.Lyrics.$Properties|null)
 			static create(properties: proto.Message.MusicMessage.$Shape): proto.Message.MusicMessage & proto.Message.MusicMessage.$Shape
 			static create(properties?: proto.Message.MusicMessage.$Properties): proto.Message.MusicMessage
-			static encode(m: proto.Message.MusicMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.MusicMessage & proto.Message.MusicMessage.$Shape
+			static encode(m: proto.Message.MusicMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.MusicMessage & proto.Message.MusicMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.MusicMessage
-			static toObject(m: proto.Message.MusicMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.MusicMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace MusicMessage {
@@ -11403,10 +11403,10 @@ export namespace proto {
 				lines: proto.Message.MusicMessage.Lyrics.Line.$Properties[]
 				static create(properties: proto.Message.MusicMessage.Lyrics.$Shape): proto.Message.MusicMessage.Lyrics & proto.Message.MusicMessage.Lyrics.$Shape
 				static create(properties?: proto.Message.MusicMessage.Lyrics.$Properties): proto.Message.MusicMessage.Lyrics
-				static encode(m: proto.Message.MusicMessage.Lyrics.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.MusicMessage.Lyrics & proto.Message.MusicMessage.Lyrics.$Shape
+				static encode(m: proto.Message.MusicMessage.Lyrics.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.MusicMessage.Lyrics & proto.Message.MusicMessage.Lyrics.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.MusicMessage.Lyrics
-				static toObject(m: proto.Message.MusicMessage.Lyrics, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.MusicMessage.Lyrics, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace Lyrics {
@@ -11426,10 +11426,10 @@ export namespace proto {
 					wordOffsets: proto.Message.MusicMessage.Lyrics.Line.WordOffset.$Properties[]
 					static create(properties: proto.Message.MusicMessage.Lyrics.Line.$Shape): proto.Message.MusicMessage.Lyrics.Line & proto.Message.MusicMessage.Lyrics.Line.$Shape
 					static create(properties?: proto.Message.MusicMessage.Lyrics.Line.$Properties): proto.Message.MusicMessage.Lyrics.Line
-					static encode(m: proto.Message.MusicMessage.Lyrics.Line.$Properties, w?: PbWriter): PbWriter
-					static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.MusicMessage.Lyrics.Line & proto.Message.MusicMessage.Lyrics.Line.$Shape
+					static encode(m: proto.Message.MusicMessage.Lyrics.Line.$Properties, w?: PBWriter): PBWriter
+					static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.MusicMessage.Lyrics.Line & proto.Message.MusicMessage.Lyrics.Line.$Shape
 					static fromObject(d: { [k: string]: any }): proto.Message.MusicMessage.Lyrics.Line
-					static toObject(m: proto.Message.MusicMessage.Lyrics.Line, o?: PbConversionOptions): { [k: string]: any }
+					static toObject(m: proto.Message.MusicMessage.Lyrics.Line, o?: PBConversionOptions): { [k: string]: any }
 					toJSON(): { [k: string]: any }
 				}
 				namespace Line {
@@ -11452,10 +11452,10 @@ export namespace proto {
 						endOffsetMs?: (number|Long|null)
 						static create(properties: proto.Message.MusicMessage.Lyrics.Line.WordOffset.$Shape): proto.Message.MusicMessage.Lyrics.Line.WordOffset & proto.Message.MusicMessage.Lyrics.Line.WordOffset.$Shape
 						static create(properties?: proto.Message.MusicMessage.Lyrics.Line.WordOffset.$Properties): proto.Message.MusicMessage.Lyrics.Line.WordOffset
-						static encode(m: proto.Message.MusicMessage.Lyrics.Line.WordOffset.$Properties, w?: PbWriter): PbWriter
-						static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.MusicMessage.Lyrics.Line.WordOffset & proto.Message.MusicMessage.Lyrics.Line.WordOffset.$Shape
+						static encode(m: proto.Message.MusicMessage.Lyrics.Line.WordOffset.$Properties, w?: PBWriter): PBWriter
+						static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.MusicMessage.Lyrics.Line.WordOffset & proto.Message.MusicMessage.Lyrics.Line.WordOffset.$Shape
 						static fromObject(d: { [k: string]: any }): proto.Message.MusicMessage.Lyrics.Line.WordOffset
-						static toObject(m: proto.Message.MusicMessage.Lyrics.Line.WordOffset, o?: PbConversionOptions): { [k: string]: any }
+						static toObject(m: proto.Message.MusicMessage.Lyrics.Line.WordOffset, o?: PBConversionOptions): { [k: string]: any }
 						toJSON(): { [k: string]: any }
 					}
 					namespace WordOffset {
@@ -11490,10 +11490,10 @@ export namespace proto {
 			contextInfo?: (proto.ContextInfo.$Properties|null)
 			static create(properties: proto.Message.NewsletterAdminInviteMessage.$Shape): proto.Message.NewsletterAdminInviteMessage & proto.Message.NewsletterAdminInviteMessage.$Shape
 			static create(properties?: proto.Message.NewsletterAdminInviteMessage.$Properties): proto.Message.NewsletterAdminInviteMessage
-			static encode(m: proto.Message.NewsletterAdminInviteMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.NewsletterAdminInviteMessage & proto.Message.NewsletterAdminInviteMessage.$Shape
+			static encode(m: proto.Message.NewsletterAdminInviteMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.NewsletterAdminInviteMessage & proto.Message.NewsletterAdminInviteMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.NewsletterAdminInviteMessage
-			static toObject(m: proto.Message.NewsletterAdminInviteMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.NewsletterAdminInviteMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace NewsletterAdminInviteMessage {
@@ -11528,10 +11528,10 @@ export namespace proto {
 			contextInfo?: (proto.ContextInfo.$Properties|null)
 			static create(properties: proto.Message.NewsletterFollowerInviteMessage.$Shape): proto.Message.NewsletterFollowerInviteMessage & proto.Message.NewsletterFollowerInviteMessage.$Shape
 			static create(properties?: proto.Message.NewsletterFollowerInviteMessage.$Properties): proto.Message.NewsletterFollowerInviteMessage
-			static encode(m: proto.Message.NewsletterFollowerInviteMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.NewsletterFollowerInviteMessage & proto.Message.NewsletterFollowerInviteMessage.$Shape
+			static encode(m: proto.Message.NewsletterFollowerInviteMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.NewsletterFollowerInviteMessage & proto.Message.NewsletterFollowerInviteMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.NewsletterFollowerInviteMessage
-			static toObject(m: proto.Message.NewsletterFollowerInviteMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.NewsletterFollowerInviteMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace NewsletterFollowerInviteMessage {
@@ -11574,10 +11574,10 @@ export namespace proto {
 			catalogType?: (string|null)
 			static create(properties: proto.Message.OrderMessage.$Shape): proto.Message.OrderMessage & proto.Message.OrderMessage.$Shape
 			static create(properties?: proto.Message.OrderMessage.$Properties): proto.Message.OrderMessage
-			static encode(m: proto.Message.OrderMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.OrderMessage & proto.Message.OrderMessage.$Shape
+			static encode(m: proto.Message.OrderMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.OrderMessage & proto.Message.OrderMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.OrderMessage
-			static toObject(m: proto.Message.OrderMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.OrderMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace OrderMessage {
@@ -11636,10 +11636,10 @@ export namespace proto {
 			messageParamsJson?: (string|null)
 			static create(properties: proto.Message.PaymentExtendedMetadata.$Shape): proto.Message.PaymentExtendedMetadata & proto.Message.PaymentExtendedMetadata.$Shape
 			static create(properties?: proto.Message.PaymentExtendedMetadata.$Properties): proto.Message.PaymentExtendedMetadata
-			static encode(m: proto.Message.PaymentExtendedMetadata.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PaymentExtendedMetadata & proto.Message.PaymentExtendedMetadata.$Shape
+			static encode(m: proto.Message.PaymentExtendedMetadata.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PaymentExtendedMetadata & proto.Message.PaymentExtendedMetadata.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.PaymentExtendedMetadata
-			static toObject(m: proto.Message.PaymentExtendedMetadata, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.PaymentExtendedMetadata, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PaymentExtendedMetadata {
@@ -11663,10 +11663,10 @@ export namespace proto {
 			inviteType?: (proto.Message.PaymentInviteMessage.InviteType|null)
 			static create(properties: proto.Message.PaymentInviteMessage.$Shape): proto.Message.PaymentInviteMessage & proto.Message.PaymentInviteMessage.$Shape
 			static create(properties?: proto.Message.PaymentInviteMessage.$Properties): proto.Message.PaymentInviteMessage
-			static encode(m: proto.Message.PaymentInviteMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PaymentInviteMessage & proto.Message.PaymentInviteMessage.$Shape
+			static encode(m: proto.Message.PaymentInviteMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PaymentInviteMessage & proto.Message.PaymentInviteMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.PaymentInviteMessage
-			static toObject(m: proto.Message.PaymentInviteMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.PaymentInviteMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PaymentInviteMessage {
@@ -11701,10 +11701,10 @@ export namespace proto {
 			provider?: (proto.Message.PaymentLinkMetadata.PaymentLinkProvider.$Properties|null)
 			static create(properties: proto.Message.PaymentLinkMetadata.$Shape): proto.Message.PaymentLinkMetadata & proto.Message.PaymentLinkMetadata.$Shape
 			static create(properties?: proto.Message.PaymentLinkMetadata.$Properties): proto.Message.PaymentLinkMetadata
-			static encode(m: proto.Message.PaymentLinkMetadata.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PaymentLinkMetadata & proto.Message.PaymentLinkMetadata.$Shape
+			static encode(m: proto.Message.PaymentLinkMetadata.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PaymentLinkMetadata & proto.Message.PaymentLinkMetadata.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.PaymentLinkMetadata
-			static toObject(m: proto.Message.PaymentLinkMetadata, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.PaymentLinkMetadata, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PaymentLinkMetadata {
@@ -11723,10 +11723,10 @@ export namespace proto {
 				displayText?: (string|null)
 				static create(properties: proto.Message.PaymentLinkMetadata.PaymentLinkButton.$Shape): proto.Message.PaymentLinkMetadata.PaymentLinkButton & proto.Message.PaymentLinkMetadata.PaymentLinkButton.$Shape
 				static create(properties?: proto.Message.PaymentLinkMetadata.PaymentLinkButton.$Properties): proto.Message.PaymentLinkMetadata.PaymentLinkButton
-				static encode(m: proto.Message.PaymentLinkMetadata.PaymentLinkButton.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PaymentLinkMetadata.PaymentLinkButton & proto.Message.PaymentLinkMetadata.PaymentLinkButton.$Shape
+				static encode(m: proto.Message.PaymentLinkMetadata.PaymentLinkButton.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PaymentLinkMetadata.PaymentLinkButton & proto.Message.PaymentLinkMetadata.PaymentLinkButton.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.PaymentLinkMetadata.PaymentLinkButton
-				static toObject(m: proto.Message.PaymentLinkMetadata.PaymentLinkButton, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.PaymentLinkMetadata.PaymentLinkButton, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace PaymentLinkButton {
@@ -11744,10 +11744,10 @@ export namespace proto {
 				headerType?: (proto.Message.PaymentLinkMetadata.PaymentLinkHeader.PaymentLinkHeaderType|null)
 				static create(properties: proto.Message.PaymentLinkMetadata.PaymentLinkHeader.$Shape): proto.Message.PaymentLinkMetadata.PaymentLinkHeader & proto.Message.PaymentLinkMetadata.PaymentLinkHeader.$Shape
 				static create(properties?: proto.Message.PaymentLinkMetadata.PaymentLinkHeader.$Properties): proto.Message.PaymentLinkMetadata.PaymentLinkHeader
-				static encode(m: proto.Message.PaymentLinkMetadata.PaymentLinkHeader.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PaymentLinkMetadata.PaymentLinkHeader & proto.Message.PaymentLinkMetadata.PaymentLinkHeader.$Shape
+				static encode(m: proto.Message.PaymentLinkMetadata.PaymentLinkHeader.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PaymentLinkMetadata.PaymentLinkHeader & proto.Message.PaymentLinkMetadata.PaymentLinkHeader.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.PaymentLinkMetadata.PaymentLinkHeader
-				static toObject(m: proto.Message.PaymentLinkMetadata.PaymentLinkHeader, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.PaymentLinkMetadata.PaymentLinkHeader, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace PaymentLinkHeader {
@@ -11769,10 +11769,10 @@ export namespace proto {
 				paramsJson?: (string|null)
 				static create(properties: proto.Message.PaymentLinkMetadata.PaymentLinkProvider.$Shape): proto.Message.PaymentLinkMetadata.PaymentLinkProvider & proto.Message.PaymentLinkMetadata.PaymentLinkProvider.$Shape
 				static create(properties?: proto.Message.PaymentLinkMetadata.PaymentLinkProvider.$Properties): proto.Message.PaymentLinkMetadata.PaymentLinkProvider
-				static encode(m: proto.Message.PaymentLinkMetadata.PaymentLinkProvider.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PaymentLinkMetadata.PaymentLinkProvider & proto.Message.PaymentLinkMetadata.PaymentLinkProvider.$Shape
+				static encode(m: proto.Message.PaymentLinkMetadata.PaymentLinkProvider.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PaymentLinkMetadata.PaymentLinkProvider & proto.Message.PaymentLinkMetadata.PaymentLinkProvider.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.PaymentLinkMetadata.PaymentLinkProvider
-				static toObject(m: proto.Message.PaymentLinkMetadata.PaymentLinkProvider, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.PaymentLinkMetadata.PaymentLinkProvider, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace PaymentLinkProvider {
@@ -11799,10 +11799,10 @@ export namespace proto {
 			amount?: (proto.Money.$Properties|null)
 			static create(properties: proto.Message.PaymentReminderMessage.$Shape): proto.Message.PaymentReminderMessage & proto.Message.PaymentReminderMessage.$Shape
 			static create(properties?: proto.Message.PaymentReminderMessage.$Properties): proto.Message.PaymentReminderMessage
-			static encode(m: proto.Message.PaymentReminderMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PaymentReminderMessage & proto.Message.PaymentReminderMessage.$Shape
+			static encode(m: proto.Message.PaymentReminderMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PaymentReminderMessage & proto.Message.PaymentReminderMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.PaymentReminderMessage
-			static toObject(m: proto.Message.PaymentReminderMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.PaymentReminderMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PaymentReminderMessage {
@@ -11855,10 +11855,10 @@ export namespace proto {
 			recentConversationsOnDemandRequest?: (proto.Message.PeerDataOperationRequestMessage.RecentConversationsOnDemandRequest.$Properties|null)
 			static create(properties: proto.Message.PeerDataOperationRequestMessage.$Shape): proto.Message.PeerDataOperationRequestMessage & proto.Message.PeerDataOperationRequestMessage.$Shape
 			static create(properties?: proto.Message.PeerDataOperationRequestMessage.$Properties): proto.Message.PeerDataOperationRequestMessage
-			static encode(m: proto.Message.PeerDataOperationRequestMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestMessage & proto.Message.PeerDataOperationRequestMessage.$Shape
+			static encode(m: proto.Message.PeerDataOperationRequestMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestMessage & proto.Message.PeerDataOperationRequestMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.PeerDataOperationRequestMessage
-			static toObject(m: proto.Message.PeerDataOperationRequestMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.PeerDataOperationRequestMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PeerDataOperationRequestMessage {
@@ -11887,10 +11887,10 @@ export namespace proto {
 				campaignId?: (string|null)
 				static create(properties: proto.Message.PeerDataOperationRequestMessage.BizBroadcastInsightsContactListRequest.$Shape): proto.Message.PeerDataOperationRequestMessage.BizBroadcastInsightsContactListRequest & proto.Message.PeerDataOperationRequestMessage.BizBroadcastInsightsContactListRequest.$Shape
 				static create(properties?: proto.Message.PeerDataOperationRequestMessage.BizBroadcastInsightsContactListRequest.$Properties): proto.Message.PeerDataOperationRequestMessage.BizBroadcastInsightsContactListRequest
-				static encode(m: proto.Message.PeerDataOperationRequestMessage.BizBroadcastInsightsContactListRequest.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestMessage.BizBroadcastInsightsContactListRequest & proto.Message.PeerDataOperationRequestMessage.BizBroadcastInsightsContactListRequest.$Shape
+				static encode(m: proto.Message.PeerDataOperationRequestMessage.BizBroadcastInsightsContactListRequest.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestMessage.BizBroadcastInsightsContactListRequest & proto.Message.PeerDataOperationRequestMessage.BizBroadcastInsightsContactListRequest.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.PeerDataOperationRequestMessage.BizBroadcastInsightsContactListRequest
-				static toObject(m: proto.Message.PeerDataOperationRequestMessage.BizBroadcastInsightsContactListRequest, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.PeerDataOperationRequestMessage.BizBroadcastInsightsContactListRequest, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace BizBroadcastInsightsContactListRequest {
@@ -11908,10 +11908,10 @@ export namespace proto {
 				campaignId?: (string|null)
 				static create(properties: proto.Message.PeerDataOperationRequestMessage.BizBroadcastInsightsRefreshRequest.$Shape): proto.Message.PeerDataOperationRequestMessage.BizBroadcastInsightsRefreshRequest & proto.Message.PeerDataOperationRequestMessage.BizBroadcastInsightsRefreshRequest.$Shape
 				static create(properties?: proto.Message.PeerDataOperationRequestMessage.BizBroadcastInsightsRefreshRequest.$Properties): proto.Message.PeerDataOperationRequestMessage.BizBroadcastInsightsRefreshRequest
-				static encode(m: proto.Message.PeerDataOperationRequestMessage.BizBroadcastInsightsRefreshRequest.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestMessage.BizBroadcastInsightsRefreshRequest & proto.Message.PeerDataOperationRequestMessage.BizBroadcastInsightsRefreshRequest.$Shape
+				static encode(m: proto.Message.PeerDataOperationRequestMessage.BizBroadcastInsightsRefreshRequest.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestMessage.BizBroadcastInsightsRefreshRequest & proto.Message.PeerDataOperationRequestMessage.BizBroadcastInsightsRefreshRequest.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.PeerDataOperationRequestMessage.BizBroadcastInsightsRefreshRequest
-				static toObject(m: proto.Message.PeerDataOperationRequestMessage.BizBroadcastInsightsRefreshRequest, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.PeerDataOperationRequestMessage.BizBroadcastInsightsRefreshRequest, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace BizBroadcastInsightsRefreshRequest {
@@ -11929,10 +11929,10 @@ export namespace proto {
 				registrationTraceId?: (string|null)
 				static create(properties: proto.Message.PeerDataOperationRequestMessage.CompanionCanonicalUserNonceFetchRequest.$Shape): proto.Message.PeerDataOperationRequestMessage.CompanionCanonicalUserNonceFetchRequest & proto.Message.PeerDataOperationRequestMessage.CompanionCanonicalUserNonceFetchRequest.$Shape
 				static create(properties?: proto.Message.PeerDataOperationRequestMessage.CompanionCanonicalUserNonceFetchRequest.$Properties): proto.Message.PeerDataOperationRequestMessage.CompanionCanonicalUserNonceFetchRequest
-				static encode(m: proto.Message.PeerDataOperationRequestMessage.CompanionCanonicalUserNonceFetchRequest.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestMessage.CompanionCanonicalUserNonceFetchRequest & proto.Message.PeerDataOperationRequestMessage.CompanionCanonicalUserNonceFetchRequest.$Shape
+				static encode(m: proto.Message.PeerDataOperationRequestMessage.CompanionCanonicalUserNonceFetchRequest.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestMessage.CompanionCanonicalUserNonceFetchRequest & proto.Message.PeerDataOperationRequestMessage.CompanionCanonicalUserNonceFetchRequest.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.PeerDataOperationRequestMessage.CompanionCanonicalUserNonceFetchRequest
-				static toObject(m: proto.Message.PeerDataOperationRequestMessage.CompanionCanonicalUserNonceFetchRequest, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.PeerDataOperationRequestMessage.CompanionCanonicalUserNonceFetchRequest, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace CompanionCanonicalUserNonceFetchRequest {
@@ -11952,10 +11952,10 @@ export namespace proto {
 				fullHistorySyncOnDemandConfig?: (proto.Message.FullHistorySyncOnDemandConfig.$Properties|null)
 				static create(properties: proto.Message.PeerDataOperationRequestMessage.FullHistorySyncOnDemandRequest.$Shape): proto.Message.PeerDataOperationRequestMessage.FullHistorySyncOnDemandRequest & proto.Message.PeerDataOperationRequestMessage.FullHistorySyncOnDemandRequest.$Shape
 				static create(properties?: proto.Message.PeerDataOperationRequestMessage.FullHistorySyncOnDemandRequest.$Properties): proto.Message.PeerDataOperationRequestMessage.FullHistorySyncOnDemandRequest
-				static encode(m: proto.Message.PeerDataOperationRequestMessage.FullHistorySyncOnDemandRequest.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestMessage.FullHistorySyncOnDemandRequest & proto.Message.PeerDataOperationRequestMessage.FullHistorySyncOnDemandRequest.$Shape
+				static encode(m: proto.Message.PeerDataOperationRequestMessage.FullHistorySyncOnDemandRequest.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestMessage.FullHistorySyncOnDemandRequest & proto.Message.PeerDataOperationRequestMessage.FullHistorySyncOnDemandRequest.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.PeerDataOperationRequestMessage.FullHistorySyncOnDemandRequest
-				static toObject(m: proto.Message.PeerDataOperationRequestMessage.FullHistorySyncOnDemandRequest, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.PeerDataOperationRequestMessage.FullHistorySyncOnDemandRequest, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace FullHistorySyncOnDemandRequest {
@@ -11979,10 +11979,10 @@ export namespace proto {
 				agmId?: (string|null)
 				static create(properties: proto.Message.PeerDataOperationRequestMessage.GalaxyFlowAction.$Shape): proto.Message.PeerDataOperationRequestMessage.GalaxyFlowAction & proto.Message.PeerDataOperationRequestMessage.GalaxyFlowAction.$Shape
 				static create(properties?: proto.Message.PeerDataOperationRequestMessage.GalaxyFlowAction.$Properties): proto.Message.PeerDataOperationRequestMessage.GalaxyFlowAction
-				static encode(m: proto.Message.PeerDataOperationRequestMessage.GalaxyFlowAction.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestMessage.GalaxyFlowAction & proto.Message.PeerDataOperationRequestMessage.GalaxyFlowAction.$Shape
+				static encode(m: proto.Message.PeerDataOperationRequestMessage.GalaxyFlowAction.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestMessage.GalaxyFlowAction & proto.Message.PeerDataOperationRequestMessage.GalaxyFlowAction.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.PeerDataOperationRequestMessage.GalaxyFlowAction
-				static toObject(m: proto.Message.PeerDataOperationRequestMessage.GalaxyFlowAction, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.PeerDataOperationRequestMessage.GalaxyFlowAction, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace GalaxyFlowAction {
@@ -12011,10 +12011,10 @@ export namespace proto {
 				regenerateChunk?: (boolean|null)
 				static create(properties: proto.Message.PeerDataOperationRequestMessage.HistorySyncChunkRetryRequest.$Shape): proto.Message.PeerDataOperationRequestMessage.HistorySyncChunkRetryRequest & proto.Message.PeerDataOperationRequestMessage.HistorySyncChunkRetryRequest.$Shape
 				static create(properties?: proto.Message.PeerDataOperationRequestMessage.HistorySyncChunkRetryRequest.$Properties): proto.Message.PeerDataOperationRequestMessage.HistorySyncChunkRetryRequest
-				static encode(m: proto.Message.PeerDataOperationRequestMessage.HistorySyncChunkRetryRequest.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestMessage.HistorySyncChunkRetryRequest & proto.Message.PeerDataOperationRequestMessage.HistorySyncChunkRetryRequest.$Shape
+				static encode(m: proto.Message.PeerDataOperationRequestMessage.HistorySyncChunkRetryRequest.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestMessage.HistorySyncChunkRetryRequest & proto.Message.PeerDataOperationRequestMessage.HistorySyncChunkRetryRequest.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.PeerDataOperationRequestMessage.HistorySyncChunkRetryRequest
-				static toObject(m: proto.Message.PeerDataOperationRequestMessage.HistorySyncChunkRetryRequest, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.PeerDataOperationRequestMessage.HistorySyncChunkRetryRequest, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace HistorySyncChunkRetryRequest {
@@ -12042,10 +12042,10 @@ export namespace proto {
 				mode?: (proto.Message.PeerDataOperationRequestMessage.HistorySyncOnDemandRequest.Mode|null)
 				static create(properties: proto.Message.PeerDataOperationRequestMessage.HistorySyncOnDemandRequest.$Shape): proto.Message.PeerDataOperationRequestMessage.HistorySyncOnDemandRequest & proto.Message.PeerDataOperationRequestMessage.HistorySyncOnDemandRequest.$Shape
 				static create(properties?: proto.Message.PeerDataOperationRequestMessage.HistorySyncOnDemandRequest.$Properties): proto.Message.PeerDataOperationRequestMessage.HistorySyncOnDemandRequest
-				static encode(m: proto.Message.PeerDataOperationRequestMessage.HistorySyncOnDemandRequest.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestMessage.HistorySyncOnDemandRequest & proto.Message.PeerDataOperationRequestMessage.HistorySyncOnDemandRequest.$Shape
+				static encode(m: proto.Message.PeerDataOperationRequestMessage.HistorySyncOnDemandRequest.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestMessage.HistorySyncOnDemandRequest & proto.Message.PeerDataOperationRequestMessage.HistorySyncOnDemandRequest.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.PeerDataOperationRequestMessage.HistorySyncOnDemandRequest
-				static toObject(m: proto.Message.PeerDataOperationRequestMessage.HistorySyncOnDemandRequest, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.PeerDataOperationRequestMessage.HistorySyncOnDemandRequest, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace HistorySyncOnDemandRequest {
@@ -12074,10 +12074,10 @@ export namespace proto {
 				messageKey?: (proto.MessageKey.$Properties|null)
 				static create(properties: proto.Message.PeerDataOperationRequestMessage.PlaceholderMessageResendRequest.$Shape): proto.Message.PeerDataOperationRequestMessage.PlaceholderMessageResendRequest & proto.Message.PeerDataOperationRequestMessage.PlaceholderMessageResendRequest.$Shape
 				static create(properties?: proto.Message.PeerDataOperationRequestMessage.PlaceholderMessageResendRequest.$Properties): proto.Message.PeerDataOperationRequestMessage.PlaceholderMessageResendRequest
-				static encode(m: proto.Message.PeerDataOperationRequestMessage.PlaceholderMessageResendRequest.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestMessage.PlaceholderMessageResendRequest & proto.Message.PeerDataOperationRequestMessage.PlaceholderMessageResendRequest.$Shape
+				static encode(m: proto.Message.PeerDataOperationRequestMessage.PlaceholderMessageResendRequest.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestMessage.PlaceholderMessageResendRequest & proto.Message.PeerDataOperationRequestMessage.PlaceholderMessageResendRequest.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.PeerDataOperationRequestMessage.PlaceholderMessageResendRequest
-				static toObject(m: proto.Message.PeerDataOperationRequestMessage.PlaceholderMessageResendRequest, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.PeerDataOperationRequestMessage.PlaceholderMessageResendRequest, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace PlaceholderMessageResendRequest {
@@ -12096,10 +12096,10 @@ export namespace proto {
 				messagesPerConversation?: (number|null)
 				static create(properties: proto.Message.PeerDataOperationRequestMessage.RecentConversationsOnDemandRequest.$Shape): proto.Message.PeerDataOperationRequestMessage.RecentConversationsOnDemandRequest & proto.Message.PeerDataOperationRequestMessage.RecentConversationsOnDemandRequest.$Shape
 				static create(properties?: proto.Message.PeerDataOperationRequestMessage.RecentConversationsOnDemandRequest.$Properties): proto.Message.PeerDataOperationRequestMessage.RecentConversationsOnDemandRequest
-				static encode(m: proto.Message.PeerDataOperationRequestMessage.RecentConversationsOnDemandRequest.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestMessage.RecentConversationsOnDemandRequest & proto.Message.PeerDataOperationRequestMessage.RecentConversationsOnDemandRequest.$Shape
+				static encode(m: proto.Message.PeerDataOperationRequestMessage.RecentConversationsOnDemandRequest.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestMessage.RecentConversationsOnDemandRequest & proto.Message.PeerDataOperationRequestMessage.RecentConversationsOnDemandRequest.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.PeerDataOperationRequestMessage.RecentConversationsOnDemandRequest
-				static toObject(m: proto.Message.PeerDataOperationRequestMessage.RecentConversationsOnDemandRequest, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.PeerDataOperationRequestMessage.RecentConversationsOnDemandRequest, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace RecentConversationsOnDemandRequest {
@@ -12118,10 +12118,10 @@ export namespace proto {
 				fileSha256?: (string|null)
 				static create(properties: proto.Message.PeerDataOperationRequestMessage.RequestStickerReupload.$Shape): proto.Message.PeerDataOperationRequestMessage.RequestStickerReupload & proto.Message.PeerDataOperationRequestMessage.RequestStickerReupload.$Shape
 				static create(properties?: proto.Message.PeerDataOperationRequestMessage.RequestStickerReupload.$Properties): proto.Message.PeerDataOperationRequestMessage.RequestStickerReupload
-				static encode(m: proto.Message.PeerDataOperationRequestMessage.RequestStickerReupload.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestMessage.RequestStickerReupload & proto.Message.PeerDataOperationRequestMessage.RequestStickerReupload.$Shape
+				static encode(m: proto.Message.PeerDataOperationRequestMessage.RequestStickerReupload.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestMessage.RequestStickerReupload & proto.Message.PeerDataOperationRequestMessage.RequestStickerReupload.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.PeerDataOperationRequestMessage.RequestStickerReupload
-				static toObject(m: proto.Message.PeerDataOperationRequestMessage.RequestStickerReupload, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.PeerDataOperationRequestMessage.RequestStickerReupload, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace RequestStickerReupload {
@@ -12140,10 +12140,10 @@ export namespace proto {
 				includeHqThumbnail?: (boolean|null)
 				static create(properties: proto.Message.PeerDataOperationRequestMessage.RequestUrlPreview.$Shape): proto.Message.PeerDataOperationRequestMessage.RequestUrlPreview & proto.Message.PeerDataOperationRequestMessage.RequestUrlPreview.$Shape
 				static create(properties?: proto.Message.PeerDataOperationRequestMessage.RequestUrlPreview.$Properties): proto.Message.PeerDataOperationRequestMessage.RequestUrlPreview
-				static encode(m: proto.Message.PeerDataOperationRequestMessage.RequestUrlPreview.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestMessage.RequestUrlPreview & proto.Message.PeerDataOperationRequestMessage.RequestUrlPreview.$Shape
+				static encode(m: proto.Message.PeerDataOperationRequestMessage.RequestUrlPreview.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestMessage.RequestUrlPreview & proto.Message.PeerDataOperationRequestMessage.RequestUrlPreview.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.PeerDataOperationRequestMessage.RequestUrlPreview
-				static toObject(m: proto.Message.PeerDataOperationRequestMessage.RequestUrlPreview, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.PeerDataOperationRequestMessage.RequestUrlPreview, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace RequestUrlPreview {
@@ -12163,10 +12163,10 @@ export namespace proto {
 				timestamp?: (number|Long|null)
 				static create(properties: proto.Message.PeerDataOperationRequestMessage.SyncDCollectionFatalRecoveryRequest.$Shape): proto.Message.PeerDataOperationRequestMessage.SyncDCollectionFatalRecoveryRequest & proto.Message.PeerDataOperationRequestMessage.SyncDCollectionFatalRecoveryRequest.$Shape
 				static create(properties?: proto.Message.PeerDataOperationRequestMessage.SyncDCollectionFatalRecoveryRequest.$Properties): proto.Message.PeerDataOperationRequestMessage.SyncDCollectionFatalRecoveryRequest
-				static encode(m: proto.Message.PeerDataOperationRequestMessage.SyncDCollectionFatalRecoveryRequest.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestMessage.SyncDCollectionFatalRecoveryRequest & proto.Message.PeerDataOperationRequestMessage.SyncDCollectionFatalRecoveryRequest.$Shape
+				static encode(m: proto.Message.PeerDataOperationRequestMessage.SyncDCollectionFatalRecoveryRequest.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestMessage.SyncDCollectionFatalRecoveryRequest & proto.Message.PeerDataOperationRequestMessage.SyncDCollectionFatalRecoveryRequest.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.PeerDataOperationRequestMessage.SyncDCollectionFatalRecoveryRequest
-				static toObject(m: proto.Message.PeerDataOperationRequestMessage.SyncDCollectionFatalRecoveryRequest, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.PeerDataOperationRequestMessage.SyncDCollectionFatalRecoveryRequest, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace SyncDCollectionFatalRecoveryRequest {
@@ -12188,10 +12188,10 @@ export namespace proto {
 			peerDataOperationResult: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.$Properties[]
 			static create(properties: proto.Message.PeerDataOperationRequestResponseMessage.$Shape): proto.Message.PeerDataOperationRequestResponseMessage & proto.Message.PeerDataOperationRequestResponseMessage.$Shape
 			static create(properties?: proto.Message.PeerDataOperationRequestResponseMessage.$Properties): proto.Message.PeerDataOperationRequestResponseMessage
-			static encode(m: proto.Message.PeerDataOperationRequestResponseMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestResponseMessage & proto.Message.PeerDataOperationRequestResponseMessage.$Shape
+			static encode(m: proto.Message.PeerDataOperationRequestResponseMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestResponseMessage & proto.Message.PeerDataOperationRequestResponseMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.PeerDataOperationRequestResponseMessage
-			static toObject(m: proto.Message.PeerDataOperationRequestResponseMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.PeerDataOperationRequestResponseMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PeerDataOperationRequestResponseMessage {
@@ -12227,10 +12227,10 @@ export namespace proto {
 				contactRefreshResponse?: (proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.ContactRefreshResponse.$Properties|null)
 				static create(properties: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.$Shape): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.$Shape
 				static create(properties?: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.$Properties): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult
-				static encode(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.$Shape
+				static encode(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult
-				static toObject(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace PeerDataOperationResult {
@@ -12276,10 +12276,10 @@ export namespace proto {
 					contacts: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.BizBroadcastInsightsContactState.$Properties[]
 					static create(properties: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.BizBroadcastInsightsContactListResponse.$Shape): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.BizBroadcastInsightsContactListResponse & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.BizBroadcastInsightsContactListResponse.$Shape
 					static create(properties?: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.BizBroadcastInsightsContactListResponse.$Properties): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.BizBroadcastInsightsContactListResponse
-					static encode(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.BizBroadcastInsightsContactListResponse.$Properties, w?: PbWriter): PbWriter
-					static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.BizBroadcastInsightsContactListResponse & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.BizBroadcastInsightsContactListResponse.$Shape
+					static encode(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.BizBroadcastInsightsContactListResponse.$Properties, w?: PBWriter): PBWriter
+					static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.BizBroadcastInsightsContactListResponse & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.BizBroadcastInsightsContactListResponse.$Shape
 					static fromObject(d: { [k: string]: any }): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.BizBroadcastInsightsContactListResponse
-					static toObject(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.BizBroadcastInsightsContactListResponse, o?: PbConversionOptions): { [k: string]: any }
+					static toObject(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.BizBroadcastInsightsContactListResponse, o?: PBConversionOptions): { [k: string]: any }
 					toJSON(): { [k: string]: any }
 				}
 				namespace BizBroadcastInsightsContactListResponse {
@@ -12300,10 +12300,10 @@ export namespace proto {
 					state?: (proto.Message.InsightDeliveryState|null)
 					static create(properties: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.BizBroadcastInsightsContactState.$Shape): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.BizBroadcastInsightsContactState & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.BizBroadcastInsightsContactState.$Shape
 					static create(properties?: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.BizBroadcastInsightsContactState.$Properties): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.BizBroadcastInsightsContactState
-					static encode(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.BizBroadcastInsightsContactState.$Properties, w?: PbWriter): PbWriter
-					static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.BizBroadcastInsightsContactState & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.BizBroadcastInsightsContactState.$Shape
+					static encode(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.BizBroadcastInsightsContactState.$Properties, w?: PBWriter): PBWriter
+					static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.BizBroadcastInsightsContactState & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.BizBroadcastInsightsContactState.$Shape
 					static fromObject(d: { [k: string]: any }): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.BizBroadcastInsightsContactState
-					static toObject(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.BizBroadcastInsightsContactState, o?: PbConversionOptions): { [k: string]: any }
+					static toObject(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.BizBroadcastInsightsContactState, o?: PBConversionOptions): { [k: string]: any }
 					toJSON(): { [k: string]: any }
 				}
 				namespace BizBroadcastInsightsContactState {
@@ -12324,10 +12324,10 @@ export namespace proto {
 					forceRefresh?: (boolean|null)
 					static create(properties: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.CompanionCanonicalUserNonceFetchResponse.$Shape): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.CompanionCanonicalUserNonceFetchResponse & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.CompanionCanonicalUserNonceFetchResponse.$Shape
 					static create(properties?: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.CompanionCanonicalUserNonceFetchResponse.$Properties): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.CompanionCanonicalUserNonceFetchResponse
-					static encode(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.CompanionCanonicalUserNonceFetchResponse.$Properties, w?: PbWriter): PbWriter
-					static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.CompanionCanonicalUserNonceFetchResponse & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.CompanionCanonicalUserNonceFetchResponse.$Shape
+					static encode(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.CompanionCanonicalUserNonceFetchResponse.$Properties, w?: PBWriter): PBWriter
+					static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.CompanionCanonicalUserNonceFetchResponse & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.CompanionCanonicalUserNonceFetchResponse.$Shape
 					static fromObject(d: { [k: string]: any }): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.CompanionCanonicalUserNonceFetchResponse
-					static toObject(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.CompanionCanonicalUserNonceFetchResponse, o?: PbConversionOptions): { [k: string]: any }
+					static toObject(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.CompanionCanonicalUserNonceFetchResponse, o?: PBConversionOptions): { [k: string]: any }
 					toJSON(): { [k: string]: any }
 				}
 				namespace CompanionCanonicalUserNonceFetchResponse {
@@ -12347,10 +12347,10 @@ export namespace proto {
 					nonce?: (string|null)
 					static create(properties: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.CompanionMetaNonceFetchResponse.$Shape): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.CompanionMetaNonceFetchResponse & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.CompanionMetaNonceFetchResponse.$Shape
 					static create(properties?: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.CompanionMetaNonceFetchResponse.$Properties): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.CompanionMetaNonceFetchResponse
-					static encode(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.CompanionMetaNonceFetchResponse.$Properties, w?: PbWriter): PbWriter
-					static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.CompanionMetaNonceFetchResponse & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.CompanionMetaNonceFetchResponse.$Shape
+					static encode(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.CompanionMetaNonceFetchResponse.$Properties, w?: PBWriter): PBWriter
+					static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.CompanionMetaNonceFetchResponse & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.CompanionMetaNonceFetchResponse.$Shape
 					static fromObject(d: { [k: string]: any }): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.CompanionMetaNonceFetchResponse
-					static toObject(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.CompanionMetaNonceFetchResponse, o?: PbConversionOptions): { [k: string]: any }
+					static toObject(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.CompanionMetaNonceFetchResponse, o?: PBConversionOptions): { [k: string]: any }
 					toJSON(): { [k: string]: any }
 				}
 				namespace CompanionMetaNonceFetchResponse {
@@ -12371,10 +12371,10 @@ export namespace proto {
 					uniqueContactCount?: (number|null)
 					static create(properties: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.ContactRefreshResponse.$Shape): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.ContactRefreshResponse & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.ContactRefreshResponse.$Shape
 					static create(properties?: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.ContactRefreshResponse.$Properties): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.ContactRefreshResponse
-					static encode(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.ContactRefreshResponse.$Properties, w?: PbWriter): PbWriter
-					static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.ContactRefreshResponse & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.ContactRefreshResponse.$Shape
+					static encode(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.ContactRefreshResponse.$Properties, w?: PBWriter): PBWriter
+					static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.ContactRefreshResponse & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.ContactRefreshResponse.$Shape
 					static fromObject(d: { [k: string]: any }): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.ContactRefreshResponse
-					static toObject(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.ContactRefreshResponse, o?: PbConversionOptions): { [k: string]: any }
+					static toObject(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.ContactRefreshResponse, o?: PBConversionOptions): { [k: string]: any }
 					toJSON(): { [k: string]: any }
 				}
 				namespace ContactRefreshResponse {
@@ -12404,10 +12404,10 @@ export namespace proto {
 					fileLength?: (number|Long|null)
 					static create(properties: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FlowResponsesCsvBundle.$Shape): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FlowResponsesCsvBundle & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FlowResponsesCsvBundle.$Shape
 					static create(properties?: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FlowResponsesCsvBundle.$Properties): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FlowResponsesCsvBundle
-					static encode(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FlowResponsesCsvBundle.$Properties, w?: PbWriter): PbWriter
-					static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FlowResponsesCsvBundle & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FlowResponsesCsvBundle.$Shape
+					static encode(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FlowResponsesCsvBundle.$Properties, w?: PBWriter): PBWriter
+					static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FlowResponsesCsvBundle & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FlowResponsesCsvBundle.$Shape
 					static fromObject(d: { [k: string]: any }): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FlowResponsesCsvBundle
-					static toObject(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FlowResponsesCsvBundle, o?: PbConversionOptions): { [k: string]: any }
+					static toObject(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FlowResponsesCsvBundle, o?: PBConversionOptions): { [k: string]: any }
 					toJSON(): { [k: string]: any }
 				}
 				namespace FlowResponsesCsvBundle {
@@ -12435,10 +12435,10 @@ export namespace proto {
 					responseCode?: (proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FullHistorySyncOnDemandResponseCode|null)
 					static create(properties: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FullHistorySyncOnDemandRequestResponse.$Shape): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FullHistorySyncOnDemandRequestResponse & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FullHistorySyncOnDemandRequestResponse.$Shape
 					static create(properties?: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FullHistorySyncOnDemandRequestResponse.$Properties): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FullHistorySyncOnDemandRequestResponse
-					static encode(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FullHistorySyncOnDemandRequestResponse.$Properties, w?: PbWriter): PbWriter
-					static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FullHistorySyncOnDemandRequestResponse & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FullHistorySyncOnDemandRequestResponse.$Shape
+					static encode(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FullHistorySyncOnDemandRequestResponse.$Properties, w?: PBWriter): PBWriter
+					static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FullHistorySyncOnDemandRequestResponse & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FullHistorySyncOnDemandRequestResponse.$Shape
 					static fromObject(d: { [k: string]: any }): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FullHistorySyncOnDemandRequestResponse
-					static toObject(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FullHistorySyncOnDemandRequestResponse, o?: PbConversionOptions): { [k: string]: any }
+					static toObject(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.FullHistorySyncOnDemandRequestResponse, o?: PBConversionOptions): { [k: string]: any }
 					toJSON(): { [k: string]: any }
 				}
 				namespace FullHistorySyncOnDemandRequestResponse {
@@ -12471,10 +12471,10 @@ export namespace proto {
 					canRecover?: (boolean|null)
 					static create(properties: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.HistorySyncChunkRetryResponse.$Shape): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.HistorySyncChunkRetryResponse & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.HistorySyncChunkRetryResponse.$Shape
 					static create(properties?: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.HistorySyncChunkRetryResponse.$Properties): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.HistorySyncChunkRetryResponse
-					static encode(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.HistorySyncChunkRetryResponse.$Properties, w?: PbWriter): PbWriter
-					static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.HistorySyncChunkRetryResponse & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.HistorySyncChunkRetryResponse.$Shape
+					static encode(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.HistorySyncChunkRetryResponse.$Properties, w?: PBWriter): PBWriter
+					static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.HistorySyncChunkRetryResponse & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.HistorySyncChunkRetryResponse.$Shape
 					static fromObject(d: { [k: string]: any }): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.HistorySyncChunkRetryResponse
-					static toObject(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.HistorySyncChunkRetryResponse, o?: PbConversionOptions): { [k: string]: any }
+					static toObject(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.HistorySyncChunkRetryResponse, o?: PBConversionOptions): { [k: string]: any }
 					toJSON(): { [k: string]: any }
 				}
 				namespace HistorySyncChunkRetryResponse {
@@ -12511,10 +12511,10 @@ export namespace proto {
 					previewMetadata?: (proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.PaymentLinkPreviewMetadata.$Properties|null)
 					static create(properties: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.$Shape): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.$Shape
 					static create(properties?: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.$Properties): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse
-					static encode(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.$Properties, w?: PbWriter): PbWriter
-					static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.$Shape
+					static encode(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.$Properties, w?: PBWriter): PBWriter
+					static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.$Shape
 					static fromObject(d: { [k: string]: any }): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse
-					static toObject(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse, o?: PbConversionOptions): { [k: string]: any }
+					static toObject(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse, o?: PBConversionOptions): { [k: string]: any }
 					toJSON(): { [k: string]: any }
 				}
 				namespace LinkPreviewResponse {
@@ -12544,10 +12544,10 @@ export namespace proto {
 						thumbHeight?: (number|null)
 						static create(properties: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.LinkPreviewHighQualityThumbnail.$Shape): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.LinkPreviewHighQualityThumbnail & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.LinkPreviewHighQualityThumbnail.$Shape
 						static create(properties?: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.LinkPreviewHighQualityThumbnail.$Properties): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.LinkPreviewHighQualityThumbnail
-						static encode(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.LinkPreviewHighQualityThumbnail.$Properties, w?: PbWriter): PbWriter
-						static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.LinkPreviewHighQualityThumbnail & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.LinkPreviewHighQualityThumbnail.$Shape
+						static encode(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.LinkPreviewHighQualityThumbnail.$Properties, w?: PBWriter): PBWriter
+						static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.LinkPreviewHighQualityThumbnail & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.LinkPreviewHighQualityThumbnail.$Shape
 						static fromObject(d: { [k: string]: any }): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.LinkPreviewHighQualityThumbnail
-						static toObject(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.LinkPreviewHighQualityThumbnail, o?: PbConversionOptions): { [k: string]: any }
+						static toObject(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.LinkPreviewHighQualityThumbnail, o?: PBConversionOptions): { [k: string]: any }
 						toJSON(): { [k: string]: any }
 					}
 					namespace LinkPreviewHighQualityThumbnail {
@@ -12575,10 +12575,10 @@ export namespace proto {
 						currency?: (string|null)
 						static create(properties: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.PaymentLinkPreviewMetadata.$Shape): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.PaymentLinkPreviewMetadata & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.PaymentLinkPreviewMetadata.$Shape
 						static create(properties?: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.PaymentLinkPreviewMetadata.$Properties): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.PaymentLinkPreviewMetadata
-						static encode(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.PaymentLinkPreviewMetadata.$Properties, w?: PbWriter): PbWriter
-						static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.PaymentLinkPreviewMetadata & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.PaymentLinkPreviewMetadata.$Shape
+						static encode(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.PaymentLinkPreviewMetadata.$Properties, w?: PBWriter): PBWriter
+						static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.PaymentLinkPreviewMetadata & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.PaymentLinkPreviewMetadata.$Shape
 						static fromObject(d: { [k: string]: any }): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.PaymentLinkPreviewMetadata
-						static toObject(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.PaymentLinkPreviewMetadata, o?: PbConversionOptions): { [k: string]: any }
+						static toObject(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.LinkPreviewResponse.PaymentLinkPreviewMetadata, o?: PBConversionOptions): { [k: string]: any }
 						toJSON(): { [k: string]: any }
 					}
 					namespace PaymentLinkPreviewMetadata {
@@ -12601,10 +12601,10 @@ export namespace proto {
 					webMessageInfoBytes?: (Uint8Array|null)
 					static create(properties: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.PlaceholderMessageResendResponse.$Shape): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.PlaceholderMessageResendResponse & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.PlaceholderMessageResendResponse.$Shape
 					static create(properties?: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.PlaceholderMessageResendResponse.$Properties): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.PlaceholderMessageResendResponse
-					static encode(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.PlaceholderMessageResendResponse.$Properties, w?: PbWriter): PbWriter
-					static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.PlaceholderMessageResendResponse & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.PlaceholderMessageResendResponse.$Shape
+					static encode(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.PlaceholderMessageResendResponse.$Properties, w?: PBWriter): PBWriter
+					static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.PlaceholderMessageResendResponse & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.PlaceholderMessageResendResponse.$Shape
 					static fromObject(d: { [k: string]: any }): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.PlaceholderMessageResendResponse
-					static toObject(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.PlaceholderMessageResendResponse, o?: PbConversionOptions): { [k: string]: any }
+					static toObject(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.PlaceholderMessageResendResponse, o?: PBConversionOptions): { [k: string]: any }
 					toJSON(): { [k: string]: any }
 				}
 				namespace PlaceholderMessageResendResponse {
@@ -12623,10 +12623,10 @@ export namespace proto {
 					isCompressed?: (boolean|null)
 					static create(properties: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.SyncDSnapshotFatalRecoveryResponse.$Shape): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.SyncDSnapshotFatalRecoveryResponse & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.SyncDSnapshotFatalRecoveryResponse.$Shape
 					static create(properties?: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.SyncDSnapshotFatalRecoveryResponse.$Properties): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.SyncDSnapshotFatalRecoveryResponse
-					static encode(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.SyncDSnapshotFatalRecoveryResponse.$Properties, w?: PbWriter): PbWriter
-					static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.SyncDSnapshotFatalRecoveryResponse & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.SyncDSnapshotFatalRecoveryResponse.$Shape
+					static encode(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.SyncDSnapshotFatalRecoveryResponse.$Properties, w?: PBWriter): PBWriter
+					static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.SyncDSnapshotFatalRecoveryResponse & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.SyncDSnapshotFatalRecoveryResponse.$Shape
 					static fromObject(d: { [k: string]: any }): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.SyncDSnapshotFatalRecoveryResponse
-					static toObject(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.SyncDSnapshotFatalRecoveryResponse, o?: PbConversionOptions): { [k: string]: any }
+					static toObject(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.SyncDSnapshotFatalRecoveryResponse, o?: PBConversionOptions): { [k: string]: any }
 					toJSON(): { [k: string]: any }
 				}
 				namespace SyncDSnapshotFatalRecoveryResponse {
@@ -12646,10 +12646,10 @@ export namespace proto {
 					waEntFbid?: (string|null)
 					static create(properties: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.WaffleNonceFetchResponse.$Shape): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.WaffleNonceFetchResponse & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.WaffleNonceFetchResponse.$Shape
 					static create(properties?: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.WaffleNonceFetchResponse.$Properties): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.WaffleNonceFetchResponse
-					static encode(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.WaffleNonceFetchResponse.$Properties, w?: PbWriter): PbWriter
-					static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.WaffleNonceFetchResponse & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.WaffleNonceFetchResponse.$Shape
+					static encode(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.WaffleNonceFetchResponse.$Properties, w?: PBWriter): PBWriter
+					static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.WaffleNonceFetchResponse & proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.WaffleNonceFetchResponse.$Shape
 					static fromObject(d: { [k: string]: any }): proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.WaffleNonceFetchResponse
-					static toObject(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.WaffleNonceFetchResponse, o?: PbConversionOptions): { [k: string]: any }
+					static toObject(m: proto.Message.PeerDataOperationRequestResponseMessage.PeerDataOperationResult.WaffleNonceFetchResponse, o?: PBConversionOptions): { [k: string]: any }
 					toJSON(): { [k: string]: any }
 				}
 				namespace WaffleNonceFetchResponse {
@@ -12690,10 +12690,10 @@ export namespace proto {
 			senderTimestampMs?: (number|Long|null)
 			static create(properties: proto.Message.PinInChatMessage.$Shape): proto.Message.PinInChatMessage & proto.Message.PinInChatMessage.$Shape
 			static create(properties?: proto.Message.PinInChatMessage.$Properties): proto.Message.PinInChatMessage
-			static encode(m: proto.Message.PinInChatMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PinInChatMessage & proto.Message.PinInChatMessage.$Shape
+			static encode(m: proto.Message.PinInChatMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PinInChatMessage & proto.Message.PinInChatMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.PinInChatMessage
-			static toObject(m: proto.Message.PinInChatMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.PinInChatMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PinInChatMessage {
@@ -12718,10 +12718,10 @@ export namespace proto {
 			type?: (proto.Message.PlaceholderMessage.PlaceholderType|null)
 			static create(properties: proto.Message.PlaceholderMessage.$Shape): proto.Message.PlaceholderMessage & proto.Message.PlaceholderMessage.$Shape
 			static create(properties?: proto.Message.PlaceholderMessage.$Properties): proto.Message.PlaceholderMessage
-			static encode(m: proto.Message.PlaceholderMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PlaceholderMessage & proto.Message.PlaceholderMessage.$Shape
+			static encode(m: proto.Message.PlaceholderMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PlaceholderMessage & proto.Message.PlaceholderMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.PlaceholderMessage
-			static toObject(m: proto.Message.PlaceholderMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.PlaceholderMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PlaceholderMessage {
@@ -12744,10 +12744,10 @@ export namespace proto {
 			metadata?: (proto.Message.PollUpdateMessageMetadata.$Properties|null)
 			static create(properties: proto.Message.PollAddOptionMessage.$Shape): proto.Message.PollAddOptionMessage & proto.Message.PollAddOptionMessage.$Shape
 			static create(properties?: proto.Message.PollAddOptionMessage.$Properties): proto.Message.PollAddOptionMessage
-			static encode(m: proto.Message.PollAddOptionMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PollAddOptionMessage & proto.Message.PollAddOptionMessage.$Shape
+			static encode(m: proto.Message.PollAddOptionMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PollAddOptionMessage & proto.Message.PollAddOptionMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.PollAddOptionMessage
-			static toObject(m: proto.Message.PollAddOptionMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.PollAddOptionMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PollAddOptionMessage {
@@ -12782,10 +12782,10 @@ export namespace proto {
 			allowAddOption?: (boolean|null)
 			static create(properties: proto.Message.PollCreationMessage.$Shape): proto.Message.PollCreationMessage & proto.Message.PollCreationMessage.$Shape
 			static create(properties?: proto.Message.PollCreationMessage.$Properties): proto.Message.PollCreationMessage
-			static encode(m: proto.Message.PollCreationMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PollCreationMessage & proto.Message.PollCreationMessage.$Shape
+			static encode(m: proto.Message.PollCreationMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PollCreationMessage & proto.Message.PollCreationMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.PollCreationMessage
-			static toObject(m: proto.Message.PollCreationMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.PollCreationMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PollCreationMessage {
@@ -12826,10 +12826,10 @@ export namespace proto {
 				optionHash?: (string|null)
 				static create(properties: proto.Message.PollCreationMessage.Option.$Shape): proto.Message.PollCreationMessage.Option & proto.Message.PollCreationMessage.Option.$Shape
 				static create(properties?: proto.Message.PollCreationMessage.Option.$Properties): proto.Message.PollCreationMessage.Option
-				static encode(m: proto.Message.PollCreationMessage.Option.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PollCreationMessage.Option & proto.Message.PollCreationMessage.Option.$Shape
+				static encode(m: proto.Message.PollCreationMessage.Option.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PollCreationMessage.Option & proto.Message.PollCreationMessage.Option.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.PollCreationMessage.Option
-				static toObject(m: proto.Message.PollCreationMessage.Option, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.PollCreationMessage.Option, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace Option {
@@ -12850,10 +12850,10 @@ export namespace proto {
 			encIv?: (Uint8Array|null)
 			static create(properties: proto.Message.PollEncValue.$Shape): proto.Message.PollEncValue & proto.Message.PollEncValue.$Shape
 			static create(properties?: proto.Message.PollEncValue.$Properties): proto.Message.PollEncValue
-			static encode(m: proto.Message.PollEncValue.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PollEncValue & proto.Message.PollEncValue.$Shape
+			static encode(m: proto.Message.PollEncValue.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PollEncValue & proto.Message.PollEncValue.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.PollEncValue
-			static toObject(m: proto.Message.PollEncValue, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.PollEncValue, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PollEncValue {
@@ -12875,10 +12875,10 @@ export namespace proto {
 			pollType?: (proto.Message.PollType|null)
 			static create(properties: proto.Message.PollResultSnapshotMessage.$Shape): proto.Message.PollResultSnapshotMessage & proto.Message.PollResultSnapshotMessage.$Shape
 			static create(properties?: proto.Message.PollResultSnapshotMessage.$Properties): proto.Message.PollResultSnapshotMessage
-			static encode(m: proto.Message.PollResultSnapshotMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PollResultSnapshotMessage & proto.Message.PollResultSnapshotMessage.$Shape
+			static encode(m: proto.Message.PollResultSnapshotMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PollResultSnapshotMessage & proto.Message.PollResultSnapshotMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.PollResultSnapshotMessage
-			static toObject(m: proto.Message.PollResultSnapshotMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.PollResultSnapshotMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PollResultSnapshotMessage {
@@ -12905,10 +12905,10 @@ export namespace proto {
 				optionVoteCount?: (number|Long|null)
 				static create(properties: proto.Message.PollResultSnapshotMessage.PollVote.$Shape): proto.Message.PollResultSnapshotMessage.PollVote & proto.Message.PollResultSnapshotMessage.PollVote.$Shape
 				static create(properties?: proto.Message.PollResultSnapshotMessage.PollVote.$Properties): proto.Message.PollResultSnapshotMessage.PollVote
-				static encode(m: proto.Message.PollResultSnapshotMessage.PollVote.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PollResultSnapshotMessage.PollVote & proto.Message.PollResultSnapshotMessage.PollVote.$Shape
+				static encode(m: proto.Message.PollResultSnapshotMessage.PollVote.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PollResultSnapshotMessage.PollVote & proto.Message.PollResultSnapshotMessage.PollVote.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.PollResultSnapshotMessage.PollVote
-				static toObject(m: proto.Message.PollResultSnapshotMessage.PollVote, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.PollResultSnapshotMessage.PollVote, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace PollVote {
@@ -12935,10 +12935,10 @@ export namespace proto {
 			senderTimestampMs?: (number|Long|null)
 			static create(properties: proto.Message.PollUpdateMessage.$Shape): proto.Message.PollUpdateMessage & proto.Message.PollUpdateMessage.$Shape
 			static create(properties?: proto.Message.PollUpdateMessage.$Properties): proto.Message.PollUpdateMessage
-			static encode(m: proto.Message.PollUpdateMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PollUpdateMessage & proto.Message.PollUpdateMessage.$Shape
+			static encode(m: proto.Message.PollUpdateMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PollUpdateMessage & proto.Message.PollUpdateMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.PollUpdateMessage
-			static toObject(m: proto.Message.PollUpdateMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.PollUpdateMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PollUpdateMessage {
@@ -12960,10 +12960,10 @@ export namespace proto {
 			lastEditStanzaId?: (string|null)
 			static create(properties: proto.Message.PollUpdateMessageMetadata.$Shape): proto.Message.PollUpdateMessageMetadata & proto.Message.PollUpdateMessageMetadata.$Shape
 			static create(properties?: proto.Message.PollUpdateMessageMetadata.$Properties): proto.Message.PollUpdateMessageMetadata
-			static encode(m: proto.Message.PollUpdateMessageMetadata.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PollUpdateMessageMetadata & proto.Message.PollUpdateMessageMetadata.$Shape
+			static encode(m: proto.Message.PollUpdateMessageMetadata.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PollUpdateMessageMetadata & proto.Message.PollUpdateMessageMetadata.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.PollUpdateMessageMetadata
-			static toObject(m: proto.Message.PollUpdateMessageMetadata, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.PollUpdateMessageMetadata, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PollUpdateMessageMetadata {
@@ -12982,10 +12982,10 @@ export namespace proto {
 			selectedOptions: Uint8Array[]
 			static create(properties: proto.Message.PollVoteMessage.$Shape): proto.Message.PollVoteMessage & proto.Message.PollVoteMessage.$Shape
 			static create(properties?: proto.Message.PollVoteMessage.$Properties): proto.Message.PollVoteMessage
-			static encode(m: proto.Message.PollVoteMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.PollVoteMessage & proto.Message.PollVoteMessage.$Shape
+			static encode(m: proto.Message.PollVoteMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PollVoteMessage & proto.Message.PollVoteMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.PollVoteMessage
-			static toObject(m: proto.Message.PollVoteMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.PollVoteMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PollVoteMessage {
@@ -13008,10 +13008,10 @@ export namespace proto {
 			contextInfo?: (proto.ContextInfo.$Properties|null)
 			static create(properties: proto.Message.ProductMessage.$Shape): proto.Message.ProductMessage & proto.Message.ProductMessage.$Shape
 			static create(properties?: proto.Message.ProductMessage.$Properties): proto.Message.ProductMessage
-			static encode(m: proto.Message.ProductMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.ProductMessage & proto.Message.ProductMessage.$Shape
+			static encode(m: proto.Message.ProductMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.ProductMessage & proto.Message.ProductMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.ProductMessage
-			static toObject(m: proto.Message.ProductMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.ProductMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ProductMessage {
@@ -13043,10 +13043,10 @@ export namespace proto {
 				description?: (string|null)
 				static create(properties: proto.Message.ProductMessage.CatalogSnapshot.$Shape): proto.Message.ProductMessage.CatalogSnapshot & proto.Message.ProductMessage.CatalogSnapshot.$Shape
 				static create(properties?: proto.Message.ProductMessage.CatalogSnapshot.$Properties): proto.Message.ProductMessage.CatalogSnapshot
-				static encode(m: proto.Message.ProductMessage.CatalogSnapshot.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.ProductMessage.CatalogSnapshot & proto.Message.ProductMessage.CatalogSnapshot.$Shape
+				static encode(m: proto.Message.ProductMessage.CatalogSnapshot.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.ProductMessage.CatalogSnapshot & proto.Message.ProductMessage.CatalogSnapshot.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.ProductMessage.CatalogSnapshot
-				static toObject(m: proto.Message.ProductMessage.CatalogSnapshot, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.ProductMessage.CatalogSnapshot, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace CatalogSnapshot {
@@ -13082,10 +13082,10 @@ export namespace proto {
 				signedUrl?: (string|null)
 				static create(properties: proto.Message.ProductMessage.ProductSnapshot.$Shape): proto.Message.ProductMessage.ProductSnapshot & proto.Message.ProductMessage.ProductSnapshot.$Shape
 				static create(properties?: proto.Message.ProductMessage.ProductSnapshot.$Properties): proto.Message.ProductMessage.ProductSnapshot
-				static encode(m: proto.Message.ProductMessage.ProductSnapshot.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.ProductMessage.ProductSnapshot & proto.Message.ProductMessage.ProductSnapshot.$Shape
+				static encode(m: proto.Message.ProductMessage.ProductSnapshot.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.ProductMessage.ProductSnapshot & proto.Message.ProductMessage.ProductSnapshot.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.ProductMessage.ProductSnapshot
-				static toObject(m: proto.Message.ProductMessage.ProductSnapshot, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.ProductMessage.ProductSnapshot, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace ProductSnapshot {
@@ -13162,10 +13162,10 @@ export namespace proto {
 			additionalPromptIds: string[]
 			static create(properties: proto.Message.ProtocolMessage.$Shape): proto.Message.ProtocolMessage & proto.Message.ProtocolMessage.$Shape
 			static create(properties?: proto.Message.ProtocolMessage.$Properties): proto.Message.ProtocolMessage
-			static encode(m: proto.Message.ProtocolMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.ProtocolMessage & proto.Message.ProtocolMessage.$Shape
+			static encode(m: proto.Message.ProtocolMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.ProtocolMessage & proto.Message.ProtocolMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.ProtocolMessage
-			static toObject(m: proto.Message.ProtocolMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.ProtocolMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ProtocolMessage {
@@ -13290,10 +13290,10 @@ export namespace proto {
 			text?: (string|null)
 			static create(properties: proto.Message.QuestionResponseMessage.$Shape): proto.Message.QuestionResponseMessage & proto.Message.QuestionResponseMessage.$Shape
 			static create(properties?: proto.Message.QuestionResponseMessage.$Properties): proto.Message.QuestionResponseMessage
-			static encode(m: proto.Message.QuestionResponseMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.QuestionResponseMessage & proto.Message.QuestionResponseMessage.$Shape
+			static encode(m: proto.Message.QuestionResponseMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.QuestionResponseMessage & proto.Message.QuestionResponseMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.QuestionResponseMessage
-			static toObject(m: proto.Message.QuestionResponseMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.QuestionResponseMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace QuestionResponseMessage {
@@ -13315,10 +13315,10 @@ export namespace proto {
 			senderTimestampMs?: (number|Long|null)
 			static create(properties: proto.Message.ReactionMessage.$Shape): proto.Message.ReactionMessage & proto.Message.ReactionMessage.$Shape
 			static create(properties?: proto.Message.ReactionMessage.$Properties): proto.Message.ReactionMessage
-			static encode(m: proto.Message.ReactionMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.ReactionMessage & proto.Message.ReactionMessage.$Shape
+			static encode(m: proto.Message.ReactionMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.ReactionMessage & proto.Message.ReactionMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.ReactionMessage
-			static toObject(m: proto.Message.ReactionMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.ReactionMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ReactionMessage {
@@ -13339,10 +13339,10 @@ export namespace proto {
 			contextInfo?: (proto.ContextInfo.$Properties|null)
 			static create(properties: proto.Message.RequestLocationMessage.$Shape): proto.Message.RequestLocationMessage & proto.Message.RequestLocationMessage.$Shape
 			static create(properties?: proto.Message.RequestLocationMessage.$Properties): proto.Message.RequestLocationMessage
-			static encode(m: proto.Message.RequestLocationMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.RequestLocationMessage & proto.Message.RequestLocationMessage.$Shape
+			static encode(m: proto.Message.RequestLocationMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.RequestLocationMessage & proto.Message.RequestLocationMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.RequestLocationMessage
-			static toObject(m: proto.Message.RequestLocationMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.RequestLocationMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace RequestLocationMessage {
@@ -13365,10 +13365,10 @@ export namespace proto {
 			senderTimestampMs?: (number|Long|null)
 			static create(properties: proto.Message.RequestLocationUpdateMessage.$Shape): proto.Message.RequestLocationUpdateMessage & proto.Message.RequestLocationUpdateMessage.$Shape
 			static create(properties?: proto.Message.RequestLocationUpdateMessage.$Properties): proto.Message.RequestLocationUpdateMessage
-			static encode(m: proto.Message.RequestLocationUpdateMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.RequestLocationUpdateMessage & proto.Message.RequestLocationUpdateMessage.$Shape
+			static encode(m: proto.Message.RequestLocationUpdateMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.RequestLocationUpdateMessage & proto.Message.RequestLocationUpdateMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.RequestLocationUpdateMessage
-			static toObject(m: proto.Message.RequestLocationUpdateMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.RequestLocationUpdateMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace RequestLocationUpdateMessage {
@@ -13398,10 +13398,10 @@ export namespace proto {
 			background?: (proto.PaymentBackground.$Properties|null)
 			static create(properties: proto.Message.RequestPaymentMessage.$Shape): proto.Message.RequestPaymentMessage & proto.Message.RequestPaymentMessage.$Shape
 			static create(properties?: proto.Message.RequestPaymentMessage.$Properties): proto.Message.RequestPaymentMessage
-			static encode(m: proto.Message.RequestPaymentMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.RequestPaymentMessage & proto.Message.RequestPaymentMessage.$Shape
+			static encode(m: proto.Message.RequestPaymentMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.RequestPaymentMessage & proto.Message.RequestPaymentMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.RequestPaymentMessage
-			static toObject(m: proto.Message.RequestPaymentMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.RequestPaymentMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace RequestPaymentMessage {
@@ -13434,10 +13434,10 @@ export namespace proto {
 			contextInfo?: (proto.ContextInfo.$Properties|null)
 			static create(properties: proto.Message.RequestPhoneNumberMessage.$Shape): proto.Message.RequestPhoneNumberMessage & proto.Message.RequestPhoneNumberMessage.$Shape
 			static create(properties?: proto.Message.RequestPhoneNumberMessage.$Properties): proto.Message.RequestPhoneNumberMessage
-			static encode(m: proto.Message.RequestPhoneNumberMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.RequestPhoneNumberMessage & proto.Message.RequestPhoneNumberMessage.$Shape
+			static encode(m: proto.Message.RequestPhoneNumberMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.RequestPhoneNumberMessage & proto.Message.RequestPhoneNumberMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.RequestPhoneNumberMessage
-			static toObject(m: proto.Message.RequestPhoneNumberMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.RequestPhoneNumberMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace RequestPhoneNumberMessage {
@@ -13460,10 +13460,10 @@ export namespace proto {
 			botAgentMetadata?: (proto.BotAgentMetadata.$Properties|null)
 			static create(properties: proto.Message.RequestWelcomeMessageMetadata.$Shape): proto.Message.RequestWelcomeMessageMetadata & proto.Message.RequestWelcomeMessageMetadata.$Shape
 			static create(properties?: proto.Message.RequestWelcomeMessageMetadata.$Properties): proto.Message.RequestWelcomeMessageMetadata
-			static encode(m: proto.Message.RequestWelcomeMessageMetadata.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.RequestWelcomeMessageMetadata & proto.Message.RequestWelcomeMessageMetadata.$Shape
+			static encode(m: proto.Message.RequestWelcomeMessageMetadata.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.RequestWelcomeMessageMetadata & proto.Message.RequestWelcomeMessageMetadata.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.RequestWelcomeMessageMetadata
-			static toObject(m: proto.Message.RequestWelcomeMessageMetadata, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.RequestWelcomeMessageMetadata, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace RequestWelcomeMessageMetadata {
@@ -13491,10 +13491,10 @@ export namespace proto {
 			chatJid?: (string|null)
 			static create(properties: proto.Message.RootSecretDistributeMessage.$Shape): proto.Message.RootSecretDistributeMessage & proto.Message.RootSecretDistributeMessage.$Shape
 			static create(properties?: proto.Message.RootSecretDistributeMessage.$Properties): proto.Message.RootSecretDistributeMessage
-			static encode(m: proto.Message.RootSecretDistributeMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.RootSecretDistributeMessage & proto.Message.RootSecretDistributeMessage.$Shape
+			static encode(m: proto.Message.RootSecretDistributeMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.RootSecretDistributeMessage & proto.Message.RootSecretDistributeMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.RootSecretDistributeMessage
-			static toObject(m: proto.Message.RootSecretDistributeMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.RootSecretDistributeMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace RootSecretDistributeMessage {
@@ -13514,10 +13514,10 @@ export namespace proto {
 			title?: (string|null)
 			static create(properties: proto.Message.ScheduledCallCreationMessage.$Shape): proto.Message.ScheduledCallCreationMessage & proto.Message.ScheduledCallCreationMessage.$Shape
 			static create(properties?: proto.Message.ScheduledCallCreationMessage.$Properties): proto.Message.ScheduledCallCreationMessage
-			static encode(m: proto.Message.ScheduledCallCreationMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.ScheduledCallCreationMessage & proto.Message.ScheduledCallCreationMessage.$Shape
+			static encode(m: proto.Message.ScheduledCallCreationMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.ScheduledCallCreationMessage & proto.Message.ScheduledCallCreationMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.ScheduledCallCreationMessage
-			static toObject(m: proto.Message.ScheduledCallCreationMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.ScheduledCallCreationMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ScheduledCallCreationMessage {
@@ -13543,10 +13543,10 @@ export namespace proto {
 			editType?: (proto.Message.ScheduledCallEditMessage.EditType|null)
 			static create(properties: proto.Message.ScheduledCallEditMessage.$Shape): proto.Message.ScheduledCallEditMessage & proto.Message.ScheduledCallEditMessage.$Shape
 			static create(properties?: proto.Message.ScheduledCallEditMessage.$Properties): proto.Message.ScheduledCallEditMessage
-			static encode(m: proto.Message.ScheduledCallEditMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.ScheduledCallEditMessage & proto.Message.ScheduledCallEditMessage.$Shape
+			static encode(m: proto.Message.ScheduledCallEditMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.ScheduledCallEditMessage & proto.Message.ScheduledCallEditMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.ScheduledCallEditMessage
-			static toObject(m: proto.Message.ScheduledCallEditMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.ScheduledCallEditMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ScheduledCallEditMessage {
@@ -13573,10 +13573,10 @@ export namespace proto {
 			remoteKeyId?: (string|null)
 			static create(properties: proto.Message.SecretEncryptedMessage.$Shape): proto.Message.SecretEncryptedMessage & proto.Message.SecretEncryptedMessage.$Shape
 			static create(properties?: proto.Message.SecretEncryptedMessage.$Properties): proto.Message.SecretEncryptedMessage
-			static encode(m: proto.Message.SecretEncryptedMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.SecretEncryptedMessage & proto.Message.SecretEncryptedMessage.$Shape
+			static encode(m: proto.Message.SecretEncryptedMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.SecretEncryptedMessage & proto.Message.SecretEncryptedMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.SecretEncryptedMessage
-			static toObject(m: proto.Message.SecretEncryptedMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.SecretEncryptedMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace SecretEncryptedMessage {
@@ -13609,10 +13609,10 @@ export namespace proto {
 			transactionData?: (string|null)
 			static create(properties: proto.Message.SendPaymentMessage.$Shape): proto.Message.SendPaymentMessage & proto.Message.SendPaymentMessage.$Shape
 			static create(properties?: proto.Message.SendPaymentMessage.$Properties): proto.Message.SendPaymentMessage
-			static encode(m: proto.Message.SendPaymentMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.SendPaymentMessage & proto.Message.SendPaymentMessage.$Shape
+			static encode(m: proto.Message.SendPaymentMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.SendPaymentMessage & proto.Message.SendPaymentMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.SendPaymentMessage
-			static toObject(m: proto.Message.SendPaymentMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.SendPaymentMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace SendPaymentMessage {
@@ -13640,10 +13640,10 @@ export namespace proto {
 			axolotlSenderKeyDistributionMessage?: (Uint8Array|null)
 			static create(properties: proto.Message.SenderKeyDistributionMessage.$Shape): proto.Message.SenderKeyDistributionMessage & proto.Message.SenderKeyDistributionMessage.$Shape
 			static create(properties?: proto.Message.SenderKeyDistributionMessage.$Properties): proto.Message.SenderKeyDistributionMessage
-			static encode(m: proto.Message.SenderKeyDistributionMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.SenderKeyDistributionMessage & proto.Message.SenderKeyDistributionMessage.$Shape
+			static encode(m: proto.Message.SenderKeyDistributionMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.SenderKeyDistributionMessage & proto.Message.SenderKeyDistributionMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.SenderKeyDistributionMessage
-			static toObject(m: proto.Message.SenderKeyDistributionMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.SenderKeyDistributionMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace SenderKeyDistributionMessage {
@@ -13664,10 +13664,10 @@ export namespace proto {
 			keyData?: (Uint8Array|null)
 			static create(properties: proto.Message.SharedDeviceContactHashKey.$Shape): proto.Message.SharedDeviceContactHashKey & proto.Message.SharedDeviceContactHashKey.$Shape
 			static create(properties?: proto.Message.SharedDeviceContactHashKey.$Properties): proto.Message.SharedDeviceContactHashKey
-			static encode(m: proto.Message.SharedDeviceContactHashKey.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.SharedDeviceContactHashKey & proto.Message.SharedDeviceContactHashKey.$Shape
+			static encode(m: proto.Message.SharedDeviceContactHashKey.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.SharedDeviceContactHashKey & proto.Message.SharedDeviceContactHashKey.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.SharedDeviceContactHashKey
-			static toObject(m: proto.Message.SharedDeviceContactHashKey, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.SharedDeviceContactHashKey, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace SharedDeviceContactHashKey {
@@ -13692,10 +13692,10 @@ export namespace proto {
 			knownEpoch?: (number|null)
 			static create(properties: proto.Message.SharedDeviceContactHashKeyRequest.$Shape): proto.Message.SharedDeviceContactHashKeyRequest & proto.Message.SharedDeviceContactHashKeyRequest.$Shape
 			static create(properties?: proto.Message.SharedDeviceContactHashKeyRequest.$Properties): proto.Message.SharedDeviceContactHashKeyRequest
-			static encode(m: proto.Message.SharedDeviceContactHashKeyRequest.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.SharedDeviceContactHashKeyRequest & proto.Message.SharedDeviceContactHashKeyRequest.$Shape
+			static encode(m: proto.Message.SharedDeviceContactHashKeyRequest.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.SharedDeviceContactHashKeyRequest & proto.Message.SharedDeviceContactHashKeyRequest.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.SharedDeviceContactHashKeyRequest
-			static toObject(m: proto.Message.SharedDeviceContactHashKeyRequest, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.SharedDeviceContactHashKeyRequest, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace SharedDeviceContactHashKeyRequest {
@@ -13713,10 +13713,10 @@ export namespace proto {
 			keys: proto.Message.SharedDeviceContactHashKey.$Properties[]
 			static create(properties: proto.Message.SharedDeviceContactHashKeyShare.$Shape): proto.Message.SharedDeviceContactHashKeyShare & proto.Message.SharedDeviceContactHashKeyShare.$Shape
 			static create(properties?: proto.Message.SharedDeviceContactHashKeyShare.$Properties): proto.Message.SharedDeviceContactHashKeyShare
-			static encode(m: proto.Message.SharedDeviceContactHashKeyShare.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.SharedDeviceContactHashKeyShare & proto.Message.SharedDeviceContactHashKeyShare.$Shape
+			static encode(m: proto.Message.SharedDeviceContactHashKeyShare.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.SharedDeviceContactHashKeyShare & proto.Message.SharedDeviceContactHashKeyShare.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.SharedDeviceContactHashKeyShare
-			static toObject(m: proto.Message.SharedDeviceContactHashKeyShare, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.SharedDeviceContactHashKeyShare, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace SharedDeviceContactHashKeyShare {
@@ -13740,10 +13740,10 @@ export namespace proto {
 			contextInfo?: (proto.ContextInfo.$Properties|null)
 			static create(properties: proto.Message.SplitPaymentMessage.$Shape): proto.Message.SplitPaymentMessage & proto.Message.SplitPaymentMessage.$Shape
 			static create(properties?: proto.Message.SplitPaymentMessage.$Properties): proto.Message.SplitPaymentMessage
-			static encode(m: proto.Message.SplitPaymentMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.SplitPaymentMessage & proto.Message.SplitPaymentMessage.$Shape
+			static encode(m: proto.Message.SplitPaymentMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.SplitPaymentMessage & proto.Message.SplitPaymentMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.SplitPaymentMessage
-			static toObject(m: proto.Message.SplitPaymentMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.SplitPaymentMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace SplitPaymentMessage {
@@ -13778,10 +13778,10 @@ export namespace proto {
 			status?: (proto.Message.SplitPaymentParticipant.SplitPaymentStatus|null)
 			static create(properties: proto.Message.SplitPaymentParticipant.$Shape): proto.Message.SplitPaymentParticipant & proto.Message.SplitPaymentParticipant.$Shape
 			static create(properties?: proto.Message.SplitPaymentParticipant.$Properties): proto.Message.SplitPaymentParticipant
-			static encode(m: proto.Message.SplitPaymentParticipant.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.SplitPaymentParticipant & proto.Message.SplitPaymentParticipant.$Shape
+			static encode(m: proto.Message.SplitPaymentParticipant.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.SplitPaymentParticipant & proto.Message.SplitPaymentParticipant.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.SplitPaymentParticipant
-			static toObject(m: proto.Message.SplitPaymentParticipant, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.SplitPaymentParticipant, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace SplitPaymentParticipant {
@@ -13806,10 +13806,10 @@ export namespace proto {
 			participantJid?: (string|null)
 			static create(properties: proto.Message.SplitPaymentUpdateMessage.$Shape): proto.Message.SplitPaymentUpdateMessage & proto.Message.SplitPaymentUpdateMessage.$Shape
 			static create(properties?: proto.Message.SplitPaymentUpdateMessage.$Properties): proto.Message.SplitPaymentUpdateMessage
-			static encode(m: proto.Message.SplitPaymentUpdateMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.SplitPaymentUpdateMessage & proto.Message.SplitPaymentUpdateMessage.$Shape
+			static encode(m: proto.Message.SplitPaymentUpdateMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.SplitPaymentUpdateMessage & proto.Message.SplitPaymentUpdateMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.SplitPaymentUpdateMessage
-			static toObject(m: proto.Message.SplitPaymentUpdateMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.SplitPaymentUpdateMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace SplitPaymentUpdateMessage {
@@ -13828,10 +13828,10 @@ export namespace proto {
 			style?: (proto.Message.StatusLinkPreviewMetadata.Style|null)
 			static create(properties: proto.Message.StatusLinkPreviewMetadata.$Shape): proto.Message.StatusLinkPreviewMetadata & proto.Message.StatusLinkPreviewMetadata.$Shape
 			static create(properties?: proto.Message.StatusLinkPreviewMetadata.$Properties): proto.Message.StatusLinkPreviewMetadata
-			static encode(m: proto.Message.StatusLinkPreviewMetadata.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.StatusLinkPreviewMetadata & proto.Message.StatusLinkPreviewMetadata.$Shape
+			static encode(m: proto.Message.StatusLinkPreviewMetadata.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.StatusLinkPreviewMetadata & proto.Message.StatusLinkPreviewMetadata.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.StatusLinkPreviewMetadata
-			static toObject(m: proto.Message.StatusLinkPreviewMetadata, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.StatusLinkPreviewMetadata, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace StatusLinkPreviewMetadata {
@@ -13857,10 +13857,10 @@ export namespace proto {
 			type?: (proto.Message.StatusNotificationMessage.StatusNotificationType|null)
 			static create(properties: proto.Message.StatusNotificationMessage.$Shape): proto.Message.StatusNotificationMessage & proto.Message.StatusNotificationMessage.$Shape
 			static create(properties?: proto.Message.StatusNotificationMessage.$Properties): proto.Message.StatusNotificationMessage
-			static encode(m: proto.Message.StatusNotificationMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.StatusNotificationMessage & proto.Message.StatusNotificationMessage.$Shape
+			static encode(m: proto.Message.StatusNotificationMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.StatusNotificationMessage & proto.Message.StatusNotificationMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.StatusNotificationMessage
-			static toObject(m: proto.Message.StatusNotificationMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.StatusNotificationMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace StatusNotificationMessage {
@@ -13888,10 +13888,10 @@ export namespace proto {
 			text?: (string|null)
 			static create(properties: proto.Message.StatusQuestionAnswerMessage.$Shape): proto.Message.StatusQuestionAnswerMessage & proto.Message.StatusQuestionAnswerMessage.$Shape
 			static create(properties?: proto.Message.StatusQuestionAnswerMessage.$Properties): proto.Message.StatusQuestionAnswerMessage
-			static encode(m: proto.Message.StatusQuestionAnswerMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.StatusQuestionAnswerMessage & proto.Message.StatusQuestionAnswerMessage.$Shape
+			static encode(m: proto.Message.StatusQuestionAnswerMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.StatusQuestionAnswerMessage & proto.Message.StatusQuestionAnswerMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.StatusQuestionAnswerMessage
-			static toObject(m: proto.Message.StatusQuestionAnswerMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.StatusQuestionAnswerMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace StatusQuestionAnswerMessage {
@@ -13913,10 +13913,10 @@ export namespace proto {
 			originalStatusId?: (proto.MessageKey.$Properties|null)
 			static create(properties: proto.Message.StatusQuotedMessage.$Shape): proto.Message.StatusQuotedMessage & proto.Message.StatusQuotedMessage.$Shape
 			static create(properties?: proto.Message.StatusQuotedMessage.$Properties): proto.Message.StatusQuotedMessage
-			static encode(m: proto.Message.StatusQuotedMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.StatusQuotedMessage & proto.Message.StatusQuotedMessage.$Shape
+			static encode(m: proto.Message.StatusQuotedMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.StatusQuotedMessage & proto.Message.StatusQuotedMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.StatusQuotedMessage
-			static toObject(m: proto.Message.StatusQuotedMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.StatusQuotedMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace StatusQuotedMessage {
@@ -13942,10 +13942,10 @@ export namespace proto {
 			type?: (proto.Message.StatusStickerInteractionMessage.StatusStickerType|null)
 			static create(properties: proto.Message.StatusStickerInteractionMessage.$Shape): proto.Message.StatusStickerInteractionMessage & proto.Message.StatusStickerInteractionMessage.$Shape
 			static create(properties?: proto.Message.StatusStickerInteractionMessage.$Properties): proto.Message.StatusStickerInteractionMessage
-			static encode(m: proto.Message.StatusStickerInteractionMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.StatusStickerInteractionMessage & proto.Message.StatusStickerInteractionMessage.$Shape
+			static encode(m: proto.Message.StatusStickerInteractionMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.StatusStickerInteractionMessage & proto.Message.StatusStickerInteractionMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.StatusStickerInteractionMessage
-			static toObject(m: proto.Message.StatusStickerInteractionMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.StatusStickerInteractionMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace StatusStickerInteractionMessage {
@@ -13992,10 +13992,10 @@ export namespace proto {
 			audio?: "audioMessage"
 			static create(properties: proto.Message.StickerMessage.$Shape): proto.Message.StickerMessage & proto.Message.StickerMessage.$Shape
 			static create(properties?: proto.Message.StickerMessage.$Properties): proto.Message.StickerMessage
-			static encode(m: proto.Message.StickerMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.StickerMessage & proto.Message.StickerMessage.$Shape
+			static encode(m: proto.Message.StickerMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.StickerMessage & proto.Message.StickerMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.StickerMessage
-			static toObject(m: proto.Message.StickerMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.StickerMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace StickerMessage {
@@ -14084,10 +14084,10 @@ export namespace proto {
 			stickerPackOrigin?: (proto.Message.StickerPackMessage.StickerPackOrigin|null)
 			static create(properties: proto.Message.StickerPackMessage.$Shape): proto.Message.StickerPackMessage & proto.Message.StickerPackMessage.$Shape
 			static create(properties?: proto.Message.StickerPackMessage.$Properties): proto.Message.StickerPackMessage
-			static encode(m: proto.Message.StickerPackMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.StickerPackMessage & proto.Message.StickerPackMessage.$Shape
+			static encode(m: proto.Message.StickerPackMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.StickerPackMessage & proto.Message.StickerPackMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.StickerPackMessage
-			static toObject(m: proto.Message.StickerPackMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.StickerPackMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace StickerPackMessage {
@@ -14155,10 +14155,10 @@ export namespace proto {
 				premium?: (number|null)
 				static create(properties: proto.Message.StickerPackMessage.Sticker.$Shape): proto.Message.StickerPackMessage.Sticker & proto.Message.StickerPackMessage.Sticker.$Shape
 				static create(properties?: proto.Message.StickerPackMessage.Sticker.$Properties): proto.Message.StickerPackMessage.Sticker
-				static encode(m: proto.Message.StickerPackMessage.Sticker.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.StickerPackMessage.Sticker & proto.Message.StickerPackMessage.Sticker.$Shape
+				static encode(m: proto.Message.StickerPackMessage.Sticker.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.StickerPackMessage.Sticker & proto.Message.StickerPackMessage.Sticker.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.StickerPackMessage.Sticker
-				static toObject(m: proto.Message.StickerPackMessage.Sticker, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.StickerPackMessage.Sticker, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace Sticker {
@@ -14190,10 +14190,10 @@ export namespace proto {
 			requestTimestamp?: (number|Long|null)
 			static create(properties: proto.Message.StickerSyncRMRMessage.$Shape): proto.Message.StickerSyncRMRMessage & proto.Message.StickerSyncRMRMessage.$Shape
 			static create(properties?: proto.Message.StickerSyncRMRMessage.$Properties): proto.Message.StickerSyncRMRMessage
-			static encode(m: proto.Message.StickerSyncRMRMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.StickerSyncRMRMessage & proto.Message.StickerSyncRMRMessage.$Shape
+			static encode(m: proto.Message.StickerSyncRMRMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.StickerSyncRMRMessage & proto.Message.StickerSyncRMRMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.StickerSyncRMRMessage
-			static toObject(m: proto.Message.StickerSyncRMRMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.StickerSyncRMRMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace StickerSyncRMRMessage {
@@ -14217,10 +14217,10 @@ export namespace proto {
 			selectedCarouselCardIndex?: (number|null)
 			static create(properties: proto.Message.TemplateButtonReplyMessage.$Shape): proto.Message.TemplateButtonReplyMessage & proto.Message.TemplateButtonReplyMessage.$Shape
 			static create(properties?: proto.Message.TemplateButtonReplyMessage.$Properties): proto.Message.TemplateButtonReplyMessage
-			static encode(m: proto.Message.TemplateButtonReplyMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.TemplateButtonReplyMessage & proto.Message.TemplateButtonReplyMessage.$Shape
+			static encode(m: proto.Message.TemplateButtonReplyMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.TemplateButtonReplyMessage & proto.Message.TemplateButtonReplyMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.TemplateButtonReplyMessage
-			static toObject(m: proto.Message.TemplateButtonReplyMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.TemplateButtonReplyMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace TemplateButtonReplyMessage {
@@ -14255,10 +14255,10 @@ export namespace proto {
 			format?: ("fourRowTemplate"|"hydratedFourRowTemplate"|"interactiveMessageTemplate")
 			static create(properties: proto.Message.TemplateMessage.$Shape): proto.Message.TemplateMessage & proto.Message.TemplateMessage.$Shape
 			static create(properties?: proto.Message.TemplateMessage.$Properties): proto.Message.TemplateMessage
-			static encode(m: proto.Message.TemplateMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.TemplateMessage & proto.Message.TemplateMessage.$Shape
+			static encode(m: proto.Message.TemplateMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.TemplateMessage & proto.Message.TemplateMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.TemplateMessage
-			static toObject(m: proto.Message.TemplateMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.TemplateMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace TemplateMessage {
@@ -14299,10 +14299,10 @@ export namespace proto {
 				title?: ("documentMessage"|"highlyStructuredMessage"|"imageMessage"|"videoMessage"|"locationMessage")
 				static create(properties: proto.Message.TemplateMessage.FourRowTemplate.$Shape): proto.Message.TemplateMessage.FourRowTemplate & proto.Message.TemplateMessage.FourRowTemplate.$Shape
 				static create(properties?: proto.Message.TemplateMessage.FourRowTemplate.$Properties): proto.Message.TemplateMessage.FourRowTemplate
-				static encode(m: proto.Message.TemplateMessage.FourRowTemplate.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.TemplateMessage.FourRowTemplate & proto.Message.TemplateMessage.FourRowTemplate.$Shape
+				static encode(m: proto.Message.TemplateMessage.FourRowTemplate.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.TemplateMessage.FourRowTemplate & proto.Message.TemplateMessage.FourRowTemplate.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.TemplateMessage.FourRowTemplate
-				static toObject(m: proto.Message.TemplateMessage.FourRowTemplate, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.TemplateMessage.FourRowTemplate, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace FourRowTemplate {
@@ -14350,10 +14350,10 @@ export namespace proto {
 				title?: ("documentMessage"|"hydratedTitleText"|"imageMessage"|"videoMessage"|"locationMessage")
 				static create(properties: proto.Message.TemplateMessage.HydratedFourRowTemplate.$Shape): proto.Message.TemplateMessage.HydratedFourRowTemplate & proto.Message.TemplateMessage.HydratedFourRowTemplate.$Shape
 				static create(properties?: proto.Message.TemplateMessage.HydratedFourRowTemplate.$Properties): proto.Message.TemplateMessage.HydratedFourRowTemplate
-				static encode(m: proto.Message.TemplateMessage.HydratedFourRowTemplate.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.TemplateMessage.HydratedFourRowTemplate & proto.Message.TemplateMessage.HydratedFourRowTemplate.$Shape
+				static encode(m: proto.Message.TemplateMessage.HydratedFourRowTemplate.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.TemplateMessage.HydratedFourRowTemplate & proto.Message.TemplateMessage.HydratedFourRowTemplate.$Shape
 				static fromObject(d: { [k: string]: any }): proto.Message.TemplateMessage.HydratedFourRowTemplate
-				static toObject(m: proto.Message.TemplateMessage.HydratedFourRowTemplate, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.Message.TemplateMessage.HydratedFourRowTemplate, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace HydratedFourRowTemplate {
@@ -14396,10 +14396,10 @@ export namespace proto {
 			fbExperimentId?: (number|null)
 			static create(properties: proto.Message.URLMetadata.$Shape): proto.Message.URLMetadata & proto.Message.URLMetadata.$Shape
 			static create(properties?: proto.Message.URLMetadata.$Properties): proto.Message.URLMetadata
-			static encode(m: proto.Message.URLMetadata.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.URLMetadata & proto.Message.URLMetadata.$Shape
+			static encode(m: proto.Message.URLMetadata.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.URLMetadata & proto.Message.URLMetadata.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.URLMetadata
-			static toObject(m: proto.Message.URLMetadata, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.URLMetadata, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace URLMetadata {
@@ -14420,10 +14420,10 @@ export namespace proto {
 			profilePictureUrl: string
 			static create(properties: proto.Message.VideoEndCard.$Shape): proto.Message.VideoEndCard & proto.Message.VideoEndCard.$Shape
 			static create(properties?: proto.Message.VideoEndCard.$Properties): proto.Message.VideoEndCard
-			static encode(m: proto.Message.VideoEndCard.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.VideoEndCard & proto.Message.VideoEndCard.$Shape
+			static encode(m: proto.Message.VideoEndCard.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.VideoEndCard & proto.Message.VideoEndCard.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.VideoEndCard
-			static toObject(m: proto.Message.VideoEndCard, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.VideoEndCard, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace VideoEndCard {
@@ -14475,10 +14475,10 @@ export namespace proto {
 			smartThumbnailTs?: (number|Long|null)
 			static create(properties: proto.Message.VideoMessage.$Shape): proto.Message.VideoMessage & proto.Message.VideoMessage.$Shape
 			static create(properties?: proto.Message.VideoMessage.$Properties): proto.Message.VideoMessage
-			static encode(m: proto.Message.VideoMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.Message.VideoMessage & proto.Message.VideoMessage.$Shape
+			static encode(m: proto.Message.VideoMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.VideoMessage & proto.Message.VideoMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.Message.VideoMessage
-			static toObject(m: proto.Message.VideoMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.Message.VideoMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace VideoMessage {
@@ -14579,10 +14579,10 @@ export namespace proto {
 		legacyMessage?: (proto.LegacyMessage.$Properties|null)
 		static create(properties: proto.MessageAddOn.$Shape): proto.MessageAddOn & proto.MessageAddOn.$Shape
 		static create(properties?: proto.MessageAddOn.$Properties): proto.MessageAddOn
-		static encode(m: proto.MessageAddOn.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.MessageAddOn & proto.MessageAddOn.$Shape
+		static encode(m: proto.MessageAddOn.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.MessageAddOn & proto.MessageAddOn.$Shape
 		static fromObject(d: { [k: string]: any }): proto.MessageAddOn
-		static toObject(m: proto.MessageAddOn, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.MessageAddOn, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace MessageAddOn {
@@ -14626,10 +14626,10 @@ export namespace proto {
 		messageAddOnExpiryType?: (proto.MessageContextInfo.MessageAddonExpiryType|null)
 		static create(properties: proto.MessageAddOnContextInfo.$Shape): proto.MessageAddOnContextInfo & proto.MessageAddOnContextInfo.$Shape
 		static create(properties?: proto.MessageAddOnContextInfo.$Properties): proto.MessageAddOnContextInfo
-		static encode(m: proto.MessageAddOnContextInfo.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.MessageAddOnContextInfo & proto.MessageAddOnContextInfo.$Shape
+		static encode(m: proto.MessageAddOnContextInfo.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.MessageAddOnContextInfo & proto.MessageAddOnContextInfo.$Shape
 		static fromObject(d: { [k: string]: any }): proto.MessageAddOnContextInfo
-		static toObject(m: proto.MessageAddOnContextInfo, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.MessageAddOnContextInfo, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace MessageAddOnContextInfo {
@@ -14650,10 +14650,10 @@ export namespace proto {
 		messageIndex?: (number|null)
 		static create(properties: proto.MessageAssociation.$Shape): proto.MessageAssociation & proto.MessageAssociation.$Shape
 		static create(properties?: proto.MessageAssociation.$Properties): proto.MessageAssociation
-		static encode(m: proto.MessageAssociation.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.MessageAssociation & proto.MessageAssociation.$Shape
+		static encode(m: proto.MessageAssociation.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.MessageAssociation & proto.MessageAssociation.$Shape
 		static fromObject(d: { [k: string]: any }): proto.MessageAssociation
-		static toObject(m: proto.MessageAssociation, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.MessageAssociation, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace MessageAssociation {
@@ -14719,10 +14719,10 @@ export namespace proto {
 		lightE2Ee?: (boolean|null)
 		static create(properties: proto.MessageContextInfo.$Shape): proto.MessageContextInfo & proto.MessageContextInfo.$Shape
 		static create(properties?: proto.MessageContextInfo.$Properties): proto.MessageContextInfo
-		static encode(m: proto.MessageContextInfo.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.MessageContextInfo & proto.MessageContextInfo.$Shape
+		static encode(m: proto.MessageContextInfo.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.MessageContextInfo & proto.MessageContextInfo.$Shape
 		static fromObject(d: { [k: string]: any }): proto.MessageContextInfo
-		static toObject(m: proto.MessageContextInfo, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.MessageContextInfo, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace MessageContextInfo {
@@ -14768,10 +14768,10 @@ export namespace proto {
 		participant?: (string|null)
 		static create(properties: proto.MessageKey.$Shape): proto.MessageKey & proto.MessageKey.$Shape
 		static create(properties?: proto.MessageKey.$Properties): proto.MessageKey
-		static encode(m: proto.MessageKey.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.MessageKey & proto.MessageKey.$Shape
+		static encode(m: proto.MessageKey.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.MessageKey & proto.MessageKey.$Shape
 		static fromObject(d: { [k: string]: any }): proto.MessageKey
-		static toObject(m: proto.MessageKey, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.MessageKey, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace MessageKey {
@@ -14794,10 +14794,10 @@ export namespace proto {
 		encPayload?: (Uint8Array|null)
 		static create(properties: proto.MessageSecretMessage.$Shape): proto.MessageSecretMessage & proto.MessageSecretMessage.$Shape
 		static create(properties?: proto.MessageSecretMessage.$Properties): proto.MessageSecretMessage
-		static encode(m: proto.MessageSecretMessage.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.MessageSecretMessage & proto.MessageSecretMessage.$Shape
+		static encode(m: proto.MessageSecretMessage.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.MessageSecretMessage & proto.MessageSecretMessage.$Shape
 		static fromObject(d: { [k: string]: any }): proto.MessageSecretMessage
-		static toObject(m: proto.MessageSecretMessage, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.MessageSecretMessage, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace MessageSecretMessage {
@@ -14819,10 +14819,10 @@ export namespace proto {
 		currencyCode?: (string|null)
 		static create(properties: proto.Money.$Shape): proto.Money & proto.Money.$Shape
 		static create(properties?: proto.Money.$Properties): proto.Money
-		static encode(m: proto.Money.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.Money & proto.Money.$Shape
+		static encode(m: proto.Money.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.Money & proto.Money.$Shape
 		static fromObject(d: { [k: string]: any }): proto.Money
-		static toObject(m: proto.Money, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.Money, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace Money {
@@ -14898,12 +14898,16 @@ export namespace proto {
 		qrUrl?: (string|null)
 		musicData?: (proto.MsgOpaqueData.MusicData.$Properties|null)
 		pollAddedOptionName?: (string|null)
+		sharableEventInviteStatus?: (string|null)
+		sharableEventInviteLocationName?: (string|null)
+		sharableEventInviteCoverImageHandle?: (string|null)
+		sharableEventInviteLastUpdatedTsUsec?: (number|Long|null)
 		static create(properties: proto.MsgOpaqueData.$Shape): proto.MsgOpaqueData & proto.MsgOpaqueData.$Shape
 		static create(properties?: proto.MsgOpaqueData.$Properties): proto.MsgOpaqueData
-		static encode(m: proto.MsgOpaqueData.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.MsgOpaqueData & proto.MsgOpaqueData.$Shape
+		static encode(m: proto.MsgOpaqueData.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.MsgOpaqueData & proto.MsgOpaqueData.$Shape
 		static fromObject(d: { [k: string]: any }): proto.MsgOpaqueData
-		static toObject(m: proto.MsgOpaqueData, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.MsgOpaqueData, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace MsgOpaqueData {
@@ -14967,6 +14971,10 @@ export namespace proto {
 			qrUrl?: (string|null)
 			musicData?: (proto.MsgOpaqueData.MusicData.$Properties|null)
 			pollAddedOptionName?: (string|null)
+			sharableEventInviteStatus?: (string|null)
+			sharableEventInviteLocationName?: (string|null)
+			sharableEventInviteCoverImageHandle?: (string|null)
+			sharableEventInviteLastUpdatedTsUsec?: (number|Long|null)
 			$unknowns?: Uint8Array[]
 		}
 		type $Shape = proto.MsgOpaqueData.$Properties
@@ -14983,10 +14991,10 @@ export namespace proto {
 			jpegThumbnail?: (Uint8Array|null)
 			static create(properties: proto.MsgOpaqueData.EventLocation.$Shape): proto.MsgOpaqueData.EventLocation & proto.MsgOpaqueData.EventLocation.$Shape
 			static create(properties?: proto.MsgOpaqueData.EventLocation.$Properties): proto.MsgOpaqueData.EventLocation
-			static encode(m: proto.MsgOpaqueData.EventLocation.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.MsgOpaqueData.EventLocation & proto.MsgOpaqueData.EventLocation.$Shape
+			static encode(m: proto.MsgOpaqueData.EventLocation.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.MsgOpaqueData.EventLocation & proto.MsgOpaqueData.EventLocation.$Shape
 			static fromObject(d: { [k: string]: any }): proto.MsgOpaqueData.EventLocation
-			static toObject(m: proto.MsgOpaqueData.EventLocation, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.MsgOpaqueData.EventLocation, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace EventLocation {
@@ -15028,10 +15036,10 @@ export namespace proto {
 			lyricsConfirmedAtS?: (number|Long|null)
 			static create(properties: proto.MsgOpaqueData.MusicData.$Shape): proto.MsgOpaqueData.MusicData & proto.MsgOpaqueData.MusicData.$Shape
 			static create(properties?: proto.MsgOpaqueData.MusicData.$Properties): proto.MsgOpaqueData.MusicData
-			static encode(m: proto.MsgOpaqueData.MusicData.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.MsgOpaqueData.MusicData & proto.MsgOpaqueData.MusicData.$Shape
+			static encode(m: proto.MsgOpaqueData.MusicData.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.MsgOpaqueData.MusicData & proto.MsgOpaqueData.MusicData.$Shape
 			static fromObject(d: { [k: string]: any }): proto.MsgOpaqueData.MusicData
-			static toObject(m: proto.MsgOpaqueData.MusicData, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.MsgOpaqueData.MusicData, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace MusicData {
@@ -15070,10 +15078,10 @@ export namespace proto {
 				wordOffsets: proto.MsgOpaqueData.MusicData.LyricsLine.WordOffset.$Properties[]
 				static create(properties: proto.MsgOpaqueData.MusicData.LyricsLine.$Shape): proto.MsgOpaqueData.MusicData.LyricsLine & proto.MsgOpaqueData.MusicData.LyricsLine.$Shape
 				static create(properties?: proto.MsgOpaqueData.MusicData.LyricsLine.$Properties): proto.MsgOpaqueData.MusicData.LyricsLine
-				static encode(m: proto.MsgOpaqueData.MusicData.LyricsLine.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.MsgOpaqueData.MusicData.LyricsLine & proto.MsgOpaqueData.MusicData.LyricsLine.$Shape
+				static encode(m: proto.MsgOpaqueData.MusicData.LyricsLine.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.MsgOpaqueData.MusicData.LyricsLine & proto.MsgOpaqueData.MusicData.LyricsLine.$Shape
 				static fromObject(d: { [k: string]: any }): proto.MsgOpaqueData.MusicData.LyricsLine
-				static toObject(m: proto.MsgOpaqueData.MusicData.LyricsLine, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.MsgOpaqueData.MusicData.LyricsLine, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace LyricsLine {
@@ -15096,10 +15104,10 @@ export namespace proto {
 					endOffsetMs?: (number|null)
 					static create(properties: proto.MsgOpaqueData.MusicData.LyricsLine.WordOffset.$Shape): proto.MsgOpaqueData.MusicData.LyricsLine.WordOffset & proto.MsgOpaqueData.MusicData.LyricsLine.WordOffset.$Shape
 					static create(properties?: proto.MsgOpaqueData.MusicData.LyricsLine.WordOffset.$Properties): proto.MsgOpaqueData.MusicData.LyricsLine.WordOffset
-					static encode(m: proto.MsgOpaqueData.MusicData.LyricsLine.WordOffset.$Properties, w?: PbWriter): PbWriter
-					static decode(r: (PbReader|Uint8Array), l?: number): proto.MsgOpaqueData.MusicData.LyricsLine.WordOffset & proto.MsgOpaqueData.MusicData.LyricsLine.WordOffset.$Shape
+					static encode(m: proto.MsgOpaqueData.MusicData.LyricsLine.WordOffset.$Properties, w?: PBWriter): PBWriter
+					static decode(r: (PBReader|Uint8Array), l?: number): proto.MsgOpaqueData.MusicData.LyricsLine.WordOffset & proto.MsgOpaqueData.MusicData.LyricsLine.WordOffset.$Shape
 					static fromObject(d: { [k: string]: any }): proto.MsgOpaqueData.MusicData.LyricsLine.WordOffset
-					static toObject(m: proto.MsgOpaqueData.MusicData.LyricsLine.WordOffset, o?: PbConversionOptions): { [k: string]: any }
+					static toObject(m: proto.MsgOpaqueData.MusicData.LyricsLine.WordOffset, o?: PBConversionOptions): { [k: string]: any }
 					toJSON(): { [k: string]: any }
 				}
 				namespace WordOffset {
@@ -15131,10 +15139,10 @@ export namespace proto {
 			addOptionMsgT?: (number|null)
 			static create(properties: proto.MsgOpaqueData.PollOption.$Shape): proto.MsgOpaqueData.PollOption & proto.MsgOpaqueData.PollOption.$Shape
 			static create(properties?: proto.MsgOpaqueData.PollOption.$Properties): proto.MsgOpaqueData.PollOption
-			static encode(m: proto.MsgOpaqueData.PollOption.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.MsgOpaqueData.PollOption & proto.MsgOpaqueData.PollOption.$Shape
+			static encode(m: proto.MsgOpaqueData.PollOption.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.MsgOpaqueData.PollOption & proto.MsgOpaqueData.PollOption.$Shape
 			static fromObject(d: { [k: string]: any }): proto.MsgOpaqueData.PollOption
-			static toObject(m: proto.MsgOpaqueData.PollOption, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.MsgOpaqueData.PollOption, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PollOption {
@@ -15161,10 +15169,10 @@ export namespace proto {
 			optionVoteCount?: (number|null)
 			static create(properties: proto.MsgOpaqueData.PollVoteSnapshot.$Shape): proto.MsgOpaqueData.PollVoteSnapshot & proto.MsgOpaqueData.PollVoteSnapshot.$Shape
 			static create(properties?: proto.MsgOpaqueData.PollVoteSnapshot.$Properties): proto.MsgOpaqueData.PollVoteSnapshot
-			static encode(m: proto.MsgOpaqueData.PollVoteSnapshot.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.MsgOpaqueData.PollVoteSnapshot & proto.MsgOpaqueData.PollVoteSnapshot.$Shape
+			static encode(m: proto.MsgOpaqueData.PollVoteSnapshot.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.MsgOpaqueData.PollVoteSnapshot & proto.MsgOpaqueData.PollVoteSnapshot.$Shape
 			static fromObject(d: { [k: string]: any }): proto.MsgOpaqueData.PollVoteSnapshot
-			static toObject(m: proto.MsgOpaqueData.PollVoteSnapshot, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.MsgOpaqueData.PollVoteSnapshot, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PollVoteSnapshot {
@@ -15183,10 +15191,10 @@ export namespace proto {
 			pollVotes: proto.MsgOpaqueData.PollVoteSnapshot.$Properties[]
 			static create(properties: proto.MsgOpaqueData.PollVotesSnapshot.$Shape): proto.MsgOpaqueData.PollVotesSnapshot & proto.MsgOpaqueData.PollVotesSnapshot.$Shape
 			static create(properties?: proto.MsgOpaqueData.PollVotesSnapshot.$Properties): proto.MsgOpaqueData.PollVotesSnapshot
-			static encode(m: proto.MsgOpaqueData.PollVotesSnapshot.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.MsgOpaqueData.PollVotesSnapshot & proto.MsgOpaqueData.PollVotesSnapshot.$Shape
+			static encode(m: proto.MsgOpaqueData.PollVotesSnapshot.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.MsgOpaqueData.PollVotesSnapshot & proto.MsgOpaqueData.PollVotesSnapshot.$Shape
 			static fromObject(d: { [k: string]: any }): proto.MsgOpaqueData.PollVotesSnapshot
-			static toObject(m: proto.MsgOpaqueData.PollVotesSnapshot, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.MsgOpaqueData.PollVotesSnapshot, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PollVotesSnapshot {
@@ -15206,10 +15214,10 @@ export namespace proto {
 		quotedMsg?: (proto.MsgOpaqueData.$Properties|null)
 		static create(properties: proto.MsgRowOpaqueData.$Shape): proto.MsgRowOpaqueData & proto.MsgRowOpaqueData.$Shape
 		static create(properties?: proto.MsgRowOpaqueData.$Properties): proto.MsgRowOpaqueData
-		static encode(m: proto.MsgRowOpaqueData.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.MsgRowOpaqueData & proto.MsgRowOpaqueData.$Shape
+		static encode(m: proto.MsgRowOpaqueData.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.MsgRowOpaqueData & proto.MsgRowOpaqueData.$Shape
 		static fromObject(d: { [k: string]: any }): proto.MsgRowOpaqueData
-		static toObject(m: proto.MsgRowOpaqueData, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.MsgRowOpaqueData, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace MsgRowOpaqueData {
@@ -15329,10 +15337,10 @@ export namespace proto {
 		signature?: (Uint8Array|null)
 		static create(properties: proto.NoiseCertificate.$Shape): proto.NoiseCertificate & proto.NoiseCertificate.$Shape
 		static create(properties?: proto.NoiseCertificate.$Properties): proto.NoiseCertificate
-		static encode(m: proto.NoiseCertificate.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.NoiseCertificate & proto.NoiseCertificate.$Shape
+		static encode(m: proto.NoiseCertificate.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.NoiseCertificate & proto.NoiseCertificate.$Shape
 		static fromObject(d: { [k: string]: any }): proto.NoiseCertificate
-		static toObject(m: proto.NoiseCertificate, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.NoiseCertificate, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace NoiseCertificate {
@@ -15354,10 +15362,10 @@ export namespace proto {
 			key?: (Uint8Array|null)
 			static create(properties: proto.NoiseCertificate.Details.$Shape): proto.NoiseCertificate.Details & proto.NoiseCertificate.Details.$Shape
 			static create(properties?: proto.NoiseCertificate.Details.$Properties): proto.NoiseCertificate.Details
-			static encode(m: proto.NoiseCertificate.Details.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.NoiseCertificate.Details & proto.NoiseCertificate.Details.$Shape
+			static encode(m: proto.NoiseCertificate.Details.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.NoiseCertificate.Details & proto.NoiseCertificate.Details.$Shape
 			static fromObject(d: { [k: string]: any }): proto.NoiseCertificate.Details
-			static toObject(m: proto.NoiseCertificate.Details, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.NoiseCertificate.Details, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace Details {
@@ -15380,10 +15388,10 @@ export namespace proto {
 		accountType?: (proto.NonE2EEAttestation.AccountType|null)
 		static create(properties: proto.NonE2EEAttestation.$Shape): proto.NonE2EEAttestation & proto.NonE2EEAttestation.$Shape
 		static create(properties?: proto.NonE2EEAttestation.$Properties): proto.NonE2EEAttestation
-		static encode(m: proto.NonE2EEAttestation.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.NonE2EEAttestation & proto.NonE2EEAttestation.$Shape
+		static encode(m: proto.NonE2EEAttestation.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.NonE2EEAttestation & proto.NonE2EEAttestation.$Shape
 		static fromObject(d: { [k: string]: any }): proto.NonE2EEAttestation
-		static toObject(m: proto.NonE2EEAttestation, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.NonE2EEAttestation, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace NonE2EEAttestation {
@@ -15409,10 +15417,10 @@ export namespace proto {
 		participant?: (string|null)
 		static create(properties: proto.NotificationMessageInfo.$Shape): proto.NotificationMessageInfo & proto.NotificationMessageInfo.$Shape
 		static create(properties?: proto.NotificationMessageInfo.$Properties): proto.NotificationMessageInfo
-		static encode(m: proto.NotificationMessageInfo.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.NotificationMessageInfo & proto.NotificationMessageInfo.$Shape
+		static encode(m: proto.NotificationMessageInfo.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.NotificationMessageInfo & proto.NotificationMessageInfo.$Shape
 		static fromObject(d: { [k: string]: any }): proto.NotificationMessageInfo
-		static toObject(m: proto.NotificationMessageInfo, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.NotificationMessageInfo, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace NotificationMessageInfo {
@@ -15444,10 +15452,10 @@ export namespace proto {
 		callVibrate?: (string|null)
 		static create(properties: proto.NotificationSettings.$Shape): proto.NotificationSettings & proto.NotificationSettings.$Shape
 		static create(properties?: proto.NotificationSettings.$Properties): proto.NotificationSettings
-		static encode(m: proto.NotificationSettings.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.NotificationSettings & proto.NotificationSettings.$Shape
+		static encode(m: proto.NotificationSettings.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.NotificationSettings & proto.NotificationSettings.$Shape
 		static fromObject(d: { [k: string]: any }): proto.NotificationSettings
-		static toObject(m: proto.NotificationSettings, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.NotificationSettings, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace NotificationSettings {
@@ -15475,10 +15483,10 @@ export namespace proto {
 		conversations: proto.Conversation.$Properties[]
 		static create(properties: proto.OmittedConversationMetadata.$Shape): proto.OmittedConversationMetadata & proto.OmittedConversationMetadata.$Shape
 		static create(properties?: proto.OmittedConversationMetadata.$Properties): proto.OmittedConversationMetadata
-		static encode(m: proto.OmittedConversationMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.OmittedConversationMetadata & proto.OmittedConversationMetadata.$Shape
+		static encode(m: proto.OmittedConversationMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.OmittedConversationMetadata & proto.OmittedConversationMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.OmittedConversationMetadata
-		static toObject(m: proto.OmittedConversationMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.OmittedConversationMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace OmittedConversationMetadata {
@@ -15511,10 +15519,10 @@ export namespace proto {
 		advSecret?: (Uint8Array|null)
 		static create(properties: proto.PairingRequest.$Shape): proto.PairingRequest & proto.PairingRequest.$Shape
 		static create(properties?: proto.PairingRequest.$Properties): proto.PairingRequest
-		static encode(m: proto.PairingRequest.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.PairingRequest & proto.PairingRequest.$Shape
+		static encode(m: proto.PairingRequest.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.PairingRequest & proto.PairingRequest.$Shape
 		static fromObject(d: { [k: string]: any }): proto.PairingRequest
-		static toObject(m: proto.PairingRequest, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.PairingRequest, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace PairingRequest {
@@ -15536,10 +15544,10 @@ export namespace proto {
 		leaveTs?: (number|Long|null)
 		static create(properties: proto.PastParticipant.$Shape): proto.PastParticipant & proto.PastParticipant.$Shape
 		static create(properties?: proto.PastParticipant.$Properties): proto.PastParticipant
-		static encode(m: proto.PastParticipant.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.PastParticipant & proto.PastParticipant.$Shape
+		static encode(m: proto.PastParticipant.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.PastParticipant & proto.PastParticipant.$Shape
 		static fromObject(d: { [k: string]: any }): proto.PastParticipant
-		static toObject(m: proto.PastParticipant, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.PastParticipant, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace PastParticipant {
@@ -15564,10 +15572,10 @@ export namespace proto {
 		pastParticipants: proto.PastParticipant.$Properties[]
 		static create(properties: proto.PastParticipants.$Shape): proto.PastParticipants & proto.PastParticipants.$Shape
 		static create(properties?: proto.PastParticipants.$Properties): proto.PastParticipants
-		static encode(m: proto.PastParticipants.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.PastParticipants & proto.PastParticipants.$Shape
+		static encode(m: proto.PastParticipants.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.PastParticipants & proto.PastParticipants.$Shape
 		static fromObject(d: { [k: string]: any }): proto.PastParticipants
-		static toObject(m: proto.PastParticipants, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.PastParticipants, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace PastParticipants {
@@ -15596,10 +15604,10 @@ export namespace proto {
 		isSenderPrimary?: (boolean|null)
 		static create(properties: proto.PatchDebugData.$Shape): proto.PatchDebugData & proto.PatchDebugData.$Shape
 		static create(properties?: proto.PatchDebugData.$Properties): proto.PatchDebugData
-		static encode(m: proto.PatchDebugData.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.PatchDebugData & proto.PatchDebugData.$Shape
+		static encode(m: proto.PatchDebugData.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.PatchDebugData & proto.PatchDebugData.$Shape
 		static fromObject(d: { [k: string]: any }): proto.PatchDebugData
-		static toObject(m: proto.PatchDebugData, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.PatchDebugData, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace PatchDebugData {
@@ -15650,10 +15658,10 @@ export namespace proto {
 		type?: (proto.PaymentBackground.Type|null)
 		static create(properties: proto.PaymentBackground.$Shape): proto.PaymentBackground & proto.PaymentBackground.$Shape
 		static create(properties?: proto.PaymentBackground.$Properties): proto.PaymentBackground
-		static encode(m: proto.PaymentBackground.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.PaymentBackground & proto.PaymentBackground.$Shape
+		static encode(m: proto.PaymentBackground.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.PaymentBackground & proto.PaymentBackground.$Shape
 		static fromObject(d: { [k: string]: any }): proto.PaymentBackground
-		static toObject(m: proto.PaymentBackground, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.PaymentBackground, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace PaymentBackground {
@@ -15683,10 +15691,10 @@ export namespace proto {
 			directPath?: (string|null)
 			static create(properties: proto.PaymentBackground.MediaData.$Shape): proto.PaymentBackground.MediaData & proto.PaymentBackground.MediaData.$Shape
 			static create(properties?: proto.PaymentBackground.MediaData.$Properties): proto.PaymentBackground.MediaData
-			static encode(m: proto.PaymentBackground.MediaData.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.PaymentBackground.MediaData & proto.PaymentBackground.MediaData.$Shape
+			static encode(m: proto.PaymentBackground.MediaData.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.PaymentBackground.MediaData & proto.PaymentBackground.MediaData.$Shape
 			static fromObject(d: { [k: string]: any }): proto.PaymentBackground.MediaData
-			static toObject(m: proto.PaymentBackground.MediaData, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.PaymentBackground.MediaData, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace MediaData {
@@ -15725,10 +15733,10 @@ export namespace proto {
 		exchangeAmount?: (proto.Money.$Properties|null)
 		static create(properties: proto.PaymentInfo.$Shape): proto.PaymentInfo & proto.PaymentInfo.$Shape
 		static create(properties?: proto.PaymentInfo.$Properties): proto.PaymentInfo
-		static encode(m: proto.PaymentInfo.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.PaymentInfo & proto.PaymentInfo.$Shape
+		static encode(m: proto.PaymentInfo.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.PaymentInfo & proto.PaymentInfo.$Shape
 		static fromObject(d: { [k: string]: any }): proto.PaymentInfo
-		static toObject(m: proto.PaymentInfo, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.PaymentInfo, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace PaymentInfo {
@@ -15811,10 +15819,10 @@ export namespace proto {
 		lidJid?: (string|null)
 		static create(properties: proto.PhoneNumberToLIDMapping.$Shape): proto.PhoneNumberToLIDMapping & proto.PhoneNumberToLIDMapping.$Shape
 		static create(properties?: proto.PhoneNumberToLIDMapping.$Properties): proto.PhoneNumberToLIDMapping
-		static encode(m: proto.PhoneNumberToLIDMapping.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.PhoneNumberToLIDMapping & proto.PhoneNumberToLIDMapping.$Shape
+		static encode(m: proto.PhoneNumberToLIDMapping.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.PhoneNumberToLIDMapping & proto.PhoneNumberToLIDMapping.$Shape
 		static fromObject(d: { [k: string]: any }): proto.PhoneNumberToLIDMapping
-		static toObject(m: proto.PhoneNumberToLIDMapping, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.PhoneNumberToLIDMapping, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace PhoneNumberToLIDMapping {
@@ -15835,10 +15843,10 @@ export namespace proto {
 		newPhotoId?: (number|null)
 		static create(properties: proto.PhotoChange.$Shape): proto.PhotoChange & proto.PhotoChange.$Shape
 		static create(properties?: proto.PhotoChange.$Properties): proto.PhotoChange
-		static encode(m: proto.PhotoChange.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.PhotoChange & proto.PhotoChange.$Shape
+		static encode(m: proto.PhotoChange.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.PhotoChange & proto.PhotoChange.$Shape
 		static fromObject(d: { [k: string]: any }): proto.PhotoChange
-		static toObject(m: proto.PhotoChange, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.PhotoChange, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace PhotoChange {
@@ -15862,10 +15870,10 @@ export namespace proto {
 		messageAddOnContextInfo?: (proto.MessageAddOnContextInfo.$Properties|null)
 		static create(properties: proto.PinInChat.$Shape): proto.PinInChat & proto.PinInChat.$Shape
 		static create(properties?: proto.PinInChat.$Properties): proto.PinInChat
-		static encode(m: proto.PinInChat.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.PinInChat & proto.PinInChat.$Shape
+		static encode(m: proto.PinInChat.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.PinInChat & proto.PinInChat.$Shape
 		static fromObject(d: { [k: string]: any }): proto.PinInChat
-		static toObject(m: proto.PinInChat, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.PinInChat, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace PinInChat {
@@ -15895,10 +15903,10 @@ export namespace proto {
 		y?: (number|null)
 		static create(properties: proto.Point.$Shape): proto.Point & proto.Point.$Shape
 		static create(properties?: proto.Point.$Properties): proto.Point
-		static encode(m: proto.Point.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.Point & proto.Point.$Shape
+		static encode(m: proto.Point.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.Point & proto.Point.$Shape
 		static fromObject(d: { [k: string]: any }): proto.Point
-		static toObject(m: proto.Point, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.Point, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace Point {
@@ -15921,10 +15929,10 @@ export namespace proto {
 		originalOptions: proto.Message.PollCreationMessage.Option.$Properties[]
 		static create(properties: proto.PollAdditionalMetadata.$Shape): proto.PollAdditionalMetadata & proto.PollAdditionalMetadata.$Shape
 		static create(properties?: proto.PollAdditionalMetadata.$Properties): proto.PollAdditionalMetadata
-		static encode(m: proto.PollAdditionalMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.PollAdditionalMetadata & proto.PollAdditionalMetadata.$Shape
+		static encode(m: proto.PollAdditionalMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.PollAdditionalMetadata & proto.PollAdditionalMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.PollAdditionalMetadata
-		static toObject(m: proto.PollAdditionalMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.PollAdditionalMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace PollAdditionalMetadata {
@@ -15944,10 +15952,10 @@ export namespace proto {
 			pollNameHash?: (Uint8Array|null)
 			static create(properties: proto.PollAdditionalMetadata.PollNameHashHistoryEntry.$Shape): proto.PollAdditionalMetadata.PollNameHashHistoryEntry & proto.PollAdditionalMetadata.PollNameHashHistoryEntry.$Shape
 			static create(properties?: proto.PollAdditionalMetadata.PollNameHashHistoryEntry.$Properties): proto.PollAdditionalMetadata.PollNameHashHistoryEntry
-			static encode(m: proto.PollAdditionalMetadata.PollNameHashHistoryEntry.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.PollAdditionalMetadata.PollNameHashHistoryEntry & proto.PollAdditionalMetadata.PollNameHashHistoryEntry.$Shape
+			static encode(m: proto.PollAdditionalMetadata.PollNameHashHistoryEntry.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.PollAdditionalMetadata.PollNameHashHistoryEntry & proto.PollAdditionalMetadata.PollNameHashHistoryEntry.$Shape
 			static fromObject(d: { [k: string]: any }): proto.PollAdditionalMetadata.PollNameHashHistoryEntry
-			static toObject(m: proto.PollAdditionalMetadata.PollNameHashHistoryEntry, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.PollAdditionalMetadata.PollNameHashHistoryEntry, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PollNameHashHistoryEntry {
@@ -15968,10 +15976,10 @@ export namespace proto {
 		encIv?: (Uint8Array|null)
 		static create(properties: proto.PollEncValue.$Shape): proto.PollEncValue & proto.PollEncValue.$Shape
 		static create(properties?: proto.PollEncValue.$Properties): proto.PollEncValue
-		static encode(m: proto.PollEncValue.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.PollEncValue & proto.PollEncValue.$Shape
+		static encode(m: proto.PollEncValue.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.PollEncValue & proto.PollEncValue.$Shape
 		static fromObject(d: { [k: string]: any }): proto.PollEncValue
-		static toObject(m: proto.PollEncValue, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.PollEncValue, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace PollEncValue {
@@ -15995,10 +16003,10 @@ export namespace proto {
 		metadata?: (proto.Message.PollUpdateMessageMetadata.$Properties|null)
 		static create(properties: proto.PollUpdate.$Shape): proto.PollUpdate & proto.PollUpdate.$Shape
 		static create(properties?: proto.PollUpdate.$Properties): proto.PollUpdate
-		static encode(m: proto.PollUpdate.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.PollUpdate & proto.PollUpdate.$Shape
+		static encode(m: proto.PollUpdate.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.PollUpdate & proto.PollUpdate.$Shape
 		static fromObject(d: { [k: string]: any }): proto.PollUpdate
-		static toObject(m: proto.PollUpdate, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.PollUpdate, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace PollUpdate {
@@ -16023,10 +16031,10 @@ export namespace proto {
 		privateKey?: (Uint8Array|null)
 		static create(properties: proto.PreKeyRecordStructure.$Shape): proto.PreKeyRecordStructure & proto.PreKeyRecordStructure.$Shape
 		static create(properties?: proto.PreKeyRecordStructure.$Properties): proto.PreKeyRecordStructure
-		static encode(m: proto.PreKeyRecordStructure.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.PreKeyRecordStructure & proto.PreKeyRecordStructure.$Shape
+		static encode(m: proto.PreKeyRecordStructure.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.PreKeyRecordStructure & proto.PreKeyRecordStructure.$Shape
 		static fromObject(d: { [k: string]: any }): proto.PreKeyRecordStructure
-		static toObject(m: proto.PreKeyRecordStructure, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.PreKeyRecordStructure, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace PreKeyRecordStructure {
@@ -16053,10 +16061,10 @@ export namespace proto {
 		kyberCiphertext?: (Uint8Array|null)
 		static create(properties: proto.PreKeySignalMessage.$Shape): proto.PreKeySignalMessage & proto.PreKeySignalMessage.$Shape
 		static create(properties?: proto.PreKeySignalMessage.$Properties): proto.PreKeySignalMessage
-		static encode(m: proto.PreKeySignalMessage.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.PreKeySignalMessage & proto.PreKeySignalMessage.$Shape
+		static encode(m: proto.PreKeySignalMessage.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.PreKeySignalMessage & proto.PreKeySignalMessage.$Shape
 		static fromObject(d: { [k: string]: any }): proto.PreKeySignalMessage
-		static toObject(m: proto.PreKeySignalMessage, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.PreKeySignalMessage, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace PreKeySignalMessage {
@@ -16081,10 +16089,10 @@ export namespace proto {
 		serverCampaignId?: (string|null)
 		static create(properties: proto.PremiumMessageInfo.$Shape): proto.PremiumMessageInfo & proto.PremiumMessageInfo.$Shape
 		static create(properties?: proto.PremiumMessageInfo.$Properties): proto.PremiumMessageInfo
-		static encode(m: proto.PremiumMessageInfo.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.PremiumMessageInfo & proto.PremiumMessageInfo.$Shape
+		static encode(m: proto.PremiumMessageInfo.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.PremiumMessageInfo & proto.PremiumMessageInfo.$Shape
 		static fromObject(d: { [k: string]: any }): proto.PremiumMessageInfo
-		static toObject(m: proto.PremiumMessageInfo, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.PremiumMessageInfo, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace PremiumMessageInfo {
@@ -16103,10 +16111,10 @@ export namespace proto {
 		nonce?: (Uint8Array|null)
 		static create(properties: proto.PrimaryEphemeralIdentity.$Shape): proto.PrimaryEphemeralIdentity & proto.PrimaryEphemeralIdentity.$Shape
 		static create(properties?: proto.PrimaryEphemeralIdentity.$Properties): proto.PrimaryEphemeralIdentity
-		static encode(m: proto.PrimaryEphemeralIdentity.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.PrimaryEphemeralIdentity & proto.PrimaryEphemeralIdentity.$Shape
+		static encode(m: proto.PrimaryEphemeralIdentity.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.PrimaryEphemeralIdentity & proto.PrimaryEphemeralIdentity.$Shape
 		static fromObject(d: { [k: string]: any }): proto.PrimaryEphemeralIdentity
-		static toObject(m: proto.PrimaryEphemeralIdentity, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.PrimaryEphemeralIdentity, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace PrimaryEphemeralIdentity {
@@ -16137,10 +16145,10 @@ export namespace proto {
 		capabilities: string[]
 		static create(properties: proto.ProcessedVideo.$Shape): proto.ProcessedVideo & proto.ProcessedVideo.$Shape
 		static create(properties?: proto.ProcessedVideo.$Properties): proto.ProcessedVideo
-		static encode(m: proto.ProcessedVideo.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.ProcessedVideo & proto.ProcessedVideo.$Shape
+		static encode(m: proto.ProcessedVideo.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.ProcessedVideo & proto.ProcessedVideo.$Shape
 		static fromObject(d: { [k: string]: any }): proto.ProcessedVideo
-		static toObject(m: proto.ProcessedVideo, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.ProcessedVideo, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace ProcessedVideo {
@@ -16172,10 +16180,10 @@ export namespace proto {
 		commitment?: (proto.CompanionCommitment.$Properties|null)
 		static create(properties: proto.ProloguePayload.$Shape): proto.ProloguePayload & proto.ProloguePayload.$Shape
 		static create(properties?: proto.ProloguePayload.$Properties): proto.ProloguePayload
-		static encode(m: proto.ProloguePayload.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.ProloguePayload & proto.ProloguePayload.$Shape
+		static encode(m: proto.ProloguePayload.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.ProloguePayload & proto.ProloguePayload.$Shape
 		static fromObject(d: { [k: string]: any }): proto.ProloguePayload
-		static toObject(m: proto.ProloguePayload, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.ProloguePayload, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace ProloguePayload {
@@ -16195,10 +16203,10 @@ export namespace proto {
 		pushname?: (string|null)
 		static create(properties: proto.Pushname.$Shape): proto.Pushname & proto.Pushname.$Shape
 		static create(properties?: proto.Pushname.$Properties): proto.Pushname
-		static encode(m: proto.Pushname.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.Pushname & proto.Pushname.$Shape
+		static encode(m: proto.Pushname.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.Pushname & proto.Pushname.$Shape
 		static fromObject(d: { [k: string]: any }): proto.Pushname
-		static toObject(m: proto.Pushname, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.Pushname, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace Pushname {
@@ -16216,10 +16224,10 @@ export namespace proto {
 		$unknowns?: Uint8Array[]
 		static create(properties: proto.QP.$Shape): proto.QP & proto.QP.$Shape
 		static create(properties?: proto.QP.$Properties): proto.QP
-		static encode(m: proto.QP.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.QP & proto.QP.$Shape
+		static encode(m: proto.QP.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.QP & proto.QP.$Shape
 		static fromObject(d: { [k: string]: any }): proto.QP
-		static toObject(m: proto.QP, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.QP, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace QP {
@@ -16243,10 +16251,10 @@ export namespace proto {
 			clientNotSupportedConfig: proto.QP.FilterClientNotSupportedConfig
 			static create(properties: proto.QP.Filter.$Shape): proto.QP.Filter & proto.QP.Filter.$Shape
 			static create(properties?: proto.QP.Filter.$Properties): proto.QP.Filter
-			static encode(m: proto.QP.Filter.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.QP.Filter & proto.QP.Filter.$Shape
+			static encode(m: proto.QP.Filter.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.QP.Filter & proto.QP.Filter.$Shape
 			static fromObject(d: { [k: string]: any }): proto.QP.Filter
-			static toObject(m: proto.QP.Filter, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.QP.Filter, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace Filter {
@@ -16269,10 +16277,10 @@ export namespace proto {
 			filters: proto.QP.Filter.$Properties[]
 			static create(properties: proto.QP.FilterClause.$Shape): proto.QP.FilterClause & proto.QP.FilterClause.$Shape
 			static create(properties?: proto.QP.FilterClause.$Properties): proto.QP.FilterClause
-			static encode(m: proto.QP.FilterClause.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.QP.FilterClause & proto.QP.FilterClause.$Shape
+			static encode(m: proto.QP.FilterClause.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.QP.FilterClause & proto.QP.FilterClause.$Shape
 			static fromObject(d: { [k: string]: any }): proto.QP.FilterClause
-			static toObject(m: proto.QP.FilterClause, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.QP.FilterClause, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace FilterClause {
@@ -16297,10 +16305,10 @@ export namespace proto {
 			value?: (string|null)
 			static create(properties: proto.QP.FilterParameters.$Shape): proto.QP.FilterParameters & proto.QP.FilterParameters.$Shape
 			static create(properties?: proto.QP.FilterParameters.$Properties): proto.QP.FilterParameters
-			static encode(m: proto.QP.FilterParameters.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.QP.FilterParameters & proto.QP.FilterParameters.$Shape
+			static encode(m: proto.QP.FilterParameters.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.QP.FilterParameters & proto.QP.FilterParameters.$Shape
 			static fromObject(d: { [k: string]: any }): proto.QP.FilterParameters
-			static toObject(m: proto.QP.FilterParameters, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.QP.FilterParameters, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace FilterParameters {
@@ -16326,10 +16334,10 @@ export namespace proto {
 		extractedText?: (string|null)
 		static create(properties: proto.QuarantinedMessage.$Shape): proto.QuarantinedMessage & proto.QuarantinedMessage.$Shape
 		static create(properties?: proto.QuarantinedMessage.$Properties): proto.QuarantinedMessage
-		static encode(m: proto.QuarantinedMessage.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.QuarantinedMessage & proto.QuarantinedMessage.$Shape
+		static encode(m: proto.QuarantinedMessage.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.QuarantinedMessage & proto.QuarantinedMessage.$Shape
 		static fromObject(d: { [k: string]: any }): proto.QuarantinedMessage
-		static toObject(m: proto.QuarantinedMessage, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.QuarantinedMessage, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace QuarantinedMessage {
@@ -16352,10 +16360,10 @@ export namespace proto {
 		unread?: (boolean|null)
 		static create(properties: proto.Reaction.$Shape): proto.Reaction & proto.Reaction.$Shape
 		static create(properties?: proto.Reaction.$Properties): proto.Reaction
-		static encode(m: proto.Reaction.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.Reaction & proto.Reaction.$Shape
+		static encode(m: proto.Reaction.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.Reaction & proto.Reaction.$Shape
 		static fromObject(d: { [k: string]: any }): proto.Reaction
-		static toObject(m: proto.Reaction, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.Reaction, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace Reaction {
@@ -16378,10 +16386,10 @@ export namespace proto {
 		weight?: (number|null)
 		static create(properties: proto.RecentEmojiWeight.$Shape): proto.RecentEmojiWeight & proto.RecentEmojiWeight.$Shape
 		static create(properties?: proto.RecentEmojiWeight.$Properties): proto.RecentEmojiWeight
-		static encode(m: proto.RecentEmojiWeight.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.RecentEmojiWeight & proto.RecentEmojiWeight.$Shape
+		static encode(m: proto.RecentEmojiWeight.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.RecentEmojiWeight & proto.RecentEmojiWeight.$Shape
 		static fromObject(d: { [k: string]: any }): proto.RecentEmojiWeight
-		static toObject(m: proto.RecentEmojiWeight, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.RecentEmojiWeight, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace RecentEmojiWeight {
@@ -16401,10 +16409,10 @@ export namespace proto {
 		previousSessions: proto.SessionStructure.$Properties[]
 		static create(properties: proto.RecordStructure.$Shape): proto.RecordStructure & proto.RecordStructure.$Shape
 		static create(properties?: proto.RecordStructure.$Properties): proto.RecordStructure
-		static encode(m: proto.RecordStructure.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.RecordStructure & proto.RecordStructure.$Shape
+		static encode(m: proto.RecordStructure.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.RecordStructure & proto.RecordStructure.$Shape
 		static fromObject(d: { [k: string]: any }): proto.RecordStructure
-		static toObject(m: proto.RecordStructure, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.RecordStructure, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace RecordStructure {
@@ -16426,10 +16434,10 @@ export namespace proto {
 		never?: (boolean|null)
 		static create(properties: proto.Reportable.$Shape): proto.Reportable & proto.Reportable.$Shape
 		static create(properties?: proto.Reportable.$Properties): proto.Reportable
-		static encode(m: proto.Reportable.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.Reportable & proto.Reportable.$Shape
+		static encode(m: proto.Reportable.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.Reportable & proto.Reportable.$Shape
 		static fromObject(d: { [k: string]: any }): proto.Reportable
-		static toObject(m: proto.Reportable, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.Reportable, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace Reportable {
@@ -16451,10 +16459,10 @@ export namespace proto {
 		reportingTagTimestamp?: (number|Long|null)
 		static create(properties: proto.ReportingTokenInfo.$Shape): proto.ReportingTokenInfo & proto.ReportingTokenInfo.$Shape
 		static create(properties?: proto.ReportingTokenInfo.$Properties): proto.ReportingTokenInfo
-		static encode(m: proto.ReportingTokenInfo.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.ReportingTokenInfo & proto.ReportingTokenInfo.$Shape
+		static encode(m: proto.ReportingTokenInfo.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.ReportingTokenInfo & proto.ReportingTokenInfo.$Shape
 		static fromObject(d: { [k: string]: any }): proto.ReportingTokenInfo
-		static toObject(m: proto.ReportingTokenInfo, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.ReportingTokenInfo, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace ReportingTokenInfo {
@@ -16478,10 +16486,10 @@ export namespace proto {
 		tcpKeepalive?: (boolean|null)
 		static create(properties: proto.RoutingInfo.$Shape): proto.RoutingInfo & proto.RoutingInfo.$Shape
 		static create(properties?: proto.RoutingInfo.$Properties): proto.RoutingInfo
-		static encode(m: proto.RoutingInfo.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.RoutingInfo & proto.RoutingInfo.$Shape
+		static encode(m: proto.RoutingInfo.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.RoutingInfo & proto.RoutingInfo.$Shape
 		static fromObject(d: { [k: string]: any }): proto.RoutingInfo
-		static toObject(m: proto.RoutingInfo, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.RoutingInfo, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace RoutingInfo {
@@ -16506,10 +16514,10 @@ export namespace proto {
 		scheduledTime?: (number|Long|null)
 		static create(properties: proto.ScheduledMessageMetadata.$Shape): proto.ScheduledMessageMetadata & proto.ScheduledMessageMetadata.$Shape
 		static create(properties?: proto.ScheduledMessageMetadata.$Properties): proto.ScheduledMessageMetadata
-		static encode(m: proto.ScheduledMessageMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.ScheduledMessageMetadata & proto.ScheduledMessageMetadata.$Shape
+		static encode(m: proto.ScheduledMessageMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.ScheduledMessageMetadata & proto.ScheduledMessageMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.ScheduledMessageMetadata
-		static toObject(m: proto.ScheduledMessageMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.ScheduledMessageMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace ScheduledMessageMetadata {
@@ -16532,10 +16540,10 @@ export namespace proto {
 		signingKey?: (Uint8Array|null)
 		static create(properties: proto.SenderKeyDistributionMessage.$Shape): proto.SenderKeyDistributionMessage & proto.SenderKeyDistributionMessage.$Shape
 		static create(properties?: proto.SenderKeyDistributionMessage.$Properties): proto.SenderKeyDistributionMessage
-		static encode(m: proto.SenderKeyDistributionMessage.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.SenderKeyDistributionMessage & proto.SenderKeyDistributionMessage.$Shape
+		static encode(m: proto.SenderKeyDistributionMessage.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.SenderKeyDistributionMessage & proto.SenderKeyDistributionMessage.$Shape
 		static fromObject(d: { [k: string]: any }): proto.SenderKeyDistributionMessage
-		static toObject(m: proto.SenderKeyDistributionMessage, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.SenderKeyDistributionMessage, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace SenderKeyDistributionMessage {
@@ -16558,10 +16566,10 @@ export namespace proto {
 		ciphertext?: (Uint8Array|null)
 		static create(properties: proto.SenderKeyMessage.$Shape): proto.SenderKeyMessage & proto.SenderKeyMessage.$Shape
 		static create(properties?: proto.SenderKeyMessage.$Properties): proto.SenderKeyMessage
-		static encode(m: proto.SenderKeyMessage.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.SenderKeyMessage & proto.SenderKeyMessage.$Shape
+		static encode(m: proto.SenderKeyMessage.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.SenderKeyMessage & proto.SenderKeyMessage.$Shape
 		static fromObject(d: { [k: string]: any }): proto.SenderKeyMessage
-		static toObject(m: proto.SenderKeyMessage, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.SenderKeyMessage, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace SenderKeyMessage {
@@ -16581,10 +16589,10 @@ export namespace proto {
 		senderKeyStates: proto.SenderKeyStateStructure.$Properties[]
 		static create(properties: proto.SenderKeyRecordStructure.$Shape): proto.SenderKeyRecordStructure & proto.SenderKeyRecordStructure.$Shape
 		static create(properties?: proto.SenderKeyRecordStructure.$Properties): proto.SenderKeyRecordStructure
-		static encode(m: proto.SenderKeyRecordStructure.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.SenderKeyRecordStructure & proto.SenderKeyRecordStructure.$Shape
+		static encode(m: proto.SenderKeyRecordStructure.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.SenderKeyRecordStructure & proto.SenderKeyRecordStructure.$Shape
 		static fromObject(d: { [k: string]: any }): proto.SenderKeyRecordStructure
-		static toObject(m: proto.SenderKeyRecordStructure, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.SenderKeyRecordStructure, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace SenderKeyRecordStructure {
@@ -16605,10 +16613,10 @@ export namespace proto {
 		senderMessageKeys: proto.SenderKeyStateStructure.SenderMessageKey.$Properties[]
 		static create(properties: proto.SenderKeyStateStructure.$Shape): proto.SenderKeyStateStructure & proto.SenderKeyStateStructure.$Shape
 		static create(properties?: proto.SenderKeyStateStructure.$Properties): proto.SenderKeyStateStructure
-		static encode(m: proto.SenderKeyStateStructure.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.SenderKeyStateStructure & proto.SenderKeyStateStructure.$Shape
+		static encode(m: proto.SenderKeyStateStructure.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.SenderKeyStateStructure & proto.SenderKeyStateStructure.$Shape
 		static fromObject(d: { [k: string]: any }): proto.SenderKeyStateStructure
-		static toObject(m: proto.SenderKeyStateStructure, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.SenderKeyStateStructure, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace SenderKeyStateStructure {
@@ -16629,10 +16637,10 @@ export namespace proto {
 			seed?: (Uint8Array|null)
 			static create(properties: proto.SenderKeyStateStructure.SenderChainKey.$Shape): proto.SenderKeyStateStructure.SenderChainKey & proto.SenderKeyStateStructure.SenderChainKey.$Shape
 			static create(properties?: proto.SenderKeyStateStructure.SenderChainKey.$Properties): proto.SenderKeyStateStructure.SenderChainKey
-			static encode(m: proto.SenderKeyStateStructure.SenderChainKey.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SenderKeyStateStructure.SenderChainKey & proto.SenderKeyStateStructure.SenderChainKey.$Shape
+			static encode(m: proto.SenderKeyStateStructure.SenderChainKey.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SenderKeyStateStructure.SenderChainKey & proto.SenderKeyStateStructure.SenderChainKey.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SenderKeyStateStructure.SenderChainKey
-			static toObject(m: proto.SenderKeyStateStructure.SenderChainKey, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SenderKeyStateStructure.SenderChainKey, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace SenderChainKey {
@@ -16652,10 +16660,10 @@ export namespace proto {
 			seed?: (Uint8Array|null)
 			static create(properties: proto.SenderKeyStateStructure.SenderMessageKey.$Shape): proto.SenderKeyStateStructure.SenderMessageKey & proto.SenderKeyStateStructure.SenderMessageKey.$Shape
 			static create(properties?: proto.SenderKeyStateStructure.SenderMessageKey.$Properties): proto.SenderKeyStateStructure.SenderMessageKey
-			static encode(m: proto.SenderKeyStateStructure.SenderMessageKey.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SenderKeyStateStructure.SenderMessageKey & proto.SenderKeyStateStructure.SenderMessageKey.$Shape
+			static encode(m: proto.SenderKeyStateStructure.SenderMessageKey.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SenderKeyStateStructure.SenderMessageKey & proto.SenderKeyStateStructure.SenderMessageKey.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SenderKeyStateStructure.SenderMessageKey
-			static toObject(m: proto.SenderKeyStateStructure.SenderMessageKey, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SenderKeyStateStructure.SenderMessageKey, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace SenderMessageKey {
@@ -16675,10 +16683,10 @@ export namespace proto {
 			private?: (Uint8Array|null)
 			static create(properties: proto.SenderKeyStateStructure.SenderSigningKey.$Shape): proto.SenderKeyStateStructure.SenderSigningKey & proto.SenderKeyStateStructure.SenderSigningKey.$Shape
 			static create(properties?: proto.SenderKeyStateStructure.SenderSigningKey.$Properties): proto.SenderKeyStateStructure.SenderSigningKey
-			static encode(m: proto.SenderKeyStateStructure.SenderSigningKey.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SenderKeyStateStructure.SenderSigningKey & proto.SenderKeyStateStructure.SenderSigningKey.$Shape
+			static encode(m: proto.SenderKeyStateStructure.SenderSigningKey.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SenderKeyStateStructure.SenderSigningKey & proto.SenderKeyStateStructure.SenderSigningKey.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SenderKeyStateStructure.SenderSigningKey
-			static toObject(m: proto.SenderKeyStateStructure.SenderSigningKey, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SenderKeyStateStructure.SenderSigningKey, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace SenderSigningKey {
@@ -16698,10 +16706,10 @@ export namespace proto {
 		stanzaId?: (string|null)
 		static create(properties: proto.ServerErrorReceipt.$Shape): proto.ServerErrorReceipt & proto.ServerErrorReceipt.$Shape
 		static create(properties?: proto.ServerErrorReceipt.$Properties): proto.ServerErrorReceipt
-		static encode(m: proto.ServerErrorReceipt.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.ServerErrorReceipt & proto.ServerErrorReceipt.$Shape
+		static encode(m: proto.ServerErrorReceipt.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.ServerErrorReceipt & proto.ServerErrorReceipt.$Shape
 		static fromObject(d: { [k: string]: any }): proto.ServerErrorReceipt
-		static toObject(m: proto.ServerErrorReceipt, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.ServerErrorReceipt, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace ServerErrorReceipt {
@@ -16731,10 +16739,10 @@ export namespace proto {
 		aliceBaseKey?: (Uint8Array|null)
 		static create(properties: proto.SessionStructure.$Shape): proto.SessionStructure & proto.SessionStructure.$Shape
 		static create(properties?: proto.SessionStructure.$Properties): proto.SessionStructure
-		static encode(m: proto.SessionStructure.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.SessionStructure & proto.SessionStructure.$Shape
+		static encode(m: proto.SessionStructure.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.SessionStructure & proto.SessionStructure.$Shape
 		static fromObject(d: { [k: string]: any }): proto.SessionStructure
-		static toObject(m: proto.SessionStructure, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.SessionStructure, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace SessionStructure {
@@ -16766,10 +16774,10 @@ export namespace proto {
 			messageKeys: proto.SessionStructure.Chain.MessageKey.$Properties[]
 			static create(properties: proto.SessionStructure.Chain.$Shape): proto.SessionStructure.Chain & proto.SessionStructure.Chain.$Shape
 			static create(properties?: proto.SessionStructure.Chain.$Properties): proto.SessionStructure.Chain
-			static encode(m: proto.SessionStructure.Chain.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SessionStructure.Chain & proto.SessionStructure.Chain.$Shape
+			static encode(m: proto.SessionStructure.Chain.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SessionStructure.Chain & proto.SessionStructure.Chain.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SessionStructure.Chain
-			static toObject(m: proto.SessionStructure.Chain, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SessionStructure.Chain, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace Chain {
@@ -16790,10 +16798,10 @@ export namespace proto {
 				key?: (Uint8Array|null)
 				static create(properties: proto.SessionStructure.Chain.ChainKey.$Shape): proto.SessionStructure.Chain.ChainKey & proto.SessionStructure.Chain.ChainKey.$Shape
 				static create(properties?: proto.SessionStructure.Chain.ChainKey.$Properties): proto.SessionStructure.Chain.ChainKey
-				static encode(m: proto.SessionStructure.Chain.ChainKey.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.SessionStructure.Chain.ChainKey & proto.SessionStructure.Chain.ChainKey.$Shape
+				static encode(m: proto.SessionStructure.Chain.ChainKey.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.SessionStructure.Chain.ChainKey & proto.SessionStructure.Chain.ChainKey.$Shape
 				static fromObject(d: { [k: string]: any }): proto.SessionStructure.Chain.ChainKey
-				static toObject(m: proto.SessionStructure.Chain.ChainKey, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.SessionStructure.Chain.ChainKey, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace ChainKey {
@@ -16815,10 +16823,10 @@ export namespace proto {
 				iv?: (Uint8Array|null)
 				static create(properties: proto.SessionStructure.Chain.MessageKey.$Shape): proto.SessionStructure.Chain.MessageKey & proto.SessionStructure.Chain.MessageKey.$Shape
 				static create(properties?: proto.SessionStructure.Chain.MessageKey.$Properties): proto.SessionStructure.Chain.MessageKey
-				static encode(m: proto.SessionStructure.Chain.MessageKey.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.SessionStructure.Chain.MessageKey & proto.SessionStructure.Chain.MessageKey.$Shape
+				static encode(m: proto.SessionStructure.Chain.MessageKey.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.SessionStructure.Chain.MessageKey & proto.SessionStructure.Chain.MessageKey.$Shape
 				static fromObject(d: { [k: string]: any }): proto.SessionStructure.Chain.MessageKey
-				static toObject(m: proto.SessionStructure.Chain.MessageKey, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.SessionStructure.Chain.MessageKey, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace MessageKey {
@@ -16846,10 +16854,10 @@ export namespace proto {
 			localIdentityKeyPrivate?: (Uint8Array|null)
 			static create(properties: proto.SessionStructure.PendingKeyExchange.$Shape): proto.SessionStructure.PendingKeyExchange & proto.SessionStructure.PendingKeyExchange.$Shape
 			static create(properties?: proto.SessionStructure.PendingKeyExchange.$Properties): proto.SessionStructure.PendingKeyExchange
-			static encode(m: proto.SessionStructure.PendingKeyExchange.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SessionStructure.PendingKeyExchange & proto.SessionStructure.PendingKeyExchange.$Shape
+			static encode(m: proto.SessionStructure.PendingKeyExchange.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SessionStructure.PendingKeyExchange & proto.SessionStructure.PendingKeyExchange.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SessionStructure.PendingKeyExchange
-			static toObject(m: proto.SessionStructure.PendingKeyExchange, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SessionStructure.PendingKeyExchange, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PendingKeyExchange {
@@ -16877,10 +16885,10 @@ export namespace proto {
 			kyberCiphertext?: (Uint8Array|null)
 			static create(properties: proto.SessionStructure.PendingPreKey.$Shape): proto.SessionStructure.PendingPreKey & proto.SessionStructure.PendingPreKey.$Shape
 			static create(properties?: proto.SessionStructure.PendingPreKey.$Properties): proto.SessionStructure.PendingPreKey
-			static encode(m: proto.SessionStructure.PendingPreKey.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SessionStructure.PendingPreKey & proto.SessionStructure.PendingPreKey.$Shape
+			static encode(m: proto.SessionStructure.PendingPreKey.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SessionStructure.PendingPreKey & proto.SessionStructure.PendingPreKey.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SessionStructure.PendingPreKey
-			static toObject(m: proto.SessionStructure.PendingPreKey, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SessionStructure.PendingPreKey, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PendingPreKey {
@@ -16905,10 +16913,10 @@ export namespace proto {
 		sessionTransparencyType?: (proto.SessionTransparencyType|null)
 		static create(properties: proto.SessionTransparencyMetadata.$Shape): proto.SessionTransparencyMetadata & proto.SessionTransparencyMetadata.$Shape
 		static create(properties?: proto.SessionTransparencyMetadata.$Properties): proto.SessionTransparencyMetadata
-		static encode(m: proto.SessionTransparencyMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.SessionTransparencyMetadata & proto.SessionTransparencyMetadata.$Shape
+		static encode(m: proto.SessionTransparencyMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.SessionTransparencyMetadata & proto.SessionTransparencyMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.SessionTransparencyMetadata
-		static toObject(m: proto.SessionTransparencyMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.SessionTransparencyMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace SessionTransparencyMetadata {
@@ -16935,10 +16943,10 @@ export namespace proto {
 		ciphertext?: (Uint8Array|null)
 		static create(properties: proto.SignalMessage.$Shape): proto.SignalMessage & proto.SignalMessage.$Shape
 		static create(properties?: proto.SignalMessage.$Properties): proto.SignalMessage
-		static encode(m: proto.SignalMessage.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.SignalMessage & proto.SignalMessage.$Shape
+		static encode(m: proto.SignalMessage.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.SignalMessage & proto.SignalMessage.$Shape
 		static fromObject(d: { [k: string]: any }): proto.SignalMessage
-		static toObject(m: proto.SignalMessage, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.SignalMessage, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace SignalMessage {
@@ -16963,10 +16971,10 @@ export namespace proto {
 		timestamp?: (number|Long|null)
 		static create(properties: proto.SignedPreKeyRecordStructure.$Shape): proto.SignedPreKeyRecordStructure & proto.SignedPreKeyRecordStructure.$Shape
 		static create(properties?: proto.SignedPreKeyRecordStructure.$Properties): proto.SignedPreKeyRecordStructure
-		static encode(m: proto.SignedPreKeyRecordStructure.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.SignedPreKeyRecordStructure & proto.SignedPreKeyRecordStructure.$Shape
+		static encode(m: proto.SignedPreKeyRecordStructure.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.SignedPreKeyRecordStructure & proto.SignedPreKeyRecordStructure.$Shape
 		static fromObject(d: { [k: string]: any }): proto.SignedPreKeyRecordStructure
-		static toObject(m: proto.SignedPreKeyRecordStructure, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.SignedPreKeyRecordStructure, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace SignedPreKeyRecordStructure {
@@ -16996,10 +17004,10 @@ export namespace proto {
 		attributionData?: ("statusReshare"|"externalShare"|"music"|"groupStatus"|"rlAttribution"|"aiCreatedAttribution")
 		static create(properties: proto.StatusAttribution.$Shape): proto.StatusAttribution & proto.StatusAttribution.$Shape
 		static create(properties?: proto.StatusAttribution.$Properties): proto.StatusAttribution
-		static encode(m: proto.StatusAttribution.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.StatusAttribution & proto.StatusAttribution.$Shape
+		static encode(m: proto.StatusAttribution.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.StatusAttribution & proto.StatusAttribution.$Shape
 		static fromObject(d: { [k: string]: any }): proto.StatusAttribution
-		static toObject(m: proto.StatusAttribution, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.StatusAttribution, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace StatusAttribution {
@@ -17036,10 +17044,10 @@ export namespace proto {
 			source?: (proto.StatusAttribution.AiCreatedAttribution.Source|null)
 			static create(properties: proto.StatusAttribution.AiCreatedAttribution.$Shape): proto.StatusAttribution.AiCreatedAttribution & proto.StatusAttribution.AiCreatedAttribution.$Shape
 			static create(properties?: proto.StatusAttribution.AiCreatedAttribution.$Properties): proto.StatusAttribution.AiCreatedAttribution
-			static encode(m: proto.StatusAttribution.AiCreatedAttribution.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.StatusAttribution.AiCreatedAttribution & proto.StatusAttribution.AiCreatedAttribution.$Shape
+			static encode(m: proto.StatusAttribution.AiCreatedAttribution.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.StatusAttribution.AiCreatedAttribution & proto.StatusAttribution.AiCreatedAttribution.$Shape
 			static fromObject(d: { [k: string]: any }): proto.StatusAttribution.AiCreatedAttribution
-			static toObject(m: proto.StatusAttribution.AiCreatedAttribution, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.StatusAttribution.AiCreatedAttribution, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace AiCreatedAttribution {
@@ -17064,10 +17072,10 @@ export namespace proto {
 			actionFallbackUrl?: (string|null)
 			static create(properties: proto.StatusAttribution.ExternalShare.$Shape): proto.StatusAttribution.ExternalShare & proto.StatusAttribution.ExternalShare.$Shape
 			static create(properties?: proto.StatusAttribution.ExternalShare.$Properties): proto.StatusAttribution.ExternalShare
-			static encode(m: proto.StatusAttribution.ExternalShare.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.StatusAttribution.ExternalShare & proto.StatusAttribution.ExternalShare.$Shape
+			static encode(m: proto.StatusAttribution.ExternalShare.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.StatusAttribution.ExternalShare & proto.StatusAttribution.ExternalShare.$Shape
 			static fromObject(d: { [k: string]: any }): proto.StatusAttribution.ExternalShare
-			static toObject(m: proto.StatusAttribution.ExternalShare, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.StatusAttribution.ExternalShare, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ExternalShare {
@@ -17104,10 +17112,10 @@ export namespace proto {
 			authorJid?: (string|null)
 			static create(properties: proto.StatusAttribution.GroupStatus.$Shape): proto.StatusAttribution.GroupStatus & proto.StatusAttribution.GroupStatus.$Shape
 			static create(properties?: proto.StatusAttribution.GroupStatus.$Properties): proto.StatusAttribution.GroupStatus
-			static encode(m: proto.StatusAttribution.GroupStatus.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.StatusAttribution.GroupStatus & proto.StatusAttribution.GroupStatus.$Shape
+			static encode(m: proto.StatusAttribution.GroupStatus.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.StatusAttribution.GroupStatus & proto.StatusAttribution.GroupStatus.$Shape
 			static fromObject(d: { [k: string]: any }): proto.StatusAttribution.GroupStatus
-			static toObject(m: proto.StatusAttribution.GroupStatus, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.StatusAttribution.GroupStatus, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace GroupStatus {
@@ -17130,10 +17138,10 @@ export namespace proto {
 			isExplicit?: (boolean|null)
 			static create(properties: proto.StatusAttribution.Music.$Shape): proto.StatusAttribution.Music & proto.StatusAttribution.Music.$Shape
 			static create(properties?: proto.StatusAttribution.Music.$Properties): proto.StatusAttribution.Music
-			static encode(m: proto.StatusAttribution.Music.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.StatusAttribution.Music & proto.StatusAttribution.Music.$Shape
+			static encode(m: proto.StatusAttribution.Music.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.StatusAttribution.Music & proto.StatusAttribution.Music.$Shape
 			static fromObject(d: { [k: string]: any }): proto.StatusAttribution.Music
-			static toObject(m: proto.StatusAttribution.Music, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.StatusAttribution.Music, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace Music {
@@ -17156,10 +17164,10 @@ export namespace proto {
 			source?: (proto.StatusAttribution.RLAttribution.Source|null)
 			static create(properties: proto.StatusAttribution.RLAttribution.$Shape): proto.StatusAttribution.RLAttribution & proto.StatusAttribution.RLAttribution.$Shape
 			static create(properties?: proto.StatusAttribution.RLAttribution.$Properties): proto.StatusAttribution.RLAttribution
-			static encode(m: proto.StatusAttribution.RLAttribution.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.StatusAttribution.RLAttribution & proto.StatusAttribution.RLAttribution.$Shape
+			static encode(m: proto.StatusAttribution.RLAttribution.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.StatusAttribution.RLAttribution & proto.StatusAttribution.RLAttribution.$Shape
 			static fromObject(d: { [k: string]: any }): proto.StatusAttribution.RLAttribution
-			static toObject(m: proto.StatusAttribution.RLAttribution, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.StatusAttribution.RLAttribution, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace RLAttribution {
@@ -17184,10 +17192,10 @@ export namespace proto {
 			metadata?: (proto.StatusAttribution.StatusReshare.Metadata.$Properties|null)
 			static create(properties: proto.StatusAttribution.StatusReshare.$Shape): proto.StatusAttribution.StatusReshare & proto.StatusAttribution.StatusReshare.$Shape
 			static create(properties?: proto.StatusAttribution.StatusReshare.$Properties): proto.StatusAttribution.StatusReshare
-			static encode(m: proto.StatusAttribution.StatusReshare.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.StatusAttribution.StatusReshare & proto.StatusAttribution.StatusReshare.$Shape
+			static encode(m: proto.StatusAttribution.StatusReshare.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.StatusAttribution.StatusReshare & proto.StatusAttribution.StatusReshare.$Shape
 			static fromObject(d: { [k: string]: any }): proto.StatusAttribution.StatusReshare
-			static toObject(m: proto.StatusAttribution.StatusReshare, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.StatusAttribution.StatusReshare, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace StatusReshare {
@@ -17208,10 +17216,10 @@ export namespace proto {
 				hasMultipleReshares?: (boolean|null)
 				static create(properties: proto.StatusAttribution.StatusReshare.Metadata.$Shape): proto.StatusAttribution.StatusReshare.Metadata & proto.StatusAttribution.StatusReshare.Metadata.$Shape
 				static create(properties?: proto.StatusAttribution.StatusReshare.Metadata.$Properties): proto.StatusAttribution.StatusReshare.Metadata
-				static encode(m: proto.StatusAttribution.StatusReshare.Metadata.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.StatusAttribution.StatusReshare.Metadata & proto.StatusAttribution.StatusReshare.Metadata.$Shape
+				static encode(m: proto.StatusAttribution.StatusReshare.Metadata.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.StatusAttribution.StatusReshare.Metadata & proto.StatusAttribution.StatusReshare.Metadata.$Shape
 				static fromObject(d: { [k: string]: any }): proto.StatusAttribution.StatusReshare.Metadata
-				static toObject(m: proto.StatusAttribution.StatusReshare.Metadata, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.StatusAttribution.StatusReshare.Metadata, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace Metadata {
@@ -17256,10 +17264,10 @@ export namespace proto {
 		quotedStatus?: (proto.Message.$Properties|null)
 		static create(properties: proto.StatusMentionMessage.$Shape): proto.StatusMentionMessage & proto.StatusMentionMessage.$Shape
 		static create(properties?: proto.StatusMentionMessage.$Properties): proto.StatusMentionMessage
-		static encode(m: proto.StatusMentionMessage.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.StatusMentionMessage & proto.StatusMentionMessage.$Shape
+		static encode(m: proto.StatusMentionMessage.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.StatusMentionMessage & proto.StatusMentionMessage.$Shape
 		static fromObject(d: { [k: string]: any }): proto.StatusMentionMessage
-		static toObject(m: proto.StatusMentionMessage, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.StatusMentionMessage, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace StatusMentionMessage {
@@ -17281,10 +17289,10 @@ export namespace proto {
 		campaignExpirationTimestamp?: (number|Long|null)
 		static create(properties: proto.StatusPSA.$Shape): proto.StatusPSA & proto.StatusPSA.$Shape
 		static create(properties?: proto.StatusPSA.$Properties): proto.StatusPSA
-		static encode(m: proto.StatusPSA.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.StatusPSA & proto.StatusPSA.$Shape
+		static encode(m: proto.StatusPSA.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.StatusPSA & proto.StatusPSA.$Shape
 		static fromObject(d: { [k: string]: any }): proto.StatusPSA
-		static toObject(m: proto.StatusPSA, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.StatusPSA, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace StatusPSA {
@@ -17316,10 +17324,10 @@ export namespace proto {
 		isAvatarSticker?: (boolean|null)
 		static create(properties: proto.StickerMetadata.$Shape): proto.StickerMetadata & proto.StickerMetadata.$Shape
 		static create(properties?: proto.StickerMetadata.$Properties): proto.StickerMetadata
-		static encode(m: proto.StickerMetadata.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.StickerMetadata & proto.StickerMetadata.$Shape
+		static encode(m: proto.StickerMetadata.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.StickerMetadata & proto.StickerMetadata.$Shape
 		static fromObject(d: { [k: string]: any }): proto.StickerMetadata
-		static toObject(m: proto.StickerMetadata, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.StickerMetadata, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace StickerMetadata {
@@ -17353,10 +17361,10 @@ export namespace proto {
 		version?: (number|null)
 		static create(properties: proto.SyncActionData.$Shape): proto.SyncActionData & proto.SyncActionData.$Shape
 		static create(properties?: proto.SyncActionData.$Properties): proto.SyncActionData
-		static encode(m: proto.SyncActionData.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionData & proto.SyncActionData.$Shape
+		static encode(m: proto.SyncActionData.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionData & proto.SyncActionData.$Shape
 		static fromObject(d: { [k: string]: any }): proto.SyncActionData
-		static toObject(m: proto.SyncActionData, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.SyncActionData, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace SyncActionData {
@@ -17474,10 +17482,10 @@ export namespace proto {
 		hatchCvmSecretAction?: (proto.SyncActionValue.HatchCVMSecretAction.$Properties|null)
 		static create(properties: proto.SyncActionValue.$Shape): proto.SyncActionValue & proto.SyncActionValue.$Shape
 		static create(properties?: proto.SyncActionValue.$Properties): proto.SyncActionValue
-		static encode(m: proto.SyncActionValue.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue & proto.SyncActionValue.$Shape
+		static encode(m: proto.SyncActionValue.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue & proto.SyncActionValue.$Shape
 		static fromObject(d: { [k: string]: any }): proto.SyncActionValue
-		static toObject(m: proto.SyncActionValue, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.SyncActionValue, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace SyncActionValue {
@@ -17681,10 +17689,10 @@ export namespace proto {
 			isDeleted?: (boolean|null)
 			static create(properties: proto.SyncActionValue.AgentAction.$Shape): proto.SyncActionValue.AgentAction & proto.SyncActionValue.AgentAction.$Shape
 			static create(properties?: proto.SyncActionValue.AgentAction.$Properties): proto.SyncActionValue.AgentAction
-			static encode(m: proto.SyncActionValue.AgentAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.AgentAction & proto.SyncActionValue.AgentAction.$Shape
+			static encode(m: proto.SyncActionValue.AgentAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.AgentAction & proto.SyncActionValue.AgentAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.AgentAction
-			static toObject(m: proto.SyncActionValue.AgentAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.AgentAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace AgentAction {
@@ -17704,10 +17712,10 @@ export namespace proto {
 			newTitle?: (string|null)
 			static create(properties: proto.SyncActionValue.AiThreadRenameAction.$Shape): proto.SyncActionValue.AiThreadRenameAction & proto.SyncActionValue.AiThreadRenameAction.$Shape
 			static create(properties?: proto.SyncActionValue.AiThreadRenameAction.$Properties): proto.SyncActionValue.AiThreadRenameAction
-			static encode(m: proto.SyncActionValue.AiThreadRenameAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.AiThreadRenameAction & proto.SyncActionValue.AiThreadRenameAction.$Shape
+			static encode(m: proto.SyncActionValue.AiThreadRenameAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.AiThreadRenameAction & proto.SyncActionValue.AiThreadRenameAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.AiThreadRenameAction
-			static toObject(m: proto.SyncActionValue.AiThreadRenameAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.AiThreadRenameAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace AiThreadRenameAction {
@@ -17725,10 +17733,10 @@ export namespace proto {
 			allowed?: (boolean|null)
 			static create(properties: proto.SyncActionValue.AndroidUnsupportedActions.$Shape): proto.SyncActionValue.AndroidUnsupportedActions & proto.SyncActionValue.AndroidUnsupportedActions.$Shape
 			static create(properties?: proto.SyncActionValue.AndroidUnsupportedActions.$Properties): proto.SyncActionValue.AndroidUnsupportedActions
-			static encode(m: proto.SyncActionValue.AndroidUnsupportedActions.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.AndroidUnsupportedActions & proto.SyncActionValue.AndroidUnsupportedActions.$Shape
+			static encode(m: proto.SyncActionValue.AndroidUnsupportedActions.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.AndroidUnsupportedActions & proto.SyncActionValue.AndroidUnsupportedActions.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.AndroidUnsupportedActions
-			static toObject(m: proto.SyncActionValue.AndroidUnsupportedActions, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.AndroidUnsupportedActions, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace AndroidUnsupportedActions {
@@ -17747,10 +17755,10 @@ export namespace proto {
 			messageRange?: (proto.SyncActionValue.SyncActionMessageRange.$Properties|null)
 			static create(properties: proto.SyncActionValue.ArchiveChatAction.$Shape): proto.SyncActionValue.ArchiveChatAction & proto.SyncActionValue.ArchiveChatAction.$Shape
 			static create(properties?: proto.SyncActionValue.ArchiveChatAction.$Properties): proto.SyncActionValue.ArchiveChatAction
-			static encode(m: proto.SyncActionValue.ArchiveChatAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.ArchiveChatAction & proto.SyncActionValue.ArchiveChatAction.$Shape
+			static encode(m: proto.SyncActionValue.ArchiveChatAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.ArchiveChatAction & proto.SyncActionValue.ArchiveChatAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.ArchiveChatAction
-			static toObject(m: proto.SyncActionValue.ArchiveChatAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.ArchiveChatAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ArchiveChatAction {
@@ -17769,10 +17777,10 @@ export namespace proto {
 			autoOrganize?: (boolean|null)
 			static create(properties: proto.SyncActionValue.AutoOrganizeBusinessChatSetting.$Shape): proto.SyncActionValue.AutoOrganizeBusinessChatSetting & proto.SyncActionValue.AutoOrganizeBusinessChatSetting.$Shape
 			static create(properties?: proto.SyncActionValue.AutoOrganizeBusinessChatSetting.$Properties): proto.SyncActionValue.AutoOrganizeBusinessChatSetting
-			static encode(m: proto.SyncActionValue.AutoOrganizeBusinessChatSetting.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.AutoOrganizeBusinessChatSetting & proto.SyncActionValue.AutoOrganizeBusinessChatSetting.$Shape
+			static encode(m: proto.SyncActionValue.AutoOrganizeBusinessChatSetting.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.AutoOrganizeBusinessChatSetting & proto.SyncActionValue.AutoOrganizeBusinessChatSetting.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.AutoOrganizeBusinessChatSetting
-			static toObject(m: proto.SyncActionValue.AutoOrganizeBusinessChatSetting, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.AutoOrganizeBusinessChatSetting, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace AutoOrganizeBusinessChatSetting {
@@ -17791,10 +17799,10 @@ export namespace proto {
 			recentAvatarStickers: proto.SyncActionValue.StickerAction.$Properties[]
 			static create(properties: proto.SyncActionValue.AvatarUpdatedAction.$Shape): proto.SyncActionValue.AvatarUpdatedAction & proto.SyncActionValue.AvatarUpdatedAction.$Shape
 			static create(properties?: proto.SyncActionValue.AvatarUpdatedAction.$Properties): proto.SyncActionValue.AvatarUpdatedAction
-			static encode(m: proto.SyncActionValue.AvatarUpdatedAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.AvatarUpdatedAction & proto.SyncActionValue.AvatarUpdatedAction.$Shape
+			static encode(m: proto.SyncActionValue.AvatarUpdatedAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.AvatarUpdatedAction & proto.SyncActionValue.AvatarUpdatedAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.AvatarUpdatedAction
-			static toObject(m: proto.SyncActionValue.AvatarUpdatedAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.AvatarUpdatedAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace AvatarUpdatedAction {
@@ -17818,10 +17826,10 @@ export namespace proto {
 			pending?: (boolean|null)
 			static create(properties: proto.SyncActionValue.BBProPendingCustomerBaseAction.$Shape): proto.SyncActionValue.BBProPendingCustomerBaseAction & proto.SyncActionValue.BBProPendingCustomerBaseAction.$Shape
 			static create(properties?: proto.SyncActionValue.BBProPendingCustomerBaseAction.$Properties): proto.SyncActionValue.BBProPendingCustomerBaseAction
-			static encode(m: proto.SyncActionValue.BBProPendingCustomerBaseAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.BBProPendingCustomerBaseAction & proto.SyncActionValue.BBProPendingCustomerBaseAction.$Shape
+			static encode(m: proto.SyncActionValue.BBProPendingCustomerBaseAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.BBProPendingCustomerBaseAction & proto.SyncActionValue.BBProPendingCustomerBaseAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.BBProPendingCustomerBaseAction
-			static toObject(m: proto.SyncActionValue.BBProPendingCustomerBaseAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.BBProPendingCustomerBaseAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace BBProPendingCustomerBaseAction {
@@ -17841,10 +17849,10 @@ export namespace proto {
 			updatedAtMs?: (number|Long|null)
 			static create(properties: proto.SyncActionValue.BizAISettingsNudgeAction.$Shape): proto.SyncActionValue.BizAISettingsNudgeAction & proto.SyncActionValue.BizAISettingsNudgeAction.$Shape
 			static create(properties?: proto.SyncActionValue.BizAISettingsNudgeAction.$Properties): proto.SyncActionValue.BizAISettingsNudgeAction
-			static encode(m: proto.SyncActionValue.BizAISettingsNudgeAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.BizAISettingsNudgeAction & proto.SyncActionValue.BizAISettingsNudgeAction.$Shape
+			static encode(m: proto.SyncActionValue.BizAISettingsNudgeAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.BizAISettingsNudgeAction & proto.SyncActionValue.BizAISettingsNudgeAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.BizAISettingsNudgeAction
-			static toObject(m: proto.SyncActionValue.BizAISettingsNudgeAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.BizAISettingsNudgeAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace BizAISettingsNudgeAction {
@@ -17873,10 +17881,10 @@ export namespace proto {
 			isSent?: (boolean|null)
 			static create(properties: proto.SyncActionValue.BotWelcomeRequestAction.$Shape): proto.SyncActionValue.BotWelcomeRequestAction & proto.SyncActionValue.BotWelcomeRequestAction.$Shape
 			static create(properties?: proto.SyncActionValue.BotWelcomeRequestAction.$Properties): proto.SyncActionValue.BotWelcomeRequestAction
-			static encode(m: proto.SyncActionValue.BotWelcomeRequestAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.BotWelcomeRequestAction & proto.SyncActionValue.BotWelcomeRequestAction.$Shape
+			static encode(m: proto.SyncActionValue.BotWelcomeRequestAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.BotWelcomeRequestAction & proto.SyncActionValue.BotWelcomeRequestAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.BotWelcomeRequestAction
-			static toObject(m: proto.SyncActionValue.BotWelcomeRequestAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.BotWelcomeRequestAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace BotWelcomeRequestAction {
@@ -17895,10 +17903,10 @@ export namespace proto {
 			pnJid?: (string|null)
 			static create(properties: proto.SyncActionValue.BroadcastListParticipant.$Shape): proto.SyncActionValue.BroadcastListParticipant & proto.SyncActionValue.BroadcastListParticipant.$Shape
 			static create(properties?: proto.SyncActionValue.BroadcastListParticipant.$Properties): proto.SyncActionValue.BroadcastListParticipant
-			static encode(m: proto.SyncActionValue.BroadcastListParticipant.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.BroadcastListParticipant & proto.SyncActionValue.BroadcastListParticipant.$Shape
+			static encode(m: proto.SyncActionValue.BroadcastListParticipant.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.BroadcastListParticipant & proto.SyncActionValue.BroadcastListParticipant.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.BroadcastListParticipant
-			static toObject(m: proto.SyncActionValue.BroadcastListParticipant, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.BroadcastListParticipant, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace BroadcastListParticipant {
@@ -17917,10 +17925,10 @@ export namespace proto {
 			locked?: (boolean|null)
 			static create(properties: proto.SyncActionValue.BubbleLockMessageAction.$Shape): proto.SyncActionValue.BubbleLockMessageAction & proto.SyncActionValue.BubbleLockMessageAction.$Shape
 			static create(properties?: proto.SyncActionValue.BubbleLockMessageAction.$Properties): proto.SyncActionValue.BubbleLockMessageAction
-			static encode(m: proto.SyncActionValue.BubbleLockMessageAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.BubbleLockMessageAction & proto.SyncActionValue.BubbleLockMessageAction.$Shape
+			static encode(m: proto.SyncActionValue.BubbleLockMessageAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.BubbleLockMessageAction & proto.SyncActionValue.BubbleLockMessageAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.BubbleLockMessageAction
-			static toObject(m: proto.SyncActionValue.BubbleLockMessageAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.BubbleLockMessageAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace BubbleLockMessageAction {
@@ -17938,10 +17946,10 @@ export namespace proto {
 			deleted?: (boolean|null)
 			static create(properties: proto.SyncActionValue.BusinessBroadcastAssociationAction.$Shape): proto.SyncActionValue.BusinessBroadcastAssociationAction & proto.SyncActionValue.BusinessBroadcastAssociationAction.$Shape
 			static create(properties?: proto.SyncActionValue.BusinessBroadcastAssociationAction.$Properties): proto.SyncActionValue.BusinessBroadcastAssociationAction
-			static encode(m: proto.SyncActionValue.BusinessBroadcastAssociationAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.BusinessBroadcastAssociationAction & proto.SyncActionValue.BusinessBroadcastAssociationAction.$Shape
+			static encode(m: proto.SyncActionValue.BusinessBroadcastAssociationAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.BusinessBroadcastAssociationAction & proto.SyncActionValue.BusinessBroadcastAssociationAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.BusinessBroadcastAssociationAction
-			static toObject(m: proto.SyncActionValue.BusinessBroadcastAssociationAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.BusinessBroadcastAssociationAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace BusinessBroadcastAssociationAction {
@@ -17969,10 +17977,10 @@ export namespace proto {
 			customAudienceFbid?: (string|null)
 			static create(properties: proto.SyncActionValue.BusinessBroadcastCampaignAction.$Shape): proto.SyncActionValue.BusinessBroadcastCampaignAction & proto.SyncActionValue.BusinessBroadcastCampaignAction.$Shape
 			static create(properties?: proto.SyncActionValue.BusinessBroadcastCampaignAction.$Properties): proto.SyncActionValue.BusinessBroadcastCampaignAction
-			static encode(m: proto.SyncActionValue.BusinessBroadcastCampaignAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.BusinessBroadcastCampaignAction & proto.SyncActionValue.BusinessBroadcastCampaignAction.$Shape
+			static encode(m: proto.SyncActionValue.BusinessBroadcastCampaignAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.BusinessBroadcastCampaignAction & proto.SyncActionValue.BusinessBroadcastCampaignAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.BusinessBroadcastCampaignAction
-			static toObject(m: proto.SyncActionValue.BusinessBroadcastCampaignAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.BusinessBroadcastCampaignAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace BusinessBroadcastCampaignAction {
@@ -18023,10 +18031,10 @@ export namespace proto {
 			quickReplyCount?: (number|null)
 			static create(properties: proto.SyncActionValue.BusinessBroadcastInsightsAction.$Shape): proto.SyncActionValue.BusinessBroadcastInsightsAction & proto.SyncActionValue.BusinessBroadcastInsightsAction.$Shape
 			static create(properties?: proto.SyncActionValue.BusinessBroadcastInsightsAction.$Properties): proto.SyncActionValue.BusinessBroadcastInsightsAction
-			static encode(m: proto.SyncActionValue.BusinessBroadcastInsightsAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.BusinessBroadcastInsightsAction & proto.SyncActionValue.BusinessBroadcastInsightsAction.$Shape
+			static encode(m: proto.SyncActionValue.BusinessBroadcastInsightsAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.BusinessBroadcastInsightsAction & proto.SyncActionValue.BusinessBroadcastInsightsAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.BusinessBroadcastInsightsAction
-			static toObject(m: proto.SyncActionValue.BusinessBroadcastInsightsAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.BusinessBroadcastInsightsAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace BusinessBroadcastInsightsAction {
@@ -18053,10 +18061,10 @@ export namespace proto {
 			customAudienceFbid?: (string|null)
 			static create(properties: proto.SyncActionValue.BusinessBroadcastListAction.$Shape): proto.SyncActionValue.BusinessBroadcastListAction & proto.SyncActionValue.BusinessBroadcastListAction.$Shape
 			static create(properties?: proto.SyncActionValue.BusinessBroadcastListAction.$Properties): proto.SyncActionValue.BusinessBroadcastListAction
-			static encode(m: proto.SyncActionValue.BusinessBroadcastListAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.BusinessBroadcastListAction & proto.SyncActionValue.BusinessBroadcastListAction.$Shape
+			static encode(m: proto.SyncActionValue.BusinessBroadcastListAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.BusinessBroadcastListAction & proto.SyncActionValue.BusinessBroadcastListAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.BusinessBroadcastListAction
-			static toObject(m: proto.SyncActionValue.BusinessBroadcastListAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.BusinessBroadcastListAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace BusinessBroadcastListAction {
@@ -18079,10 +18087,10 @@ export namespace proto {
 			activated?: (boolean|null)
 			static create(properties: proto.SyncActionValue.BusinessFolderActivationAction.$Shape): proto.SyncActionValue.BusinessFolderActivationAction & proto.SyncActionValue.BusinessFolderActivationAction.$Shape
 			static create(properties?: proto.SyncActionValue.BusinessFolderActivationAction.$Properties): proto.SyncActionValue.BusinessFolderActivationAction
-			static encode(m: proto.SyncActionValue.BusinessFolderActivationAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.BusinessFolderActivationAction & proto.SyncActionValue.BusinessFolderActivationAction.$Shape
+			static encode(m: proto.SyncActionValue.BusinessFolderActivationAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.BusinessFolderActivationAction & proto.SyncActionValue.BusinessFolderActivationAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.BusinessFolderActivationAction
-			static toObject(m: proto.SyncActionValue.BusinessFolderActivationAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.BusinessFolderActivationAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace BusinessFolderActivationAction {
@@ -18100,10 +18108,10 @@ export namespace proto {
 			callLogRecord?: (proto.CallLogRecord.$Properties|null)
 			static create(properties: proto.SyncActionValue.CallLogAction.$Shape): proto.SyncActionValue.CallLogAction & proto.SyncActionValue.CallLogAction.$Shape
 			static create(properties?: proto.SyncActionValue.CallLogAction.$Properties): proto.SyncActionValue.CallLogAction
-			static encode(m: proto.SyncActionValue.CallLogAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.CallLogAction & proto.SyncActionValue.CallLogAction.$Shape
+			static encode(m: proto.SyncActionValue.CallLogAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.CallLogAction & proto.SyncActionValue.CallLogAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.CallLogAction
-			static toObject(m: proto.SyncActionValue.CallLogAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.CallLogAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace CallLogAction {
@@ -18121,10 +18129,10 @@ export namespace proto {
 			deviceAgentId?: (string|null)
 			static create(properties: proto.SyncActionValue.ChatAssignmentAction.$Shape): proto.SyncActionValue.ChatAssignmentAction & proto.SyncActionValue.ChatAssignmentAction.$Shape
 			static create(properties?: proto.SyncActionValue.ChatAssignmentAction.$Properties): proto.SyncActionValue.ChatAssignmentAction
-			static encode(m: proto.SyncActionValue.ChatAssignmentAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.ChatAssignmentAction & proto.SyncActionValue.ChatAssignmentAction.$Shape
+			static encode(m: proto.SyncActionValue.ChatAssignmentAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.ChatAssignmentAction & proto.SyncActionValue.ChatAssignmentAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.ChatAssignmentAction
-			static toObject(m: proto.SyncActionValue.ChatAssignmentAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.ChatAssignmentAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ChatAssignmentAction {
@@ -18142,10 +18150,10 @@ export namespace proto {
 			chatOpened?: (boolean|null)
 			static create(properties: proto.SyncActionValue.ChatAssignmentOpenedStatusAction.$Shape): proto.SyncActionValue.ChatAssignmentOpenedStatusAction & proto.SyncActionValue.ChatAssignmentOpenedStatusAction.$Shape
 			static create(properties?: proto.SyncActionValue.ChatAssignmentOpenedStatusAction.$Properties): proto.SyncActionValue.ChatAssignmentOpenedStatusAction
-			static encode(m: proto.SyncActionValue.ChatAssignmentOpenedStatusAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.ChatAssignmentOpenedStatusAction & proto.SyncActionValue.ChatAssignmentOpenedStatusAction.$Shape
+			static encode(m: proto.SyncActionValue.ChatAssignmentOpenedStatusAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.ChatAssignmentOpenedStatusAction & proto.SyncActionValue.ChatAssignmentOpenedStatusAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.ChatAssignmentOpenedStatusAction
-			static toObject(m: proto.SyncActionValue.ChatAssignmentOpenedStatusAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.ChatAssignmentOpenedStatusAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ChatAssignmentOpenedStatusAction {
@@ -18163,10 +18171,10 @@ export namespace proto {
 			messageRange?: (proto.SyncActionValue.SyncActionMessageRange.$Properties|null)
 			static create(properties: proto.SyncActionValue.ClearChatAction.$Shape): proto.SyncActionValue.ClearChatAction & proto.SyncActionValue.ClearChatAction.$Shape
 			static create(properties?: proto.SyncActionValue.ClearChatAction.$Properties): proto.SyncActionValue.ClearChatAction
-			static encode(m: proto.SyncActionValue.ClearChatAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.ClearChatAction & proto.SyncActionValue.ClearChatAction.$Shape
+			static encode(m: proto.SyncActionValue.ClearChatAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.ClearChatAction & proto.SyncActionValue.ClearChatAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.ClearChatAction
-			static toObject(m: proto.SyncActionValue.ClearChatAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.ClearChatAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ClearChatAction {
@@ -18184,10 +18192,10 @@ export namespace proto {
 			version?: (number|Long|null)
 			static create(properties: proto.SyncActionValue.CoexV2VersionAction.$Shape): proto.SyncActionValue.CoexV2VersionAction & proto.SyncActionValue.CoexV2VersionAction.$Shape
 			static create(properties?: proto.SyncActionValue.CoexV2VersionAction.$Properties): proto.SyncActionValue.CoexV2VersionAction
-			static encode(m: proto.SyncActionValue.CoexV2VersionAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.CoexV2VersionAction & proto.SyncActionValue.CoexV2VersionAction.$Shape
+			static encode(m: proto.SyncActionValue.CoexV2VersionAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.CoexV2VersionAction & proto.SyncActionValue.CoexV2VersionAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.CoexV2VersionAction
-			static toObject(m: proto.SyncActionValue.CoexV2VersionAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.CoexV2VersionAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace CoexV2VersionAction {
@@ -18205,10 +18213,10 @@ export namespace proto {
 			nestingState?: (proto.SyncActionValue.CommunityNestingStateAction.NestingState|null)
 			static create(properties: proto.SyncActionValue.CommunityNestingStateAction.$Shape): proto.SyncActionValue.CommunityNestingStateAction & proto.SyncActionValue.CommunityNestingStateAction.$Shape
 			static create(properties?: proto.SyncActionValue.CommunityNestingStateAction.$Properties): proto.SyncActionValue.CommunityNestingStateAction
-			static encode(m: proto.SyncActionValue.CommunityNestingStateAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.CommunityNestingStateAction & proto.SyncActionValue.CommunityNestingStateAction.$Shape
+			static encode(m: proto.SyncActionValue.CommunityNestingStateAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.CommunityNestingStateAction & proto.SyncActionValue.CommunityNestingStateAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.CommunityNestingStateAction
-			static toObject(m: proto.SyncActionValue.CommunityNestingStateAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.CommunityNestingStateAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace CommunityNestingStateAction {
@@ -18237,10 +18245,10 @@ export namespace proto {
 			birthday?: (string|null)
 			static create(properties: proto.SyncActionValue.ContactAction.$Shape): proto.SyncActionValue.ContactAction & proto.SyncActionValue.ContactAction.$Shape
 			static create(properties?: proto.SyncActionValue.ContactAction.$Properties): proto.SyncActionValue.ContactAction
-			static encode(m: proto.SyncActionValue.ContactAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.ContactAction & proto.SyncActionValue.ContactAction.$Shape
+			static encode(m: proto.SyncActionValue.ContactAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.ContactAction & proto.SyncActionValue.ContactAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.ContactAction
-			static toObject(m: proto.SyncActionValue.ContactAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.ContactAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ContactAction {
@@ -18264,10 +18272,10 @@ export namespace proto {
 			isHidden?: (boolean|null)
 			static create(properties: proto.SyncActionValue.ContactManagerMetadataAction.$Shape): proto.SyncActionValue.ContactManagerMetadataAction & proto.SyncActionValue.ContactManagerMetadataAction.$Shape
 			static create(properties?: proto.SyncActionValue.ContactManagerMetadataAction.$Properties): proto.SyncActionValue.ContactManagerMetadataAction
-			static encode(m: proto.SyncActionValue.ContactManagerMetadataAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.ContactManagerMetadataAction & proto.SyncActionValue.ContactManagerMetadataAction.$Shape
+			static encode(m: proto.SyncActionValue.ContactManagerMetadataAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.ContactManagerMetadataAction & proto.SyncActionValue.ContactManagerMetadataAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.ContactManagerMetadataAction
-			static toObject(m: proto.SyncActionValue.ContactManagerMetadataAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.ContactManagerMetadataAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ContactManagerMetadataAction {
@@ -18285,10 +18293,10 @@ export namespace proto {
 			isCtwaMessageReceived?: (boolean|null)
 			static create(properties: proto.SyncActionValue.CtwaMessageReceivedAction.$Shape): proto.SyncActionValue.CtwaMessageReceivedAction & proto.SyncActionValue.CtwaMessageReceivedAction.$Shape
 			static create(properties?: proto.SyncActionValue.CtwaMessageReceivedAction.$Properties): proto.SyncActionValue.CtwaMessageReceivedAction
-			static encode(m: proto.SyncActionValue.CtwaMessageReceivedAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.CtwaMessageReceivedAction & proto.SyncActionValue.CtwaMessageReceivedAction.$Shape
+			static encode(m: proto.SyncActionValue.CtwaMessageReceivedAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.CtwaMessageReceivedAction & proto.SyncActionValue.CtwaMessageReceivedAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.CtwaMessageReceivedAction
-			static toObject(m: proto.SyncActionValue.CtwaMessageReceivedAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.CtwaMessageReceivedAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace CtwaMessageReceivedAction {
@@ -18306,10 +18314,10 @@ export namespace proto {
 			isCtwaPerCustomerDataSharingEnabled?: (boolean|null)
 			static create(properties: proto.SyncActionValue.CtwaPerCustomerDataSharingAction.$Shape): proto.SyncActionValue.CtwaPerCustomerDataSharingAction & proto.SyncActionValue.CtwaPerCustomerDataSharingAction.$Shape
 			static create(properties?: proto.SyncActionValue.CtwaPerCustomerDataSharingAction.$Properties): proto.SyncActionValue.CtwaPerCustomerDataSharingAction
-			static encode(m: proto.SyncActionValue.CtwaPerCustomerDataSharingAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.CtwaPerCustomerDataSharingAction & proto.SyncActionValue.CtwaPerCustomerDataSharingAction.$Shape
+			static encode(m: proto.SyncActionValue.CtwaPerCustomerDataSharingAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.CtwaPerCustomerDataSharingAction & proto.SyncActionValue.CtwaPerCustomerDataSharingAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.CtwaPerCustomerDataSharingAction
-			static toObject(m: proto.SyncActionValue.CtwaPerCustomerDataSharingAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.CtwaPerCustomerDataSharingAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace CtwaPerCustomerDataSharingAction {
@@ -18330,10 +18338,10 @@ export namespace proto {
 			metadata: proto.SyncActionValue.CustomPaymentMethodMetadata.$Properties[]
 			static create(properties: proto.SyncActionValue.CustomPaymentMethod.$Shape): proto.SyncActionValue.CustomPaymentMethod & proto.SyncActionValue.CustomPaymentMethod.$Shape
 			static create(properties?: proto.SyncActionValue.CustomPaymentMethod.$Properties): proto.SyncActionValue.CustomPaymentMethod
-			static encode(m: proto.SyncActionValue.CustomPaymentMethod.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.CustomPaymentMethod & proto.SyncActionValue.CustomPaymentMethod.$Shape
+			static encode(m: proto.SyncActionValue.CustomPaymentMethod.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.CustomPaymentMethod & proto.SyncActionValue.CustomPaymentMethod.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.CustomPaymentMethod
-			static toObject(m: proto.SyncActionValue.CustomPaymentMethod, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.CustomPaymentMethod, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace CustomPaymentMethod {
@@ -18355,10 +18363,10 @@ export namespace proto {
 			value: string
 			static create(properties: proto.SyncActionValue.CustomPaymentMethodMetadata.$Shape): proto.SyncActionValue.CustomPaymentMethodMetadata & proto.SyncActionValue.CustomPaymentMethodMetadata.$Shape
 			static create(properties?: proto.SyncActionValue.CustomPaymentMethodMetadata.$Properties): proto.SyncActionValue.CustomPaymentMethodMetadata
-			static encode(m: proto.SyncActionValue.CustomPaymentMethodMetadata.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.CustomPaymentMethodMetadata & proto.SyncActionValue.CustomPaymentMethodMetadata.$Shape
+			static encode(m: proto.SyncActionValue.CustomPaymentMethodMetadata.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.CustomPaymentMethodMetadata & proto.SyncActionValue.CustomPaymentMethodMetadata.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.CustomPaymentMethodMetadata
-			static toObject(m: proto.SyncActionValue.CustomPaymentMethodMetadata, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.CustomPaymentMethodMetadata, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace CustomPaymentMethodMetadata {
@@ -18377,10 +18385,10 @@ export namespace proto {
 			customPaymentMethods: proto.SyncActionValue.CustomPaymentMethod.$Properties[]
 			static create(properties: proto.SyncActionValue.CustomPaymentMethodsAction.$Shape): proto.SyncActionValue.CustomPaymentMethodsAction & proto.SyncActionValue.CustomPaymentMethodsAction.$Shape
 			static create(properties?: proto.SyncActionValue.CustomPaymentMethodsAction.$Properties): proto.SyncActionValue.CustomPaymentMethodsAction
-			static encode(m: proto.SyncActionValue.CustomPaymentMethodsAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.CustomPaymentMethodsAction & proto.SyncActionValue.CustomPaymentMethodsAction.$Shape
+			static encode(m: proto.SyncActionValue.CustomPaymentMethodsAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.CustomPaymentMethodsAction & proto.SyncActionValue.CustomPaymentMethodsAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.CustomPaymentMethodsAction
-			static toObject(m: proto.SyncActionValue.CustomPaymentMethodsAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.CustomPaymentMethodsAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace CustomPaymentMethodsAction {
@@ -18408,10 +18416,10 @@ export namespace proto {
 			modifiedAt?: (number|Long|null)
 			static create(properties: proto.SyncActionValue.CustomerDataAction.$Shape): proto.SyncActionValue.CustomerDataAction & proto.SyncActionValue.CustomerDataAction.$Shape
 			static create(properties?: proto.SyncActionValue.CustomerDataAction.$Properties): proto.SyncActionValue.CustomerDataAction
-			static encode(m: proto.SyncActionValue.CustomerDataAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.CustomerDataAction & proto.SyncActionValue.CustomerDataAction.$Shape
+			static encode(m: proto.SyncActionValue.CustomerDataAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.CustomerDataAction & proto.SyncActionValue.CustomerDataAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.CustomerDataAction
-			static toObject(m: proto.SyncActionValue.CustomerDataAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.CustomerDataAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace CustomerDataAction {
@@ -18439,10 +18447,10 @@ export namespace proto {
 			messageRange?: (proto.SyncActionValue.SyncActionMessageRange.$Properties|null)
 			static create(properties: proto.SyncActionValue.DeleteChatAction.$Shape): proto.SyncActionValue.DeleteChatAction & proto.SyncActionValue.DeleteChatAction.$Shape
 			static create(properties?: proto.SyncActionValue.DeleteChatAction.$Properties): proto.SyncActionValue.DeleteChatAction
-			static encode(m: proto.SyncActionValue.DeleteChatAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.DeleteChatAction & proto.SyncActionValue.DeleteChatAction.$Shape
+			static encode(m: proto.SyncActionValue.DeleteChatAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.DeleteChatAction & proto.SyncActionValue.DeleteChatAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.DeleteChatAction
-			static toObject(m: proto.SyncActionValue.DeleteChatAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.DeleteChatAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace DeleteChatAction {
@@ -18461,10 +18469,10 @@ export namespace proto {
 			isIncoming?: (boolean|null)
 			static create(properties: proto.SyncActionValue.DeleteIndividualCallLogAction.$Shape): proto.SyncActionValue.DeleteIndividualCallLogAction & proto.SyncActionValue.DeleteIndividualCallLogAction.$Shape
 			static create(properties?: proto.SyncActionValue.DeleteIndividualCallLogAction.$Properties): proto.SyncActionValue.DeleteIndividualCallLogAction
-			static encode(m: proto.SyncActionValue.DeleteIndividualCallLogAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.DeleteIndividualCallLogAction & proto.SyncActionValue.DeleteIndividualCallLogAction.$Shape
+			static encode(m: proto.SyncActionValue.DeleteIndividualCallLogAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.DeleteIndividualCallLogAction & proto.SyncActionValue.DeleteIndividualCallLogAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.DeleteIndividualCallLogAction
-			static toObject(m: proto.SyncActionValue.DeleteIndividualCallLogAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.DeleteIndividualCallLogAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace DeleteIndividualCallLogAction {
@@ -18484,10 +18492,10 @@ export namespace proto {
 			messageTimestamp?: (number|Long|null)
 			static create(properties: proto.SyncActionValue.DeleteMessageForMeAction.$Shape): proto.SyncActionValue.DeleteMessageForMeAction & proto.SyncActionValue.DeleteMessageForMeAction.$Shape
 			static create(properties?: proto.SyncActionValue.DeleteMessageForMeAction.$Properties): proto.SyncActionValue.DeleteMessageForMeAction
-			static encode(m: proto.SyncActionValue.DeleteMessageForMeAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.DeleteMessageForMeAction & proto.SyncActionValue.DeleteMessageForMeAction.$Shape
+			static encode(m: proto.SyncActionValue.DeleteMessageForMeAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.DeleteMessageForMeAction & proto.SyncActionValue.DeleteMessageForMeAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.DeleteMessageForMeAction
-			static toObject(m: proto.SyncActionValue.DeleteMessageForMeAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.DeleteMessageForMeAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace DeleteMessageForMeAction {
@@ -18506,10 +18514,10 @@ export namespace proto {
 			isEnabled?: (boolean|null)
 			static create(properties: proto.SyncActionValue.DetectedOutcomesStatusAction.$Shape): proto.SyncActionValue.DetectedOutcomesStatusAction & proto.SyncActionValue.DetectedOutcomesStatusAction.$Shape
 			static create(properties?: proto.SyncActionValue.DetectedOutcomesStatusAction.$Properties): proto.SyncActionValue.DetectedOutcomesStatusAction
-			static encode(m: proto.SyncActionValue.DetectedOutcomesStatusAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.DetectedOutcomesStatusAction & proto.SyncActionValue.DetectedOutcomesStatusAction.$Shape
+			static encode(m: proto.SyncActionValue.DetectedOutcomesStatusAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.DetectedOutcomesStatusAction & proto.SyncActionValue.DetectedOutcomesStatusAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.DetectedOutcomesStatusAction
-			static toObject(m: proto.SyncActionValue.DetectedOutcomesStatusAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.DetectedOutcomesStatusAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace DetectedOutcomesStatusAction {
@@ -18527,10 +18535,10 @@ export namespace proto {
 			isOptIn?: (boolean|null)
 			static create(properties: proto.SyncActionValue.ExternalWebBetaAction.$Shape): proto.SyncActionValue.ExternalWebBetaAction & proto.SyncActionValue.ExternalWebBetaAction.$Shape
 			static create(properties?: proto.SyncActionValue.ExternalWebBetaAction.$Properties): proto.SyncActionValue.ExternalWebBetaAction
-			static encode(m: proto.SyncActionValue.ExternalWebBetaAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.ExternalWebBetaAction & proto.SyncActionValue.ExternalWebBetaAction.$Shape
+			static encode(m: proto.SyncActionValue.ExternalWebBetaAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.ExternalWebBetaAction & proto.SyncActionValue.ExternalWebBetaAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.ExternalWebBetaAction
-			static toObject(m: proto.SyncActionValue.ExternalWebBetaAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.ExternalWebBetaAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ExternalWebBetaAction {
@@ -18548,10 +18556,10 @@ export namespace proto {
 			favorites: proto.SyncActionValue.FavoritesAction.Favorite.$Properties[]
 			static create(properties: proto.SyncActionValue.FavoritesAction.$Shape): proto.SyncActionValue.FavoritesAction & proto.SyncActionValue.FavoritesAction.$Shape
 			static create(properties?: proto.SyncActionValue.FavoritesAction.$Properties): proto.SyncActionValue.FavoritesAction
-			static encode(m: proto.SyncActionValue.FavoritesAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.FavoritesAction & proto.SyncActionValue.FavoritesAction.$Shape
+			static encode(m: proto.SyncActionValue.FavoritesAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.FavoritesAction & proto.SyncActionValue.FavoritesAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.FavoritesAction
-			static toObject(m: proto.SyncActionValue.FavoritesAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.FavoritesAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace FavoritesAction {
@@ -18568,10 +18576,10 @@ export namespace proto {
 				id?: (string|null)
 				static create(properties: proto.SyncActionValue.FavoritesAction.Favorite.$Shape): proto.SyncActionValue.FavoritesAction.Favorite & proto.SyncActionValue.FavoritesAction.Favorite.$Shape
 				static create(properties?: proto.SyncActionValue.FavoritesAction.Favorite.$Properties): proto.SyncActionValue.FavoritesAction.Favorite
-				static encode(m: proto.SyncActionValue.FavoritesAction.Favorite.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.FavoritesAction.Favorite & proto.SyncActionValue.FavoritesAction.Favorite.$Shape
+				static encode(m: proto.SyncActionValue.FavoritesAction.Favorite.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.FavoritesAction.Favorite & proto.SyncActionValue.FavoritesAction.Favorite.$Shape
 				static fromObject(d: { [k: string]: any }): proto.SyncActionValue.FavoritesAction.Favorite
-				static toObject(m: proto.SyncActionValue.FavoritesAction.Favorite, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.SyncActionValue.FavoritesAction.Favorite, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace Favorite {
@@ -18590,10 +18598,10 @@ export namespace proto {
 			groupHistoryToggleMode?: (proto.SyncActionValue.GroupHistoryToggleAction.GroupHistoryToggleMode|null)
 			static create(properties: proto.SyncActionValue.GroupHistoryToggleAction.$Shape): proto.SyncActionValue.GroupHistoryToggleAction & proto.SyncActionValue.GroupHistoryToggleAction.$Shape
 			static create(properties?: proto.SyncActionValue.GroupHistoryToggleAction.$Properties): proto.SyncActionValue.GroupHistoryToggleAction
-			static encode(m: proto.SyncActionValue.GroupHistoryToggleAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.GroupHistoryToggleAction & proto.SyncActionValue.GroupHistoryToggleAction.$Shape
+			static encode(m: proto.SyncActionValue.GroupHistoryToggleAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.GroupHistoryToggleAction & proto.SyncActionValue.GroupHistoryToggleAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.GroupHistoryToggleAction
-			static toObject(m: proto.SyncActionValue.GroupHistoryToggleAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.GroupHistoryToggleAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace GroupHistoryToggleAction {
@@ -18617,10 +18625,10 @@ export namespace proto {
 			generation?: (number|Long|null)
 			static create(properties: proto.SyncActionValue.HatchCVMSecretAction.$Shape): proto.SyncActionValue.HatchCVMSecretAction & proto.SyncActionValue.HatchCVMSecretAction.$Shape
 			static create(properties?: proto.SyncActionValue.HatchCVMSecretAction.$Properties): proto.SyncActionValue.HatchCVMSecretAction
-			static encode(m: proto.SyncActionValue.HatchCVMSecretAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.HatchCVMSecretAction & proto.SyncActionValue.HatchCVMSecretAction.$Shape
+			static encode(m: proto.SyncActionValue.HatchCVMSecretAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.HatchCVMSecretAction & proto.SyncActionValue.HatchCVMSecretAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.HatchCVMSecretAction
-			static toObject(m: proto.SyncActionValue.HatchCVMSecretAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.HatchCVMSecretAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace HatchCVMSecretAction {
@@ -18640,10 +18648,10 @@ export namespace proto {
 			agmId?: (string|null)
 			static create(properties: proto.SyncActionValue.InteractiveMessageAction.$Shape): proto.SyncActionValue.InteractiveMessageAction & proto.SyncActionValue.InteractiveMessageAction.$Shape
 			static create(properties?: proto.SyncActionValue.InteractiveMessageAction.$Properties): proto.SyncActionValue.InteractiveMessageAction
-			static encode(m: proto.SyncActionValue.InteractiveMessageAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.InteractiveMessageAction & proto.SyncActionValue.InteractiveMessageAction.$Shape
+			static encode(m: proto.SyncActionValue.InteractiveMessageAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.InteractiveMessageAction & proto.SyncActionValue.InteractiveMessageAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.InteractiveMessageAction
-			static toObject(m: proto.SyncActionValue.InteractiveMessageAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.InteractiveMessageAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace InteractiveMessageAction {
@@ -18665,10 +18673,10 @@ export namespace proto {
 			expiredKeyEpoch?: (number|null)
 			static create(properties: proto.SyncActionValue.KeyExpiration.$Shape): proto.SyncActionValue.KeyExpiration & proto.SyncActionValue.KeyExpiration.$Shape
 			static create(properties?: proto.SyncActionValue.KeyExpiration.$Properties): proto.SyncActionValue.KeyExpiration
-			static encode(m: proto.SyncActionValue.KeyExpiration.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.KeyExpiration & proto.SyncActionValue.KeyExpiration.$Shape
+			static encode(m: proto.SyncActionValue.KeyExpiration.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.KeyExpiration & proto.SyncActionValue.KeyExpiration.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.KeyExpiration
-			static toObject(m: proto.SyncActionValue.KeyExpiration, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.KeyExpiration, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace KeyExpiration {
@@ -18687,10 +18695,10 @@ export namespace proto {
 			modelMetaData?: (string|null)
 			static create(properties: proto.SyncActionValue.LabelAssociationAction.$Shape): proto.SyncActionValue.LabelAssociationAction & proto.SyncActionValue.LabelAssociationAction.$Shape
 			static create(properties?: proto.SyncActionValue.LabelAssociationAction.$Properties): proto.SyncActionValue.LabelAssociationAction
-			static encode(m: proto.SyncActionValue.LabelAssociationAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.LabelAssociationAction & proto.SyncActionValue.LabelAssociationAction.$Shape
+			static encode(m: proto.SyncActionValue.LabelAssociationAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.LabelAssociationAction & proto.SyncActionValue.LabelAssociationAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.LabelAssociationAction
-			static toObject(m: proto.SyncActionValue.LabelAssociationAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.LabelAssociationAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace LabelAssociationAction {
@@ -18717,10 +18725,10 @@ export namespace proto {
 			muteEndTimeMs?: (number|Long|null)
 			static create(properties: proto.SyncActionValue.LabelEditAction.$Shape): proto.SyncActionValue.LabelEditAction & proto.SyncActionValue.LabelEditAction.$Shape
 			static create(properties?: proto.SyncActionValue.LabelEditAction.$Properties): proto.SyncActionValue.LabelEditAction
-			static encode(m: proto.SyncActionValue.LabelEditAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.LabelEditAction & proto.SyncActionValue.LabelEditAction.$Shape
+			static encode(m: proto.SyncActionValue.LabelEditAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.LabelEditAction & proto.SyncActionValue.LabelEditAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.LabelEditAction
-			static toObject(m: proto.SyncActionValue.LabelEditAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.LabelEditAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace LabelEditAction {
@@ -18769,10 +18777,10 @@ export namespace proto {
 			sortedLabelIds: number[]
 			static create(properties: proto.SyncActionValue.LabelReorderingAction.$Shape): proto.SyncActionValue.LabelReorderingAction & proto.SyncActionValue.LabelReorderingAction.$Shape
 			static create(properties?: proto.SyncActionValue.LabelReorderingAction.$Properties): proto.SyncActionValue.LabelReorderingAction
-			static encode(m: proto.SyncActionValue.LabelReorderingAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.LabelReorderingAction & proto.SyncActionValue.LabelReorderingAction.$Shape
+			static encode(m: proto.SyncActionValue.LabelReorderingAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.LabelReorderingAction & proto.SyncActionValue.LabelReorderingAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.LabelReorderingAction
-			static toObject(m: proto.SyncActionValue.LabelReorderingAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.LabelReorderingAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace LabelReorderingAction {
@@ -18790,10 +18798,10 @@ export namespace proto {
 			subListId?: (number|null)
 			static create(properties: proto.SyncActionValue.LabelSublistAction.$Shape): proto.SyncActionValue.LabelSublistAction & proto.SyncActionValue.LabelSublistAction.$Shape
 			static create(properties?: proto.SyncActionValue.LabelSublistAction.$Properties): proto.SyncActionValue.LabelSublistAction
-			static encode(m: proto.SyncActionValue.LabelSublistAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.LabelSublistAction & proto.SyncActionValue.LabelSublistAction.$Shape
+			static encode(m: proto.SyncActionValue.LabelSublistAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.LabelSublistAction & proto.SyncActionValue.LabelSublistAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.LabelSublistAction
-			static toObject(m: proto.SyncActionValue.LabelSublistAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.LabelSublistAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace LabelSublistAction {
@@ -18814,10 +18822,10 @@ export namespace proto {
 			birthday?: (string|null)
 			static create(properties: proto.SyncActionValue.LidContactAction.$Shape): proto.SyncActionValue.LidContactAction & proto.SyncActionValue.LidContactAction.$Shape
 			static create(properties?: proto.SyncActionValue.LidContactAction.$Properties): proto.SyncActionValue.LidContactAction
-			static encode(m: proto.SyncActionValue.LidContactAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.LidContactAction & proto.SyncActionValue.LidContactAction.$Shape
+			static encode(m: proto.SyncActionValue.LidContactAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.LidContactAction & proto.SyncActionValue.LidContactAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.LidContactAction
-			static toObject(m: proto.SyncActionValue.LidContactAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.LidContactAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace LidContactAction {
@@ -18838,10 +18846,10 @@ export namespace proto {
 			locale?: (string|null)
 			static create(properties: proto.SyncActionValue.LocaleSetting.$Shape): proto.SyncActionValue.LocaleSetting & proto.SyncActionValue.LocaleSetting.$Shape
 			static create(properties?: proto.SyncActionValue.LocaleSetting.$Properties): proto.SyncActionValue.LocaleSetting
-			static encode(m: proto.SyncActionValue.LocaleSetting.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.LocaleSetting & proto.SyncActionValue.LocaleSetting.$Shape
+			static encode(m: proto.SyncActionValue.LocaleSetting.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.LocaleSetting & proto.SyncActionValue.LocaleSetting.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.LocaleSetting
-			static toObject(m: proto.SyncActionValue.LocaleSetting, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.LocaleSetting, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace LocaleSetting {
@@ -18859,10 +18867,10 @@ export namespace proto {
 			locked?: (boolean|null)
 			static create(properties: proto.SyncActionValue.LockChatAction.$Shape): proto.SyncActionValue.LockChatAction & proto.SyncActionValue.LockChatAction.$Shape
 			static create(properties?: proto.SyncActionValue.LockChatAction.$Properties): proto.SyncActionValue.LockChatAction
-			static encode(m: proto.SyncActionValue.LockChatAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.LockChatAction & proto.SyncActionValue.LockChatAction.$Shape
+			static encode(m: proto.SyncActionValue.LockChatAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.LockChatAction & proto.SyncActionValue.LockChatAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.LockChatAction
-			static toObject(m: proto.SyncActionValue.LockChatAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.LockChatAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace LockChatAction {
@@ -18881,10 +18889,10 @@ export namespace proto {
 			aiReplyMode?: (proto.SyncActionValue.MaibaAIFeaturesControlAction.MaibaAIReplyMode|null)
 			static create(properties: proto.SyncActionValue.MaibaAIFeaturesControlAction.$Shape): proto.SyncActionValue.MaibaAIFeaturesControlAction & proto.SyncActionValue.MaibaAIFeaturesControlAction.$Shape
 			static create(properties?: proto.SyncActionValue.MaibaAIFeaturesControlAction.$Properties): proto.SyncActionValue.MaibaAIFeaturesControlAction
-			static encode(m: proto.SyncActionValue.MaibaAIFeaturesControlAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.MaibaAIFeaturesControlAction & proto.SyncActionValue.MaibaAIFeaturesControlAction.$Shape
+			static encode(m: proto.SyncActionValue.MaibaAIFeaturesControlAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.MaibaAIFeaturesControlAction & proto.SyncActionValue.MaibaAIFeaturesControlAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.MaibaAIFeaturesControlAction
-			static toObject(m: proto.SyncActionValue.MaibaAIFeaturesControlAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.MaibaAIFeaturesControlAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace MaibaAIFeaturesControlAction {
@@ -18914,10 +18922,10 @@ export namespace proto {
 			messageRange?: (proto.SyncActionValue.SyncActionMessageRange.$Properties|null)
 			static create(properties: proto.SyncActionValue.MarkChatAsReadAction.$Shape): proto.SyncActionValue.MarkChatAsReadAction & proto.SyncActionValue.MarkChatAsReadAction.$Shape
 			static create(properties?: proto.SyncActionValue.MarkChatAsReadAction.$Properties): proto.SyncActionValue.MarkChatAsReadAction
-			static encode(m: proto.SyncActionValue.MarkChatAsReadAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.MarkChatAsReadAction & proto.SyncActionValue.MarkChatAsReadAction.$Shape
+			static encode(m: proto.SyncActionValue.MarkChatAsReadAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.MarkChatAsReadAction & proto.SyncActionValue.MarkChatAsReadAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.MarkChatAsReadAction
-			static toObject(m: proto.SyncActionValue.MarkChatAsReadAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.MarkChatAsReadAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace MarkChatAsReadAction {
@@ -18942,10 +18950,10 @@ export namespace proto {
 			mediaId?: (string|null)
 			static create(properties: proto.SyncActionValue.MarketingMessageAction.$Shape): proto.SyncActionValue.MarketingMessageAction & proto.SyncActionValue.MarketingMessageAction.$Shape
 			static create(properties?: proto.SyncActionValue.MarketingMessageAction.$Properties): proto.SyncActionValue.MarketingMessageAction
-			static encode(m: proto.SyncActionValue.MarketingMessageAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.MarketingMessageAction & proto.SyncActionValue.MarketingMessageAction.$Shape
+			static encode(m: proto.SyncActionValue.MarketingMessageAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.MarketingMessageAction & proto.SyncActionValue.MarketingMessageAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.MarketingMessageAction
-			static toObject(m: proto.SyncActionValue.MarketingMessageAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.MarketingMessageAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace MarketingMessageAction {
@@ -18972,10 +18980,10 @@ export namespace proto {
 			repliedCount?: (number|null)
 			static create(properties: proto.SyncActionValue.MarketingMessageBroadcastAction.$Shape): proto.SyncActionValue.MarketingMessageBroadcastAction & proto.SyncActionValue.MarketingMessageBroadcastAction.$Shape
 			static create(properties?: proto.SyncActionValue.MarketingMessageBroadcastAction.$Properties): proto.SyncActionValue.MarketingMessageBroadcastAction
-			static encode(m: proto.SyncActionValue.MarketingMessageBroadcastAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.MarketingMessageBroadcastAction & proto.SyncActionValue.MarketingMessageBroadcastAction.$Shape
+			static encode(m: proto.SyncActionValue.MarketingMessageBroadcastAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.MarketingMessageBroadcastAction & proto.SyncActionValue.MarketingMessageBroadcastAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.MarketingMessageBroadcastAction
-			static toObject(m: proto.SyncActionValue.MarketingMessageBroadcastAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.MarketingMessageBroadcastAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace MarketingMessageBroadcastAction {
@@ -18996,10 +19004,10 @@ export namespace proto {
 			credentialId?: (string|null)
 			static create(properties: proto.SyncActionValue.MerchantPaymentPartnerAction.$Shape): proto.SyncActionValue.MerchantPaymentPartnerAction & proto.SyncActionValue.MerchantPaymentPartnerAction.$Shape
 			static create(properties?: proto.SyncActionValue.MerchantPaymentPartnerAction.$Properties): proto.SyncActionValue.MerchantPaymentPartnerAction
-			static encode(m: proto.SyncActionValue.MerchantPaymentPartnerAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.MerchantPaymentPartnerAction & proto.SyncActionValue.MerchantPaymentPartnerAction.$Shape
+			static encode(m: proto.SyncActionValue.MerchantPaymentPartnerAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.MerchantPaymentPartnerAction & proto.SyncActionValue.MerchantPaymentPartnerAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.MerchantPaymentPartnerAction
-			static toObject(m: proto.SyncActionValue.MerchantPaymentPartnerAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.MerchantPaymentPartnerAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace MerchantPaymentPartnerAction {
@@ -19025,10 +19033,10 @@ export namespace proto {
 			musicUserIdMap: { [k: string]: string }
 			static create(properties: proto.SyncActionValue.MusicUserIdAction.$Shape): proto.SyncActionValue.MusicUserIdAction & proto.SyncActionValue.MusicUserIdAction.$Shape
 			static create(properties?: proto.SyncActionValue.MusicUserIdAction.$Properties): proto.SyncActionValue.MusicUserIdAction
-			static encode(m: proto.SyncActionValue.MusicUserIdAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.MusicUserIdAction & proto.SyncActionValue.MusicUserIdAction.$Shape
+			static encode(m: proto.SyncActionValue.MusicUserIdAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.MusicUserIdAction & proto.SyncActionValue.MusicUserIdAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.MusicUserIdAction
-			static toObject(m: proto.SyncActionValue.MusicUserIdAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.MusicUserIdAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace MusicUserIdAction {
@@ -19050,10 +19058,10 @@ export namespace proto {
 			muteEveryoneMentionEndTimestamp?: (number|Long|null)
 			static create(properties: proto.SyncActionValue.MuteAction.$Shape): proto.SyncActionValue.MuteAction & proto.SyncActionValue.MuteAction.$Shape
 			static create(properties?: proto.SyncActionValue.MuteAction.$Properties): proto.SyncActionValue.MuteAction
-			static encode(m: proto.SyncActionValue.MuteAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.MuteAction & proto.SyncActionValue.MuteAction.$Shape
+			static encode(m: proto.SyncActionValue.MuteAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.MuteAction & proto.SyncActionValue.MuteAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.MuteAction
-			static toObject(m: proto.SyncActionValue.MuteAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.MuteAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace MuteAction {
@@ -19074,10 +19082,10 @@ export namespace proto {
 			salt?: (Uint8Array|null)
 			static create(properties: proto.SyncActionValue.NctSaltSyncAction.$Shape): proto.SyncActionValue.NctSaltSyncAction & proto.SyncActionValue.NctSaltSyncAction.$Shape
 			static create(properties?: proto.SyncActionValue.NctSaltSyncAction.$Properties): proto.SyncActionValue.NctSaltSyncAction
-			static encode(m: proto.SyncActionValue.NctSaltSyncAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.NctSaltSyncAction & proto.SyncActionValue.NctSaltSyncAction.$Shape
+			static encode(m: proto.SyncActionValue.NctSaltSyncAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.NctSaltSyncAction & proto.SyncActionValue.NctSaltSyncAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.NctSaltSyncAction
-			static toObject(m: proto.SyncActionValue.NctSaltSyncAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.NctSaltSyncAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace NctSaltSyncAction {
@@ -19095,10 +19103,10 @@ export namespace proto {
 			newsletterSavedInterests?: (string|null)
 			static create(properties: proto.SyncActionValue.NewsletterSavedInterestsAction.$Shape): proto.SyncActionValue.NewsletterSavedInterestsAction & proto.SyncActionValue.NewsletterSavedInterestsAction.$Shape
 			static create(properties?: proto.SyncActionValue.NewsletterSavedInterestsAction.$Properties): proto.SyncActionValue.NewsletterSavedInterestsAction
-			static encode(m: proto.SyncActionValue.NewsletterSavedInterestsAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.NewsletterSavedInterestsAction & proto.SyncActionValue.NewsletterSavedInterestsAction.$Shape
+			static encode(m: proto.SyncActionValue.NewsletterSavedInterestsAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.NewsletterSavedInterestsAction & proto.SyncActionValue.NewsletterSavedInterestsAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.NewsletterSavedInterestsAction
-			static toObject(m: proto.SyncActionValue.NewsletterSavedInterestsAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.NewsletterSavedInterestsAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace NewsletterSavedInterestsAction {
@@ -19120,10 +19128,10 @@ export namespace proto {
 			unstructuredContent?: (string|null)
 			static create(properties: proto.SyncActionValue.NoteEditAction.$Shape): proto.SyncActionValue.NoteEditAction & proto.SyncActionValue.NoteEditAction.$Shape
 			static create(properties?: proto.SyncActionValue.NoteEditAction.$Properties): proto.SyncActionValue.NoteEditAction
-			static encode(m: proto.SyncActionValue.NoteEditAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.NoteEditAction & proto.SyncActionValue.NoteEditAction.$Shape
+			static encode(m: proto.SyncActionValue.NoteEditAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.NoteEditAction & proto.SyncActionValue.NoteEditAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.NoteEditAction
-			static toObject(m: proto.SyncActionValue.NoteEditAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.NoteEditAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace NoteEditAction {
@@ -19149,10 +19157,10 @@ export namespace proto {
 			notificationActivitySetting?: (proto.SyncActionValue.NotificationActivitySettingAction.NotificationActivitySetting|null)
 			static create(properties: proto.SyncActionValue.NotificationActivitySettingAction.$Shape): proto.SyncActionValue.NotificationActivitySettingAction & proto.SyncActionValue.NotificationActivitySettingAction.$Shape
 			static create(properties?: proto.SyncActionValue.NotificationActivitySettingAction.$Properties): proto.SyncActionValue.NotificationActivitySettingAction
-			static encode(m: proto.SyncActionValue.NotificationActivitySettingAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.NotificationActivitySettingAction & proto.SyncActionValue.NotificationActivitySettingAction.$Shape
+			static encode(m: proto.SyncActionValue.NotificationActivitySettingAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.NotificationActivitySettingAction & proto.SyncActionValue.NotificationActivitySettingAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.NotificationActivitySettingAction
-			static toObject(m: proto.SyncActionValue.NotificationActivitySettingAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.NotificationActivitySettingAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace NotificationActivitySettingAction {
@@ -19176,10 +19184,10 @@ export namespace proto {
 			acknowledged?: (boolean|null)
 			static create(properties: proto.SyncActionValue.NuxAction.$Shape): proto.SyncActionValue.NuxAction & proto.SyncActionValue.NuxAction.$Shape
 			static create(properties?: proto.SyncActionValue.NuxAction.$Properties): proto.SyncActionValue.NuxAction
-			static encode(m: proto.SyncActionValue.NuxAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.NuxAction & proto.SyncActionValue.NuxAction.$Shape
+			static encode(m: proto.SyncActionValue.NuxAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.NuxAction & proto.SyncActionValue.NuxAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.NuxAction
-			static toObject(m: proto.SyncActionValue.NuxAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.NuxAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace NuxAction {
@@ -19198,10 +19206,10 @@ export namespace proto {
 			firstName?: (string|null)
 			static create(properties: proto.SyncActionValue.OutContactAction.$Shape): proto.SyncActionValue.OutContactAction & proto.SyncActionValue.OutContactAction.$Shape
 			static create(properties?: proto.SyncActionValue.OutContactAction.$Properties): proto.SyncActionValue.OutContactAction
-			static encode(m: proto.SyncActionValue.OutContactAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.OutContactAction & proto.SyncActionValue.OutContactAction.$Shape
+			static encode(m: proto.SyncActionValue.OutContactAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.OutContactAction & proto.SyncActionValue.OutContactAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.OutContactAction
-			static toObject(m: proto.SyncActionValue.OutContactAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.OutContactAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace OutContactAction {
@@ -19220,10 +19228,10 @@ export namespace proto {
 			cpi?: (string|null)
 			static create(properties: proto.SyncActionValue.PaymentInfoAction.$Shape): proto.SyncActionValue.PaymentInfoAction & proto.SyncActionValue.PaymentInfoAction.$Shape
 			static create(properties?: proto.SyncActionValue.PaymentInfoAction.$Properties): proto.SyncActionValue.PaymentInfoAction
-			static encode(m: proto.SyncActionValue.PaymentInfoAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.PaymentInfoAction & proto.SyncActionValue.PaymentInfoAction.$Shape
+			static encode(m: proto.SyncActionValue.PaymentInfoAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.PaymentInfoAction & proto.SyncActionValue.PaymentInfoAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.PaymentInfoAction
-			static toObject(m: proto.SyncActionValue.PaymentInfoAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.PaymentInfoAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PaymentInfoAction {
@@ -19242,10 +19250,10 @@ export namespace proto {
 			accepted: boolean
 			static create(properties: proto.SyncActionValue.PaymentTosAction.$Shape): proto.SyncActionValue.PaymentTosAction & proto.SyncActionValue.PaymentTosAction.$Shape
 			static create(properties?: proto.SyncActionValue.PaymentTosAction.$Properties): proto.SyncActionValue.PaymentTosAction
-			static encode(m: proto.SyncActionValue.PaymentTosAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.PaymentTosAction & proto.SyncActionValue.PaymentTosAction.$Shape
+			static encode(m: proto.SyncActionValue.PaymentTosAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.PaymentTosAction & proto.SyncActionValue.PaymentTosAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.PaymentTosAction
-			static toObject(m: proto.SyncActionValue.PaymentTosAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.PaymentTosAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PaymentTosAction {
@@ -19267,10 +19275,10 @@ export namespace proto {
 			pinned?: (boolean|null)
 			static create(properties: proto.SyncActionValue.PinAction.$Shape): proto.SyncActionValue.PinAction & proto.SyncActionValue.PinAction.$Shape
 			static create(properties?: proto.SyncActionValue.PinAction.$Properties): proto.SyncActionValue.PinAction
-			static encode(m: proto.SyncActionValue.PinAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.PinAction & proto.SyncActionValue.PinAction.$Shape
+			static encode(m: proto.SyncActionValue.PinAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.PinAction & proto.SyncActionValue.PinAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.PinAction
-			static toObject(m: proto.SyncActionValue.PinAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.PinAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PinAction {
@@ -19288,10 +19296,10 @@ export namespace proto {
 			pnJid?: (string|null)
 			static create(properties: proto.SyncActionValue.PnForLidChatAction.$Shape): proto.SyncActionValue.PnForLidChatAction & proto.SyncActionValue.PnForLidChatAction.$Shape
 			static create(properties?: proto.SyncActionValue.PnForLidChatAction.$Properties): proto.SyncActionValue.PnForLidChatAction
-			static encode(m: proto.SyncActionValue.PnForLidChatAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.PnForLidChatAction & proto.SyncActionValue.PnForLidChatAction.$Shape
+			static encode(m: proto.SyncActionValue.PnForLidChatAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.PnForLidChatAction & proto.SyncActionValue.PnForLidChatAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.PnForLidChatAction
-			static toObject(m: proto.SyncActionValue.PnForLidChatAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.PnForLidChatAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PnForLidChatAction {
@@ -19309,10 +19317,10 @@ export namespace proto {
 			flags: string[]
 			static create(properties: proto.SyncActionValue.PrimaryFeature.$Shape): proto.SyncActionValue.PrimaryFeature & proto.SyncActionValue.PrimaryFeature.$Shape
 			static create(properties?: proto.SyncActionValue.PrimaryFeature.$Properties): proto.SyncActionValue.PrimaryFeature
-			static encode(m: proto.SyncActionValue.PrimaryFeature.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.PrimaryFeature & proto.SyncActionValue.PrimaryFeature.$Shape
+			static encode(m: proto.SyncActionValue.PrimaryFeature.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.PrimaryFeature & proto.SyncActionValue.PrimaryFeature.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.PrimaryFeature
-			static toObject(m: proto.SyncActionValue.PrimaryFeature, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.PrimaryFeature, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PrimaryFeature {
@@ -19330,10 +19338,10 @@ export namespace proto {
 			version?: (string|null)
 			static create(properties: proto.SyncActionValue.PrimaryVersionAction.$Shape): proto.SyncActionValue.PrimaryVersionAction & proto.SyncActionValue.PrimaryVersionAction.$Shape
 			static create(properties?: proto.SyncActionValue.PrimaryVersionAction.$Properties): proto.SyncActionValue.PrimaryVersionAction
-			static encode(m: proto.SyncActionValue.PrimaryVersionAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.PrimaryVersionAction & proto.SyncActionValue.PrimaryVersionAction.$Shape
+			static encode(m: proto.SyncActionValue.PrimaryVersionAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.PrimaryVersionAction & proto.SyncActionValue.PrimaryVersionAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.PrimaryVersionAction
-			static toObject(m: proto.SyncActionValue.PrimaryVersionAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.PrimaryVersionAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PrimaryVersionAction {
@@ -19351,10 +19359,10 @@ export namespace proto {
 			isUserOptedOut?: (boolean|null)
 			static create(properties: proto.SyncActionValue.PrivacySettingChannelsPersonalisedRecommendationAction.$Shape): proto.SyncActionValue.PrivacySettingChannelsPersonalisedRecommendationAction & proto.SyncActionValue.PrivacySettingChannelsPersonalisedRecommendationAction.$Shape
 			static create(properties?: proto.SyncActionValue.PrivacySettingChannelsPersonalisedRecommendationAction.$Properties): proto.SyncActionValue.PrivacySettingChannelsPersonalisedRecommendationAction
-			static encode(m: proto.SyncActionValue.PrivacySettingChannelsPersonalisedRecommendationAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.PrivacySettingChannelsPersonalisedRecommendationAction & proto.SyncActionValue.PrivacySettingChannelsPersonalisedRecommendationAction.$Shape
+			static encode(m: proto.SyncActionValue.PrivacySettingChannelsPersonalisedRecommendationAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.PrivacySettingChannelsPersonalisedRecommendationAction & proto.SyncActionValue.PrivacySettingChannelsPersonalisedRecommendationAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.PrivacySettingChannelsPersonalisedRecommendationAction
-			static toObject(m: proto.SyncActionValue.PrivacySettingChannelsPersonalisedRecommendationAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.PrivacySettingChannelsPersonalisedRecommendationAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PrivacySettingChannelsPersonalisedRecommendationAction {
@@ -19372,10 +19380,10 @@ export namespace proto {
 			isPreviewsDisabled?: (boolean|null)
 			static create(properties: proto.SyncActionValue.PrivacySettingDisableLinkPreviewsAction.$Shape): proto.SyncActionValue.PrivacySettingDisableLinkPreviewsAction & proto.SyncActionValue.PrivacySettingDisableLinkPreviewsAction.$Shape
 			static create(properties?: proto.SyncActionValue.PrivacySettingDisableLinkPreviewsAction.$Properties): proto.SyncActionValue.PrivacySettingDisableLinkPreviewsAction
-			static encode(m: proto.SyncActionValue.PrivacySettingDisableLinkPreviewsAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.PrivacySettingDisableLinkPreviewsAction & proto.SyncActionValue.PrivacySettingDisableLinkPreviewsAction.$Shape
+			static encode(m: proto.SyncActionValue.PrivacySettingDisableLinkPreviewsAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.PrivacySettingDisableLinkPreviewsAction & proto.SyncActionValue.PrivacySettingDisableLinkPreviewsAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.PrivacySettingDisableLinkPreviewsAction
-			static toObject(m: proto.SyncActionValue.PrivacySettingDisableLinkPreviewsAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.PrivacySettingDisableLinkPreviewsAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PrivacySettingDisableLinkPreviewsAction {
@@ -19393,10 +19401,10 @@ export namespace proto {
 			isEnabled?: (boolean|null)
 			static create(properties: proto.SyncActionValue.PrivacySettingRelayAllCalls.$Shape): proto.SyncActionValue.PrivacySettingRelayAllCalls & proto.SyncActionValue.PrivacySettingRelayAllCalls.$Shape
 			static create(properties?: proto.SyncActionValue.PrivacySettingRelayAllCalls.$Properties): proto.SyncActionValue.PrivacySettingRelayAllCalls
-			static encode(m: proto.SyncActionValue.PrivacySettingRelayAllCalls.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.PrivacySettingRelayAllCalls & proto.SyncActionValue.PrivacySettingRelayAllCalls.$Shape
+			static encode(m: proto.SyncActionValue.PrivacySettingRelayAllCalls.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.PrivacySettingRelayAllCalls & proto.SyncActionValue.PrivacySettingRelayAllCalls.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.PrivacySettingRelayAllCalls
-			static toObject(m: proto.SyncActionValue.PrivacySettingRelayAllCalls, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.PrivacySettingRelayAllCalls, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PrivacySettingRelayAllCalls {
@@ -19414,10 +19422,10 @@ export namespace proto {
 			privateProcessingStatus?: (proto.SyncActionValue.PrivateProcessingSettingAction.PrivateProcessingStatus|null)
 			static create(properties: proto.SyncActionValue.PrivateProcessingSettingAction.$Shape): proto.SyncActionValue.PrivateProcessingSettingAction & proto.SyncActionValue.PrivateProcessingSettingAction.$Shape
 			static create(properties?: proto.SyncActionValue.PrivateProcessingSettingAction.$Properties): proto.SyncActionValue.PrivateProcessingSettingAction
-			static encode(m: proto.SyncActionValue.PrivateProcessingSettingAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.PrivateProcessingSettingAction & proto.SyncActionValue.PrivateProcessingSettingAction.$Shape
+			static encode(m: proto.SyncActionValue.PrivateProcessingSettingAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.PrivateProcessingSettingAction & proto.SyncActionValue.PrivateProcessingSettingAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.PrivateProcessingSettingAction
-			static toObject(m: proto.SyncActionValue.PrivateProcessingSettingAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.PrivateProcessingSettingAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PrivateProcessingSettingAction {
@@ -19440,10 +19448,10 @@ export namespace proto {
 			name?: (string|null)
 			static create(properties: proto.SyncActionValue.PushNameSetting.$Shape): proto.SyncActionValue.PushNameSetting & proto.SyncActionValue.PushNameSetting.$Shape
 			static create(properties?: proto.SyncActionValue.PushNameSetting.$Properties): proto.SyncActionValue.PushNameSetting
-			static encode(m: proto.SyncActionValue.PushNameSetting.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.PushNameSetting & proto.SyncActionValue.PushNameSetting.$Shape
+			static encode(m: proto.SyncActionValue.PushNameSetting.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.PushNameSetting & proto.SyncActionValue.PushNameSetting.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.PushNameSetting
-			static toObject(m: proto.SyncActionValue.PushNameSetting, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.PushNameSetting, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace PushNameSetting {
@@ -19466,10 +19474,10 @@ export namespace proto {
 			associatedLabelIds: string[]
 			static create(properties: proto.SyncActionValue.QuickReplyAction.$Shape): proto.SyncActionValue.QuickReplyAction & proto.SyncActionValue.QuickReplyAction.$Shape
 			static create(properties?: proto.SyncActionValue.QuickReplyAction.$Properties): proto.SyncActionValue.QuickReplyAction
-			static encode(m: proto.SyncActionValue.QuickReplyAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.QuickReplyAction & proto.SyncActionValue.QuickReplyAction.$Shape
+			static encode(m: proto.SyncActionValue.QuickReplyAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.QuickReplyAction & proto.SyncActionValue.QuickReplyAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.QuickReplyAction
-			static toObject(m: proto.SyncActionValue.QuickReplyAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.QuickReplyAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace QuickReplyAction {
@@ -19492,10 +19500,10 @@ export namespace proto {
 			weights: proto.RecentEmojiWeight.$Properties[]
 			static create(properties: proto.SyncActionValue.RecentEmojiWeightsAction.$Shape): proto.SyncActionValue.RecentEmojiWeightsAction & proto.SyncActionValue.RecentEmojiWeightsAction.$Shape
 			static create(properties?: proto.SyncActionValue.RecentEmojiWeightsAction.$Properties): proto.SyncActionValue.RecentEmojiWeightsAction
-			static encode(m: proto.SyncActionValue.RecentEmojiWeightsAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.RecentEmojiWeightsAction & proto.SyncActionValue.RecentEmojiWeightsAction.$Shape
+			static encode(m: proto.SyncActionValue.RecentEmojiWeightsAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.RecentEmojiWeightsAction & proto.SyncActionValue.RecentEmojiWeightsAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.RecentEmojiWeightsAction
-			static toObject(m: proto.SyncActionValue.RecentEmojiWeightsAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.RecentEmojiWeightsAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace RecentEmojiWeightsAction {
@@ -19513,10 +19521,10 @@ export namespace proto {
 			lastStickerSentTs?: (number|Long|null)
 			static create(properties: proto.SyncActionValue.RemoveRecentStickerAction.$Shape): proto.SyncActionValue.RemoveRecentStickerAction & proto.SyncActionValue.RemoveRecentStickerAction.$Shape
 			static create(properties?: proto.SyncActionValue.RemoveRecentStickerAction.$Properties): proto.SyncActionValue.RemoveRecentStickerAction
-			static encode(m: proto.SyncActionValue.RemoveRecentStickerAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.RemoveRecentStickerAction & proto.SyncActionValue.RemoveRecentStickerAction.$Shape
+			static encode(m: proto.SyncActionValue.RemoveRecentStickerAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.RemoveRecentStickerAction & proto.SyncActionValue.RemoveRecentStickerAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.RemoveRecentStickerAction
-			static toObject(m: proto.SyncActionValue.RemoveRecentStickerAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.RemoveRecentStickerAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace RemoveRecentStickerAction {
@@ -19568,10 +19576,10 @@ export namespace proto {
 			mediaAutoDownloadQuality?: (proto.SyncActionValue.SettingsSyncAction.MediaAutoDownloadQualitySetting|null)
 			static create(properties: proto.SyncActionValue.SettingsSyncAction.$Shape): proto.SyncActionValue.SettingsSyncAction & proto.SyncActionValue.SettingsSyncAction.$Shape
 			static create(properties?: proto.SyncActionValue.SettingsSyncAction.$Properties): proto.SyncActionValue.SettingsSyncAction
-			static encode(m: proto.SyncActionValue.SettingsSyncAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.SettingsSyncAction & proto.SyncActionValue.SettingsSyncAction.$Shape
+			static encode(m: proto.SyncActionValue.SettingsSyncAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.SettingsSyncAction & proto.SyncActionValue.SettingsSyncAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.SettingsSyncAction
-			static toObject(m: proto.SyncActionValue.SettingsSyncAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.SettingsSyncAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace SettingsSyncAction {
@@ -19685,10 +19693,10 @@ export namespace proto {
 			allowed?: (boolean|null)
 			static create(properties: proto.SyncActionValue.SharedDeviceAllowlistAction.$Shape): proto.SyncActionValue.SharedDeviceAllowlistAction & proto.SyncActionValue.SharedDeviceAllowlistAction.$Shape
 			static create(properties?: proto.SyncActionValue.SharedDeviceAllowlistAction.$Properties): proto.SyncActionValue.SharedDeviceAllowlistAction
-			static encode(m: proto.SyncActionValue.SharedDeviceAllowlistAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.SharedDeviceAllowlistAction & proto.SyncActionValue.SharedDeviceAllowlistAction.$Shape
+			static encode(m: proto.SyncActionValue.SharedDeviceAllowlistAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.SharedDeviceAllowlistAction & proto.SyncActionValue.SharedDeviceAllowlistAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.SharedDeviceAllowlistAction
-			static toObject(m: proto.SyncActionValue.SharedDeviceAllowlistAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.SharedDeviceAllowlistAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace SharedDeviceAllowlistAction {
@@ -19707,10 +19715,10 @@ export namespace proto {
 			ttlMs?: (number|Long|null)
 			static create(properties: proto.SyncActionValue.SharedDeviceSecretAction.$Shape): proto.SyncActionValue.SharedDeviceSecretAction & proto.SyncActionValue.SharedDeviceSecretAction.$Shape
 			static create(properties?: proto.SyncActionValue.SharedDeviceSecretAction.$Properties): proto.SyncActionValue.SharedDeviceSecretAction
-			static encode(m: proto.SyncActionValue.SharedDeviceSecretAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.SharedDeviceSecretAction & proto.SyncActionValue.SharedDeviceSecretAction.$Shape
+			static encode(m: proto.SyncActionValue.SharedDeviceSecretAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.SharedDeviceSecretAction & proto.SyncActionValue.SharedDeviceSecretAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.SharedDeviceSecretAction
-			static toObject(m: proto.SyncActionValue.SharedDeviceSecretAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.SharedDeviceSecretAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace SharedDeviceSecretAction {
@@ -19729,10 +19737,10 @@ export namespace proto {
 			starred?: (boolean|null)
 			static create(properties: proto.SyncActionValue.StarAction.$Shape): proto.SyncActionValue.StarAction & proto.SyncActionValue.StarAction.$Shape
 			static create(properties?: proto.SyncActionValue.StarAction.$Properties): proto.SyncActionValue.StarAction
-			static encode(m: proto.SyncActionValue.StarAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.StarAction & proto.SyncActionValue.StarAction.$Shape
+			static encode(m: proto.SyncActionValue.StarAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.StarAction & proto.SyncActionValue.StarAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.StarAction
-			static toObject(m: proto.SyncActionValue.StarAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.StarAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace StarAction {
@@ -19750,10 +19758,10 @@ export namespace proto {
 			enabled?: (boolean|null)
 			static create(properties: proto.SyncActionValue.StatusPostOptInNotificationPreferencesAction.$Shape): proto.SyncActionValue.StatusPostOptInNotificationPreferencesAction & proto.SyncActionValue.StatusPostOptInNotificationPreferencesAction.$Shape
 			static create(properties?: proto.SyncActionValue.StatusPostOptInNotificationPreferencesAction.$Properties): proto.SyncActionValue.StatusPostOptInNotificationPreferencesAction
-			static encode(m: proto.SyncActionValue.StatusPostOptInNotificationPreferencesAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.StatusPostOptInNotificationPreferencesAction & proto.SyncActionValue.StatusPostOptInNotificationPreferencesAction.$Shape
+			static encode(m: proto.SyncActionValue.StatusPostOptInNotificationPreferencesAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.StatusPostOptInNotificationPreferencesAction & proto.SyncActionValue.StatusPostOptInNotificationPreferencesAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.StatusPostOptInNotificationPreferencesAction
-			static toObject(m: proto.SyncActionValue.StatusPostOptInNotificationPreferencesAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.StatusPostOptInNotificationPreferencesAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace StatusPostOptInNotificationPreferencesAction {
@@ -19776,10 +19784,10 @@ export namespace proto {
 			modes: proto.SyncActionValue.StatusPrivacyAction.StatusDistributionMode[]
 			static create(properties: proto.SyncActionValue.StatusPrivacyAction.$Shape): proto.SyncActionValue.StatusPrivacyAction & proto.SyncActionValue.StatusPrivacyAction.$Shape
 			static create(properties?: proto.SyncActionValue.StatusPrivacyAction.$Properties): proto.SyncActionValue.StatusPrivacyAction
-			static encode(m: proto.SyncActionValue.StatusPrivacyAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.StatusPrivacyAction & proto.SyncActionValue.StatusPrivacyAction.$Shape
+			static encode(m: proto.SyncActionValue.StatusPrivacyAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.StatusPrivacyAction & proto.SyncActionValue.StatusPrivacyAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.StatusPrivacyAction
-			static toObject(m: proto.SyncActionValue.StatusPrivacyAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.StatusPrivacyAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace StatusPrivacyAction {
@@ -19805,10 +19813,10 @@ export namespace proto {
 				userJid: string[]
 				static create(properties: proto.SyncActionValue.StatusPrivacyAction.CustomList.$Shape): proto.SyncActionValue.StatusPrivacyAction.CustomList & proto.SyncActionValue.StatusPrivacyAction.CustomList.$Shape
 				static create(properties?: proto.SyncActionValue.StatusPrivacyAction.CustomList.$Properties): proto.SyncActionValue.StatusPrivacyAction.CustomList
-				static encode(m: proto.SyncActionValue.StatusPrivacyAction.CustomList.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.StatusPrivacyAction.CustomList & proto.SyncActionValue.StatusPrivacyAction.CustomList.$Shape
+				static encode(m: proto.SyncActionValue.StatusPrivacyAction.CustomList.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.StatusPrivacyAction.CustomList & proto.SyncActionValue.StatusPrivacyAction.CustomList.$Shape
 				static fromObject(d: { [k: string]: any }): proto.SyncActionValue.StatusPrivacyAction.CustomList
-				static toObject(m: proto.SyncActionValue.StatusPrivacyAction.CustomList, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.SyncActionValue.StatusPrivacyAction.CustomList, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace CustomList {
@@ -19850,10 +19858,10 @@ export namespace proto {
 			isAvatarSticker?: (boolean|null)
 			static create(properties: proto.SyncActionValue.StickerAction.$Shape): proto.SyncActionValue.StickerAction & proto.SyncActionValue.StickerAction.$Shape
 			static create(properties?: proto.SyncActionValue.StickerAction.$Properties): proto.SyncActionValue.StickerAction
-			static encode(m: proto.SyncActionValue.StickerAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.StickerAction & proto.SyncActionValue.StickerAction.$Shape
+			static encode(m: proto.SyncActionValue.StickerAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.StickerAction & proto.SyncActionValue.StickerAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.StickerAction
-			static toObject(m: proto.SyncActionValue.StickerAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.StickerAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace StickerAction {
@@ -19885,10 +19893,10 @@ export namespace proto {
 			expirationDate?: (number|Long|null)
 			static create(properties: proto.SyncActionValue.SubscriptionAction.$Shape): proto.SyncActionValue.SubscriptionAction & proto.SyncActionValue.SubscriptionAction.$Shape
 			static create(properties?: proto.SyncActionValue.SubscriptionAction.$Properties): proto.SyncActionValue.SubscriptionAction
-			static encode(m: proto.SyncActionValue.SubscriptionAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.SubscriptionAction & proto.SyncActionValue.SubscriptionAction.$Shape
+			static encode(m: proto.SyncActionValue.SubscriptionAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.SubscriptionAction & proto.SyncActionValue.SubscriptionAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.SubscriptionAction
-			static toObject(m: proto.SyncActionValue.SubscriptionAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.SubscriptionAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace SubscriptionAction {
@@ -19909,10 +19917,10 @@ export namespace proto {
 			paidFeature: proto.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature.$Properties[]
 			static create(properties: proto.SyncActionValue.SubscriptionsSyncV2Action.$Shape): proto.SyncActionValue.SubscriptionsSyncV2Action & proto.SyncActionValue.SubscriptionsSyncV2Action.$Shape
 			static create(properties?: proto.SyncActionValue.SubscriptionsSyncV2Action.$Properties): proto.SyncActionValue.SubscriptionsSyncV2Action
-			static encode(m: proto.SyncActionValue.SubscriptionsSyncV2Action.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.SubscriptionsSyncV2Action & proto.SyncActionValue.SubscriptionsSyncV2Action.$Shape
+			static encode(m: proto.SyncActionValue.SubscriptionsSyncV2Action.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.SubscriptionsSyncV2Action & proto.SyncActionValue.SubscriptionsSyncV2Action.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.SubscriptionsSyncV2Action
-			static toObject(m: proto.SyncActionValue.SubscriptionsSyncV2Action, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.SubscriptionsSyncV2Action, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace SubscriptionsSyncV2Action {
@@ -19933,10 +19941,10 @@ export namespace proto {
 				expirationTime?: (number|Long|null)
 				static create(properties: proto.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature.$Shape): proto.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature & proto.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature.$Shape
 				static create(properties?: proto.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature.$Properties): proto.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature
-				static encode(m: proto.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature & proto.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature.$Shape
+				static encode(m: proto.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature & proto.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature.$Shape
 				static fromObject(d: { [k: string]: any }): proto.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature
-				static toObject(m: proto.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.SyncActionValue.SubscriptionsSyncV2Action.PaidFeature, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace PaidFeature {
@@ -19964,10 +19972,10 @@ export namespace proto {
 				creationTime?: (number|Long|null)
 				static create(properties: proto.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo.$Shape): proto.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo & proto.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo.$Shape
 				static create(properties?: proto.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo.$Properties): proto.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo
-				static encode(m: proto.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo & proto.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo.$Shape
+				static encode(m: proto.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo & proto.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo.$Shape
 				static fromObject(d: { [k: string]: any }): proto.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo
-				static toObject(m: proto.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.SyncActionValue.SubscriptionsSyncV2Action.SubscriptionInfo, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace SubscriptionInfo {
@@ -19994,10 +20002,10 @@ export namespace proto {
 			timestamp?: (number|Long|null)
 			static create(properties: proto.SyncActionValue.SyncActionMessage.$Shape): proto.SyncActionValue.SyncActionMessage & proto.SyncActionValue.SyncActionMessage.$Shape
 			static create(properties?: proto.SyncActionValue.SyncActionMessage.$Properties): proto.SyncActionValue.SyncActionMessage
-			static encode(m: proto.SyncActionValue.SyncActionMessage.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.SyncActionMessage & proto.SyncActionValue.SyncActionMessage.$Shape
+			static encode(m: proto.SyncActionValue.SyncActionMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.SyncActionMessage & proto.SyncActionValue.SyncActionMessage.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.SyncActionMessage
-			static toObject(m: proto.SyncActionValue.SyncActionMessage, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.SyncActionMessage, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace SyncActionMessage {
@@ -20018,10 +20026,10 @@ export namespace proto {
 			messages: proto.SyncActionValue.SyncActionMessage.$Properties[]
 			static create(properties: proto.SyncActionValue.SyncActionMessageRange.$Shape): proto.SyncActionValue.SyncActionMessageRange & proto.SyncActionValue.SyncActionMessageRange.$Shape
 			static create(properties?: proto.SyncActionValue.SyncActionMessageRange.$Properties): proto.SyncActionValue.SyncActionMessageRange
-			static encode(m: proto.SyncActionValue.SyncActionMessageRange.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.SyncActionMessageRange & proto.SyncActionValue.SyncActionMessageRange.$Shape
+			static encode(m: proto.SyncActionValue.SyncActionMessageRange.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.SyncActionMessageRange & proto.SyncActionValue.SyncActionMessageRange.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.SyncActionMessageRange
-			static toObject(m: proto.SyncActionValue.SyncActionMessageRange, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.SyncActionMessageRange, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace SyncActionMessageRange {
@@ -20041,10 +20049,10 @@ export namespace proto {
 			pinned?: (boolean|null)
 			static create(properties: proto.SyncActionValue.ThreadPinAction.$Shape): proto.SyncActionValue.ThreadPinAction & proto.SyncActionValue.ThreadPinAction.$Shape
 			static create(properties?: proto.SyncActionValue.ThreadPinAction.$Properties): proto.SyncActionValue.ThreadPinAction
-			static encode(m: proto.SyncActionValue.ThreadPinAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.ThreadPinAction & proto.SyncActionValue.ThreadPinAction.$Shape
+			static encode(m: proto.SyncActionValue.ThreadPinAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.ThreadPinAction & proto.SyncActionValue.ThreadPinAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.ThreadPinAction
-			static toObject(m: proto.SyncActionValue.ThreadPinAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.ThreadPinAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace ThreadPinAction {
@@ -20062,10 +20070,10 @@ export namespace proto {
 			isTwentyFourHourFormatEnabled?: (boolean|null)
 			static create(properties: proto.SyncActionValue.TimeFormatAction.$Shape): proto.SyncActionValue.TimeFormatAction & proto.SyncActionValue.TimeFormatAction.$Shape
 			static create(properties?: proto.SyncActionValue.TimeFormatAction.$Properties): proto.SyncActionValue.TimeFormatAction
-			static encode(m: proto.SyncActionValue.TimeFormatAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.TimeFormatAction & proto.SyncActionValue.TimeFormatAction.$Shape
+			static encode(m: proto.SyncActionValue.TimeFormatAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.TimeFormatAction & proto.SyncActionValue.TimeFormatAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.TimeFormatAction
-			static toObject(m: proto.SyncActionValue.TimeFormatAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.TimeFormatAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace TimeFormatAction {
@@ -20083,10 +20091,10 @@ export namespace proto {
 			definition?: (Uint8Array|null)
 			static create(properties: proto.SyncActionValue.UGCBot.$Shape): proto.SyncActionValue.UGCBot & proto.SyncActionValue.UGCBot.$Shape
 			static create(properties?: proto.SyncActionValue.UGCBot.$Properties): proto.SyncActionValue.UGCBot
-			static encode(m: proto.SyncActionValue.UGCBot.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.UGCBot & proto.SyncActionValue.UGCBot.$Shape
+			static encode(m: proto.SyncActionValue.UGCBot.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.UGCBot & proto.SyncActionValue.UGCBot.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.UGCBot
-			static toObject(m: proto.SyncActionValue.UGCBot, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.UGCBot, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace UGCBot {
@@ -20104,10 +20112,10 @@ export namespace proto {
 			unarchiveChats?: (boolean|null)
 			static create(properties: proto.SyncActionValue.UnarchiveChatsSetting.$Shape): proto.SyncActionValue.UnarchiveChatsSetting & proto.SyncActionValue.UnarchiveChatsSetting.$Shape
 			static create(properties?: proto.SyncActionValue.UnarchiveChatsSetting.$Properties): proto.SyncActionValue.UnarchiveChatsSetting
-			static encode(m: proto.SyncActionValue.UnarchiveChatsSetting.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.UnarchiveChatsSetting & proto.SyncActionValue.UnarchiveChatsSetting.$Shape
+			static encode(m: proto.SyncActionValue.UnarchiveChatsSetting.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.UnarchiveChatsSetting & proto.SyncActionValue.UnarchiveChatsSetting.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.UnarchiveChatsSetting
-			static toObject(m: proto.SyncActionValue.UnarchiveChatsSetting, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.UnarchiveChatsSetting, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace UnarchiveChatsSetting {
@@ -20125,10 +20133,10 @@ export namespace proto {
 			muted?: (boolean|null)
 			static create(properties: proto.SyncActionValue.UserStatusMuteAction.$Shape): proto.SyncActionValue.UserStatusMuteAction & proto.SyncActionValue.UserStatusMuteAction.$Shape
 			static create(properties?: proto.SyncActionValue.UserStatusMuteAction.$Properties): proto.SyncActionValue.UserStatusMuteAction
-			static encode(m: proto.SyncActionValue.UserStatusMuteAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.UserStatusMuteAction & proto.SyncActionValue.UserStatusMuteAction.$Shape
+			static encode(m: proto.SyncActionValue.UserStatusMuteAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.UserStatusMuteAction & proto.SyncActionValue.UserStatusMuteAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.UserStatusMuteAction
-			static toObject(m: proto.SyncActionValue.UserStatusMuteAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.UserStatusMuteAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace UserStatusMuteAction {
@@ -20146,10 +20154,10 @@ export namespace proto {
 			chatStartMode?: (proto.SyncActionValue.UsernameChatStartModeAction.ChatStartMode|null)
 			static create(properties: proto.SyncActionValue.UsernameChatStartModeAction.$Shape): proto.SyncActionValue.UsernameChatStartModeAction & proto.SyncActionValue.UsernameChatStartModeAction.$Shape
 			static create(properties?: proto.SyncActionValue.UsernameChatStartModeAction.$Properties): proto.SyncActionValue.UsernameChatStartModeAction
-			static encode(m: proto.SyncActionValue.UsernameChatStartModeAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.UsernameChatStartModeAction & proto.SyncActionValue.UsernameChatStartModeAction.$Shape
+			static encode(m: proto.SyncActionValue.UsernameChatStartModeAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.UsernameChatStartModeAction & proto.SyncActionValue.UsernameChatStartModeAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.UsernameChatStartModeAction
-			static toObject(m: proto.SyncActionValue.UsernameChatStartModeAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.UsernameChatStartModeAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace UsernameChatStartModeAction {
@@ -20171,10 +20179,10 @@ export namespace proto {
 			secrets: proto.SyncActionValue.WASARootSecretAction.RootSecretEntry.$Properties[]
 			static create(properties: proto.SyncActionValue.WASARootSecretAction.$Shape): proto.SyncActionValue.WASARootSecretAction & proto.SyncActionValue.WASARootSecretAction.$Shape
 			static create(properties?: proto.SyncActionValue.WASARootSecretAction.$Properties): proto.SyncActionValue.WASARootSecretAction
-			static encode(m: proto.SyncActionValue.WASARootSecretAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.WASARootSecretAction & proto.SyncActionValue.WASARootSecretAction.$Shape
+			static encode(m: proto.SyncActionValue.WASARootSecretAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.WASARootSecretAction & proto.SyncActionValue.WASARootSecretAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.WASARootSecretAction
-			static toObject(m: proto.SyncActionValue.WASARootSecretAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.WASARootSecretAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace WASARootSecretAction {
@@ -20194,10 +20202,10 @@ export namespace proto {
 				status?: (proto.SyncActionValue.WASARootSecretAction.RootSecretEntry.Status|null)
 				static create(properties: proto.SyncActionValue.WASARootSecretAction.RootSecretEntry.$Shape): proto.SyncActionValue.WASARootSecretAction.RootSecretEntry & proto.SyncActionValue.WASARootSecretAction.RootSecretEntry.$Shape
 				static create(properties?: proto.SyncActionValue.WASARootSecretAction.RootSecretEntry.$Properties): proto.SyncActionValue.WASARootSecretAction.RootSecretEntry
-				static encode(m: proto.SyncActionValue.WASARootSecretAction.RootSecretEntry.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.WASARootSecretAction.RootSecretEntry & proto.SyncActionValue.WASARootSecretAction.RootSecretEntry.$Shape
+				static encode(m: proto.SyncActionValue.WASARootSecretAction.RootSecretEntry.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.WASARootSecretAction.RootSecretEntry & proto.SyncActionValue.WASARootSecretAction.RootSecretEntry.$Shape
 				static fromObject(d: { [k: string]: any }): proto.SyncActionValue.WASARootSecretAction.RootSecretEntry
-				static toObject(m: proto.SyncActionValue.WASARootSecretAction.RootSecretEntry, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.SyncActionValue.WASARootSecretAction.RootSecretEntry, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace RootSecretEntry {
@@ -20223,10 +20231,10 @@ export namespace proto {
 			linkState?: (proto.SyncActionValue.WaffleAccountLinkStateAction.AccountLinkState|null)
 			static create(properties: proto.SyncActionValue.WaffleAccountLinkStateAction.$Shape): proto.SyncActionValue.WaffleAccountLinkStateAction & proto.SyncActionValue.WaffleAccountLinkStateAction.$Shape
 			static create(properties?: proto.SyncActionValue.WaffleAccountLinkStateAction.$Properties): proto.SyncActionValue.WaffleAccountLinkStateAction
-			static encode(m: proto.SyncActionValue.WaffleAccountLinkStateAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.WaffleAccountLinkStateAction & proto.SyncActionValue.WaffleAccountLinkStateAction.$Shape
+			static encode(m: proto.SyncActionValue.WaffleAccountLinkStateAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.WaffleAccountLinkStateAction & proto.SyncActionValue.WaffleAccountLinkStateAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.WaffleAccountLinkStateAction
-			static toObject(m: proto.SyncActionValue.WaffleAccountLinkStateAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.WaffleAccountLinkStateAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace WaffleAccountLinkStateAction {
@@ -20249,10 +20257,10 @@ export namespace proto {
 			identifier?: (string|null)
 			static create(properties: proto.SyncActionValue.WamoUserIdentifierAction.$Shape): proto.SyncActionValue.WamoUserIdentifierAction & proto.SyncActionValue.WamoUserIdentifierAction.$Shape
 			static create(properties?: proto.SyncActionValue.WamoUserIdentifierAction.$Properties): proto.SyncActionValue.WamoUserIdentifierAction
-			static encode(m: proto.SyncActionValue.WamoUserIdentifierAction.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncActionValue.WamoUserIdentifierAction & proto.SyncActionValue.WamoUserIdentifierAction.$Shape
+			static encode(m: proto.SyncActionValue.WamoUserIdentifierAction.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncActionValue.WamoUserIdentifierAction & proto.SyncActionValue.WamoUserIdentifierAction.$Shape
 			static fromObject(d: { [k: string]: any }): proto.SyncActionValue.WamoUserIdentifierAction
-			static toObject(m: proto.SyncActionValue.WamoUserIdentifierAction, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.SyncActionValue.WamoUserIdentifierAction, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace WamoUserIdentifierAction {
@@ -20271,10 +20279,10 @@ export namespace proto {
 		blob?: (Uint8Array|null)
 		static create(properties: proto.SyncdIndex.$Shape): proto.SyncdIndex & proto.SyncdIndex.$Shape
 		static create(properties?: proto.SyncdIndex.$Properties): proto.SyncdIndex
-		static encode(m: proto.SyncdIndex.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncdIndex & proto.SyncdIndex.$Shape
+		static encode(m: proto.SyncdIndex.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncdIndex & proto.SyncdIndex.$Shape
 		static fromObject(d: { [k: string]: any }): proto.SyncdIndex
-		static toObject(m: proto.SyncdIndex, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.SyncdIndex, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace SyncdIndex {
@@ -20293,10 +20301,10 @@ export namespace proto {
 		record?: (proto.SyncdRecord.$Properties|null)
 		static create(properties: proto.SyncdMutation.$Shape): proto.SyncdMutation & proto.SyncdMutation.$Shape
 		static create(properties?: proto.SyncdMutation.$Properties): proto.SyncdMutation
-		static encode(m: proto.SyncdMutation.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncdMutation & proto.SyncdMutation.$Shape
+		static encode(m: proto.SyncdMutation.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncdMutation & proto.SyncdMutation.$Shape
 		static fromObject(d: { [k: string]: any }): proto.SyncdMutation
-		static toObject(m: proto.SyncdMutation, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.SyncdMutation, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace SyncdMutation {
@@ -20319,10 +20327,10 @@ export namespace proto {
 		mutations: proto.SyncdMutation.$Properties[]
 		static create(properties: proto.SyncdMutations.$Shape): proto.SyncdMutations & proto.SyncdMutations.$Shape
 		static create(properties?: proto.SyncdMutations.$Properties): proto.SyncdMutations
-		static encode(m: proto.SyncdMutations.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncdMutations & proto.SyncdMutations.$Shape
+		static encode(m: proto.SyncdMutations.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncdMutations & proto.SyncdMutations.$Shape
 		static fromObject(d: { [k: string]: any }): proto.SyncdMutations
-		static toObject(m: proto.SyncdMutations, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.SyncdMutations, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace SyncdMutations {
@@ -20348,10 +20356,10 @@ export namespace proto {
 		clientDebugData?: (Uint8Array|null)
 		static create(properties: proto.SyncdPatch.$Shape): proto.SyncdPatch & proto.SyncdPatch.$Shape
 		static create(properties?: proto.SyncdPatch.$Properties): proto.SyncdPatch
-		static encode(m: proto.SyncdPatch.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncdPatch & proto.SyncdPatch.$Shape
+		static encode(m: proto.SyncdPatch.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncdPatch & proto.SyncdPatch.$Shape
 		static fromObject(d: { [k: string]: any }): proto.SyncdPatch
-		static toObject(m: proto.SyncdPatch, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.SyncdPatch, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace SyncdPatch {
@@ -20379,10 +20387,10 @@ export namespace proto {
 		mac?: (Uint8Array|null)
 		static create(properties: proto.SyncdPlainTextRecord.$Shape): proto.SyncdPlainTextRecord & proto.SyncdPlainTextRecord.$Shape
 		static create(properties?: proto.SyncdPlainTextRecord.$Properties): proto.SyncdPlainTextRecord
-		static encode(m: proto.SyncdPlainTextRecord.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncdPlainTextRecord & proto.SyncdPlainTextRecord.$Shape
+		static encode(m: proto.SyncdPlainTextRecord.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncdPlainTextRecord & proto.SyncdPlainTextRecord.$Shape
 		static fromObject(d: { [k: string]: any }): proto.SyncdPlainTextRecord
-		static toObject(m: proto.SyncdPlainTextRecord, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.SyncdPlainTextRecord, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace SyncdPlainTextRecord {
@@ -20409,10 +20417,10 @@ export namespace proto {
 		keyId?: (proto.KeyId.$Properties|null)
 		static create(properties: proto.SyncdRecord.$Shape): proto.SyncdRecord & proto.SyncdRecord.$Shape
 		static create(properties?: proto.SyncdRecord.$Properties): proto.SyncdRecord
-		static encode(m: proto.SyncdRecord.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncdRecord & proto.SyncdRecord.$Shape
+		static encode(m: proto.SyncdRecord.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncdRecord & proto.SyncdRecord.$Shape
 		static fromObject(d: { [k: string]: any }): proto.SyncdRecord
-		static toObject(m: proto.SyncdRecord, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.SyncdRecord, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace SyncdRecord {
@@ -20435,10 +20443,10 @@ export namespace proto {
 		keyId?: (proto.KeyId.$Properties|null)
 		static create(properties: proto.SyncdSnapshot.$Shape): proto.SyncdSnapshot & proto.SyncdSnapshot.$Shape
 		static create(properties?: proto.SyncdSnapshot.$Properties): proto.SyncdSnapshot
-		static encode(m: proto.SyncdSnapshot.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncdSnapshot & proto.SyncdSnapshot.$Shape
+		static encode(m: proto.SyncdSnapshot.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncdSnapshot & proto.SyncdSnapshot.$Shape
 		static fromObject(d: { [k: string]: any }): proto.SyncdSnapshot
-		static toObject(m: proto.SyncdSnapshot, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.SyncdSnapshot, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace SyncdSnapshot {
@@ -20462,10 +20470,10 @@ export namespace proto {
 		collectionLthash?: (Uint8Array|null)
 		static create(properties: proto.SyncdSnapshotRecovery.$Shape): proto.SyncdSnapshotRecovery & proto.SyncdSnapshotRecovery.$Shape
 		static create(properties?: proto.SyncdSnapshotRecovery.$Properties): proto.SyncdSnapshotRecovery
-		static encode(m: proto.SyncdSnapshotRecovery.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncdSnapshotRecovery & proto.SyncdSnapshotRecovery.$Shape
+		static encode(m: proto.SyncdSnapshotRecovery.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncdSnapshotRecovery & proto.SyncdSnapshotRecovery.$Shape
 		static fromObject(d: { [k: string]: any }): proto.SyncdSnapshotRecovery
-		static toObject(m: proto.SyncdSnapshotRecovery, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.SyncdSnapshotRecovery, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace SyncdSnapshotRecovery {
@@ -20492,10 +20500,10 @@ export namespace proto {
 		blob?: (Uint8Array|null)
 		static create(properties: proto.SyncdValue.$Shape): proto.SyncdValue & proto.SyncdValue.$Shape
 		static create(properties?: proto.SyncdValue.$Properties): proto.SyncdValue
-		static encode(m: proto.SyncdValue.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncdValue & proto.SyncdValue.$Shape
+		static encode(m: proto.SyncdValue.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncdValue & proto.SyncdValue.$Shape
 		static fromObject(d: { [k: string]: any }): proto.SyncdValue
-		static toObject(m: proto.SyncdValue, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.SyncdValue, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace SyncdValue {
@@ -20513,10 +20521,10 @@ export namespace proto {
 		version?: (number|Long|null)
 		static create(properties: proto.SyncdVersion.$Shape): proto.SyncdVersion & proto.SyncdVersion.$Shape
 		static create(properties?: proto.SyncdVersion.$Properties): proto.SyncdVersion
-		static encode(m: proto.SyncdVersion.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.SyncdVersion & proto.SyncdVersion.$Shape
+		static encode(m: proto.SyncdVersion.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.SyncdVersion & proto.SyncdVersion.$Shape
 		static fromObject(d: { [k: string]: any }): proto.SyncdVersion
-		static toObject(m: proto.SyncdVersion, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.SyncdVersion, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace SyncdVersion {
@@ -20535,10 +20543,10 @@ export namespace proto {
 		tapUrl?: (string|null)
 		static create(properties: proto.TapLinkAction.$Shape): proto.TapLinkAction & proto.TapLinkAction.$Shape
 		static create(properties?: proto.TapLinkAction.$Properties): proto.TapLinkAction
-		static encode(m: proto.TapLinkAction.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.TapLinkAction & proto.TapLinkAction.$Shape
+		static encode(m: proto.TapLinkAction.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.TapLinkAction & proto.TapLinkAction.$Shape
 		static fromObject(d: { [k: string]: any }): proto.TapLinkAction
-		static toObject(m: proto.TapLinkAction, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.TapLinkAction, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace TapLinkAction {
@@ -20561,10 +20569,10 @@ export namespace proto {
 		button?: ("quickReplyButton"|"urlButton"|"callButton")
 		static create(properties: proto.TemplateButton.$Shape): proto.TemplateButton & proto.TemplateButton.$Shape
 		static create(properties?: proto.TemplateButton.$Properties): proto.TemplateButton
-		static encode(m: proto.TemplateButton.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.TemplateButton & proto.TemplateButton.$Shape
+		static encode(m: proto.TemplateButton.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.TemplateButton & proto.TemplateButton.$Shape
 		static fromObject(d: { [k: string]: any }): proto.TemplateButton
-		static toObject(m: proto.TemplateButton, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.TemplateButton, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace TemplateButton {
@@ -20594,10 +20602,10 @@ export namespace proto {
 			phoneNumber?: (proto.Message.HighlyStructuredMessage.$Properties|null)
 			static create(properties: proto.TemplateButton.CallButton.$Shape): proto.TemplateButton.CallButton & proto.TemplateButton.CallButton.$Shape
 			static create(properties?: proto.TemplateButton.CallButton.$Properties): proto.TemplateButton.CallButton
-			static encode(m: proto.TemplateButton.CallButton.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.TemplateButton.CallButton & proto.TemplateButton.CallButton.$Shape
+			static encode(m: proto.TemplateButton.CallButton.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.TemplateButton.CallButton & proto.TemplateButton.CallButton.$Shape
 			static fromObject(d: { [k: string]: any }): proto.TemplateButton.CallButton
-			static toObject(m: proto.TemplateButton.CallButton, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.TemplateButton.CallButton, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace CallButton {
@@ -20621,10 +20629,10 @@ export namespace proto {
 			id?: (string|null)
 			static create(properties: proto.TemplateButton.QuickReplyButton.$Shape): proto.TemplateButton.QuickReplyButton & proto.TemplateButton.QuickReplyButton.$Shape
 			static create(properties?: proto.TemplateButton.QuickReplyButton.$Properties): proto.TemplateButton.QuickReplyButton
-			static encode(m: proto.TemplateButton.QuickReplyButton.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.TemplateButton.QuickReplyButton & proto.TemplateButton.QuickReplyButton.$Shape
+			static encode(m: proto.TemplateButton.QuickReplyButton.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.TemplateButton.QuickReplyButton & proto.TemplateButton.QuickReplyButton.$Shape
 			static fromObject(d: { [k: string]: any }): proto.TemplateButton.QuickReplyButton
-			static toObject(m: proto.TemplateButton.QuickReplyButton, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.TemplateButton.QuickReplyButton, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace QuickReplyButton {
@@ -20648,10 +20656,10 @@ export namespace proto {
 			url?: (proto.Message.HighlyStructuredMessage.$Properties|null)
 			static create(properties: proto.TemplateButton.URLButton.$Shape): proto.TemplateButton.URLButton & proto.TemplateButton.URLButton.$Shape
 			static create(properties?: proto.TemplateButton.URLButton.$Properties): proto.TemplateButton.URLButton
-			static encode(m: proto.TemplateButton.URLButton.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.TemplateButton.URLButton & proto.TemplateButton.URLButton.$Shape
+			static encode(m: proto.TemplateButton.URLButton.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.TemplateButton.URLButton & proto.TemplateButton.URLButton.$Shape
 			static fromObject(d: { [k: string]: any }): proto.TemplateButton.URLButton
-			static toObject(m: proto.TemplateButton.URLButton, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.TemplateButton.URLButton, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace URLButton {
@@ -20676,10 +20684,10 @@ export namespace proto {
 		threadKey?: (proto.MessageKey.$Properties|null)
 		static create(properties: proto.ThreadID.$Shape): proto.ThreadID & proto.ThreadID.$Shape
 		static create(properties?: proto.ThreadID.$Properties): proto.ThreadID
-		static encode(m: proto.ThreadID.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.ThreadID & proto.ThreadID.$Shape
+		static encode(m: proto.ThreadID.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.ThreadID & proto.ThreadID.$Shape
 		static fromObject(d: { [k: string]: any }): proto.ThreadID
-		static toObject(m: proto.ThreadID, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.ThreadID, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace ThreadID {
@@ -20705,10 +20713,10 @@ export namespace proto {
 		associationType?: (proto.MessageAssociation.AssociationType|null)
 		static create(properties: proto.UnCountedAssociatedMessageList.$Shape): proto.UnCountedAssociatedMessageList & proto.UnCountedAssociatedMessageList.$Shape
 		static create(properties?: proto.UnCountedAssociatedMessageList.$Properties): proto.UnCountedAssociatedMessageList
-		static encode(m: proto.UnCountedAssociatedMessageList.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.UnCountedAssociatedMessageList & proto.UnCountedAssociatedMessageList.$Shape
+		static encode(m: proto.UnCountedAssociatedMessageList.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.UnCountedAssociatedMessageList & proto.UnCountedAssociatedMessageList.$Shape
 		static fromObject(d: { [k: string]: any }): proto.UnCountedAssociatedMessageList
-		static toObject(m: proto.UnCountedAssociatedMessageList, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.UnCountedAssociatedMessageList, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace UnCountedAssociatedMessageList {
@@ -20734,10 +20742,10 @@ export namespace proto {
 		parentMessage?: (proto.MessageKey.$Properties|null)
 		static create(properties: proto.UnCountedAssociatedMessageListWithMessageBytes.$Shape): proto.UnCountedAssociatedMessageListWithMessageBytes & proto.UnCountedAssociatedMessageListWithMessageBytes.$Shape
 		static create(properties?: proto.UnCountedAssociatedMessageListWithMessageBytes.$Properties): proto.UnCountedAssociatedMessageListWithMessageBytes
-		static encode(m: proto.UnCountedAssociatedMessageListWithMessageBytes.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.UnCountedAssociatedMessageListWithMessageBytes & proto.UnCountedAssociatedMessageListWithMessageBytes.$Shape
+		static encode(m: proto.UnCountedAssociatedMessageListWithMessageBytes.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.UnCountedAssociatedMessageListWithMessageBytes & proto.UnCountedAssociatedMessageListWithMessageBytes.$Shape
 		static fromObject(d: { [k: string]: any }): proto.UnCountedAssociatedMessageListWithMessageBytes
-		static toObject(m: proto.UnCountedAssociatedMessageListWithMessageBytes, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.UnCountedAssociatedMessageListWithMessageBytes, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace UnCountedAssociatedMessageListWithMessageBytes {
@@ -20756,10 +20764,10 @@ export namespace proto {
 		urlTrackingMapElements: proto.UrlTrackingMap.UrlTrackingMapElement.$Properties[]
 		static create(properties: proto.UrlTrackingMap.$Shape): proto.UrlTrackingMap & proto.UrlTrackingMap.$Shape
 		static create(properties?: proto.UrlTrackingMap.$Properties): proto.UrlTrackingMap
-		static encode(m: proto.UrlTrackingMap.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.UrlTrackingMap & proto.UrlTrackingMap.$Shape
+		static encode(m: proto.UrlTrackingMap.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.UrlTrackingMap & proto.UrlTrackingMap.$Shape
 		static fromObject(d: { [k: string]: any }): proto.UrlTrackingMap
-		static toObject(m: proto.UrlTrackingMap, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.UrlTrackingMap, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace UrlTrackingMap {
@@ -20779,10 +20787,10 @@ export namespace proto {
 			cardIndex?: (number|null)
 			static create(properties: proto.UrlTrackingMap.UrlTrackingMapElement.$Shape): proto.UrlTrackingMap.UrlTrackingMapElement & proto.UrlTrackingMap.UrlTrackingMapElement.$Shape
 			static create(properties?: proto.UrlTrackingMap.UrlTrackingMapElement.$Properties): proto.UrlTrackingMap.UrlTrackingMapElement
-			static encode(m: proto.UrlTrackingMap.UrlTrackingMapElement.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.UrlTrackingMap.UrlTrackingMapElement & proto.UrlTrackingMap.UrlTrackingMapElement.$Shape
+			static encode(m: proto.UrlTrackingMap.UrlTrackingMapElement.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.UrlTrackingMap.UrlTrackingMapElement & proto.UrlTrackingMap.UrlTrackingMapElement.$Shape
 			static fromObject(d: { [k: string]: any }): proto.UrlTrackingMap.UrlTrackingMapElement
-			static toObject(m: proto.UrlTrackingMap.UrlTrackingMapElement, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.UrlTrackingMap.UrlTrackingMapElement, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace UrlTrackingMapElement {
@@ -20807,10 +20815,10 @@ export namespace proto {
 		transformedData?: (Uint8Array|null)
 		static create(properties: proto.UserPassword.$Shape): proto.UserPassword & proto.UserPassword.$Shape
 		static create(properties?: proto.UserPassword.$Properties): proto.UserPassword
-		static encode(m: proto.UserPassword.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.UserPassword & proto.UserPassword.$Shape
+		static encode(m: proto.UserPassword.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.UserPassword & proto.UserPassword.$Shape
 		static fromObject(d: { [k: string]: any }): proto.UserPassword
-		static toObject(m: proto.UserPassword, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.UserPassword, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace UserPassword {
@@ -20846,10 +20854,10 @@ export namespace proto {
 			value?: (proto.UserPassword.TransformerArg.Value.$Properties|null)
 			static create(properties: proto.UserPassword.TransformerArg.$Shape): proto.UserPassword.TransformerArg & proto.UserPassword.TransformerArg.$Shape
 			static create(properties?: proto.UserPassword.TransformerArg.$Properties): proto.UserPassword.TransformerArg
-			static encode(m: proto.UserPassword.TransformerArg.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.UserPassword.TransformerArg & proto.UserPassword.TransformerArg.$Shape
+			static encode(m: proto.UserPassword.TransformerArg.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.UserPassword.TransformerArg & proto.UserPassword.TransformerArg.$Shape
 			static fromObject(d: { [k: string]: any }): proto.UserPassword.TransformerArg
-			static toObject(m: proto.UserPassword.TransformerArg, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.UserPassword.TransformerArg, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace TransformerArg {
@@ -20873,10 +20881,10 @@ export namespace proto {
 				value?: ("asBlob"|"asUnsignedInteger")
 				static create(properties: proto.UserPassword.TransformerArg.Value.$Shape): proto.UserPassword.TransformerArg.Value & proto.UserPassword.TransformerArg.Value.$Shape
 				static create(properties?: proto.UserPassword.TransformerArg.Value.$Properties): proto.UserPassword.TransformerArg.Value
-				static encode(m: proto.UserPassword.TransformerArg.Value.$Properties, w?: PbWriter): PbWriter
-				static decode(r: (PbReader|Uint8Array), l?: number): proto.UserPassword.TransformerArg.Value & proto.UserPassword.TransformerArg.Value.$Shape
+				static encode(m: proto.UserPassword.TransformerArg.Value.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.UserPassword.TransformerArg.Value & proto.UserPassword.TransformerArg.Value.$Shape
 				static fromObject(d: { [k: string]: any }): proto.UserPassword.TransformerArg.Value
-				static toObject(m: proto.UserPassword.TransformerArg.Value, o?: PbConversionOptions): { [k: string]: any }
+				static toObject(m: proto.UserPassword.TransformerArg.Value, o?: PBConversionOptions): { [k: string]: any }
 				toJSON(): { [k: string]: any }
 			}
 			namespace Value {
@@ -20909,10 +20917,10 @@ export namespace proto {
 		deliveredDeviceJid: string[]
 		static create(properties: proto.UserReceipt.$Shape): proto.UserReceipt & proto.UserReceipt.$Shape
 		static create(properties?: proto.UserReceipt.$Properties): proto.UserReceipt
-		static encode(m: proto.UserReceipt.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.UserReceipt & proto.UserReceipt.$Shape
+		static encode(m: proto.UserReceipt.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.UserReceipt & proto.UserReceipt.$Shape
 		static fromObject(d: { [k: string]: any }): proto.UserReceipt
-		static toObject(m: proto.UserReceipt, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.UserReceipt, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace UserReceipt {
@@ -20937,10 +20945,10 @@ export namespace proto {
 		serverSignature?: (Uint8Array|null)
 		static create(properties: proto.VerifiedNameCertificate.$Shape): proto.VerifiedNameCertificate & proto.VerifiedNameCertificate.$Shape
 		static create(properties?: proto.VerifiedNameCertificate.$Properties): proto.VerifiedNameCertificate
-		static encode(m: proto.VerifiedNameCertificate.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.VerifiedNameCertificate & proto.VerifiedNameCertificate.$Shape
+		static encode(m: proto.VerifiedNameCertificate.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.VerifiedNameCertificate & proto.VerifiedNameCertificate.$Shape
 		static fromObject(d: { [k: string]: any }): proto.VerifiedNameCertificate
-		static toObject(m: proto.VerifiedNameCertificate, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.VerifiedNameCertificate, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace VerifiedNameCertificate {
@@ -20963,10 +20971,10 @@ export namespace proto {
 			issueTime?: (number|Long|null)
 			static create(properties: proto.VerifiedNameCertificate.Details.$Shape): proto.VerifiedNameCertificate.Details & proto.VerifiedNameCertificate.Details.$Shape
 			static create(properties?: proto.VerifiedNameCertificate.Details.$Properties): proto.VerifiedNameCertificate.Details
-			static encode(m: proto.VerifiedNameCertificate.Details.$Properties, w?: PbWriter): PbWriter
-			static decode(r: (PbReader|Uint8Array), l?: number): proto.VerifiedNameCertificate.Details & proto.VerifiedNameCertificate.Details.$Shape
+			static encode(m: proto.VerifiedNameCertificate.Details.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.VerifiedNameCertificate.Details & proto.VerifiedNameCertificate.Details.$Shape
 			static fromObject(d: { [k: string]: any }): proto.VerifiedNameCertificate.Details
-			static toObject(m: proto.VerifiedNameCertificate.Details, o?: PbConversionOptions): { [k: string]: any }
+			static toObject(m: proto.VerifiedNameCertificate.Details, o?: PBConversionOptions): { [k: string]: any }
 			toJSON(): { [k: string]: any }
 		}
 		namespace Details {
@@ -20991,10 +20999,10 @@ export namespace proto {
 		isGenAi?: (boolean|null)
 		static create(properties: proto.WallpaperSettings.$Shape): proto.WallpaperSettings & proto.WallpaperSettings.$Shape
 		static create(properties?: proto.WallpaperSettings.$Properties): proto.WallpaperSettings
-		static encode(m: proto.WallpaperSettings.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.WallpaperSettings & proto.WallpaperSettings.$Shape
+		static encode(m: proto.WallpaperSettings.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.WallpaperSettings & proto.WallpaperSettings.$Shape
 		static fromObject(d: { [k: string]: any }): proto.WallpaperSettings
-		static toObject(m: proto.WallpaperSettings, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.WallpaperSettings, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace WallpaperSettings {
@@ -21058,10 +21066,10 @@ export namespace proto {
 		noDeleteMessageTimeLimit?: (proto.WebFeatures.Flag|null)
 		static create(properties: proto.WebFeatures.$Shape): proto.WebFeatures & proto.WebFeatures.$Shape
 		static create(properties?: proto.WebFeatures.$Properties): proto.WebFeatures
-		static encode(m: proto.WebFeatures.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.WebFeatures & proto.WebFeatures.$Shape
+		static encode(m: proto.WebFeatures.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.WebFeatures & proto.WebFeatures.$Shape
 		static fromObject(d: { [k: string]: any }): proto.WebFeatures
-		static toObject(m: proto.WebFeatures, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.WebFeatures, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace WebFeatures {
@@ -21205,10 +21213,10 @@ export namespace proto {
 		eventInviteAdditionalMetadata?: (proto.EventInviteAdditionalMetadata.$Properties|null)
 		static create(properties: proto.WebMessageInfo.$Shape): proto.WebMessageInfo & proto.WebMessageInfo.$Shape
 		static create(properties?: proto.WebMessageInfo.$Properties): proto.WebMessageInfo
-		static encode(m: proto.WebMessageInfo.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.WebMessageInfo & proto.WebMessageInfo.$Shape
+		static encode(m: proto.WebMessageInfo.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.WebMessageInfo & proto.WebMessageInfo.$Shape
 		static fromObject(d: { [k: string]: any }): proto.WebMessageInfo
-		static toObject(m: proto.WebMessageInfo, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.WebMessageInfo, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace WebMessageInfo {
@@ -21657,10 +21665,10 @@ export namespace proto {
 		messageBytes?: (Uint8Array|null)
 		static create(properties: proto.WebMessageInfoWithMessageBytes.$Shape): proto.WebMessageInfoWithMessageBytes & proto.WebMessageInfoWithMessageBytes.$Shape
 		static create(properties?: proto.WebMessageInfoWithMessageBytes.$Properties): proto.WebMessageInfoWithMessageBytes
-		static encode(m: proto.WebMessageInfoWithMessageBytes.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.WebMessageInfoWithMessageBytes & proto.WebMessageInfoWithMessageBytes.$Shape
+		static encode(m: proto.WebMessageInfoWithMessageBytes.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.WebMessageInfoWithMessageBytes & proto.WebMessageInfoWithMessageBytes.$Shape
 		static fromObject(d: { [k: string]: any }): proto.WebMessageInfoWithMessageBytes
-		static toObject(m: proto.WebMessageInfoWithMessageBytes, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.WebMessageInfoWithMessageBytes, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace WebMessageInfoWithMessageBytes {
@@ -21682,10 +21690,10 @@ export namespace proto {
 		notifyMessages: proto.WebMessageInfo.$Properties[]
 		static create(properties: proto.WebNotificationsInfo.$Shape): proto.WebNotificationsInfo & proto.WebNotificationsInfo.$Shape
 		static create(properties?: proto.WebNotificationsInfo.$Properties): proto.WebNotificationsInfo
-		static encode(m: proto.WebNotificationsInfo.$Properties, w?: PbWriter): PbWriter
-		static decode(r: (PbReader|Uint8Array), l?: number): proto.WebNotificationsInfo & proto.WebNotificationsInfo.$Shape
+		static encode(m: proto.WebNotificationsInfo.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.WebNotificationsInfo & proto.WebNotificationsInfo.$Shape
 		static fromObject(d: { [k: string]: any }): proto.WebNotificationsInfo
-		static toObject(m: proto.WebNotificationsInfo, o?: PbConversionOptions): { [k: string]: any }
+		static toObject(m: proto.WebNotificationsInfo, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
 	namespace WebNotificationsInfo {
