@@ -41,7 +41,9 @@ export function getStream(item: any, opts: any): Promise<{
     type: string;
 }>;
 export function getHttpStream(url: any, options?: {}): Promise<any>;
-export function encryptedStream(media: any, mediaType: any, { logger, saveOriginalFileIfRequired, opts }?: {}): Promise<{
+export function encryptedStream(media: any, mediaType: any, { logger, saveOriginalFileIfRequired, mediaKey, opts }?: {
+    mediaKey?: any;
+}): Promise<{
     mediaKey: any;
     originalFilePath: any;
     encFilePath: any;

@@ -4363,7 +4363,6 @@ export namespace proto {
 		constructor(p?: proto.Config.$Properties)
 		$unknowns?: Uint8Array[]
 		field: { [k: string]: proto.Field.$Properties }
-		version?: (number|null)
 		static create(properties: proto.Config.$Shape): proto.Config & proto.Config.$Shape
 		static create(properties?: proto.Config.$Properties): proto.Config
 		static encode(m: proto.Config.$Properties, w?: PBWriter): PBWriter
@@ -4375,7 +4374,6 @@ export namespace proto {
 	namespace Config {
 		interface $Properties {
 			field?: ({ [k: string]: proto.Field.$Properties }|null)
-			version?: (number|null)
 			$unknowns?: Uint8Array[]
 		}
 		type $Shape = proto.Config.$Properties
@@ -6278,7 +6276,6 @@ export namespace proto {
 		$unknowns?: Uint8Array[]
 		minVersion?: (number|null)
 		maxVersion?: (number|null)
-		notReportableMinVersion?: (number|null)
 		isMessage?: (boolean|null)
 		subfield: { [k: string]: proto.Field.$Properties }
 		static create(properties: proto.Field.$Shape): proto.Field & proto.Field.$Shape
@@ -6293,7 +6290,6 @@ export namespace proto {
 		interface $Properties {
 			minVersion?: (number|null)
 			maxVersion?: (number|null)
-			notReportableMinVersion?: (number|null)
 			isMessage?: (boolean|null)
 			subfield?: ({ [k: string]: proto.Field.$Properties }|null)
 			$unknowns?: Uint8Array[]
@@ -16422,33 +16418,6 @@ export namespace proto {
 			$unknowns?: Uint8Array[]
 		}
 		type $Shape = proto.RecordStructure.$Properties
-	}
-	interface IReportable extends proto.Reportable.$Properties {
-	}
-	class Reportable {
-		constructor(p?: proto.Reportable.$Properties)
-		$unknowns?: Uint8Array[]
-		minVersion?: (number|null)
-		maxVersion?: (number|null)
-		notReportableMinVersion?: (number|null)
-		never?: (boolean|null)
-		static create(properties: proto.Reportable.$Shape): proto.Reportable & proto.Reportable.$Shape
-		static create(properties?: proto.Reportable.$Properties): proto.Reportable
-		static encode(m: proto.Reportable.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.Reportable & proto.Reportable.$Shape
-		static fromObject(d: { [k: string]: any }): proto.Reportable
-		static toObject(m: proto.Reportable, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace Reportable {
-		interface $Properties {
-			minVersion?: (number|null)
-			maxVersion?: (number|null)
-			notReportableMinVersion?: (number|null)
-			never?: (boolean|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.Reportable.$Properties
 	}
 	interface IReportingTokenInfo extends proto.ReportingTokenInfo.$Properties {
 	}
