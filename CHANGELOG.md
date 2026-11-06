@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.1 - 2026-11-06
+
+- fix: fix a typo in `prepareWAMessageMedia()` affecting MIME type detection.
+
 ## 0.5.0 - 2026-11-06
 
 - feat: add the missing `genai_sticker` media type when sending `stickerMessage` with the `isAiSticker` attribute.
