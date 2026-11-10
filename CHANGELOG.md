@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.5.2 - 2026-11-11
+
+- fix: add the missing `payment_key_info` stanza attributes when sending `buttons` with `interactiveMessage`.
+- fix: only record `sender-key-memory` for devices that received an SKDM.
+- fix: do not send retry receipts for undecryptable `fromMe` messages.
+- fix: add view once meta tag when sending view once messages.
+- chore: update WAProto to `2.3000.1053755068`.
+- chore: update default socket version to `2.3000.1053853618`.
+
 ## 0.5.1 - 2026-11-06
 
 - fix: fix a typo in `prepareWAMessageMedia()` affecting MIME type detection.
