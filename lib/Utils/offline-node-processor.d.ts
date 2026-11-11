@@ -7,3 +7,4 @@
 export function makeOfflineNodeProcessor(nodeProcessorMap: any, deps: any, batchSize?: number): {
     enqueue: (type: any, node: any) => void;
 };
+export function isOfflineNode(node: any): boolean;

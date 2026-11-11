@@ -4490,6 +4490,7 @@ export namespace proto {
 		sourceExperienceId?: (number|null)
 		sourceExperienceIds: number[]
 		foaMutualsSignature?: (Uint8Array|null)
+		forwardReachScore?: (number|null)
 		static create(properties: proto.ContextInfo.$Shape): proto.ContextInfo & proto.ContextInfo.$Shape
 		static create(properties?: proto.ContextInfo.$Properties): proto.ContextInfo
 		static encode(m: proto.ContextInfo.$Properties, w?: PBWriter): PBWriter
@@ -4569,6 +4570,7 @@ export namespace proto {
 			sourceExperienceId?: (number|null)
 			sourceExperienceIds?: (number[]|null)
 			foaMutualsSignature?: (Uint8Array|null)
+			forwardReachScore?: (number|null)
 			$unknowns?: Uint8Array[]
 		}
 		type $Shape = {
@@ -4641,6 +4643,7 @@ export namespace proto {
 		  sourceExperienceId?: number|null
 		  sourceExperienceIds?: number[]|null
 		  foaMutualsSignature?: Uint8Array|null
+		  forwardReachScore?: number|null
 		  $unknowns?: Uint8Array[]
 		}
 		interface IAdReplyInfo extends proto.ContextInfo.AdReplyInfo.$Properties {
@@ -8066,6 +8069,8 @@ export namespace proto {
 		botGroupParticipantMessage?: (proto.Message.FutureProofMessage.$Properties|null)
 		requestLocationUpdateMessage?: (proto.Message.RequestLocationUpdateMessage.$Properties|null)
 		vpcRequestMessage?: (proto.Message.VpcRequestMessage.$Properties|null)
+		instantVideoMessage?: (proto.Message.VideoMessage.$Properties|null)
+		paymentDetailsMessage?: (proto.Message.PaymentDetailsMessage.$Properties|null)
 		static create(properties: proto.Message.$Shape): proto.Message & proto.Message.$Shape
 		static create(properties?: proto.Message.$Properties): proto.Message
 		static encode(m: proto.Message.$Properties, w?: PBWriter): PBWriter
@@ -8194,6 +8199,8 @@ export namespace proto {
 			botGroupParticipantMessage?: (proto.Message.FutureProofMessage.$Properties|null)
 			requestLocationUpdateMessage?: (proto.Message.RequestLocationUpdateMessage.$Properties|null)
 			vpcRequestMessage?: (proto.Message.VpcRequestMessage.$Properties|null)
+			instantVideoMessage?: (proto.Message.VideoMessage.$Properties|null)
+			paymentDetailsMessage?: (proto.Message.PaymentDetailsMessage.$Properties|null)
 			$unknowns?: Uint8Array[]
 		}
 		type $Shape = {
@@ -8315,6 +8322,8 @@ export namespace proto {
 		  botGroupParticipantMessage?: proto.Message.FutureProofMessage.$Shape|null
 		  requestLocationUpdateMessage?: proto.Message.RequestLocationUpdateMessage.$Shape|null
 		  vpcRequestMessage?: proto.Message.VpcRequestMessage.$Shape|null
+		  instantVideoMessage?: proto.Message.VideoMessage.$Shape|null
+		  paymentDetailsMessage?: proto.Message.PaymentDetailsMessage.$Shape|null
 		  $unknowns?: Uint8Array[]
 		}
 		interface IAlbumMessage extends proto.Message.AlbumMessage.$Properties {
@@ -11765,6 +11774,59 @@ export namespace proto {
 			}
 			enum OrderSurface {
 				CATALOG = 1
+			}
+		}
+		interface IPaymentDetailsMessage extends proto.Message.PaymentDetailsMessage.$Properties {
+		}
+		class PaymentDetailsMessage {
+			constructor(p?: proto.Message.PaymentDetailsMessage.$Properties)
+			$unknowns?: Uint8Array[]
+			serviceType?: (proto.Message.PaymentDetailsMessage.ServiceType|null)
+			amount?: (proto.Money.$Properties|null)
+			payeeName?: (string|null)
+			payerName?: (string|null)
+			transactionTimestampMs?: (number|Long|null)
+			transactionId?: (string|null)
+			status?: (proto.Message.PaymentDetailsMessage.Status|null)
+			contextInfo?: (proto.ContextInfo.$Properties|null)
+			static create(properties: proto.Message.PaymentDetailsMessage.$Shape): proto.Message.PaymentDetailsMessage & proto.Message.PaymentDetailsMessage.$Shape
+			static create(properties?: proto.Message.PaymentDetailsMessage.$Properties): proto.Message.PaymentDetailsMessage
+			static encode(m: proto.Message.PaymentDetailsMessage.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.Message.PaymentDetailsMessage & proto.Message.PaymentDetailsMessage.$Shape
+			static fromObject(d: { [k: string]: any }): proto.Message.PaymentDetailsMessage
+			static toObject(m: proto.Message.PaymentDetailsMessage, o?: PBConversionOptions): { [k: string]: any }
+			toJSON(): { [k: string]: any }
+		}
+		namespace PaymentDetailsMessage {
+			interface $Properties {
+				serviceType?: (proto.Message.PaymentDetailsMessage.ServiceType|null)
+				amount?: (proto.Money.$Properties|null)
+				payeeName?: (string|null)
+				payerName?: (string|null)
+				transactionTimestampMs?: (number|Long|null)
+				transactionId?: (string|null)
+				status?: (proto.Message.PaymentDetailsMessage.Status|null)
+				contextInfo?: (proto.ContextInfo.$Properties|null)
+				$unknowns?: Uint8Array[]
+			}
+			type $Shape = {
+			  serviceType?: proto.Message.PaymentDetailsMessage.ServiceType|null
+			  amount?: proto.Money.$Shape|null
+			  payeeName?: string|null
+			  payerName?: string|null
+			  transactionTimestampMs?: number|Long|null
+			  transactionId?: string|null
+			  status?: proto.Message.PaymentDetailsMessage.Status|null
+			  contextInfo?: proto.ContextInfo.$Shape|null
+			  $unknowns?: Uint8Array[]
+			}
+			enum ServiceType {
+				UNKNOWN = 0,
+				UPI = 1
+			}
+			enum Status {
+				STATUS_UNKNOWN = 0,
+				SUCCESS = 1
 			}
 		}
 		interface IPaymentExtendedMetadata extends proto.Message.PaymentExtendedMetadata.$Properties {

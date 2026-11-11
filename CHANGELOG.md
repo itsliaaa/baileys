@@ -1,6 +1,13 @@
 # Changelog
 
-## 0.5.2 - 2026-11-11
+## 0.5.3 - 2026-11-11
+
+- fix: treat offline zero node as online.
+- fix: include the WebSocket close code and reason in the connection closed error.
+- fix: do not announce presence on a partial `creds.update`.
+- chore: update WAProto and socket version to `2.3000.1053984976`.
+
+## 0.5.2 - 2026-11-10
 
 - fix: add the missing `payment_key_info` stanza attributes when sending `buttons` with `interactiveMessage`.
 - fix: only record `sender-key-memory` for devices that received an SKDM.
