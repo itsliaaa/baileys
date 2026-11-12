@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.4 - 2026-11-12
+
+- chore: update WAProto and socket version to `2.3000.1054241206`.
+
 ## 0.5.3 - 2026-11-11
 
 - fix: treat offline zero node as online.

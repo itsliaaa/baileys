@@ -28,6 +28,17 @@
    </a>
 </p>
 
+> [!IMPORTANT]
+> To be clear, I am **NOT** the original maintainer of Baileys. Full credit and respect belong to:
+>
+> https://github.com/WhiskeySockets/Baileys
+>
+> **Forking is completely acceptable. Removing attribution, contributor credits, or modification history is not.**
+>
+> **Read [NOTICE.md](https://github.com/itsliaaa/baileys/blob/main/NOTICE.md) for important attribution requirements and future maintenance plans.**
+>
+> Thank you. 🤍
+
 ☕ For donation: [Saweria](https://saweria.co/itsliaaa)
 
 ### 📋 Table of Contents
@@ -115,20 +126,6 @@ This fork designed for production use with a focus on clarity and safety:
 
 - 🚫 No obfuscation. Easy to read and audit.
 - 🚫 No auto-follow channel (newsletter) behavior.
-
-> [!IMPORTANT]
-> To be clear, I am **NOT** the original maintainer of Baileys. Full credit and respect belong to:
->
-> https://github.com/WhiskeySockets/Baileys
->
-> **Forking is completely acceptable. Removing attribution, contributor credits, or modification history is not.**
->
-> Thank you. 🤍
-
-> [!NOTE]
-> 📄 This project is maintained with limited scope and is not intended to replace upstream Baileys.
->
-> 😞 And, really sorry for my bad english.
 
 ### 🛠️ Internal Adjustments
 - 🖼️ Fixed an issue where media could not be sent to newsletters due to an upstream issue.
