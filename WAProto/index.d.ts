@@ -1195,68 +1195,6 @@ export namespace proto {
 		}
 		type $Shape = proto.ActionLink.$Properties
 	}
-	interface IAddDeviceKeysOutput extends proto.AddDeviceKeysOutput.$Properties {
-	}
-	class AddDeviceKeysOutput {
-		constructor(p?: proto.AddDeviceKeysOutput.$Properties)
-		$unknowns?: Uint8Array[]
-		devicePublicKey: Uint8Array
-		epochAuthPublicKey: Uint8Array
-		epochAuthPublicKeySig: Uint8Array
-		epochStoragePublicKey: Uint8Array
-		epochStoragePublicKeySig: Uint8Array
-		epochStoragePrivateKey: Uint8Array
-		orfClientState: Uint8Array
-		static create(properties: proto.AddDeviceKeysOutput.$Shape): proto.AddDeviceKeysOutput & proto.AddDeviceKeysOutput.$Shape
-		static create(properties?: proto.AddDeviceKeysOutput.$Properties): proto.AddDeviceKeysOutput
-		static encode(m: proto.AddDeviceKeysOutput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.AddDeviceKeysOutput & proto.AddDeviceKeysOutput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.AddDeviceKeysOutput
-		static toObject(m: proto.AddDeviceKeysOutput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace AddDeviceKeysOutput {
-		interface $Properties {
-			devicePublicKey?: (Uint8Array|null)
-			epochAuthPublicKey?: (Uint8Array|null)
-			epochAuthPublicKeySig?: (Uint8Array|null)
-			epochStoragePublicKey?: (Uint8Array|null)
-			epochStoragePublicKeySig?: (Uint8Array|null)
-			epochStoragePrivateKey?: (Uint8Array|null)
-			orfClientState?: (Uint8Array|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.AddDeviceKeysOutput.$Properties
-	}
-	interface IAddDeviceSyncEpochInput extends proto.AddDeviceSyncEpochInput.$Properties {
-	}
-	class AddDeviceSyncEpochInput {
-		constructor(p?: proto.AddDeviceSyncEpochInput.$Properties)
-		$unknowns?: Uint8Array[]
-		epochId: (number|Long)
-		epochAnonId: number
-		encryptedEpochKey?: (Uint8Array|null)
-		senderAuthPubKey: Uint8Array
-		nextEpochId?: (number|Long|null)
-		static create(properties: proto.AddDeviceSyncEpochInput.$Shape): proto.AddDeviceSyncEpochInput & proto.AddDeviceSyncEpochInput.$Shape
-		static create(properties?: proto.AddDeviceSyncEpochInput.$Properties): proto.AddDeviceSyncEpochInput
-		static encode(m: proto.AddDeviceSyncEpochInput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.AddDeviceSyncEpochInput & proto.AddDeviceSyncEpochInput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.AddDeviceSyncEpochInput
-		static toObject(m: proto.AddDeviceSyncEpochInput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace AddDeviceSyncEpochInput {
-		interface $Properties {
-			epochId?: (number|Long|null)
-			epochAnonId?: (number|null)
-			encryptedEpochKey?: (Uint8Array|null)
-			senderAuthPubKey?: (Uint8Array|null)
-			nextEpochId?: (number|Long|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.AddDeviceSyncEpochInput.$Properties
-	}
 	interface IAutoDownloadSettings extends proto.AutoDownloadSettings.$Properties {
 	}
 	class AutoDownloadSettings {
@@ -1306,31 +1244,6 @@ export namespace proto {
 			$unknowns?: Uint8Array[]
 		}
 		type $Shape = proto.AvatarUserSettings.$Properties
-	}
-	interface IBackwardEdge extends proto.BackwardEdge.$Properties {
-	}
-	class BackwardEdge {
-		constructor(p?: proto.BackwardEdge.$Properties)
-		$unknowns?: Uint8Array[]
-		encryptedPrevEpochAnonId: Uint8Array
-		encryptedPrevEpochRootKey: Uint8Array
-		prevEpochRootKeyFingerprint: Uint8Array
-		static create(properties: proto.BackwardEdge.$Shape): proto.BackwardEdge & proto.BackwardEdge.$Shape
-		static create(properties?: proto.BackwardEdge.$Properties): proto.BackwardEdge
-		static encode(m: proto.BackwardEdge.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.BackwardEdge & proto.BackwardEdge.$Shape
-		static fromObject(d: { [k: string]: any }): proto.BackwardEdge
-		static toObject(m: proto.BackwardEdge, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace BackwardEdge {
-		interface $Properties {
-			encryptedPrevEpochAnonId?: (Uint8Array|null)
-			encryptedPrevEpochRootKey?: (Uint8Array|null)
-			prevEpochRootKeyFingerprint?: (Uint8Array|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.BackwardEdge.$Properties
 	}
 	interface IBizAIMetadataSync extends proto.BizAIMetadataSync.$Properties {
 	}
@@ -1706,7 +1619,9 @@ export namespace proto {
 			RICH_RESPONSE_SOCIAL_ENTITY_PREFETCH_SCHEDULER_ENABLED = 84,
 			AI_MUSE_JARVIS_EXTENDED_CARDS_ENABLED = 85,
 			AI_INTERJECTIONS_ENABLED = 86,
-			AI_RICH_RESPONSE_READ_ALOUD_ENABLED = 87
+			AI_RICH_RESPONSE_READ_ALOUD_ENABLED = 87,
+			AI_RICH_RESPONSE_ITEM_LISTS_ENABLED = 88,
+			RICH_RESPONSE_SIDE_BY_SIDE_BUFFER_BOTH = 89
 		}
 	}
 	interface IBotCommandMetadata extends proto.BotCommandMetadata.$Properties {
@@ -2565,7 +2480,8 @@ export namespace proto {
 		NEW_CHAT_LIST = 56,
 		CONTACTS_TAB = 57,
 		NEW_3P_AGENT_CREATION = 58,
-		SHARE = 59
+		SHARE = 59,
+		BIRTHDAY_BANNER = 60
 	}
 	interface IBotMetricsMetadata extends proto.BotMetricsMetadata.$Properties {
 	}
@@ -4388,6 +4304,31 @@ export namespace proto {
 		CRITICAL_BLOCK = 4,
 		CRITICAL_UNBLOCK_LOW = 5
 	}
+	interface ICombinedFingerprint extends proto.CombinedFingerprint.$Properties {
+	}
+	class CombinedFingerprint {
+		constructor(p?: proto.CombinedFingerprint.$Properties)
+		$unknowns?: Uint8Array[]
+		version?: (number|null)
+		localFingerprint?: (proto.FingerprintData.$Properties|null)
+		remoteFingerprint?: (proto.FingerprintData.$Properties|null)
+		static create(properties: proto.CombinedFingerprint.$Shape): proto.CombinedFingerprint & proto.CombinedFingerprint.$Shape
+		static create(properties?: proto.CombinedFingerprint.$Properties): proto.CombinedFingerprint
+		static encode(m: proto.CombinedFingerprint.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.CombinedFingerprint & proto.CombinedFingerprint.$Shape
+		static fromObject(d: { [k: string]: any }): proto.CombinedFingerprint
+		static toObject(m: proto.CombinedFingerprint, o?: PBConversionOptions): { [k: string]: any }
+		toJSON(): { [k: string]: any }
+	}
+	namespace CombinedFingerprint {
+		interface $Properties {
+			version?: (number|null)
+			localFingerprint?: (proto.FingerprintData.$Properties|null)
+			remoteFingerprint?: (proto.FingerprintData.$Properties|null)
+			$unknowns?: Uint8Array[]
+		}
+		type $Shape = proto.CombinedFingerprint.$Properties
+	}
 	interface ICommentMetadata extends proto.CommentMetadata.$Properties {
 	}
 	class CommentMetadata {
@@ -4456,152 +4397,6 @@ export namespace proto {
 			$unknowns?: Uint8Array[]
 		}
 		type $Shape = proto.CompanionEphemeralIdentity.$Properties
-	}
-	interface ICompanionTestMessageThreadIdInput extends proto.CompanionTestMessageThreadIdInput.$Properties {
-	}
-	class CompanionTestMessageThreadIdInput {
-		constructor(p?: proto.CompanionTestMessageThreadIdInput.$Properties)
-		$unknowns?: Uint8Array[]
-		static create(properties: proto.CompanionTestMessageThreadIdInput.$Shape): proto.CompanionTestMessageThreadIdInput & proto.CompanionTestMessageThreadIdInput.$Shape
-		static create(properties?: proto.CompanionTestMessageThreadIdInput.$Properties): proto.CompanionTestMessageThreadIdInput
-		static encode(m: proto.CompanionTestMessageThreadIdInput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.CompanionTestMessageThreadIdInput & proto.CompanionTestMessageThreadIdInput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.CompanionTestMessageThreadIdInput
-		static toObject(m: proto.CompanionTestMessageThreadIdInput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace CompanionTestMessageThreadIdInput {
-		interface $Properties {
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.CompanionTestMessageThreadIdInput.$Properties
-	}
-	interface ICompanionTestMessageThreadIdOutput extends proto.CompanionTestMessageThreadIdOutput.$Properties {
-	}
-	class CompanionTestMessageThreadIdOutput {
-		constructor(p?: proto.CompanionTestMessageThreadIdOutput.$Properties)
-		$unknowns?: Uint8Array[]
-		success?: (proto.CompanionTestMessageThreadIdSuccess.$Properties|null)
-		error?: (string|null)
-		result?: ("success"|"error")
-		static create(properties: proto.CompanionTestMessageThreadIdOutput.$Shape): proto.CompanionTestMessageThreadIdOutput & proto.CompanionTestMessageThreadIdOutput.$Shape
-		static create(properties?: proto.CompanionTestMessageThreadIdOutput.$Properties): proto.CompanionTestMessageThreadIdOutput
-		static encode(m: proto.CompanionTestMessageThreadIdOutput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.CompanionTestMessageThreadIdOutput & proto.CompanionTestMessageThreadIdOutput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.CompanionTestMessageThreadIdOutput
-		static toObject(m: proto.CompanionTestMessageThreadIdOutput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace CompanionTestMessageThreadIdOutput {
-		interface $Properties {
-			success?: (proto.CompanionTestMessageThreadIdSuccess.$Properties|null)
-			error?: (string|null)
-			result?: ("success"|"error")
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = {
-		  success?: proto.CompanionTestMessageThreadIdSuccess.$Shape|null
-		  error?: string|null
-		  $unknowns?: Uint8Array[]
-		} & (
-		  ({ result?: undefined; success?: null; error?: null }|{ result?: "success"; success: proto.CompanionTestMessageThreadIdSuccess.$Shape; error?: null }|{ result?: "error"; success?: null; error: string })
-		)
-	}
-	interface ICompanionTestMessageThreadIdSuccess extends proto.CompanionTestMessageThreadIdSuccess.$Properties {
-	}
-	class CompanionTestMessageThreadIdSuccess {
-		constructor(p?: proto.CompanionTestMessageThreadIdSuccess.$Properties)
-		$unknowns?: Uint8Array[]
-		threadId: string
-		static create(properties: proto.CompanionTestMessageThreadIdSuccess.$Shape): proto.CompanionTestMessageThreadIdSuccess & proto.CompanionTestMessageThreadIdSuccess.$Shape
-		static create(properties?: proto.CompanionTestMessageThreadIdSuccess.$Properties): proto.CompanionTestMessageThreadIdSuccess
-		static encode(m: proto.CompanionTestMessageThreadIdSuccess.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.CompanionTestMessageThreadIdSuccess & proto.CompanionTestMessageThreadIdSuccess.$Shape
-		static fromObject(d: { [k: string]: any }): proto.CompanionTestMessageThreadIdSuccess
-		static toObject(m: proto.CompanionTestMessageThreadIdSuccess, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace CompanionTestMessageThreadIdSuccess {
-		interface $Properties {
-			threadId?: (string|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.CompanionTestMessageThreadIdSuccess.$Properties
-	}
-	interface IComputeClientSealTokenInput extends proto.ComputeClientSealTokenInput.$Properties {
-	}
-	class ComputeClientSealTokenInput {
-		constructor(p?: proto.ComputeClientSealTokenInput.$Properties)
-		$unknowns?: Uint8Array[]
-		orfClientState: Uint8Array
-		backupId: (number|Long)
-		static create(properties: proto.ComputeClientSealTokenInput.$Shape): proto.ComputeClientSealTokenInput & proto.ComputeClientSealTokenInput.$Shape
-		static create(properties?: proto.ComputeClientSealTokenInput.$Properties): proto.ComputeClientSealTokenInput
-		static encode(m: proto.ComputeClientSealTokenInput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.ComputeClientSealTokenInput & proto.ComputeClientSealTokenInput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.ComputeClientSealTokenInput
-		static toObject(m: proto.ComputeClientSealTokenInput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace ComputeClientSealTokenInput {
-		interface $Properties {
-			orfClientState?: (Uint8Array|null)
-			backupId?: (number|Long|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.ComputeClientSealTokenInput.$Properties
-	}
-	interface IComputeClientSealTokenOutput extends proto.ComputeClientSealTokenOutput.$Properties {
-	}
-	class ComputeClientSealTokenOutput {
-		constructor(p?: proto.ComputeClientSealTokenOutput.$Properties)
-		$unknowns?: Uint8Array[]
-		success?: (proto.ComputeClientSealTokenSuccess.$Properties|null)
-		error?: (string|null)
-		result?: ("success"|"error")
-		static create(properties: proto.ComputeClientSealTokenOutput.$Shape): proto.ComputeClientSealTokenOutput & proto.ComputeClientSealTokenOutput.$Shape
-		static create(properties?: proto.ComputeClientSealTokenOutput.$Properties): proto.ComputeClientSealTokenOutput
-		static encode(m: proto.ComputeClientSealTokenOutput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.ComputeClientSealTokenOutput & proto.ComputeClientSealTokenOutput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.ComputeClientSealTokenOutput
-		static toObject(m: proto.ComputeClientSealTokenOutput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace ComputeClientSealTokenOutput {
-		interface $Properties {
-			success?: (proto.ComputeClientSealTokenSuccess.$Properties|null)
-			error?: (string|null)
-			result?: ("success"|"error")
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = {
-		  success?: proto.ComputeClientSealTokenSuccess.$Shape|null
-		  error?: string|null
-		  $unknowns?: Uint8Array[]
-		} & (
-		  ({ result?: undefined; success?: null; error?: null }|{ result?: "success"; success: proto.ComputeClientSealTokenSuccess.$Shape; error?: null }|{ result?: "error"; success?: null; error: string })
-		)
-	}
-	interface IComputeClientSealTokenSuccess extends proto.ComputeClientSealTokenSuccess.$Properties {
-	}
-	class ComputeClientSealTokenSuccess {
-		constructor(p?: proto.ComputeClientSealTokenSuccess.$Properties)
-		$unknowns?: Uint8Array[]
-		clientSealToken: Uint8Array
-		static create(properties: proto.ComputeClientSealTokenSuccess.$Shape): proto.ComputeClientSealTokenSuccess & proto.ComputeClientSealTokenSuccess.$Shape
-		static create(properties?: proto.ComputeClientSealTokenSuccess.$Properties): proto.ComputeClientSealTokenSuccess
-		static encode(m: proto.ComputeClientSealTokenSuccess.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.ComputeClientSealTokenSuccess & proto.ComputeClientSealTokenSuccess.$Shape
-		static fromObject(d: { [k: string]: any }): proto.ComputeClientSealTokenSuccess
-		static toObject(m: proto.ComputeClientSealTokenSuccess, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace ComputeClientSealTokenSuccess {
-		interface $Properties {
-			clientSealToken?: (Uint8Array|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.ComputeClientSealTokenSuccess.$Properties
 	}
 	interface IConfig extends proto.Config.$Properties {
 	}
@@ -5518,6 +5313,9 @@ export namespace proto {
 		acp2Setting?: (proto.ACP2Setting.$Properties|null)
 		acp2HistoryWithheld?: (boolean|null)
 		groupRootKeys: proto.GroupRootKey.$Properties[]
+		isWorkGroup?: (boolean|null)
+		nonE2EeType?: (number|null)
+		contactAccountEncryptionAttestationType?: (proto.NonE2EEAttestation.AccountType|null)
 		static create(properties: proto.Conversation.$Shape): proto.Conversation & proto.Conversation.$Shape
 		static create(properties?: proto.Conversation.$Properties): proto.Conversation
 		static encode(m: proto.Conversation.$Properties, w?: PBWriter): PBWriter
@@ -5594,6 +5392,9 @@ export namespace proto {
 			acp2Setting?: (proto.ACP2Setting.$Properties|null)
 			acp2HistoryWithheld?: (boolean|null)
 			groupRootKeys?: (proto.GroupRootKey.$Properties[]|null)
+			isWorkGroup?: (boolean|null)
+			nonE2EeType?: (number|null)
+			contactAccountEncryptionAttestationType?: (proto.NonE2EEAttestation.AccountType|null)
 			$unknowns?: Uint8Array[]
 		}
 		type $Shape = {
@@ -5663,6 +5464,9 @@ export namespace proto {
 		  acp2Setting?: proto.ACP2Setting.$Shape|null
 		  acp2HistoryWithheld?: boolean|null
 		  groupRootKeys?: proto.GroupRootKey.$Shape[]|null
+		  isWorkGroup?: boolean|null
+		  nonE2EeType?: number|null
+		  contactAccountEncryptionAttestationType?: proto.NonE2EEAttestation.AccountType|null
 		  $unknowns?: Uint8Array[]
 		}
 		enum EndOfHistoryTransferType {
@@ -5677,397 +5481,6 @@ export namespace proto {
 			APPEAL_APPROVED = 2,
 			APPEAL_REJECTED = 3
 		}
-	}
-	interface ICreateBackupInput extends proto.CreateBackupInput.$Properties {
-	}
-	class CreateBackupInput {
-		constructor(p?: proto.CreateBackupInput.$Properties)
-		$unknowns?: Uint8Array[]
-		recoveryCode: string
-		userId: (number|Long)
-		static create(properties: proto.CreateBackupInput.$Shape): proto.CreateBackupInput & proto.CreateBackupInput.$Shape
-		static create(properties?: proto.CreateBackupInput.$Properties): proto.CreateBackupInput
-		static encode(m: proto.CreateBackupInput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.CreateBackupInput & proto.CreateBackupInput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.CreateBackupInput
-		static toObject(m: proto.CreateBackupInput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace CreateBackupInput {
-		interface $Properties {
-			recoveryCode?: (string|null)
-			userId?: (number|Long|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.CreateBackupInput.$Properties
-	}
-	interface ICreateBackupOutput extends proto.CreateBackupOutput.$Properties {
-	}
-	class CreateBackupOutput {
-		constructor(p?: proto.CreateBackupOutput.$Properties)
-		$unknowns?: Uint8Array[]
-		success?: (proto.CreateBackupSuccess.$Properties|null)
-		error?: (string|null)
-		result?: ("success"|"error")
-		static create(properties: proto.CreateBackupOutput.$Shape): proto.CreateBackupOutput & proto.CreateBackupOutput.$Shape
-		static create(properties?: proto.CreateBackupOutput.$Properties): proto.CreateBackupOutput
-		static encode(m: proto.CreateBackupOutput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.CreateBackupOutput & proto.CreateBackupOutput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.CreateBackupOutput
-		static toObject(m: proto.CreateBackupOutput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace CreateBackupOutput {
-		interface $Properties {
-			success?: (proto.CreateBackupSuccess.$Properties|null)
-			error?: (string|null)
-			result?: ("success"|"error")
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = {
-		  success?: proto.CreateBackupSuccess.$Shape|null
-		  error?: string|null
-		  $unknowns?: Uint8Array[]
-		} & (
-		  ({ result?: undefined; success?: null; error?: null }|{ result?: "success"; success: proto.CreateBackupSuccess.$Shape; error?: null }|{ result?: "error"; success?: null; error: string })
-		)
-	}
-	interface ICreateBackupSuccess extends proto.CreateBackupSuccess.$Properties {
-	}
-	class CreateBackupSuccess {
-		constructor(p?: proto.CreateBackupSuccess.$Properties)
-		$unknowns?: Uint8Array[]
-		device?: (proto.DeviceOutput.$Properties|null)
-		virtualDevice?: (proto.VirtualDeviceOutput.$Properties|null)
-		epoch0?: (proto.Epoch0Output.$Properties|null)
-		mailboxRootKey: Uint8Array
-		static create(properties: proto.CreateBackupSuccess.$Shape): proto.CreateBackupSuccess & proto.CreateBackupSuccess.$Shape
-		static create(properties?: proto.CreateBackupSuccess.$Properties): proto.CreateBackupSuccess
-		static encode(m: proto.CreateBackupSuccess.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.CreateBackupSuccess & proto.CreateBackupSuccess.$Shape
-		static fromObject(d: { [k: string]: any }): proto.CreateBackupSuccess
-		static toObject(m: proto.CreateBackupSuccess, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace CreateBackupSuccess {
-		interface $Properties {
-			device?: (proto.DeviceOutput.$Properties|null)
-			virtualDevice?: (proto.VirtualDeviceOutput.$Properties|null)
-			epoch0?: (proto.Epoch0Output.$Properties|null)
-			mailboxRootKey?: (Uint8Array|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.CreateBackupSuccess.$Properties
-	}
-	interface IDecryptMessageInput extends proto.DecryptMessageInput.$Properties {
-	}
-	class DecryptMessageInput {
-		constructor(p?: proto.DecryptMessageInput.$Properties)
-		$unknowns?: Uint8Array[]
-		epochRootKey: Uint8Array
-		epochAnonId: number
-		threadId: string
-		encryptionVersion: number
-		ciphertext: Uint8Array
-		static create(properties: proto.DecryptMessageInput.$Shape): proto.DecryptMessageInput & proto.DecryptMessageInput.$Shape
-		static create(properties?: proto.DecryptMessageInput.$Properties): proto.DecryptMessageInput
-		static encode(m: proto.DecryptMessageInput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.DecryptMessageInput & proto.DecryptMessageInput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.DecryptMessageInput
-		static toObject(m: proto.DecryptMessageInput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace DecryptMessageInput {
-		interface $Properties {
-			epochRootKey?: (Uint8Array|null)
-			epochAnonId?: (number|null)
-			threadId?: (string|null)
-			encryptionVersion?: (number|null)
-			ciphertext?: (Uint8Array|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.DecryptMessageInput.$Properties
-	}
-	interface IDecryptMessageOutput extends proto.DecryptMessageOutput.$Properties {
-	}
-	class DecryptMessageOutput {
-		constructor(p?: proto.DecryptMessageOutput.$Properties)
-		$unknowns?: Uint8Array[]
-		success?: (proto.DecryptMessageSuccess.$Properties|null)
-		error?: (string|null)
-		result?: ("success"|"error")
-		static create(properties: proto.DecryptMessageOutput.$Shape): proto.DecryptMessageOutput & proto.DecryptMessageOutput.$Shape
-		static create(properties?: proto.DecryptMessageOutput.$Properties): proto.DecryptMessageOutput
-		static encode(m: proto.DecryptMessageOutput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.DecryptMessageOutput & proto.DecryptMessageOutput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.DecryptMessageOutput
-		static toObject(m: proto.DecryptMessageOutput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace DecryptMessageOutput {
-		interface $Properties {
-			success?: (proto.DecryptMessageSuccess.$Properties|null)
-			error?: (string|null)
-			result?: ("success"|"error")
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = {
-		  success?: proto.DecryptMessageSuccess.$Shape|null
-		  error?: string|null
-		  $unknowns?: Uint8Array[]
-		} & (
-		  ({ result?: undefined; success?: null; error?: null }|{ result?: "success"; success: proto.DecryptMessageSuccess.$Shape; error?: null }|{ result?: "error"; success?: null; error: string })
-		)
-	}
-	interface IDecryptMessageSuccess extends proto.DecryptMessageSuccess.$Properties {
-	}
-	class DecryptMessageSuccess {
-		constructor(p?: proto.DecryptMessageSuccess.$Properties)
-		$unknowns?: Uint8Array[]
-		plaintextPayload: Uint8Array
-		static create(properties: proto.DecryptMessageSuccess.$Shape): proto.DecryptMessageSuccess & proto.DecryptMessageSuccess.$Shape
-		static create(properties?: proto.DecryptMessageSuccess.$Properties): proto.DecryptMessageSuccess
-		static encode(m: proto.DecryptMessageSuccess.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.DecryptMessageSuccess & proto.DecryptMessageSuccess.$Shape
-		static fromObject(d: { [k: string]: any }): proto.DecryptMessageSuccess
-		static toObject(m: proto.DecryptMessageSuccess, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace DecryptMessageSuccess {
-		interface $Properties {
-			plaintextPayload?: (Uint8Array|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.DecryptMessageSuccess.$Properties
-	}
-	interface IDeriveEpochsInput extends proto.DeriveEpochsInput.$Properties {
-	}
-	class DeriveEpochsInput {
-		constructor(p?: proto.DeriveEpochsInput.$Properties)
-		$unknowns?: Uint8Array[]
-		epochStoragePrivateKey: Uint8Array
-		epochs: proto.EpochKey.$Properties[]
-		edges: proto.EpochDerivationEdge.$Properties[]
-		static create(properties: proto.DeriveEpochsInput.$Shape): proto.DeriveEpochsInput & proto.DeriveEpochsInput.$Shape
-		static create(properties?: proto.DeriveEpochsInput.$Properties): proto.DeriveEpochsInput
-		static encode(m: proto.DeriveEpochsInput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.DeriveEpochsInput & proto.DeriveEpochsInput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.DeriveEpochsInput
-		static toObject(m: proto.DeriveEpochsInput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace DeriveEpochsInput {
-		interface $Properties {
-			epochStoragePrivateKey?: (Uint8Array|null)
-			epochs?: (proto.EpochKey.$Properties[]|null)
-			edges?: (proto.EpochDerivationEdge.$Properties[]|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.DeriveEpochsInput.$Properties
-	}
-	interface IDeriveEpochsOutput extends proto.DeriveEpochsOutput.$Properties {
-	}
-	class DeriveEpochsOutput {
-		constructor(p?: proto.DeriveEpochsOutput.$Properties)
-		$unknowns?: Uint8Array[]
-		success?: (proto.DeriveEpochsSuccess.$Properties|null)
-		error?: (string|null)
-		result?: ("success"|"error")
-		static create(properties: proto.DeriveEpochsOutput.$Shape): proto.DeriveEpochsOutput & proto.DeriveEpochsOutput.$Shape
-		static create(properties?: proto.DeriveEpochsOutput.$Properties): proto.DeriveEpochsOutput
-		static encode(m: proto.DeriveEpochsOutput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.DeriveEpochsOutput & proto.DeriveEpochsOutput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.DeriveEpochsOutput
-		static toObject(m: proto.DeriveEpochsOutput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace DeriveEpochsOutput {
-		interface $Properties {
-			success?: (proto.DeriveEpochsSuccess.$Properties|null)
-			error?: (string|null)
-			result?: ("success"|"error")
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = {
-		  success?: proto.DeriveEpochsSuccess.$Shape|null
-		  error?: string|null
-		  $unknowns?: Uint8Array[]
-		} & (
-		  ({ result?: undefined; success?: null; error?: null }|{ result?: "success"; success: proto.DeriveEpochsSuccess.$Shape; error?: null }|{ result?: "error"; success?: null; error: string })
-		)
-	}
-	interface IDeriveEpochsSuccess extends proto.DeriveEpochsSuccess.$Properties {
-	}
-	class DeriveEpochsSuccess {
-		constructor(p?: proto.DeriveEpochsSuccess.$Properties)
-		$unknowns?: Uint8Array[]
-		epochs: proto.EpochKey.$Properties[]
-		static create(properties: proto.DeriveEpochsSuccess.$Shape): proto.DeriveEpochsSuccess & proto.DeriveEpochsSuccess.$Shape
-		static create(properties?: proto.DeriveEpochsSuccess.$Properties): proto.DeriveEpochsSuccess
-		static encode(m: proto.DeriveEpochsSuccess.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.DeriveEpochsSuccess & proto.DeriveEpochsSuccess.$Shape
-		static fromObject(d: { [k: string]: any }): proto.DeriveEpochsSuccess
-		static toObject(m: proto.DeriveEpochsSuccess, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace DeriveEpochsSuccess {
-		interface $Properties {
-			epochs?: (proto.EpochKey.$Properties[]|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.DeriveEpochsSuccess.$Properties
-	}
-	interface IDeriveMessageKeyInput extends proto.DeriveMessageKeyInput.$Properties {
-	}
-	class DeriveMessageKeyInput {
-		constructor(p?: proto.DeriveMessageKeyInput.$Properties)
-		$unknowns?: Uint8Array[]
-		epochRootKey: Uint8Array
-		epochAnonId: number
-		threadId: string
-		static create(properties: proto.DeriveMessageKeyInput.$Shape): proto.DeriveMessageKeyInput & proto.DeriveMessageKeyInput.$Shape
-		static create(properties?: proto.DeriveMessageKeyInput.$Properties): proto.DeriveMessageKeyInput
-		static encode(m: proto.DeriveMessageKeyInput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.DeriveMessageKeyInput & proto.DeriveMessageKeyInput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.DeriveMessageKeyInput
-		static toObject(m: proto.DeriveMessageKeyInput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace DeriveMessageKeyInput {
-		interface $Properties {
-			epochRootKey?: (Uint8Array|null)
-			epochAnonId?: (number|null)
-			threadId?: (string|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.DeriveMessageKeyInput.$Properties
-	}
-	interface IDeriveMessageKeyOutput extends proto.DeriveMessageKeyOutput.$Properties {
-	}
-	class DeriveMessageKeyOutput {
-		constructor(p?: proto.DeriveMessageKeyOutput.$Properties)
-		$unknowns?: Uint8Array[]
-		success?: (proto.DeriveMessageKeySuccess.$Properties|null)
-		error?: (string|null)
-		result?: ("success"|"error")
-		static create(properties: proto.DeriveMessageKeyOutput.$Shape): proto.DeriveMessageKeyOutput & proto.DeriveMessageKeyOutput.$Shape
-		static create(properties?: proto.DeriveMessageKeyOutput.$Properties): proto.DeriveMessageKeyOutput
-		static encode(m: proto.DeriveMessageKeyOutput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.DeriveMessageKeyOutput & proto.DeriveMessageKeyOutput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.DeriveMessageKeyOutput
-		static toObject(m: proto.DeriveMessageKeyOutput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace DeriveMessageKeyOutput {
-		interface $Properties {
-			success?: (proto.DeriveMessageKeySuccess.$Properties|null)
-			error?: (string|null)
-			result?: ("success"|"error")
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = {
-		  success?: proto.DeriveMessageKeySuccess.$Shape|null
-		  error?: string|null
-		  $unknowns?: Uint8Array[]
-		} & (
-		  ({ result?: undefined; success?: null; error?: null }|{ result?: "success"; success: proto.DeriveMessageKeySuccess.$Shape; error?: null }|{ result?: "error"; success?: null; error: string })
-		)
-	}
-	interface IDeriveMessageKeySuccess extends proto.DeriveMessageKeySuccess.$Properties {
-	}
-	class DeriveMessageKeySuccess {
-		constructor(p?: proto.DeriveMessageKeySuccess.$Properties)
-		$unknowns?: Uint8Array[]
-		messageKey: Uint8Array
-		static create(properties: proto.DeriveMessageKeySuccess.$Shape): proto.DeriveMessageKeySuccess & proto.DeriveMessageKeySuccess.$Shape
-		static create(properties?: proto.DeriveMessageKeySuccess.$Properties): proto.DeriveMessageKeySuccess
-		static encode(m: proto.DeriveMessageKeySuccess.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.DeriveMessageKeySuccess & proto.DeriveMessageKeySuccess.$Shape
-		static fromObject(d: { [k: string]: any }): proto.DeriveMessageKeySuccess
-		static toObject(m: proto.DeriveMessageKeySuccess, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace DeriveMessageKeySuccess {
-		interface $Properties {
-			messageKey?: (Uint8Array|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.DeriveMessageKeySuccess.$Properties
-	}
-	interface IDeriveVirtualDeviceIdInput extends proto.DeriveVirtualDeviceIdInput.$Properties {
-	}
-	class DeriveVirtualDeviceIdInput {
-		constructor(p?: proto.DeriveVirtualDeviceIdInput.$Properties)
-		$unknowns?: Uint8Array[]
-		recoveryCode: string
-		userId: (number|Long)
-		static create(properties: proto.DeriveVirtualDeviceIdInput.$Shape): proto.DeriveVirtualDeviceIdInput & proto.DeriveVirtualDeviceIdInput.$Shape
-		static create(properties?: proto.DeriveVirtualDeviceIdInput.$Properties): proto.DeriveVirtualDeviceIdInput
-		static encode(m: proto.DeriveVirtualDeviceIdInput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.DeriveVirtualDeviceIdInput & proto.DeriveVirtualDeviceIdInput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.DeriveVirtualDeviceIdInput
-		static toObject(m: proto.DeriveVirtualDeviceIdInput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace DeriveVirtualDeviceIdInput {
-		interface $Properties {
-			recoveryCode?: (string|null)
-			userId?: (number|Long|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.DeriveVirtualDeviceIdInput.$Properties
-	}
-	interface IDeriveVirtualDeviceIdOutput extends proto.DeriveVirtualDeviceIdOutput.$Properties {
-	}
-	class DeriveVirtualDeviceIdOutput {
-		constructor(p?: proto.DeriveVirtualDeviceIdOutput.$Properties)
-		$unknowns?: Uint8Array[]
-		success?: (proto.DeriveVirtualDeviceIdSuccess.$Properties|null)
-		error?: (string|null)
-		result?: ("success"|"error")
-		static create(properties: proto.DeriveVirtualDeviceIdOutput.$Shape): proto.DeriveVirtualDeviceIdOutput & proto.DeriveVirtualDeviceIdOutput.$Shape
-		static create(properties?: proto.DeriveVirtualDeviceIdOutput.$Properties): proto.DeriveVirtualDeviceIdOutput
-		static encode(m: proto.DeriveVirtualDeviceIdOutput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.DeriveVirtualDeviceIdOutput & proto.DeriveVirtualDeviceIdOutput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.DeriveVirtualDeviceIdOutput
-		static toObject(m: proto.DeriveVirtualDeviceIdOutput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace DeriveVirtualDeviceIdOutput {
-		interface $Properties {
-			success?: (proto.DeriveVirtualDeviceIdSuccess.$Properties|null)
-			error?: (string|null)
-			result?: ("success"|"error")
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = {
-		  success?: proto.DeriveVirtualDeviceIdSuccess.$Shape|null
-		  error?: string|null
-		  $unknowns?: Uint8Array[]
-		} & (
-		  ({ result?: undefined; success?: null; error?: null }|{ result?: "success"; success: proto.DeriveVirtualDeviceIdSuccess.$Shape; error?: null }|{ result?: "error"; success?: null; error: string })
-		)
-	}
-	interface IDeriveVirtualDeviceIdSuccess extends proto.DeriveVirtualDeviceIdSuccess.$Properties {
-	}
-	class DeriveVirtualDeviceIdSuccess {
-		constructor(p?: proto.DeriveVirtualDeviceIdSuccess.$Properties)
-		$unknowns?: Uint8Array[]
-		virtualDeviceId: Uint8Array
-		static create(properties: proto.DeriveVirtualDeviceIdSuccess.$Shape): proto.DeriveVirtualDeviceIdSuccess & proto.DeriveVirtualDeviceIdSuccess.$Shape
-		static create(properties?: proto.DeriveVirtualDeviceIdSuccess.$Properties): proto.DeriveVirtualDeviceIdSuccess
-		static encode(m: proto.DeriveVirtualDeviceIdSuccess.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.DeriveVirtualDeviceIdSuccess & proto.DeriveVirtualDeviceIdSuccess.$Shape
-		static fromObject(d: { [k: string]: any }): proto.DeriveVirtualDeviceIdSuccess
-		static toObject(m: proto.DeriveVirtualDeviceIdSuccess, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace DeriveVirtualDeviceIdSuccess {
-		interface $Properties {
-			virtualDeviceId?: (Uint8Array|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.DeriveVirtualDeviceIdSuccess.$Properties
 	}
 	interface IDeviceCapabilities extends proto.DeviceCapabilities.$Properties {
 	}
@@ -6461,49 +5874,6 @@ export namespace proto {
 		}
 		type $Shape = proto.DeviceListMetadata.$Properties
 	}
-	interface IDeviceOutput extends proto.DeviceOutput.$Properties {
-	}
-	class DeviceOutput {
-		constructor(p?: proto.DeviceOutput.$Properties)
-		$unknowns?: Uint8Array[]
-		publicKey: Uint8Array
-		epochAuthPublicKey: Uint8Array
-		epochAuthPublicKeySig: Uint8Array
-		epochStoragePublicKey: Uint8Array
-		epochStoragePublicKeySig: Uint8Array
-		supportedEncryptionVersions: number[]
-		encryptionVersionSignature: Uint8Array
-		clientVersion: number
-		ocmfClientState: Uint8Array
-		epochStoragePrivateKey: Uint8Array
-		epochAuthPrivateKey: Uint8Array
-		deviceEpochHmac: Uint8Array
-		static create(properties: proto.DeviceOutput.$Shape): proto.DeviceOutput & proto.DeviceOutput.$Shape
-		static create(properties?: proto.DeviceOutput.$Properties): proto.DeviceOutput
-		static encode(m: proto.DeviceOutput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.DeviceOutput & proto.DeviceOutput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.DeviceOutput
-		static toObject(m: proto.DeviceOutput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace DeviceOutput {
-		interface $Properties {
-			publicKey?: (Uint8Array|null)
-			epochAuthPublicKey?: (Uint8Array|null)
-			epochAuthPublicKeySig?: (Uint8Array|null)
-			epochStoragePublicKey?: (Uint8Array|null)
-			epochStoragePublicKeySig?: (Uint8Array|null)
-			supportedEncryptionVersions?: (number[]|null)
-			encryptionVersionSignature?: (Uint8Array|null)
-			clientVersion?: (number|null)
-			ocmfClientState?: (Uint8Array|null)
-			epochStoragePrivateKey?: (Uint8Array|null)
-			epochAuthPrivateKey?: (Uint8Array|null)
-			deviceEpochHmac?: (Uint8Array|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.DeviceOutput.$Properties
-	}
 	interface IDeviceProps extends proto.DeviceProps.$Properties {
 	}
 	class DeviceProps {
@@ -6514,6 +5884,7 @@ export namespace proto {
 		platformType?: (proto.DeviceProps.PlatformType|null)
 		requireFullSync?: (boolean|null)
 		historySyncConfig?: (proto.DeviceProps.HistorySyncConfig.$Properties|null)
+		deviceName?: (string|null)
 		static create(properties: proto.DeviceProps.$Shape): proto.DeviceProps & proto.DeviceProps.$Shape
 		static create(properties?: proto.DeviceProps.$Properties): proto.DeviceProps
 		static encode(m: proto.DeviceProps.$Properties, w?: PBWriter): PBWriter
@@ -6529,6 +5900,7 @@ export namespace proto {
 			platformType?: (proto.DeviceProps.PlatformType|null)
 			requireFullSync?: (boolean|null)
 			historySyncConfig?: (proto.DeviceProps.HistorySyncConfig.$Properties|null)
+			deviceName?: (string|null)
 			$unknowns?: Uint8Array[]
 		}
 		type $Shape = proto.DeviceProps.$Properties
@@ -6814,107 +6186,6 @@ export namespace proto {
 		}
 		type $Shape = proto.EmbeddedMusic.$Properties
 	}
-	interface IEncryptMessageInput extends proto.EncryptMessageInput.$Properties {
-	}
-	class EncryptMessageInput {
-		constructor(p?: proto.EncryptMessageInput.$Properties)
-		$unknowns?: Uint8Array[]
-		epochRootKey: Uint8Array
-		mailboxRootKey: Uint8Array
-		orfClientState: Uint8Array
-		epochAnonId: number
-		epochId: (number|Long)
-		threadId: string
-		waCanonicalUserFbid: (number|Long)
-		timestampMs: (number|Long)
-		backupId: (number|Long)
-		plaintextPayload: Uint8Array
-		stanzaId: string
-		static create(properties: proto.EncryptMessageInput.$Shape): proto.EncryptMessageInput & proto.EncryptMessageInput.$Shape
-		static create(properties?: proto.EncryptMessageInput.$Properties): proto.EncryptMessageInput
-		static encode(m: proto.EncryptMessageInput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.EncryptMessageInput & proto.EncryptMessageInput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.EncryptMessageInput
-		static toObject(m: proto.EncryptMessageInput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace EncryptMessageInput {
-		interface $Properties {
-			epochRootKey?: (Uint8Array|null)
-			mailboxRootKey?: (Uint8Array|null)
-			orfClientState?: (Uint8Array|null)
-			epochAnonId?: (number|null)
-			epochId?: (number|Long|null)
-			threadId?: (string|null)
-			waCanonicalUserFbid?: (number|Long|null)
-			timestampMs?: (number|Long|null)
-			backupId?: (number|Long|null)
-			plaintextPayload?: (Uint8Array|null)
-			stanzaId?: (string|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.EncryptMessageInput.$Properties
-	}
-	interface IEncryptMessageOutput extends proto.EncryptMessageOutput.$Properties {
-	}
-	class EncryptMessageOutput {
-		constructor(p?: proto.EncryptMessageOutput.$Properties)
-		$unknowns?: Uint8Array[]
-		success?: (proto.EncryptMessageSuccess.$Properties|null)
-		error?: (string|null)
-		result?: ("success"|"error")
-		static create(properties: proto.EncryptMessageOutput.$Shape): proto.EncryptMessageOutput & proto.EncryptMessageOutput.$Shape
-		static create(properties?: proto.EncryptMessageOutput.$Properties): proto.EncryptMessageOutput
-		static encode(m: proto.EncryptMessageOutput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.EncryptMessageOutput & proto.EncryptMessageOutput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.EncryptMessageOutput
-		static toObject(m: proto.EncryptMessageOutput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace EncryptMessageOutput {
-		interface $Properties {
-			success?: (proto.EncryptMessageSuccess.$Properties|null)
-			error?: (string|null)
-			result?: ("success"|"error")
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = {
-		  success?: proto.EncryptMessageSuccess.$Shape|null
-		  error?: string|null
-		  $unknowns?: Uint8Array[]
-		} & (
-		  ({ result?: undefined; success?: null; error?: null }|{ result?: "success"; success: proto.EncryptMessageSuccess.$Shape; error?: null }|{ result?: "error"; success?: null; error: string })
-		)
-	}
-	interface IEncryptMessageSuccess extends proto.EncryptMessageSuccess.$Properties {
-	}
-	class EncryptMessageSuccess {
-		constructor(p?: proto.EncryptMessageSuccess.$Properties)
-		$unknowns?: Uint8Array[]
-		encryptedProtobuf: Uint8Array
-		orfThreadId: Uint8Array
-		valueSecretRef: string
-		offlineThreadingId: (number|Long)
-		timestampMs: (number|Long)
-		static create(properties: proto.EncryptMessageSuccess.$Shape): proto.EncryptMessageSuccess & proto.EncryptMessageSuccess.$Shape
-		static create(properties?: proto.EncryptMessageSuccess.$Properties): proto.EncryptMessageSuccess
-		static encode(m: proto.EncryptMessageSuccess.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.EncryptMessageSuccess & proto.EncryptMessageSuccess.$Shape
-		static fromObject(d: { [k: string]: any }): proto.EncryptMessageSuccess
-		static toObject(m: proto.EncryptMessageSuccess, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace EncryptMessageSuccess {
-		interface $Properties {
-			encryptedProtobuf?: (Uint8Array|null)
-			orfThreadId?: (Uint8Array|null)
-			valueSecretRef?: (string|null)
-			offlineThreadingId?: (number|Long|null)
-			timestampMs?: (number|Long|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.EncryptMessageSuccess.$Properties
-	}
 	interface IEncryptedPairingRequest extends proto.EncryptedPairingRequest.$Properties {
 	}
 	class EncryptedPairingRequest {
@@ -6938,39 +6209,6 @@ export namespace proto {
 		}
 		type $Shape = proto.EncryptedPairingRequest.$Properties
 	}
-	interface IEncryptedSecretValuesOutput extends proto.EncryptedSecretValuesOutput.$Properties {
-	}
-	class EncryptedSecretValuesOutput {
-		constructor(p?: proto.EncryptedSecretValuesOutput.$Properties)
-		$unknowns?: Uint8Array[]
-		encryptedDevicePrivateKey: Uint8Array
-		encryptedObliviousValidationTokenBlob: Uint8Array
-		encryptedEpochStoragePrivateKey: Uint8Array
-		encryptedOcmfClientState: Uint8Array
-		encryptedMailboxRootKeyBlob: Uint8Array
-		encryptedEpochAnonId: Uint8Array
-		encryptedEpochRootKey: Uint8Array
-		static create(properties: proto.EncryptedSecretValuesOutput.$Shape): proto.EncryptedSecretValuesOutput & proto.EncryptedSecretValuesOutput.$Shape
-		static create(properties?: proto.EncryptedSecretValuesOutput.$Properties): proto.EncryptedSecretValuesOutput
-		static encode(m: proto.EncryptedSecretValuesOutput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.EncryptedSecretValuesOutput & proto.EncryptedSecretValuesOutput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.EncryptedSecretValuesOutput
-		static toObject(m: proto.EncryptedSecretValuesOutput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace EncryptedSecretValuesOutput {
-		interface $Properties {
-			encryptedDevicePrivateKey?: (Uint8Array|null)
-			encryptedObliviousValidationTokenBlob?: (Uint8Array|null)
-			encryptedEpochStoragePrivateKey?: (Uint8Array|null)
-			encryptedOcmfClientState?: (Uint8Array|null)
-			encryptedMailboxRootKeyBlob?: (Uint8Array|null)
-			encryptedEpochAnonId?: (Uint8Array|null)
-			encryptedEpochRootKey?: (Uint8Array|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.EncryptedSecretValuesOutput.$Properties
-	}
 	interface IEphemeralSetting extends proto.EphemeralSetting.$Properties {
 	}
 	class EphemeralSetting {
@@ -6993,106 +6231,6 @@ export namespace proto {
 			$unknowns?: Uint8Array[]
 		}
 		type $Shape = proto.EphemeralSetting.$Properties
-	}
-	interface IEpoch0Output extends proto.Epoch0Output.$Properties {
-	}
-	class Epoch0Output {
-		constructor(p?: proto.Epoch0Output.$Properties)
-		$unknowns?: Uint8Array[]
-		epochAnonId: number
-		epochRootKeyFingerprint: Uint8Array
-		epochRootKey: Uint8Array
-		static create(properties: proto.Epoch0Output.$Shape): proto.Epoch0Output & proto.Epoch0Output.$Shape
-		static create(properties?: proto.Epoch0Output.$Properties): proto.Epoch0Output
-		static encode(m: proto.Epoch0Output.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.Epoch0Output & proto.Epoch0Output.$Shape
-		static fromObject(d: { [k: string]: any }): proto.Epoch0Output
-		static toObject(m: proto.Epoch0Output, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace Epoch0Output {
-		interface $Properties {
-			epochAnonId?: (number|null)
-			epochRootKeyFingerprint?: (Uint8Array|null)
-			epochRootKey?: (Uint8Array|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.Epoch0Output.$Properties
-	}
-	interface IEpochDerivationEdge extends proto.EpochDerivationEdge.$Properties {
-	}
-	class EpochDerivationEdge {
-		constructor(p?: proto.EpochDerivationEdge.$Properties)
-		$unknowns?: Uint8Array[]
-		fromEpoch?: (proto.EpochIds.$Properties|null)
-		toEpoch?: (proto.EpochIds.$Properties|null)
-		forwardEdge?: (proto.ForwardEdgeInput.$Properties|null)
-		backwardEdge?: (Uint8Array|null)
-		static create(properties: proto.EpochDerivationEdge.$Shape): proto.EpochDerivationEdge & proto.EpochDerivationEdge.$Shape
-		static create(properties?: proto.EpochDerivationEdge.$Properties): proto.EpochDerivationEdge
-		static encode(m: proto.EpochDerivationEdge.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.EpochDerivationEdge & proto.EpochDerivationEdge.$Shape
-		static fromObject(d: { [k: string]: any }): proto.EpochDerivationEdge
-		static toObject(m: proto.EpochDerivationEdge, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace EpochDerivationEdge {
-		interface $Properties {
-			fromEpoch?: (proto.EpochIds.$Properties|null)
-			toEpoch?: (proto.EpochIds.$Properties|null)
-			forwardEdge?: (proto.ForwardEdgeInput.$Properties|null)
-			backwardEdge?: (Uint8Array|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.EpochDerivationEdge.$Properties
-	}
-	interface IEpochIds extends proto.EpochIds.$Properties {
-	}
-	class EpochIds {
-		constructor(p?: proto.EpochIds.$Properties)
-		$unknowns?: Uint8Array[]
-		serverEpochId: (number|Long)
-		epochAnonId: number
-		static create(properties: proto.EpochIds.$Shape): proto.EpochIds & proto.EpochIds.$Shape
-		static create(properties?: proto.EpochIds.$Properties): proto.EpochIds
-		static encode(m: proto.EpochIds.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.EpochIds & proto.EpochIds.$Shape
-		static fromObject(d: { [k: string]: any }): proto.EpochIds
-		static toObject(m: proto.EpochIds, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace EpochIds {
-		interface $Properties {
-			serverEpochId?: (number|Long|null)
-			epochAnonId?: (number|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.EpochIds.$Properties
-	}
-	interface IEpochKey extends proto.EpochKey.$Properties {
-	}
-	class EpochKey {
-		constructor(p?: proto.EpochKey.$Properties)
-		$unknowns?: Uint8Array[]
-		serverEpochId: (number|Long)
-		epochAnonId: number
-		epochRootKey: Uint8Array
-		static create(properties: proto.EpochKey.$Shape): proto.EpochKey & proto.EpochKey.$Shape
-		static create(properties?: proto.EpochKey.$Properties): proto.EpochKey
-		static encode(m: proto.EpochKey.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.EpochKey & proto.EpochKey.$Shape
-		static fromObject(d: { [k: string]: any }): proto.EpochKey
-		static toObject(m: proto.EpochKey, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace EpochKey {
-		interface $Properties {
-			serverEpochId?: (number|Long|null)
-			epochAnonId?: (number|null)
-			epochRootKey?: (Uint8Array|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.EpochKey.$Properties
 	}
 	interface IEventAdditionalMetadata extends proto.EventAdditionalMetadata.$Properties {
 	}
@@ -7244,28 +6382,36 @@ export namespace proto {
 		}
 		type $Shape = proto.Field.$Properties
 	}
-	interface IForwardEdgeInput extends proto.ForwardEdgeInput.$Properties {
+	interface IFingerprintData extends proto.FingerprintData.$Properties {
 	}
-	class ForwardEdgeInput {
-		constructor(p?: proto.ForwardEdgeInput.$Properties)
+	class FingerprintData {
+		constructor(p?: proto.FingerprintData.$Properties)
 		$unknowns?: Uint8Array[]
-		encryptedEntropy: Uint8Array
-		authPublicKey: Uint8Array
-		static create(properties: proto.ForwardEdgeInput.$Shape): proto.ForwardEdgeInput & proto.ForwardEdgeInput.$Shape
-		static create(properties?: proto.ForwardEdgeInput.$Properties): proto.ForwardEdgeInput
-		static encode(m: proto.ForwardEdgeInput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.ForwardEdgeInput & proto.ForwardEdgeInput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.ForwardEdgeInput
-		static toObject(m: proto.ForwardEdgeInput, o?: PBConversionOptions): { [k: string]: any }
+		publicKey?: (Uint8Array|null)
+		pnIdentifier?: (Uint8Array|null)
+		lidIdentifier?: (Uint8Array|null)
+		usernameIdentifier?: (Uint8Array|null)
+		hostedState?: (proto.HostedState|null)
+		hashedPublicKey?: (Uint8Array|null)
+		static create(properties: proto.FingerprintData.$Shape): proto.FingerprintData & proto.FingerprintData.$Shape
+		static create(properties?: proto.FingerprintData.$Properties): proto.FingerprintData
+		static encode(m: proto.FingerprintData.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.FingerprintData & proto.FingerprintData.$Shape
+		static fromObject(d: { [k: string]: any }): proto.FingerprintData
+		static toObject(m: proto.FingerprintData, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
-	namespace ForwardEdgeInput {
+	namespace FingerprintData {
 		interface $Properties {
-			encryptedEntropy?: (Uint8Array|null)
-			authPublicKey?: (Uint8Array|null)
+			publicKey?: (Uint8Array|null)
+			pnIdentifier?: (Uint8Array|null)
+			lidIdentifier?: (Uint8Array|null)
+			usernameIdentifier?: (Uint8Array|null)
+			hostedState?: (proto.HostedState|null)
+			hashedPublicKey?: (Uint8Array|null)
 			$unknowns?: Uint8Array[]
 		}
-		type $Shape = proto.ForwardEdgeInput.$Properties
+		type $Shape = proto.FingerprintData.$Properties
 	}
 	interface IForwardedAIBotMessageInfo extends proto.ForwardedAIBotMessageInfo.$Properties {
 	}
@@ -7495,6 +6641,123 @@ export namespace proto {
 			$unknowns?: Uint8Array[]
 		}
 		type $Shape = proto.GroupHistoryWithMessageBytes.$Properties
+	}
+	interface IGroupMembershipForm extends proto.GroupMembershipForm.$Properties {
+	}
+	class GroupMembershipForm {
+		constructor(p?: proto.GroupMembershipForm.$Properties)
+		$unknowns?: Uint8Array[]
+		questions: proto.GroupMembershipFormQuestion.$Properties[]
+		memberTagPrompt?: (string|null)
+		schemaVersion?: (number|null)
+		static create(properties: proto.GroupMembershipForm.$Shape): proto.GroupMembershipForm & proto.GroupMembershipForm.$Shape
+		static create(properties?: proto.GroupMembershipForm.$Properties): proto.GroupMembershipForm
+		static encode(m: proto.GroupMembershipForm.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.GroupMembershipForm & proto.GroupMembershipForm.$Shape
+		static fromObject(d: { [k: string]: any }): proto.GroupMembershipForm
+		static toObject(m: proto.GroupMembershipForm, o?: PBConversionOptions): { [k: string]: any }
+		toJSON(): { [k: string]: any }
+	}
+	namespace GroupMembershipForm {
+		interface $Properties {
+			questions?: (proto.GroupMembershipFormQuestion.$Properties[]|null)
+			memberTagPrompt?: (string|null)
+			schemaVersion?: (number|null)
+			$unknowns?: Uint8Array[]
+		}
+		type $Shape = proto.GroupMembershipForm.$Properties
+	}
+	interface IGroupMembershipFormMemberTagAnswer extends proto.GroupMembershipFormMemberTagAnswer.$Properties {
+	}
+	class GroupMembershipFormMemberTagAnswer {
+		constructor(p?: proto.GroupMembershipFormMemberTagAnswer.$Properties)
+		$unknowns?: Uint8Array[]
+		prompt?: (string|null)
+		memberTag?: (string|null)
+		static create(properties: proto.GroupMembershipFormMemberTagAnswer.$Shape): proto.GroupMembershipFormMemberTagAnswer & proto.GroupMembershipFormMemberTagAnswer.$Shape
+		static create(properties?: proto.GroupMembershipFormMemberTagAnswer.$Properties): proto.GroupMembershipFormMemberTagAnswer
+		static encode(m: proto.GroupMembershipFormMemberTagAnswer.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.GroupMembershipFormMemberTagAnswer & proto.GroupMembershipFormMemberTagAnswer.$Shape
+		static fromObject(d: { [k: string]: any }): proto.GroupMembershipFormMemberTagAnswer
+		static toObject(m: proto.GroupMembershipFormMemberTagAnswer, o?: PBConversionOptions): { [k: string]: any }
+		toJSON(): { [k: string]: any }
+	}
+	namespace GroupMembershipFormMemberTagAnswer {
+		interface $Properties {
+			prompt?: (string|null)
+			memberTag?: (string|null)
+			$unknowns?: Uint8Array[]
+		}
+		type $Shape = proto.GroupMembershipFormMemberTagAnswer.$Properties
+	}
+	interface IGroupMembershipFormQuestion extends proto.GroupMembershipFormQuestion.$Properties {
+	}
+	class GroupMembershipFormQuestion {
+		constructor(p?: proto.GroupMembershipFormQuestion.$Properties)
+		$unknowns?: Uint8Array[]
+		text?: (string|null)
+		static create(properties: proto.GroupMembershipFormQuestion.$Shape): proto.GroupMembershipFormQuestion & proto.GroupMembershipFormQuestion.$Shape
+		static create(properties?: proto.GroupMembershipFormQuestion.$Properties): proto.GroupMembershipFormQuestion
+		static encode(m: proto.GroupMembershipFormQuestion.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.GroupMembershipFormQuestion & proto.GroupMembershipFormQuestion.$Shape
+		static fromObject(d: { [k: string]: any }): proto.GroupMembershipFormQuestion
+		static toObject(m: proto.GroupMembershipFormQuestion, o?: PBConversionOptions): { [k: string]: any }
+		toJSON(): { [k: string]: any }
+	}
+	namespace GroupMembershipFormQuestion {
+		interface $Properties {
+			text?: (string|null)
+			$unknowns?: Uint8Array[]
+		}
+		type $Shape = proto.GroupMembershipFormQuestion.$Properties
+	}
+	interface IGroupMembershipFormQuestionAnswer extends proto.GroupMembershipFormQuestionAnswer.$Properties {
+	}
+	class GroupMembershipFormQuestionAnswer {
+		constructor(p?: proto.GroupMembershipFormQuestionAnswer.$Properties)
+		$unknowns?: Uint8Array[]
+		question?: (proto.GroupMembershipFormQuestion.$Properties|null)
+		answer?: (string|null)
+		static create(properties: proto.GroupMembershipFormQuestionAnswer.$Shape): proto.GroupMembershipFormQuestionAnswer & proto.GroupMembershipFormQuestionAnswer.$Shape
+		static create(properties?: proto.GroupMembershipFormQuestionAnswer.$Properties): proto.GroupMembershipFormQuestionAnswer
+		static encode(m: proto.GroupMembershipFormQuestionAnswer.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.GroupMembershipFormQuestionAnswer & proto.GroupMembershipFormQuestionAnswer.$Shape
+		static fromObject(d: { [k: string]: any }): proto.GroupMembershipFormQuestionAnswer
+		static toObject(m: proto.GroupMembershipFormQuestionAnswer, o?: PBConversionOptions): { [k: string]: any }
+		toJSON(): { [k: string]: any }
+	}
+	namespace GroupMembershipFormQuestionAnswer {
+		interface $Properties {
+			question?: (proto.GroupMembershipFormQuestion.$Properties|null)
+			answer?: (string|null)
+			$unknowns?: Uint8Array[]
+		}
+		type $Shape = proto.GroupMembershipFormQuestionAnswer.$Properties
+	}
+	interface IGroupMembershipFormSubmission extends proto.GroupMembershipFormSubmission.$Properties {
+	}
+	class GroupMembershipFormSubmission {
+		constructor(p?: proto.GroupMembershipFormSubmission.$Properties)
+		$unknowns?: Uint8Array[]
+		questionAnswers: proto.GroupMembershipFormQuestionAnswer.$Properties[]
+		memberTagAnswer?: (proto.GroupMembershipFormMemberTagAnswer.$Properties|null)
+		schemaVersion?: (number|null)
+		static create(properties: proto.GroupMembershipFormSubmission.$Shape): proto.GroupMembershipFormSubmission & proto.GroupMembershipFormSubmission.$Shape
+		static create(properties?: proto.GroupMembershipFormSubmission.$Properties): proto.GroupMembershipFormSubmission
+		static encode(m: proto.GroupMembershipFormSubmission.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.GroupMembershipFormSubmission & proto.GroupMembershipFormSubmission.$Shape
+		static fromObject(d: { [k: string]: any }): proto.GroupMembershipFormSubmission
+		static toObject(m: proto.GroupMembershipFormSubmission, o?: PBConversionOptions): { [k: string]: any }
+		toJSON(): { [k: string]: any }
+	}
+	namespace GroupMembershipFormSubmission {
+		interface $Properties {
+			questionAnswers?: (proto.GroupMembershipFormQuestionAnswer.$Properties[]|null)
+			memberTagAnswer?: (proto.GroupMembershipFormMemberTagAnswer.$Properties|null)
+			schemaVersion?: (number|null)
+			$unknowns?: Uint8Array[]
+		}
+		type $Shape = proto.GroupMembershipFormSubmission.$Properties
 	}
 	interface IGroupMention extends proto.GroupMention.$Properties {
 	}
@@ -7934,6 +7197,10 @@ export namespace proto {
 		  msgOrderId?: number|Long|null
 		  $unknowns?: Uint8Array[]
 		}
+	}
+	enum HostedState {
+		E2EE = 0,
+		HOSTED = 1
 	}
 	interface IHydratedTemplateButton extends proto.HydratedTemplateButton.$Properties {
 	}
@@ -8434,76 +7701,6 @@ export namespace proto {
 			$unknowns?: Uint8Array[]
 		}
 		type $Shape = proto.LIDMigrationMappingSyncMessage.$Properties
-	}
-	interface ILabyrinthWaCommand extends proto.LabyrinthWaCommand.$Properties {
-	}
-	class LabyrinthWaCommand {
-		constructor(p?: proto.LabyrinthWaCommand.$Properties)
-		$unknowns?: Uint8Array[]
-		createBackupInput?: (proto.CreateBackupInput.$Properties|null)
-		encryptMessageInput?: (proto.EncryptMessageInput.$Properties|null)
-		decryptMessageInput?: (proto.DecryptMessageInput.$Properties|null)
-		orfThreadIdInput?: (proto.OrfThreadIdInput.$Properties|null)
-		deriveMessageKeyInput?: (proto.DeriveMessageKeyInput.$Properties|null)
-		rotateEpochInput?: (proto.RotateEpochInput.$Properties|null)
-		deriveVirtualDeviceIdInput?: (proto.DeriveVirtualDeviceIdInput.$Properties|null)
-		prepareAddDeviceInput?: (proto.PrepareAddDeviceInput.$Properties|null)
-		computeClientSealTokenInput?: (proto.ComputeClientSealTokenInput.$Properties|null)
-		openSealedThreadIdInput?: (proto.OpenSealedThreadIdInput.$Properties|null)
-		deriveEpochsInput?: (proto.DeriveEpochsInput.$Properties|null)
-		sealThreadIdInput?: (proto.SealThreadIdInput.$Properties|null)
-		prepareAddPeerDeviceInput?: (proto.PrepareAddPeerDeviceInput.$Properties|null)
-		companionTestMessageThreadIdInput?: (proto.CompanionTestMessageThreadIdInput.$Properties|null)
-		parseCompanionTestMessageInput?: (proto.ParseCompanionTestMessageInput.$Properties|null)
-		commandInput?: ("createBackupInput"|"encryptMessageInput"|"decryptMessageInput"|"orfThreadIdInput"|"deriveMessageKeyInput"|"rotateEpochInput"|"deriveVirtualDeviceIdInput"|"prepareAddDeviceInput"|"computeClientSealTokenInput"|"openSealedThreadIdInput"|"deriveEpochsInput"|"sealThreadIdInput"|"prepareAddPeerDeviceInput"|"companionTestMessageThreadIdInput"|"parseCompanionTestMessageInput")
-		static create(properties: proto.LabyrinthWaCommand.$Shape): proto.LabyrinthWaCommand & proto.LabyrinthWaCommand.$Shape
-		static create(properties?: proto.LabyrinthWaCommand.$Properties): proto.LabyrinthWaCommand
-		static encode(m: proto.LabyrinthWaCommand.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.LabyrinthWaCommand & proto.LabyrinthWaCommand.$Shape
-		static fromObject(d: { [k: string]: any }): proto.LabyrinthWaCommand
-		static toObject(m: proto.LabyrinthWaCommand, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace LabyrinthWaCommand {
-		interface $Properties {
-			createBackupInput?: (proto.CreateBackupInput.$Properties|null)
-			encryptMessageInput?: (proto.EncryptMessageInput.$Properties|null)
-			decryptMessageInput?: (proto.DecryptMessageInput.$Properties|null)
-			orfThreadIdInput?: (proto.OrfThreadIdInput.$Properties|null)
-			deriveMessageKeyInput?: (proto.DeriveMessageKeyInput.$Properties|null)
-			rotateEpochInput?: (proto.RotateEpochInput.$Properties|null)
-			deriveVirtualDeviceIdInput?: (proto.DeriveVirtualDeviceIdInput.$Properties|null)
-			prepareAddDeviceInput?: (proto.PrepareAddDeviceInput.$Properties|null)
-			computeClientSealTokenInput?: (proto.ComputeClientSealTokenInput.$Properties|null)
-			openSealedThreadIdInput?: (proto.OpenSealedThreadIdInput.$Properties|null)
-			deriveEpochsInput?: (proto.DeriveEpochsInput.$Properties|null)
-			sealThreadIdInput?: (proto.SealThreadIdInput.$Properties|null)
-			prepareAddPeerDeviceInput?: (proto.PrepareAddPeerDeviceInput.$Properties|null)
-			companionTestMessageThreadIdInput?: (proto.CompanionTestMessageThreadIdInput.$Properties|null)
-			parseCompanionTestMessageInput?: (proto.ParseCompanionTestMessageInput.$Properties|null)
-			commandInput?: ("createBackupInput"|"encryptMessageInput"|"decryptMessageInput"|"orfThreadIdInput"|"deriveMessageKeyInput"|"rotateEpochInput"|"deriveVirtualDeviceIdInput"|"prepareAddDeviceInput"|"computeClientSealTokenInput"|"openSealedThreadIdInput"|"deriveEpochsInput"|"sealThreadIdInput"|"prepareAddPeerDeviceInput"|"companionTestMessageThreadIdInput"|"parseCompanionTestMessageInput")
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = {
-		  createBackupInput?: proto.CreateBackupInput.$Shape|null
-		  encryptMessageInput?: proto.EncryptMessageInput.$Shape|null
-		  decryptMessageInput?: proto.DecryptMessageInput.$Shape|null
-		  orfThreadIdInput?: proto.OrfThreadIdInput.$Shape|null
-		  deriveMessageKeyInput?: proto.DeriveMessageKeyInput.$Shape|null
-		  rotateEpochInput?: proto.RotateEpochInput.$Shape|null
-		  deriveVirtualDeviceIdInput?: proto.DeriveVirtualDeviceIdInput.$Shape|null
-		  prepareAddDeviceInput?: proto.PrepareAddDeviceInput.$Shape|null
-		  computeClientSealTokenInput?: proto.ComputeClientSealTokenInput.$Shape|null
-		  openSealedThreadIdInput?: proto.OpenSealedThreadIdInput.$Shape|null
-		  deriveEpochsInput?: proto.DeriveEpochsInput.$Shape|null
-		  sealThreadIdInput?: proto.SealThreadIdInput.$Shape|null
-		  prepareAddPeerDeviceInput?: proto.PrepareAddPeerDeviceInput.$Shape|null
-		  companionTestMessageThreadIdInput?: proto.CompanionTestMessageThreadIdInput.$Shape|null
-		  parseCompanionTestMessageInput?: proto.ParseCompanionTestMessageInput.$Shape|null
-		  $unknowns?: Uint8Array[]
-		} & (
-		  ({ commandInput?: undefined; createBackupInput?: null; encryptMessageInput?: null; decryptMessageInput?: null; orfThreadIdInput?: null; deriveMessageKeyInput?: null; rotateEpochInput?: null; deriveVirtualDeviceIdInput?: null; prepareAddDeviceInput?: null; computeClientSealTokenInput?: null; openSealedThreadIdInput?: null; deriveEpochsInput?: null; sealThreadIdInput?: null; prepareAddPeerDeviceInput?: null; companionTestMessageThreadIdInput?: null; parseCompanionTestMessageInput?: null }|{ commandInput?: "createBackupInput"; createBackupInput: proto.CreateBackupInput.$Shape; encryptMessageInput?: null; decryptMessageInput?: null; orfThreadIdInput?: null; deriveMessageKeyInput?: null; rotateEpochInput?: null; deriveVirtualDeviceIdInput?: null; prepareAddDeviceInput?: null; computeClientSealTokenInput?: null; openSealedThreadIdInput?: null; deriveEpochsInput?: null; sealThreadIdInput?: null; prepareAddPeerDeviceInput?: null; companionTestMessageThreadIdInput?: null; parseCompanionTestMessageInput?: null }|{ commandInput?: "encryptMessageInput"; createBackupInput?: null; encryptMessageInput: proto.EncryptMessageInput.$Shape; decryptMessageInput?: null; orfThreadIdInput?: null; deriveMessageKeyInput?: null; rotateEpochInput?: null; deriveVirtualDeviceIdInput?: null; prepareAddDeviceInput?: null; computeClientSealTokenInput?: null; openSealedThreadIdInput?: null; deriveEpochsInput?: null; sealThreadIdInput?: null; prepareAddPeerDeviceInput?: null; companionTestMessageThreadIdInput?: null; parseCompanionTestMessageInput?: null }|{ commandInput?: "decryptMessageInput"; createBackupInput?: null; encryptMessageInput?: null; decryptMessageInput: proto.DecryptMessageInput.$Shape; orfThreadIdInput?: null; deriveMessageKeyInput?: null; rotateEpochInput?: null; deriveVirtualDeviceIdInput?: null; prepareAddDeviceInput?: null; computeClientSealTokenInput?: null; openSealedThreadIdInput?: null; deriveEpochsInput?: null; sealThreadIdInput?: null; prepareAddPeerDeviceInput?: null; companionTestMessageThreadIdInput?: null; parseCompanionTestMessageInput?: null }|{ commandInput?: "orfThreadIdInput"; createBackupInput?: null; encryptMessageInput?: null; decryptMessageInput?: null; orfThreadIdInput: proto.OrfThreadIdInput.$Shape; deriveMessageKeyInput?: null; rotateEpochInput?: null; deriveVirtualDeviceIdInput?: null; prepareAddDeviceInput?: null; computeClientSealTokenInput?: null; openSealedThreadIdInput?: null; deriveEpochsInput?: null; sealThreadIdInput?: null; prepareAddPeerDeviceInput?: null; companionTestMessageThreadIdInput?: null; parseCompanionTestMessageInput?: null }|{ commandInput?: "deriveMessageKeyInput"; createBackupInput?: null; encryptMessageInput?: null; decryptMessageInput?: null; orfThreadIdInput?: null; deriveMessageKeyInput: proto.DeriveMessageKeyInput.$Shape; rotateEpochInput?: null; deriveVirtualDeviceIdInput?: null; prepareAddDeviceInput?: null; computeClientSealTokenInput?: null; openSealedThreadIdInput?: null; deriveEpochsInput?: null; sealThreadIdInput?: null; prepareAddPeerDeviceInput?: null; companionTestMessageThreadIdInput?: null; parseCompanionTestMessageInput?: null }|{ commandInput?: "rotateEpochInput"; createBackupInput?: null; encryptMessageInput?: null; decryptMessageInput?: null; orfThreadIdInput?: null; deriveMessageKeyInput?: null; rotateEpochInput: proto.RotateEpochInput.$Shape; deriveVirtualDeviceIdInput?: null; prepareAddDeviceInput?: null; computeClientSealTokenInput?: null; openSealedThreadIdInput?: null; deriveEpochsInput?: null; sealThreadIdInput?: null; prepareAddPeerDeviceInput?: null; companionTestMessageThreadIdInput?: null; parseCompanionTestMessageInput?: null }|{ commandInput?: "deriveVirtualDeviceIdInput"; createBackupInput?: null; encryptMessageInput?: null; decryptMessageInput?: null; orfThreadIdInput?: null; deriveMessageKeyInput?: null; rotateEpochInput?: null; deriveVirtualDeviceIdInput: proto.DeriveVirtualDeviceIdInput.$Shape; prepareAddDeviceInput?: null; computeClientSealTokenInput?: null; openSealedThreadIdInput?: null; deriveEpochsInput?: null; sealThreadIdInput?: null; prepareAddPeerDeviceInput?: null; companionTestMessageThreadIdInput?: null; parseCompanionTestMessageInput?: null }|{ commandInput?: "prepareAddDeviceInput"; createBackupInput?: null; encryptMessageInput?: null; decryptMessageInput?: null; orfThreadIdInput?: null; deriveMessageKeyInput?: null; rotateEpochInput?: null; deriveVirtualDeviceIdInput?: null; prepareAddDeviceInput: proto.PrepareAddDeviceInput.$Shape; computeClientSealTokenInput?: null; openSealedThreadIdInput?: null; deriveEpochsInput?: null; sealThreadIdInput?: null; prepareAddPeerDeviceInput?: null; companionTestMessageThreadIdInput?: null; parseCompanionTestMessageInput?: null }|{ commandInput?: "computeClientSealTokenInput"; createBackupInput?: null; encryptMessageInput?: null; decryptMessageInput?: null; orfThreadIdInput?: null; deriveMessageKeyInput?: null; rotateEpochInput?: null; deriveVirtualDeviceIdInput?: null; prepareAddDeviceInput?: null; computeClientSealTokenInput: proto.ComputeClientSealTokenInput.$Shape; openSealedThreadIdInput?: null; deriveEpochsInput?: null; sealThreadIdInput?: null; prepareAddPeerDeviceInput?: null; companionTestMessageThreadIdInput?: null; parseCompanionTestMessageInput?: null }|{ commandInput?: "openSealedThreadIdInput"; createBackupInput?: null; encryptMessageInput?: null; decryptMessageInput?: null; orfThreadIdInput?: null; deriveMessageKeyInput?: null; rotateEpochInput?: null; deriveVirtualDeviceIdInput?: null; prepareAddDeviceInput?: null; computeClientSealTokenInput?: null; openSealedThreadIdInput: proto.OpenSealedThreadIdInput.$Shape; deriveEpochsInput?: null; sealThreadIdInput?: null; prepareAddPeerDeviceInput?: null; companionTestMessageThreadIdInput?: null; parseCompanionTestMessageInput?: null }|{ commandInput?: "deriveEpochsInput"; createBackupInput?: null; encryptMessageInput?: null; decryptMessageInput?: null; orfThreadIdInput?: null; deriveMessageKeyInput?: null; rotateEpochInput?: null; deriveVirtualDeviceIdInput?: null; prepareAddDeviceInput?: null; computeClientSealTokenInput?: null; openSealedThreadIdInput?: null; deriveEpochsInput: proto.DeriveEpochsInput.$Shape; sealThreadIdInput?: null; prepareAddPeerDeviceInput?: null; companionTestMessageThreadIdInput?: null; parseCompanionTestMessageInput?: null }|{ commandInput?: "sealThreadIdInput"; createBackupInput?: null; encryptMessageInput?: null; decryptMessageInput?: null; orfThreadIdInput?: null; deriveMessageKeyInput?: null; rotateEpochInput?: null; deriveVirtualDeviceIdInput?: null; prepareAddDeviceInput?: null; computeClientSealTokenInput?: null; openSealedThreadIdInput?: null; deriveEpochsInput?: null; sealThreadIdInput: proto.SealThreadIdInput.$Shape; prepareAddPeerDeviceInput?: null; companionTestMessageThreadIdInput?: null; parseCompanionTestMessageInput?: null }|{ commandInput?: "prepareAddPeerDeviceInput"; createBackupInput?: null; encryptMessageInput?: null; decryptMessageInput?: null; orfThreadIdInput?: null; deriveMessageKeyInput?: null; rotateEpochInput?: null; deriveVirtualDeviceIdInput?: null; prepareAddDeviceInput?: null; computeClientSealTokenInput?: null; openSealedThreadIdInput?: null; deriveEpochsInput?: null; sealThreadIdInput?: null; prepareAddPeerDeviceInput: proto.PrepareAddPeerDeviceInput.$Shape; companionTestMessageThreadIdInput?: null; parseCompanionTestMessageInput?: null }|{ commandInput?: "companionTestMessageThreadIdInput"; createBackupInput?: null; encryptMessageInput?: null; decryptMessageInput?: null; orfThreadIdInput?: null; deriveMessageKeyInput?: null; rotateEpochInput?: null; deriveVirtualDeviceIdInput?: null; prepareAddDeviceInput?: null; computeClientSealTokenInput?: null; openSealedThreadIdInput?: null; deriveEpochsInput?: null; sealThreadIdInput?: null; prepareAddPeerDeviceInput?: null; companionTestMessageThreadIdInput: proto.CompanionTestMessageThreadIdInput.$Shape; parseCompanionTestMessageInput?: null }|{ commandInput?: "parseCompanionTestMessageInput"; createBackupInput?: null; encryptMessageInput?: null; decryptMessageInput?: null; orfThreadIdInput?: null; deriveMessageKeyInput?: null; rotateEpochInput?: null; deriveVirtualDeviceIdInput?: null; prepareAddDeviceInput?: null; computeClientSealTokenInput?: null; openSealedThreadIdInput?: null; deriveEpochsInput?: null; sealThreadIdInput?: null; prepareAddPeerDeviceInput?: null; companionTestMessageThreadIdInput?: null; parseCompanionTestMessageInput: proto.ParseCompanionTestMessageInput.$Shape })
-		)
 	}
 	interface ILegacyMessage extends proto.LegacyMessage.$Properties {
 	}
@@ -11885,6 +11082,7 @@ export namespace proto {
 			videoContentUrl?: (string|null)
 			musicMetadata?: (proto.EmbeddedMusic.$Properties|null)
 			videoContentCaption?: (string|null)
+			videoId?: (string|null)
 			static create(properties: proto.Message.LinkPreviewMetadata.$Shape): proto.Message.LinkPreviewMetadata & proto.Message.LinkPreviewMetadata.$Shape
 			static create(properties?: proto.Message.LinkPreviewMetadata.$Properties): proto.Message.LinkPreviewMetadata
 			static encode(m: proto.Message.LinkPreviewMetadata.$Properties, w?: PBWriter): PBWriter
@@ -11904,6 +11102,7 @@ export namespace proto {
 				videoContentUrl?: (string|null)
 				musicMetadata?: (proto.EmbeddedMusic.$Properties|null)
 				videoContentCaption?: (string|null)
+				videoId?: (string|null)
 				$unknowns?: Uint8Array[]
 			}
 			type $Shape = proto.Message.LinkPreviewMetadata.$Properties
@@ -16693,160 +15892,6 @@ export namespace proto {
 		  $unknowns?: Uint8Array[]
 		}
 	}
-	interface IOpenSealedThreadIdInput extends proto.OpenSealedThreadIdInput.$Properties {
-	}
-	class OpenSealedThreadIdInput {
-		constructor(p?: proto.OpenSealedThreadIdInput.$Properties)
-		$unknowns?: Uint8Array[]
-		backupId: (number|Long)
-		sealedThreadId: Uint8Array
-		epochs: proto.EpochKey.$Properties[]
-		static create(properties: proto.OpenSealedThreadIdInput.$Shape): proto.OpenSealedThreadIdInput & proto.OpenSealedThreadIdInput.$Shape
-		static create(properties?: proto.OpenSealedThreadIdInput.$Properties): proto.OpenSealedThreadIdInput
-		static encode(m: proto.OpenSealedThreadIdInput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.OpenSealedThreadIdInput & proto.OpenSealedThreadIdInput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.OpenSealedThreadIdInput
-		static toObject(m: proto.OpenSealedThreadIdInput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace OpenSealedThreadIdInput {
-		interface $Properties {
-			backupId?: (number|Long|null)
-			sealedThreadId?: (Uint8Array|null)
-			epochs?: (proto.EpochKey.$Properties[]|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.OpenSealedThreadIdInput.$Properties
-	}
-	interface IOpenSealedThreadIdOutput extends proto.OpenSealedThreadIdOutput.$Properties {
-	}
-	class OpenSealedThreadIdOutput {
-		constructor(p?: proto.OpenSealedThreadIdOutput.$Properties)
-		$unknowns?: Uint8Array[]
-		success?: (proto.OpenSealedThreadIdSuccess.$Properties|null)
-		error?: (string|null)
-		result?: ("success"|"error")
-		static create(properties: proto.OpenSealedThreadIdOutput.$Shape): proto.OpenSealedThreadIdOutput & proto.OpenSealedThreadIdOutput.$Shape
-		static create(properties?: proto.OpenSealedThreadIdOutput.$Properties): proto.OpenSealedThreadIdOutput
-		static encode(m: proto.OpenSealedThreadIdOutput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.OpenSealedThreadIdOutput & proto.OpenSealedThreadIdOutput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.OpenSealedThreadIdOutput
-		static toObject(m: proto.OpenSealedThreadIdOutput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace OpenSealedThreadIdOutput {
-		interface $Properties {
-			success?: (proto.OpenSealedThreadIdSuccess.$Properties|null)
-			error?: (string|null)
-			result?: ("success"|"error")
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = {
-		  success?: proto.OpenSealedThreadIdSuccess.$Shape|null
-		  error?: string|null
-		  $unknowns?: Uint8Array[]
-		} & (
-		  ({ result?: undefined; success?: null; error?: null }|{ result?: "success"; success: proto.OpenSealedThreadIdSuccess.$Shape; error?: null }|{ result?: "error"; success?: null; error: string })
-		)
-	}
-	interface IOpenSealedThreadIdSuccess extends proto.OpenSealedThreadIdSuccess.$Properties {
-	}
-	class OpenSealedThreadIdSuccess {
-		constructor(p?: proto.OpenSealedThreadIdSuccess.$Properties)
-		$unknowns?: Uint8Array[]
-		threadId: string
-		sealEpochAnonId: number
-		static create(properties: proto.OpenSealedThreadIdSuccess.$Shape): proto.OpenSealedThreadIdSuccess & proto.OpenSealedThreadIdSuccess.$Shape
-		static create(properties?: proto.OpenSealedThreadIdSuccess.$Properties): proto.OpenSealedThreadIdSuccess
-		static encode(m: proto.OpenSealedThreadIdSuccess.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.OpenSealedThreadIdSuccess & proto.OpenSealedThreadIdSuccess.$Shape
-		static fromObject(d: { [k: string]: any }): proto.OpenSealedThreadIdSuccess
-		static toObject(m: proto.OpenSealedThreadIdSuccess, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace OpenSealedThreadIdSuccess {
-		interface $Properties {
-			threadId?: (string|null)
-			sealEpochAnonId?: (number|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.OpenSealedThreadIdSuccess.$Properties
-	}
-	interface IOrfThreadIdInput extends proto.OrfThreadIdInput.$Properties {
-	}
-	class OrfThreadIdInput {
-		constructor(p?: proto.OrfThreadIdInput.$Properties)
-		$unknowns?: Uint8Array[]
-		orfClientState: Uint8Array
-		threadId: string
-		static create(properties: proto.OrfThreadIdInput.$Shape): proto.OrfThreadIdInput & proto.OrfThreadIdInput.$Shape
-		static create(properties?: proto.OrfThreadIdInput.$Properties): proto.OrfThreadIdInput
-		static encode(m: proto.OrfThreadIdInput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.OrfThreadIdInput & proto.OrfThreadIdInput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.OrfThreadIdInput
-		static toObject(m: proto.OrfThreadIdInput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace OrfThreadIdInput {
-		interface $Properties {
-			orfClientState?: (Uint8Array|null)
-			threadId?: (string|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.OrfThreadIdInput.$Properties
-	}
-	interface IOrfThreadIdOutput extends proto.OrfThreadIdOutput.$Properties {
-	}
-	class OrfThreadIdOutput {
-		constructor(p?: proto.OrfThreadIdOutput.$Properties)
-		$unknowns?: Uint8Array[]
-		success?: (proto.OrfThreadIdSuccess.$Properties|null)
-		error?: (string|null)
-		result?: ("success"|"error")
-		static create(properties: proto.OrfThreadIdOutput.$Shape): proto.OrfThreadIdOutput & proto.OrfThreadIdOutput.$Shape
-		static create(properties?: proto.OrfThreadIdOutput.$Properties): proto.OrfThreadIdOutput
-		static encode(m: proto.OrfThreadIdOutput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.OrfThreadIdOutput & proto.OrfThreadIdOutput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.OrfThreadIdOutput
-		static toObject(m: proto.OrfThreadIdOutput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace OrfThreadIdOutput {
-		interface $Properties {
-			success?: (proto.OrfThreadIdSuccess.$Properties|null)
-			error?: (string|null)
-			result?: ("success"|"error")
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = {
-		  success?: proto.OrfThreadIdSuccess.$Shape|null
-		  error?: string|null
-		  $unknowns?: Uint8Array[]
-		} & (
-		  ({ result?: undefined; success?: null; error?: null }|{ result?: "success"; success: proto.OrfThreadIdSuccess.$Shape; error?: null }|{ result?: "error"; success?: null; error: string })
-		)
-	}
-	interface IOrfThreadIdSuccess extends proto.OrfThreadIdSuccess.$Properties {
-	}
-	class OrfThreadIdSuccess {
-		constructor(p?: proto.OrfThreadIdSuccess.$Properties)
-		$unknowns?: Uint8Array[]
-		orfThreadId: Uint8Array
-		static create(properties: proto.OrfThreadIdSuccess.$Shape): proto.OrfThreadIdSuccess & proto.OrfThreadIdSuccess.$Shape
-		static create(properties?: proto.OrfThreadIdSuccess.$Properties): proto.OrfThreadIdSuccess
-		static encode(m: proto.OrfThreadIdSuccess.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.OrfThreadIdSuccess & proto.OrfThreadIdSuccess.$Shape
-		static fromObject(d: { [k: string]: any }): proto.OrfThreadIdSuccess
-		static toObject(m: proto.OrfThreadIdSuccess, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace OrfThreadIdSuccess {
-		interface $Properties {
-			orfThreadId?: (Uint8Array|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.OrfThreadIdSuccess.$Properties
-	}
 	interface IPairingRequest extends proto.PairingRequest.$Properties {
 	}
 	class PairingRequest {
@@ -16871,79 +15916,6 @@ export namespace proto {
 			$unknowns?: Uint8Array[]
 		}
 		type $Shape = proto.PairingRequest.$Properties
-	}
-	interface IParseCompanionTestMessageInput extends proto.ParseCompanionTestMessageInput.$Properties {
-	}
-	class ParseCompanionTestMessageInput {
-		constructor(p?: proto.ParseCompanionTestMessageInput.$Properties)
-		$unknowns?: Uint8Array[]
-		plaintext: Uint8Array
-		static create(properties: proto.ParseCompanionTestMessageInput.$Shape): proto.ParseCompanionTestMessageInput & proto.ParseCompanionTestMessageInput.$Shape
-		static create(properties?: proto.ParseCompanionTestMessageInput.$Properties): proto.ParseCompanionTestMessageInput
-		static encode(m: proto.ParseCompanionTestMessageInput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.ParseCompanionTestMessageInput & proto.ParseCompanionTestMessageInput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.ParseCompanionTestMessageInput
-		static toObject(m: proto.ParseCompanionTestMessageInput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace ParseCompanionTestMessageInput {
-		interface $Properties {
-			plaintext?: (Uint8Array|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.ParseCompanionTestMessageInput.$Properties
-	}
-	interface IParseCompanionTestMessageOutput extends proto.ParseCompanionTestMessageOutput.$Properties {
-	}
-	class ParseCompanionTestMessageOutput {
-		constructor(p?: proto.ParseCompanionTestMessageOutput.$Properties)
-		$unknowns?: Uint8Array[]
-		success?: (proto.ParseCompanionTestMessageSuccess.$Properties|null)
-		error?: (string|null)
-		result?: ("success"|"error")
-		static create(properties: proto.ParseCompanionTestMessageOutput.$Shape): proto.ParseCompanionTestMessageOutput & proto.ParseCompanionTestMessageOutput.$Shape
-		static create(properties?: proto.ParseCompanionTestMessageOutput.$Properties): proto.ParseCompanionTestMessageOutput
-		static encode(m: proto.ParseCompanionTestMessageOutput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.ParseCompanionTestMessageOutput & proto.ParseCompanionTestMessageOutput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.ParseCompanionTestMessageOutput
-		static toObject(m: proto.ParseCompanionTestMessageOutput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace ParseCompanionTestMessageOutput {
-		interface $Properties {
-			success?: (proto.ParseCompanionTestMessageSuccess.$Properties|null)
-			error?: (string|null)
-			result?: ("success"|"error")
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = {
-		  success?: proto.ParseCompanionTestMessageSuccess.$Shape|null
-		  error?: string|null
-		  $unknowns?: Uint8Array[]
-		} & (
-		  ({ result?: undefined; success?: null; error?: null }|{ result?: "success"; success: proto.ParseCompanionTestMessageSuccess.$Shape; error?: null }|{ result?: "error"; success?: null; error: string })
-		)
-	}
-	interface IParseCompanionTestMessageSuccess extends proto.ParseCompanionTestMessageSuccess.$Properties {
-	}
-	class ParseCompanionTestMessageSuccess {
-		constructor(p?: proto.ParseCompanionTestMessageSuccess.$Properties)
-		$unknowns?: Uint8Array[]
-		createdAtMs: (number|Long)
-		static create(properties: proto.ParseCompanionTestMessageSuccess.$Shape): proto.ParseCompanionTestMessageSuccess & proto.ParseCompanionTestMessageSuccess.$Shape
-		static create(properties?: proto.ParseCompanionTestMessageSuccess.$Properties): proto.ParseCompanionTestMessageSuccess
-		static encode(m: proto.ParseCompanionTestMessageSuccess.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.ParseCompanionTestMessageSuccess & proto.ParseCompanionTestMessageSuccess.$Shape
-		static fromObject(d: { [k: string]: any }): proto.ParseCompanionTestMessageSuccess
-		static toObject(m: proto.ParseCompanionTestMessageSuccess, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace ParseCompanionTestMessageSuccess {
-		interface $Properties {
-			createdAtMs?: (number|Long|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.ParseCompanionTestMessageSuccess.$Properties
 	}
 	interface IPastParticipant extends proto.PastParticipant.$Properties {
 	}
@@ -17338,6 +16310,8 @@ export namespace proto {
 		pollInvalidated?: (boolean|null)
 		pollNameHashHistory: proto.PollAdditionalMetadata.PollNameHashHistoryEntry.$Properties[]
 		originalOptions: proto.Message.PollCreationMessage.Option.$Properties[]
+		pollOptionReplayEntries: proto.PollAdditionalMetadata.PollOptionReplayEntry.$Properties[]
+		pollOptionReplayBase?: (proto.PollAdditionalMetadata.PollOptionReplayBase.$Properties|null)
 		static create(properties: proto.PollAdditionalMetadata.$Shape): proto.PollAdditionalMetadata & proto.PollAdditionalMetadata.$Shape
 		static create(properties?: proto.PollAdditionalMetadata.$Properties): proto.PollAdditionalMetadata
 		static encode(m: proto.PollAdditionalMetadata.$Properties, w?: PBWriter): PBWriter
@@ -17351,6 +16325,8 @@ export namespace proto {
 			pollInvalidated?: (boolean|null)
 			pollNameHashHistory?: (proto.PollAdditionalMetadata.PollNameHashHistoryEntry.$Properties[]|null)
 			originalOptions?: (proto.Message.PollCreationMessage.Option.$Properties[]|null)
+			pollOptionReplayEntries?: (proto.PollAdditionalMetadata.PollOptionReplayEntry.$Properties[]|null)
+			pollOptionReplayBase?: (proto.PollAdditionalMetadata.PollOptionReplayBase.$Properties|null)
 			$unknowns?: Uint8Array[]
 		}
 		type $Shape = proto.PollAdditionalMetadata.$Properties
@@ -17376,6 +16352,93 @@ export namespace proto {
 				$unknowns?: Uint8Array[]
 			}
 			type $Shape = proto.PollAdditionalMetadata.PollNameHashHistoryEntry.$Properties
+		}
+		interface IPollOptionReplayBase extends proto.PollAdditionalMetadata.PollOptionReplayBase.$Properties {
+		}
+		class PollOptionReplayBase {
+			constructor(p?: proto.PollAdditionalMetadata.PollOptionReplayBase.$Properties)
+			$unknowns?: Uint8Array[]
+			boundaryTimestampMs?: (number|Long|null)
+			editTimestampMs?: (number|Long|null)
+			options: proto.PollAdditionalMetadata.PollOptionReplayBase.Option.$Properties[]
+			static create(properties: proto.PollAdditionalMetadata.PollOptionReplayBase.$Shape): proto.PollAdditionalMetadata.PollOptionReplayBase & proto.PollAdditionalMetadata.PollOptionReplayBase.$Shape
+			static create(properties?: proto.PollAdditionalMetadata.PollOptionReplayBase.$Properties): proto.PollAdditionalMetadata.PollOptionReplayBase
+			static encode(m: proto.PollAdditionalMetadata.PollOptionReplayBase.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.PollAdditionalMetadata.PollOptionReplayBase & proto.PollAdditionalMetadata.PollOptionReplayBase.$Shape
+			static fromObject(d: { [k: string]: any }): proto.PollAdditionalMetadata.PollOptionReplayBase
+			static toObject(m: proto.PollAdditionalMetadata.PollOptionReplayBase, o?: PBConversionOptions): { [k: string]: any }
+			toJSON(): { [k: string]: any }
+		}
+		namespace PollOptionReplayBase {
+			interface $Properties {
+				boundaryTimestampMs?: (number|Long|null)
+				editTimestampMs?: (number|Long|null)
+				options?: (proto.PollAdditionalMetadata.PollOptionReplayBase.Option.$Properties[]|null)
+				$unknowns?: Uint8Array[]
+			}
+			type $Shape = proto.PollAdditionalMetadata.PollOptionReplayBase.$Properties
+			interface IOption extends proto.PollAdditionalMetadata.PollOptionReplayBase.Option.$Properties {
+			}
+			class Option {
+				constructor(p?: proto.PollAdditionalMetadata.PollOptionReplayBase.Option.$Properties)
+				$unknowns?: Uint8Array[]
+				optionHash?: (Uint8Array|null)
+				enteredTimestampMs?: (number|Long|null)
+				addMessageKey?: (proto.MessageKey.$Properties|null)
+				static create(properties: proto.PollAdditionalMetadata.PollOptionReplayBase.Option.$Shape): proto.PollAdditionalMetadata.PollOptionReplayBase.Option & proto.PollAdditionalMetadata.PollOptionReplayBase.Option.$Shape
+				static create(properties?: proto.PollAdditionalMetadata.PollOptionReplayBase.Option.$Properties): proto.PollAdditionalMetadata.PollOptionReplayBase.Option
+				static encode(m: proto.PollAdditionalMetadata.PollOptionReplayBase.Option.$Properties, w?: PBWriter): PBWriter
+				static decode(r: (PBReader|Uint8Array), l?: number): proto.PollAdditionalMetadata.PollOptionReplayBase.Option & proto.PollAdditionalMetadata.PollOptionReplayBase.Option.$Shape
+				static fromObject(d: { [k: string]: any }): proto.PollAdditionalMetadata.PollOptionReplayBase.Option
+				static toObject(m: proto.PollAdditionalMetadata.PollOptionReplayBase.Option, o?: PBConversionOptions): { [k: string]: any }
+				toJSON(): { [k: string]: any }
+			}
+			namespace Option {
+				interface $Properties {
+					optionHash?: (Uint8Array|null)
+					enteredTimestampMs?: (number|Long|null)
+					addMessageKey?: (proto.MessageKey.$Properties|null)
+					$unknowns?: Uint8Array[]
+				}
+				type $Shape = proto.PollAdditionalMetadata.PollOptionReplayBase.Option.$Properties
+			}
+		}
+		interface IPollOptionReplayEntry extends proto.PollAdditionalMetadata.PollOptionReplayEntry.$Properties {
+		}
+		class PollOptionReplayEntry {
+			constructor(p?: proto.PollAdditionalMetadata.PollOptionReplayEntry.$Properties)
+			$unknowns?: Uint8Array[]
+			type?: (proto.PollAdditionalMetadata.PollOptionReplayEntry.Type|null)
+			messageKey?: (proto.MessageKey.$Properties|null)
+			serverTimestampMs?: (number|Long|null)
+			editTimestampMs?: (number|Long|null)
+			optionHashes: Uint8Array[]
+			revokedMessageKey?: (proto.MessageKey.$Properties|null)
+			static create(properties: proto.PollAdditionalMetadata.PollOptionReplayEntry.$Shape): proto.PollAdditionalMetadata.PollOptionReplayEntry & proto.PollAdditionalMetadata.PollOptionReplayEntry.$Shape
+			static create(properties?: proto.PollAdditionalMetadata.PollOptionReplayEntry.$Properties): proto.PollAdditionalMetadata.PollOptionReplayEntry
+			static encode(m: proto.PollAdditionalMetadata.PollOptionReplayEntry.$Properties, w?: PBWriter): PBWriter
+			static decode(r: (PBReader|Uint8Array), l?: number): proto.PollAdditionalMetadata.PollOptionReplayEntry & proto.PollAdditionalMetadata.PollOptionReplayEntry.$Shape
+			static fromObject(d: { [k: string]: any }): proto.PollAdditionalMetadata.PollOptionReplayEntry
+			static toObject(m: proto.PollAdditionalMetadata.PollOptionReplayEntry, o?: PBConversionOptions): { [k: string]: any }
+			toJSON(): { [k: string]: any }
+		}
+		namespace PollOptionReplayEntry {
+			interface $Properties {
+				type?: (proto.PollAdditionalMetadata.PollOptionReplayEntry.Type|null)
+				messageKey?: (proto.MessageKey.$Properties|null)
+				serverTimestampMs?: (number|Long|null)
+				editTimestampMs?: (number|Long|null)
+				optionHashes?: (Uint8Array[]|null)
+				revokedMessageKey?: (proto.MessageKey.$Properties|null)
+				$unknowns?: Uint8Array[]
+			}
+			type $Shape = proto.PollAdditionalMetadata.PollOptionReplayEntry.$Properties
+			enum Type {
+				UNKNOWN = 0,
+				EDIT = 1,
+				ADD = 2,
+				REVOKE = 3
+			}
 		}
 	}
 	interface IPollEncValue extends proto.PollEncValue.$Properties {
@@ -17512,192 +16575,6 @@ export namespace proto {
 			$unknowns?: Uint8Array[]
 		}
 		type $Shape = proto.PremiumMessageInfo.$Properties
-	}
-	interface IPrepareAddDeviceInput extends proto.PrepareAddDeviceInput.$Properties {
-	}
-	class PrepareAddDeviceInput {
-		constructor(p?: proto.PrepareAddDeviceInput.$Properties)
-		$unknowns?: Uint8Array[]
-		recoveryCode: string
-		userId: (number|Long)
-		encryptedSecretValuesJson: string
-		virtualDeviceBaseEpochId: (number|Long)
-		activeEpochId: (number|Long)
-		syncEpochs: proto.AddDeviceSyncEpochInput.$Properties[]
-		static create(properties: proto.PrepareAddDeviceInput.$Shape): proto.PrepareAddDeviceInput & proto.PrepareAddDeviceInput.$Shape
-		static create(properties?: proto.PrepareAddDeviceInput.$Properties): proto.PrepareAddDeviceInput
-		static encode(m: proto.PrepareAddDeviceInput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.PrepareAddDeviceInput & proto.PrepareAddDeviceInput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.PrepareAddDeviceInput
-		static toObject(m: proto.PrepareAddDeviceInput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace PrepareAddDeviceInput {
-		interface $Properties {
-			recoveryCode?: (string|null)
-			userId?: (number|Long|null)
-			encryptedSecretValuesJson?: (string|null)
-			virtualDeviceBaseEpochId?: (number|Long|null)
-			activeEpochId?: (number|Long|null)
-			syncEpochs?: (proto.AddDeviceSyncEpochInput.$Properties[]|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.PrepareAddDeviceInput.$Properties
-	}
-	interface IPrepareAddDeviceOutput extends proto.PrepareAddDeviceOutput.$Properties {
-	}
-	class PrepareAddDeviceOutput {
-		constructor(p?: proto.PrepareAddDeviceOutput.$Properties)
-		$unknowns?: Uint8Array[]
-		success?: (proto.PrepareAddDeviceSuccess.$Properties|null)
-		error?: (string|null)
-		result?: ("success"|"error")
-		static create(properties: proto.PrepareAddDeviceOutput.$Shape): proto.PrepareAddDeviceOutput & proto.PrepareAddDeviceOutput.$Shape
-		static create(properties?: proto.PrepareAddDeviceOutput.$Properties): proto.PrepareAddDeviceOutput
-		static encode(m: proto.PrepareAddDeviceOutput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.PrepareAddDeviceOutput & proto.PrepareAddDeviceOutput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.PrepareAddDeviceOutput
-		static toObject(m: proto.PrepareAddDeviceOutput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace PrepareAddDeviceOutput {
-		interface $Properties {
-			success?: (proto.PrepareAddDeviceSuccess.$Properties|null)
-			error?: (string|null)
-			result?: ("success"|"error")
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = {
-		  success?: proto.PrepareAddDeviceSuccess.$Shape|null
-		  error?: string|null
-		  $unknowns?: Uint8Array[]
-		} & (
-		  ({ result?: undefined; success?: null; error?: null }|{ result?: "success"; success: proto.PrepareAddDeviceSuccess.$Shape; error?: null }|{ result?: "error"; success?: null; error: string })
-		)
-	}
-	interface IPrepareAddDeviceSuccess extends proto.PrepareAddDeviceSuccess.$Properties {
-	}
-	class PrepareAddDeviceSuccess {
-		constructor(p?: proto.PrepareAddDeviceSuccess.$Properties)
-		$unknowns?: Uint8Array[]
-		deviceKeys?: (proto.AddDeviceKeysOutput.$Properties|null)
-		currentEpoch?: (proto.EpochKey.$Properties|null)
-		mailboxRootSalt: Uint8Array
-		orfRotationToken: Uint8Array
-		deviceEpochHmac: Uint8Array
-		epochRootKeyFingerprint: Uint8Array
-		supportedEncryptionVersions: number[]
-		encryptionVersionSignature: Uint8Array
-		clientVersion: number
-		static create(properties: proto.PrepareAddDeviceSuccess.$Shape): proto.PrepareAddDeviceSuccess & proto.PrepareAddDeviceSuccess.$Shape
-		static create(properties?: proto.PrepareAddDeviceSuccess.$Properties): proto.PrepareAddDeviceSuccess
-		static encode(m: proto.PrepareAddDeviceSuccess.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.PrepareAddDeviceSuccess & proto.PrepareAddDeviceSuccess.$Shape
-		static fromObject(d: { [k: string]: any }): proto.PrepareAddDeviceSuccess
-		static toObject(m: proto.PrepareAddDeviceSuccess, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace PrepareAddDeviceSuccess {
-		interface $Properties {
-			deviceKeys?: (proto.AddDeviceKeysOutput.$Properties|null)
-			currentEpoch?: (proto.EpochKey.$Properties|null)
-			mailboxRootSalt?: (Uint8Array|null)
-			orfRotationToken?: (Uint8Array|null)
-			deviceEpochHmac?: (Uint8Array|null)
-			epochRootKeyFingerprint?: (Uint8Array|null)
-			supportedEncryptionVersions?: (number[]|null)
-			encryptionVersionSignature?: (Uint8Array|null)
-			clientVersion?: (number|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.PrepareAddDeviceSuccess.$Properties
-	}
-	interface IPrepareAddPeerDeviceInput extends proto.PrepareAddPeerDeviceInput.$Properties {
-	}
-	class PrepareAddPeerDeviceInput {
-		constructor(p?: proto.PrepareAddPeerDeviceInput.$Properties)
-		$unknowns?: Uint8Array[]
-		advSecret: Uint8Array
-		sealedPayload: Uint8Array
-		backupId: (number|Long)
-		userId: (number|Long)
-		companionIdentityPub: Uint8Array
-		activeEpochId: (number|Long)
-		static create(properties: proto.PrepareAddPeerDeviceInput.$Shape): proto.PrepareAddPeerDeviceInput & proto.PrepareAddPeerDeviceInput.$Shape
-		static create(properties?: proto.PrepareAddPeerDeviceInput.$Properties): proto.PrepareAddPeerDeviceInput
-		static encode(m: proto.PrepareAddPeerDeviceInput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.PrepareAddPeerDeviceInput & proto.PrepareAddPeerDeviceInput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.PrepareAddPeerDeviceInput
-		static toObject(m: proto.PrepareAddPeerDeviceInput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace PrepareAddPeerDeviceInput {
-		interface $Properties {
-			advSecret?: (Uint8Array|null)
-			sealedPayload?: (Uint8Array|null)
-			backupId?: (number|Long|null)
-			userId?: (number|Long|null)
-			companionIdentityPub?: (Uint8Array|null)
-			activeEpochId?: (number|Long|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.PrepareAddPeerDeviceInput.$Properties
-	}
-	interface IPrepareAddPeerDeviceOutput extends proto.PrepareAddPeerDeviceOutput.$Properties {
-	}
-	class PrepareAddPeerDeviceOutput {
-		constructor(p?: proto.PrepareAddPeerDeviceOutput.$Properties)
-		$unknowns?: Uint8Array[]
-		success?: (proto.PrepareAddPeerDeviceSuccess.$Properties|null)
-		error?: (string|null)
-		result?: ("success"|"error")
-		static create(properties: proto.PrepareAddPeerDeviceOutput.$Shape): proto.PrepareAddPeerDeviceOutput & proto.PrepareAddPeerDeviceOutput.$Shape
-		static create(properties?: proto.PrepareAddPeerDeviceOutput.$Properties): proto.PrepareAddPeerDeviceOutput
-		static encode(m: proto.PrepareAddPeerDeviceOutput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.PrepareAddPeerDeviceOutput & proto.PrepareAddPeerDeviceOutput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.PrepareAddPeerDeviceOutput
-		static toObject(m: proto.PrepareAddPeerDeviceOutput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace PrepareAddPeerDeviceOutput {
-		interface $Properties {
-			success?: (proto.PrepareAddPeerDeviceSuccess.$Properties|null)
-			error?: (string|null)
-			result?: ("success"|"error")
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = {
-		  success?: proto.PrepareAddPeerDeviceSuccess.$Shape|null
-		  error?: string|null
-		  $unknowns?: Uint8Array[]
-		} & (
-		  ({ result?: undefined; success?: null; error?: null }|{ result?: "success"; success: proto.PrepareAddPeerDeviceSuccess.$Shape; error?: null }|{ result?: "error"; success?: null; error: string })
-		)
-	}
-	interface IPrepareAddPeerDeviceSuccess extends proto.PrepareAddPeerDeviceSuccess.$Properties {
-	}
-	class PrepareAddPeerDeviceSuccess {
-		constructor(p?: proto.PrepareAddPeerDeviceSuccess.$Properties)
-		$unknowns?: Uint8Array[]
-		enrolment?: (proto.PrepareAddDeviceSuccess.$Properties|null)
-		serverDataId: (number|Long)
-		companionDeviceBinding: Uint8Array
-		static create(properties: proto.PrepareAddPeerDeviceSuccess.$Shape): proto.PrepareAddPeerDeviceSuccess & proto.PrepareAddPeerDeviceSuccess.$Shape
-		static create(properties?: proto.PrepareAddPeerDeviceSuccess.$Properties): proto.PrepareAddPeerDeviceSuccess
-		static encode(m: proto.PrepareAddPeerDeviceSuccess.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.PrepareAddPeerDeviceSuccess & proto.PrepareAddPeerDeviceSuccess.$Shape
-		static fromObject(d: { [k: string]: any }): proto.PrepareAddPeerDeviceSuccess
-		static toObject(m: proto.PrepareAddPeerDeviceSuccess, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace PrepareAddPeerDeviceSuccess {
-		interface $Properties {
-			enrolment?: (proto.PrepareAddDeviceSuccess.$Properties|null)
-			serverDataId?: (number|Long|null)
-			companionDeviceBinding?: (Uint8Array|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.PrepareAddPeerDeviceSuccess.$Properties
 	}
 	interface IPrimaryEphemeralIdentity extends proto.PrimaryEphemeralIdentity.$Properties {
 	}
@@ -18043,148 +16920,36 @@ export namespace proto {
 		}
 		type $Shape = proto.ReportingTokenInfo.$Properties
 	}
-	interface IRotateEpochInput extends proto.RotateEpochInput.$Properties {
+	interface IRoutingInfo extends proto.RoutingInfo.$Properties {
 	}
-	class RotateEpochInput {
-		constructor(p?: proto.RotateEpochInput.$Properties)
+	class RoutingInfo {
+		constructor(p?: proto.RoutingInfo.$Properties)
 		$unknowns?: Uint8Array[]
-		currentEpochRootKey: Uint8Array
-		currentEpochAnonId: number
-		currentEpochFbid: (number|Long)
-		epochStorageAuthPrivateKey: Uint8Array
-		members: proto.RotateEpochMemberInput.$Properties[]
-		static create(properties: proto.RotateEpochInput.$Shape): proto.RotateEpochInput & proto.RotateEpochInput.$Shape
-		static create(properties?: proto.RotateEpochInput.$Properties): proto.RotateEpochInput
-		static encode(m: proto.RotateEpochInput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.RotateEpochInput & proto.RotateEpochInput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.RotateEpochInput
-		static toObject(m: proto.RotateEpochInput, o?: PBConversionOptions): { [k: string]: any }
+		regionId: number[]
+		clusterId: number[]
+		taskId?: (number|null)
+		debug?: (boolean|null)
+		tcpBbr?: (boolean|null)
+		tcpKeepalive?: (boolean|null)
+		static create(properties: proto.RoutingInfo.$Shape): proto.RoutingInfo & proto.RoutingInfo.$Shape
+		static create(properties?: proto.RoutingInfo.$Properties): proto.RoutingInfo
+		static encode(m: proto.RoutingInfo.$Properties, w?: PBWriter): PBWriter
+		static decode(r: (PBReader|Uint8Array), l?: number): proto.RoutingInfo & proto.RoutingInfo.$Shape
+		static fromObject(d: { [k: string]: any }): proto.RoutingInfo
+		static toObject(m: proto.RoutingInfo, o?: PBConversionOptions): { [k: string]: any }
 		toJSON(): { [k: string]: any }
 	}
-	namespace RotateEpochInput {
+	namespace RoutingInfo {
 		interface $Properties {
-			currentEpochRootKey?: (Uint8Array|null)
-			currentEpochAnonId?: (number|null)
-			currentEpochFbid?: (number|Long|null)
-			epochStorageAuthPrivateKey?: (Uint8Array|null)
-			members?: (proto.RotateEpochMemberInput.$Properties[]|null)
+			regionId?: (number[]|null)
+			clusterId?: (number[]|null)
+			taskId?: (number|null)
+			debug?: (boolean|null)
+			tcpBbr?: (boolean|null)
+			tcpKeepalive?: (boolean|null)
 			$unknowns?: Uint8Array[]
 		}
-		type $Shape = proto.RotateEpochInput.$Properties
-	}
-	interface IRotateEpochMemberEdge extends proto.RotateEpochMemberEdge.$Properties {
-	}
-	class RotateEpochMemberEdge {
-		constructor(p?: proto.RotateEpochMemberEdge.$Properties)
-		$unknowns?: Uint8Array[]
-		deviceId: (number|Long)
-		encryptedEpochKey: Uint8Array
-		deviceEpochHmac: Uint8Array
-		static create(properties: proto.RotateEpochMemberEdge.$Shape): proto.RotateEpochMemberEdge & proto.RotateEpochMemberEdge.$Shape
-		static create(properties?: proto.RotateEpochMemberEdge.$Properties): proto.RotateEpochMemberEdge
-		static encode(m: proto.RotateEpochMemberEdge.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.RotateEpochMemberEdge & proto.RotateEpochMemberEdge.$Shape
-		static fromObject(d: { [k: string]: any }): proto.RotateEpochMemberEdge
-		static toObject(m: proto.RotateEpochMemberEdge, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace RotateEpochMemberEdge {
-		interface $Properties {
-			deviceId?: (number|Long|null)
-			encryptedEpochKey?: (Uint8Array|null)
-			deviceEpochHmac?: (Uint8Array|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.RotateEpochMemberEdge.$Properties
-	}
-	interface IRotateEpochMemberInput extends proto.RotateEpochMemberInput.$Properties {
-	}
-	class RotateEpochMemberInput {
-		constructor(p?: proto.RotateEpochMemberInput.$Properties)
-		$unknowns?: Uint8Array[]
-		deviceId: (number|Long)
-		epochStoragePublicKey: Uint8Array
-		devicePublicKey: Uint8Array
-		prevDeviceEpochHmac: Uint8Array
-		epochStoragePublicKeySig: Uint8Array
-		static create(properties: proto.RotateEpochMemberInput.$Shape): proto.RotateEpochMemberInput & proto.RotateEpochMemberInput.$Shape
-		static create(properties?: proto.RotateEpochMemberInput.$Properties): proto.RotateEpochMemberInput
-		static encode(m: proto.RotateEpochMemberInput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.RotateEpochMemberInput & proto.RotateEpochMemberInput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.RotateEpochMemberInput
-		static toObject(m: proto.RotateEpochMemberInput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace RotateEpochMemberInput {
-		interface $Properties {
-			deviceId?: (number|Long|null)
-			epochStoragePublicKey?: (Uint8Array|null)
-			devicePublicKey?: (Uint8Array|null)
-			prevDeviceEpochHmac?: (Uint8Array|null)
-			epochStoragePublicKeySig?: (Uint8Array|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.RotateEpochMemberInput.$Properties
-	}
-	interface IRotateEpochOutput extends proto.RotateEpochOutput.$Properties {
-	}
-	class RotateEpochOutput {
-		constructor(p?: proto.RotateEpochOutput.$Properties)
-		$unknowns?: Uint8Array[]
-		success?: (proto.RotateEpochSuccess.$Properties|null)
-		error?: (string|null)
-		result?: ("success"|"error")
-		static create(properties: proto.RotateEpochOutput.$Shape): proto.RotateEpochOutput & proto.RotateEpochOutput.$Shape
-		static create(properties?: proto.RotateEpochOutput.$Properties): proto.RotateEpochOutput
-		static encode(m: proto.RotateEpochOutput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.RotateEpochOutput & proto.RotateEpochOutput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.RotateEpochOutput
-		static toObject(m: proto.RotateEpochOutput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace RotateEpochOutput {
-		interface $Properties {
-			success?: (proto.RotateEpochSuccess.$Properties|null)
-			error?: (string|null)
-			result?: ("success"|"error")
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = {
-		  success?: proto.RotateEpochSuccess.$Shape|null
-		  error?: string|null
-		  $unknowns?: Uint8Array[]
-		} & (
-		  ({ result?: undefined; success?: null; error?: null }|{ result?: "success"; success: proto.RotateEpochSuccess.$Shape; error?: null }|{ result?: "error"; success?: null; error: string })
-		)
-	}
-	interface IRotateEpochSuccess extends proto.RotateEpochSuccess.$Properties {
-	}
-	class RotateEpochSuccess {
-		constructor(p?: proto.RotateEpochSuccess.$Properties)
-		$unknowns?: Uint8Array[]
-		newEpochRootKey: Uint8Array
-		newEpochAnonId: number
-		backwardEdge?: (proto.BackwardEdge.$Properties|null)
-		memberEdges: proto.RotateEpochMemberEdge.$Properties[]
-		epochRootKeyFingerprint: Uint8Array
-		static create(properties: proto.RotateEpochSuccess.$Shape): proto.RotateEpochSuccess & proto.RotateEpochSuccess.$Shape
-		static create(properties?: proto.RotateEpochSuccess.$Properties): proto.RotateEpochSuccess
-		static encode(m: proto.RotateEpochSuccess.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.RotateEpochSuccess & proto.RotateEpochSuccess.$Shape
-		static fromObject(d: { [k: string]: any }): proto.RotateEpochSuccess
-		static toObject(m: proto.RotateEpochSuccess, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace RotateEpochSuccess {
-		interface $Properties {
-			newEpochRootKey?: (Uint8Array|null)
-			newEpochAnonId?: (number|null)
-			backwardEdge?: (proto.BackwardEdge.$Properties|null)
-			memberEdges?: (proto.RotateEpochMemberEdge.$Properties[]|null)
-			epochRootKeyFingerprint?: (Uint8Array|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.RotateEpochSuccess.$Properties
+		type $Shape = proto.RoutingInfo.$Properties
 	}
 	interface IScheduledMessageMetadata extends proto.ScheduledMessageMetadata.$Properties {
 	}
@@ -18210,85 +16975,6 @@ export namespace proto {
 			$unknowns?: Uint8Array[]
 		}
 		type $Shape = proto.ScheduledMessageMetadata.$Properties
-	}
-	interface ISealThreadIdInput extends proto.SealThreadIdInput.$Properties {
-	}
-	class SealThreadIdInput {
-		constructor(p?: proto.SealThreadIdInput.$Properties)
-		$unknowns?: Uint8Array[]
-		epochRootKey: Uint8Array
-		epochAnonId: number
-		backupId: (number|Long)
-		threadId: string
-		static create(properties: proto.SealThreadIdInput.$Shape): proto.SealThreadIdInput & proto.SealThreadIdInput.$Shape
-		static create(properties?: proto.SealThreadIdInput.$Properties): proto.SealThreadIdInput
-		static encode(m: proto.SealThreadIdInput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.SealThreadIdInput & proto.SealThreadIdInput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.SealThreadIdInput
-		static toObject(m: proto.SealThreadIdInput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace SealThreadIdInput {
-		interface $Properties {
-			epochRootKey?: (Uint8Array|null)
-			epochAnonId?: (number|null)
-			backupId?: (number|Long|null)
-			threadId?: (string|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.SealThreadIdInput.$Properties
-	}
-	interface ISealThreadIdOutput extends proto.SealThreadIdOutput.$Properties {
-	}
-	class SealThreadIdOutput {
-		constructor(p?: proto.SealThreadIdOutput.$Properties)
-		$unknowns?: Uint8Array[]
-		success?: (proto.SealThreadIdSuccess.$Properties|null)
-		error?: (string|null)
-		result?: ("success"|"error")
-		static create(properties: proto.SealThreadIdOutput.$Shape): proto.SealThreadIdOutput & proto.SealThreadIdOutput.$Shape
-		static create(properties?: proto.SealThreadIdOutput.$Properties): proto.SealThreadIdOutput
-		static encode(m: proto.SealThreadIdOutput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.SealThreadIdOutput & proto.SealThreadIdOutput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.SealThreadIdOutput
-		static toObject(m: proto.SealThreadIdOutput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace SealThreadIdOutput {
-		interface $Properties {
-			success?: (proto.SealThreadIdSuccess.$Properties|null)
-			error?: (string|null)
-			result?: ("success"|"error")
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = {
-		  success?: proto.SealThreadIdSuccess.$Shape|null
-		  error?: string|null
-		  $unknowns?: Uint8Array[]
-		} & (
-		  ({ result?: undefined; success?: null; error?: null }|{ result?: "success"; success: proto.SealThreadIdSuccess.$Shape; error?: null }|{ result?: "error"; success?: null; error: string })
-		)
-	}
-	interface ISealThreadIdSuccess extends proto.SealThreadIdSuccess.$Properties {
-	}
-	class SealThreadIdSuccess {
-		constructor(p?: proto.SealThreadIdSuccess.$Properties)
-		$unknowns?: Uint8Array[]
-		sealedThreadId: Uint8Array
-		static create(properties: proto.SealThreadIdSuccess.$Shape): proto.SealThreadIdSuccess & proto.SealThreadIdSuccess.$Shape
-		static create(properties?: proto.SealThreadIdSuccess.$Properties): proto.SealThreadIdSuccess
-		static encode(m: proto.SealThreadIdSuccess.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.SealThreadIdSuccess & proto.SealThreadIdSuccess.$Shape
-		static fromObject(d: { [k: string]: any }): proto.SealThreadIdSuccess
-		static toObject(m: proto.SealThreadIdSuccess, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace SealThreadIdSuccess {
-		interface $Properties {
-			sealedThreadId?: (Uint8Array|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.SealThreadIdSuccess.$Properties
 	}
 	interface ISenderKeyDistributionMessage extends proto.SenderKeyDistributionMessage.$Properties {
 	}
@@ -22778,39 +21464,6 @@ export namespace proto {
 			}
 			type $Shape = proto.VerifiedNameCertificate.Details.$Properties
 		}
-	}
-	interface IVirtualDeviceOutput extends proto.VirtualDeviceOutput.$Properties {
-	}
-	class VirtualDeviceOutput {
-		constructor(p?: proto.VirtualDeviceOutput.$Properties)
-		$unknowns?: Uint8Array[]
-		vdId: Uint8Array
-		vdPublicKey: Uint8Array
-		vdEpochStoragePublicKey: Uint8Array
-		vdEpochStoragePublicKeySig: Uint8Array
-		ocmfRotationToken: Uint8Array
-		deviceEpochHmac: Uint8Array
-		encryptedSecretValues?: (proto.EncryptedSecretValuesOutput.$Properties|null)
-		static create(properties: proto.VirtualDeviceOutput.$Shape): proto.VirtualDeviceOutput & proto.VirtualDeviceOutput.$Shape
-		static create(properties?: proto.VirtualDeviceOutput.$Properties): proto.VirtualDeviceOutput
-		static encode(m: proto.VirtualDeviceOutput.$Properties, w?: PBWriter): PBWriter
-		static decode(r: (PBReader|Uint8Array), l?: number): proto.VirtualDeviceOutput & proto.VirtualDeviceOutput.$Shape
-		static fromObject(d: { [k: string]: any }): proto.VirtualDeviceOutput
-		static toObject(m: proto.VirtualDeviceOutput, o?: PBConversionOptions): { [k: string]: any }
-		toJSON(): { [k: string]: any }
-	}
-	namespace VirtualDeviceOutput {
-		interface $Properties {
-			vdId?: (Uint8Array|null)
-			vdPublicKey?: (Uint8Array|null)
-			vdEpochStoragePublicKey?: (Uint8Array|null)
-			vdEpochStoragePublicKeySig?: (Uint8Array|null)
-			ocmfRotationToken?: (Uint8Array|null)
-			deviceEpochHmac?: (Uint8Array|null)
-			encryptedSecretValues?: (proto.EncryptedSecretValuesOutput.$Properties|null)
-			$unknowns?: Uint8Array[]
-		}
-		type $Shape = proto.VirtualDeviceOutput.$Properties
 	}
 	interface IWallpaperSettings extends proto.WallpaperSettings.$Properties {
 	}
