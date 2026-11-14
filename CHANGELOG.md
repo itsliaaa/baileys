@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.6 - 2026-11-14
+
+- fix: don't build downloads on the `a.whatsapp.net` placeholder host.
+- fix: encrypt a retry resend once, also for groups.
+- chore: update WAProto and socket version to `2.3000.1054623785`.
+
 ## 0.5.5 - 2026-11-13
 
 - chore: update WAProto and socket version to `2.3000.1054357583`.
